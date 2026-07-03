@@ -1,0 +1,43 @@
+GET /content/uploads/siteorigin-widgets/sow-image-default-8b5b6f678277-171.css?ver=23960545b7288d1e3feda144a69963de HTTP/1.1
+Host: bancobacc.com.do
+User-Agent: Mozilla/5.0 (compatible; Osmedeus/v4; +https://github.com/j3ssie/osmedeus)
+Accept-Charset: utf-8
+Accept-Encoding: gzip
+
+HTTP/1.1 200 OK
+Connection: close
+Content-Length: 566
+Accept-Ranges: bytes
+Cache-Control: s-maxage=10
+Content-Type: text/css
+Date: Wed, 17 Sep 2025 03:22:31 GMT
+Last-Modified: Tue, 09 Sep 2025 19:19:12 GMT
+Referrer-Policy: no-referrer-when-downgrade
+Server: Apache
+Upgrade: h2,h2c
+X-Permitted-Cross-Domain-Policies: none
+X-Xss-Protection: 1; mode=block
+
+.so-widget-sow-image-default-8b5b6f678277-171 .sow-image-container {
+  display: flex;
+  align-items: flex-start;
+}
+.so-widget-sow-image-default-8b5b6f678277-171 .sow-image-container > a {
+  display: inline-block;
+  
+  max-width: 100%;
+}
+@media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) {
+  .so-widget-sow-image-default-8b5b6f678277-171 .sow-image-container > a {
+    display: flex;
+  }
+}
+.so-widget-sow-image-default-8b5b6f678277-171 .sow-image-container .so-widget-image {
+  display: block;
+  height: auto;
+  max-width: 100%;
+  
+}
+
+
+http://bancobacc.com.do/content/uploads/siteorigin-widgets/sow-image-default-8b5b6f678277-171.css?ver=23960545b7288d1e3feda144a69963de

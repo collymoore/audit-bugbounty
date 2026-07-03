@@ -1,0 +1,11 @@
+[waf-detect:apachegeneric] [http] [info] https://bancobacc.com.do
+[waf-detect:wordfence] [http] [info] https://bancobacc.com.do
+[wordpress-passive-detection:theme_slug] [http] [info] https://bancobacc.com.do ["bacc"]
+[wordpress-detect] [http] [info] https://bancobacc.com.do
+[tech-detect:youtube] [http] [info] https://bancobacc.com.do
+[wordpress-plugin-detect:contact-form-7] [http] [info] https://bancobacc.com.do
+[wordpress-plugin-detect:siteorigin-panels] [http] [info] https://bancobacc.com.do
+[wordpress-plugin-detect:skt-templates] [http] [info] https://bancobacc.com.do
+[apache-detect] [http] [info] https://bancobacc.com.do ["Apache"]
+[pagespeed-detect] [http] [info] https://bancobacc.com.do
+[switch-protocol] [http] [info] https://bancobacc.com.do ["h2,h2c"]

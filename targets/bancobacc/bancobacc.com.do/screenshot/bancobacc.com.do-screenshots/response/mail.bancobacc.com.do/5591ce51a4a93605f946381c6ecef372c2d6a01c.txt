@@ -1,0 +1,24 @@
+GET / HTTP/1.1
+Host: mail.bancobacc.com.do
+User-Agent: Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.168 Safari/537.36
+Accept-Charset: utf-8
+Accept-Encoding: gzip
+
+HTTP/1.1 301 Moved Permanently
+Connection: close
+Content-Type: text/html; charset=UTF-8
+Date: Wed, 17 Sep 2025 03:19:56 GMT
+Location: https://bancobacc.com.do/
+Referrer-Policy: no-referrer-when-downgrade
+Server: Apache
+Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+Upgrade: h2,h2c
+X-Permitted-Cross-Domain-Policies: none
+X-Redirect-By: WordPress
+X-Xss-Protection: 1; mode=block
+Content-Length: 0
+
+
+
+
+https://mail.bancobacc.com.do

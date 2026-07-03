@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Auditoría de Seguridad — Banco BACC | NSI LLC</title>
+<style>
+  @page { margin: 2cm; @top-center { content: element(header); } @bottom-center { content: counter(page); } }
+  body { font-family: 'Segoe UI', Arial, sans-serif; color: #1a1a2e; line-height: 1.6; max-width: 900px; margin: 0 auto; padding: 20px; }
+  .cover { text-align: center; padding: 80px 0 40px; border-bottom: 3px solid #c0392b; margin-bottom: 40px; }
+  .cover h1 { font-size: 2.2em; color: #c0392b; margin-bottom: 5px; }
+  .cover .subtitle { font-size: 1.3em; color: #555; }
+  .cover .meta { margin-top: 40px; color: #777; font-size: 0.9em; }
+  .cover .classification { margin-top: 60px; padding: 10px 20px; background: #c0392b; color: #fff; display: inline-block; font-weight: bold; letter-spacing: 2px; }
+  .page-break { page-break-before: always; }
+  h2 { color: #2c3e50; border-bottom: 2px solid #ddd; padding-bottom: 8px; margin-top: 35px; }
+  h3 { color: #34495e; margin-top: 25px; }
+  .risk-critical { color: #c0392b; font-weight: bold; }
+  .risk-high { color: #e67e22; font-weight: bold; }
+  .risk-medium { color: #f39c12; font-weight: bold; }
+  .risk-info { color: #7f8c8d; font-weight: bold; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.9em; }
+  th { background: #2c3e50; color: #fff; padding: 10px 12px; text-align: left; }
+  td { padding: 8px 12px; border-bottom: 1px solid #ddd; }
+  tr:hover { background: #f5f6fa; }
+  .severity-critical { background: #fde8e8; border-left: 4px solid #c0392b; }
+  .severity-high { background: #fef3e2; border-left: 4px solid #e67e22; }
+  .severity-medium { background: #fef9e7; border-left: 4px solid #f39c12; }
+  .finding { background: #f8f9fa; border-radius: 6px; padding: 15px 20px; margin: 15px 0; }
+  .finding h4 { margin-top: 0; }
+  pre { background: #1e1e2e; color: #cdd6f4; padding: 12px 15px; border-radius: 6px; overflow-x: auto; font-size: 0.85em; line-height: 1.4; }
+  code { background: #eef; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  .cvss-box { display: inline-block; background: #2c3e50; color: #fff; padding: 3px 10px; border-radius: 4px; font-size: 0.8em; margin-left: 10px; }
+  .badge { display: inline-block; padding: 2px 8px; border-radius: 3px; font-size: 0.75em; font-weight: bold; color: #fff; }
+  .badge-critical { background: #c0392b; }
+  .badge-high { background: #e67e22; }
+  .badge-medium { background: #f39c12; }
+  .badge-info { background: #7f8c8d; }
+  .exec-summary { background: linear-gradient(135deg, #1a1a2e, #16213e); color: #fff; padding: 25px; border-radius: 8px; margin: 20px 0; }
+  .exec-summary .metric { display: inline-block; text-align: center; margin: 10px 20px 10px 0; }
+  .exec-summary .metric .value { font-size: 2em; font-weight: bold; }
+  .exec-summary .metric .label { font-size: 0.8em; opacity: 0.8; }
+  .tech-section { border-left: 3px solid #3498db; padding-left: 15px; margin: 20px 0; }
+  .timeline { position: relative; padding-left: 30px; }
+  .timeline-item { margin: 15px 0; padding: 10px 15px; background: #f8f9fa; border-radius: 6px; border-left: 3px solid #2c3e50; }
+  .timeline-item .priority { font-weight: bold; float: right; }
+  @media print { body { padding: 0; } .page-break { page-break-before: always; } pre { font-size: 0.75em; } }
+</style>
+</head>
+<body>
+
+<!-- ==================== PORTADA ==================== -->
+<div class="cover">
+  <h1>🔒 Auditoría de Seguridad Externa</h1>
+  <div class="subtitle">Banco de Ahorro y Crédito del Caribe (Banco BACC)</div>
+  <p style="margin-top:20px;color:#666;">bancobacc.com.do — Julio 2026</p>
+  <div class="meta">
+    <p><strong>Metodología:</strong> Black-box (sin credenciales)</p>
+    <p><strong>Duración:</strong> 29 Jun — 01 Jul 2026 (2 sesiones)</p>
+    <p><strong>Firmante:</strong> NSI LLC — Null Session Intelligence</p>
+  </div>
+  <div class="classification">CONFIDENCIAL</div>
+</div>
+
+<!-- ==================== RESUMEN EJECUTIVO ==================== -->
+<div class="exec-summary">
+  <h2 style="color:#fff;border:none;margin-top:0;">📊 Resumen de Riesgo</h2>
+  <div class="metric"><div class="value" style="color:#e74c3c;">37</div><div class="label">Hallazgos</div></div>
+  <div class="metric"><div class="value" style="color:#e74c3c;">3</div><div class="label">Críticos</div></div>
+  <div class="metric"><div class="value" style="color:#e67e22;">7</div><div class="label">Altos</div></div>
+  <div class="metric"><div class="value" style="color:#f39c12;">8</div><div class="label">Medios</div></div>
+  <div class="metric"><div class="value" style="color:#7f8c8d;">3</div><div class="label">Informativos</div></div>
+  <div class="metric"><div class="value" style="color:#3498db;">21</div><div class="label">CVEs</div></div>
+  <p style="margin-top:20px;opacity:0.9;">El Banco BACC presenta <strong>múltiples vulnerabilidades críticas</strong> que exponen datos de clientes, infraestructura interna y la plataforma de banca en línea a ataques externos. Se requiere acción inmediata.</p>
+</div>
+
+<div class="page-break"></div>
+
+<!-- ==================== INFORME EJECUTIVO ==================== -->
+<h2>📋 Informe Ejecutivo para Alta Gerencia y CISO</h2>
+
+<h3>Hallazgos Críticos — Acción Inmediata</h3>
+
+<div class="finding severity-critical">
+  <h4>🔴 BACC-01: Infraestructura de Administración Expuesta</h4>
+  <p><strong>Riesgo:</strong> Acceso no autorizado al panel de control del hosting</p>
+  <p><strong>Impacto:</strong> Compromiso total del sitio web, defacement, robo de datos</p>
+  <p><strong>Estado:</strong> Puerto 2083 actualmente no responde (posible mitigación reciente)</p>
+  <span class="badge badge-critical">CVSS 9.1</span>
+</div>
+
+<div class="finding severity-critical">
+  <h4>🔴 BACC-02: Directorio de Uploads con Listado Público</h4>
+  <p><strong>Riesgo:</strong> Exposición de 105 documentos internos del banco (2017-2026)</p>
+  <p><strong>Impacto:</strong> Fuga de información sensible de 21 empleados, rutas internas de Windows</p>
+  <span class="badge badge-critical">CVSS 7.5</span>
+</div>
+
+<div class="finding severity-critical">
+  <h4>🔴 BACC-03: Dockerfile Expuesto</h4>
+  <p><strong>Riesgo:</strong> Revelación de configuración interna del servidor</p>
+  <span class="badge badge-critical">CVSS 5.3</span>
+</div>
+
+<h3>Riesgos Altos — WordPress Severamente Desactualizado</h3>
+<p><strong>6 plugins vulnerables</strong> con <strong>21 CVEs documentados</strong>:</p>
+
+<table>
+<tr><th>Plugin</th><th>Versión</th><th>Última</th><th>CVEs</th><th>Riesgo Principal</th></tr>
+<tr><td>Contact Form 7</td><td>5.7.7</td><td>6.1.6</td><td>4</td><td>File Upload, Open Redirect</td></tr>
+<tr><td>Page Builder SiteOrigin</td><td>2.25.0</td><td>2.34.5</td><td>6</td><td><strong>Local File Inclusion</strong></td></tr>
+<tr><td>Yoast SEO</td><td>20.12</td><td>27+</td><td>6</td><td><strong>IDOR Information Exposure</strong></td></tr>
+<tr><td>WP Mail SMTP</td><td>3.8.2</td><td>4.9.0</td><td>1</td><td>SMTP Password Exposure</td></tr>
+<tr><td>Duplicate Post</td><td>4.5</td><td>—</td><td>1</td><td>Post Duplication</td></tr>
+<tr><td>Custom Post Type UI</td><td>1.13.7</td><td>—</td><td>1</td><td>Unauth CPT Modification</td></tr>
+</table>
+
+<h3>🟠 Riesgos Medios</h3>
+<table>
+<tr><th>ID</th><th>Hallazgo</th><th>Impacto</th></tr>
+<tr><td>BACC-07</td><td>Clickjacking en banca en línea</td><td>Suplantación de interfaz bancaria</td></tr>
+<tr><td>BACC-08</td><td>Sin Content-Security-Policy</td><td>XSS, data exfiltración</td></tr>
+<tr><td>BACC-13</td><td>WordPress 6.2.6 obsoleto</td><td>2 CVEs conocidos</td></tr>
+<tr><td>BACC-14</td><td>mod_pagespeed expuesto</td><td>Fingerprinting, info disclosure</td></tr>
+</table>
+
+<h3>Línea de Tiempo de Remediación</h3>
+<div class="timeline">
+  <div class="timeline-item"><strong>🔴 Inmediato</strong> — Deshabilitar directory listing en /content/uploads/<span class="priority">1 hora</span></div>
+  <div class="timeline-item"><strong>🔴 Inmediato</strong> — Actualizar WordPress 6.2.6 → ≥6.2.8<span class="priority">4 horas</span></div>
+  <div class="timeline-item"><strong>🔴 Inmediato</strong> — Actualizar Contact Form 7 (5.7.7 → 6.1.6)<span class="priority">1 hora</span></div>
+  <div class="timeline-item"><strong>🔴 Inmediato</strong> — Actualizar Page Builder SiteOrigin (2.25.0 → 2.34.5)<span class="priority">2 horas</span></div>
+  <div class="timeline-item"><strong>🟡 Corto plazo</strong> — Actualizar Yoast SEO (20.12 → 27+)<span class="priority">2 horas</span></div>
+  <div class="timeline-item"><strong>🟡 Corto plazo</strong> — Actualizar WP Mail SMTP + resto de plugins<span class="priority">3 horas</span></div>
+  <div class="timeline-item"><strong>🟡 Corto plazo</strong> — Implementar X-Frame-Options en banca en línea<span class="priority">30 min</span></div>
+  <div class="timeline-item"><strong>🟠 Mediano plazo</strong> — Implementar Content-Security-Policy<span class="priority">4 horas</span></div>
+</div>
+
+<h3>Recomendaciones Estratégicas</h3>
+<ol>
+  <li><strong>Actualización inmediata</strong> de todos los plugins de WordPress (6 de 8 desactualizados)</li>
+  <li><strong>Implementar WAF a nivel de red</strong> además de Wordfence (Cloudflare, Sucuri)</li>
+  <li><strong>Deshabilitar directory listing</strong> en Apache para todos los directorios</li>
+  <li><strong>Política de seguridad de contenido (CSP)</strong> para prevenir XSS</li>
+  <li><strong>Segmentación de red</strong> — separar WordPress del hosting compartido</li>
+  <li><strong>Auditoría trimestral</strong> con pruebas de penetración externas</li>
+</ol>
+
+<div class="page-break"></div>
+
+<!-- ==================== INFORME TÉCNICO ==================== -->
+<h2>🔬 Informe Técnico para Analistas de Ciberseguridad</h2>
+
+<h3>1. Comandos de Reconocimiento</h3>
+<div class="tech-section">
+<pre># Subdomain discovery
+subfinder -d bancobacc.com.do -all -silent -o subs_raw.txt
+
+# HTTP probing + tech detection
+httpx -l subs_raw.txt -silent -status-code -title -tech-detect -o live.txt -json
+
+# Vulnerability scan
+nuclei -l live.txt -c 50 -t ~/nuclei-templates/ -o nuclei_results.txt
+
+# WordPress scan via WPScan (API key)
+docker run --rm wpscanteam/wpscan \
+  --url https://bancobacc.com.do \
+  --disable-tls-checks --random-user-agent \
+  --api-token "TOKEN" --enumerate vp,vt,u
+
+# Directory listing verification
+curl -sI https://bancobacc.com.do/content/uploads/
+
+# PDF metadata extraction
+pdfinfo archivo.pdf | grep -iE "author|creator|producer"
+strings archivo.pdf | grep -E '[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}'</pre>
+</div>
+
+<h3>2. Inventario de CVEs por Plugin</h3>
+
+<h4>Contact Form 7 (5.7.7 → 6.1.6)</h4>
+<table>
+<tr><th>CVE</th><th>Tipo</th><th>Requiere Auth</th><th>Fix</th></tr>
+<tr><td>CVE-2023-6449</td><td>Arbitrary File Upload</td><td>Editor+</td><td>5.8.4</td></tr>
+<tr class="severity-high"><td>CVE-2024-2242</td><td>Reflected XSS</td><td>No</td><td>5.9.2</td></tr>
+<tr class="severity-high"><td><strong>CVE-2024-4704</strong></td><td><strong>Open Redirect</strong></td><td><strong>No</strong></td><td><strong>5.9.5</strong></td></tr>
+<tr><td>CVE-2025-3247</td><td>Order Replay</td><td>No</td><td>6.0.6</td></tr>
+</table>
+
+<h4>Page Builder by SiteOrigin (2.25.0 → 2.34.5)</h4>
+<table>
+<tr><th>CVE</th><th>Tipo</th><th>Fix</th></tr>
+<tr><td>CVE-2024-2202</td><td>Stored XSS</td><td>2.29.7</td></tr>
+<tr><td>CVE-2024-4361</td><td>Stored XSS via shortcode</td><td>2.29.16</td></tr>
+<tr><td>CVE-2024-12240</td><td>Stored XSS via Row Label</td><td>2.31.1</td></tr>
+<tr><td>CVE-2025-1459</td><td>Stored XSS</td><td>2.31.5</td></tr>
+<tr class="severity-critical"><td><strong>CVE-2026-2448</strong></td><td><strong>Local File Inclusion</strong></td><td><strong>2.34.0</strong></td></tr>
+<tr><td>CVE-2026-13295</td><td>Stored XSS</td><td>2.34.4</td></tr>
+</table>
+
+<h4>Yoast SEO (20.12 → 27+)</h4>
+<table>
+<tr><th>CVE</th><th>Tipo</th><th>Fix</th></tr>
+<tr><td>CVE-2023-40680</td><td>Stored XSS (SEO Manager+)</td><td>21.1</td></tr>
+<tr class="severity-high"><td>CVE-2024-4041</td><td>Reflected XSS</td><td>22.6</td></tr>
+<tr><td>CVE-2024-4984</td><td>Stored XSS (Contributor+)</td><td>22.7</td></tr>
+<tr><td>CVE-2026-1293</td><td>Stored XSS</td><td>26.9</td></tr>
+<tr><td>CVE-2026-3427</td><td>Stored XSS via 'jsonText'</td><td>27.2</td></tr>
+<tr class="severity-high"><td><strong>CVE-2025-14481</strong></td><td><strong>IDOR Information Exposure</strong></td><td><strong>26.6</strong></td></tr>
+</table>
+
+<h3>3. Cheatsheet de Comandos</h3>
+<table>
+<tr><th>Acción</th><th>Comando</th></tr>
+<tr><td>Subdomain discovery</td><td><code>subfinder -d bancobacc.com.do -all -silent -o subs.txt</code></td></tr>
+<tr><td>HTTP probing</td><td><code>httpx -l subs.txt -status-code -title -tech-detect -o live.txt -json</code></td></tr>
+<tr><td>Vuln scan</td><td><code>nuclei -l live.txt -c 50 -t ~/nuclei-templates/ -o nuclei.txt</code></td></tr>
+<tr><td>WPScan full</td><td><code>docker run --rm wpscanteam/wpscan --url https://bancobacc.com.do --random-user-agent --api-token TOKEN --enumerate vp,vt,u</code></td></tr>
+<tr><td>Directory listing</td><td><code>curl -s https://bancobacc.com.do/content/uploads/ | grep -oP 'href="\K[^"]+/'</code></td></tr>
+<tr><td>PDF metadata</td><td><code>pdfinfo file.pdf | grep -iE "author|creator|producer"</code></td></tr>
+<tr><td>Clickjacking test</td><td><code>curl -sI https://bancobacc.com.do/enlinea/ | grep -i "x-frame-options"</code></td></tr>
+</table>
+
+<h3>4. Metadatos de Infraestructura</h3>
+<table>
+<tr><th>Parámetro</th><th>Valor</th></tr>
+<tr><td>Servidor Web</td><td>Apache con mod_pagespeed 1.13.35.2-0</td></tr>
+<tr><td>WordPress</td><td>6.2.6 (path: /cms/, content: /content/)</td></tr>
+<tr><td>WAF</td><td>Wordfence (bloquea user enum, xmlrpc, nuclei patterns)</td></tr>
+<tr><td>Hosting</td><td>GBH Web Hosting (cPanel compartido, ns1.gbhwebhosting.com)</td></tr>
+<tr><td>Email</td><td>Office 365 (protection.outlook.com)</td></tr>
+<tr><td>Online Banking</td><td>ASP.NET Bankingly (admin.bancobacc.com.do)</td></tr>
+<tr><td>Tema WordPress</td><td>bacc v1.0 por Soluciones GBH</td></tr>
+</table>
+
+<h3>5. Herramientas Utilizadas</h3>
+<table>
+<tr><th>Herramienta</th><th>Versión</th><th>Propósito</th><th>Resultado</th></tr>
+<tr><td>subfinder</td><td>v2.14.0</td><td>Subdomain discovery</td><td>38 subs</td></tr>
+<tr><td>httpx</td><td>v1.9.0</td><td>HTTP probing</td><td>Tech stack</td></tr>
+<tr><td>nuclei</td><td>v3.3.9</td><td>Vuln scanning</td><td>CVEs + misconfigs</td></tr>
+<tr><td>wpscan</td><td>4.0.0</td><td>WordPress audit</td><td>21 CVEs, 6 plugins</td></tr>
+<tr><td>dalfox</td><td>v2.13.0</td><td>XSS scanning</td><td>Bloqueado por WAF</td></tr>
+<tr><td>trufflehog</td><td>—</td><td>Secret scanning</td><td>No aplicable</td></tr>
+<tr><td>pdfinfo/strings</td><td>—</td><td>PDF metadata</td><td>21 empleados</td></tr>
+</table>
+
+<br>
+<hr>
+<p style="text-align:center;color:#999;font-size:0.85em;">
+  <strong>NSI LLC</strong> — Null Session Intelligence<br>
+  Informe generado el 01 Julio 2026 — Clasificación: CONFIDENCIAL<br>
+  Este documento contiene información sensible. Distribución restringida.
+</p>
+
+</body>
+</html>

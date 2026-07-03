@@ -1,0 +1,74 @@
+GET /content/themes/bacc/assets/packages/baron/baron.css?ver=23960545b7288d1e3feda144a69963de HTTP/1.1
+Host: bancobacc.com.do
+User-Agent: Mozilla/5.0 (compatible; Osmedeus/v4; +https://github.com/j3ssie/osmedeus)
+Accept-Charset: utf-8
+Accept-Encoding: gzip
+
+HTTP/1.1 200 OK
+Connection: close
+Content-Length: 907
+Accept-Ranges: bytes
+Content-Type: text/css
+Date: Wed, 17 Sep 2025 03:22:30 GMT
+Last-Modified: Fri, 16 Jul 2021 14:11:41 GMT
+Referrer-Policy: no-referrer-when-downgrade
+Server: Apache
+Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+Upgrade: h2,h2c
+X-Permitted-Cross-Domain-Policies: none
+X-Xss-Protection: 1; mode=block
+
+.baron__clipper {
+    position: relative;
+    overflow: hidden;
+}
+.baron__scroller {
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    border: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    -webkit-overflow-scrolling: touch;
+    /* remove line to customize scrollbar in iOs */
+}
+.baron__scroller::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+.baron__track {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+}
+.baron._scrollbar .baron__track {
+    display: block;
+}
+.baron__free {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+}
+.baron__bar {
+    display: none;
+    position: absolute;
+    right: 0;    
+    z-index: 1;
+    width: 10px;
+    background: #999;
+}
+.baron._scrollbar .baron__bar {
+    display: block;
+}
+.baron__control {
+    display: none;
+}
+
+
+https://bancobacc.com.do/content/themes/bacc/assets/packages/baron/baron.css?ver=23960545b7288d1e3feda144a69963de

@@ -1,0 +1,23 @@
+GET /sharedjs/sharedjs/jstz.min.js?locale=el HTTP/1.1
+Host: cpanel.bancobacc.com.do
+User-Agent: Mozilla/5.0 (compatible; Osmedeus/v4; +https://github.com/j3ssie/osmedeus)
+Accept-Charset: utf-8
+Accept-Encoding: gzip
+
+HTTP/1.1 308 Moved
+Connection: close
+Content-Length: 124
+Cache-Control: no-cache, no-store, must-revalidate, private
+Content-Type: text/html; charset="utf-8"
+Date: Wed, 17 Sep 2025 03:22:43 GMT
+Location: /sharedjs/sharedjs/jstz.min.js?locale=el
+Referrer-Policy: no-referrer-when-downgrade
+Server: Apache
+X-Permitted-Cross-Domain-Policies: none
+X-Xss-Protection: 1; mode=block
+
+<html><head><META HTTP-EQUIV="refresh" CONTENT="2;URL=/sharedjs/sharedjs/jstz.min.js?locale=el"></head><body></body></html>
+
+
+
+http://cpanel.bancobacc.com.do/sharedjs/sharedjs/jstz.min.js?locale=el

@@ -1,0 +1,35 @@
+GET / HTTP/1.1
+Host: admin.bancobacc.com.do
+User-Agent: Mozilla/5.0 (ZZ; Linux i686; rv:132.0) Gecko/20100101 Firefox/132.0
+Accept-Charset: utf-8
+Accept-Encoding: gzip
+
+HTTP/1.1 302 Found
+Connection: close
+Content-Length: 142
+Access-Control-Expose-Headers: Request-Context
+Cache-Control: private
+Content-Security-Policy: default-src 'self' 'unsafe-inline' 'unsafe-eval' www.google.com ajax.aspnetcdn.com web.bankingly.com ws://web.bankingly.com rum-static.pingdom.net rum-collector.pingdom.net https://s3.amazonaws.com/assets.freshdesk.com/widget/ https://bankingly.freshdesk.com https://www.google-analytics.com https://www.googletagmanager.com https://maps.googleapis.com bklycdn.azureedge.net; font-src 'self' data: static-content bklycdn.azureedge.net; img-src 'self' data: static-content bklycdn.azureedge.net https://www.google-analytics.com https://www.googletagmanager.com https://csi.gstatic.com; frame-ancestors 'self'; form-action 'self';
+Content-Type: text/html; charset=utf-8
+Date: Wed, 17 Sep 2025 03:19:57 GMT
+Location: /Login.aspx?ReturnUrl=%2f
+Permissions-Policy: ambient-light-sensor=(),autoplay=(),accelerometer=(),camera=(),encrypted-media=(),fullscreen=(),geolocation=(),gyroscope=(),magnetometer=(),microphone=(),midi=(),payment=(),picture-in-picture=(),speaker=(),usb=(),vibrate=(),vr=()
+Referrer-Policy: no-referrer-when-downgrade
+Request-Context: appId=cid-v1:c507e9f1-11c4-4a9d-9d7f-3e9715190feb
+Set-Cookie: ASLBSA=0003dafe5242098496a56f311e99cbdf723d2864a4a4bda0ed95b64ff032d0aaa7ff; Path=/; Secure; HttpOnly;
+Set-Cookie: ASLBSACORS=0003dafe5242098496a56f311e99cbdf723d2864a4a4bda0ed95b64ff032d0aaa7ff; SameSite=none; Path=/; Secure; HttpOnly;
+X-Azure-Ref: 20250917T031957Z-16d665cc78b4sprhhC1TEB3prn00000003z000000000crqg
+X-Cache: CONFIG_NOCACHE
+X-Content-Security-Policy: default-src 'self' 'unsafe-inline' 'unsafe-eval' www.google.com ajax.aspnetcdn.com web.bankingly.com ws://web.bankingly.com rum-static.pingdom.net rum-collector.pingdom.net https://s3.amazonaws.com/assets.freshdesk.com/widget https://bankingly.freshdesk.com https://www.google-analytics.com https://www.googletagmanager.com https://maps.googleapis.com bklycdn.azureedge.net; font-src 'self' data: static-content bklycdn.azureedge.net; img-src 'self' data:bklycdn.azureedge.net https://www.google-analytics.com https://www.googletagmanager.com https://csi.gstatic.com; frame-ancestors 'self';
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-Ua-Compatible: IE=edge
+X-Xss-Protection: 1; mode=block
+
+<html><head><title>Object moved</title></head><body>
+<h2>Object moved to <a href="/Login.aspx?ReturnUrl=%2f">here</a>.</h2>
+</body></html>
+
+
+
+https://admin.bancobacc.com.do

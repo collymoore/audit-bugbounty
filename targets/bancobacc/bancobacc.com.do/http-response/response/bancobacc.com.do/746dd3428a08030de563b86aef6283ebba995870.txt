@@ -1,0 +1,90 @@
+GET /content/themes/bacc/js/dealers.js?ver=1.0 HTTP/1.1
+Host: bancobacc.com.do
+User-Agent: Mozilla/5.0 (compatible; Osmedeus/v4; +https://github.com/j3ssie/osmedeus)
+Accept-Charset: utf-8
+Accept-Encoding: gzip
+
+HTTP/1.1 200 OK
+Connection: close
+Content-Length: 2220
+Accept-Ranges: bytes
+Content-Type: application/javascript
+Date: Wed, 17 Sep 2025 03:22:30 GMT
+Last-Modified: Fri, 16 Jul 2021 14:11:42 GMT
+Referrer-Policy: no-referrer-when-downgrade
+Server: Apache
+Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+Upgrade: h2,h2c
+X-Permitted-Cross-Domain-Policies: none
+X-Xss-Protection: 1; mode=block
+
+(function($){
+    var search, sort,perPage, currentPage, dealerTemplate, maxPage, $container = $('#dealers-container');
+    search = $container.data('ds');
+    sort = $container.data('dsort');
+    currentPage = $container.data('dpage');
+    maxPage = $container.data('maxPage');
+    dealerTemplate = Handlebars.compile($("#dealer-card-template").html());
+
+    var loadDealers = function (page) {
+        var deferred = $.Deferred();
+        $.get(bacc.admin_url, {
+            'action' : 'get_dealers',
+            'ds': search,
+            'dsort': sort,
+            'page' : page
+        }, function(dealers){
+            if(dealers.length){
+                deferred.resolve(dealers);
+            }else{
+                deferred.reject();
+            }
+        },'json');
+        return deferred.promise();
+    };
+    var insertDealers = function(container, dealers){
+        $.each(dealers,function(index, dealer){
+            var content = $(dealerTemplate(dealer));
+            content.hide();
+            container.append(content);
+            content.fadeIn();
+        });
+        loadDealersMap();
+    };
+    InfiniteScroll({
+        selector: '.infinite-scroll-btn',
+        container: $container,
+        page: currentPage,
+        maxPage: maxPage,
+        loadCallback: loadDealers,
+        contentCallback: insertDealers
+    });
+
+    var loadDealersMap = function(){
+        $('.dealer-map:not(.loaded)').each(function(index, dealerMap){
+            var $dealerMap = $(dealerMap);
+            $dealerMap.css({height: '230px', width: '100%'}).addClass('loaded');
+            var map = new GMaps({
+                el: dealerMap,
+                lat: $dealerMap.data('lat'),
+                lng: $dealerMap.data('lng'),
+                zoom: 14,
+                draggable: true,
+                scrollwheel: true
+
+            });
+            map.addMarker({
+                'lat': $dealerMap.data('lat'),
+                'lng': $dealerMap.data('lng'),
+                'icon': {
+                    'url': bacc.theme_url + '/assets/images/dealer-marker.png'
+                }
+            });
+        });
+    };
+    loadDealersMap();
+
+})(jQuery);
+
+
+https://bancobacc.com.do/content/themes/bacc/js/dealers.js?ver=1.0

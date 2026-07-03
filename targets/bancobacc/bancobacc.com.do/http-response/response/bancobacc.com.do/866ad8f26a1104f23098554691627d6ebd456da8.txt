@@ -1,0 +1,33 @@
+GET /wp-json/oembed/1.0/embed?url=https%3A%2F%2Fbancobacc.com.do%2Fsolicitud-de-prestamo%2F HTTP/1.1
+Host: bancobacc.com.do
+User-Agent: Mozilla/5.0 (compatible; Osmedeus/v4; +https://github.com/j3ssie/osmedeus)
+Accept-Charset: utf-8
+Accept-Encoding: gzip
+
+HTTP/1.1 200 OK
+Connection: close
+Transfer-Encoding: chunked
+Access-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type
+Access-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link
+Allow: GET
+Cache-Control: s-maxage=10
+Content-Type: application/json; charset=UTF-8
+Date: Wed, 17 Sep 2025 03:22:37 GMT
+Link: <https://bancobacc.com.do/wp-json/>; rel="https://api.w.org/"
+Referrer-Policy: no-referrer-when-downgrade
+Server: Apache
+Upgrade: h2,h2c
+Vary: Origin
+X-Content-Type-Options: nosniff
+X-Permitted-Cross-Domain-Policies: none
+X-Robots-Tag: noindex
+X-Xss-Protection: 1; mode=block
+
+a17
+{"version":"1.0","provider_name":"Banco BACC","provider_url":"https:\/\/bancobacc.com.do","title":"Solicitud de pr\u00e9stamo - Banco BACC","type":"rich","width":600,"height":338,"html":"<blockquote class=\"wp-embedded-content\" data-secret=\"f2WOeaIZLF\"><a href=\"https:\/\/bancobacc.com.do\/solicitud-de-prestamo\/\">Solicitud de pr\u00e9stamo<\/a><\/blockquote><iframe sandbox=\"allow-scripts\" security=\"restricted\" src=\"https:\/\/bancobacc.com.do\/solicitud-de-prestamo\/embed\/#?secret=f2WOeaIZLF\" width=\"600\" height=\"338\" title=\"&#8220;Solicitud de pr\u00e9stamo&#8221; &#8212; Banco BACC\" data-secret=\"f2WOeaIZLF\" frameborder=\"0\" marginwidth=\"0\" marginheight=\"0\" scrolling=\"no\" class=\"wp-embedded-content\"><\/iframe><script type=\"text\/javascript\">\n\/*! This file is auto-generated *\/\n!function(c,d){\"use strict\";var e=!1,o=!1;if(d.querySelector)if(c.addEventListener)e=!0;if(c.wp=c.wp||{},c.wp.receiveEmbedMessage);else if(c.wp.receiveEmbedMessage=function(e){var t=e.data;if(!t);else if(!(t.secret||t.message||t.value));else if(\/[^a-zA-Z0-9]\/.test(t.secret));else{for(var r,s,a,i=d.querySelectorAll('iframe[data-secret=\"'+t.secret+'\"]'),n=d.querySelectorAll('blockquote[data-secret=\"'+t.secret+'\"]'),o=new RegExp(\"^https?:$\",\"i\"),l=0;l<n.length;l++)n[l].style.display=\"none\";for(l=0;l<i.length;l++)if(r=i[l],e.source!==r.contentWindow);else{if(r.removeAttribute(\"style\"),\"height\"===t.message){if(1e3<(s=parseInt(t.value,10)))s=1e3;else if(~~s<200)s=200;r.height=s}if(\"link\"===t.message)if(s=d.createElement(\"a\"),a=d.createElement(\"a\"),s.href=r.getAttribute(\"src\"),a.href=t.value,!o.test(a.protocol));else if(a.host===s.host)if(d.activeElement===r)c.top.location.href=t.value}}},e)c.addEventListener(\"message\",c.wp.receiveEmbedMessage,!1),d.addEventListener(\"DOMContentLoaded\",t,!1),c.addEventListener(\"load\",t,!1);function t(){if(o);else{o=!0;for(var e,t,r,s=-1!==navigator.appVersion.indexOf(\"MSIE 10\"),a=!!navigator.userAgent.match(\/Trident.*rv:11\\.\/),i=d.querySelectorAll(\"iframe.wp-embedded-content\"),n=0;n<i.length;n++){if(!(r=(t=i[n]).getAttribute(\"data-secret\")))r=Math.random().toString(36).substr(2,10),t.src+=\"#?secret=\"+r,t.setAttribute(\"data-secret\",r);if(s||a)(e=t.cloneNode(!0)).removeAttribute(\"security\"),t.parentNode.replaceChild(e,t);t.contentWindow.postMessage({message:\"ready\",secret:r},\"*\")}}}}(window,document);\n<\/script>\n","description":"SOLICITUD DE PR\u00c9STAMO","thumbnail_url":"https:\/\/bancobacc.com.do\/content\/uploads\/2025\/04\/Solicitud-de-Prestamo-2.png"}
+0
+
+
+
+
+http://bancobacc.com.do/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fbancobacc.com.do%2Fsolicitud-de-prestamo%2F

@@ -1,0 +1,26 @@
+GET / HTTP/1.1
+Host: baccbancobacc.bancobacc.com.do
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0.3 Safari/605.1.15
+Accept-Charset: utf-8
+Accept-Encoding: gzip
+
+HTTP/1.1 301 Moved Permanently
+Connection: close
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+Date: Wed, 17 Sep 2025 03:19:56 GMT
+Location: https://bancobacc.com.do/
+Referrer-Policy: no-referrer-when-downgrade
+Server: Apache
+Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+Upgrade: h2,h2c
+X-Permitted-Cross-Domain-Policies: none
+X-Redirect-By: WordPress
+X-Xss-Protection: 1; mode=block
+
+0
+
+
+
+
+https://baccbancobacc.bancobacc.com.do

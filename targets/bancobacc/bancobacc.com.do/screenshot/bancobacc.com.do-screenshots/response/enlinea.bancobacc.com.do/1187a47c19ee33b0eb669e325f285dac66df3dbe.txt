@@ -1,0 +1,35 @@
+GET / HTTP/1.1
+Host: enlinea.bancobacc.com.do
+User-Agent: Mozilla/5.0 (SS; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36
+Accept-Charset: utf-8
+Accept-Encoding: gzip
+
+HTTP/1.1 302 Found
+Connection: close
+Content-Length: 177
+Access-Control-Expose-Headers: Request-Context
+Cache-Control: private
+Content-Security-Policy: default-src 'self' www.facebook.com www.google-analytics.com analytics.google.com data maps.googleapis.com: 'unsafe-inline' 'unsafe-eval' www.google.com ajax.aspnetcdn.com web.bankingly.com ws://web.bankingly.com rum-static.pingdom.net rum-collector.pingdom.net rum-collector-2.pingdom.net connect.facebook.net www.google-analytics.com analytics.google.com www.googletagmanager.com seal.websecurity.norton.com detectca.easysol.net www.gstatic.com cdn.ywxi.net maps.googleapis.com seal.digicert.com js.hs-scripts.com js.hscollectedforms.net js.usemessages.com js.hsadspixel.net js.hs-analytics.net api.hubspot.com forms.hubspot.com api.hubapi.com track.hubspot.com app.hubspot.com js.hsleadflows.net www.googleadservices.com googleads.g.doubleclick.net www.google.com.uy stats.g.doubleclick.net static-content bklycdn.azureedge.net ; font-src 'self' data: static-content bklycdn.azureedge.net; img-src 'self' data: static-content bklycdn.azureedge.net ; form-action 'self'; frame-ancestors 'self' ;
+Content-Type: text/html; charset=utf-8
+Date: Wed, 17 Sep 2025 03:19:57 GMT
+Location: /Administration.WebUI/Pages/General/Login.aspx?ReturnUrl=%2f
+Permissions-Policy: ambient-light-sensor=(),autoplay=(),accelerometer=(),camera=(),encrypted-media=(),fullscreen=(),geolocation=(self),gyroscope=(),magnetometer=(),microphone=(),midi=(),payment=(),picture-in-picture=(),speaker=(),usb=(),vibrate=(),vr=()
+Referrer-Policy: no-referrer-when-downgrade
+Request-Context: appId=cid-v1:c507e9f1-11c4-4a9d-9d7f-3e9715190feb
+Set-Cookie: ASLBSA=000301bf9a89006cf0536f51f0a40f47a255a08e3d4ddb9ef997c4d8e2de43d6f9ba; Path=/; Secure; HttpOnly;
+Set-Cookie: ASLBSACORS=000301bf9a89006cf0536f51f0a40f47a255a08e3d4ddb9ef997c4d8e2de43d6f9ba; SameSite=none; Path=/; Secure; HttpOnly;
+X-Azure-Ref: 20250917T031957Z-1794b4fd8b76gkrchC1TEBen2n000000047000000000arka
+X-Cache: CONFIG_NOCACHE
+X-Content-Security-Policy: default-src 'self' www.facebook.com www.google-analytics.com analytics.google.com data maps.googleapis.com: 'unsafe-inline' 'unsafe-eval' www.google.com ajax.aspnetcdn.com web.bankingly.com ws://web.bankingly.com rum-static.pingdom.net rum-collector.pingdom.net rum-collector-2.pingdom.net connect.facebook.net www.google-analytics.com analytics.google.com www.googletagmanager.com seal.websecurity.norton.com detectca.easysol.net www.gstatic.com cdn.ywxi.net maps.googleapis.com seal.digicert.com js.hs-scripts.com js.hscollectedforms.net js.usemessages.com js.hsadspixel.net js.hs-analytics.net api.hubspot.com forms.hubspot.com api.hubapi.com track.hubspot.com app.hubspot.com js.hsleadflows.net www.googleadservices.com googleads.g.doubleclick.net www.google.com.uy stats.g.doubleclick.net static-content bklycdn.azureedge.net ; font-src 'self' data: static-content bklycdn.azureedge.net; img-src 'self' data: static-content bklycdn.azureedge.net ;
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-Ua-Compatible: IE=edge
+X-Xss-Protection: 1; mode=block
+
+<html><head><title>Object moved</title></head><body>
+<h2>Object moved to <a href="/Administration.WebUI/Pages/General/Login.aspx?ReturnUrl=%2f">here</a>.</h2>
+</body></html>
+
+
+
+https://enlinea.bancobacc.com.do

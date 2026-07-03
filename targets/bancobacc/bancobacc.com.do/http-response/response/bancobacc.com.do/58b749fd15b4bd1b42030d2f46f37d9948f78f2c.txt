@@ -1,0 +1,95 @@
+GET /content/themes/bacc/js/map.js?ver=1.0 HTTP/1.1
+Host: bancobacc.com.do
+User-Agent: Mozilla/5.0 (compatible; Osmedeus/v4; +https://github.com/j3ssie/osmedeus)
+Accept-Charset: utf-8
+Accept-Encoding: gzip
+
+HTTP/1.1 200 OK
+Connection: close
+Content-Length: 2455
+Accept-Ranges: bytes
+Content-Type: application/javascript
+Date: Wed, 17 Sep 2025 03:22:30 GMT
+Last-Modified: Fri, 16 Jul 2021 14:11:42 GMT
+Referrer-Policy: no-referrer-when-downgrade
+Server: Apache
+Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+Upgrade: h2,h2c
+X-Permitted-Cross-Domain-Policies: none
+X-Xss-Protection: 1; mode=block
+
+(function ($) {
+    var map = new GMaps({
+        el: '#map-container',
+        lat: 18.485169941932313,
+        lng: -69.94005382061005,
+        zoom: 16
+    });
+    var unhiglightMarkers = function () {
+        for (var i = 0, m; m = map.markers[i]; i++) {
+            if (m.infoWindow) {
+                m.windowIsOpen = false;
+                m.setIcon(m.defaultIcon);
+            }
+        }
+    };
+    var i = 0;
+
+    $('.map-marker').each(function () {
+        
+        var marker = map.createMarker($(this).data('marker'));
+
+        google.maps.event.addListener(marker, 'click', function() {
+            var markerLatitude = marker.getPosition().lat();
+            var markerLongitude = marker.getPosition().lng();
+
+            window.open(`https://maps.google.com/maps?q=loc:${markerLatitude},${markerLongitude}`, '_blank');
+
+        });
+        marker.windowIsOpen = false;
+        marker.addListener('mouseover', function () {
+            marker.setIcon(marker.selectedIcon);
+        });
+        marker.addListener('mouseout', function () {
+            if (!marker.windowIsOpen) {
+                marker.setIcon(marker.defaultIcon);
+            }
+        });
+        if (marker.infoWindow) {
+            marker.infoWindow.addListener('domready', function () {
+                unhiglightMarkers();
+                marker.windowIsOpen = true;
+                marker.setIcon(marker.selectedIcon);
+            });
+            marker.infoWindow.addListener('closeclick', function () {
+                unhiglightMarkers();
+                marker.windowIsOpen = false;
+            });
+        }
+        $(this).data('markerObject', marker);
+        map.addMarker(marker);
+        if(i == 0) {
+            map.panTo(marker.position);
+        }
+        i++;
+    }).click(function (e) {
+        // set active, center and show infowindow
+//          marker.setIcon(marker.selectedIcon);
+        var marker = $(this).data('markerObject');
+        map.hideInfoWindows();
+        marker.infoWindow.open(map, marker);
+        map.setZoom(16);
+        map.panTo(marker.position);
+    }).hover(function () {
+        var marker = $(this).data('markerObject');
+        marker.setIcon(marker.selectedIcon);
+    }, function () {
+        var marker = $(this).data('markerObject');
+        if (!marker.windowIsOpen) {
+            marker.setIcon(marker.defaultIcon);
+        }
+    });
+})(jQuery);
+
+
+https://bancobacc.com.do/content/themes/bacc/js/map.js?ver=1.0

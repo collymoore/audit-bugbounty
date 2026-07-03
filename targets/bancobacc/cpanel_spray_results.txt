@@ -1,0 +1,4 @@
+Generated 45 username variants
+Testing 45 users x 13 passwords
+Users: ['wheinsen', 'pedro', 'william', 'johan', 'gustavo.domingo', 'cleidy.peguero', 'rosanny', 'wilfredo', 'wayner', 'johan.tavarez']
+Passwords: ['Bancobacc2025', 'Bancobacc2026', 'bancobacc2025', 'bancobacc2026', 'BACC2025']

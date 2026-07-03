@@ -1,0 +1,86 @@
++--------------------------------------------+--------------------------------+---------------------------------------------------------------------+------------------------------------------+
+|                    URL                     |             TITLE              |                                TECH                                 |              RESPONSE HASH               |
++--------------------------------------------+--------------------------------+---------------------------------------------------------------------+------------------------------------------+
+| http://autodiscover.bancobacc.com.do       | No-Title                       | HTTP/3;;IIS:10.0;;Microsoft                                         | 3bc15c8aae3e4124dd409035f32ea2fd6835efc9 |
+|                                            |                                | ASP.NET;;Windows Server                                             |                                          |
+| http://bacc.do.bancobacc.com.do            | Index of /                     | Apache HTTP Server;;Google                                          | 3bc15c8aae3e4124dd409035f32ea2fd6835efc9 |
+|                                            |                                | PageSpeed:1.13.35.2                                                 |                                          |
+| http://www.bacc.do.bancobacc.com.do        | Index of /                     | Apache HTTP Server;;Google                                          | 3bc15c8aae3e4124dd409035f32ea2fd6835efc9 |
+|                                            |                                | PageSpeed:1.13.35.2                                                 |                                          |
+| http://bancobacc.do.bancobacc.com.do       | Index of /                     | Apache HTTP Server;;Google                                          | 3bc15c8aae3e4124dd409035f32ea2fd6835efc9 |
+|                                            |                                | PageSpeed:1.13.35.2                                                 |                                          |
+| http://www.bacc.bancobacc.com.do           | No-Title                       | Apache HTTP Server                                                  | 3bc15c8aae3e4124dd409035f32ea2fd6835efc9 |
+| http://bacc.bancobacc.com.do               | No-Title                       | Apache HTTP Server                                                  | 3bc15c8aae3e4124dd409035f32ea2fd6835efc9 |
+| http://www.bancobacc.do.bancobacc.com.do   | Index of /                     | Apache HTTP Server;;Google                                          | 3bc15c8aae3e4124dd409035f32ea2fd6835efc9 |
+|                                            |                                | PageSpeed:1.13.35.2                                                 |                                          |
+| http://www.bancobacc.bancobacc.com.do      | No-Title                       | Apache HTTP Server                                                  | 3bc15c8aae3e4124dd409035f32ea2fd6835efc9 |
+| http://bancobacc.bancobacc.com.do          | No-Title                       | Apache HTTP Server                                                  | 3bc15c8aae3e4124dd409035f32ea2fd6835efc9 |
+| https://www.bacc.do.bancobacc.com.do       | Index of /                     | Apache HTTP Server;;Google                                          | 3bc15c8aae3e4124dd409035f32ea2fd6835efc9 |
+|                                            |                                | PageSpeed:1.13.35.2;;HSTS                                           |                                          |
+| https://bacc.do.bancobacc.com.do           | Index of /                     | Apache HTTP Server;;Google                                          | 3bc15c8aae3e4124dd409035f32ea2fd6835efc9 |
+|                                            |                                | PageSpeed:1.13.35.2;;HSTS                                           |                                          |
+| http://enlinea.bancobacc.com.do            | Page not found                 | Azure;;Azure Front Door                                             | 3bc15c8aae3e4124dd409035f32ea2fd6835efc9 |
+| http://admin.bancobacc.com.do              | Page not found                 | Azure;;Azure Front Door                                             | 3bc15c8aae3e4124dd409035f32ea2fd6835efc9 |
+| http://webmail.bancobacc.com.do            | Webmail Login                  | Apache HTTP Server;;Google                                          | 3bc15c8aae3e4124dd409035f32ea2fd6835efc9 |
+|                                            |                                | PageSpeed:1.13.35.2;;HSTS                                           |                                          |
+| http://www.baccbancobacc.bancobacc.com.do  | No-Title                       | Apache HTTP Server                                                  | 3bc15c8aae3e4124dd409035f32ea2fd6835efc9 |
+| http://baccbancobacc.bancobacc.com.do      | No-Title                       | Apache HTTP Server                                                  | 3bc15c8aae3e4124dd409035f32ea2fd6835efc9 |
+| https://bancobacc.do.bancobacc.com.do      | Index of /                     | Apache HTTP Server;;Google                                          | 3bc15c8aae3e4124dd409035f32ea2fd6835efc9 |
+|                                            |                                | PageSpeed:1.13.35.2;;HSTS                                           |                                          |
+| http://cpanel.bancobacc.com.do             | cPanel Login                   | Apache HTTP                                                         | 3bc15c8aae3e4124dd409035f32ea2fd6835efc9 |
+|                                            |                                | Server;;HSTS;;cPanel                                                |                                          |
+| https://www.bancobacc.do.bancobacc.com.do  | Index of /                     | Apache HTTP Server;;Google                                          | 3bc15c8aae3e4124dd409035f32ea2fd6835efc9 |
+|                                            |                                | PageSpeed:1.13.35.2;;HSTS                                           |                                          |
+| https://bacc.bancobacc.com.do              | No-Title                       | Apache HTTP Server;;HSTS                                            | 3bc15c8aae3e4124dd409035f32ea2fd6835efc9 |
+| https://webmail.bancobacc.com.do           | Webmail Login                  | Apache HTTP Server;;Google                                          | 3bc15c8aae3e4124dd409035f32ea2fd6835efc9 |
+|                                            |                                | PageSpeed:1.13.35.2;;HSTS                                           |                                          |
+| https://cpanel.bancobacc.com.do            | cPanel Login                   | Apache HTTP                                                         | 3bc15c8aae3e4124dd409035f32ea2fd6835efc9 |
+|                                            |                                | Server;;HSTS;;cPanel                                                |                                          |
+| https://www.bacc.bancobacc.com.do          | No-Title                       | Apache HTTP Server;;HSTS                                            | 3bc15c8aae3e4124dd409035f32ea2fd6835efc9 |
+| https://bancobacc.bancobacc.com.do         | No-Title                       | Apache HTTP Server;;HSTS                                            | 3bc15c8aae3e4124dd409035f32ea2fd6835efc9 |
+| https://www.bancobacc.bancobacc.com.do     | No-Title                       | Apache HTTP Server;;HSTS                                            | 3bc15c8aae3e4124dd409035f32ea2fd6835efc9 |
+| http://mail.bancobacc.com.do               | No-Title                       | Apache HTTP Server                                                  | 3bc15c8aae3e4124dd409035f32ea2fd6835efc9 |
+| http://cpcontacts.bancobacc.com.do         | 503 Service Unavailable        | Apache HTTP Server                                                  | 3bc15c8aae3e4124dd409035f32ea2fd6835efc9 |
+| http://cpcalendars.bancobacc.com.do        | 503 Service Unavailable        | Apache HTTP Server                                                  | 3bc15c8aae3e4124dd409035f32ea2fd6835efc9 |
+| http://webdisk.bancobacc.com.do            | No-Title                       | Basic;;HSTS                                                         | 3bc15c8aae3e4124dd409035f32ea2fd6835efc9 |
+| https://www.baccbancobacc.bancobacc.com.do | No-Title                       | Apache HTTP Server;;HSTS                                            | 3bc15c8aae3e4124dd409035f32ea2fd6835efc9 |
+| http://www.bancobacc.com.do                | No-Title                       | Apache HTTP Server                                                  | 3bc15c8aae3e4124dd409035f32ea2fd6835efc9 |
+| https://admin.bancobacc.com.do             | Portal de Administración de    | Amazon S3;;Amazon Web                                               | 3bc15c8aae3e4124dd409035f32ea2fd6835efc9 |
+|                                            | Banco BACC                     | Services;;Azure;;Azure                                              |                                          |
+|                                            |                                | Edge Network;;Azure Front                                           |                                          |
+|                                            |                                | Door;;HSTS;;Microsoft                                               |                                          |
+|                                            |                                | ASP.NET;;jQuery                                                     |                                          |
+| https://baccbancobacc.bancobacc.com.do     | No-Title                       | Apache HTTP Server;;HSTS                                            | 3bc15c8aae3e4124dd409035f32ea2fd6835efc9 |
+| https://reclamaciones.bancobacc.com.do     | 404 Not Found                  | Apache HTTP Server                                                  | 3bc15c8aae3e4124dd409035f32ea2fd6835efc9 |
+| https://solicitudes.bancobacc.com.do       | 403 Forbidden                  | Apache HTTP Server                                                  | 3bc15c8aae3e4124dd409035f32ea2fd6835efc9 |
+| https://verificacion.bancobacc.com.do      | 403 Forbidden                  | Apache HTTP Server                                                  | 3bc15c8aae3e4124dd409035f32ea2fd6835efc9 |
+| https://carrosrd.bancobacc.com.do          | 403 Forbidden                  | Apache HTTP Server                                                  | 3bc15c8aae3e4124dd409035f32ea2fd6835efc9 |
+| https://supercarros.bancobacc.com.do       | 403 Forbidden                  | Apache HTTP Server                                                  | 3bc15c8aae3e4124dd409035f32ea2fd6835efc9 |
+| https://webdisk.bancobacc.com.do           | No-Title                       | Basic;;HSTS                                                         | 3bc15c8aae3e4124dd409035f32ea2fd6835efc9 |
+| https://cpcalendars.bancobacc.com.do       | 503 Service Unavailable        | Apache HTTP Server;;HSTS                                            | 3bc15c8aae3e4124dd409035f32ea2fd6835efc9 |
+| https://cpcontacts.bancobacc.com.do        | 503 Service Unavailable        | Apache HTTP Server;;HSTS                                            | 3bc15c8aae3e4124dd409035f32ea2fd6835efc9 |
+| https://enlinea.bancobacc.com.do           | BACC en Línea                  | Azure;;Azure Edge                                                   | 3bc15c8aae3e4124dd409035f32ea2fd6835efc9 |
+|                                            |                                | Network;;Azure Front                                                |                                          |
+|                                            |                                | Door;;Google Tag                                                    |                                          |
+|                                            |                                | Manager;;HSTS;;Microsoft                                            |                                          |
+|                                            |                                | ASP.NET;;Microsoft                                                  |                                          |
+|                                            |                                | Ajax Content Delivery                                               |                                          |
+|                                            |                                | Network;;jQuery;;jQuery                                             |                                          |
+|                                            |                                | Migrate:1.2.1                                                       |                                          |
+| http://bancobacc.com.do                    | Banco BACC - Banco de Ahorro y | Apache HTTP Server;;Bootstrap;;Google                               | 3bc15c8aae3e4124dd409035f32ea2fd6835efc9 |
+|                                            | Crédito del Caribe             | PageSpeed:1.13.35.2;;HSTS;;MySQL;;PHP;;Slick;;WOW;;WordPress;;Yoast |                                          |
+|                                            |                                | SEO:20.12;;YouTube;;imagesLoaded:4.1.4;;jQuery;;jQuery              |                                          |
+|                                            |                                | Migrate:3.4.0;;reCAPTCHA                                            |                                          |
+| https://mail.bancobacc.com.do              | No-Title                       | Apache HTTP Server;;HSTS                                            | 3bc15c8aae3e4124dd409035f32ea2fd6835efc9 |
+| https://www.bancobacc.com.do               | No-Title                       | Apache HTTP Server;;HSTS                                            | 3bc15c8aae3e4124dd409035f32ea2fd6835efc9 |
+| https://bancobacc.com.do                   | Banco BACC - Banco de Ahorro y | Apache HTTP Server;;Bootstrap;;Google                               | 3bc15c8aae3e4124dd409035f32ea2fd6835efc9 |
+|                                            | Crédito del Caribe             | PageSpeed:1.13.35.2;;HSTS;;MySQL;;PHP;;Slick;;WOW;;WordPress;;Yoast |                                          |
+|                                            |                                | SEO:20.12;;YouTube;;imagesLoaded:4.1.4;;jQuery;;jQuery              |                                          |
+|                                            |                                | Migrate:3.4.0;;reCAPTCHA                                            |                                          |
+| https://www.carrosrd.bancobacc.com.do      | 403 Forbidden                  | Apache HTTP Server                                                  | 3bc15c8aae3e4124dd409035f32ea2fd6835efc9 |
+| https://www.reclamaciones.bancobacc.com.do | 403 Forbidden                  | Apache HTTP Server                                                  | 3bc15c8aae3e4124dd409035f32ea2fd6835efc9 |
+| https://www.solicitudes.bancobacc.com.do   | 403 Forbidden                  | Apache HTTP Server                                                  | 3bc15c8aae3e4124dd409035f32ea2fd6835efc9 |
+| https://www.supercarros.bancobacc.com.do   | 403 Forbidden                  | Apache HTTP Server                                                  | 3bc15c8aae3e4124dd409035f32ea2fd6835efc9 |
+| https://www.verificacion.bancobacc.com.do  | 403 Forbidden                  | Apache HTTP Server                                                  | 3bc15c8aae3e4124dd409035f32ea2fd6835efc9 |
++--------------------------------------------+--------------------------------+---------------------------------------------------------------------+------------------------------------------+
+

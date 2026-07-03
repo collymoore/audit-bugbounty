@@ -1,0 +1,28 @@
+GET / HTTP/1.1
+Host: autodiscover.bancobacc.com.do
+User-Agent: Mozilla/5.0 (ZZ; Linux x86_64; rv:135.0) Gecko/20100101 Firefox/135.0
+Accept-Charset: utf-8
+Accept-Encoding: gzip
+
+HTTP/1.1 301 Moved Permanently
+Connection: close
+Alt-Svc: ":443";ma=2592000,h3-29=":443";ma=2592000
+Cache-Control: no-cache
+Date: Wed, 17 Sep 2025 03:19:56 GMT
+Location: https://outlook.office365.com/mail/?realm=bancobacc.com.do&vd=autodiscover
+Ms-Cv: zAQqlbztDhkqJa6LKTrBwA.0
+Pragma: no-cache
+Request-Id: 952a04cc-edbc-190e-2a25-ae8b293ac1c0
+Server: Microsoft-IIS/10.0
+X-Feefzinfo: MNZ
+X-Feproxyinfo: MN2PR19CA0026.NAMPRD19.PROD.OUTLOOK.COM
+X-Feserver: MN2PR19CA0026
+X-Feserver: MN2PR19CA0026
+X-Powered-By: ASP.NET
+X-Requestid: 18de584d-9883-4444-b476-c33f44d5e492
+Content-Length: 0
+
+
+
+
+http://autodiscover.bancobacc.com.do

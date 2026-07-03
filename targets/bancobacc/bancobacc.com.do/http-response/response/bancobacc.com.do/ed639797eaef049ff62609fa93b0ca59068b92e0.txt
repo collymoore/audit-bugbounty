@@ -1,0 +1,729 @@
+GET /content/themes/bacc/js/main.js?ver=20170106 HTTP/1.1
+Host: bancobacc.com.do
+User-Agent: Mozilla/5.0 (compatible; Osmedeus/v4; +https://github.com/j3ssie/osmedeus)
+Accept-Charset: utf-8
+Accept-Encoding: gzip
+
+HTTP/1.1 200 OK
+Connection: close
+Content-Length: 15344
+Accept-Ranges: bytes
+Content-Type: application/javascript
+Date: Wed, 17 Sep 2025 03:22:30 GMT
+Last-Modified: Mon, 31 Jul 2023 21:35:11 GMT
+Referrer-Policy: no-referrer-when-downgrade
+Server: Apache
+Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+Upgrade: h2,h2c
+X-Permitted-Cross-Domain-Policies: none
+X-Xss-Protection: 1; mode=block
+
+// Header
+
+(function($) {
+  var Header = (function(){
+
+    var config = {
+      element: $('.site-header'),
+      pos: {
+        top: 150,
+        last: $(window).scrollTop()
+      }
+    };
+
+
+    var init = function init(settings) {
+
+      // Allow overriding the default config
+      $.extend( true, config, settings );
+
+      // Add Scrolling event
+      events();
+
+    };
+
+
+    var events = function events() {
+
+      $('#mobile-toggle').on('click', function() {
+        $('#site-navigation').toggleClass('active');
+        $(this).toggleClass('active');
+        $('body').toggleClass('mobile-is-open');
+      });
+
+    };
+
+
+    var isScrollingUp = function isScrollingUp() {
+      var currentPosition = $(window).scrollTop();
+
+      if ( currentPosition > config.pos.last ) {
+        config.pos.last = currentPosition;
+        return false;
+      }
+
+      config.pos.last = currentPosition;
+      return true;
+
+    };
+
+
+    var isTop = function isTop() {
+      var currentPosition = $(window).scrollTop();
+
+      if ( currentPosition <= config.pos.top) {
+        return true;
+      }
+
+      return false
+    }
+
+
+    var showUp = function showUp() {
+
+      var $header = config.element
+
+      if ( isScrollingUp() ) {
+        // Scrolling Up!
+
+        $header.removeClass('scroll-up');
+      } else {
+        // Scrolling Down!
+
+        if ( !isTop() ) {
+          $header.addClass('scroll-up');
+        }
+      }
+    };
+
+
+    return {
+      init: init
+    }
+
+  })();
+
+
+  $(document).ready(function() {
+
+    Header.init({
+      pos: {
+        top: 160
+      }
+    });
+
+  });
+
+})(jQuery);
+
+
+// Slide Carousel
+
+(function($) {
+
+  var slideCarousel = (function() {
+    var $container;
+
+    var init = function (container) {
+      $container = $(container);
+
+      if ( !$container.length ) {
+        return;
+      }
+
+      setup();
+    };
+
+
+    var setup = function () {
+      $container.slick({
+        autoplay: false,
+        arrows: true,
+        fade: true,
+        infinite: true,
+        dots: true,
+        speed: 300,
+        centerMode: true,
+        slidesToShow: 1,
+        adaptiveHeight: true,
+        prevArrow: '<button type="button" class="slick-prev slick-arrow"><i class="icon-arrow left"></i></button>',
+        nextArrow: '<button type="button" class="slick-next slick-arrow"><i class="icon-arrow right"></i></button>',
+        responsive: [
+          {
+            breakpoint: 991, // 992px
+            settings: {
+              adaptiveHeight: true,
+              arrows: false
+            }
+          }
+        ]
+      });
+    };
+
+    return {
+      init: init
+    }
+  })()
+
+  $(document).ready( function () {
+    slideCarousel.init('.showcase-slide .panel-grid-cell');
+  });
+
+})(jQuery);
+
+
+// FloatingLabel styles
+
+(function($){
+
+	var FloatingLabel = {
+		$input: '',
+
+		init: function(input) {
+			this.$input = $(input);
+			this.default();
+			this.addEvents();
+		},
+
+
+		addEvents: function() {
+			var _this = this;
+
+			this.$input.on('focus', function(e) {
+				_this.focus.call(this);
+			});
+
+			this.$input.on('focusout', function(e) {
+				_this.focusOut.call(this);
+				_this.isEmpty.call(this);
+			});
+
+		},
+
+
+		focus: function() {
+			var $closest = $(this).closest('.input-label');
+
+			$closest.addClass('is-focused');
+		},
+
+
+		focusOut: function() {
+			var $closest = $(this).closest('.input-label');
+
+			$closest.removeClass('is-focused');
+		},
+
+
+		isEmpty: function() {
+			var $closest = $(this).closest('.input-label');
+
+			if ( $(this).val() != '' ) {
+				$closest.removeClass('is-empty');
+			} else {
+				$closest.addClass('is-empty');
+			}
+		},
+
+
+		default: function() {
+			$(this.$input).each( function(index, input) {
+				if ( $(input).val() == '' ) {
+					$(input).closest('.input-label').addClass('is-empty');
+				}
+			});
+		}
+	};
+
+	$(document).ready( function () {
+		FloatingLabel.init('.wpcf7-form-control');
+	});
+
+
+})(jQuery);
+
+//Add target="_blank attribute to links"
+
+(function($) {
+  $(document).ready(function() {
+    $(".ibanking-navigation a").attr("target", "_blank");
+  });
+})(jQuery);
+
+// Adds Full Height for 'full-height' class wrapper
+
+(function($) {
+
+  var fullHeight = (function() {
+    var $section;
+
+    var init = function init(section) {
+      $section = $(section);
+
+      if ( !$section.length ) {
+        return;
+      }
+
+      setup();
+      events();
+    };
+
+
+    var events = function events() {
+      $(window).resize(function() {
+        setup();
+      });
+    };
+
+
+    var setup = function setup() {
+      var windowH = $(window).height();
+
+      $section.css({
+        height: windowH - 64
+      });
+    };
+
+    return {
+      init: init
+    }
+  })()
+
+  $(document).ready( function () {
+    fullHeight.init('.full-height');
+  })
+
+})(jQuery);
+
+
+// Wow.js initialization
+
+(function($) {
+
+  var wow = new WOW({
+    boxClass: 'panel-row-style'
+  });
+
+  $(document).ready( function () {
+    wow.init();
+  })
+
+})(jQuery);
+
+
+
+// Baron.js initialization
+
+(function ($) {
+
+  var CustomScroll = (function() {
+    var $customscroll = null;
+
+    var init = function init(className) {
+      $customscroll = $(className);
+
+      if ( !$customscroll.length ) return;
+
+      setup();
+    };
+
+    var setup = function setup() {
+      baron({
+          root: '.baron',
+          scroller: '.baron__scroller',
+          bar: '.baron__bar',
+          scrollingCls: '_scrolling',
+          draggingCls: '_dragging'
+      }).controls({
+          // Element to be used as interactive track. Note: it could be different from 'track' param of baron.
+          track: '.baron__track',
+          forward: '.baron__down',
+          backward: '.baron__up'
+      });
+    };
+
+    return {
+      init: init
+    }
+  })();
+
+  $(document).ready(function () {
+    CustomScroll.init('.customscroll');
+  });
+
+})(jQuery);
+
+
+// Masonry initialization
+
+(function ($) {
+
+  var Faculties = (function () {
+    var options = {
+      container: '.faculties-content',
+      item: '.faculty'
+    }
+    var $grid = null;
+
+
+    var init = function init() {
+      setup();
+      events();
+    };
+
+
+    var moveUp = function moveUp(activeElement) {
+      var currentPosition = $(options.item).index(activeElement);
+      var newPosition = currentPosition - 3;
+
+      if (currentPosition > 2) {
+        $( $(options.item).eq(newPosition) ).before( $(activeElement) );
+      }
+
+    };
+
+    var moveDown = function (activeElement) {
+      var order = $(activeElement).data('order');
+
+      if (order > 2) {
+        var prev = $(options.item).parent().find(`[data-order=${order - 1}]`)
+        prev.after( $(activeElement) );
+      }
+    }
+
+
+    var clean = function items(items) {
+      $(items).each(function(position, item) {
+        $(item).removeClass('is-expanded');
+        $(item).find('.faculty-head').removeClass('fixed');
+      });
+    };
+
+
+    var scrollEvent = function scrollEvent() {
+      var $elements = $(options.item).find('.faculty-content');
+      $elements.each(function(pos, element) {
+        var $element = $(element);
+
+        $element.on('scroll', function() {
+          var $facultyHead = $(this).find('.faculty-head');
+          var $facultyHeadH = $facultyHead.outerHeight();
+          var facultyTop = $(this).scrollTop();
+          $facultyHead.css({ height: $facultyHeadH });
+
+          if ( facultyTop > ($facultyHeadH - 45) ) {
+            $facultyHead.addClass('fixed');
+          } else {
+            $facultyHead.removeClass('fixed');
+          }
+        })
+      });
+    };
+
+
+    var events = function events() {
+      var $lastActiveItem = null;
+      $grid.on( 'click', options.item, function( event ) {
+
+        var $activeItem = $(this);
+        var hasExpandedItems = $grid.find('.is-expanded');
+
+
+        if ( $lastActiveItem && $lastActiveItem.hasClass('is-expanded') ) {
+          $lastActiveItem.removeClass('is-expanded');
+          $lastActiveItem.find('.faculty-head').removeClass('fixed');
+          moveUp($lastActiveItem);
+          $lastActiveItem = null;
+          $activeItem.click();
+          
+          $grid.masonry('reloadItems');
+          $grid.masonry();
+          return
+        }
+        moveUp($activeItem);
+        clean(options.item);
+        $activeItem.addClass('is-expanded');
+        $lastActiveItem = $activeItem;
+
+        $grid.masonry('reloadItems');
+        $grid.masonry();
+
+      });
+
+      scrollEvent()
+    };
+
+
+    var setup = function setup() {
+      $grid = $(options.container).masonry({
+        itemSelector: '.faculty',
+        columnWidth: '.faculty',
+        percentagePosition: true,
+        transitionDuration: '0.25s'
+      });
+    };
+
+    return {
+      init: init
+    }
+  })();
+
+  $(document).ready(function () {
+    Faculties.init();
+  });
+})(jQuery);
+  
+
+// Slide Carousel
+
+(function($) {
+
+  var timelineCarousel = (function() {
+    var $timeline;
+    var $tablerows;
+    var $slideContent;
+    var $slideNav;
+
+    var init = function init(timeline) {
+      $timeline = $(timeline);
+
+      if ( !$timeline.length ) {
+        return;
+      }
+
+      setup();
+    };
+
+
+    var getContent = function getContent() {
+      $tablerows = $timeline.find('tbody').children();
+      $slideContent = $('<div></div>', { class: 'timeline-slide' });
+      $slideNav = $('<div></div>', { class: 'timeline-nav' });
+
+      $tablerows.each(function(pos, element) {
+
+        $('<div class="element">' + element.innerHTML + '</div>').appendTo( $slideContent );
+        $('<div class="element"><h4>' + $(element).find('h4').text() + '</h4></div>').appendTo( $slideNav );
+      });
+
+      $slideNav.appendTo($timeline);
+      $slideContent.appendTo($timeline);
+    };
+
+
+    var slide = function slide() {
+
+      $slideContent.slick({
+        autoplay: false,
+        asNavFor: $slideNav,
+        arrows: false,
+        infinite: false,
+      });
+
+      $slideNav.slick({
+        autoplay: false,
+        arrows: false,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        asNavFor: $slideContent,
+        centerMode: true,
+        focusOnSelect: true,
+        infinite: false,
+      });
+
+    };
+
+
+    var setup = function setup() {
+      getContent();
+      slide();
+    };
+
+    return {
+      init: init
+    }
+  })();
+
+  $(document).ready( function () {
+    timelineCarousel.init('.timeline');
+  });
+
+})(jQuery);
+
+// Suggestions Modal
+
+(function($) {
+  $(".suggestions-open a").click(function() {
+    $("#suggestionsFormModal").modal('show');
+  });
+
+})(jQuery);
+
+
+// Autofocus Modal Inputs
+
+(function($) {
+  var AutoFocusModalInput = (function() {
+    var $modals = 0;
+
+
+    // Recieve Modals who will have the attach event
+    var init = function init(modalClasses) {
+      $modals = $(modalClasses);
+
+      if (!$modals.length) return;
+
+      events();
+    };
+
+    var events = function events() {
+      $modals.map( function (position, modal) {
+        $(modal).on('shown.bs.modal', function () {
+          focusInput.call(this);
+        });
+      })
+    };
+
+    var focusInput = function focusInput() {
+      $(this).find('.wpcf7-form-control').first().focus();
+    };
+
+    return {
+      init: init
+    };
+  })();
+
+
+  AutoFocusModalInput.init('.autofocus-first-input');
+})(jQuery);
+
+// Suggestions Modal
+
+(function($) {
+  $(".suggestions-open a").click(function() {
+    $("#suggestionsFormModal").modal('show');
+  });
+
+})(jQuery);
+
+// Management info modal
+
+(function($) {
+  var managementModal = (function() {    
+   
+    var init = function init() {
+
+      var button;
+      var managerHead;
+      var managerName;
+      var managerTitle;
+      var managerAbout;
+      
+      $('#managementModal').on('show.bs.modal', function (event) {
+        button = $(event.relatedTarget) // Button that triggered the modal
+        managerHead = $(event.relatedTarget).parent().parent().siblings(".manager-head");
+        managerName = managerHead.children(".manager-name").text();
+        managerTitle = managerHead.children(".manager-title").text();
+        managerAbout = managerHead.children(".manager-about").html();
+
+        // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+        // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+        var modal = $(this)
+        modal.find('.manager-name').text(managerName);
+        modal.find('.manager-title').text(managerTitle);
+        modal.find('.manager-about').html(managerAbout);
+      });
+
+      $('#managementModal').on('hidden.bs.modal', function (event) {
+          managerHead = "";
+          managerTitle = "";
+          managerAbout = "";
+
+          var modal = $(this)
+          modal.find('.manager-name').text(managerName);
+          modal.find('.manager-title').text(managerTitle);
+          modal.find('.manager-about').html(managerAbout);
+      });
+      
+    };
+
+    return {
+      init: init
+    };
+  })();
+
+
+  managementModal.init('');
+})(jQuery);
+
+//Download multiple files at the same time
+(function($) {
+  if(!$('.download-all').length) return;
+  else {
+    var downloadAll = $('.download-all');
+
+    downloadAll.on('click', function() {
+      var downloadChildrens = $('.financial-statements .item a');
+      $.each(downloadChildrens, function (index, element) {
+        element.click();
+      })
+    })
+  }
+
+})(jQuery);
+
+//Disable Devtools access
+(function($) {
+
+  //disable devtools by clicking right click
+  $(document).bind('contextmenu', function(e) {
+    e.preventDefault();
+  });
+
+  //disable devtools by clicking f12 key
+  $(document).keydown(function(e) {
+    if(e.which === 123) return false;
+  });
+
+})(jQuery);
+
+//Youtube Modal autoplay
+(function($) {
+
+  const play = $(`.youtubeModal`);
+  // Create YT API script
+  const tag = document.createElement('script');
+  const firstScript = document.getElementsByTagName('script')[0];
+  tag.src = 'https://www.youtube.com/iframe_api';
+  firstScript.parentNode.insertBefore(tag, firstScript);
+  // Clicked element
+  play.click((e) => {
+    const elm = $(e.currentTarget);
+    // Get video item
+    const video = $($(elm.data().target).find('iframe'));
+    // Set new id
+    video.attr('id', Math.random() * 200);
+    video.attr('src', `${video.attr('src')}&rel=0&enablejsapi=1`);
+    // Start instance with the new video id
+    const player = new YT.Player(video.attr('id'), {
+      events: {
+        onReady: (getVideo) => {
+          getVideo.target.playVideo();
+          player.playVideo();
+        },
+        onStateChange: (state) => {
+          $(document).on('hidden.bs.modal', () => {
+            if (state.data !== YT.PlayerState.PAUSED && state.data !== YT.PlayerState.PLAYING) {
+              player.pauseVideo();
+            }
+          });
+        }
+      },
+    });
+  });
+})(jQuery);
+
+
+
+
+https://bancobacc.com.do/content/themes/bacc/js/main.js?ver=20170106

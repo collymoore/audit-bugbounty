@@ -1,0 +1,86 @@
+GET /content/themes/bacc/js/infinitescroll.js?ver=1.0 HTTP/1.1
+Host: bancobacc.com.do
+User-Agent: Mozilla/5.0 (compatible; Osmedeus/v4; +https://github.com/j3ssie/osmedeus)
+Accept-Charset: utf-8
+Accept-Encoding: gzip
+
+HTTP/1.1 200 OK
+Connection: close
+Content-Length: 2216
+Accept-Ranges: bytes
+Content-Type: application/javascript
+Date: Wed, 17 Sep 2025 03:22:30 GMT
+Last-Modified: Fri, 16 Jul 2021 14:11:42 GMT
+Referrer-Policy: no-referrer-when-downgrade
+Server: Apache
+Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+Upgrade: h2,h2c
+X-Permitted-Cross-Domain-Policies: none
+X-Xss-Protection: 1; mode=block
+
+(function($){
+    window.InfiniteScroll = function (options) {
+        var opts = $.extend({
+            selector: null,
+            container: null,
+            maxPage: Infinity,
+            page: 1,
+            loadCallback: function(page){
+                console.log('TODO: IMPLEMENT loadCallback')
+            },
+            contentCallback: function(container, items){
+                console.log('TODO: IMPLEMENT contentCallback')
+            },
+            loadingCallback : function(show) {
+                if(show){
+                    $(opts.selector).addClass('loading');
+                }else{
+                    $(opts.selector).removeClass('loading');
+                }
+            },
+            offset: 150
+        }, options);
+        var doingCall = false;
+        var unsetListeners = function(){
+            $(window).off('scroll', scrollListener);
+            $(opts.selector).off('click', clickListener);
+            $(opts.selector).fadeOut();
+        };
+        var loadContent = function(){
+            if(doingCall){
+                return;
+            }
+            doingCall = true;
+            opts.loadingCallback(true);
+            opts.loadCallback(opts.page).then(function(items){
+                opts.contentCallback(opts.container,items);
+                opts.page++;
+                if(opts.page > opts.maxPage){
+                    unsetListeners();
+                }
+            }, unsetListeners).always(function() {
+                opts.loadingCallback(false);
+                doingCall = false;
+            });
+        };
+        var scrollListener = function () {
+            if  ($(window).scrollTop() >= $(document).height() - ($(window).height() + opts.offset)){
+                loadContent();
+            }
+        };
+        var clickListener = function (e) {
+            e.preventDefault();
+            loadContent();
+        };
+        // Load first time content, bind infinite scroll and bind next click event
+        $(opts.selector).one('click', function (e) {
+            e.preventDefault();
+            loadContent();
+            $(window).scroll(scrollListener);
+            $(opts.selector).on('click', clickListener);
+        });
+    };
+})(jQuery, window);
+
+
+https://bancobacc.com.do/content/themes/bacc/js/infinitescroll.js?ver=1.0

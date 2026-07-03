@@ -1,0 +1,24 @@
+GET /verification/g HTTP/1.1
+Host: verificacion.bancobacc.com.do
+User-Agent: Mozilla/5.0 (compatible; Osmedeus/v4; +https://github.com/j3ssie/osmedeus)
+Accept-Charset: utf-8
+Accept-Encoding: gzip
+
+HTTP/1.1 403 Forbidden
+Connection: close
+Content-Length: 199
+Content-Type: text/html; charset=iso-8859-1
+Date: Wed, 17 Sep 2025 03:22:53 GMT
+Server: Apache
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>403 Forbidden</title>
+</head><body>
+<h1>Forbidden</h1>
+<p>You don't have permission to access this resource.</p>
+</body></html>
+
+
+
+https://verificacion.bancobacc.com.do/verification/g

@@ -1,0 +1,29 @@
+GET /cms/xmlrpc.php HTTP/1.1
+Host: bancobacc.com.do
+User-Agent: Mozilla/5.0 (compatible; Osmedeus/v4; +https://github.com/j3ssie/osmedeus)
+Accept-Charset: utf-8
+Accept-Encoding: gzip
+
+HTTP/1.1 405 Method Not Allowed
+Connection: close
+Transfer-Encoding: chunked
+Allow: POST
+Cache-Control: s-maxage=10
+Content-Type: text/plain;charset=UTF-8
+Date: Wed, 17 Sep 2025 03:22:28 GMT
+Referrer-Policy: no-referrer-when-downgrade
+Server: Apache
+Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+Upgrade: h2,h2c
+X-Permitted-Cross-Domain-Policies: none
+X-Robots-Tag: noindex, follow
+X-Xss-Protection: 1; mode=block
+
+2a
+XML-RPC server accepts POST requests only.
+0
+
+
+
+
+https://bancobacc.com.do/cms/xmlrpc.php

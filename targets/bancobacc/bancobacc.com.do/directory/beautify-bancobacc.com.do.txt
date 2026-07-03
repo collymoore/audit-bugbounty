@@ -1,0 +1,20 @@
+http://autodiscover.bancobacc.com.do/%2e%2e//google.com                     | 403 | 312   | 17   | 7   | 
+http://autodiscover.bancobacc.com.do/.%2e/%2e%2e/%2e%2e/%2e%2e/etc/passwd   | 403 | 312   | 17   | 7   | 
+http://autodiscover.bancobacc.com.do/\..\..\..\..\..\..\..\..\..\etc\passwd | 403 | 312   | 17   | 7   | 
+https://admin.bancobacc.com.do/App_Code                                     | 500 | 75    | 12   | 1   | 
+https://admin.bancobacc.com.do/App_Data                                     | 500 | 75    | 12   | 1   | 
+https://admin.bancobacc.com.do/VERSION.txt                                  | 200 | 17    | 1    | 2   | 
+https://admin.bancobacc.com.do/Version.txt                                  | 200 | 17    | 1    | 2   | 
+https://bacc.bancobacc.com.do/%2e%2e//google.com                            | 301 | 0     | 1    | 1   | https://bacc.bancobacc.com.do/%2e%2e/google.com
+https://bacc.bancobacc.com.do/.dockerignore                                 | 200 | 4     | 1    | 1   | 
+https://bacc.bancobacc.com.do/.git                                          | 301 | 243   | 14   | 8   | https://bacc.bancobacc.com.do/.git/
+https://bacc.bancobacc.com.do/.tool-versions                                | 200 | 15    | 2    | 2   | 
+https://bacc.bancobacc.com.do/.well-known/acme-challenge                    | 301 | 265   | 14   | 8   | https://bacc.bancobacc.com.do/.well-known/acme-challenge/
+https://bacc.bancobacc.com.do/admin/                                        | 302 | 0     | 1    | 1   | https://bancobacc.com.do/cms/wp-admin/
+https://bacc.bancobacc.com.do//show_image_NpAdvCatPG.php?cache=false&cat=1& | 301 | 0     | 1    | 1   | https://bacc.bancobacc.com.do/show_image_NpAdvCatPG.php?cache=false&cat=1&f
+https://bacc.bancobacc.com.do/0                                             | 200 | 70617 | 2647 | 589 | 
+https://bacc.bancobacc.com.do/Citrix//AccessPlatform/auth/clientscripts/coo | 301 | 0     | 1    | 1   | https://bacc.bancobacc.com.do/Citrix/AccessPlatform/auth/clientscripts/cook
+https://bacc.bancobacc.com.do/Dockerfile                                    | 200 | 746   | 62   | 29  | 
+https://bacc.bancobacc.com.do/New%20folder%20(2)                            | 301 | 0     | 1    | 1   | https://bacc.bancobacc.com.do/New%20folder%20(2
+https://bacc.bancobacc.com.do/PMA/index.php                                 | 301 | 0     | 1    | 1   | https://bacc.bancobacc.com.do/PMA/
+https://bacc.bancobacc.com.do/PMA2/index.php                                | 301 | 0     | 1    | 1   | https://bacc.bancobacc.com.do/PMA2/

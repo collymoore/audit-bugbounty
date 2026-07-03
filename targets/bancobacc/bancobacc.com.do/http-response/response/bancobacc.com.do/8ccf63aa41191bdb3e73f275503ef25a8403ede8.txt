@@ -1,0 +1,51 @@
+GET /comments/feed/ HTTP/1.1
+Host: bancobacc.com.do
+User-Agent: Mozilla/5.0 (compatible; Osmedeus/v4; +https://github.com/j3ssie/osmedeus)
+Accept-Charset: utf-8
+Accept-Encoding: gzip
+
+HTTP/1.1 200 OK
+Connection: close
+Transfer-Encoding: chunked
+Content-Type: application/rss+xml; charset=UTF-8
+Date: Wed, 17 Sep 2025 03:22:28 GMT
+Etag: "5ea14d2f336a6fc9f51d53ef902ad215"
+Last-Modified: Wed, 09 Jul 2025 21:08:30 GMT
+Link: <https://bancobacc.com.do/wp-json/>; rel="https://api.w.org/"
+Referrer-Policy: no-referrer-when-downgrade
+Server: Apache
+Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+Upgrade: h2,h2c
+X-Permitted-Cross-Domain-Policies: none
+X-Robots-Tag: noindex, follow
+X-Xss-Protection: 1; mode=block
+
+2a8
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>
+	Comentarios para Banco BACC	</title>
+	<atom:link href="https://bancobacc.com.do/comments/feed/" rel="self" type="application/rss+xml" />
+	<link>https://bancobacc.com.do/</link>
+	<description>Icono resumen</description>
+	<lastBuildDate>Wed, 09 Jul 2025 21:08:30 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	
+</channel>
+</rss>
+
+0
+
+
+
+
+https://bancobacc.com.do/comments/feed/

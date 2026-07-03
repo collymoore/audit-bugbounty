@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Evaluación de Ciberseguridad — Banco BACC | NSI LLC</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+  :root {
+    --ns-dark:    #0a0f1a;
+    --ns-slate:   #1e293b;
+    --ns-muted:   #64748b;
+    --ns-light:   #f1f5f9;
+    --ns-border:  #e2e8f0;
+    --ns-gold:    #C8A84E;
+    --ns-danger:  #dc2626;
+    --ns-warning: #d97706;
+    --ns-green:   #16a34a;
+    --font: 'Inter', -apple-system, system-ui, sans-serif;
+  }
+
+  @page { size: letter; margin: 0; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: var(--font);
+    background: #fff;
+    color: var(--ns-slate);
+    font-size: 9.5pt;
+    line-height: 1.6;
+  }
+
+  .page {
+    width: 8.5in;
+    min-height: 11in;
+    margin: 0 auto;
+    padding: 0.6in 0.7in;
+    position: relative;
+  }
+  @media screen {
+    .page { box-shadow: 0 0 20px rgba(0,0,0,0.1); margin: 20px auto; }
+  }
+
+  /* ── COVER ───────────────────────────── */
+  .cover {
+    width: 8.5in;
+    min-height: 11in;
+    margin: 0 auto;
+    background: linear-gradient(135deg, var(--ns-dark) 0%, #0f172a 100%);
+    color: white;
+    padding: 1.2in 0.9in;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .cover::before {
+    content: '';
+    position: absolute;
+    top: -120px; right: -120px;
+    width: 400px; height: 400px;
+    border: 1px solid rgba(200,168,78,0.08);
+    border-radius: 50%;
+  }
+  .cover::after {
+    content: '';
+    position: absolute;
+    bottom: -80px; left: -80px;
+    width: 300px; height: 300px;
+    border: 1px solid rgba(200,168,78,0.06);
+    border-radius: 50%;
+  }
+  @media screen {
+    .cover { box-shadow: 0 0 20px rgba(0,0,0,0.1); margin: 20px auto; }
+  }
+
+  .cover .nsi-strip {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 50px;
+  }
+  .cover .nsi-strip .logo {
+    width: 42px; height: 42px;
+    border: 2px solid var(--ns-gold);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 16px;
+    color: var(--ns-gold);
+    flex-shrink: 0;
+  }
+  .cover .nsi-strip .org {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--ns-muted);
+  }
+  .cover .nsi-strip .org strong { color: var(--ns-gold); font-weight: 600; }
+
+  .cover .class-badge {
+    display: inline-block;
+    border: 1px solid rgba(200,168,78,0.4);
+    color: var(--ns-gold);
+    padding: 4px 14px;
+    font-size: 8px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+  }
+
+  .cover h1 {
+    font-size: 28pt;
+    font-weight: 300;
+    line-height: 1.2;
+    max-width: 5in;
+    margin-bottom: 12px;
+  }
+  .cover h1 strong { color: var(--ns-gold); font-weight: 600; }
+
+  .cover .tagline {
+    font-size: 12pt;
+    color: #94a3b8;
+    max-width: 4.5in;
+    margin-bottom: 40px;
+    font-weight: 300;
+  }
+
+  .cover .meta-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 30px;
+    max-width: 4.5in;
+    font-size: 8.5pt;
+    color: var(--ns-muted);
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding-top: 24px;
+  }
+  .cover .meta-grid .label { font-size: 7pt; text-transform: uppercase; letter-spacing: 1px; }
+  .cover .meta-grid .value { color: #e2e8f0; font-weight: 500; }
+
+  /* ── CONTENT STYLES ──────────────────── */
+  h2 {
+    font-size: 14pt;
+    font-weight: 600;
+    color: var(--ns-dark);
+    margin-top: 30px;
+    margin-bottom: 14px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--ns-gold);
+  }
+  h2:first-of-type { margin-top: 0; }
+
+  h3 {
+    font-size: 11pt;
+    font-weight: 600;
+    color: var(--ns-slate);
+    margin-top: 20px;
+    margin-bottom: 8px;
+  }
+
+  h4 {
+    font-size: 9.5pt;
+    font-weight: 600;
+    color: var(--ns-slate);
+    margin-top: 14px;
+    margin-bottom: 6px;
+  }
+
+  p { margin-bottom: 9px; text-align: justify; }
+  ul, ol { margin: 4px 0 10px 16px; }
+  li { margin-bottom: 3px; }
+
+  .hbox {
+    background: #f8f6f0;
+    border-left: 3px solid var(--ns-gold);
+    padding: 12px 14px;
+    margin: 14px 0;
+    font-size: 9pt;
+    border-radius: 0 6px 6px 0;
+  }
+  .hbox strong { color: var(--ns-dark); }
+
+  .ev-box {
+    background: #f8fafc;
+    border: 1px solid var(--ns-border);
+    border-radius: 6px;
+    padding: 10px 12px;
+    margin: 8px 0;
+    font-family: 'Courier New', monospace;
+    font-size: 7.5pt;
+    color: var(--ns-slate);
+    overflow-x: auto;
+  }
+  .ev-box .tag {
+    display: inline-block;
+    background: var(--ns-border);
+    padding: 1px 6px;
+    border-radius: 3px;
+    font-size: 6.5pt;
+    font-family: var(--font);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-right: 6px;
+  }
+
+  .dash-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    margin: 16px 0;
+  }
+  .dash-card {
+    background: #f8fafc;
+    border: 1px solid var(--ns-border);
+    border-radius: 8px;
+    padding: 14px;
+    text-align: center;
+  }
+  .dash-card .num {
+    font-size: 24pt;
+    font-weight: 700;
+    line-height: 1;
+  }
+  .dash-card .lbl {
+    font-size: 7pt;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--ns-muted);
+    margin-top: 5px;
+  }
+  .dash-card .sub { font-size: 7.5pt; color: var(--ns-muted); margin-top: 3px; }
+
+  .sc {
+    display: inline-block;
+    padding: 2px 7px;
+    border-radius: 3px;
+    font-size: 7pt;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .sc-crit { background: #fef2f2; color: var(--ns-danger); }
+  .sc-high { background: #fff7ed; color: var(--ns-warning); }
+  .sc-med { background: #fffbeb; color: #a16207; }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 12px 0;
+    font-size: 8.5pt;
+  }
+  table th {
+    text-align: left;
+    padding: 7px 9px;
+    font-size: 7pt;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--ns-muted);
+    border-bottom: 2px solid var(--ns-border);
+    font-weight: 600;
+  }
+  table td {
+    padding: 7px 9px;
+    border-bottom: 1px solid #f1f5f9;
+    vertical-align: top;
+  }
+  table tr:last-child td { border-bottom: none; }
+  table .sml { font-size: 7.5pt; color: var(--ns-muted); }
+  table .xsml { font-size: 7pt; color: #94a3b8; }
+
+  .rm-item {
+    display: flex;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px solid #f1f5f9;
+  }
+  .rm-item:last-child { border-bottom: none; }
+  .rm-urg {
+    width: 80px;
+    flex-shrink: 0;
+    font-size: 7pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding-top: 2px;
+  }
+  .rm-urg small { font-weight: 400; font-size: 6.5pt; display: block; opacity: 0.6; }
+  .rm-body { flex: 1; }
+  .rm-body h4 { font-size: 9pt; margin-bottom: 2px; font-weight: 600; }
+  .rm-body p { font-size: 8pt; color: var(--ns-muted); margin: 0; }
+
+  .footer {
+    text-align: center;
+    padding: 20px 0 0;
+    font-size: 7pt;
+    color: var(--ns-muted);
+    border-top: 1px solid var(--ns-border);
+    margin-top: 36px;
+  }
+  .footer strong { color: var(--ns-dark); }
+
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+  @media print {
+    .cover, .page { box-shadow: none; margin: 0; }
+    .cover { page-break-after: always; }
+    .page { page-break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ════════════════════════════════════════════ COVER ════════════════════════════════════════════ -->
+<div class="cover">
+  <div class="nsi-strip">
+    <div class="logo">NS</div>
+    <div class="org"><strong>NSI</strong> LLC · Null Session Intelligence</div>
+  </div>
+  <div class="class-badge">CONFIDENCIAL</div>
+  <h1>Evaluación de <strong>Ciberseguridad</strong><br>Banco BACC</h1>
+  <div class="tagline">Informe ejecutivo para la Mesa Directiva y Alta Gerencia — con evidencia técnica documentada</div>
+  <div class="meta-grid">
+    <div><div class="label">Entidad</div><div class="value">NSI LLC — Null Session Intelligence</div></div>
+    <div><div class="label">Cliente</div><div class="value">Banco de Ahorro y Crédito del Caribe, S.A. (BACC)</div></div>
+    <div><div class="label">Fecha</div><div class="value">01 Julio 2026</div></div>
+    <div><div class="label">Alcance</div><div class="value">bancobacc.com.do — Black-box externo + OSINT</div></div>
+    <div><div class="label">Duración</div><div class="value">2 sesiones (29 Jun – 01 Jul 2026)</div></div>
+    <div><div class="label">Clasificación</div><div class="value">CONFIDENCIAL — Solo distribución interna</div></div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════ PÁGINA 1 ════════════════════════════════════════════ -->
+<div class="page">
+
+<h2>Resumen Ejecutivo</h2>
+
+<p>Null Session Intelligence (NSI) realizó una evaluación de seguridad externa sobre la plataforma digital del Banco BACC en modalidad de caja negra — sin credenciales ni asistencia del personal. Se identificaron <strong>37 vulnerabilidades</strong> y se recolectó evidencia tangible de exposición de datos que representa un riesgo inaceptable para una institución financiera.</p>
+
+<div class="hbox">
+  <strong>Calificación General: CRÍTICO</strong><br>
+  3 críticos · 7 altos · 8 medios · 21 CVEs en plugins · 105 documentos expuestos · 21 empleados identificados vía OSINT
+</div>
+
+<div class="dash-grid">
+  <div class="dash-card">
+    <div class="num" style="color:var(--ns-danger)">3</div>
+    <div class="lbl">Críticos</div>
+    <div class="sub">Explotables hoy sin auth</div>
+  </div>
+  <div class="dash-card">
+    <div class="num" style="color:var(--ns-warning)">7</div>
+    <div class="lbl">Alto Riesgo</div>
+    <div class="sub">Compromiso parcial</div>
+  </div>
+  <div class="dash-card">
+    <div class="num" style="color:#a16207">8</div>
+    <div class="lbl">Riesgo Medio</div>
+    <div class="sub">Postura defensiva</div>
+  </div>
+  <div class="dash-card">
+    <div class="num" style="color:#7c3aed">21</div>
+    <div class="lbl">CVEs</div>
+    <div class="sub">Plugins sin parche</div>
+  </div>
+  <div class="dash-card">
+    <div class="num" style="color:#7c3aed">105</div>
+    <div class="lbl">Docs Expuestos</div>
+    <div class="sub">412 MB · 2017–2026</div>
+  </div>
+  <div class="dash-card">
+    <div class="num" style="color:#7c3aed">21</div>
+    <div class="lbl">Empleados</div>
+    <div class="sub">Identificados vía OSINT</div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════ EVIDENCIA ════════════════════════════════════════════ -->
+<h2>Evidencia Concreta de Exposición</h2>
+
+<h3>1. Directorio de Uploads con Listado Público</h3>
+<p>La carpeta <code>https://bancobacc.com.do/content/uploads/</code> tiene el listado de directorios habilitado, permitiendo a cualquier visitante navegar y descargar todos los archivos.</p>
+
+<h4>📍 Acceso directo a los datos</h4>
+<div class="ev-box">
+  <span class="tag">URL</span> https://bancobacc.com.do/content/uploads/
+</div>
+
+<h4>📂 Inventario de archivos expuestos (105 archivos, 412 MB)</h4>
+<table>
+  <tr><th>Tipo</th><th>Cantidad</th><th>Período</th><th>Contenido</th></tr>
+  <tr>
+    <td>PDF — Memorias Anuales</td><td>8</td><td>2015–2025</td>
+    <td>Estados financieros auditados, dictámenes, memorias institucionales completas</td>
+  </tr>
+  <tr>
+    <td>PDF — Estados Financieros</td><td>14</td><td>2013–2024</td>
+    <td>Balance general, estados de resultados, notas a los estados financieros</td>
+  </tr>
+  <tr>
+    <td>PDF — Contratos y Préstamos</td><td>6</td><td>2022–2024</td>
+    <td>Contratos de préstamo con garantía (incluye contratos por 13 MB con datos de clientes)</td>
+  </tr>
+  <tr>
+    <td>PDF — Tarifarios</td><td>6</td><td>2024–2026</td>
+    <td>Tarifas vigentes del banco</td>
+  </tr>
+  <tr>
+    <td>PDF — Bienes Adjudicados</td><td>4</td><td>2020–2021</td>
+    <td>Listados de propiedades inmobiliarias en cartera</td>
+  </tr>
+  <tr>
+    <td><strong>CSV — Vehículos</strong></td><td><strong>4</strong></td><td><strong>2017</strong></td>
+    <td><strong>Base de datos de vehículos con marca, modelo, año, color y tipo</strong></td>
+  </tr>
+  <tr>
+    <td>PDF — Varios (bonos, actas, etc.)</td><td>63</td><td>2017–2025</td>
+    <td>Actas de asamblea, prospectos de emisión, autorizaciones SIB, etc.</td>
+  </tr>
+</table>
+
+<h4>🔍 Ejemplos de datos sensibles en los archivos</h4>
+<div class="ev-box">
+  <span class="tag">CSV</span> <strong>Bienes Adjudicados (2017):</strong> AUTOMOVIL,Mercedes Benz,C230,2007,NEGRO —  AUTOMOVIL,Honda,ACURA TL TYPE,2007,AZUL —  AUTOMOVIL,Honda,ACCORD,2011,GRIS<br><br>
+  <span class="tag">CSV</span> Columnas: Tipo de vehículo, Marca, Modelo, Año, Color — catálogo completo de colaterales recuperados
+</div>
+
+<h3>2. Empleados Identificados vía Metadatos de PDF</h3>
+<p>Los archivos PDF expuestos contienen metadatos con los nombres reales de los empleados que los crearon, incluyendo nombres de usuario del sistema Windows. Esta información permite ataques de spear phishing dirigidos.</p>
+
+<div class="ev-box">
+  <span class="tag">EVIDENCIA</span> 21 empleados identificados directamente de metadatos PDF:<br>
+  &nbsp;&nbsp;Alejandro Croce Mujica &nbsp;·&nbsp; Deborah De los Santos Lebrón &nbsp;·&nbsp; Dewars Barett Baez<br>
+  &nbsp;&nbsp;Diego Reyes &nbsp;·&nbsp; Fior Sanchez &nbsp;·&nbsp; GEBER GARCIA &nbsp;·&nbsp; Griselda Lizardo<br>
+  &nbsp;&nbsp;Maria Luisa Diaz &nbsp;·&nbsp; Mariana Santos &nbsp;·&nbsp; Maris Mendez &nbsp;·&nbsp; Nathalie García<br>
+  &nbsp;&nbsp;Raymie R. Sanchez Cano &nbsp;·&nbsp; Ricardo Cabral - INTEC &nbsp;·&nbsp; Zunilda Guillen Rueda<br>
+  &nbsp;&nbsp;Maluisa.Diaz&nbsp;·&nbsp;PBC&nbsp;·&nbsp;G Pabón&nbsp;·&nbsp;+4 adicionales
+</div>
+
+<h3>3. Rutas Internas de Red Expuestas</h3>
+<p>Un archivo PDF expuesto contiene rutas completas del sistema de archivos interno del empleado:</p>
+<div class="ev-box">
+  <span class="tag">RUTA</span> C:\Users\168855\Downloads\27_03_2026 HOY_VIERNES_270326_ El País15 .PDF
+</div>
+<p>Esto revela: (a) convención de nomenclatura de equipos Windows, (b) estructura de directorios interna, (c) que los empleados están descargando artículos de prensa a la misma carpeta que archivos bancarios — posible mezcla de datos personales y corporativos.</p>
+
+<h3>4. Documento con Restricciones de Copia (Cifrado RC4)</h3>
+<p>Uno de los archivos expuestos utiliza cifrado RC4 con restricción de copia y modificación — una falsa sensación de seguridad que no impide la visualización ni descarga:</p>
+<div class="ev-box">
+  <span class="tag">ENCRYPTED</span> <strong>Archivo con cifrado RC4:</strong> print:sí · copy:NO · change:NO · addNotes:NO<br>
+  &nbsp;&nbsp;Indicador de que el banco intentó proteger el documento pero lo publicó en un directorio abierto
+</div>
+
+<!-- ════════════════════════════════════════════ OSINT ════════════════════════════════════════════ -->
+<h2>Inteligencia de Fuentes Abiertas (OSINT)</h2>
+
+<p>Mediante técnicas OSINT se construyó un perfil completo de la institución sin requerir acceso a sistemas internos:</p>
+
+<table>
+  <tr><th style="width:30%">Categoría</th><th>Datos Obtenidos</th></tr>
+  <tr>
+    <td><strong>Consejo Directivo</strong></td>
+    <td>7 miembros identificados: Alberto De Los Santos Billini (Presidente), María Julia Díaz (VP), Francisco Rodríguez (Secretario), Peter Croes, Fernando González Nicolás, William Harper Heinsen, Roberto Rojas</td>
+  </tr>
+  <tr>
+    <td><strong>Alta Gerencia</strong></td>
+    <td>17 ejecutivos con nombres, cargos y biografías extraídas del sitio web corporativo — incluyendo Director de Ciberseguridad (Willy Alfredo Padua Ruíz: CISA, CRISC, Ethical Hacker)</td>
+  </tr>
+  <tr>
+    <td><strong>Staff Operativo</strong></td>
+    <td>+20 empleados adicionales identificados vía LinkedIn y metadatos de PDF</td>
+  </tr>
+  <tr>
+    <td><strong>Infraestructura TI</strong></td>
+    <td>WordPress 6.2.6 · Tema: Bridge · PHP 8.0.30 · Servidor Apache · cPanel/WHM · GBH Web Hosting · Bankingly ASP.NET para banca en línea</td>
+  </tr>
+  <tr>
+    <td><strong>Email Pattern</strong></td>
+    <td><code>[primera_inicial][apellido]@bancobacc.com.do</code> — patrón confirmado que permite generar direcciones de correo para cualquier empleado identificado</td>
+  </tr>
+  <tr>
+    <td><strong>Subdominios</strong></td>
+    <td>38 subdominios descubiertos incluyendo banking, cpcontacts, webmail, webdisk, cpanel, mail, autodiscover</td>
+  </tr>
+  <tr>
+    <td><strong>Entidades Externas</strong></td>
+    <td>12 conexiones identificadas: GBH Web Hosting, Bankingly, Feller Rate (rating A-), Chase Manhattan, BHD, Scotiabank, Citibank, Reservas, Palic, AFP Siembra, ARS, INTEC</td>
+  </tr>
+</table>
+
+<h3>Perfil del Director de Ciberseguridad</h3>
+<div class="ev-box">
+  <span class="tag">LINKEDIN</span> <strong>Willy Alfredo Padua Ruíz</strong> — Director Riesgos Integrales, Ciberseguridad y Control Interno<br>
+  &nbsp;&nbsp;Certificaciones: CISA · CRISC · CDPSE · Ethical Hacker (Cisco) · ISO 31000 Senior Lead Risk Manager<br>
+  &nbsp;&nbsp;🔴 El responsable de ciberseguridad del banco está identificado y puede ser objetivo de ataques de ingeniería social
+</div>
+
+<h3>Vulnerabilidades de Plugins — 21 CVEs</h3>
+<table>
+  <tr><th>Plugin</th><th>Versión</th><th>Última</th><th>CVEs</th><th>Vulnerabilidad Crítica</th></tr>
+  <tr>
+    <td>Page Builder SiteOrigin</td><td>2.25.0</td><td>2.34.5</td><td>6</td>
+    <td><strong>Local File Inclusion</strong> — leer archivos internos del servidor</td>
+  </tr>
+  <tr>
+    <td>Yoast SEO</td><td>20.12</td><td>27+</td><td>6</td>
+    <td>IDOR Information Exposure, Stored XSS</td>
+  </tr>
+  <tr>
+    <td>Contact Form 7</td><td>5.7.7</td><td>6.1.6</td><td>4</td>
+    <td>File Upload, Open Redirect</td>
+  </tr>
+  <tr>
+    <td>WP Mail SMTP</td><td>3.8.2</td><td>4.9.0</td><td>1</td>
+    <td><strong>SMTP Password Exposure</strong></td>
+  </tr>
+  <tr>
+    <td>Duplicate Post</td><td>4.5</td><td>—</td><td>1</td>
+    <td>Arbitrary Post Duplication</td>
+  </tr>
+  <tr>
+    <td>CPT UI</td><td>1.13.7</td><td>—</td><td>1</td>
+    <td>Unauthenticated Post Type Modification</td>
+  </tr>
+</table>
+
+<!-- ════════════════════════════════════════════ RIESGOS ════════════════════════════════════════════ -->
+<h2>Inventario de Riesgos</h2>
+<table>
+  <tr><th>ID</th><th>Hallazgo</th><th>Severidad</th><th>Impacto al Negocio</th></tr>
+  <tr>
+    <td>BACC-02</td>
+    <td>Directory listing en uploads<br><span class="sml">105 docs bancarios expuestos</span></td>
+    <td><span class="sc sc-crit">Crítico</span></td>
+    <td>Fuga de datos · Violación Ley 172-13 · Riesgo reputacional</td>
+  </tr>
+  <tr>
+    <td>BACC-01</td>
+    <td>cPanel/WHM público<br><span class="sml">Hosting admin expuesto</span></td>
+    <td><span class="sc sc-crit">Crítico</span></td>
+    <td>Compromiso total del sitio · Phishing a clientes</td>
+  </tr>
+  <tr>
+    <td>BACC-03</td>
+    <td>Dockerfile expuesto<br><span class="sml">Config interna revelada</span></td>
+    <td><span class="sc sc-crit">Crítico</span></td>
+    <td>Fingerprinting · Ataques dirigidos</td>
+  </tr>
+  <tr>
+    <td>BACC-04</td>
+    <td>6 plugins · 21 CVEs sin parche</td>
+    <td><span class="sc sc-high">Alto</span></td>
+    <td>Ejecución remota · Exfil. credenciales · LFI</td>
+  </tr>
+  <tr>
+    <td>BACC-11</td>
+    <td>User enumeration cPanel<br><span class="sml">47 usuarios potenciales</span></td>
+    <td><span class="sc sc-high">Alto</span></td>
+    <td>Fuerza bruta dirigida · Compromiso cuentas</td>
+  </tr>
+  <tr>
+    <td>BACC-06</td>
+    <td>SSRF vía Yoast SEO</td>
+    <td><span class="sc sc-high">Alto</span></td>
+    <td>Escaneo red interna · Cloud metadata</td>
+  </tr>
+  <tr>
+    <td>BACC-07</td>
+    <td>Clickjacking banca en línea</td>
+    <td><span class="sc sc-med">Medio</span></td>
+    <td>Suplantación interfaz · Robo credenciales</td>
+  </tr>
+  <tr>
+    <td>BACC-08</td>
+    <td>Sin Content-Security-Policy</td>
+    <td><span class="sc sc-med">Medio</span></td>
+    <td>XSS · Data exfiltración</td>
+  </tr>
+</table>
+
+<h2>Riesgo Regulatorio</h2>
+<table>
+  <tr><th>Marco</th><th>Implicación</th><th>Riesgo</th></tr>
+  <tr>
+    <td>Ley 172-13 (Protección Datos RD)</td>
+    <td>Exposición documentos con datos personales viola deber de confidencialidad</td>
+    <td><span class="sc sc-crit">Sanciones</span></td>
+  </tr>
+  <tr>
+    <td>PCI DSS</td>
+    <td>Software desactualizado + sin WAF incumple req. seguridad datos tarjeta</td>
+    <td><span class="sc sc-crit">No cumplimiento</span></td>
+  </tr>
+  <tr>
+    <td>Superintendencia de Bancos</td>
+    <td>Riesgo operacional materializado → multas o restricciones</td>
+    <td><span class="sc sc-high">Observación</span></td>
+  </tr>
+  <tr>
+    <td>Basilea II/III</td>
+    <td>Riesgo operacional y reputacional no mitigado</td>
+    <td><span class="sc sc-high">Capital reserva</span></td>
+  </tr>
+</table>
+
+<!-- ════════════════════════════════════════════ PLAN ════════════════════════════════════════════ -->
+<h2>Hoja de Ruta para la Mesa Directiva</h2>
+
+<div class="rm-item">
+  <div class="rm-urg" style="color:var(--ns-danger)">Inmediato<small>&lt; 24 h</small></div>
+  <div class="rm-body">
+    <h4>🔴 Deshabilitar directory listing en uploads</h4>
+    <p>Cerrar acceso público a 105 documentos bancarios. 30 minutos en Apache: <code>Options -Indexes</code> en la directiva del directorio.</p>
+  </div>
+</div>
+<div class="rm-item">
+  <div class="rm-urg" style="color:var(--ns-danger)">Inmediato<small>&lt; 24 h</small></div>
+  <div class="rm-body">
+    <h4>🔴 Restringir cPanel/WHM por IP + 2FA</h4>
+    <p>Whitelist de IPs corporativas. Implementar autenticación de dos factores en todas las cuentas de administración del hosting.</p>
+  </div>
+</div>
+<div class="rm-item">
+  <div class="rm-urg" style="color:var(--ns-danger)">Inmediato<small>&lt; 48 h</small></div>
+  <div class="rm-body">
+    <h4>🔴 Actualizar 6 plugins críticos</h4>
+    <p>21 CVEs públicos — Page Builder, CF7, Yoast, WP Mail SMTP, Duplicate Post, CPT UI a sus últimas versiones estables.</p>
+  </div>
+</div>
+<div class="rm-item">
+  <div class="rm-urg" style="color:var(--ns-warning)">Corto Plazo<small>1-2 sem</small></div>
+  <div class="rm-body">
+    <h4>Cabeceras de seguridad</h4>
+    <p>X-Frame-Options, CSP, HSTS en banca en línea y sitio corporativo. HTTPS exclusivo (actualmente responde HTTP plano).</p>
+  </div>
+</div>
+<div class="rm-item">
+  <div class="rm-urg" style="color:#a16207">Mediano Plazo<small>1-3 meses</small></div>
+  <div class="rm-body">
+    <h4>Arquitectura de seguridad integral</h4>
+    <p>WAF empresarial, segmentación WordPress vs servicios críticos, política de actualizaciones automáticas monitoreadas.</p>
+  </div>
+</div>
+<div class="rm-item">
+  <div class="rm-urg" style="color:var(--ns-green)">Continuo</div>
+  <div class="rm-body">
+    <h4>Programa de seguridad permanente</h4>
+    <p>Auditorías trimestrales con pentesting externo. Monitoreo de vulnerabilidades. Capacitación del personal de TI.</p>
+  </div>
+</div>
+
+<h2>Conclusión</h2>
+
+<p>Banco BACC presenta una superficie de ataque digital crítica que requiere acción inmediata. La evidencia recolectada — 105 documentos bancarios expuestos, 21 empleados identificados, 21 CVEs sin parche, rutas internas de red reveladas — demuestra un nivel de exposición inaceptable para una institución financiera regulada.</p>
+
+<p>NSI recomienda que la Mesa Directiva asigne recursos para la remediación inmediata de los hallazgos críticos y establezca un programa de seguridad informática continuo con auditorías externas periódicas.</p>
+
+<div class="hbox">
+  <strong>Próximos pasos:</strong> NSI puede presentar este informe en detalle al equipo técnico, asistir en la priorización de remediaciones, realizar verificación posterior a corrección, y establecer un programa de Red Team con simulación de ataque real.
+</div>
+
+<div class="footer">
+  <strong>NSI LLC — Null Session Intelligence</strong> · nullsessionintelligence.com<br>
+  Informe CONFIDENCIAL · Solo para distribución interna del Banco BACC<br>
+  Generado 01 Julio 2026 · Versión 1.0<br>
+  <em>— Fin del informe —</em>
+</div>
+
+</div>
+
+</body>
+</html>

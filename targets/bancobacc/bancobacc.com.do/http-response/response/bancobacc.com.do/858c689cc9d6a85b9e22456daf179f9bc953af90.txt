@@ -1,0 +1,33 @@
+GET /wp-json/wp/v2/pages/595 HTTP/1.1
+Host: bancobacc.com.do
+User-Agent: Mozilla/5.0 (compatible; Osmedeus/v4; +https://github.com/j3ssie/osmedeus)
+Accept-Charset: utf-8
+Accept-Encoding: gzip
+
+HTTP/1.1 200 OK
+Connection: close
+Transfer-Encoding: chunked
+Access-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type
+Access-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link
+Allow: GET
+Cache-Control: s-maxage=10
+Content-Type: application/json; charset=UTF-8
+Date: Wed, 17 Sep 2025 03:22:39 GMT
+Link: <https://bancobacc.com.do/modelos-de-contrato-de-adhesion-de-prestamos/>; rel="alternate"; type=text/html
+Referrer-Policy: no-referrer-when-downgrade
+Server: Apache
+Upgrade: h2,h2c
+Vary: Origin
+X-Content-Type-Options: nosniff
+X-Permitted-Cross-Domain-Policies: none
+X-Robots-Tag: noindex
+X-Xss-Protection: 1; mode=block
+
+1067
+{"id":595,"date":"2018-03-07T14:40:57","date_gmt":"2018-03-07T18:40:57","guid":{"rendered":"http:\/\/bancobacc.com.do\/?page_id=595"},"modified":"2024-07-22T11:56:59","modified_gmt":"2024-07-22T15:56:59","slug":"modelos-de-contrato-de-adhesion-de-prestamos","status":"publish","type":"page","link":"https:\/\/bancobacc.com.do\/modelos-de-contrato-de-adhesion-de-prestamos\/","title":{"rendered":"Modelos de Contrato de Adhesi\u00f3n de Pr\u00e9stamos"},"content":{"rendered":"<div id=\"pl-595\"  class=\"panel-layout\" ><div id=\"pg-595-0\"  class=\"panel-grid panel-has-style\" ><div class=\"showcase panel-row-style panel-row-style-for-595-0\" id=\"showcase\" ><div id=\"pgc-595-0-0\"  class=\"panel-grid-cell\" ><div id=\"panel-595-0-0-0\" class=\"so-panel widget widget_sow-editor panel-first-child panel-last-child\" data-index=\"0\" ><div class=\"showcase-blue panel-widget-style panel-widget-style-for-595-0-0-0\" ><div\n\t\t\t\n\t\t\tclass=\"so-widget-sow-editor so-widget-sow-editor-base\"\n\t\t\t\n\t\t>\n<div class=\"siteorigin-widget-tinymce textwidget\">\n\t<h1 style=\"text-align: center;\">Modelos de Contrato<\/h1>\n<\/div>\n<\/div><\/div><\/div><\/div><\/div><\/div><div id=\"pg-595-1\"  class=\"panel-grid panel-has-style\" ><div class=\"container panel-row-style panel-row-style-for-595-1\" ><div id=\"pgc-595-1-0\"  class=\"panel-grid-cell\" ><div id=\"panel-595-1-0-0\" class=\"so-panel widget widget_gbh_template_part gbh_template_part panel-first-child panel-last-child\" data-index=\"1\" ><div class=\"row\" id=\"loans-model-block\">\n  \n\n  <div class=\"col-md-10 col-md-offset-1 col-lg-5 col-lg-offset-3\">    \n    <div class=\"bonds-block bonds-block--no-padding\">\n            <div class=\"corporate-bonds one-column\">\n                      <div class=\"item\">\n              <a class=\"btn btn-clear arrow blue\" href=\"https:\/\/bancobacc.com.do\/content\/uploads\/2018\/03\/Modelo-Contrato-de-Adhesi\u00f3n.pdf\" download=\"modelo-de-contrato-de-adhesion-de-prestamosmodelo-de-contrato-de-adhesion-de-prestamos.pdf\">\n\t<span class=\"year\">Modelo de Contrato de Adhesi\u00f3n de Pr\u00e9stamos<\/span>\n<\/a>            <\/div>\n                      <div class=\"item\">\n              <a class=\"btn btn-clear arrow blue\" href=\"https:\/\/bancobacc.com.do\/content\/uploads\/2018\/03\/Contrato-Garant\u00eda-Hipotecaria.pdf\" download=\"contrato-de-prestamos-con-garantia-hipotecariacontrato-de-prestamos-con-garantia-hipotecaria.pdf\">\n\t<span class=\"year\">Contrato de Pr\u00e9stamos con Garant\u00eda Hipotecaria<\/span>\n<\/a>            <\/div>\n                      <div class=\"item\">\n              <a class=\"btn btn-clear arrow blue\" href=\"https:\/\/bancobacc.com.do\/content\/uploads\/2024\/07\/Contrato-de-Prestamo-con-Garantia-Mobiliaria.pdf\" download=\"contrato-de-prestamos-con-garantia-mobiliaria2024.pdf\">\n\t<span class=\"year\">Contrato de Pr\u00e9stamos con Garant\u00eda Mobiliaria<\/span>\n<\/a>            <\/div>\n                <\/div>\n      <div class=\"clearfix\"><\/div>\n    <\/div>\n  <\/div>\n\n<\/div><!-- end of Model--><\/div><\/div><\/div><\/div><\/div>","protected":false},"excerpt":{"rendered":"<p>Modelos de Contrato<\/p>\n","protected":false},"author":2,"featured_media":0,"parent":0,"menu_order":0,"comment_status":"closed","ping_status":"closed","template":"","meta":[],"_links":{"self":[{"href":"https:\/\/bancobacc.com.do\/wp-json\/wp\/v2\/pages\/595"}],"collection":[{"href":"https:\/\/bancobacc.com.do\/wp-json\/wp\/v2\/pages"}],"about":[{"href":"https:\/\/bancobacc.com.do\/wp-json\/wp\/v2\/types\/page"}],"author":[{"embeddable":true,"href":"https:\/\/bancobacc.com.do\/wp-json\/wp\/v2\/users\/2"}],"replies":[{"embeddable":true,"href":"https:\/\/bancobacc.com.do\/wp-json\/wp\/v2\/comments?post=595"}],"version-history":[{"count":30,"href":"https:\/\/bancobacc.com.do\/wp-json\/wp\/v2\/pages\/595\/revisions"}],"predecessor-version":[{"id":1948,"href":"https:\/\/bancobacc.com.do\/wp-json\/wp\/v2\/pages\/595\/revisions\/1948"}],"wp:attachment":[{"href":"https:\/\/bancobacc.com.do\/wp-json\/wp\/v2\/media?parent=595"}],"curies":[{"name":"wp","href":"https:\/\/api.w.org\/{rel}","templated":true}]}}
+0
+
+
+
+
+http://bancobacc.com.do/wp-json/wp/v2/pages/595

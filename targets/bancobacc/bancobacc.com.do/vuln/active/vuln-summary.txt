@@ -1,0 +1,8 @@
+[CVE-2019-7192][Medium] - https://webdisk.bancobacc.com.do
+[CVE-2020-25213][Critical] - https://cpanel.bancobacc.com.do
+[CVE-2020-25213][Critical] - https://webmail.bancobacc.com.do
+[common-route-01][Potential] - https://webmail.bancobacc.com.do
+[joomla-sqli-hdwplayer-01][High] - https://mail.bancobacc.com.do
+[joomla-sqli-hdwplayer-01][High] - https://webmail.bancobacc.com.do
+[wordpress-rest-api-01][Medium] - https://mail.bancobacc.com.do
+[wordpress-rest-api-01][Medium] - https://www.baccbancobacc.bancobacc.com.do

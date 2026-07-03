@@ -1,0 +1,33 @@
+GET /wp-json/wp/v2/pages/1325 HTTP/1.1
+Host: bancobacc.com.do
+User-Agent: Mozilla/5.0 (compatible; Osmedeus/v4; +https://github.com/j3ssie/osmedeus)
+Accept-Charset: utf-8
+Accept-Encoding: gzip
+
+HTTP/1.1 200 OK
+Connection: close
+Transfer-Encoding: chunked
+Access-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type
+Access-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link
+Allow: GET
+Cache-Control: s-maxage=10
+Content-Type: application/json; charset=UTF-8
+Date: Wed, 17 Sep 2025 03:22:37 GMT
+Link: <https://bancobacc.com.do/seguros-o-mecanismos-de-cobertura-obligatorios/>; rel="alternate"; type=text/html
+Referrer-Policy: no-referrer-when-downgrade
+Server: Apache
+Upgrade: h2,h2c
+Vary: Origin
+X-Content-Type-Options: nosniff
+X-Permitted-Cross-Domain-Policies: none
+X-Robots-Tag: noindex
+X-Xss-Protection: 1; mode=block
+
+1310
+{"id":1325,"date":"2023-07-31T17:26:44","date_gmt":"2023-07-31T21:26:44","guid":{"rendered":"https:\/\/bancobacc.com.do\/?page_id=1325"},"modified":"2023-07-31T17:26:44","modified_gmt":"2023-07-31T21:26:44","slug":"seguros-o-mecanismos-de-cobertura-obligatorios","status":"publish","type":"page","link":"https:\/\/bancobacc.com.do\/seguros-o-mecanismos-de-cobertura-obligatorios\/","title":{"rendered":"Seguros o mecanismos de Cobertura obligatorios"},"content":{"rendered":"<div id=\"pl-1325\"  class=\"panel-layout\" ><div id=\"pg-1325-0\"  class=\"panel-grid panel-has-style\" ><div class=\"showcase siteorigin-panels-stretch panel-row-style panel-row-style-for-1325-0\" id=\"showcase\" data-stretch-type=\"full-stretched-padded\" ><div id=\"pgc-1325-0-0\"  class=\"panel-grid-cell\" ><div id=\"panel-1325-0-0-0\" class=\"so-panel widget widget_sow-editor panel-first-child panel-last-child\" data-index=\"0\" ><div class=\"showcase-blue panel-widget-style panel-widget-style-for-1325-0-0-0\" ><div\n\t\t\t\n\t\t\tclass=\"so-widget-sow-editor so-widget-sow-editor-base\"\n\t\t\t\n\t\t>\n<div class=\"siteorigin-widget-tinymce textwidget\">\n\t<h1 style=\"text-align: center;\">Seguros o mecanismos de Cobertura Obligatorios<\/h1>\n<p style=\"text-align: center;\">Las p\u00f3lizas de seguro vinculadas a los financiamientos aseguran la protecci\u00f3n necesaria de los veh\u00edculos financiados.<\/p>\n<\/div>\n<\/div><\/div><\/div><\/div><\/div><\/div><div id=\"pg-1325-1\"  class=\"panel-grid panel-has-style\" ><div class=\"container panel-row-style panel-row-style-for-1325-1\" ><div id=\"pgc-1325-1-0\"  class=\"panel-grid-cell\" ><div id=\"panel-1325-1-0-0\" class=\"so-panel widget widget_gbh_template_part gbh_template_part panel-first-child panel-last-child\" data-index=\"1\" ><div class=\"nopadding panel-widget-style panel-widget-style-for-1325-1-0-0\" ><div class=\"payment-container\">\n\t<h5><i>1<\/i> <span>Puedes dirigirte a cualquiera de nuestras sucursales<\/span><\/h5>\n\t<div class=\"fieldset\">\n\t\t<div class=\"payment-branches\">\n\t\t      \t<\/div>\n\t<\/div> <!-- End of Fieldset -->\n\n\t<h5><i>2<\/i> <span>Puedes dirigirte a cualquier sucursal del Banco BHD Le\u00f3n<\/span><\/h5>\n\t<div class=\"fieldset\">\n\t\t<h6>A trav\u00e9s de cualquier sucursal del Banco BHD Le\u00f3n, siguiendo los pasos a continuaci\u00f3n:<\/h6>\n\t\t<div class=\"info-content\">\n\t        <ul>\n\t          \t<li>Dirigirse al un oficial de caja.<\/li>\n\t          \t<li>Informar al cajero que va a realizar pago de un servicio de Banco BACC.<\/li>\n\t          \t<li>Indicar al cajero su n\u00famero de pr\u00e9stamo (como referencia).<\/li>\n\t          \t<li>\u00c9l realizar\u00e1 su pago. Solicite confirmaci\u00f3n.<\/li>\n\t        <\/ul>\n\t    <\/div>\n\t<\/div> <!-- End of Fieldset -->\n\n\t<h5><i>3<\/i> <span>Puedes realizar la transacci\u00f3n a trav\u00e9s del portal electr\u00f3nico Bancasa (Banco BHD Le\u00f3n)<\/span><\/h5>\n\t<div class=\"fieldset\">\n\t\t<h6>Para realizar la transacci\u00f3n a trav\u00e9s de Bancasa, solo tienes que:<\/h6>\n\t\t<div class=\"info-content\">\n\t        <ul class=\"spaced\">\n\t        \t<li>Acceder a Bancasa.<\/li>\n\t\t\t\t<li>Elegir la opci\u00f3n pago de servicio.<\/li>\n\t\t\t\t<li>Seleccionar pagos.<\/li>\n\t\t\t\t<li>Elegir pago en l\u00ednea.<\/li>\n\t\t\t\t<li>Llenar los datos requeridos.<\/li>\n\t\t\t\t<li>Selecciona la opci\u00f3n de 'Confirmar'.<\/li>\n\t\t\t\t<li>Si los datos est\u00e1n correctos, selecciona la opci\u00f3n de 'Enviar'.<\/li>\n\t        <\/ul>\n\t    <\/div>\n\t<\/div> <!-- End of Fieldset -->\n<\/div><\/div><\/div><\/div><\/div><\/div><\/div>","protected":false},"excerpt":{"rendered":"<p>Seguros o mecanismos de Cobertura Obligatorios Las p\u00f3lizas de seguro vinculadas a los financiamientos aseguran la protecci\u00f3n necesaria de los veh\u00edculos financiados.<\/p>\n","protected":false},"author":5,"featured_media":0,"parent":0,"menu_order":0,"comment_status":"closed","ping_status":"closed","template":"","meta":[],"_links":{"self":[{"href":"https:\/\/bancobacc.com.do\/wp-json\/wp\/v2\/pages\/1325"}],"collection":[{"href":"https:\/\/bancobacc.com.do\/wp-json\/wp\/v2\/pages"}],"about":[{"href":"https:\/\/bancobacc.com.do\/wp-json\/wp\/v2\/types\/page"}],"author":[{"embeddable":true,"href":"https:\/\/bancobacc.com.do\/wp-json\/wp\/v2\/users\/5"}],"replies":[{"embeddable":true,"href":"https:\/\/bancobacc.com.do\/wp-json\/wp\/v2\/comments?post=1325"}],"version-history":[{"count":22,"href":"https:\/\/bancobacc.com.do\/wp-json\/wp\/v2\/pages\/1325\/revisions"}],"predecessor-version":[{"id":1753,"href":"https:\/\/bancobacc.com.do\/wp-json\/wp\/v2\/pages\/1325\/revisions\/1753"}],"wp:attachment":[{"href":"https:\/\/bancobacc.com.do\/wp-json\/wp\/v2\/media?parent=1325"}],"curies":[{"name":"wp","href":"https:\/\/api.w.org\/{rel}","templated":true}]}}
+0
+
+
+
+
+http://bancobacc.com.do/wp-json/wp/v2/pages/1325

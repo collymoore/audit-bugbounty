@@ -1,0 +1,33 @@
+GET /wp-json/wp/v2/pages/378 HTTP/1.1
+Host: bancobacc.com.do
+User-Agent: Mozilla/5.0 (compatible; Osmedeus/v4; +https://github.com/j3ssie/osmedeus)
+Accept-Charset: utf-8
+Accept-Encoding: gzip
+
+HTTP/1.1 200 OK
+Connection: close
+Transfer-Encoding: chunked
+Access-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type
+Access-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link
+Allow: GET
+Content-Type: application/json; charset=UTF-8
+Date: Wed, 17 Sep 2025 03:22:39 GMT
+Link: <https://bancobacc.com.do/hechos-relevantes/>; rel="alternate"; type=text/html
+Referrer-Policy: no-referrer-when-downgrade
+Server: Apache
+Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+Upgrade: h2,h2c
+Vary: Origin
+X-Content-Type-Options: nosniff
+X-Permitted-Cross-Domain-Policies: none
+X-Robots-Tag: noindex
+X-Xss-Protection: 1; mode=block
+
+11a7
+{"id":378,"date":"2018-01-03T21:46:07","date_gmt":"2018-01-04T01:46:07","guid":{"rendered":"http:\/\/bancobacc.com.do\/?page_id=378"},"modified":"2018-01-16T13:26:54","modified_gmt":"2018-01-16T17:26:54","slug":"hechos-relevantes","status":"publish","type":"page","link":"https:\/\/bancobacc.com.do\/hechos-relevantes\/","title":{"rendered":"Hechos relevantes"},"content":{"rendered":"<div id=\"pl-378\"  class=\"panel-layout\" ><div id=\"pg-378-0\"  class=\"panel-grid panel-has-style\" ><div class=\"showcase panel-row-style panel-row-style-for-378-0\" id=\"showcase\" ><div id=\"pgc-378-0-0\"  class=\"panel-grid-cell\" ><div id=\"panel-378-0-0-0\" class=\"so-panel widget widget_sow-editor panel-first-child panel-last-child\" data-index=\"0\" ><div class=\"showcase-blue panel-widget-style panel-widget-style-for-378-0-0-0\" ><div\n\t\t\t\n\t\t\tclass=\"so-widget-sow-editor so-widget-sow-editor-base\"\n\t\t\t\n\t\t>\n<div class=\"siteorigin-widget-tinymce textwidget\">\n\t<h1 style=\"text-align: center;\">Hechos relevantes<\/h1>\n<\/div>\n<\/div><\/div><\/div><\/div><\/div><\/div><div id=\"pg-378-1\"  class=\"panel-grid panel-has-style\" ><div class=\"container panel-row-style panel-row-style-for-378-1\" ><div id=\"pgc-378-1-0\"  class=\"panel-grid-cell\" ><div id=\"panel-378-1-0-0\" class=\"so-panel widget widget_gbh_template_part gbh_template_part panel-first-child panel-last-child\" data-index=\"1\" ><div class=\"row\">\n  <div class=\"col-xs-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2\">\n    <div class=\"facts-block\">\n            <div class=\"relevant-facts one-column\">\n                  <div class=\"item\">\n            <a class=\"btn btn-clear arrow blue\" href=\"https:\/\/bancobacc.com.do\/content\/uploads\/2018\/01\/2016-03_recapitalizacion_utilidades_diciembre_2016.pdf\" download=\"recapitalizacion-de-las-utilidades-del-ano-fiscal-terminado-en-diciembre-2016.pdf\">\n\t<span class=\"year\">Recapitalizaci\u00f3n de las utilidades del a\u00f1o fiscal terminado en diciembre 2016<\/span>\n<\/a>          <\/div>\n                  <div class=\"item\">\n            <a class=\"btn btn-clear arrow blue\" href=\"https:\/\/bancobacc.com.do\/content\/uploads\/2018\/01\/2016-10_cambio_imagen_corporativa.pdf\" download=\"cambio-de-imagen-corporativa-de-la-institucion.pdf\">\n\t<span class=\"year\">Cambio de imagen corporativa de la Instituci\u00f3n<\/span>\n<\/a>          <\/div>\n                  <div class=\"item\">\n            <a class=\"btn btn-clear arrow blue\" href=\"https:\/\/bancobacc.com.do\/content\/uploads\/2018\/01\/2017-11-23_apertura_sucursal_santiago.pdf\" download=\"apertura-nueva-sucursal-en-santiago-de-los-caballeros.pdf\">\n\t<span class=\"year\">Apertura nueva sucursal en Santiago de los Caballeros<\/span>\n<\/a>          <\/div>\n                  <div class=\"item\">\n            <a class=\"btn btn-clear arrow blue\" href=\"https:\/\/bancobacc.com.do\/content\/uploads\/2018\/01\/2017-11-28_aprobacion_prospecto_preliminar_emision_bonos_corporativos.pdf\" download=\"aprobacion-de-prospecto-preliminar-de-emision-de-bonos-corporativos-por-dop-300-millones.pdf\">\n\t<span class=\"year\">Aprobaci\u00f3n de prospecto preliminar de emisi\u00f3n de bonos corporativos por DOP 300 millones<\/span>\n<\/a>          <\/div>\n              <\/div>\n      <div class=\"clearfix\"><\/div>\n    <\/div>\n  <\/div>\n<\/div><!-- end of financial-statements -->\n<\/div><\/div><\/div><\/div><\/div>","protected":false},"excerpt":{"rendered":"<p>Hechos relevantes<\/p>\n","protected":false},"author":2,"featured_media":0,"parent":0,"menu_order":0,"comment_status":"closed","ping_status":"closed","template":"","meta":[],"_links":{"self":[{"href":"https:\/\/bancobacc.com.do\/wp-json\/wp\/v2\/pages\/378"}],"collection":[{"href":"https:\/\/bancobacc.com.do\/wp-json\/wp\/v2\/pages"}],"about":[{"href":"https:\/\/bancobacc.com.do\/wp-json\/wp\/v2\/types\/page"}],"author":[{"embeddable":true,"href":"https:\/\/bancobacc.com.do\/wp-json\/wp\/v2\/users\/2"}],"replies":[{"embeddable":true,"href":"https:\/\/bancobacc.com.do\/wp-json\/wp\/v2\/comments?post=378"}],"version-history":[{"count":4,"href":"https:\/\/bancobacc.com.do\/wp-json\/wp\/v2\/pages\/378\/revisions"}],"predecessor-version":[{"id":488,"href":"https:\/\/bancobacc.com.do\/wp-json\/wp\/v2\/pages\/378\/revisions\/488"}],"wp:attachment":[{"href":"https:\/\/bancobacc.com.do\/wp-json\/wp\/v2\/media?parent=378"}],"curies":[{"name":"wp","href":"https:\/\/api.w.org\/{rel}","templated":true}]}}
+0
+
+
+
+
+https://bancobacc.com.do/wp-json/wp/v2/pages/378

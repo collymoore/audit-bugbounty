@@ -1,0 +1,68 @@
+GET /cms/wp-includes/wlwmanifest.xml HTTP/1.1
+Host: bancobacc.com.do
+User-Agent: Mozilla/5.0 (compatible; Osmedeus/v4; +https://github.com/j3ssie/osmedeus)
+Accept-Charset: utf-8
+Accept-Encoding: gzip
+
+HTTP/1.1 200 OK
+Connection: close
+Content-Length: 1045
+Accept-Ranges: bytes
+Cache-Control: s-maxage=10
+Content-Type: application/xml
+Date: Wed, 17 Sep 2025 03:22:28 GMT
+Last-Modified: Mon, 31 Jul 2023 21:35:10 GMT
+Referrer-Policy: no-referrer-when-downgrade
+Server: Apache
+Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+Upgrade: h2,h2c
+X-Permitted-Cross-Domain-Policies: none
+X-Xss-Protection: 1; mode=block
+
+<?xml version="1.0" encoding="utf-8" ?>
+
+<manifest xmlns="http://schemas.microsoft.com/wlw/manifest/weblog">
+
+  <options>
+    <clientType>WordPress</clientType>
+	<supportsKeywords>Yes</supportsKeywords>
+	<supportsGetTags>Yes</supportsGetTags>
+  </options>
+
+  <weblog>
+    <serviceName>WordPress</serviceName>
+    <imageUrl>images/wlw/wp-icon.png</imageUrl>
+    <watermarkImageUrl>images/wlw/wp-watermark.png</watermarkImageUrl>
+    <homepageLinkText>View site</homepageLinkText>
+    <adminLinkText>Dashboard</adminLinkText>
+    <adminUrl>
+      <![CDATA[
+			{blog-postapi-url}/../wp-admin/
+		]]>
+    </adminUrl>
+    <postEditingUrl>
+      <![CDATA[
+			{blog-postapi-url}/../wp-admin/post.php?action=edit&post={post-id}
+		]]>
+    </postEditingUrl>
+  </weblog>
+
+  <buttons>
+    <button>
+      <id>0</id>
+      <text>Manage Comments</text>
+      <imageUrl>images/wlw/wp-comments.png</imageUrl>
+      <clickUrl>
+        <![CDATA[
+				{blog-postapi-url}/../wp-admin/edit-comments.php
+			]]>
+      </clickUrl>
+    </button>
+
+  </buttons>
+
+</manifest>
+
+
+
+https://bancobacc.com.do/cms/wp-includes/wlwmanifest.xml

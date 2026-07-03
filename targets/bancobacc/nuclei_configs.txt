@@ -1,0 +1,2 @@
+[azure-domain-tenant] [http] [info] https://login.microsoftonline.com:443/bancobacc.com.do/v2.0/.well-known/openid-configuration ["f969783a-71a2-4526-96fa-42c05f0cf061"]
+[dockerfile-hidden-disclosure] [http] [medium] https://bancobacc.com.do/Dockerfile

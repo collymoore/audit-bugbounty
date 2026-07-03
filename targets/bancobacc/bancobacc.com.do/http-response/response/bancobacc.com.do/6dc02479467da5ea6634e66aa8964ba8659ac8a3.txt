@@ -1,0 +1,33 @@
+GET /wp-json/wp/v2/pages/57 HTTP/1.1
+Host: bancobacc.com.do
+User-Agent: Mozilla/5.0 (compatible; Osmedeus/v4; +https://github.com/j3ssie/osmedeus)
+Accept-Charset: utf-8
+Accept-Encoding: gzip
+
+HTTP/1.1 200 OK
+Connection: close
+Transfer-Encoding: chunked
+Access-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type
+Access-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link
+Allow: GET
+Content-Type: application/json; charset=UTF-8
+Date: Wed, 17 Sep 2025 03:22:39 GMT
+Link: <https://bancobacc.com.do/bienes-adjudicados/>; rel="alternate"; type=text/html
+Referrer-Policy: no-referrer-when-downgrade
+Server: Apache
+Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+Upgrade: h2,h2c
+Vary: Origin
+X-Content-Type-Options: nosniff
+X-Permitted-Cross-Domain-Policies: none
+X-Robots-Tag: noindex
+X-Xss-Protection: 1; mode=block
+
+f64
+{"id":57,"date":"2017-01-13T08:52:32","date_gmt":"2017-01-13T12:52:32","guid":{"rendered":"https:\/\/bancobacc.com.do\/?page_id=57"},"modified":"2024-03-15T11:21:19","modified_gmt":"2024-03-15T15:21:19","slug":"bienes-adjudicados","status":"publish","type":"page","link":"https:\/\/bancobacc.com.do\/bienes-adjudicados\/","title":{"rendered":"Bienes Adjudicados"},"content":{"rendered":"<div id=\"pl-57\"  class=\"panel-layout\" ><div id=\"pg-57-0\"  class=\"panel-grid panel-no-style\" ><div id=\"pgc-57-0-0\"  class=\"panel-grid-cell\" ><div id=\"panel-57-0-0-0\" class=\"so-panel widget widget_sow-editor panel-first-child panel-last-child\" data-index=\"0\" ><div\n\t\t\t\n\t\t\tclass=\"so-widget-sow-editor so-widget-sow-editor-base\"\n\t\t\t\n\t\t>\n<div class=\"siteorigin-widget-tinymce textwidget\">\n\t<p><img decoding=\"async\" loading=\"lazy\" class=\"alignright wp-image-400\" src=\"https:\/\/bancobacc.com.do\/content\/uploads\/2017\/01\/grand-cherokee-2016.jpeg\" alt=\"\" width=\"822\" height=\"457\" srcset=\"https:\/\/bancobacc.com.do\/content\/uploads\/2017\/01\/grand-cherokee-2016.jpeg 640w, https:\/\/bancobacc.com.do\/content\/uploads\/2017\/01\/grand-cherokee-2016-300x167.jpeg 300w\" sizes=\"(max-width: 822px) 100vw, 822px\" \/><\/p>\n<p>&nbsp;<\/p>\n<p><span style=\"font-family: tahoma, arial, helvetica, sans-serif;\"><strong><span style=\"font-size: 36pt; color: #005c90;\">Bienes Adjudicados!<\/span><\/strong><\/span><\/p>\n<p><strong>Tenemos una gran variedad de veh\u00edculos, nuevos y usados, de diversas marcas, modelos y a\u00f1o, disponibles en nuestra lista de bienes adjudicados.<\/strong><\/p>\n<p>&nbsp;<\/p>\n<p><span style=\"font-family: tahoma, arial, helvetica, sans-serif;\"><span style=\"font-size: 24px;\"><b>Cons\u00faltala<\/b><\/span><\/span><strong><span style=\"font-size: 18pt; font-family: tahoma, arial, helvetica, sans-serif;\">\u00a0ya!<\/span><\/strong><\/p>\n<p><a href=\"https:\/\/bancobacc.com.do\/content\/uploads\/2024\/03\/Listado-de-vehiculo-en-venta.pdf\">RELACION DE VEHICULOS EN VENTA FEBRERO 24<\/a><\/p>\n<p>&nbsp;<\/p>\n<p><strong>Favor cont\u00e1ctanos al siguiente n\u00famero en caso de presentar alg\u00fan inter\u00e9s por los veh\u00edculos mostrados..<\/strong><\/p>\n<p><strong>Tel.: 829-770-5569<span class=\"mdi mdi-phone\">\u00a0<\/span><\/strong><\/p>\n<\/div>\n<\/div><\/div><\/div><\/div><\/div>","protected":false},"excerpt":{"rendered":"<p>&nbsp; Bienes Adjudicados! Tenemos una gran variedad de veh\u00edculos, nuevos y usados, de diversas marcas, modelos y a\u00f1o, disponibles en nuestra lista de bienes adjudicados. &nbsp; Cons\u00faltala\u00a0ya! RELACION DE VEHICULOS EN VENTA FEBRERO 24 &nbsp; Favor cont\u00e1ctanos al siguiente n\u00famero en caso de presentar alg\u00fan inter\u00e9s por los veh\u00edculos mostrados.. Tel.: 829-770-5569\u00a0<\/p>\n","protected":false},"author":2,"featured_media":325,"parent":0,"menu_order":0,"comment_status":"closed","ping_status":"closed","template":"","meta":[],"_links":{"self":[{"href":"https:\/\/bancobacc.com.do\/wp-json\/wp\/v2\/pages\/57"}],"collection":[{"href":"https:\/\/bancobacc.com.do\/wp-json\/wp\/v2\/pages"}],"about":[{"href":"https:\/\/bancobacc.com.do\/wp-json\/wp\/v2\/types\/page"}],"author":[{"embeddable":true,"href":"https:\/\/bancobacc.com.do\/wp-json\/wp\/v2\/users\/2"}],"replies":[{"embeddable":true,"href":"https:\/\/bancobacc.com.do\/wp-json\/wp\/v2\/comments?post=57"}],"version-history":[{"count":76,"href":"https:\/\/bancobacc.com.do\/wp-json\/wp\/v2\/pages\/57\/revisions"}],"predecessor-version":[{"id":1906,"href":"https:\/\/bancobacc.com.do\/wp-json\/wp\/v2\/pages\/57\/revisions\/1906"}],"wp:featuredmedia":[{"embeddable":true,"href":"https:\/\/bancobacc.com.do\/wp-json\/wp\/v2\/media\/325"}],"wp:attachment":[{"href":"https:\/\/bancobacc.com.do\/wp-json\/wp\/v2\/media?parent=57"}],"curies":[{"name":"wp","href":"https:\/\/api.w.org\/{rel}","templated":true}]}}
+0
+
+
+
+
+https://bancobacc.com.do/wp-json/wp/v2/pages/57

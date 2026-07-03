@@ -1,0 +1,87 @@
+GET /content/themes/bacc/js/form-solicitar.js?ver=1.0 HTTP/1.1
+Host: bancobacc.com.do
+User-Agent: Mozilla/5.0 (compatible; Osmedeus/v4; +https://github.com/j3ssie/osmedeus)
+Accept-Charset: utf-8
+Accept-Encoding: gzip
+
+HTTP/1.1 200 OK
+Connection: close
+Content-Length: 2361
+Accept-Ranges: bytes
+Content-Type: application/javascript
+Date: Wed, 17 Sep 2025 03:22:30 GMT
+Last-Modified: Fri, 16 Jul 2021 14:11:42 GMT
+Referrer-Policy: no-referrer-when-downgrade
+Server: Apache
+Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+Upgrade: h2,h2c
+X-Permitted-Cross-Domain-Policies: none
+X-Xss-Protection: 1; mode=block
+
+(function($){
+    var moneyOptions = {
+        // prefix: 'RD$ ',
+        numeral: true,
+        numeralThousandsGroupStyle: 'thousand'
+    };
+    new Cleave('#car-price', moneyOptions);
+    new Cleave('#loan-amount', moneyOptions);
+    new Cleave('#company-salary', moneyOptions);
+    var phoneOptions = {
+        numericOnly: true,
+        delimiter: '-',
+        blocks: [3, 3, 4]
+    };
+    new Cleave('#phone-number', phoneOptions);
+    new Cleave('#phone-home', phoneOptions);
+
+    function justLetters(event) {
+        var key = event.keyCode;
+        return ((key >= 65 && key <= 90) || key == 8);
+    };
+    
+
+    var $inputsJustLetters = $('#full-name, #nacionality, #civil-status').on('keypress', function(e) {
+        return e.metaKey || // cmd/ctrl
+        e.which <= 0 || // arrow keys
+        e.which == 8 || // delete key
+        /[A-Za-z]/.test(String.fromCharCode(e.which)); // numbers
+    });
+
+    var $carMake = $('#car-make'), $carModel = $('#car-model'), $yearSelect = $('#car-year');
+    $carMake.selectpicker({
+        liveSearch: true
+    });
+    $carModel.selectpicker({
+        liveSearch: true
+    });
+    for(var year = new Date().getFullYear(), i = 0; i < 15; i++, year--){
+        $yearSelect.append('<option value="'+year+'">'+year+'</option>');
+    }
+    $yearSelect.selectpicker('refresh');
+    $.getJSON('http://www.carqueryapi.com/api/0.3/?cmd=getMakes&callback=?',function (response) {
+        $.each(response.Makes, function(index, make){
+            $carMake.append('<option value="'+make.make_id+'">'+make.make_display+'</option>');
+        });
+        $carMake.selectpicker('refresh');
+    });
+    $carMake.on('change',function(){
+        var $firstOption = $carModel.children().eq(0).detach();
+        if($(this).val() === ''){
+            $carModel.empty();
+            $carModel.append($firstOption);
+        }else{
+            $.getJSON('http://www.carqueryapi.com/api/0.3/?cmd=getModels&make='+$(this).val()+'&callback=?',function (response) {
+                $carModel.empty();
+                $carModel.append($firstOption);
+                $.each(response.Models, function(index, model){
+                    $carModel.append('<option value="'+model.model_name+'">'+model.model_name+'</option>');
+                });
+                $carModel.selectpicker('refresh');
+            });
+        }
+    });
+})(jQuery);
+
+
+https://bancobacc.com.do/content/themes/bacc/js/form-solicitar.js?ver=1.0

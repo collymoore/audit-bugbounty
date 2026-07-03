@@ -1,0 +1,220 @@
+GET /dealers/feed/ HTTP/1.1
+Host: bancobacc.com.do
+User-Agent: Mozilla/5.0 (compatible; Osmedeus/v4; +https://github.com/j3ssie/osmedeus)
+Accept-Charset: utf-8
+Accept-Encoding: gzip
+
+HTTP/1.1 200 OK
+Connection: close
+Transfer-Encoding: chunked
+Content-Type: application/rss+xml; charset=UTF-8
+Date: Wed, 17 Sep 2025 03:22:32 GMT
+Etag: "5ea14d2f336a6fc9f51d53ef902ad215"
+Last-Modified: Wed, 09 Jul 2025 21:08:30 GMT
+Link: <https://bancobacc.com.do/wp-json/>; rel="https://api.w.org/", <https://bancobacc.com.do/dealers/>; rel="canonical"
+Referrer-Policy: no-referrer-when-downgrade
+Server: Apache
+Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+Upgrade: h2,h2c
+X-Permitted-Cross-Domain-Policies: none
+X-Xss-Protection: 1; mode=block
+
+247f
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Dealers Archive - Banco BACC</title>
+	<atom:link href="https://bancobacc.com.do/dealers/feed/" rel="self" type="application/rss+xml" />
+	<link>https://bancobacc.com.do/dealers/</link>
+	<description>Icono resumen</description>
+	<lastBuildDate>Tue, 27 Nov 2018 15:21:44 +0000</lastBuildDate>
+	<language>es</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	
+
+<image>
+	<url>https://bancobacc.com.do/content/uploads/2023/08/cropped-Icono-de-la-App-Google.-96x96-px-32x32.png</url>
+	<title>Dealers Archive - Banco BACC</title>
+	<link>https://bancobacc.com.do/dealers/</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
+	<item>
+		<title>Arismendy Motors</title>
+		<link>https://bancobacc.com.do/dealer/arismendy-motors/</link>
+		
+		<dc:creator><![CDATA[Soporte GBH]]></dc:creator>
+		<pubDate>Wed, 11 Jan 2017 15:03:56 +0000</pubDate>
+				<guid isPermaLink="false">https://bancobacc.com.do/?post_type=dealer&#038;p=49</guid>
+
+					<description><![CDATA[<p>La entrada <a rel="nofollow" href="https://bancobacc.com.do/dealer/arismendy-motors/">Arismendy Motors</a> aparece primero en <a rel="nofollow" href="https://bancobacc.com.do">Banco BACC</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>La entrada <a rel="nofollow" href="https://bancobacc.com.do/dealer/arismendy-motors/">Arismendy Motors</a> aparece primero en <a rel="nofollow" href="https://bancobacc.com.do">Banco BACC</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Auto Haus</title>
+		<link>https://bancobacc.com.do/dealer/auto-haus/</link>
+		
+		<dc:creator><![CDATA[Soporte BACC]]></dc:creator>
+		<pubDate>Thu, 15 Nov 2018 18:16:41 +0000</pubDate>
+				<guid isPermaLink="false">https://bancobacc.com.do/?post_type=dealer&#038;p=868</guid>
+
+					<description><![CDATA[<p>La entrada <a rel="nofollow" href="https://bancobacc.com.do/dealer/auto-haus/">Auto Haus</a> aparece primero en <a rel="nofollow" href="https://bancobacc.com.do">Banco BACC</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>La entrada <a rel="nofollow" href="https://bancobacc.com.do/dealer/auto-haus/">Auto Haus</a> aparece primero en <a rel="nofollow" href="https://bancobacc.com.do">Banco BACC</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>B F Motors, SRL.</title>
+		<link>https://bancobacc.com.do/dealer/b-f-motors-srl/</link>
+		
+		<dc:creator><![CDATA[Soporte BACC]]></dc:creator>
+		<pubDate>Tue, 27 Nov 2018 15:16:28 +0000</pubDate>
+				<guid isPermaLink="false">https://bancobacc.com.do/?post_type=dealer&#038;p=878</guid>
+
+					<description><![CDATA[<p>La entrada <a rel="nofollow" href="https://bancobacc.com.do/dealer/b-f-motors-srl/">B F Motors, SRL.</a> aparece primero en <a rel="nofollow" href="https://bancobacc.com.do">Banco BACC</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>La entrada <a rel="nofollow" href="https://bancobacc.com.do/dealer/b-f-motors-srl/">B F Motors, SRL.</a> aparece primero en <a rel="nofollow" href="https://bancobacc.com.do">Banco BACC</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Capital Auto Import SRL.</title>
+		<link>https://bancobacc.com.do/dealer/capital-auto-import-srl/</link>
+		
+		<dc:creator><![CDATA[Soporte BACC]]></dc:creator>
+		<pubDate>Tue, 27 Nov 2018 15:21:44 +0000</pubDate>
+				<guid isPermaLink="false">https://bancobacc.com.do/?post_type=dealer&#038;p=879</guid>
+
+					<description><![CDATA[<p>La entrada <a rel="nofollow" href="https://bancobacc.com.do/dealer/capital-auto-import-srl/">Capital Auto Import SRL.</a> aparece primero en <a rel="nofollow" href="https://bancobacc.com.do">Banco BACC</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>La entrada <a rel="nofollow" href="https://bancobacc.com.do/dealer/capital-auto-import-srl/">Capital Auto Import SRL.</a> aparece primero en <a rel="nofollow" href="https://bancobacc.com.do">Banco BACC</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>German Auto</title>
+		<link>https://bancobacc.com.do/dealer/german-auto/</link>
+		
+		<dc:creator><![CDATA[Soporte GBH]]></dc:creator>
+		<pubDate>Fri, 05 Jan 2018 15:56:49 +0000</pubDate>
+				<guid isPermaLink="false">http://bancobacc.com.do/?post_type=dealer&#038;p=419</guid>
+
+					<description><![CDATA[<p>La entrada <a rel="nofollow" href="https://bancobacc.com.do/dealer/german-auto/">German Auto</a> aparece primero en <a rel="nofollow" href="https://bancobacc.com.do">Banco BACC</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>La entrada <a rel="nofollow" href="https://bancobacc.com.do/dealer/german-auto/">German Auto</a> aparece primero en <a rel="nofollow" href="https://bancobacc.com.do">Banco BACC</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Grupo Viamar</title>
+		<link>https://bancobacc.com.do/dealer/grupo-viamar/</link>
+		
+		<dc:creator><![CDATA[Soporte GBH]]></dc:creator>
+		<pubDate>Fri, 05 Jan 2018 16:12:22 +0000</pubDate>
+				<guid isPermaLink="false">http://bancobacc.com.do/?post_type=dealer&#038;p=422</guid>
+
+					<description><![CDATA[<p>La entrada <a rel="nofollow" href="https://bancobacc.com.do/dealer/grupo-viamar/">Grupo Viamar</a> aparece primero en <a rel="nofollow" href="https://bancobacc.com.do">Banco BACC</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>La entrada <a rel="nofollow" href="https://bancobacc.com.do/dealer/grupo-viamar/">Grupo Viamar</a> aparece primero en <a rel="nofollow" href="https://bancobacc.com.do">Banco BACC</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>MINI &#8211; Magna Motors S.A.</title>
+		<link>https://bancobacc.com.do/dealer/mini-magna-motors-s/</link>
+		
+		<dc:creator><![CDATA[Soporte GBH]]></dc:creator>
+		<pubDate>Wed, 11 Jan 2017 15:05:23 +0000</pubDate>
+				<guid isPermaLink="false">https://bancobacc.com.do/?post_type=dealer&#038;p=50</guid>
+
+					<description><![CDATA[<p>La entrada <a rel="nofollow" href="https://bancobacc.com.do/dealer/mini-magna-motors-s/">MINI &#8211; Magna Motors S.A.</a> aparece primero en <a rel="nofollow" href="https://bancobacc.com.do">Banco BACC</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>La entrada <a rel="nofollow" href="https://bancobacc.com.do/dealer/mini-magna-motors-s/">MINI &#8211; Magna Motors S.A.</a> aparece primero en <a rel="nofollow" href="https://bancobacc.com.do">Banco BACC</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Peynado Ga</title>
+		<link>https://bancobacc.com.do/dealer/peynado-ga/</link>
+		
+		<dc:creator><![CDATA[Soporte GBH]]></dc:creator>
+		<pubDate>Fri, 05 Jan 2018 16:04:34 +0000</pubDate>
+				<guid isPermaLink="false">http://bancobacc.com.do/?post_type=dealer&#038;p=420</guid>
+
+					<description><![CDATA[<p>La entrada <a rel="nofollow" href="https://bancobacc.com.do/dealer/peynado-ga/">Peynado Ga</a> aparece primero en <a rel="nofollow" href="https://bancobacc.com.do">Banco BACC</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>La entrada <a rel="nofollow" href="https://bancobacc.com.do/dealer/peynado-ga/">Peynado Ga</a> aparece primero en <a rel="nofollow" href="https://bancobacc.com.do">Banco BACC</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Rama Autos SRL</title>
+		<link>https://bancobacc.com.do/dealer/rama-autos-srl/</link>
+		
+		<dc:creator><![CDATA[Soporte GBH]]></dc:creator>
+		<pubDate>Fri, 05 Jan 2018 16:11:43 +0000</pubDate>
+				<guid isPermaLink="false">http://bancobacc.com.do/?post_type=dealer&#038;p=421</guid>
+
+					<description><![CDATA[<p>La entrada <a rel="nofollow" href="https://bancobacc.com.do/dealer/rama-autos-srl/">Rama Autos SRL</a> aparece primero en <a rel="nofollow" href="https://bancobacc.com.do">Banco BACC</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>La entrada <a rel="nofollow" href="https://bancobacc.com.do/dealer/rama-autos-srl/">Rama Autos SRL</a> aparece primero en <a rel="nofollow" href="https://bancobacc.com.do">Banco BACC</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Valdez Motors, SRL.</title>
+		<link>https://bancobacc.com.do/dealer/valdez-motors-srl/</link>
+		
+		<dc:creator><![CDATA[Soporte BACC]]></dc:creator>
+		<pubDate>Tue, 27 Nov 2018 15:05:32 +0000</pubDate>
+				<guid isPermaLink="false">https://bancobacc.com.do/?post_type=dealer&#038;p=875</guid>
+
+					<description><![CDATA[<p>La entrada <a rel="nofollow" href="https://bancobacc.com.do/dealer/valdez-motors-srl/">Valdez Motors, SRL.</a> aparece primero en <a rel="nofollow" href="https://bancobacc.com.do">Banco BACC</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>La entrada <a rel="nofollow" href="https://bancobacc.com.do/dealer/valdez-motors-srl/">Valdez Motors, SRL.</a> aparece primero en <a rel="nofollow" href="https://bancobacc.com.do">Banco BACC</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>
+
+0
+
+
+
+
+https://bancobacc.com.do/dealers/feed/

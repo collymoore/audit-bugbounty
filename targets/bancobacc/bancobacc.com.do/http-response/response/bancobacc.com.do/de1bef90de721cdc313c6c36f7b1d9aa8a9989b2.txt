@@ -1,0 +1,194 @@
+GET /content/themes/bacc/js/calculator.js?ver=1.0 HTTP/1.1
+Host: bancobacc.com.do
+User-Agent: Mozilla/5.0 (compatible; Osmedeus/v4; +https://github.com/j3ssie/osmedeus)
+Accept-Charset: utf-8
+Accept-Encoding: gzip
+
+HTTP/1.1 200 OK
+Connection: close
+Content-Length: 6744
+Accept-Ranges: bytes
+Content-Type: application/javascript
+Date: Wed, 17 Sep 2025 03:22:30 GMT
+Last-Modified: Fri, 16 Jul 2021 14:11:42 GMT
+Referrer-Policy: no-referrer-when-downgrade
+Server: Apache
+Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+Upgrade: h2,h2c
+X-Permitted-Cross-Domain-Policies: none
+X-Xss-Protection: 1; mode=block
+
+(function ($) {
+    var Calculate = {
+        /**
+         * @param {Number} amount
+         * @param {Number} rate in percentage
+         * @param {Number} months number of months
+         * @returns {Number} the monthly payment
+         */
+        monthlyFee: function (amount, rate, months) {
+            var fee = 0;
+            var total = 0;
+            if(!rate) rate = 6
+
+            if (!amount) {
+                amount = 0;
+            }
+            var interest = (rate / 100 / 12);
+            var top = (amount * interest);
+            var subBottom = ((rate - 1) >= 0) ? Math.pow(1 + interest, months) : interest + 1;
+            var bottom = 1 - (1 / subBottom);
+            fee = top / bottom;
+            total = fee * months;
+
+            if(isFinite(fee) && isFinite(total)) {
+                return {
+                    fee: fee,
+                    total: total
+                };
+            }
+
+            else return { fee: 0.00, total: 0.00}
+        },
+        /**
+         * Future Value. Aport from the FV function on Excel 
+         * @param {Number} amout Your capital
+         * @param {Number} interest The rate
+         * @param {Number} months The lifespan of the CD
+         * @returns {Number} Future value of the investment based on a constant interest rate
+         */
+        _futureValue: function (amount, rate, months) {
+            return (amount > 0) ? Number(amount * (Math.pow((1 + rate / 100), months))) : Number(amount);
+        },
+
+        /**
+         * Certificate Deposit Recapitalisable
+         * @param {Number} amount 
+         * @param {Number} rate 
+         * @param {Number} months
+         * @returns capital + interests earned using compound interest method
+         */
+        recapitalisable: function (amount, rate, months) {
+            var fee = (((rate / 100) / 360) * 30);
+            var feePlusOne = fee + 1;
+            var elevate = Math.pow(fee + 1, months);
+            var total = amount * (elevate);
+
+            return Number(total);
+        },
+
+        /**
+         * Certificate Deposit Simple Interest
+         * @param {Number} amount
+         * @param {Number} rate
+         * @param {Number} months
+         * @returns {Number} The amount at the end of the period.
+         */
+        simpleInterest: function (amount, rate, months) {
+            return (amount > 0) ? Number(amount) + (amount * (((rate / 100) / 360)) * months) : 0;
+        },
+
+        /**
+         * CleaveJS Configuration Object
+         */
+        CLEAVE_CONFIG: {
+            prefix: 'RD$',
+            rawValueTrimPrefix: true,
+            numeral: true,
+            numeralThousandsGroupStyle: 'thousand'
+        },
+
+        PERCENTAGE_CLEAVE_CONFIG: {
+            rawValueTrimPrefix: true,
+            numeral: true,
+            numeralThousandsGroupStyle: 'thousand',
+            format: "%v%s"
+
+        },
+
+        DEFAULT_CLEAVE_CONFIG: {
+            rawValueTrimPrefix: true,
+            numeral: true,
+            numeralThousandsGroupStyle: 'thousand',
+            format: "%s%v"
+        },
+
+        /**
+         * AccountingJS Configuration Object
+         */
+        ACCOUNTING_CONFIG: {
+            symbol: "RD$",
+            decimal: ".",
+            thousand: ",",
+            precision: 2,
+            format: "%s%v"
+        }
+    };
+
+    $(document).ready(function () {
+        $('[data-toggle="tooltip"]').tooltip();
+        if ($('#finance-rate, #finance-time').val() <= 0) {
+            $('#finance-rate, #finance-time').val();
+        }
+        if ($('#finance-amount').length) {
+            var financeAmount = new Cleave('#finance-amount', Calculate.CLEAVE_CONFIG);
+            var vehicleValue = new Cleave('#vehicle-value', Calculate.CLEAVE_CONFIG);
+
+            $(document).on('keyup blur change', '#finance-amount, #finance-rate, #finance-time', '#certificate-type', function () {
+                if (!$('#finance-rate').val() || !$('#finance-time').val()) {
+                    $('#finance-rate').val();
+                    $('#finance-time').val();
+                    $('#monthly-payment,#total-payments').addClass('amount-smaller').removeClass('amount-small');;
+
+                    if($('#monthly-payment').text().length) {
+                        $('#monthly-payment,#total-payments').addClass('amount-smaller');
+                    }
+                }
+                var amount = Calculate.monthlyFee(
+                    financeAmount.getRawValue() * 1,
+                    Number($('#finance-rate').val()) * 1,
+                    Number($('#finance-time').val())  * 1
+                );
+
+                $('#monthly-payment').text('RD$' + amount.fee.toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,'));
+                $('#total-payments').text('RD$' + amount.total.toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,'));
+
+            });
+        } else if ($('#investment-amount').length) {
+            var investmentAmount = new Cleave('#investment-amount', Calculate.CLEAVE_CONFIG);
+
+            var financeRate = new Cleave('#finance-rate', Calculate.PERCENTAGE_CLEAVE_CONFIG);
+            var financeTime = new Cleave('#finance-time', Calculate.DEFAULT_CLEAVE_CONFIG);
+
+            $('#investment-amount, #finance-rate, #finance-time, #certificate-type').on('keyup blur change', function () {
+                var amount = 0;
+
+                if ($('#certificate-type').val().toLowerCase() === 'capitalizable') {
+                    amount = Calculate.recapitalisable(
+                        investmentAmount.getRawValue() * 1,
+                        Number(financeRate.getRawValue()) * 1,
+                        Number(financeTime.getRawValue()) * 1,
+                    );
+                } else {
+                    amount = Calculate.simpleInterest(
+                        investmentAmount.getRawValue(),
+                        Number(financeRate.getRawValue()) * 1,
+                        Number(financeTime.getRawValue()) * 1,
+                    );
+                }
+                if (amount > 99999999.99 && amount < 9999999999.99) {
+                    $('#monthly-payment').addClass('amount-small').removeClass('amount-smaller');
+
+                } else if (amount > 999999999.99) {
+                    $('#monthly-payment').addClass('amount-smaller').removeClass('amount-small');
+                } else {
+                    $('#monthly-payment').removeClass('amount-smaller amount-small');
+                }
+                $('#monthly-payment').text('RD$' + amount.toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,'));
+            });
+        }
+    });
+})(jQuery);
+
+
+https://bancobacc.com.do/content/themes/bacc/js/calculator.js?ver=1.0

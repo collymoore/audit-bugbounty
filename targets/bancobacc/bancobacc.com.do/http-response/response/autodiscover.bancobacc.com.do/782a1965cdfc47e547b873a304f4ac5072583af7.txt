@@ -1,0 +1,27 @@
+GET / HTTP/1.1
+Host: autodiscover.bancobacc.com.do
+User-Agent: Mozilla/5.0 (compatible; Osmedeus/v4; +https://github.com/j3ssie/osmedeus)
+Accept-Charset: utf-8
+Accept-Encoding: gzip
+
+HTTP/1.1 301 Moved Permanently
+Connection: close
+Cache-Control: no-cache
+Date: Wed, 17 Sep 2025 03:22:27 GMT
+Location: https://outlook.office365.com/mail/?realm=bancobacc.com.do&vd=autodiscover
+Ms-Cv: yuJ2mgTcJ8K1JcY2N5BXHA.0
+Pragma: no-cache
+Request-Id: 9a76e2ca-dc04-c227-b525-c6363790571c
+Server: Microsoft-IIS/10.0
+X-Feefzinfo: MNZ
+X-Feproxyinfo: MN2PR22CA0001.NAMPRD22.PROD.OUTLOOK.COM
+X-Feserver: MN2PR22CA0001
+X-Feserver: MN2PR22CA0001
+X-Powered-By: ASP.NET
+X-Requestid: a4c1a547-9c99-4721-9d49-11a9b33de809
+Content-Length: 0
+
+
+
+
+http://autodiscover.bancobacc.com.do

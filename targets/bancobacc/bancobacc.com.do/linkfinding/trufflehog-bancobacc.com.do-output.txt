@@ -1,0 +1,32 @@
+🐷🔑🐷  TruffleHog. Unearth your secrets. 🐷🔑🐷
+
+2025-09-16T23:23:44-04:00	info-0	trufflehog	running source	{"source_manager_worker_id": "JBJGq", "with_units": true}
+Found unverified result 🐷🔑❓
+Detector Type: URI
+Decoder Type: PLAIN
+Raw result: https://mailto:gestionhumana@bancobacc.com.do
+File: /home/nmoore/workspaces-osmedeus/bancobacc.com.do/http-response/response/bancobacc.com.do/ab26a95010e0b8fc5bcb6c4f0d4f61f4e8f174a8.txt
+Line: 164
+
+Found unverified result 🐷🔑❓
+Detector Type: URI
+Decoder Type: PLAIN
+Raw result: https://mailto:gestionhumana@bancobacc.com.do
+File: /home/nmoore/workspaces-osmedeus/bancobacc.com.do/http-response/response/bancobacc.com.do/ab26a95010e0b8fc5bcb6c4f0d4f61f4e8f174a8.txt
+Line: 16
+
+Found unverified result 🐷🔑❓
+Detector Type: URI
+Decoder Type: PLAIN
+Raw result: http://mailto:gestionhumana@bancobacc.com.do
+File: /home/nmoore/workspaces-osmedeus/bancobacc.com.do/http-response/response/index.txt
+Line: 28
+
+Found unverified result 🐷🔑❓
+Detector Type: URI
+Decoder Type: PLAIN
+Raw result: https://mailto:gestionhumana@bancobacc.com.do
+File: /home/nmoore/workspaces-osmedeus/bancobacc.com.do/http-response/response/index.txt
+Line: 32
+
+2025-09-16T23:23:46-04:00	info-0	trufflehog	finished scanning	{"chunks": 1845, "bytes": 21732338, "verified_secrets": 0, "unverified_secrets": 4, "scan_duration": "1.889101677s", "trufflehog_version": "3.90.6", "verification_caching": {"Hits":0,"Misses":3,"HitsWasted":0,"AttemptsSaved":0,"VerificationTimeSpentMS":4165}}
