@@ -1,0 +1,85 @@
+
+    <html>
+        <head>
+            <title>Internal Server Error</title>
+            
+            <link type="text/css" rel="stylesheet" href="/web/content/4898853-7cb8241/web.assets_common.0.css"/>
+            <link type="text/css" rel="stylesheet" href="/web/content/3175448-f32baa5/web.assets_frontend.0.css"/>
+            <link type="text/css" rel="stylesheet" href="/web/content/3175449-f32baa5/web.assets_frontend.1.css"/>
+            <script type="text/javascript" src="/web/content/4898856-7cb8241/web.assets_common.js"></script>
+            <script type="text/javascript" src="/web/content/3175454-f32baa5/web.assets_frontend.js"></script>
+            <script>
+                $(document).ready(function() {
+                    var button = $('#reset_templates_button');
+                    button.click(function() {
+                        var dialog = $('#reset_template_confirmation').modal('show');
+                        var input = dialog.find('input[type="text"]').val('').focus();
+                        var dialog_form = dialog.find('form');
+                        dialog_form.submit(function() {
+                            if (input.val() == dialog.find('.confirm_word').text()) {
+                                dialog.modal('hide');
+                                button.prop('disabled', true).text('Working...');
+                                $('#reset_templates_form').trigger('submit');
+                            } else {
+                                input.val('').focus();
+                            }
+                            return false;
+                        });
+                        return false;
+                    });
+                });
+            </script>
+        </head>
+        <body>
+            <div id="reset_template_confirmation" class="modal" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog">
+                    <form class="form-horizontal" role="form">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                            <h3 class="modal-title">Restablecer las plantillas</h3>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-group mb0">
+                                <label for="page-name" class="col-sm-9">
+                                    <p>Las plantillas seleccionadas serán restablecidas a su configuración predeterminada.</p>
+                                    <p>Escriba '<i class="confirm_word">si</i>' a continuación si quiere confirmar.</p>
+                                </label>
+                                <div class="col-sm-3 mt16">
+                                    <input type="text" class="form-control" required="required" placeholder="sí"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <input type="submit" value="Confirm" class="btn btn-primary"/>
+                            <button type="button" class="btn" data-dismiss="modal" aria-hidden="true">Cancelar</button>
+                        </div>
+                    </div>
+                    </form>
+                </div>
+            </div>
+
+            <div id="wrapwrap">
+                <header>
+                    <div class="navbar navbar-default navbar-static-top">
+                        <div class="container">
+                            <div class="collapse navbar-collapse navbar-top-collapse">
+                                <ul class="nav navbar-nav navbar-right" id="top_menu">
+                                    <li><a href="/">Inicio</a></li>
+                                    <li><a href="javascript: window.history.back()">Atrás</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+                <main>
+                    <div class="oe_structure">
+                        <h1 class="container mt32">500: Internal Server Error</h1>
+                    </div>
+                    
+
+                    
+                </main>
+            </div>
+        </body>
+    </html>

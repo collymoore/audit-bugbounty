@@ -1,0 +1,1238 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NSI-SA-2026-006 — CardNET Security Assessment</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+  --bg: #0a0e17;
+  --surface: #111827;
+  --surface2: #1a2332;
+  --border: #1e293b;
+  --text: #e2e8f0;
+  --text-dim: #94a3b8;
+  --red: #ef4444;
+  --orange: #f97316;
+  --yellow: #eab308;
+  --green: #22c55e;
+  --blue: #3b82f6;
+  --cyan: #06b6d4;
+  --accent: #8b5cf6;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+}
+
+/* HEADER */
+.header {
+  background: linear-gradient(135deg, #0a0e17 0%, #1a0a2e 50%, #0a0e17 100%);
+  border-bottom: 1px solid var(--border);
+  padding: 60px 40px 40px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.header::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at 50% 50%, rgba(139,92,246,0.03) 0%, transparent 60%);
+  animation: pulse 8s ease-in-out infinite;
+}
+@keyframes pulse { 0%,100% { opacity: 0.4; } 50% { opacity: 0.8; } }
+.header-content { position: relative; z-index: 1; }
+.header-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--red), var(--orange));
+  color: white;
+  padding: 6px 20px;
+  border-radius: 100px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.header h1 {
+  font-size: 42px;
+  font-weight: 900;
+  background: linear-gradient(135deg, #fff 0%, #a78bfa 50%, #818cf8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 8px;
+}
+.header .subtitle {
+  font-size: 20px;
+  color: var(--text-dim);
+  font-weight: 400;
+  margin-bottom: 4px;
+}
+.header .meta {
+  color: var(--text-dim);
+  font-size: 14px;
+  margin-top: 16px;
+}
+.header .meta span {
+  display: inline-block;
+  margin: 0 16px;
+}
+.header .meta strong { color: var(--text); }
+
+/* SEVERITY BANNER */
+.severity-banner {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  padding: 24px 40px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  flex-wrap: wrap;
+}
+.severity-box {
+  text-align: center;
+  padding: 12px 28px;
+  border-radius: 12px;
+  min-width: 120px;
+}
+.severity-box.critical {
+  background: rgba(239,68,68,0.12);
+  border: 1px solid rgba(239,68,68,0.3);
+}
+.severity-box.high {
+  background: rgba(249,115,22,0.12);
+  border: 1px solid rgba(249,115,22,0.3);
+}
+.severity-box.medium {
+  background: rgba(234,179,8,0.12);
+  border: 1px solid rgba(234,179,8,0.3);
+}
+.severity-box.info {
+  background: rgba(59,130,246,0.12);
+  border: 1px solid rgba(59,130,246,0.3);
+}
+.severity-box .num {
+  font-size: 36px;
+  font-weight: 800;
+  line-height: 1;
+}
+.severity-box.critical .num { color: var(--red); }
+.severity-box.high .num { color: var(--orange); }
+.severity-box.medium .num { color: var(--yellow); }
+.severity-box.info .num { color: var(--blue); }
+.severity-box .label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-dim);
+  margin-top: 4px;
+}
+
+/* NAV */
+.nav {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  padding: 0 40px;
+  overflow-x: auto;
+  white-space: nowrap;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.nav a {
+  display: inline-block;
+  padding: 16px 20px;
+  color: var(--text-dim);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s;
+}
+.nav a:hover {
+  color: var(--text);
+  border-bottom-color: var(--accent);
+}
+
+/* CONTENT */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+
+.section {
+  margin-bottom: 48px;
+}
+.section h2 {
+  font-size: 28px;
+  font-weight: 800;
+  margin-bottom: 24px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+.section h2 .severe { color: var(--red); }
+.section h2 .warn { color: var(--orange); }
+.section h2 .note { color: var(--blue); }
+
+.section h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 32px 0 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cve-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0;
+  font-size: 14px;
+}
+.cve-table th {
+  background: var(--surface2);
+  padding: 10px 14px;
+  text-align: left;
+  font-weight: 600;
+  color: var(--text-dim);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 1px solid var(--border);
+}
+.cve-table td {
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+.cve-table tr:hover td { background: rgba(139,92,246,0.03); }
+
+.cve-table .cvss-critical { color: var(--red); font-weight: 700; }
+.cve-table .cvss-high { color: var(--orange); font-weight: 700; }
+.cve-table .cvss-medium { color: var(--yellow); font-weight: 600; }
+.cve-table .cvss-low { color: var(--text-dim); }
+
+.findings-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 16px;
+  margin: 20px 0;
+}
+.finding-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+  transition: all 0.2s;
+}
+.finding-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+.finding-card.critical { border-left: 3px solid var(--red); }
+.finding-card.high { border-left: 3px solid var(--orange); }
+.finding-card.medium { border-left: 3px solid var(--yellow); }
+.finding-card.info { border-left: 3px solid var(--blue); }
+.finding-card .sev-tag {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 3px 10px;
+  border-radius: 100px;
+  margin-bottom: 8px;
+}
+.finding-card.critical .sev-tag { background: rgba(239,68,68,0.15); color: var(--red); }
+.finding-card.high .sev-tag { background: rgba(249,115,22,0.15); color: var(--orange); }
+.finding-card.medium .sev-tag { background: rgba(234,179,8,0.15); color: var(--yellow); }
+.finding-card.info .sev-tag { background: rgba(59,130,246,0.15); color: var(--blue); }
+.finding-card h4 {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+.finding-card p {
+  font-size: 13px;
+  color: var(--text-dim);
+  line-height: 1.5;
+}
+
+/* CODE BLOCKS */
+pre {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px 20px;
+  overflow-x: auto;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  line-height: 1.6;
+  margin: 12px 0;
+  position: relative;
+}
+pre .prompt { color: var(--green); }
+pre .cmd { color: var(--text); }
+pre .resp { color: var(--cyan); }
+code {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  background: var(--surface2);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+/* INFO BOXES */
+.info-box {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px 24px;
+  margin: 16px 0;
+}
+.info-box.red { border-left: 3px solid var(--red); }
+.info-box.orange { border-left: 3px solid var(--orange); }
+.info-box.yellow { border-left: 3px solid var(--yellow); }
+.info-box.blue { border-left: 3px solid var(--blue); }
+
+.attack-chain {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+  margin: 16px 0;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  line-height: 1.8;
+}
+.attack-chain .phase {
+  color: var(--accent);
+  font-weight: 700;
+}
+.attack-chain .step { color: var(--text); }
+.attack-chain .arrow { color: var(--text-dim); }
+
+/* MATRIX TABLE */
+.matrix {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0;
+  font-size: 13px;
+}
+.matrix th {
+  background: var(--surface2);
+  padding: 10px 14px;
+  text-align: left;
+  font-weight: 600;
+  color: var(--text-dim);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 1px solid var(--border);
+}
+.matrix td {
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--border);
+}
+.matrix .sev-dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 6px;
+}
+
+/* EOL TIMELINE */
+.timeline {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 20px 0;
+  flex-wrap: wrap;
+}
+.timeline-item {
+  flex: 1;
+  min-width: 140px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px;
+  text-align: center;
+  position: relative;
+}
+.timeline-item::after {
+  content: '→';
+  position: absolute;
+  right: -14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-dim);
+  font-size: 18px;
+}
+.timeline-item:last-child::after { display: none; }
+.timeline-item .date {
+  font-size: 11px;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.timeline-item .product {
+  font-size: 14px;
+  font-weight: 700;
+  margin: 4px 0;
+}
+.timeline-item .status {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 2px 10px;
+  border-radius: 100px;
+  display: inline-block;
+}
+.timeline-item .status.expired { background: rgba(239,68,68,0.15); color: var(--red); }
+.timeline-item .status.warning { background: rgba(249,115,22,0.15); color: var(--orange); }
+
+/* FOOTER */
+.footer {
+  text-align: center;
+  padding: 40px;
+  border-top: 1px solid var(--border);
+  color: var(--text-dim);
+  font-size: 13px;
+}
+.footer strong { color: var(--text); }
+
+/* SERVICE GRID */
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 14px;
+  margin: 16px 0;
+}
+.service-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px;
+}
+.service-card h4 {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+.service-card .url {
+  font-size: 12px;
+  color: var(--cyan);
+  font-family: 'JetBrains Mono', monospace;
+  margin-bottom: 8px;
+  word-break: break-all;
+}
+.service-card .stack {
+  font-size: 12px;
+  color: var(--text-dim);
+}
+.service-card .stack strong { color: var(--text); }
+
+/* INFRA TABLE */
+.infra-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0;
+  font-size: 13px;
+}
+.infra-table th {
+  background: var(--surface2);
+  padding: 8px 12px;
+  text-align: left;
+  font-weight: 600;
+  color: var(--text-dim);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 1px solid var(--border);
+}
+.infra-table td {
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+.infra-table .waf-yes { color: var(--green); }
+.infra-table .waf-no { color: var(--red); }
+
+@media (max-width: 768px) {
+  .header h1 { font-size: 28px; }
+  .header { padding: 40px 20px 30px; }
+  .nav { padding: 0 16px; }
+  .container { padding: 24px 16px; }
+  .findings-grid { grid-template-columns: 1fr; }
+  .timeline-item::after { display: none; }
+  .timeline { flex-direction: column; }
+}
+
+.rec-list {
+  list-style: none;
+  counter-reset: rec;
+  margin: 16px 0;
+}
+.rec-list li {
+  counter-increment: rec;
+  padding: 12px 16px 12px 52px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  margin-bottom: 8px;
+  position: relative;
+  font-size: 14px;
+}
+.rec-list li::before {
+  content: counter(rec);
+  position: absolute;
+  left: 12px;
+  top: 12px;
+  width: 28px;
+  height: 28px;
+  background: var(--accent);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 700;
+}
+.rec-list li.p0::before { background: var(--red); }
+.rec-list li.p1::before { background: var(--orange); }
+.rec-list li.p2::before { background: var(--blue); }
+.rec-list li .rec-tag {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin-left: 8px;
+  text-transform: uppercase;
+}
+.rec-list li .rec-tag.critical { background: rgba(239,68,68,0.15); color: var(--red); }
+.rec-list li .rec-tag.high { background: rgba(249,115,22,0.15); color: var(--orange); }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="header-content">
+    <div class="header-badge">🔴 Security Assessment</div>
+    <h1>CardNET Security Assessment</h1>
+    <div class="subtitle">Consorcio de Tarjetas Dominicanas S.A.</div>
+    <div class="meta">
+      <span><strong>Report ID:</strong> NSI-SA-2026-006</span>
+      <span><strong>Date:</strong> 2026-07-15</span>
+      <span><strong>Classification:</strong> 🛡️ CONFIDENTIAL</span>
+      <span><strong>Analyst:</strong> Hermes Agent (ATHENA Suite)</span>
+    </div>
+  </div>
+</div>
+
+<!-- SEVERITY BANNER -->
+<div class="severity-banner">
+  <div class="severity-box critical">
+    <div class="num">2</div>
+    <div class="label">Critical</div>
+  </div>
+  <div class="severity-box high">
+    <div class="num">6</div>
+    <div class="label">High</div>
+  </div>
+  <div class="severity-box medium">
+    <div class="num">13</div>
+    <div class="label">Medium</div>
+  </div>
+  <div class="severity-box info">
+    <div class="num">4</div>
+    <div class="label">Info</div>
+  </div>
+</div>
+
+<!-- NAV -->
+<div class="nav">
+  <a href="#exec">Executive Summary</a>
+  <a href="#infra">Infrastructure</a>
+  <a href="#critical">Critical Findings</a>
+  <a href="#high">High Findings</a>
+  <a href="#medium">Medium Findings</a>
+  <a href="#info">Info Findings</a>
+  <a href="#chains">Attack Chains</a>
+  <a href="#eol">EOL Timeline</a>
+  <a href="#recs">Recommendations</a>
+</div>
+
+<div class="container">
+
+<!-- EXECUTIVE SUMMARY -->
+<section id="exec" class="section">
+  <h2>🚀 Executive Summary</h2>
+
+  <p style="font-size:15px;margin-bottom:20px;color:var(--text-dim);">
+  This report presents the results of an external security assessment of <strong>CardNET</strong> (Consorcio de Tarjetas Dominicanas S.A.), the Dominican Republic's primary payment processor. The assessment identified <strong>25 findings</strong> across 22 live subdomains, including <strong>2 critical</strong>, <strong>6 high</strong>, <strong>13 medium</strong>, and <strong>4 informational</strong> vulnerabilities.
+  </p>
+
+  <div class="info-box red">
+    <strong>🔴 Overall Risk Level: CRITICAL</strong><br>
+    CardNET operates as a payment processor handling sensitive financial data but exposes <strong>three End-of-Life products</strong> (Odoo v11, IdentityServer4, AngularJS) and <strong>two production Odoo ERP instances</strong> with publicly accessible database manager pages. The combination of EOL software + exposed management interfaces + payment processing context creates an elevated risk of data breach or ransomware.
+  </div>
+
+  <h3>Key Statistics</h3>
+  <div class="findings-grid">
+    <div class="finding-card critical">
+      <span class="sev-tag">🔴 Critical</span>
+      <h4>Odoo v11 EOL + DB Manager</h4>
+      <p>CVE-2018-14885 — Database manager auth bypass on ecommerce:6443. No security patches since Oct 2022.</p>
+    </div>
+    <div class="finding-card critical">
+      <span class="sev-tag">🔴 Critical</span>
+      <h4>IdentityServer4 EOL + 11 Grant Types</h4>
+      <p>Repository archived Mar 2025. Password grant, implicit grant, 5 custom grants including onboarding/terminal/external_credentials.</p>
+    </div>
+    <div class="finding-card high">
+      <span class="sev-tag">🟠 High</span>
+      <h4>CSRF + PII Exposure (SIRITE)</h4>
+      <p>No Origin validation on payment gateway. Citizen ID numbers transmitted in cleartext POST body.</p>
+    </div>
+    <div class="finding-card high">
+      <span class="sev-tag">🟠 High</span>
+      <h4>Odoo v14 EOL + DB Manager</h4>
+      <p>Production Odoo 14 with public DB manager. EOL since Jan 2024. 6 applicable CVEs.</p>
+    </div>
+    <div class="finding-card high">
+      <span class="sev-tag">🟠 High</span>
+      <h4>AngularJS EOL BackOffice</h4>
+      <p>BackOffice Comercios running AngularJS (EOL Dec 2021). CVE-2026-11998 actively exploited.</p>
+    </div>
+    <div class="finding-card high">
+      <span class="sev-tag">🟠 High</span>
+      <h4>ManageEngine v15.2</h4>
+      <p>ITSM platform with CVE-2025-8309 (PrivEsc 8.8) and CVE-2022-47966 (SAML RCE 9.8) surface.</p>
+    </div>
+  </div>
+</section>
+
+<!-- INFRASTRUCTURE -->
+<section id="infra" class="section">
+  <h2>🏗️ Infrastructure Overview</h2>
+
+  <h3>Network Topology</h3>
+  <table class="infra-table">
+    <tr><th>Component</th><th>Value</th></tr>
+    <tr><td>IP Block</td><td>201.131.107.0/24 (origin servers)</td></tr>
+    <tr><td>CDN/WAF</td><td>Imperva Incapsula (selective — 16 hosts protected, 6 exposed)</td></tr>
+    <tr><td>Nameservers</td><td>ns1.cardnet.com.do, ns2.cardnet.com.do</td></tr>
+    <tr><td>MX</td><td>Sophos Email, Office 365</td></tr>
+    <tr><td>Main A Records</td><td>45.223.24.139, 45.223.18.139 (BunnyCDN / origin)</td></tr>
+    <tr><td>Internal CA</td><td>Root-CA-CARDNET (exposed via JWKS)</td></tr>
+    <tr><td>Internal Hostname</td><td>serws09.cardnet.com.do (leaked via JWKS certificate)</td></tr>
+  </table>
+
+  <h3>Live Services</h3>
+  <div class="service-grid">
+    <div class="service-card">
+      <h4>🔴 Odoo 11 EOL</h4>
+      <div class="url">ecommerce.cardnet.com.do:6443</div>
+      <div class="stack">Apache · Imperva WAF · <strong>EOL Mar 2022</strong></div>
+    </div>
+    <div class="service-card">
+      <h4>🔴 Odoo 14 EOL</h4>
+      <div class="url">ser.cardnet.com.do</div>
+      <div class="stack">Apache · Imperva WAF · <strong>EOL Jan 2024</strong></div>
+    </div>
+    <div class="service-card">
+      <h4>🔴 IdentityServer4 EOL</h4>
+      <div class="url">ecommerce.cardnet.com.do:7443</div>
+      <div class="stack">Kestrel (ASP.NET Core) · Imperva WAF · <strong>11 grant types</strong></div>
+    </div>
+    <div class="service-card">
+      <h4>🟠 SIRITE Payment Gateway</h4>
+      <div class="url">ecommerce.cardnet.com.do/sirite/</div>
+      <div class="stack">Apache · No Origin validation · PII in POST body</div>
+    </div>
+    <div class="service-card">
+      <h4>🟠 ManageEngine ServiceDesk</h4>
+      <div class="url">mesadeservicio.cardnet.com.do</div>
+      <div class="stack">Java/Tomcat · nginx + Imperva · v15.2</div>
+    </div>
+    <div class="service-card">
+      <h4>🟠 AngularJS BackOffice</h4>
+      <div class="url">ecommerce.cardnet.com.do:8443</div>
+      <div class="stack">AngularJS 1.x · Apache · <strong>EOL Dec 2021</strong></div>
+    </div>
+    <div class="service-card">
+      <h4>Merchant Portal</h4>
+      <div class="url">comercios.cardnet.com.do</div>
+      <div class="stack">Vue.js SPA · React (Quasar) · No WAF</div>
+    </div>
+    <div class="service-card">
+      <h4>LAB Environment</h4>
+      <div class="url">lab.cardnet.com.do</div>
+      <div class="stack">ASP.NET · Apache · <strong>❌ No WAF</strong></div>
+    </div>
+    <div class="service-card">
+      <h4>Mercury (Legacy)</h4>
+      <div class="url">mercury.cardnet.com.do</div>
+      <div class="stack">ASP.NET · Apache · <strong>❌ No WAF</strong></div>
+    </div>
+    <div class="service-card">
+      <h4>Check Point FW</h4>
+      <div class="url">chk.cardnet.com.do</div>
+      <div class="stack">CPWS 403 · <strong>❌ No WAF</strong></div>
+    </div>
+    <div class="service-card">
+      <h4>LAB Servicios</h4>
+      <div class="url">labservicios.cardnet.com.do</div>
+      <div class="stack">SvelteKit · nginx + Imperva</div>
+    </div>
+    <div class="service-card">
+      <h4>PayNet Recurring</h4>
+      <div class="url">pagosrecurrentes.cardnet.com.do</div>
+      <div class="stack">IIS · ASP.NET</div>
+    </div>
+  </div>
+
+  <h3>Subdomain Coverage</h3>
+  <table class="infra-table">
+    <tr><th>Coverage</th><th>Count</th><th>Details</th></tr>
+    <tr><td><span class="waf-yes">✅ With WAF</span></td><td>16</td><td>auraportal, auraportalext, autoservicio, comercios, developers, ecommerce, empleos, epay, labservicios, mesadeservicio, pagosrecurrentes, ser, servicios, vacantes, www</td></tr>
+    <tr><td><span class="waf-no">❌ Without WAF</span></td><td>6</td><td><strong>lab.cardnet.com.do</strong> (dev), <strong>mercury.cardnet.com.do</strong> (legacy), chk (CPWS), mta-sts.*</td></tr>
+    <tr><td>Non-responding</td><td>33</td><td>Internal-only DNS records (MX, NS, autoconfig, etc.)</td></tr>
+  </table>
+</section>
+
+<!-- CRITICAL FINDINGS -->
+<section id="critical" class="section">
+  <h2 class="severe">🔴 Critical Findings</h2>
+
+  <!-- C1: Odoo v11 -->
+  <h3>🔴 C1 — Odoo v11 EOL + CVE-2018-14885</h3>
+  <div class="finding-card critical" style="margin-bottom:16px">
+    <span class="sev-tag">🔴 Critical</span>
+    <p><strong>Target:</strong> <code>https://ecommerce.cardnet.com.do:6443/web/database/manager</code></p>
+    <p><strong>CVSS:</strong> 9.8 (CVE-2018-14885) — Database Manager Authentication Bypass</p>
+  </div>
+
+  <p>Odoo v11 reached End-of-Life in <strong>October 2022</strong>. No security patches are provided. The Database Manager at <code>/web/database/manager</code> is publicly accessible (HTTP 200, 36KB).</p>
+
+  <h4>Evidence</h4>
+  <pre>
+<span class="prompt">$</span><span class="cmd"> curl -sk -o /dev/null -w "HTTP %{http_code} | Size: %{size_download}\n" \
+  "https://ecommerce.cardnet.com.do:6443/web/database/manager"</span>
+<span class="resp">HTTP 200 | Size: 36906</span>
+
+<span class="prompt">$</span><span class="cmd"> curl -sk -X POST "https://ecommerce.cardnet.com.do:6443/jsonrpc" \
+  -H "Content-Type: application/json" \
+  -d '{"jsonrpc":"2.0","method":"call","params":{"service":"db","method":"list","args":[""]},"id":1}'</span>
+<span class="resp">{"jsonrpc":"2.0","id":1,"error":{"code":200,"message":"Odoo Server Error",
+"data":{"traceback":"Traceback (most recent call last):
+<b>  File \"/opt/odoo/odoo11/odoo/http.py\", line 640... </b>"}}}</span></pre>
+
+  <h4>CVE-2018-14885 Exploit Surface</h4>
+  <p>This vulnerability allows an attacker to restore a database dump <strong>without knowing the super-admin password</strong>. An arbitrary password succeeds. This grants full database access including all financial transactions, customer data, and payment configurations.</p>
+
+  <h4>Applicable CVEs</h4>
+  <table class="cve-table">
+    <tr><th>CVE</th><th>CVSS</th><th>Type</th><th>Detail</th></tr>
+    <tr><td><strong>CVE-2018-14885</strong></td><td class="cvss-critical">9.8</td><td>Auth Bypass</td><td>DB manager — restore database dump without master password</td></tr>
+    <tr><td>CVE-2021-23166</td><td class="cvss-high">7.2</td><td>Sandbox Escape</td><td>Authenticated admins can read/write local files</td></tr>
+    <tr><td>CVE-2022-0310</td><td class="cvss-high">7.5</td><td>SQL Injection</td><td>SQLi in accounting module</td></tr>
+    <tr><td>CVE-2019-1556</td><td class="cvss-critical">9.8</td><td>Privilege Escalation</td><td>Session manipulation</td></tr>
+    <tr><td>CVE-2021-45111</td><td class="cvss-medium">5.4</td><td>Access Control</td><td>Demo data creation with known credentials</td></tr>
+  </table>
+
+  <div class="info-box red">
+    <strong>⚠️ PCI DSS Impact:</strong> As CardNET is a payment processor, Odoo likely stores or processes cardholder data (PAN, CHD). The exposed DB manager violates PCI DSS Requirements 1.3, 2.2, 6.1, 7.1, 11.3.
+  </div>
+
+  <!-- C2: IdentityServer4 -->
+  <h3>🔴 C2 — IdentityServer4 EOL + 11 Grant Types</h3>
+  <div class="finding-card critical" style="margin-bottom:16px">
+    <span class="sev-tag">🔴 Critical</span>
+    <p><strong>Target:</strong> <code>https://ecommerce.cardnet.com.do:7443/agoramarket/identityserver/</code></p>
+    <p><strong>Product:</strong> IdentityServer4 (repository archived Mar 2025 — no security patches)</p>
+  </div>
+
+  <h4>Grant Types Enabled</h4>
+  <table class="cve-table">
+    <tr><th>Grant Type</th><th>Risk</th><th>Notes</th></tr>
+    <tr><td><code>password</code> (ROPC)</td><td class="cvss-critical">🔴 CRITICAL</td><td>Violates RFC 9700, OAuth BCP, NIST SP 800-63. Credential stuffing vector.</td></tr>
+    <tr><td><code>implicit</code></td><td class="cvss-critical">🔴 CRITICAL</td><td>Deprecated in OAuth 2.1. Token in URL fragment — leaks via Referer.</td></tr>
+    <tr><td><code>onboarding</code> ✦</td><td class="cvss-high">🟠 HIGH</td><td>Custom grant — likely user/terminal registration. Unknown validation logic.</td></tr>
+    <tr><td><code>terminal</code> ✦</td><td class="cvss-high">🟠 HIGH</td><td>Custom grant — POS terminal authorization. Potential for fraudulent terminal creation.</td></tr>
+    <tr><td><code>external_credentials</code> ✦</td><td class="cvss-high">🟠 HIGH</td><td>Custom grant — token exchange with external IdPs. Issuer confusion risk.</td></tr>
+    <tr><td><code>client_credentials</code></td><td class="cvss-medium">🟡 MEDIUM</td><td>Depends on client_secret protection.</td></tr>
+    <tr><td><code>device_code</code></td><td class="cvss-medium">🟡 MEDIUM</td><td>Device Code phishing vector.</td></tr>
+    <tr><td><code>mobile</code> ✦</td><td class="cvss-medium">🟡 MEDIUM</td><td>Custom grant for mobile apps.</td></tr>
+    <tr><td><code>api</code> ✦</td><td class="cvss-medium">🟡 MEDIUM</td><td>Custom grant — API-to-API auth.</td></tr>
+    <tr><td><code>authorization_code</code></td><td>🟢 LOW</td><td>Safe with PKCE S256. <strong>Plain PKCE also supported</strong> (weak).</td></tr>
+    <tr><td><code>refresh_token</code></td><td>🟢 LOW</td><td>Standard token refresh.</td></tr>
+  </table>
+  <p style="font-size:12px;color:var(--text-dim);margin-top:-8px">✦ = Custom extension grant type</p>
+
+  <h4>Scopes Exposed</h4>
+  <table class="cve-table">
+    <tr><th>Scope</th><th>Purpose</th><th>Risk</th></tr>
+    <tr><td><code>appmanager</code></td><td>Application management</td><td class="cvss-medium">🟡 Administrative</td></tr>
+    <tr><td><code>terminalmanager</code></td><td>POS terminal management</td><td class="cvss-critical">🔴 Payment ops</td></tr>
+    <tr><td><code>commercemanager</code></td><td>Merchant management</td><td class="cvss-critical">🔴 Merchant data</td></tr>
+    <tr><td><code>usermanager</code></td><td>User CRUD</td><td class="cvss-critical">🔴 User admin</td></tr>
+    <tr><td><code>paramentermanager</code></td><td>System configuration</td><td class="cvss-critical">🔴 System config</td></tr>
+  </table>
+
+  <h4>Evidence</h4>
+  <pre>
+<span class="prompt">$</span><span class="cmd"> curl -sk "https://ecommerce.cardnet.com.do:7443/agoramarket/identityserver/.well-known/openid-configuration" | python3 -m json.tool</span>
+<span class="resp">{
+  "issuer": "https://agoramarket.cardnet.com.do/identityserver",
+  "grant_types_supported": [
+    "authorization_code","client_credentials","refresh_token",
+    "implicit","password",
+    "urn:ietf:params:oauth:grant-type:device_code",
+    "onboarding","terminal","api","mobile","external_credentials"
+  ],
+  "scopes_supported": [
+    "appmanager","terminalmanager","commercemanager",
+    "paramentermanager","usermanager","api","offline_access"
+  ]
+}</span></pre>
+
+  <div class="info-box red">
+    <strong>⚠️ Internal Certificate Leak:</strong> JWKS endpoint exposes Root-CA-CARDNET internal CA and internal hostname <code>serws09.cardnet.com.do</code>.
+  </div>
+</section>
+
+<!-- HIGH FINDINGS -->
+<section id="high" class="section">
+  <h2 class="warn">🟠 High Findings</h2>
+
+  <!-- H1: CSRF + PII -->
+  <h3>🟠 H1 — SIRITE Payment Gateway: Missing Origin Validation + PII</h3>
+  <div class="finding-card high" style="margin-bottom:16px">
+    <span class="sev-tag">🟠 High</span>
+    <p><strong>Target:</strong> <code>POST https://ecommerce.cardnet.com.do/sirite/pasarela-pago/transaccion</code></p>
+    <p><strong>Type:</strong> CSRF (Missing Origin/Referer validation) + PII Exposure</p>
+  </div>
+
+  <h4>Proof of Concept</h4>
+  <pre>
+<span class="prompt">$</span><span class="cmd"> curl -sk -X POST "https://ecommerce.cardnet.com.do/sirite/pasarela-pago/transaccion" \
+  -H "Content-Type: application/x-www-form-urlencoded" \
+  -H "Origin: https://attacker-controlled.com" \
+  -H "Referer: https://attacker-controlled.com/" \
+  -d "codigoCentroRecaudacion=0020&codigoServicio=0252&montoServicio=100.00&\
+      urlRetorno=https://attacker-controlled.com/steal&\
+      nombre=Pedro%20Sanchez%20De%20La%20Cruz&\
+      numeroDocumento=00400000000&tipoDocumento=CEDULA&\
+      medioPago=PagoEnLinea&idAutorizacionPortal=POC001&\
+      numeroAutorizacion="</span>
+<span class="resp">HTTP 200 — Full payment form returned (9KB+) with credit card fields.
+Reflects: <strong>Pedro Sanchez De La Cruz</strong> and <strong>00400000000</strong></span></pre>
+
+  <h4>Impact</h4>
+  <table class="cve-table">
+    <tr><th>Vector</th><th>Impact</th></tr>
+    <tr><td>No Origin validation</td><td>Attacker embeds real CardNET payment form from any site</td></tr>
+    <tr><td>PII in POST body (nombre, numeroDocumento)</td><td>Citizen ID numbers visible in Imperva WAF logs, Apache logs, proxies</td></tr>
+    <tr><td>No authentication required</td><td>Anyone can initiate payment sessions without API key or session token</td></tr>
+    <tr><td>urlRetorno controlable</td><td>Post-payment redirect can be hijacked to attacker-controlled site</td></tr>
+  </table>
+
+  <h4>Credit Card Form Exposed Without Auth</h4>
+  <pre>
+<span class="resp">&lt;form action="/sirite/pasarela-pago/procesa-pago" method="post"&gt;
+  &lt;input type="text" name="inputNumTarjeta" /&gt;    &lt;!-- Credit card number --&gt;
+  &lt;input type="text" name="inputCvc" /&gt;            &lt;!-- CVV --&gt;
+  &lt;input type="hidden" name="sessionTracking" /&gt;
+  &lt;input type="hidden" name="H-CSRFTOKEN" /&gt;
+  &lt;button type="submit"&gt;Realizar Pago&lt;/button&gt;
+&lt;/form&gt;</span></pre>
+
+  <!-- H2: Odoo v14 -->
+  <h3>🟠 H2 — Odoo v14 EOL + Public DB Manager</h3>
+  <div class="finding-card high" style="margin-bottom:16px">
+    <span class="sev-tag">🟠 High</span>
+    <p><strong>Target:</strong> <code>https://ser.cardnet.com.do/web/database/manager</code></p>
+    <p><strong>Version:</strong> Odoo 14 Enterprise (EOL Jan 2024)</p>
+  </div>
+
+  <pre>
+<span class="prompt">$</span><span class="cmd"> curl -sk -o /dev/null -w "HTTP %{http_code} | Size: %{size_download}\n" \
+  "https://ser.cardnet.com.do/web/database/manager"</span>
+<span class="resp">HTTP 200 | Size: 39967</span>
+
+<span class="prompt">$</span><span class="cmd"> curl -sk -X POST "https://ser.cardnet.com.do/jsonrpc" \
+  -H "Content-Type: application/json" \
+  -d '{"jsonrpc":"2.0","method":"call","params":{"service":"db","method":"list","args":[""]},"id":1}'</span>
+<span class="resp">Traceback: <b>/opt/odoo/odoo14/odoo/addons/base/models/ir_http.py</b></span></pre>
+
+  <h4>Applicable CVEs</h4>
+  <table class="cve-table">
+    <tr><th>CVE</th><th>CVSS</th><th>Type</th></tr>
+    <tr><td>CVE-2021-23203</td><td class="cvss-high">7.5</td><td>Unauthorized PDF report download</td></tr>
+    <tr><td>CVE-2021-23166</td><td class="cvss-high">7.2</td><td>Sandbox escape — local file read/write</td></tr>
+    <tr><td>CVE-2022-0310</td><td class="cvss-high">7.5</td><td>SQL Injection in accounting module</td></tr>
+    <tr><td>CVE-2021-26263</td><td class="cvss-medium">6.1</td><td>Stored XSS in Discuss module</td></tr>
+    <tr><td>CVE-2019-11782</td><td class="cvss-medium">6.5</td><td>Privilege escalation via contact management</td></tr>
+    <tr><td>CVE-2023-48050</td><td class="cvss-high">8.8</td><td>Account takeover via demo data creation</td></tr>
+  </table>
+
+  <!-- H3: AngularJS -->
+  <h3>🟠 H3 — AngularJS BackOffice (EOL Dec 2021)</h3>
+  <div class="finding-card high" style="margin-bottom:16px">
+    <span class="sev-tag">🟠 High</span>
+    <p><strong>Target:</strong> <code>https://ecommerce.cardnet.com.do:8443/</code></p>
+    <p><strong>Framework:</strong> AngularJS 1.x — End-of-Life since December 31, 2021</p>
+  </div>
+
+  <h4>Unpatched CVEs (Post-EOL)</h4>
+  <table class="cve-table">
+    <tr><th>CVE</th><th>CVSS</th><th>Type</th><th>Detail</th></tr>
+    <tr><td><strong>CVE-2026-11998</strong></td><td class="cvss-high">7.5</td><td>XSS</td><td>Strict Contextual Escaping (SCE) bypass — <strong>actively exploited</strong></td></tr>
+    <tr><td>CVE-2025-2336</td><td class="cvss-high">7.5</td><td>XSS</td><td>ngSanitize SVG bypass</td></tr>
+    <tr><td>CVE-2025-0716</td><td class="cvss-high">7.5</td><td>XSS</td><td>Post-EOL vulnerability (discovered after EOL)</td></tr>
+    <tr><td>CVE-2024-8373</td><td class="cvss-medium">4.8</td><td>Content Spoofing</td><td>srcset sanitization bypass — <strong>will never be fixed</strong></td></tr>
+    <tr><td>CVE-2022-25844</td><td class="cvss-high">7.5</td><td>ReDoS</td><td>Regular expression DoS</td></tr>
+    <tr><td>CVE-2019-10768</td><td class="cvss-medium">5.6</td><td>Prototype Pollution</td><td>merge() via __proto__</td></tr>
+  </table>
+
+  <!-- H4: ManageEngine -->
+  <h3>🟠 H4 — ManageEngine ServiceDesk Plus v15.2</h3>
+  <div class="finding-card high" style="margin-bottom:16px">
+    <span class="sev-tag">🟠 High</span>
+    <p><strong>Target:</strong> <code>https://mesadeservicio.cardnet.com.do/</code></p>
+    <p><strong>Product:</strong> ManageEngine ServiceDesk Plus v15.2 (ITSM/Helpdesk)</p>
+  </div>
+
+  <h4>Applicable CVEs</h4>
+  <table class="cve-table">
+    <tr><th>CVE</th><th>CVSS</th><th>Type</th><th>Detail</th></tr>
+    <tr><td>CVE-2022-47966</td><td class="cvss-critical">9.8</td><td>RCE (Pre-auth)</td><td>SAML SSO → Apache Santuario → XSLT → RCE. <strong>⚠️ Verify if SAML was ever configured</strong></td></tr>
+    <tr><td>CVE-2025-8309</td><td class="cvss-high">8.8</td><td>PrivEsc</td><td>Low-privilege user → full admin. Patched in Build 15110</td></tr>
+    <tr><td>CVE-2021-44077</td><td class="cvss-critical">9.8</td><td>RCE (Unauth)</td><td>Exploited by APT27 (Tilted Temple). Patched in < 11306</td></tr>
+    <tr><td>CVE-2024-50053</td><td class="cvss-medium">6.5</td><td>Stored XSS</td><td>Post-authentication persistent XSS</td></tr>
+  </table>
+
+  <div class="info-box orange">
+    <strong>⚠️ Note:</strong> v15.2 post-Build 15110 patches CVE-2025-8309 and CVE-2024-50053. <strong>Actual build number needs verification.</strong> CVE-2022-47966 vector persists if SAML SSO was ever configured, even if the instance was later updated.
+  </div>
+</section>
+
+<!-- MEDIUM FINDINGS -->
+<section id="medium" class="section">
+  <h2 class="note">🟡 Medium Findings</h2>
+
+  <div class="findings-grid">
+    <div class="finding-card medium">
+      <span class="sev-tag">🟡 Medium</span>
+      <h4>M1 — Custom Grant: onboarding</h4>
+      <p>Unknown validation logic for user/terminal registration grant. No rate limiting visible. Could allow automated account creation.</p>
+    </div>
+    <div class="finding-card medium">
+      <span class="sev-tag">🟡 Medium</span>
+      <h4>M2 — Custom Grant: terminal</h4>
+      <p>POS terminal authorization grant. Potential for fraudulent terminal enrollment. High impact if exploitable.</p>
+    </div>
+    <div class="finding-card medium">
+      <span class="sev-tag">🟡 Medium</span>
+      <h4>M3 — Custom Grant: external_credentials</h4>
+      <p>External token exchange. Risk of issuer confusion if validation is weak.</p>
+    </div>
+    <div class="finding-card medium">
+      <span class="sev-tag">🟡 Medium</span>
+      <h4>M4 — Device Code Phishing</h4>
+      <p>Device authorization flow enabled. Standard phishing vector — attacker initiates flow, victim authenticates on their device.</p>
+    </div>
+    <div class="finding-card medium">
+      <span class="sev-tag">🟡 Medium</span>
+      <h4>M5 — PKCE 'plain' Supported</h4>
+      <p>IdentityServer4 supports PKCE 'plain' (no S256). Weaker than S256 — susceptible to interception if TLS is compromised.</p>
+    </div>
+    <div class="finding-card medium">
+      <span class="sev-tag">🟡 Medium</span>
+      <h4>M6 — Single JWKS Key, No Rotation</h4>
+      <p>Only one RSA256 signing key exposed. No rotation mechanism visible. Key compromise would allow full token forgery.</p>
+    </div>
+    <div class="finding-card medium">
+      <span class="sev-tag">🟡 Medium</span>
+      <h4>M7 — Public Introspection Endpoint</h4>
+      <p>Token introspection at <code>/connect/introspect</code> publicly accessible (requires client credentials, but no network restriction).</p>
+    </div>
+    <div class="finding-card medium">
+      <span class="sev-tag">🟡 Medium</span>
+      <h4>M8 — AngularJS ReDoS (CVE-2022-25844)</h4>
+      <p>Regular expression DoS in AngularJS could take down the BackOffice Comercios with crafted input.</p>
+    </div>
+    <div class="finding-card medium">
+      <span class="sev-tag">🟡 Medium</span>
+      <h4>M9 — HPKP Weak Pinning</h4>
+      <p>HPKP includes SHA256 of empty string as backup pin (<code>47DEQpj8HBSa+...</code>). Weak practice that could allow MiTM.</p>
+    </div>
+    <div class="finding-card medium">
+      <span class="sev-tag">🟡 Medium</span>
+      <h4>M10 — Session Cookies Without Auth</h4>
+      <p>Odoo instances issue session cookies (<code>session_id</code>) via GET without authentication. 90-day expiry on cookies.</p>
+    </div>
+    <div class="finding-card medium">
+      <span class="sev-tag">🟡 Medium</span>
+      <h4>M11 — CVE-2024-39694 (Open Redirect)</h4>
+      <p>IdentityServer4 open redirect. Not directly exploitable without valid client_id, but risk increases if client credentials leak.</p>
+    </div>
+    <div class="finding-card medium">
+      <span class="sev-tag">🟡 Medium</span>
+      <h4>M12 — NCF Module (ncfonnet)</h4>
+      <p>Custom Odoo module for Dominican NCF tax receipts. Accessible without auth, returns HTTP 500. Undefined behavior with correct params.</p>
+    </div>
+    <div class="finding-card medium">
+      <span class="sev-tag">🟡 Medium</span>
+      <h4>M13 — LAB Environment Without WAF</h4>
+      <p>lab.cardnet.com.do and mercury.cardnet.com.do have no Imperva WAF protection. Direct origin access to ASP.NET apps.</p>
+    </div>
+  </div>
+</section>
+
+<!-- INFO FINDINGS -->
+<section id="info" class="section">
+  <h2 class="note">ℹ️ Informational Findings</h2>
+
+  <table class="cve-table">
+    <tr><th>#</th><th>Finding</th><th>Target</th><th>Detail</th></tr>
+    <tr><td>I1</td><td>Build Version in Footer</td><td>ecommerce.cardnet.com.do/sirite/</td><td>Version v2.20250411.920 disclosed in every page footer</td></tr>
+    <tr><td>I2</td><td>Odoo Internal Paths</td><td>ser.cardnet.com.do, ecommerce:6443</td><td>/opt/odoo/odoo11/ and /opt/odoo/odoo14/ leaked via JSON-RPC errors</td></tr>
+    <tr><td>I3</td><td>Internal CA Certificate Chain</td><td>ecommerce:7443</td><td>Root-CA-CARDNET internal CA exposed via JWKS endpoint</td></tr>
+    <tr><td>I4</td><td>Internal Hostname Leak</td><td>ecommerce:7443</td><td>serws09.cardnet.com.do exposed in JWKS certificate CN</td></tr>
+  </table>
+</section>
+
+<!-- ATTACK CHAINS -->
+<section id="chains" class="section">
+  <h2>⚔️ Attack Chains</h2>
+
+  <h3>Chain A: Odoo Compromise → Payment Data Breach</h3>
+  <div class="attack-chain">
+<span class="phase">PHASE 1: RECON</span>
+<span class="step">  1. Enumerate Odoo v11 at ecommerce.cardnet.com.do:6443</span>
+  <span class="arrow">→</span> <span class="step">Discover /web/database/manager (HTTP 200, 36KB)</span>
+  <span class="arrow">→</span> <span class="step">Fingerprint version: Odoo 11.0 (via error traceback)</span>
+
+<span class="phase">PHASE 2: DB ACCESS</span>
+<span class="step">  2. Attempt CVE-2018-14885: restore DB dump with arbitrary password</span>
+  <span class="arrow">→</span> <span class="step">If successful: download full database (customers, transactions, config)</span>
+  <span class="arrow">→</span> <span class="step">If blocked: brute-force weak master passwords</span>
+
+<span class="phase">PHASE 3: DATA EXFILTRATION</span>
+<span class="step">  3. Extract from DB dump:</span>
+  <span class="arrow">→</span> <span class="step">res_users → credential hashes</span>
+  <span class="arrow">→</span> <span class="step">account_move_line → financial transactions</span>
+  <span class="arrow">→</span> <span class="step">res_partner → merchant/consumer PII</span>
+  <span class="arrow">→</span> <span class="step">ir.config_parameter → API keys, integration configs</span>
+
+<span class="phase">PHASE 4: PIVOT</span>
+<span class="step">  4. Use Odoo v11 as pivot to internal network</span>
+  <span class="arrow">→</span> <span class="step">Target Odoo v14 (ser.cardnet.com.do) with same technique</span>
+  <span class="arrow">→</span> <span class="step">Target IdentityServer4 configuration (serws09.cardnet.com.do)</span>
+  <span class="arrow">→</span> <span class="step">Access ManageEngine ITSM for support tickets (API keys, merchant data)</span>
+</div>
+
+  <h3>Chain B: IdentityServer4 Token Forgery</h3>
+  <div class="attack-chain">
+<span class="phase">PHASE 1: RECON</span>
+<span class="step">  1. Enumerate OIDC server at ecommerce.cardnet.com.do:7443</span>
+  <span class="arrow">→</span> <span class="step">Fetch .well-known/openid-configuration → 11 grant types, 7 scopes</span>
+  <span class="arrow">→</span> <span class="step">Fetch JWKS → RSA256 public key, internal CA chain</span>
+
+<span class="phase">PHASE 2: CLIENT DISCOVERY</span>
+<span class="step">  2. Probe /connect/token with common client_ids:</span>
+  <span class="arrow">→</span> <span class="step">agoramarket, commerce, mobile_app, terminal, onboarding, admin</span>
+  <span class="arrow">→</span> <span class="step">Search JS bundles (comercios.cardnet.com.do SPA) for embedded credentials</span>
+
+<span class="phase">PHASE 3: TOKEN ACQUISITION</span>
+<span class="step">  3. If client_id + client_secret discovered:</span>
+  <span class="arrow">→</span> <span class="step">Password grant → user credential stuffing → user token</span>
+  <span class="arrow">→</span> <span class="step">Client credentials → service token with usermanager/terminalmanager scopes</span>
+  <span class="arrow">→</span> <span class="step">Device code → phishing via device flow → user token</span>
+
+<span class="phase">PHASE 4: ABUSE</span>
+<span class="step">  4. With privileged tokens:</span>
+  <span class="arrow">→</span> <span class="step">Query /connect/userinfo → user profile data</span>
+  <span class="arrow">→</span> <span class="step">Access backend APIs (appmanager, terminalmanager, commercemanager)</span>
+  <span class="arrow">→</span> <span class="step">Provision new users or modify terminal configurations</span>
+</div>
+
+  <h3>Chain C: ITSM → Lateral Movement → Core</h3>
+  <div class="attack-chain">
+<span class="phase">PHASE 1: INITIAL ACCESS</span>
+<span class="step">  1. Probe mesadeservicio.cardnet.com.do (ManageEngine SDP v15.2)</span>
+  <span class="arrow">→</span> <span class="step">Test CVE-2022-47966: SAMLResponse servlet → XSLT → RCE</span>
+  <span class="arrow">→</span> <span class="step">Test default credentials: admin/admin, admin/manager</span>
+  <span class="arrow">→</span> <span class="step">Probe /RestAPI/ for auth bypass (CVE-2021-44077 style)</span>
+
+<span class="phase">PHASE 2: PERSISTENCE</span>
+<span class="step">  2. Deploy webshell on Tomcat server</span>
+  <span class="arrow">→</span> <span class="step">Dump ITSM database (contains merchant data, support tickets)</span>
+  <span class="arrow">→</span> <span class="step">Extract AD/DB credentials from configuration files</span>
+
+<span class="phase">PHASE 3: LATERAL MOVEMENT</span>
+<span class="step">  3. Pivot from ITSM server:</span>
+  <span class="arrow">→</span> <span class="step">Target AngularJS BackOffice (same internal network → ecommerce:8443)</span>
+  <span class="arrow">→</span> <span class="step">Exploit CVE-2026-11998 XSS → session hijacking of BackOffice operators</span>
+  <span class="arrow">→</span> <span class="step">Modify transaction statuses, authorize fraudulent payments</span>
+
+<span class="phase">PHASE 4: IMPACT</span>
+<span class="step">  4. Final objectives:</span>
+  <span class="arrow">→</span> <span class="step">Redirection of legitimate transactions to attacker-controlled accounts</span>
+  <span class="arrow">→</span> <span class="step">Manipulation of payment reconciliation</span>
+  <span class="arrow">→</span> <span class="step">Ransomware on critical payment infrastructure</span>
+</div>
+</section>
+
+<!-- EOL TIMELINE -->
+<section id="eol" class="section">
+  <h2>📅 End-of-Life Timeline</h2>
+
+  <p style="margin-bottom:20px;color:var(--text-dim);">CardNET operates <strong>three End-of-Life products</strong> simultaneously, none of which receive security patches. This creates a compounding risk where newly discovered vulnerabilities will never be fixed.</p>
+
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="date">Dec 2021</div>
+      <div class="product">AngularJS</div>
+      <div class="status expired">EOL</div>
+      <div style="font-size:12px;color:var(--text-dim);margin-top:6px">4.5 years without patches</div>
+    </div>
+    <div class="timeline-item">
+      <div class="date">Oct 2022</div>
+      <div class="product">Odoo v11</div>
+      <div class="status expired">EOL</div>
+      <div style="font-size:12px;color:var(--text-dim);margin-top:6px">3.8 years without patches</div>
+    </div>
+    <div class="timeline-item">
+      <div class="date">Jan 2024</div>
+      <div class="product">Odoo v14</div>
+      <div class="status expired">EOL</div>
+      <div style="font-size:12px;color:var(--text-dim);margin-top:6px">2.5 years without patches</div>
+    </div>
+    <div class="timeline-item">
+      <div class="date">Mar 2025</div>
+      <div class="product">IdentityServer4</div>
+      <div class="status expired">Archived</div>
+      <div style="font-size:12px;color:var(--text-dim);margin-top:6px">1.3 years without patches</div>
+    </div>
+    <div class="timeline-item">
+      <div class="date">Today</div>
+      <div class="product">CardNET</div>
+      <div class="status warning">⚠️ AT RISK</div>
+      <div style="font-size:12px;color:var(--text-dim);margin-top:6px">4 EOL products active</div>
+    </div>
+  </div>
+
+  <h3>Risk Matrix</h3>
+  <table class="matrix">
+    <tr><th>Service</th><th>Version</th><th>Critical</th><th>High</th><th>Medium</th><th>EOL</th><th>Primary Risk</th></tr>
+    <tr>
+      <td>Odoo v11</td><td>11.0</td>
+      <td><span class="sev-dot" style="background:var(--red)"></span>1</td>
+      <td><span class="sev-dot" style="background:var(--orange)"></span>3</td>
+      <td><span class="sev-dot" style="background:var(--yellow)"></span>2</td>
+      <td style="color:var(--red)"><strong>Oct 2022</strong></td>
+      <td>Database auth bypass (CVE-2018-14885)</td>
+    </tr>
+    <tr>
+      <td>IdentityServer4</td><td>4.x</td>
+      <td><span class="sev-dot" style="background:var(--red)"></span>2</td>
+      <td><span class="sev-dot" style="background:var(--orange)"></span>3</td>
+      <td><span class="sev-dot" style="background:var(--yellow)"></span>5</td>
+      <td style="color:var(--red)"><strong>Mar 2025</strong></td>
+      <td>ROPC grant + 5 custom grants + no patches</td>
+    </tr>
+    <tr>
+      <td>AngularJS BackOffice</td><td>1.x</td>
+      <td><span class="sev-dot" style="background:var(--red)"></span>0</td>
+      <td><span class="sev-dot" style="background:var(--orange)"></span>3</td>
+      <td><span class="sev-dot" style="background:var(--yellow)"></span>3</td>
+      <td style="color:var(--red)"><strong>Dec 2021</strong></td>
+      <td>XSS via CVE-2026-11998 (actively exploited)</td>
+    </tr>
+    <tr>
+      <td>Odoo v14</td><td>14.0</td>
+      <td><span class="sev-dot" style="background:var(--red)"></span>0</td>
+      <td><span class="sev-dot" style="background:var(--orange)"></span>3</td>
+      <td><span class="sev-dot" style="background:var(--yellow)"></span>3</td>
+      <td style="color:var(--red)"><strong>Jan 2024</strong></td>
+      <td>Public DB manager + 6 applicable CVEs</td>
+    </tr>
+    <tr>
+      <td>ManageEngine SDP</td><td>15.2</td>
+      <td><span class="sev-dot" style="background:var(--red)"></span>2*</td>
+      <td><span class="sev-dot" style="background:var(--orange)"></span>1</td>
+      <td><span class="sev-dot" style="background:var(--yellow)"></span>1</td>
+      <td>No</td>
+      <td>SAML RCE (CVE-2022-47966) if SAML ever configured</td>
+    </tr>
+  </table>
+  <p style="font-size:12px;color:var(--text-dim);">*CVE-2022-47966 (9.8) and CVE-2021-44077 (9.8) apply conditionally based on patch level and SAML configuration.</p>
+</section>
+
+<!-- RECOMMENDATIONS -->
+<section id="recs" class="section">
+  <h2>🛡️ Recommendations</h2>
+
+  <h3 style="color:var(--red)">🚨 Immediate (0–72 hours)</h3>
+  <ol class="rec-list">
+    <li class="p0">Close DB manager on <strong>both Odoo instances</strong> — block <code>/web/database/manager*</code> via WAF/nginx, set <code>list_db=False</code> in odoo.conf<span class="rec-tag critical">Critical</span></li>
+    <li class="p0">Disable <strong>password grant (ROPC)</strong> and <strong>implicit grant</strong> on IdentityServer4 — violates RFC 9700 and OAuth BCP<span class="rec-tag critical">Critical</span></li>
+    <li class="p0">Audit SAML configuration on ManageEngine SDP — if SAML was ever configured, CVE-2022-47966 vector persists<span class="rec-tag critical">Critical</span></li>
+    <li class="p0">Implement Origin/Referer validation on SIRITE payment gateway at <code>/transaccion</code> endpoint<span class="rec-tag critical">Critical</span></li>
+    <li class="p1">Review logs for unauthorized access to <code>/web/database/manager</code>, <code>/connect/token</code>, and <code>/SamlResponse</code><span class="rec-tag high">High</span></li>
+  </ol>
+
+  <h3 style="color:var(--orange)">🟠 Short Term (1–4 weeks)</h3>
+  <ol class="rec-list" start="6">
+    <li class="p1">Migrate Odoo v11 → supported version (17.0 or 18.0) — v11 has been EOL for 3.8 years<span class="rec-tag high">High</span></li>
+    <li class="p1">Migrate IdentityServer4 → Duende IdentityServer (commercial) or Open IdentityServer (fork)<span class="rec-tag high">High</span></li>
+    <li class="p1">Replace AngularJS BackOffice — framework has been EOL for 4.5 years with actively exploited CVEs<span class="rec-tag high">High</span></li>
+    <li class="p1">Restrict <code>/connect/introspect</code>, <code>/connect/deviceauthorization</code> to internal IPs<span class="rec-tag high">High</span></li>
+    <li class="p1">Disable PKCE <code>plain</code> — enforce S256 only on IdentityServer4<span class="rec-tag high">High</span></li>
+    <li class="p2">Patch WAF rules for lab.cardnet.com.do and mercury.cardnet.com.do — currently unprotected<span class="rec-tag medium">Medium</span></li>
+    <li class="p2">Implement rate limiting on <code>/connect/token</code> endpoint<span class="rec-tag medium">Medium</span></li>
+  </ol>
+
+  <h3 style="color:var(--blue)">🔵 Medium Term (1–6 months)</h3>
+  <ol class="rec-list" start="14">
+    <li class="p2">Implement JWKS key rotation — single RSA256 key is a single point of failure<span class="rec-tag medium">Medium</span></li>
+    <li class="p2">Audit custom grant type implementations: onboarding, terminal, external_credentials<span class="rec-tag medium">Medium</span></li>
+    <li class="p2">Segment network — isolate Odoo, IdentityServer4, BackOffice from payment processing core<span class="rec-tag medium">Medium</span></li>
+    <li class="p2">Conduct PCI DSS gap assessment — multiple requirements violated (1.3, 2.2, 6.1, 7.1)<span class="rec-tag medium">Medium</span></li>
+    <li class="p2">Replace ManageEngine SDP with modern ITSM on supported stack<span class="rec-tag medium">Medium</span></li>
+    <li class="p2">Engage professional penetration testing service — quarterly testing recommended<span class="rec-tag medium">Medium</span></li>
+    <li class="p2">Implement SIEM monitoring for TTPs related to APT27 (Tilted Temple) on ManageEngine<span class="rec-tag medium">Medium</span></li>
+  </ol>
+
+  <div class="info-box red" style="margin-top:32px">
+    <strong>⚠️ Compliance Notice:</strong> As a Dominican Republic payment processor, CardNET may be subject to: (1) PCI DSS compliance requirements; (2) Superintendencia de Bancos de RD regulations; (3) Ley 172-13 de Protección de Datos Personales. Continued exposure of EOL products with management interfaces may constitute regulatory non-compliance.
+  </div>
+</section>
+
+</div>
+
+<div class="footer">
+  <p><strong>NSI-SA-2026-006</strong> — CardNET Security Assessment</p>
+  <p>Generated by Hermes Agent (ATHENA Suite) — Null Session Intelligence</p>
+  <p>2026-07-15 • CONFIDENTIAL</p>
+</div>
+
+</body>
+</html>
