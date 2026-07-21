@@ -1,0 +1,37 @@
+androidAppId: com.CMR.emesalud_cardioimagenes
+iosAppId: com.CMR.emesalud.cardioimagenes
+
+name: Cardio Imágenes Especializadas
+nameShort: Cardio Imágenes
+webpage:  https://cardioimagenes.com.do/
+ip: cardioimagenes.cmr-apps.com
+usesHttps: true
+
+contact_telephone: 809-565-5666
+contact_email: info@cardioimagenes.com.do
+contact_hours: De lunes a viernes 7:00 AM a 9:00 PM, Sábados 7:00 AM a 3:00 PM y Domingos 8:00 AM A 12:00 PM
+contact_address: Calle Cub Scouts num. 24 Ensanche Naco, Santo Domingo
+
+baseUrl: /HisWebServicios/Portal/ServicioPortal.svc
+baseUrlPACS: /visorhtml5/WcfServiceIconos/Service1.svc
+baseVisorPACS: /WebUltimateGL/App/Vistas/index.html
+
+iconBackgroundColor: "#ad0d17"
+
+color_primary: 0xff2C798C
+color_accent: 0xff234570
+color_primaryDark: 0xffA7AAAD
+color_accentDark: 0xff10100f
+color_primaryLight: 0xff5695e9
+color_accentLight: 0xff60605f
+color_loadingGrey: 0xffffffff
+
+debugMode: true
+hasImaging: true
+hasLaboratory: false
+hasPathology: false
+hasDirectory: false
+canMakeAppointmets: false
+hasBanner: true
+hasRecord: false
+showAppointments: false

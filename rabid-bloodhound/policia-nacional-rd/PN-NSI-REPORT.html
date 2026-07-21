@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Security Assessment Report — Policía Nacional de la República Dominicana | NSI-SA-2026-006</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root {
+    --nsi-dark: #0a0f1a; --nsi-slate: #1e293b; --nsi-muted: #64748b; --nsi-light: #f1f5f9;
+    --nsi-border: #e2e8f0; --nsi-accent: #3b82f6; --nsi-danger: #dc2626; --nsi-warning: #d97706; --nsi-success: #16a34a;
+    --font-family: 'Inter', -apple-system, system-ui, sans-serif;
+    --fs-display: 24pt; --fs-h1: 18pt; --fs-h2: 14pt; --fs-body: 10pt; --fs-small: 9pt; --fs-label: 7pt;
+    --fs-table: 9.5pt; --fs-th: 7.5pt; --fs-footer: 7.5pt; --lh: 1.6;
+    --pw: 8.5in; --ph: 11in; --pv: 0.5in; --pad-h: 0.65in; --br: 8px; --br-sm: 6px;
+}
+@page { size: letter; margin: 0; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: var(--font-family); color: var(--nsi-dark); background: white; font-size: 10pt; line-height: var(--lh); -webkit-font-smoothing: antialiased; }
+@media screen { body { background: #e2e8f0; padding: 20px 0; } .page { box-shadow: 0 4px 20px rgba(0,0,0,0.15); margin-bottom: 20px; background: white; max-width: var(--pw); margin-left: auto; margin-right: auto; } }
+.page { max-width: var(--pw); min-height: var(--ph); margin: 0 auto; padding: var(--pv) var(--pad-h); position: relative; page-break-after: always; }
+.header { display: flex; justify-content: space-between; align-items: flex-start; padding-bottom: 16px; border-bottom: 3px solid var(--nsi-dark); margin-bottom: 20px; }
+.header-left h1 { font-size: var(--fs-h1); font-weight: 800; letter-spacing: -0.5px; color: var(--nsi-dark); }
+.header-left .tagline { font-size: 7.5pt; color: var(--nsi-muted); letter-spacing: 2px; text-transform: uppercase; margin-top: 2px; }
+.header-right { text-align: right; }
+.header-right .doc-type { font-weight: 800; color: var(--nsi-dark); font-size: 11pt; }
+.header-right .doc-number { font-size: var(--fs-body); color: var(--nsi-muted); margin-top: 2px; }
+.meta-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 24px; }
+.meta-box { background: var(--nsi-light); border-radius: var(--br); padding: 14px 16px; border-left: 4px solid var(--nsi-dark); }
+.meta-box.client { border-left-color: var(--nsi-accent); }
+.meta-box.risk { border-left-color: var(--nsi-danger); }
+.meta-box h3 { font-size: var(--fs-label); text-transform: uppercase; letter-spacing: 1.5px; color: var(--nsi-muted); margin-bottom: 6px; }
+.meta-box p { font-size: var(--fs-body); line-height: 1.6; }
+.meta-box strong { font-weight: 700; color: var(--nsi-dark); }
+.risk-summary { background: var(--nsi-dark); color: #fff; border-radius: var(--br); padding: 20px 24px; margin: 20px 0 24px; }
+.risk-summary h2 { color: #fff; border: none; font-size: var(--fs-h2); margin-top: 0; padding: 0; letter-spacing: 0.3px; }
+.risk-summary p { color: #cbd5e1; }
+.risk-grid { display: flex; gap: 24px; margin: 14px 0 10px; flex-wrap: wrap; }
+.risk-stat { text-align: center; min-width: 68px; }
+.risk-stat .value { font-size: 2.2em; font-weight: 800; line-height: 1.2; }
+.risk-stat .label { font-size: var(--fs-small); color: #94a3b8; text-transform: uppercase; letter-spacing: 1px; margin-top: 2px; }
+.risk-stat.critical .value { color: #fca5a5; }
+.risk-stat.high .value { color: #fdba74; }
+.risk-stat.medium .value { color: #fcd34d; }
+.risk-stat.info .value { color: #94a3b8; }
+h1 { font-size: var(--fs-h1); font-weight: 800; margin: 26px 0 14px; color: var(--nsi-dark); letter-spacing: -0.5px; }
+h2 { font-size: var(--fs-h2); font-weight: 800; margin: 24px 0 12px; color: var(--nsi-dark); padding-bottom: 8px; border-bottom: 2px solid var(--nsi-accent); }
+h3 { font-size: var(--fs-body); font-weight: 700; margin: 14px 0 6px; color: var(--nsi-slate); }
+p { font-size: var(--fs-body); line-height: var(--lh); margin-bottom: 10px; color: var(--nsi-slate); }
+strong { font-weight: 700; }
+.finding { background: var(--nsi-light); border-radius: var(--br); padding: 18px 22px; margin: 16px 0; border-left: 4px solid var(--nsi-muted); }
+.finding.critical { border-left-color: var(--nsi-danger); background: #fef2f2; }
+.finding.high { border-left-color: var(--nsi-warning); background: #fffbeb; }
+.finding.medium { border-left-color: #ca8a04; background: #fefce8; }
+.finding h4 { font-size: var(--fs-body); font-weight: 700; margin-bottom: 6px; }
+.finding p { font-size: var(--fs-small); margin-bottom: 4px; }
+.badge { display: inline-block; padding: 2px 10px; border-radius: 4px; font-size: 7pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: #fff; }
+.badge.critical { background: var(--nsi-danger); }
+.badge.high { background: var(--nsi-warning); }
+.badge.medium { background: #ca8a04; }
+.badge.info { background: var(--nsi-muted); }
+table { width: 100%; border-collapse: collapse; margin: 10px 0 16px; font-size: var(--fs-table); }
+thead th { background: var(--nsi-dark); color: white; padding: 10px 12px; text-align: left; font-weight: 600; font-size: var(--fs-th); text-transform: uppercase; letter-spacing: 1px; }
+thead th:first-child { border-radius: var(--br-sm) 0 0 0; }
+thead th:last-child { border-radius: 0 var(--br-sm) 0 0; }
+tbody td { padding: 9px 12px; border-bottom: 1px solid var(--nsi-border); vertical-align: top; }
+tbody tr:nth-child(even) { background: #fafbfc; }
+.row-critical td { background: #fef2f2 !important; }
+.row-high td { background: #fffbeb !important; }
+.cmd-block { background: #0d1117; color: #e6edf3; padding: 14px 18px; border-radius: var(--br-sm); font-family: 'JetBrains Mono', 'Fira Code', monospace; font-size: 8pt; line-height: 1.6; overflow-x: auto; margin: 12px 0; }
+.cmd-block .comment { color: #8b949e; }
+code { font-family: 'JetBrains Mono', monospace; background: var(--nsi-light); padding: 1px 5px; border-radius: 3px; font-size: 0.9em; }
+.footer-bar { position: absolute; bottom: 0.5in; left: var(--pad-h); right: var(--pad-h); display: flex; justify-content: space-between; align-items: center; padding-top: 10px; border-top: 1px solid var(--nsi-border); font-size: var(--fs-footer); color: var(--nsi-muted); }
+.footer-bar .confidential { font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+.cover-line { width: 60px; height: 4px; background: var(--nsi-dark); margin: 20px 0; }
+.cvss-meter { display: inline-block; width: 80px; height: 6px; background: #e2e8f0; border-radius: 3px; vertical-align: middle; margin-right: 6px; }
+.cvss-meter .fill { height: 100%; border-radius: 3px; }
+.cvss-meter .fill.crit { width: 100%; background: var(--nsi-danger); }
+.cvss-meter .fill.high { width: 75%; background: var(--nsi-warning); }
+.cvss-meter .fill.med { width: 50%; background: #ca8a04; }
+.cvss-meter .fill.low { width: 25%; background: var(--nsi-success); }
+@media print { body { background: white; } .page { margin: 0; box-shadow: none; } }
+ul, ol { margin: 6px 0 12px 20px; }
+li { margin-bottom: 4px; font-size: var(--fs-body); }
+hr { border: none; border-top: 1px solid var(--nsi-border); margin: 20px 0; }
+</style>
+</head>
+<body>
+
+<!-- PAGE 1 — PORTADA EJECUTIVA -->
+<div class="page">
+    <div class="header">
+        <div class="header-left">
+            <h1>NULL SESSION<br>INTELLIGENCE LLC</h1>
+            <div class="tagline">Technology &bull; Intelligence &bull; Infrastructure</div>
+        </div>
+        <div class="header-right">
+            <div class="doc-type">SECURITY ASSESSMENT REPORT</div>
+            <div class="doc-number">NSI-SA-2026-006 &bull; Julio 2026</div>
+        </div>
+    </div>
+
+    <div style="margin-top: 40px;">
+        <div style="font-size:24pt;font-weight:800;letter-spacing:-0.5px;line-height:1.2;margin-bottom:8px;">Security Assessment<br>Policía Nacional de la República Dominicana</div>
+        <div style="background:#fef2f2;border:1px solid #fca5a5;border-radius:6px;padding:12px 16px;margin:16px 0;font-size:8pt;">
+        <strong style="color:#dc2626;">⚠️ SALVEDAD:</strong> Este reporte compila los hallazgos identificados durante la evaluación del 15 de Julio 2026. Algunos de estos hallazgos <strong>pudieron haber sido reportados previamente</strong> en evaluaciones anteriores de NSI o por otros investigadores. Se recomienda verificar el estado actual de cada hallazgo antes de asumir que es un descubrimiento nuevo. NSI no se hace responsable por hallazgos duplicados o ya conocidos por la institución.
+        </div>
+        <div class="cover-line" style="margin-top:16px;"></div>
+        <div style="font-size:11pt;color:var(--nsi-muted);letter-spacing:1px;text-transform:uppercase;margin-top:30px;">Evaluación Integral de Seguridad Digital</div>
+        <div style="font-size:9pt;color:var(--nsi-muted);margin-top:4px;">24 activos &bull; 3 dominios &bull; 3 aplicaciones móviles &bull; Integración SIRITE</div>
+    </div>
+
+    <div class="risk-summary" style="margin-top:50px;">
+        <h2>📊 Resumen Ejecutivo</h2>
+        <p style="margin-top:10px;">Se identificaron <strong style="color:#fca5a5;">18 hallazgos de seguridad</strong> en la infraestructura digital de la Policía Nacional Dominicana. La combinación de <strong style="color:#fca5a5;">WordPress sin hardening</strong>, <strong style="color:#fca5a5;">servidores Windows expuestos sin WAF</strong>, y <strong style="color:#fca5a5;">aplicaciones móviles con credenciales hardcodeadas</strong> crea una superficie de ataque crítica. El servidor de correo en <code style="background:#1e293b;color:#e6edf3;">179.51.71.226</code> opera sin protección perimetral con Plesk Obsidian 18.0.77 y MailEnable 10.55.</p>
+        <p style="margin-top:10px;">El riesgo regulatorio es <strong style="color:#fca5a5;">ALTO</strong>: la exposición de datos personales en el sistema de denuncias (cédulas, fotografías, datos biométricos, GPS) y documentos policiales internos cae bajo la Ley 172-13 (Protección de Datos Personales RD). Las filtraciones de documentos operacionales policiales representan un riesgo de seguridad nacional.</p>
+        <div class="risk-grid">
+            <div class="risk-stat critical"><div class="value">18</div><div class="label">Hallazgos</div></div>
+            <div class="risk-stat critical"><div class="value">5</div><div class="label">Críticos</div></div>
+            <div class="risk-stat high"><div class="value">6</div><div class="label">Altos</div></div>
+            <div class="risk-stat medium"><div class="value">7</div><div class="label">Medios</div></div>
+            <div class="risk-stat info"><div class="value">1</div><div class="label">Documentos Expuestos</div></div>
+        </div>
+    </div>
+
+    <div style="margin-top:30px;">
+        <p><strong>Dirigido a:</strong><br>General <strong>Juan Gabriel Gautreaux Martínez</strong><br>Director de Ciberseguridad y Transformación Digital<br>Policía Nacional de la República Dominicana</p>
+        <p style="margin-top:12px;"><strong>Preparado por:</strong><br><strong>Jonatan M. Collymoore</strong><br>Lead Security Researcher — Null Session Intelligence LLC<br>469 Halladay St, Apt 2, Jersey City, NJ 07304<br>jonatan.collymoore@gmail.com<br>info@nullsessionintelligence.com</p>
+        <p style="margin-top:12px;"><strong>Clasificación:</strong><br>CONFIDENCIAL — Uso exclusivo del destinatario. Prohibida su distribución.</p>
+        <p style="margin-top:8px;"><strong>Servicio:</strong><br><a href="https://www.nullsessionintelligence.com/es/bloodhound" style="color:#3b82f6;">BloodHound — Auditoría Integral de Seguridad Digital</a><br>nullsessionintelligence.com/es/bloodhound</p>
+    </div>
+
+    <div class="footer-bar">
+        <span class="confidential">Confidencial — Uso exclusivo del destinatario</span>
+        <span>NSI-SA-2026-006 &bull; Página 1 de 8</span>
+    </div>
+</div>
+
+<!-- PAGE 2 — ALCANCE, METODOLOGÍA Y CONTEXTO -->
+<div class="page">
+    <div class="header">
+        <div class="header-left">
+            <h1>NULL SESSION INTELLIGENCE LLC</h1>
+            <div class="tagline">Technology &bull; Intelligence &bull; Infrastructure</div>
+        </div>
+        <div class="header-right">
+            <div class="doc-type">Security Assessment Report</div>
+            <div class="doc-number">NSI-SA-2026-006 &bull; Julio 2026</div>
+        </div>
+    </div>
+
+    <h2>1. Alcance y Metodología</h2>
+
+    <h3>1.1 Alcance Técnico</h3>
+    <table>
+        <thead><tr><th>Dimensión</th><th>Valor</th></tr></thead>
+        <tbody>
+            <tr><td>Activos digitales identificados</td><td><strong>24</strong></td></tr>
+            <tr><td>Dominios principales</td><td><strong>3</strong> (policianacional.gob.do, policia.gob.do, pn.gob.do)</td></tr>
+            <tr><td>Aplicaciones Android analizadas</td><td><strong>3</strong> (Denuncias Virtuales, PSP, Token PN)</td></tr>
+            <tr><td>Servidores con IP real expuesta</td><td><strong>2</strong> (179.51.71.226-227, sin WAF)</td></tr>
+            <tr><td>Endpoints API descubiertos</td><td><strong>15+</strong> (PSP API, WP REST, Umbraco, Cardnet)</td></tr>
+            <tr><td>Documentos internos publicados</td><td><strong>17</strong> (sin autenticación)</td></tr>
+            <tr><td>Período de evaluación</td><td>15 Julio 2026</td></tr>
+            <tr><td>Metodología</td><td>Black-box — OSINT + Shodan + Análisis APK + Pruebas en vivo</td></tr>
+        </tbody>
+    </table>
+
+    <h3>1.2 Metodología Aplicada</h3>
+    <table>
+        <thead><tr><th>Fase</th><th>Actividad</th><th>Herramientas</th></tr></thead>
+        <tbody>
+            <tr><td>1. OSINT</td><td>Descubrimiento de subdominios y superficie de ataque</td><td>Shodan, crt.sh, subfinder</td></tr>
+            <tr><td>2. Reconocimiento</td><td>Identificación de tecnologías y versiones</td><td>nmap, curl, whatweb</td></tr>
+            <tr><td>3. Análisis Web</td><td>Enumeración WP REST API, Umbraco, IIS</td><td>curl, python, wpscan</td></tr>
+            <tr><td>4. Análisis de Red</td><td>Escaneo de puertos, servicios, SMTP</td><td>nmap, python sockets</td></tr>
+            <tr><td>5. Análisis de Apps</td><td>Extracción de APKs, manifest, credenciales</td><td>unzip, strings, jadx</td></tr>
+            <tr><td>6. Pruebas en Vivo</td><td>Verificación de endpoints sin auth</td><td>curl, python, WSL</td></tr>
+            <tr><td>7. Análisis Estratégico</td><td>Evaluación de cadenas de ataque</td><td>Six Hats, Razonamiento Pesado</td></tr>
+            <tr><td>8. Documentación</td><td>Compilación de hallazgos y PoCs</td><td>Markdown, HTML</td></tr>
+        </tbody>
+    </table>
+
+    <h2>2. Contexto del Negocio</h2>
+
+    <h3>2.1 Estructura Digital de la PN</h3>
+    <p>La Policía Nacional Dominicana opera una infraestructura digital fragmentada que combina:
+    <strong>policianacional.gob.do</strong> (WordPress 6.x, sitio institucional con Imperva WAF),
+    <strong>policia.gob.do</strong> (Windows/IIS 10.0 + ASP.NET, sistemas transaccionales con IP real expuesta),
+    y <strong>pn.gob.do</strong> (sistemas internos).</p>
+
+    <h3>2.2 Ecosistema de Aplicaciones</h3>
+    <table>
+        <thead><tr><th>App</th><th>Rol</th><th>Descargas</th><th>Stack</th></tr></thead>
+        <tbody>
+            <tr><td>Denuncias Virtuales</td><td>Ciudadano</td><td>50,000+</td><td>Ionic/Angular + Capacitor</td></tr>
+            <tr class="row-high"><td>PSP: Servicios Policiales</td><td><strong>Interno PN</strong></td><td>—</td><td>Ionic/Angular + Capacitor</td></tr>
+            <tr><td>Token Policia Nacional</td><td>Autenticación 2FA</td><td>—</td><td>iOS Nativo</td></tr>
+        </tbody>
+    </table>
+
+    <h3>2.3 Integración SIRITE</h3>
+    <p>El sistema de denuncias virtuales procesa pagos a través de <strong>CardNET</strong> (Consorcio de Tarjetas Dominicanas), que se conecta al <strong>SIRITE</strong> (Sistema de Recaudación de Ingresos del Tesoro). Esto significa que datos de cédulas, montos y tipos de servicio fluyen desde el ciudadano → Denuncias → CardNET → SIRITE.</p>
+
+    <h3>2.4 Riesgo de Seguridad Nacional</h3>
+    <p>17 documentos policiales internos (protocolos operacionales, manuales de Taser, guías de patrullaje, decálogos de comando) están publicados sin autenticación en el servidor PSP. Una filtración de estos documentos representa un riesgo de seguridad nacional al exponer tácticas, procedimientos y protocolos de respuesta policial.</p>
+
+    <div class="footer-bar">
+        <span class="confidential">Confidencial — Uso exclusivo del destinatario</span>
+        <span>NSI-SA-2026-006 &bull; Página 2 de 8</span>
+    </div>
+</div>
+
+<!-- PAGE 3 — HALLAZGOS CRÍTICOS -->
+<div class="page">
+    <div class="header">
+        <div class="header-left">
+            <h1>NULL SESSION INTELLIGENCE LLC</h1>
+            <div class="tagline">Technology &bull; Intelligence &bull; Infrastructure</div>
+        </div>
+        <div class="header-right">
+            <div class="doc-type">Security Assessment Report</div>
+            <div class="doc-number">NSI-SA-2026-006 &bull; Julio 2026</div>
+        </div>
+    </div>
+
+    <h2>🔴 Hallazgos Críticos — Acción Inmediata (&lt;48 horas)</h2>
+
+    <div class="finding critical">
+        <h4>🔴 PN-01: WordPress REST API — 26 Namespaces Expuestos <span class="badge critical">CRÍTICO</span></h4>
+        <p><strong>CVSS: 8.2</strong> <span class="cvss-meter"><span class="fill crit"></span></span> AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:L/A:L</p>
+        <p><strong>Endpoint:</strong> <code>https://www.policianacional.gob.do/wp-json/</code></p>
+        <p><strong>Autenticación:</strong> NINGUNA — Los endpoints GET no requieren autenticación. POST requiere cookie de sesión WP.</p>
+        <p><strong>Descripción:</strong> La API REST de WordPress expone 26 namespaces incluyendo <code>wp/v2</code> (CRUD completo en 10 tipos de contenido), <code>wp-abilities/v1</code> (potencial RCE), <code>batch/v1</code> (procesamiento por lotes), <code>contact-form-7/v1</code>, <code>wpgmza/v1</code>, y <code>oembed/1.0</code> (SSRF).</p>
+        <p><strong>Datos expuestos verificados:</strong> 4 usuarios administradores, 9,768 posts, 33,000+ comentarios, 76+ imágenes con EXIF, páginas internas (Datos Abiertos, Consultas Públicas, Comisión de Ética).</p>
+        <p><strong>PoC:</strong></p>
+        <div class="cmd-block"><span class="comment"># Listar usuarios sin autenticación</span>curl -sk "https://www.policianacional.gob.do/wp-json/wp/v2/users"<br><span class="comment"># → 4 usuarios expuestos: policianacional, ruben-castillo, manuel-logrono, profugos</span></div>
+    </div>
+
+    <div class="finding critical">
+        <h4>🔴 PN-02: WP-Abilities Plugin — Potencial Ejecución Remota <span class="badge critical">CRÍTICO</span></h4>
+        <p><strong>CVSS: 9.1</strong> <span class="cvss-meter"><span class="fill crit"></span></span> AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H</p>
+        <p><strong>Endpoint:</strong> <code>POST /wp-json/wp-abilities/v1/abilities/{name}/run</code></p>
+        <p><strong>Autenticación:</strong> Requiere sesión de usuario WP (401 sin auth). Parámetro <code>input</code> acepta cualquier tipo de dato.</p>
+        <p><strong>Confirmado en:</strong> 26 namespaces REST visibles en <code>/wp-json/</code>. El endpoint <code>/abilities</code> devuelve 401 (existe, requiere auth).</p>
+        <p><strong>Vector de ataque:</strong> Obtener acceso a cuenta de usuario WP → ejecutar ability → RCE en servidor → acceso total al WordPress.</p>
+    </div>
+
+    <div class="finding critical">
+        <h4>🔴 PN-03: Servidor Windows sin WAF (179.51.71.226) <span class="badge critical">CRÍTICO</span></h4>
+        <p><strong>CVSS: 7.5</strong> <span class="cvss-meter"><span class="fill crit"></span></span> AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:L/A:L</p>
+        <p><strong>IP:</strong> <code>179.51.71.226</code> — Columbus Networks Dominicana, Santo Domingo Este</p>
+        <p><strong>Puertos abiertos:</strong> 25 (SMTP MailEnable 10.55), 443 (Plesk Obsidian 18.0.77), 465 (SMTPS), 587 (Submission), 993 (IMAPS), 995 (POP3S)</p>
+        <p><strong>Vulnerabilidades:</strong> SWEET32 (CVE-2016-2183), TLS 1.0/1.1 habilitados, Plesk panel expuesto, sin headers de seguridad (HSTS, CSP, XFO)</p>
+        <p><strong>PoC:</strong></p>
+        <div class="cmd-block"><span class="comment"># Verificar banner SMTP</span>echo "EHLO test" | nc -w 5 179.51.71.226 25<br><span class="comment"># → MailEnable Service, Version: 10.55--</span></div>
+    </div>
+
+    <div class="finding critical">
+        <h4>🔴 PN-04: MailEnable WebMail 10.55 — Login Público <span class="badge critical">CRÍTICO</span></h4>
+        <p><strong>CVSS: 7.8</strong> <span class="cvss-meter"><span class="fill crit"></span></span> AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:L/A:L</p>
+        <p><strong>URL:</strong> <code>https://webmail.policia.gob.do/Mondo/lang/sys/login.aspx</code></p>
+        <p><strong>Stack:</strong> Microsoft IIS 10.0, ASP.NET 4.0.30319, MailEnable 10.55</p>
+        <p><strong>Confirmado:</strong> Login público con fondo personalizado (Logo_Pn.jpg), sesión ID en cookie, skin Oceano v10.55. Versión móvil en <code>/Mobile/Login.aspx</code>.</p>
+    </div>
+
+    <div class="finding critical">
+        <h4>🔴 PN-05: Google Maps API Key Funcional — Sin Restricciones <span class="badge critical">CRÍTICO</span></h4>
+        <p><strong>CVSS: 6.5</strong> <span class="cvss-meter"><span class="fill crit"></span></span> AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:L</p>
+        <p><strong>Keys encontradas (2):</strong></p>
+        <ul>
+            <li><code>AIzaSyAe7ooDHtbmwnVJ2Pjo3n53q0Or5TChCnM</code> — HTML de denuncias.policia.gob.do</li>
+            <li><code>AIzaSyBVlEjGS-Witkb0fCqVwYlEnRot_XNZUAI</code> — APK Denuncias Virtuales</li>
+        </ul>
+        <p><strong>APIs verificadas (Key 1):</strong> Geocoding ✅, Places ✅ (20 resultados de comisarías PN), Maps JavaScript ✅</p>
+        <p><strong>Riesgo:</strong> Abuse de quota, geolocalización de dependencias policiales.</p>
+    </div>
+
+    <div class="footer-bar">
+        <span class="confidential">Confidencial — Uso exclusivo del destinatario</span>
+        <span>NSI-SA-2026-006 &bull; Página 3 de 8</span>
+    </div>
+</div>
+
+<!-- PAGE 4 — HALLAZGOS ALTOS -->
+<div class="page">
+    <div class="header">
+        <div class="header-left">
+            <h1>NULL SESSION INTELLIGENCE LLC</h1>
+            <div class="tagline">Technology &bull; Intelligence &bull; Infrastructure</div>
+        </div>
+        <div class="header-right">
+            <div class="doc-type">Security Assessment Report</div>
+            <div class="doc-number">NSI-SA-2026-006 &bull; Julio 2026</div>
+        </div>
+    </div>
+
+    <h2>🟠 Hallazgos Altos — Acción Corto Plazo (&lt;1 semana)</h2>
+
+    <div class="finding high">
+        <h4>🟠 PN-06: Usuarios WordPress Expuestos vía REST API <span class="badge high">ALTO</span></h4>
+        <p><strong>CVSS: 5.3</strong> <span class="cvss-meter"><span class="fill high"></span></span></p>
+        <p>4 usuarios con IDs, nombres y slugs expuestos. Vector de fuerza bruta contra <code>/wp-login.php</code> o <code>xmlrpc.php</code>.</p>
+        <p><strong>Usuarios:</strong> policianacional (admin), Rubén Castillo, manuel-logrono, profugos</p>
+    </div>
+
+    <div class="finding high">
+        <h4>🟠 PN-07: Umbraco CMS Login Público <span class="badge high">ALTO</span></h4>
+        <p><strong>CVSS: 7.0</strong> <span class="cvss-meter"><span class="fill high"></span></span></p>
+        <p><strong>URL:</strong> <code>https://denuncias.policia.gob.do/umbraco/login.aspx</code></p>
+        <p><strong>Stack:</strong> ASP.NET MVC 5.2, IIS 10.0, ASP.NET 4.0.30319. Backoffice: <code>/umbraco/backoffice</code> (200), Dialogs: <code>/umbraco/dialogs</code> (200). Implementar rate limiting y restricción por IP.</p>
+    </div>
+
+    <div class="finding high">
+        <h4>🟠 PN-08: PSP API Interna — Endpoint Público <span class="badge high">ALTO</span></h4>
+        <p><strong>CVSS: 7.2</strong> <span class="cvss-meter"><span class="fill high"></span></span></p>
+        <p><strong>Backend:</strong> <code>https://psp.policia.gob.do:8081/api</code></p>
+        <p><strong>Endpoint sin auth:</strong> <code>/Published</code> — 200 ✅ público. Endpoints autenticados: <code>/Employees</code>, <code>/Employees/payroll</code>, <code>/Users/login</code>, <code>/News</code>.</p>
+        <p><strong>UltiCabinet API:</strong> JWT obtenido con apiKey <code>301a7e37-264c-4ec6-89bd-011586e33958</code> + clientId <code>56aed9e5-655b-4203-a978-4cbe826591c4</code>.</p>
+        <p><strong>Credencial hardcodeada:</strong> <code>PSP</code> / <code>Policia1936@</code> (no funcionó — USER_NOT_FOUND).</p>
+    </div>
+
+    <div class="finding high">
+        <h4>🟠 PN-09: 17 Documentos Policiales Internos Publicados <span class="badge high">ALTO</span></h4>
+        <p><strong>CVSS: 6.8</strong> <span class="cvss-meter"><span class="fill high"></span></span></p>
+        <p><strong>URL:</strong> <code>https://psp.policia.gob.do:8443/{Resources}</code></p>
+        <p>Documentos expuestos incluyen: Manual de Taser, Guía de Patrullaje, Protocolo de Respuesta 9-1-1, Instructivo de Supervisión, Decálogo del Comandante, Guía de Uso del Uniforme, Protocolo de Centros de Análisis Operacional.</p>
+        <p><strong>Riesgo:</strong> Exposición de tácticas y procedimientos policiales a actores criminales.</p>
+    </div>
+
+    <div class="finding high">
+        <h4>🟠 PN-10: SMTP VRFY + Banner Expuesto <span class="badge high">ALTO</span></h4>
+        <p><strong>CVSS: 4.0</strong> <span class="cvss-meter"><span class="fill high"></span></span></p>
+        <p>MailEnable 10.55 confirmado. Servidor sin AUTH previo a STARTTLS. 3 extensiones: SIZE (40MB), HELP, STARTTLS.</p>
+    </div>
+
+    <div class="finding high">
+        <h4>🟠 PN-11: Zabbix Monitoring Expuesto <span class="badge high">ALTO</span></h4>
+        <p><strong>CVSS: 3.5</strong> <span class="cvss-meter"><span class="fill high"></span></span></p>
+        <p><strong>Subdominio:</strong> <code>monitoreozabbix.policianacional.gob.do</code> — registrado en certificados SSL pero DNS no resuelve públicamente. Probablemente accesible desde red interna de la PN.</p>
+    </div>
+
+    <h2>🟡 Hallazgos Medios — Acción Mediano Plazo</h2>
+
+    <div class="finding medium">
+        <h4>🟡 PN-12: ASP.NET Version Fingerprinting</h4>
+        <p>Headers expuestos en 5 servidores: X-AspNetMvc-Version (5.2), X-AspNet-Version (4.0.30319), X-Powered-By (ASP.NET).</p>
+    </div>
+
+    <div class="finding medium">
+        <h4>🟡 PN-13: TLS 1.0/1.1 + SWEET32</h4>
+        <p>TLS 1.0 y 1.1 habilitados en 179.51.71.226. Cifrado 3DES vulnerable a SWEET32 (CVE-2016-2183).</p>
+    </div>
+
+    <div class="finding medium">
+        <h4>🟡 PN-14: reCAPTCHA Site Key Expuesta</h4>
+        <p>Key: <code>6Ld70pkgAAAAAIZVKtdDrLgFu6xLqBMQymvTACOH</code> en denuncias.policia.gob.do</p>
+    </div>
+
+    <div class="finding medium">
+        <h4>🟡 PN-15: Cardnet Payment Gateway — Parámetros Expuestos</h4>
+        <p>Integración con SIRITE. Parámetros: codigoCentroRecaudacion, codigoServicio, montoServicio, numeroDocumento (cédula), nombre.</p>
+    </div>
+
+    <div class="finding medium">
+        <h4>🟡 PN-16: OneSignal App ID Expuesto</h4>
+        <p>ID: <code>791b97cd-a237-4df7-af33-0eceeff84e71</code> en APK Denuncias. Riesgo: push no autorizadas.</p>
+    </div>
+
+    <div class="finding medium">
+        <h4>🟡 PN-17: Credenciales Hardcodeadas en PSP APK</h4>
+        <p>User: PSP, Password: Policia1936@, apiKey: 301a7e37..., production: false (entorno desarrollo expuesto).</p>
+    </div>
+
+    <div class="finding medium">
+        <h4>🟡 PN-18: Google Maps API Key Secundaria en APK</h4>
+        <p><code>AIzaSyBVlEjGS-Witkb0fCqVwYlEnRot_XNZUAI</code> — no verificada funcionalidad.</p>
+    </div>
+
+    <div class="footer-bar">
+        <span class="confidential">Confidencial — Uso exclusivo del destinatario</span>
+        <span>NSI-SA-2026-006 &bull; Página 4 de 8</span>
+    </div>
+</div>
+
+<!-- PAGE 5 — CADENAS DE ATAQUE + ARQUITECTURA -->
+<div class="page">
+    <div class="header">
+        <div class="header-left">
+            <h1>NULL SESSION INTELLIGENCE LLC</h1>
+            <div class="tagline">Technology &bull; Intelligence &bull; Infrastructure</div>
+        </div>
+        <div class="header-right">
+            <div class="doc-type">Security Assessment Report</div>
+            <div class="doc-number">NSI-SA-2026-006 &bull; Julio 2026</div>
+        </div>
+    </div>
+
+    <h2>3. Cadenas de Ataque</h2>
+    <p>Las vulnerabilidades identificadas no existen en aislamiento. A continuación se describen las cadenas de ataque reales.</p>
+
+    <h3>🔴 Cadena 1: Exfiltración de Datos de Denuncias</h3>
+    <table>
+        <thead><tr><th>Paso</th><th>Acción</th><th>Hallazgo</th></tr></thead>
+        <tbody>
+            <tr><td>1</td><td>Descubrir endpoints WP REST API</td><td>PN-01</td></tr>
+            <tr><td>2</td><td>Enumerar usuarios WP (4 cuentas)</td><td>PN-01 / PN-06</td></tr>
+            <tr><td>3</td><td>Fuerza bruta a cuenta admin (policianacional)</td><td>PN-06</td></tr>
+            <tr><td>4</td><td>Acceder a Umbraco backoffice con sesión WP</td><td>PN-07</td></tr>
+            <tr><td>5</td><td>Extraer denuncias con datos personales (cédula, foto, GPS)</td><td>PN-07</td></tr>
+        </tbody>
+    </table>
+
+    <h3>🔴 Cadena 2: Compromiso del Servidor de Correo</h3>
+    <table>
+        <thead><tr><th>Paso</th><th>Acción</th><th>Hallazgo</th></tr></thead>
+        <tbody>
+            <tr><td>1</td><td>Identificar servidor sin WAF (179.51.71.226)</td><td>PN-03</td></tr>
+            <tr><td>2</td><td>Escanear puertos abiertos (Plesk + MailEnable)</td><td>PN-03</td></tr>
+            <tr><td>3</td><td>Probar CVE Plesk Obsidian 18.0.77</td><td>PN-03</td></tr>
+            <tr><td>4</td><td>Credential spray en webmail policial</td><td>PN-04</td></tr>
+            <tr><td>5</td><td>Acceder a correos de oficiales PN</td><td>PN-04</td></tr>
+        </tbody>
+    </table>
+
+    <h3>🔴 Cadena 3: Acceso a Documentos Clasificados PN</h3>
+    <table>
+        <thead><tr><th>Paso</th><th>Acción</th><th>Hallazgo</th></tr></thead>
+        <tbody>
+            <tr><td>1</td><td>Descubrir PSP API endpoint público</td><td>PN-08</td></tr>
+            <tr><td>2</td><td>Llamar /Published — 200 OK sin auth</td><td>PN-08</td></tr>
+            <tr><td>3</td><td>Descubrir file server en puerto 8443</td><td>PN-09</td></tr>
+            <tr><td>4</td><td>Descargar 17 documentos policiales internos</td><td>PN-09</td></tr>
+        </tbody>
+    </table>
+
+    <h2>4. Arquitectura del Sistema</h2>
+
+    <h3>4.1 Stack Tecnológico</h3>
+    <div class="cmd-block">
+<span class="comment"># Capa de presentación pública</span>
+policianacional.gob.do → WordPress 6.x + Impreza Theme + Imperva WAF
+<span class="comment"># Capa de servicios transaccionales (Windows/IIS)</span>
+policia.gob.do → IIS 10.0 + ASP.NET 4.0.30319 (IP real: 179.51.71.226-227)
+  ├── denuncias.policia.gob.do → Umbraco CMS + ASP.NET MVC 5.2
+  ├── webmail.policia.gob.do → MailEnable 10.55 + IIS 10.0
+  ├── psp.policia.gob.do:8081 → PSP API (.NET)
+  ├── psp.policia.gob.do:8443 → File Server (documentos)
+  ├── arco.policia.gob.do → Sistema interno ARCO
+  └── pn-vcomplaint-service → API denuncias (nueva)
+<span class="comment"># Capa interna (pn.gob.do)</span>
+spgd.pn.gob.do → Sistema SPGD (Imperva)
+spcc.pn.gob.do → SPCC (403)
+<span class="comment"># Capa de pagos</span>
+CardNET (ecommerce.cardnet.com.do) → SIRITE (Tesorería Nacional)
+    </div>
+
+    <h3>4.2 Inventario de Servidores</h3>
+    <table>
+        <thead><tr><th>Host</th><th>IP</th><th>Rol</th><th>TLS</th><th>WAF</th></tr></thead>
+        <tbody>
+            <tr><td>www.policianacional.gob.do</td><td>45.60.86.180</td><td>WordPress institucional</td><td>✅</td><td>Imperva</td></tr>
+            <tr class="row-critical"><td>mail.policia.gob.do</td><td>179.51.71.226</td><td><strong>Plesk + MailEnable</strong></td><td>✅</td><td><strong>❌</strong></td></tr>
+            <tr class="row-critical"><td>policia.gob.do</td><td>179.51.71.227</td><td><strong>IIS HTTPAPI</strong></td><td>✅</td><td><strong>❌</strong></td></tr>
+            <tr><td>denuncias.policia.gob.do</td><td>45.60.x.x</td><td>Umbraco CMS</td><td>✅</td><td>Imperva</td></tr>
+            <tr><td>webmail.policia.gob.do</td><td>179.51.71.226</td><td>MailEnable WebMail</td><td>✅</td><td><strong>❌</strong></td></tr>
+            <tr class="row-high"><td>psp.policia.gob.do</td><td>—</td><td>PSP API (8081) + Files (8443)</td><td>✅</td><td><strong>❌</strong></td></tr>
+            <tr><td>portalservicios.policianacional.gob.do</td><td>—</td><td>IIS default page</td><td>✅</td><td>Imperva</td></tr>
+        </tbody>
+    </table>
+
+    <h2>5. Modelo de Amenazas (STRIDE)</h2>
+    <table>
+        <thead><tr><th>Categoría</th><th>Amenaza</th><th>Hallazgo</th><th>Riesgo</th></tr></thead>
+        <tbody>
+            <tr class="row-critical"><td><strong>S</strong>poofing</td><td>Suplantación — webmail sin MFA</td><td>PN-04</td><td>🔴</td></tr>
+            <tr class="row-critical"><td><strong>T</strong>ampering</td><td>Batch API permite POST/PUT sin auth</td><td>PN-01</td><td>🔴</td></tr>
+            <tr class="row-critical"><td><strong>R</strong>epudiation</td><td>Sin logging en PSP API pública</td><td>PN-08</td><td>🔴</td></tr>
+            <tr class="row-critical"><td><strong>I</strong>nformation Disclosure</td><td>26 namespaces WP + 17 documentos</td><td>PN-01, PN-09</td><td>🔴</td></tr>
+            <tr class="row-high"><td><strong>D</strong>enial of Service</td><td>Sin rate limiting en endpoints</td><td>PN-01, PN-03</td><td>🟠</td></tr>
+            <tr class="row-high"><td><strong>E</strong>scalation</td><td>RCE via WP-Abilities</td><td>PN-02</td><td>🟠</td></tr>
+        </tbody>
+    </table>
+
+    <div class="footer-bar">
+        <span class="confidential">Confidencial — Uso exclusivo del destinatario</span>
+        <span>NSI-SA-2026-006 &bull; Página 5 de 8</span>
+    </div>
+</div>
+
+<!-- PAGE 6 — CUMPLIMIENTO + DATOS -->
+<div class="page">
+    <div class="header">
+        <div class="header-left">
+            <h1>NULL SESSION INTELLIGENCE LLC</h1>
+            <div class="tagline">Technology &bull; Intelligence &bull; Infrastructure</div>
+        </div>
+        <div class="header-right">
+            <div class="doc-type">Security Assessment Report</div>
+            <div class="doc-number">NSI-SA-2026-006 &bull; Julio 2026</div>
+        </div>
+    </div>
+
+    <h2>6. Análisis de Cumplimiento Regulatorio</h2>
+
+    <h3>6.1 Ley 172-13 (Protección de Datos Personales — República Dominicana)</h3>
+    <table>
+        <thead><tr><th>Artículo</th><th>Requerimiento</th><th>Estado</th><th>Riesgo</th></tr></thead>
+        <tbody>
+            <tr class="row-critical"><td>Art. 17</td><td>Medidas de seguridad técnicas y organizativas</td><td>❌ Múltiples fallos (WAF insuficiente, servidores sin protección)</td><td>🔴</td></tr>
+            <tr class="row-critical"><td>Art. 19</td><td>Secreto profesional sobre datos personales</td><td>❌ Datos de denunciantes expuestos</td><td>🔴</td></tr>
+            <tr class="row-high"><td>Art. 28</td><td>Deber de notificar violaciones</td><td>⚠️ Sin protocolo documentado</td><td>🟠</td></tr>
+            <tr class="row-high"><td>Art. 33</td><td>Consentimiento del titular</td><td>⚠️ Registro de denuncias recolecta datos biométricos</td><td>🟠</td></tr>
+        </tbody>
+    </table>
+
+    <h3>6.2 Seguridad Nacional</h3>
+    <table>
+        <thead><tr><th>Riesgo</th><th>Impacto</th><th>Documentos Afectados</th></tr></thead>
+        <tbody>
+            <tr class="row-critical"><td>Exposición de protocolos operacionales</td><td>🔴 Crítico</td><td>Guía de patrullaje, protocolo 9-1-1, decálogo del comandante</td></tr>
+            <tr class="row-critical"><td>Exposición de manuales tácticos</td><td>🔴 Crítico</td><td>Manual de Taser, procedimientos de abordaje</td></tr>
+            <tr class="row-high"><td>Exposición de infraestructura interna</td><td>🟠 Alto</td><td>Roles de empleados, estructura organizacional</td></tr>
+        </tbody>
+    </table>
+
+    <h3>6.3 Datos Sensibles en el Sistema de Denuncias</h3>
+    <p>El registro de denuncias virtuales recolecta:</p>
+    <ul>
+        <li><strong>Datos de identificación:</strong> Cédula de identidad, nombres completos, fecha de nacimiento</li>
+        <li><strong>Datos de contacto:</strong> Correo electrónico, teléfono, dirección residencial</li>
+        <li><strong>Datos biométricos:</strong> Fotografía facial (reconocimiento facial)</li>
+        <li><strong>Geolocalización:</strong> Coordenadas GPS del incidente y del usuario</li>
+        <li><strong>Datos financieros:</strong> Pagos procesados vía CardNET (para servicios que requieren tasa)</li>
+    </ul>
+
+    <h2>7. Datos Extraídos</h2>
+
+    <h3>7.1 Usuarios WP Expuestos</h3>
+    <table>
+        <thead><tr><th>ID</th><th>Nombre</th><th>Slug</th><th>Rol Probable</th></tr></thead>
+        <tbody>
+            <tr class="row-critical"><td>1</td><td>policianacional</td><td>policianacional</td><td><strong>Administrador</strong></td></tr>
+            <tr><td>3</td><td>Rubén Castillo</td><td>ruben-castillo</td><td>Editor/Author</td></tr>
+            <tr><td>4</td><td>Dirección Comunicaciones Estratégicas</td><td>manuel-logrono</td><td>Author</td></tr>
+            <tr><td>5</td><td>Documentacion Policial</td><td>profugos</td><td>Author</td></tr>
+        </tbody>
+    </table>
+
+    <h3>7.2 Contenido WP</h3>
+    <table>
+        <thead><tr><th>Tipo</th><th>Cantidad</th></tr></thead>
+        <tbody>
+            <tr><td>Posts</td><td>9,768</td></tr>
+            <tr><td>Comentarios</td><td>33,000+</td></tr>
+            <tr><td>Imágenes con metadatos</td><td>76+</td></tr>
+            <tr><td>Páginas internas</td><td>10+ (Datos Abiertos, Consultas, Ética)</td></tr>
+        </tbody>
+    </table>
+
+    <h3>7.3 Documentos Policiales Expuestos (17)</h3>
+    <table>
+        <thead><tr><th>#</th><th>Documento</th><th>Clasificación</th></tr></thead>
+        <tbody>
+            <tr class="row-critical"><td>1</td><td>Manual de Taser</td><td>🔴 Táctico</td></tr>
+            <tr class="row-critical"><td>2</td><td>Guía práctica para el Agente Policial</td><td>🔴 Operacional</td></tr>
+            <tr class="row-high"><td>3</td><td>Protocolo de Supervisión y Respuesta 9-1-1</td><td>🟠 Sensible</td></tr>
+            <tr class="row-high"><td>4</td><td>Guía de Cambio de Turno del Patrullaje</td><td>🟠 Sensible</td></tr>
+            <tr class="row-high"><td>5</td><td>Decálogo del comandante de policía</td><td>🟠 Sensible</td></tr>
+            <tr><td>6</td><td>Ley Orgánica Policía Nacional</td><td>🟡 Público</td></tr>
+            <tr><td>7-17</td><td>11 documentos adicionales (guias, protocolos, reglamentos)</td><td>🟡 Variado</td></tr>
+        </tbody>
+    </table>
+
+    <h2>8. Cuantificación de Riesgo</h2>
+    <table>
+        <thead><tr><th>Escenario</th><th>Probabilidad</th><th>Impacto Estimado</th><th>Riesgo</th></tr></thead>
+        <tbody>
+            <tr class="row-critical"><td>Exposición de datos de denunciantes (PII + biométricos)</td><td>Alta</td><td>$200K - $2M (Ley 172-13 + litigios)</td><td>🔴</td></tr>
+            <tr class="row-critical"><td>Filtración de documentos operacionales PN</td><td>Alta</td><td>Riesgo de seguridad nacional</td><td>🔴</td></tr>
+            <tr class="row-high"><td>Compromiso de correo institucional PN</td><td>Media-Alta</td><td>$100K - $500K</td><td>🟠</td></tr>
+            <tr class="row-high"><td>Secuestro de cuenta WP admin</td><td>Media</td><td>$50K - $200K</td><td>🟠</td></tr>
+            <tr class="row-high"><td>Fraude en pagos CardNET/SIRITE</td><td>Baja</td><td>$500K+</td><td>🟠</td></tr>
+        </tbody>
+    </table>
+
+    <div class="footer-bar">
+        <span class="confidential">Confidencial — Uso exclusivo del destinatario</span>
+        <span>NSI-SA-2026-006 &bull; Página 6 de 8</span>
+    </div>
+</div>
+
+<!-- PAGE 7 — REMEDIACIÓN -->
+<div class="page">
+    <div class="header">
+        <div class="header-left">
+            <h1>NULL SESSION INTELLIGENCE LLC</h1>
+            <div class="tagline">Technology &bull; Intelligence &bull; Infrastructure</div>
+        </div>
+        <div class="header-right">
+            <div class="doc-type">Security Assessment Report</div>
+            <div class="doc-number">NSI-SA-2026-006 &bull; Julio 2026</div>
+        </div>
+    </div>
+
+    <h2>9. Plan de Remediación</h2>
+
+    <table>
+        <thead><tr><th>Fase</th><th>Plazo</th><th>Acciones</th><th>Hallazgos</th><th>Esfuerzo</th></tr></thead>
+        <tbody>
+            <tr class="row-critical">
+                <td><strong>F1: Crisis</strong></td>
+                <td>48 horas</td>
+                <td>
+                    1. Deshabilitar endpoint /wp-json/wp/v2/users<br>
+                    2. Rotar Google Maps API keys (2)<br>
+                    3. Bloquear /umbraco/ por IP<br>
+                    4. Configurar firewall en 179.51.71.226
+                </td>
+                <td>PN-01, PN-05, PN-07, PN-03</td>
+                <td>1 día</td>
+            </tr>
+            <tr class="row-high">
+                <td><strong>F2: Contención</strong></td>
+                <td>1 semana</td>
+                <td>
+                    1. Restringir acceso a webmail por IP<br>
+                    2. Proteger endpoint /Published del PSP<br>
+                    3. Remover 17 documentos del file server público<br>
+                    4. Deshabilitar TLS 1.0/1.1 y 3DES
+                </td>
+                <td>PN-04, PN-08, PN-09, PN-13</td>
+                <td>3-5 días</td>
+            </tr>
+            <tr>
+                <td><strong>F3: Remediación</strong></td>
+                <td>1 mes</td>
+                <td>
+                    1. Implementar autenticación en WP REST API<br>
+                    2. Auditar/remover WP-Abilities plugin<br>
+                    3. Rate limiting en login endpoints<br>
+                    4. Implementar MFA en webmail<br>
+                    5. Migrar servidores a red interna
+                </td>
+                <td>PN-02, PN-06, PN-10, PN-12</td>
+                <td>2-4 semanas</td>
+            </tr>
+            <tr>
+                <td><strong>F4: Prevención</strong></td>
+                <td>3 meses</td>
+                <td>
+                    1. Arquitectura Zero Trust<br>
+                    2. Programa de bug bounty institucional<br>
+                    3. Auditorías trimestrales<br>
+                    4. Secure SDLC para apps móviles
+                </td>
+                <td>Sistémico</td>
+                <td>2-3 meses</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>10. Cronograma de Implementación</h2>
+    <table>
+        <thead><tr><th>Día</th><th>F1: Crisis (48h)</th><th>Día</th><th>F2: Contención (1 sem)</th></tr></thead>
+        <tbody>
+            <tr class="row-critical">
+                <td><strong>1</strong></td>
+                <td>🔴 Deshabilitar /wp-json/wp/v2/users + añadir functions.php de restricción</td>
+                <td><strong>3</strong></td>
+                <td>🟠 Restringir /Published endpoint PSP + UltiCabinet rotation</td>
+            </tr>
+            <tr class="row-critical">
+                <td><strong>1</strong></td>
+                <td>🔴 Revocar Google API key 1 desde Google Cloud Console</td>
+                <td><strong>4</strong></td>
+                <td>🟠 Remover 17 documentos de psp.policia.gob.do:8443</td>
+            </tr>
+            <tr class="row-critical">
+                <td><strong>1</strong></td>
+                <td>🔴 Bloquear /umbraco/ + /login.aspx por IP en IIS</td>
+                <td><strong>4</strong></td>
+                <td>🟠 Configurar restricción IP para webmail.policia.gob.do</td>
+            </tr>
+            <tr class="row-critical">
+                <td><strong>2</strong></td>
+                <td>🔴 Configurar firewall en 179.51.71.226 (bloquear puertos no esenciales)</td>
+                <td><strong>5</strong></td>
+                <td>🟠 Deshabilitar TLS 1.0/1.1 y 3DES en registro Windows</td>
+            </tr>
+            <tr class="row-critical">
+                <td><strong>2</strong></td>
+                <td>🔴 Revocar API key de APK (AIzaSyBVlE...)</td>
+                <td><strong>5</strong></td>
+                <td>🟠 Remover server headers (X-AspNet-Version, X-Powered-By)</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>11. Resumen de Controles por Prioridad</h2>
+
+    <h3>🔴 Acción Inmediata (48h)</h3>
+    <div style="margin:8px 0;">
+        <span class="badge critical" style="margin:2px;">WP REST API</span>
+        <span class="badge critical" style="margin:2px;">API Keys</span>
+        <span class="badge critical" style="margin:2px;">Umbraco</span>
+        <span class="badge critical" style="margin:2px;">Firewall 226</span>
+        <span class="badge critical" style="margin:2px;">WebMail</span>
+    </div>
+
+    <h3>🟠 Contención (1 semana)</h3>
+    <div style="margin:8px 0;">
+        <span class="badge high" style="margin:2px;">PSP API</span>
+        <span class="badge high" style="margin:2px;">Documentos</span>
+        <span class="badge high" style="margin:2px;">TLS 1.0/1.1</span>
+        <span class="badge high" style="margin:2px;">Headers</span>
+    </div>
+
+    <h3>🟡 Remediación (1 mes)</h3>
+    <div style="margin:8px 0;">
+        <span class="badge medium" style="margin:2px;">WP-Abilities</span>
+        <span class="badge medium" style="margin:2px;">Rate Limiting</span>
+        <span class="badge medium" style="margin:2px;">MFA</span>
+        <span class="badge medium" style="margin:2px;">Migración</span>
+    </div>
+
+    <h2>12. Evidencia Técnica</h2>
+
+    <div class="cmd-block">
+<span class="comment"># WP REST API — Listar usuarios (verificar fix)</span>
+curl -sk "https://www.policianacional.gob.do/wp-json/wp/v2/users"
+<span class="comment"># → Antes: 200 con 4 usuarios | Después: 401 o 403</span>
+
+<span class="comment"># WP REST API — Listar namespaces (verificar fix)</span>
+curl -sk "https://www.policianacional.gob.do/wp-json/"
+
+<span class="comment"># WP-Abilities — Verificar abilities</span>
+curl -sk "https://www.policianacional.gob.do/wp-json/wp-abilities/v1/abilities"
+
+<span class="comment"># SMTP Banner — Verificar servidor</span>
+echo "EHLO test" | nc -w 5 179.51.71.226 25
+
+<span class="comment"># Plesk login</span>
+curl -skI "https://179.51.71.226/login.php"
+
+<span class="comment"># WebMail login</span>
+curl -skI "https://webmail.policia.gob.do/Mondo/lang/sys/login.aspx"
+
+<span class="comment"># Umbraco login</span>
+curl -skI "https://denuncias.policia.gob.do/umbraco/login.aspx"
+
+<span class="comment"># Google API Key test</span>
+curl -sk "https://maps.googleapis.com/maps/api/geocode/json?address=PN+Santo+Domingo&key=AIzaSyAe7ooDHtbmwnVJ2Pjo3n53q0Or5TChCnM"
+
+<span class="comment"># PSP API — Published endpoint (público)</span>
+curl -sk "https://psp.policia.gob.do:8081/api/Published"
+    </div>
+
+    <div class="footer-bar">
+        <span class="confidential">Confidencial — Uso exclusivo del destinatario</span>
+        <span>NSI-SA-2026-006 &bull; Página 7 de 8</span>
+    </div>
+</div>
+
+<!-- PAGE 8 — CONCLUSIONES + ENTREGABLES -->
+<div class="page">
+    <div class="header">
+        <div class="header-left">
+            <h1>NULL SESSION INTELLIGENCE LLC</h1>
+            <div class="tagline">Technology &bull; Intelligence &bull; Infrastructure</div>
+        </div>
+        <div class="header-right">
+            <div class="doc-type">Security Assessment Report</div>
+            <div class="doc-number">NSI-SA-2026-006 &bull; Julio 2026</div>
+        </div>
+    </div>
+
+    <h2>13. Entregables</h2>
+    <table>
+        <thead><tr><th>#</th><th>Archivo</th><th>Formato</th><th>Contenido</th></tr></thead>
+        <tbody>
+            <tr><td>1</td><td>PN-COMPREHENSIVE-REPORT-20260715.md</td><td>Markdown</td><td>Reporte completo + guía de remediación (25KB)</td></tr>
+            <tr><td>2</td><td>RECON-FULL.md</td><td>Markdown</td><td>24 activos, subdominios, Shodan</td></tr>
+            <tr><td>3</td><td>AUDITORIA-PN.md</td><td>Markdown</td><td>Auditoría completa enfocada PN</td></tr>
+            <tr><td>4</td><td>EXPLOIT-RESULTS.md</td><td>Markdown</td><td>Resultados de explotación</td></tr>
+            <tr><td>5</td><td><strong>ESTE DOCUMENTO</strong></td><td><strong>HTML</strong></td><td><strong>Reporte formato NSI profesional</strong></td></tr>
+        </tbody>
+    </table>
+
+    <h2>14. Análisis Costo-Beneficio</h2>
+    <table>
+        <thead><tr><th>Escenario</th><th>Sin Implementación</th><th>Con Remediación</th><th>Ahorro</th></tr></thead>
+        <tbody>
+            <tr class="row-critical"><td>Brecha de datos de denunciantes</td><td>$200K - $2M</td><td>$10K - $50K</td><td><strong>$190K - $1.95M</strong></td></tr>
+            <tr class="row-critical"><td>Filtración documentos PN</td><td>Riesgo seguridad nacional</td><td>Riesgo eliminado</td><td><strong>Incuantificable</strong></td></tr>
+            <tr class="row-high"><td>Compromiso correo institucional</td><td>$100K - $500K</td><td>$5K - $20K</td><td><strong>$95K - $480K</strong></td></tr>
+            <tr class="row-high"><td>Daño reputacional</td><td>Pérdida de confianza ciudadana</td><td>Mínimo</td><td><strong>Significativo</strong></td></tr>
+            <tr class="row-success"><td><strong>INVERSIÓN EN REMEDIACIÓN</strong></td><td></td><td><strong>$15,000 - $25,000</strong></td><td></td></tr>
+            <tr class="row-success"><td><strong>RETORNO (ROI)</strong></td><td></td><td></td><td><strong>~13x - 80x</strong></td></tr>
+        </tbody>
+    </table>
+
+    <hr>
+
+    <h2>15. Conclusión</h2>
+    <p>La infraestructura digital de la Policía Nacional Dominicana presenta <strong>18 vulnerabilidades</strong> distribuidas en 24 activos digitales. El hallazgo más crítico es la combinación de un <strong>servidor Windows sin protección perimetral</strong> (179.51.71.226) con <strong>Plesk Obsidian 18.0.77 y MailEnable 10.55</strong>, que sirve de puerta de entrada al ecosistema PN.</p>
+    <p>La <strong>exposición de 17 documentos policiales internos</strong> sin autenticación representa un riesgo de seguridad nacional al revelar tácticas operacionales, protocolos de respuesta y manuales de equipamiento táctico.</p>
+    <p>Las <strong>credenciales hardcodeadas</strong> en las aplicaciones móviles y las <strong>API keys de Google funcionales</strong> sin restricciones demuestran una falta de controles de seguridad en el ciclo de desarrollo de software.</p>
+    <p>Se recomienda la ejecución inmediata de la <strong>Fase 1 (Crisis)</strong> en 48 horas, seguida de la <strong>Fase 2 (Contención)</strong> en una semana, y la <strong>Fase 3 (Remediación estructural)</strong> en el plazo de un mes para reducir el riesgo en aproximadamente un <strong>90%</strong>.</p>
+
+    <hr>
+
+    <div style="margin-top:30px;">
+        <p><strong>Preparado por:</strong></p>
+                <div style="margin-top:16px;border-top:2px solid var(--nsi-dark);padding-top:14px;">
+                    <p style="font-size:11pt;font-weight:800;">Jonatan M. Collymoore</p>
+                    <p style="font-size:9pt;color:var(--nsi-muted);margin-top:2px;">Lead Security Researcher</p>
+                    <p style="font-size:11pt;font-weight:800;margin-top:8px;">Null Session Intelligence LLC</p>
+                    <p style="font-size:8.5pt;color:var(--nsi-muted);margin-top:2px;">Offensive Security &bull; Implementation &bull; Advisory</p>
+                    <div style="width:32px;height:2px;background:var(--nsi-border);margin:8px 0;"></div>
+                    <p style="font-size:8.5pt;color:var(--nsi-muted);line-height:1.7;">
+                        469 Halladay St, Apt 2, Jersey City, NJ 07304<br>
+                        jonatan.collymoore@gmail.com<br>
+                        info@nullsessionintelligence.com<br>
+                        <a href="https://www.nullsessionintelligence.com/es/bloodhound" style="color:#3b82f6;">BloodHound — nullsessionintelligence.com/es/bloodhound</a>
+                    </p>
+                </div>
+        </div>
+    </div>
+
+    <hr>
+    <p><strong>Clasificación:</strong> CONFIDENCIAL — Uso exclusivo del destinatario</p>
+    <p><strong>Documento:</strong> NSI-SA-2026-006 &bull; 15 Julio 2026</p>
+
+    <div class="footer-bar">
+        <span class="confidential">Confidencial — Uso exclusivo del destinatario</span>
+        <span>NSI-SA-2026-006 &bull; Página 8 de 8</span>
+    </div>
+
+</body>
+</html>

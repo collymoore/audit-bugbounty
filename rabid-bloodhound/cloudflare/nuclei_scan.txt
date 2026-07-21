@@ -1,0 +1,168 @@
+[wildcard-dns-detect] [dns] [info] 3GQBVdU77gifj6bAyGW6Q33CqNC-3GQBVdU77gifj6bAyGW6Q33CqNC.aa7fedc7-4ef8-47aa-ad4c-f602987a1fc2.search.ai.cloudflare.com ["104.18.14.219","104.18.15.219"]
+[wildcard-dns-detect] [dns] [info] 3GQBVdU77gifj6bAyGW6Q33CqNC-3GQBVdU77gifj6bAyGW6Q33CqNC.852b4a55-5858-40c2-982d-34d7307fcac2.search.ai.cloudflare.com ["104.18.14.219","104.18.15.219"]
+[wildcard-dns-detect] [dns] [info] 3GQBVdU77gifj6bAyGW6Q33CqNC-3GQBVdU77gifj6bAyGW6Q33CqNC.4e024668-ffbc-44c3-bb53-bfe478c4d706.search.ai.cloudflare.com ["104.18.14.219","104.18.15.219"]
+[dns-waf-detect:cloudflare] [dns] [info] access.cloudflare.com
+[dns-waf-detect:cloudflare] [dns] [info] agents.cloudflare.com
+[wildcard-dns-detect] [dns] [info] 3GQBVdU77gifj6bAyGW6Q33CqNC-3GQBVdU77gifj6bAyGW6Q33CqNC.admin.pipelines-staging.cloudflare.com ["104.18.2.92","104.18.3.92"]
+[wildcard-dns-detect] [dns] [info] 3GQBVdU77gifj6bAyGW6Q33CqNC-3GQBVdU77gifj6bAyGW6Q33CqNC.7b4f7598-b854-4d00-aaf3-40dc3cbd94fc.search.ai.cloudflare.com ["104.18.15.219","104.18.14.219"]
+[dns-waf-detect:cloudflare] [dns] [info] akd-auditor.cloudflare.com
+[dns-waf-detect:cloudflare] [dns] [info] abuse.cloudflare.com
+[dns-waf-detect:cloudflare] [dns] [info] aim.cloudflare.com
+[dns-waf-detect:cloudflare] [dns] [info] apple-carry-relay.cloudflare.com
+[dns-waf-detect:cloudflare] [dns] [info] apple-relay.cloudflare.com
+[dns-waf-detect:cloudflare] [dns] [info] aws-flow-logs.cloudflare.com
+[dns-waf-detect:cloudflare] [dns] [info] api.workers.cloudflare.com
+[dns-waf-detect:cloudflare] [dns] [info] bastion.h3.speed.cloudflare.com
+[wildcard-dns-detect] [dns] [info] 3GQBVdU77gifj6bAyGW6Q33CqNC-3GQBVdU77gifj6bAyGW6Q33CqNC.b777d181-0889-4a49-9f3d-9b906151907a.search.ai.cloudflare.com ["104.18.14.219","104.18.15.219"]
+[wildcard-dns-detect] [dns] [info] 3GQBVdU77gifj6bAyGW6Q33CqNC-3GQBVdU77gifj6bAyGW6Q33CqNC.builder.platform.dash.staging.cloudflare.com ["104.18.22.127","104.18.23.127"]
+[dns-waf-detect:cloudflare] [dns] [info] billing.support.cloudflare.com
+[dns-waf-detect:cloudflare] [dns] [info] cdnjs-staging.cloudflare.com
+[dns-waf-detect:cloudflare] [dns] [info] certvalidate.cloudflare.com
+[wildcard-dns-detect] [dns] [info] 3GQBVdU77gifj6bAyGW6Q33CqNC-3GQBVdU77gifj6bAyGW6Q33CqNC.852b4a55-5858-40c2-982d-34d7307fcac2.search.ai.cloudflare.com ["104.18.14.219","104.18.15.219"]
+[dns-waf-detect:cloudflare] [dns] [info] builder.platform.dash.staging.cloudflare.com
+[dns-waf-detect:cloudflare] [dns] [info] abuse.cloudflare.com
+[dns-waf-detect:cloudflare] [dns] [info] certifications.cloudflare.com
+[wildcard-dns-detect] [dns] [info] 3GQBVdU77gifj6bAyGW6Q33CqNC-3GQBVdU77gifj6bAyGW6Q33CqNC.7b4f7598-b854-4d00-aaf3-40dc3cbd94fc.search.ai.cloudflare.com ["104.18.15.219","104.18.14.219"]
+[wildcard-dns-detect] [dns] [info] 3GQBVdU77gifj6bAyGW6Q33CqNC-3GQBVdU77gifj6bAyGW6Q33CqNC.c53b7fed-59db-4dfe-843f-8a1af680b080.search.ai.cloudflare.com ["104.18.14.219","104.18.15.219"]
+[wildcard-dns-detect] [dns] [info] 3GQBVdU77gifj6bAyGW6Q33CqNC-3GQBVdU77gifj6bAyGW6Q33CqNC.admin.pipelines-staging.cloudflare.com ["104.18.2.92","104.18.3.92"]
+[wildcard-dns-detect] [dns] [info] 3GQBVdU77gifj6bAyGW6Q33CqNC-3GQBVdU77gifj6bAyGW6Q33CqNC.4e024668-ffbc-44c3-bb53-bfe478c4d706.search.ai.cloudflare.com ["104.18.14.219","104.18.15.219"]
+[wildcard-dns-detect] [dns] [info] 3GQBVdU77gifj6bAyGW6Q33CqNC-3GQBVdU77gifj6bAyGW6Q33CqNC.122519cc-648a-40ca-aea0-d12ad13ff4e3.search.ai.cloudflare.com ["104.18.14.219","104.18.15.219"]
+[dns-waf-detect:cloudflare] [dns] [info] cdnjs.cloudflare.com
+[dns-waf-detect:cloudflare] [dns] [info] brunhild.challenges.cloudflare.com
+[dns-waf-detect:cloudflare] [dns] [info] certvalidate-staging.cloudflare.com
+[wildcard-dns-detect] [dns] [info] 3GQBVdU77gifj6bAyGW6Q33CqNC-3GQBVdU77gifj6bAyGW6Q33CqNC.amp.cloudflare.com ["104.16.132.229","104.16.133.229"]
+[dns-waf-detect:cloudflare] [dns] [info] access.cloudflare.com
+[dns-waf-detect:cloudflare] [dns] [info] ai.cloudflare.com
+[dns-waf-detect:cloudflare] [dns] [info] aim.cloudflare.com
+[dns-waf-detect:cloudflare] [dns] [info] admin.sqlite.cloudflare.com
+[wildcard-dns-detect] [dns] [info] 3GQBVdU77gifj6bAyGW6Q33CqNC-3GQBVdU77gifj6bAyGW6Q33CqNC.amp-reddit-com.amp.cloudflare.com ["104.16.132.229","104.16.133.229"]
+[dns-waf-detect:cloudflare] [dns] [info] agentready.cloudflare.com
+[dns-waf-detect:cloudflare] [dns] [info] api.staging.cloudflare.com
+[dns-waf-detect:cloudflare] [dns] [info] apple-carry-relay.cloudflare.com
+[dns-waf-detect:cloudflare] [dns] [info] api.workers.cloudflare.com
+[wildcard-dns-detect] [dns] [info] 3GQBVdU77gifj6bAyGW6Q33CqNC-3GQBVdU77gifj6bAyGW6Q33CqNC.b777d181-0889-4a49-9f3d-9b906151907a.search.ai.cloudflare.com ["104.18.14.219","104.18.15.219"]
+[dns-waf-detect:cloudflare] [dns] [info] apple-relay.cloudflare.com
+[dns-waf-detect:cloudflare] [dns] [info] bastion.h3.speed.cloudflare.com
+[wildcard-dns-detect] [dns] [info] 3GQBVdU77gifj6bAyGW6Q33CqNC-3GQBVdU77gifj6bAyGW6Q33CqNC.c53b7fed-59db-4dfe-843f-8a1af680b080.search.ai.cloudflare.com ["104.18.14.219","104.18.15.219"]
+[dns-waf-detect:cloudflare] [dns] [info] aws-flow-logs.cloudflare.com
+[dns-waf-detect:cloudflare] [dns] [info] cdnjs-staging.cloudflare.com
+[dns-waf-detect:cloudflare] [dns] [info] cdnjs.cloudflare.com
+[dns-waf-detect:cloudflare] [dns] [info] billing.support.cloudflare.com
+[dns-waf-detect:cloudflare] [dns] [info] certvalidate-staging.cloudflare.com
+[dns-waf-detect:cloudflare] [dns] [info] certifications.cloudflare.com
+[dns-waf-detect:cloudflare] [dns] [info] certvalidate.cloudflare.com
+[waf-detect:cloudflare] [http] [info] http://brunhild.challenges.cloudflare.com
+[waf-detect:cloudflare] [http] [info] https://ai-gateway-staging.mcp.cloudflare.com
+[waf-detect:cloudflare] [http] [info] http://api.labs.cloudflare.com
+[waf-detect:cloudflare] [http] [info] https://cdnjs-staging.cloudflare.com
+[waf-detect:cloudflare] [http] [info] https://cdnjs.cloudflare.com
+[deprecated-tls:tls_1.1] [ssl] [info] certvalidate-staging.cloudflare.com:443 ["tls11"]
+[deprecated-tls:tls_1.0] [ssl] [info] certvalidate-staging.cloudflare.com:443 ["tls10"]
+[tls-version] [ssl] [info] ai-gateway-staging.mcp.cloudflare.com:443 ["tls10"]
+[deprecated-tls:tls_1.1] [ssl] [info] cdnjs.cloudflare.com:443 ["tls11"]
+[tls-version] [ssl] [info] cdnjs.cloudflare.com:443 ["tls10"]
+[tls-version] [ssl] [info] certvalidate-staging.cloudflare.com:443 ["tls10"]
+[deprecated-tls:tls_1.1] [ssl] [info] cdnjs-staging.cloudflare.com:443 ["tls11"]
+[deprecated-tls:tls_1.0] [ssl] [info] cdnjs-staging.cloudflare.com:443 ["tls10"]
+[tls-version] [ssl] [info] cdnjs-staging.cloudflare.com:443 ["tls10"]
+[deprecated-tls:tls_1.1] [ssl] [info] ai-gateway-staging.mcp.cloudflare.com:443 ["tls11"]
+[deprecated-tls:tls_1.0] [ssl] [info] ai-gateway-staging.mcp.cloudflare.com:443 ["tls10"]
+[tls-version] [ssl] [info] ai-gateway-staging.mcp.cloudflare.com:443 ["tls11"]
+[tls-version] [ssl] [info] certvalidate-staging.cloudflare.com:443 ["tls11"]
+[tls-version] [ssl] [info] certvalidate-staging.cloudflare.com:443 ["tls12"]
+[tls-version] [ssl] [info] certvalidate-staging.cloudflare.com:443 ["tls13"]
+[tls-version] [ssl] [info] cdnjs.cloudflare.com:443 ["tls11"]
+[deprecated-tls:tls_1.0] [ssl] [info] cdnjs.cloudflare.com:443 ["tls10"]
+[weak-cipher-suites:tls-1.0] [ssl] [low] cdnjs.cloudflare.com:443 ["[tls10 TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA]"]
+[weak-cipher-suites:tls-1.1] [ssl] [low] cdnjs.cloudflare.com:443 ["[tls11 TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA]"]
+[tls-version] [ssl] [info] cdnjs.cloudflare.com:443 ["tls12"]
+[tls-version] [ssl] [info] cdnjs.cloudflare.com:443 ["tls13"]
+[tls-version] [ssl] [info] cdnjs-staging.cloudflare.com:443 ["tls11"]
+[tls-version] [ssl] [info] ai-gateway-staging.mcp.cloudflare.com:443 ["tls12"]
+[tls-version] [ssl] [info] ai-gateway-staging.mcp.cloudflare.com:443 ["tls13"]
+[weak-cipher-suites:tls-1.0] [ssl] [low] ai-gateway-staging.mcp.cloudflare.com:443 ["[tls10 TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA]"]
+[weak-cipher-suites:tls-1.0] [ssl] [low] certvalidate-staging.cloudflare.com:443 ["[tls10 TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA]"]
+[weak-cipher-suites:tls-1.0] [ssl] [low] cdnjs-staging.cloudflare.com:443 ["[tls10 TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA]"]
+[weak-cipher-suites:tls-1.1] [ssl] [low] cdnjs-staging.cloudflare.com:443 ["[tls11 TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA]"]
+[weak-cipher-suites:tls-1.1] [ssl] [low] ai-gateway-staging.mcp.cloudflare.com:443 ["[tls11 TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA]"]
+[tls-version] [ssl] [info] cdnjs-staging.cloudflare.com:443 ["tls12"]
+[weak-cipher-suites:tls-1.1] [ssl] [low] certvalidate-staging.cloudflare.com:443 ["[tls11 TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA]"]
+[tls-version] [ssl] [info] cdnjs-staging.cloudflare.com:443 ["tls13"]
+[http-missing-security-headers:permissions-policy] [http] [info] https://ai-gateway-staging.mcp.cloudflare.com
+[http-missing-security-headers:x-content-type-options] [http] [info] https://ai-gateway-staging.mcp.cloudflare.com
+[http-missing-security-headers:x-permitted-cross-domain-policies] [http] [info] https://ai-gateway-staging.mcp.cloudflare.com
+[http-missing-security-headers:referrer-policy] [http] [info] https://ai-gateway-staging.mcp.cloudflare.com
+[http-missing-security-headers:referrer-policy] [http] [info] https://cdnjs.cloudflare.com
+[http-missing-security-headers:cross-origin-embedder-policy] [http] [info] https://cdnjs.cloudflare.com
+[http-missing-security-headers:cross-origin-opener-policy] [http] [info] https://cdnjs.cloudflare.com
+[http-missing-security-headers:cross-origin-resource-policy] [http] [info] https://cdnjs.cloudflare.com
+[http-missing-security-headers:content-security-policy] [http] [info] https://cdnjs.cloudflare.com
+[http-missing-security-headers:permissions-policy] [http] [info] https://cdnjs.cloudflare.com
+[http-missing-security-headers:cross-origin-opener-policy] [http] [info] https://ai-gateway-staging.mcp.cloudflare.com
+[http-missing-security-headers:x-content-type-options] [http] [info] https://cdnjs.cloudflare.com
+[http-missing-security-headers:x-permitted-cross-domain-policies] [http] [info] https://cdnjs.cloudflare.com
+[weak-hsts-detect:hsts-header] [http] [info] https://cdnjs.cloudflare.com ["max-age=15780000"]
+[http-missing-security-headers:strict-transport-security] [http] [info] https://ai-gateway-staging.mcp.cloudflare.com
+[http-missing-security-headers:x-frame-options] [http] [info] https://ai-gateway-staging.mcp.cloudflare.com
+[http-missing-security-headers:cross-origin-embedder-policy] [http] [info] https://ai-gateway-staging.mcp.cloudflare.com
+[http-missing-security-headers:cross-origin-resource-policy] [http] [info] https://ai-gateway-staging.mcp.cloudflare.com
+[http-missing-security-headers:content-security-policy] [http] [info] https://ai-gateway-staging.mcp.cloudflare.com
+[http-missing-security-headers:cross-origin-embedder-policy] [http] [info] https://certvalidate-staging.cloudflare.com
+[http-missing-security-headers:cross-origin-opener-policy] [http] [info] https://certvalidate-staging.cloudflare.com
+[http-missing-security-headers:cross-origin-resource-policy] [http] [info] https://certvalidate-staging.cloudflare.com
+[http-missing-security-headers:strict-transport-security] [http] [info] https://certvalidate-staging.cloudflare.com
+[http-missing-security-headers:content-security-policy] [http] [info] https://certvalidate-staging.cloudflare.com
+[http-missing-security-headers:permissions-policy] [http] [info] https://certvalidate-staging.cloudflare.com
+[http-missing-security-headers:x-content-type-options] [http] [info] https://certvalidate-staging.cloudflare.com
+[http-missing-security-headers:x-permitted-cross-domain-policies] [http] [info] https://certvalidate-staging.cloudflare.com
+[http-missing-security-headers:referrer-policy] [http] [info] https://cdnjs-staging.cloudflare.com
+[http-missing-security-headers:cross-origin-embedder-policy] [http] [info] https://cdnjs-staging.cloudflare.com
+[http-missing-security-headers:cross-origin-opener-policy] [http] [info] https://cdnjs-staging.cloudflare.com
+[http-missing-security-headers:cross-origin-resource-policy] [http] [info] https://cdnjs-staging.cloudflare.com
+[http-missing-security-headers:content-security-policy] [http] [info] https://cdnjs-staging.cloudflare.com
+[http-missing-security-headers:permissions-policy] [http] [info] https://cdnjs-staging.cloudflare.com
+[http-missing-security-headers:x-content-type-options] [http] [info] https://cdnjs-staging.cloudflare.com
+[http-missing-security-headers:x-permitted-cross-domain-policies] [http] [info] https://cdnjs-staging.cloudflare.com
+[weak-hsts-detect:hsts-header] [http] [info] https://cdnjs-staging.cloudflare.com ["max-age=15780000"]
+[http-missing-security-headers:content-security-policy] [http] [info] http://brunhild.challenges.cloudflare.com
+[http-missing-security-headers:permissions-policy] [http] [info] http://brunhild.challenges.cloudflare.com
+[http-missing-security-headers:x-content-type-options] [http] [info] http://brunhild.challenges.cloudflare.com
+[http-missing-security-headers:x-permitted-cross-domain-policies] [http] [info] http://brunhild.challenges.cloudflare.com
+[http-missing-security-headers:cross-origin-embedder-policy] [http] [info] http://brunhild.challenges.cloudflare.com
+[http-missing-security-headers:cross-origin-opener-policy] [http] [info] http://brunhild.challenges.cloudflare.com
+[http-missing-security-headers:cross-origin-resource-policy] [http] [info] http://brunhild.challenges.cloudflare.com
+[http-missing-security-headers:strict-transport-security] [http] [info] http://brunhild.challenges.cloudflare.com
+[oauth-authorization-server-exposure] [http] [info] https://ai-gateway-staging.mcp.cloudflare.com/.well-known/oauth-authorization-server
+[robots-txt] [http] [info] http://brunhild.challenges.cloudflare.com/robots.txt
+[tech-detect:cloudflare] [http] [info] https://certvalidate-staging.cloudflare.com
+[tech-detect:cloudflare] [http] [info] http://brunhild.challenges.cloudflare.com
+[addeventlistener-detect] [http] [info] http://brunhild.challenges.cloudflare.com
+[robots-txt-endpoint] [http] [info] http://brunhild.challenges.cloudflare.com/robots.txt
+[missing-sri] [http] [info] https://cdnjs-staging.cloudflare.com/ ["//cdnjs.cloudflare.com/cf.core.css"]
+[missing-sri] [http] [info] https://cdnjs.cloudflare.com/ ["//cdnjs.cloudflare.com/cf.core.css"]
+[aaaa-fingerprint] [dns] [info] brunhild.challenges.cloudflare.com ["2606:4700::6812:1192","2606:4700::6812:1092"]
+[aaaa-fingerprint] [dns] [info] cdnjs.cloudflare.com ["2606:4700::6811:180e","2606:4700::6811:190e"]
+[aaaa-fingerprint] [dns] [info] ai-gateway-staging.mcp.cloudflare.com ["2606:4700::6812:189f","2606:4700::6812:199f"]
+[txt-fingerprint] [dns] [info] cdnjs-staging.cloudflare.com [""ca3-1026ade09b4b45fdb3848e5f164a4688""]
+[caa-fingerprint] [dns] [info] ai-gateway-staging.mcp.cloudflare.com
+[caa-fingerprint] [dns] [info] certvalidate-staging.cloudflare.com
+[dnssec-detection] [dns] [info] cdnjs-staging.cloudflare.com
+[dnssec-detection] [dns] [info] cdnjs.cloudflare.com
+[nameserver-fingerprint] [dns] [info] cdnjs.cloudflare.com ["olga.ns.cloudflare.com.","dylan.ns.cloudflare.com."]
+[nameserver-fingerprint] [dns] [info] cdnjs-staging.cloudflare.com ["olga.ns.cloudflare.com.","dylan.ns.cloudflare.com."]
+[nameserver-fingerprint] [dns] [info] certvalidate-staging.cloudflare.com ["naomi.ns.cloudflare.com.","graham.ns.cloudflare.com."]
+[ssl-issuer] [ssl] [info] cdnjs.cloudflare.com:443 ["Google Trust Services"]
+[ssl-dns-names] [ssl] [info] cdnjs.cloudflare.com:443 ["cdnjs.cloudflare.com","*.cdnjs.cloudflare.com"]
+[wildcard-tls] [ssl] [info] cdnjs.cloudflare.com:443 ["CN: cdnjs.cloudflare.com","SAN: [cdnjs.cloudflare.com *.cdnjs.cloudflare.com]"]
+[aaaa-fingerprint] [dns] [info] cdnjs-staging.cloudflare.com ["2606:4700::6812:1cc4","2606:4700::6812:1dc4"]
+[ssl-issuer] [ssl] [info] cdnjs-staging.cloudflare.com:443 ["Google Trust Services"]
+[ssl-dns-names] [ssl] [info] cdnjs-staging.cloudflare.com:443 ["cdnjs-staging.cloudflare.com"]
+[ssl-issuer] [ssl] [info] certvalidate-staging.cloudflare.com:443 ["Google Trust Services"]
+[ssl-dns-names] [ssl] [info] certvalidate-staging.cloudflare.com:443 ["certvalidate-staging.cloudflare.com","*.certvalidate-staging.cloudflare.com"]
+[wildcard-tls] [ssl] [info] certvalidate-staging.cloudflare.com:443 ["CN: certvalidate-staging.cloudflare.com","SAN: [certvalidate-staging.cloudflare.com *.certvalidate-staging.cloudflare.com]"]
+[ssl-issuer] [ssl] [info] ai-gateway-staging.mcp.cloudflare.com:443 ["Google Trust Services"]
+[ssl-dns-names] [ssl] [info] ai-gateway-staging.mcp.cloudflare.com:443 ["mcp.cloudflare.com","ai-gateway-staging.mcp.cloudflare.com"]
+[caa-fingerprint] [dns] [info] cdnjs.cloudflare.com
+[caa-fingerprint] [dns] [info] cdnjs-staging.cloudflare.com
+[dnssec-detection] [dns] [info] certvalidate-staging.cloudflare.com
+[aaaa-fingerprint] [dns] [info] certvalidate-staging.cloudflare.com ["2606:4700::6812:10","2606:4700::6812:110"]

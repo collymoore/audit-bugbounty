@@ -1,0 +1,56 @@
+=== EVIDENCIA: GetContrasenaTabletas (ambos sistemas) ===
+COROMINAS:
+{"GetContrasenaTabletasResult":"{\"Estado\":0,\"Data\":\"cmrservice05\",\"Error\":null}"}
+CEDISA:
+{"GetContrasenaTabletasResult":"{\"Estado\":0,\"Data\":\"cmrservice05\",\"Error\":null}"}
+=== EVIDENCIA: DICOM UID (estudio médico real) ===
+Sistema: CEDISA
+Estudio: ANGIO-RESONANCIA CRANEO
+Fecha: 2026-03-29
+Modalidad: MR (Resonancia Magnética)
+Estado Reporte: Autorizado
+DICOM UID: 1.2.826.0.1.3680043.2.7541.19000101.29320261122518120
+RutaVisor (base64): [PRESENTE]
+
+=== EVIDENCIA: PersonalRecuperar CEDISA (sample) ===
+{"PersonalRecuperarResult":"{\"data\":[{\"IdPersonal\":1,\"Nombre\":\"NO REGISTRADO \",\"Estado\":false,\"Rol\":\"ADMINISTRADOR\"},{\"IdPersonal\":4,\"Nombre\":\"Jaime Guzman \",\"Cedula\":\"500060\",\"Estado\":false,\"Rol\":\"MEDICO RADIOLOGO \",\"Especialidad\":\"RADIOLOGÍA\"},{\"IdPersonal\":5,\"Nombre\":\"MERCEDES GONZALEZ . \",\"Estado\":false,\"Rol\":\"TECNICO RADIOLOGO\"},{\"IdPersonal\":6,\"Nombre\":\"MARY Nelsy CASTILLO \",\"Cedula\":\"500015\",\"Estado\":false,\"Rol\":\"MEDICO RADIOLOGO \",\"Especialidad\":\"RADIOLOGÍA\"},{\"IdPersonal\":7,\"Nombre\":\"Bruno A. Campagna Ricart \",\"Cedula\":\"50003\",\"Estado\":false,\"Rol\":\"MEDICO RADIOLOGO \",\"Especialidad\":\"RADIOLOGÍA\"},{\"IdPersonal\":8,\"Nombre\":\"JOVANI TURBIDES . \",\"Cedula\":\"5485765\",\"Estado\":false,\"Rol\":\"TECNICO RADIOLOGO\"},{\"IdPersonal\":9,\"Nombre\":\"ADA IRIS  BORGES  \",\"Estado\":false,\"Rol\":\"FACTURADOR\"},{\"IdPersonal\":10,\"Nombre\":\"ANABELL  OLIVO \",\"Estado\":false,\"Rol\":\"FACTURADOR\"},{\"IdPersonal\":11,\"Nombre\":\"ANAESTHER MENA . \",\"Estado\":false,\"Rol\":\"FACTURADOR\"},{\"IdPersonal\":12,\"Nombre\":\"ANGELA  ESPINAL  \",\"Estado\":false,\"Rol\":\"FACTURADOR\"},{\"IdPersonal\":13,\"Nombre\":\"DIVA  HERNANDEZ \",\"Estado\":false,\"Rol\":\"FACTURADOR\"},{\"IdPersonal\":14,\"Nombre\":\"JENNIFER  HARBEY  \",\"Estado\":false,\"Rol\":\"FACTURADOR\"},{\"IdPersonal\":15,\"Nombre\":\"JOHANNA  DE LOS SANTOS  \",\"Estado\":false,\"Rol\":\"FACTURADOR\"},{\"IdPersonal\":16,\"Nombre\":\"KAREN PEREZ \",\"Estado\":false,\"Rol\":\"PACS ADMINISTRATOR\"},{\"IdPersonal\":17,\"Nombre\":\"Karla Camacho \",\"Estado\":false,\"Rol\":\"FACTURADOR\"},{\"IdPersonal\":18,\"Nombre\":\"MARIA  TRINIDAD  \",\"Estado\":false,\"Rol\":\"FACTURADOR CON IMP\"},{\"IdPersonal\":19,\"Nombre\":\"MERCEDES SANCHEZ . \",\"Estado\":false,\"Rol\":\"PACS ADMINISTRATOR\"},{\"IdPersonal\":20,\"Nombre\":\"RAYNIELIS  MAZARA  VALDEZ \",\"Estado\":false,\"Rol\":\"FACTURADOR\"},{\"IdPersonal\":21,\"Nombre\
+=== EVIDENCIA: PersonalRecuperar COROMINAS (sample) ===
+{"PersonalRecuperarResult":"{\"data\":[{\"IdPersonal\":1,\"Nombre\":\"Administrador Admin Admin \",\"Cedula\":\"0000\",\"Estado\":false,\"Rol\":\"ADMINISTRADOR\"},{\"IdPersonal\":2,\"Nombre\":\"JOAQUIN ALVAREZ   \",\"Cedula\":\"D001\",\"Estado\":false},{\"IdPersonal\":3,\"Nombre\":\"ENRIQUE CORDERO   \",\"Cedula\":\"D003\",\"Estado\":false},{\"IdPersonal\":4,\"Nombre\":\"OTILIA PAULINO   \",\"Cedula\":\"D005\",\"Estado\":false},{\"IdPersonal\":5,\"Nombre\":\"PEDRO LUIS VERAS   \",\"Cedula\":\"D007\",\"Estado\":false,\"Rol\":\"MEDICO REFERENTE\"},{\"IdPersonal\":6,\"Nombre\":\"JOAQUIN LORA CASTRO \",\"Cedula\":\"D011\",\"Estado\":false},{\"IdPersonal\":7,\"Nombre\":\"PEDRO GUZMAN   \",\"Cedula\":\"D012\",\"Estado\":false,\"Rol\":\"MEDICO REFERENTE\"},{\"IdPersonal\":8,\"Nombre\":\"JUAN VARGAS   \",\"Cedula\":\"D013\",\"Estado\":false},{\"IdPersonal\":9,\"Nombre\":\"BAUDILIO PEREZ MOLINA \",\"Cedula\":\"D014\",\"Estado\":false,\"Rol\":\"ESTACIÓN DE VISUALIZACIÓN \"},{\"IdPersonal\":10,\"Nombre\":\"FERNANDO HERNANDO   \",\"Cedula\":\"D016\",\"Estado\":false,\"Rol\":\"ESTACIÓN DE VISUALIZACIÓN \"},{\"IdPersonal\":11,\"Nombre\":\"MOISES HERRERA   \",\"Cedula\":\"D018\",\"Estado\":false,\"Rol\":\"ESTACIÓN DE VISUALIZACIÓN \"},{\"IdPersonal\":12,\"Nombre\":\"ROBINSON ABREU   \",\"Cedula\":\"D019\",\"Estado\":false,\"Rol\":\"MEDICO REFERENTE\"},{\"IdPersonal\":13,\"Nombre\":\"ENRIQUE HERRERA   \",\"Cedula\":\"D021\",\"Estado\":false,\"Rol\":\"ESTACIÓN DE VISUALIZACIÓN \"},{\"IdPersonal\":14,\"Nombre\":\"ELIAS SERULLE   \",\"Cedula\":\"D022\",\"Estado\":false},{\"IdPersonal\":15,\"Nombre\":\"RAFAEL DIAZ  MERCADO \",\"Cedula\":\"D023\",\"Estado\":false},{\"IdPersonal\":16,\"Nombre\":\"ROLANDO BAEZ   \",\"Cedula\":\"D024\",\"Estado\":false,\"Rol\":\"ESTACIÓN DE VISUALIZACIÓN \"},{\"IdPersonal\":17,\"Nombre\":\"RAFAEL FERNANDEZ LAZALA \",\"Cedula\":\"D028\",\"Estado\":false,\"Rol\":\"ESTACIÓN DE VISUALIZACIÓN \"},{\"IdPersonal\":18,\"Nombre\":\"LUIS CAN
+=== EVIDENCIA: configuration.yaml (debugMode:true) ===
+androidAppId: com.CMR.emesalud_cmrcorominas 
+iosAppId: com.CMR.emesalud.corominas
+
+name: Clínica Corominas
+nameShort: Corominas
+webpage:  www.clinicacorominas.com.do/
+ip: portal.clinicacorominas.com.do
+usesHttps: true
+
+contact_telephone: 809-580-1171 Ext. 2173
+contact_email: info@clinicacorominas.com.do
+contact_hours: Lunes a Viernes desde 8:00 AM hasta 6:00 PM y Sábados desde 8:00 AM hasta 12:00 PM
+contact_address: Calle Restauración 57, Santiago, Republica Dominicana.
+
+baseUrl: /HisWebServicios/Portal/ServicioPortal.svc
+baseUrlPACS: /visorhtml5/WcfServiceIconos/Service1.svc
+baseVisorPACS: /WebUltimateGL/App/Vistas/index.html
+
+iconBackgroundColor: "#009540"
+
+color_primary: 0xff2C798C
+color_accent: 0xff234570
+color_primaryDark: 0xffA7AAAD
+color_accentDark: 0xff10100f
+color_primaryLight: 0xff5695e9
+color_accentLight: 0xff60605f
+color_loadingGrey: 0xffffffff
+
+debugMode: true
+hasImaging: true
+hasLaboratory: false
+hasPathology: false
+hasDirectory: false
+canMakeAppointmets: false
+hasBanner: true
+hasRecord: false
+showAppointments: false

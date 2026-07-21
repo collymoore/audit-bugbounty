@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Security Assessment Report — CMR Medical Systems / IDigitales Ecosystem | NSI-SA-2026-005</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root {
+    --nsi-dark: #0a0f1a; --nsi-slate: #1e293b; --nsi-muted: #64748b; --nsi-light: #f1f5f9;
+    --nsi-border: #e2e8f0; --nsi-accent: #3b82f6; --nsi-danger: #dc2626; --nsi-warning: #d97706; --nsi-success: #16a34a;
+    --font-family: 'Inter', -apple-system, system-ui, sans-serif;
+    --fs-display: 20pt; --fs-h1: 16pt; --fs-h2: 13pt; --fs-body: 9.5pt; --fs-small: 8pt; --fs-label: 6.5pt;
+    --fs-table: 9pt; --fs-th: 7pt; --fs-footer: 7pt; --lh: 1.5;
+    --pw: 8.5in; --ph: 11in; --pv: 0.6in; --pad-h: 0.7in; --br: 8px; --br-sm: 6px;
+}
+@page { size: letter; margin: 0; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: var(--font-family); color: var(--nsi-dark); background: white; font-size: 10pt; line-height: var(--lh); -webkit-font-smoothing: antialiased; }
+@media screen { body { background: #e2e8f0; padding: 20px 0; } .page { box-shadow: 0 4px 20px rgba(0,0,0,0.15); margin-bottom: 20px; background: white; max-width: var(--pw); margin-left: auto; margin-right: auto; } }
+.page { max-width: var(--pw); min-height: var(--ph); margin: 0 auto; padding: var(--pv) var(--pad-h); position: relative; page-break-after: always; }
+.header { display: flex; justify-content: space-between; align-items: flex-start; padding-bottom: 16px; border-bottom: 3px solid var(--nsi-dark); margin-bottom: 20px; }
+.header-left h1 { font-size: var(--fs-h1); font-weight: 800; letter-spacing: -0.5px; color: var(--nsi-dark); }
+.header-left .tagline { font-size: 7.5pt; color: var(--nsi-muted); letter-spacing: 2px; text-transform: uppercase; margin-top: 2px; }
+.header-right { text-align: right; }
+.header-right .doc-type { font-weight: 800; color: var(--nsi-dark); font-size: 11pt; }
+.header-right .doc-number { font-size: var(--fs-body); color: var(--nsi-muted); margin-top: 2px; }
+.meta-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 24px; }
+.meta-box { background: var(--nsi-light); border-radius: var(--br); padding: 14px 16px; border-left: 4px solid var(--nsi-dark); }
+.meta-box.client { border-left-color: var(--nsi-accent); }
+.meta-box.risk { border-left-color: var(--nsi-danger); }
+.meta-box h3 { font-size: var(--fs-label); text-transform: uppercase; letter-spacing: 1.5px; color: var(--nsi-muted); margin-bottom: 6px; }
+.meta-box p { font-size: var(--fs-body); line-height: 1.6; }
+.meta-box strong { font-weight: 700; color: var(--nsi-dark); }
+.risk-summary { background: var(--nsi-dark); color: #fff; border-radius: var(--br); padding: 20px 24px; margin: 20px 0 24px; }
+.risk-summary h2 { color: #fff; border: none; font-size: var(--fs-h2); margin-top: 0; padding: 0; letter-spacing: 0.3px; }
+.risk-summary p { color: #cbd5e1; }
+.risk-grid { display: flex; gap: 24px; margin: 14px 0 10px; flex-wrap: wrap; }
+.risk-stat { text-align: center; min-width: 68px; }
+.risk-stat .value { font-size: 2em; font-weight: 800; line-height: 1.2; }
+.risk-stat .label { font-size: var(--fs-small); color: #94a3b8; text-transform: uppercase; letter-spacing: 1px; margin-top: 2px; }
+.risk-stat.critical .value { color: #fca5a5; }
+.risk-stat.high .value { color: #fdba74; }
+.risk-stat.medium .value { color: #fcd34d; }
+.risk-stat.info .value { color: #94a3b8; }
+h1 { font-size: var(--fs-h1); font-weight: 800; margin: 22px 0 10px; color: var(--nsi-dark); letter-spacing: -0.5px; }
+h2 { font-size: var(--fs-h2); font-weight: 800; margin: 20px 0 10px; color: var(--nsi-dark); padding-bottom: 6px; border-bottom: 2px solid var(--nsi-accent); }
+h3 { font-size: var(--fs-body); font-weight: 700; margin: 14px 0 6px; color: var(--nsi-slate); }
+h4 { font-size: var(--fs-body); font-weight: 700; margin: 10px 0 4px; }
+p { font-size: var(--fs-body); line-height: var(--lh); margin-bottom: 8px; color: var(--nsi-slate); }
+strong { font-weight: 700; }
+.finding { background: var(--nsi-light); border-radius: var(--br); padding: 14px 18px; margin: 12px 0; border-left: 4px solid var(--nsi-muted); }
+.finding.critical { border-left-color: var(--nsi-danger); background: #fef2f2; }
+.finding.high { border-left-color: var(--nsi-warning); background: #fffbeb; }
+.finding.medium { border-left-color: #ca8a04; background: #fefce8; }
+.finding h4 { font-size: var(--fs-body); font-weight: 700; margin-bottom: 6px; }
+.finding p { font-size: var(--fs-small); margin-bottom: 4px; }
+.badge { display: inline-block; padding: 2px 10px; border-radius: 4px; font-size: 7pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: #fff; }
+.badge.critical { background: var(--nsi-danger); }
+.badge.high { background: var(--nsi-warning); }
+.badge.medium { background: #ca8a04; }
+.badge.info { background: var(--nsi-muted); }
+.badge.fix { background: var(--nsi-success); }
+table { width: 100%; border-collapse: collapse; margin: 10px 0 16px; font-size: var(--fs-table); }
+thead th { background: var(--nsi-dark); color: white; padding: 8px 10px; text-align: left; font-weight: 600; font-size: var(--fs-th); text-transform: uppercase; letter-spacing: 1px; }
+thead th:first-child { border-radius: var(--br-sm) 0 0 0; }
+thead th:last-child { border-radius: 0 var(--br-sm) 0 0; }
+tbody td { padding: 7px 10px; border-bottom: 1px solid var(--nsi-border); vertical-align: top; }
+tbody tr:nth-child(even) { background: #fafbfc; }
+.row-critical td { background: #fef2f2 !important; }
+.row-high td { background: #fffbeb !important; }
+.cmd-block { background: #0d1117; color: #e6edf3; padding: 12px 16px; border-radius: var(--br-sm); font-family: 'JetBrains Mono', 'Fira Code', monospace; font-size: 7.5pt; line-height: 1.5; overflow-x: auto; margin: 8px 0; }
+.cmd-block .comment { color: #8b949e; }
+code { font-family: 'JetBrains Mono', monospace; background: var(--nsi-light); padding: 1px 5px; border-radius: 3px; font-size: 0.9em; }
+.footer-bar { position: absolute; bottom: 0.5in; left: var(--pad-h); right: var(--pad-h); display: flex; justify-content: space-between; align-items: center; padding-top: 10px; border-top: 1px solid var(--nsi-border); font-size: var(--fs-footer); color: var(--nsi-muted); }
+.footer-bar .confidential { font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+.cover-line { width: 60px; height: 4px; background: var(--nsi-dark); margin: 20px 0; }
+.cvss-meter { display: inline-block; width: 80px; height: 6px; background: #e2e8f0; border-radius: 3px; vertical-align: middle; margin-right: 6px; }
+.cvss-meter .fill { height: 100%; border-radius: 3px; }
+.cvss-meter .fill.crit { width: 100%; background: var(--nsi-danger); }
+.cvss-meter .fill.high { width: 75%; background: var(--nsi-warning); }
+.cvss-meter .fill.med { width: 50%; background: #ca8a04; }
+.cvss-meter .fill.low { width: 25%; background: var(--nsi-success); }
+@media print { body { background: white; } .page { margin: 0; box-shadow: none; } }
+ul, ol { margin: 6px 0 12px 20px; }
+li { margin-bottom: 4px; font-size: var(--fs-body); }
+hr { border: none; border-top: 1px solid var(--nsi-border); margin: 20px 0; }
+</style>
+</head>
+<body>
+
+<!-- ════════════════════════════════════════════════════════════════════════ -->
+<!-- PAGE 1 — PORTADA EJECUTIVA -->
+<!-- ════════════════════════════════════════════════════════════════════════ -->
+<div class="page">
+    <div class="header">
+        <div class="header-left">
+            <h1>NULL SESSION<br>INTELLIGENCE LLC</h1>
+            <div class="tagline">Technology &bull; Intelligence &bull; Infrastructure</div>
+        </div>
+        <div class="header-right">
+            <div class="doc-type">SECURITY ASSESSMENT REPORT</div>
+            <div class="doc-number">NSI-SA-2026-005 &bull; Julio 2026</div>
+        </div>
+    </div>
+
+    <div style="margin-top: 40px;">
+        <div style="font-size:24pt;font-weight:800;letter-spacing:-0.5px;line-height:1.2;margin-bottom:8px;">Security Assessment<br>CMR Medical Systems / IDigitales</div>
+        <div class="cover-line" style="margin-top:16px;"></div>
+        <div style="font-size:11pt;color:var(--nsi-muted);letter-spacing:1px;text-transform:uppercase;margin-top:30px;">Evaluación Integral de Seguridad</div>
+        <div style="font-size:9pt;color:var(--nsi-muted);margin-top:4px;">14 aplicaciones Android &bull; 10 entidades de salud &bull; 4 países</div>
+    </div>
+
+    <div class="risk-summary" style="margin-top:50px;">
+        <h2>📊 Resumen Ejecutivo</h2>
+        <p style="margin-top:10px;">Se identificaron <strong style="color:#fca5a5;">14 hallazgos de seguridad</strong> en el ecosistema digital de <strong>CMR Medical Systems / IDigitales</strong>, incluyendo <strong style="color:#fca5a5;">4 vulnerabilidades críticas</strong> que exponen información médica protegida (PHI) de pacientes y datos personales (PII) de más de <strong style="color:#fca5a5;">6,000 empleados</strong>. El backend WCF, desarrollado por IDigitales / Cedisa Consultores, opera sin autenticación en múltiples endpoints críticos y comparte la misma contraseña <code style="background:#1e293b;color:#e6edf3;">cmrservice05</code> en 9 servidores del ecosistema.</p>
+        <p style="margin-top:10px;">El riesgo regulatorio es <strong style="color:#fca5a5;">SEVERO</strong>: los datos expuestos caen bajo HIPAA (EE.UU.), GDPR (UE), y Ley 172-13 (RD). Las multas potenciales combinadas superan los <strong style="color:#fca5a5;">$5M USD</strong>. Se requiere acción inmediata.</p>
+        <div class="risk-grid">
+            <div class="risk-stat critical"><div class="value">14</div><div class="label">Hallazgos</div></div>
+            <div class="risk-stat critical"><div class="value">4</div><div class="label">Críticos</div></div>
+            <div class="risk-stat high"><div class="value">3</div><div class="label">Altos</div></div>
+            <div class="risk-stat medium"><div class="value">6</div><div class="label">Medios</div></div>
+            <div class="risk-stat info"><div class="value">1</div><div class="label">Info</div></div>
+            <div class="risk-stat critical"><div class="value">6,078</div><div class="label">PII Expuestos</div></div>
+        </div>
+    </div>
+
+    <div style="margin-top:30px;">
+        <p><strong>Preparado para:</strong><br>CMR Medical Systems / IDigitales — Oficina de Seguridad de la Información</p>
+        <p style="margin-top:12px;"><strong>Preparado por:</strong><br>Null Session Intelligence LLC<br>469 Halladay St, Apt 2, Jersey City, NJ 07304<br>security@nullsessionintelligence.com</p>
+        <p style="margin-top:12px;"><strong>Clasificación:</strong><br>CONFIDENCIAL — Uso exclusivo del destinatario. Prohibida su distribución.</p>
+        <p style="margin-top:12px;"><strong>Costo de referencia del servicio:</strong><br>$30,000 USD (Evaluación completa + Reporte + Recomendaciones de remediación)</p>
+    </div>
+
+    <div class="footer-bar">
+        <span class="confidential">Confidencial — Uso exclusivo del destinatario</span>
+        <span>NSI-SA-2026-005 &bull; Página 1 de 8</span>
+    </div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════════════════════ -->
+<!-- PAGE 2 — ALCANCE, METODOLOGÍA Y CONTEXTO -->
+<!-- ════════════════════════════════════════════════════════════════════════ -->
+<div class="page">
+    <div class="header">
+        <div class="header-left">
+            <h1>NULL SESSION INTELLIGENCE LLC</h1>
+            <div class="tagline">Technology &bull; Intelligence &bull; Infrastructure</div>
+        </div>
+        <div class="header-right">
+            <div class="doc-type">Security Assessment Report</div>
+            <div class="doc-number">NSI-SA-2026-005 &bull; Julio 2026</div>
+        </div>
+    </div>
+
+    <h2>1. Alcance y Metodología</h2>
+
+    <h3>1.1 Alcance Técnico</h3>
+    <table>
+        <thead><tr><th>Dimensión</th><th>Valor</th></tr></thead>
+        <tbody>
+            <tr><td>Aplicaciones Android analizadas</td><td><strong>14</strong></td></tr>
+            <tr><td>Entidades de salud identificadas</td><td><strong>10</strong></td></tr>
+            <tr><td>Países</td><td>República Dominicana, Ecuador, México, Honduras</td></tr>
+            <tr><td>Servidores WCF accesibles</td><td><strong>9</strong> de 14</td></tr>
+            <tr><td>Operaciones SOAP documentadas</td><td>~1,000+ (sumando todas las apps)</td></tr>
+            <tr><td>Período de evaluación</td><td>14 Julio 2026</td></tr>
+            <tr><td>Metodología</td><td>Black-box (sin credenciales) — Análisis estático APK + Pruebas WCF en vivo</td></tr>
+            <tr><td>Tipo de prueba</td><td>No invasiva — Solo consultas GET/POST sin modificación de datos</td></tr>
+        </tbody>
+    </table>
+
+    <h3>1.2 Metodología Aplicada</h3>
+    <table>
+        <thead><tr><th>Fase</th><th>Actividad</th><th>Herramientas</th></tr></thead>
+        <tbody>
+            <tr><td>1. Recolección</td><td>Descarga de APKs desde Google Play / APKCombo</td><td>curl, browser</td></tr>
+            <tr><td>2. Decompilación</td><td>Extracción de XAPK/APK, análisis de assets y librerías</td><td>unzip, strings, androguard</td></tr>
+            <tr><td>3. Extracción de config</td><td>Lectura de configuration.yaml, config.json, libapp.so</td><td>strings, grep, python</td></tr>
+            <tr><td>4. Descubrimiento WSDL</td><td>Identificación de endpoints WCF y descarga de WSDL</td><td>curl, xmlstarlet</td></tr>
+            <tr><td>5. Pruebas en vivo</td><td>Ejecución de llamadas SOAP/JSON sin autenticación</td><td>curl, python, Postman</td></tr>
+            <tr><td>6. Extracción de datos</td><td>Recuperación de empleados, sucursales, estudios, consentimientos</td><td>python, csv</td></tr>
+            <tr><td>7. Análisis de red</td><td>Resolución DNS, geolocalización IP, fingerprinting servidores</td><td>host, dig, curl, ipinfo.io</td></tr>
+            <tr><td>8. Documentación</td><td>Compilación de hallazgos, PoCs, y recomendaciones</td><td>markdown, HTML, graphviz</td></tr>
+        </tbody>
+    </table>
+
+    <h2>2. Contexto del Negocio</h2>
+
+    <h3>2.1 CMR Medical Systems</h3>
+    <p>CMR Medical Systems es el publisher en Google Play de <strong>14 aplicaciones</strong> del sector salud, acumulando aproximadamente <strong>18,000+ descargas</strong>. Las apps son white-label Flutter configuradas por hospital/clínica, todas conectadas al mismo backend WCF desarrollado por IDigitales / Cedisa Consultores.</p>
+
+    <h3>2.2 IDigitales / Cedisa Consultores</h3>
+    <p>El desarrollador del sistema HIS (Health Information System) que da servicio a 10 entidades de salud en 4 países. Su infraestructura central está en República Dominicana (<code>portalresultados.cedisa.do</code>, 66.98.69.202) y actúa como hub para múltiples hospitales. El namespace de sus servicios es <code>IDigitales.HIS.Web.Servicios.Portal</code>.</p>
+
+    <h3>2.3 Modelo de Negocio</h3>
+    <p>Software-as-a-Service de historia clínica electrónica con módulos de imagenología (PACS), laboratorio, patología, facturación (CFDI SAT México), consentimientos informados, y telemedicina. Cada hospital tiene su propia app white-label pero comparte la misma infraestructura backend y la misma contraseña de tablets (<code>cmrservice05</code>).</p>
+
+    <h3>2.4 Riesgo de Negocio</h3>
+    <p>Una filtración de datos médicos protegidos (PHI) en este ecosistema afectaría simultáneamente a 10 entidades de salud en 4 países, con potenciales demandas colectivas, multas regulatorias, y daño reputacional catastrófico para CMR Medical Systems y sus clientes hospitalarios.</p>
+
+    <h3>2.5 Apps Analizadas — Descargas en Google Play</h3>
+    <table>
+        <thead><tr><th>App</th><th>País</th><th>Descargas</th><th>Rating</th><th>Versión</th></tr></thead>
+        <tbody>
+            <tr><td>HIGEA</td><td>—</td><td>10K+</td><td>N/A</td><td>2.7.4</td></tr>
+            <tr><td>Policlínica Metropolitana</td><td>🇩🇴</td><td>5K+</td><td>N/A</td><td>2.7.2</td></tr>
+            <tr><td>Centro Médico Moderno</td><td>🇩🇴</td><td>1K+</td><td>N/A</td><td>2.6.3</td></tr>
+            <tr><td>CEDISA</td><td>🇩🇴</td><td>1K+</td><td>N/A</td><td>2.6.2</td></tr>
+            <tr><td>Clínica Abreu (CDD)</td><td>🇩🇴</td><td>100+</td><td>N/A</td><td>2.6.3</td></tr>
+            <tr><td>InfoSalud</td><td>—</td><td>100+</td><td>N/A</td><td>1.2.9</td></tr>
+            <tr><td>EMESALUD</td><td>—</td><td>100+</td><td>N/A</td><td>2.6.0</td></tr>
+            <tr><td>Hospital San José</td><td>🇲🇽</td><td>100+</td><td>N/A</td><td>2.2.2</td></tr>
+            <tr><td>Lab Tequis</td><td>—</td><td>100+</td><td>5.0★</td><td>1.6.0</td></tr>
+            <tr><td>EMESALUD CADI</td><td>🇩🇴</td><td>50+</td><td>N/A</td><td>2.6.2</td></tr>
+            <tr><td>Clínica Corominas 🎯</td><td>🇩🇴</td><td>10+</td><td>N/A</td><td>2.7.3</td></tr>
+            <tr><td>Honduras Medical Center</td><td>🇭🇳</td><td>10+</td><td>N/A</td><td>2.6.2</td></tr>
+            <tr><td>Cardio Imágenes</td><td>🇩🇴</td><td>10+</td><td>N/A</td><td>2.6.4</td></tr>
+            <tr><td>InterHospital</td><td>🇪🇨</td><td>10+</td><td>5.0★</td><td>1.0.6</td></tr>
+        </tbody>
+    </table>
+
+    <div class="footer-bar">
+        <span class="confidential">Confidencial — Uso exclusivo del destinatario</span>
+        <span>NSI-SA-2026-005 &bull; Página 2 de 8</span>
+    </div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════════════════════ -->
+<!-- PAGE 3 — HALLAZGOS CRÍTICOS -->
+<!-- ════════════════════════════════════════════════════════════════════════ -->
+<div class="page">
+    <div class="header">
+        <div class="header-left">
+            <h1>NULL SESSION INTELLIGENCE LLC</h1>
+            <div class="tagline">Technology &bull; Intelligence &bull; Infrastructure</div>
+        </div>
+        <div class="header-right">
+            <div class="doc-type">Security Assessment Report</div>
+            <div class="doc-number">NSI-SA-2026-005 &bull; Julio 2026</div>
+        </div>
+    </div>
+
+    <h2>🔴 Hallazgos Críticos — Acción Inmediata (&lt;48 horas)</h2>
+
+    <div class="finding critical">
+        <h4>🔴 CMR-01: GetContrasenaTabletas — Contraseña Compartida en Todo el Ecosistema <span class="badge critical">CRÍTICO</span></h4>
+        <p><strong>CVSS: 9.8</strong> <span class="cvss-meter"><span class="fill crit"></span></span> AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H</p>
+        <p><strong>Endpoint:</strong> <code>POST /HisWebServicios/Portal/ServicioPortal.svc/GetContrasenaTabletas</code></p>
+        <p><strong>Autenticación:</strong> NINGUNA — El endpoint no requiere parámetros ni credenciales.</p>
+        <p><strong>Descripción:</strong> El endpoint devuelve la contraseña de tablets médicas <strong><code>cmrservice05</code></strong> en los 9 servidores accesibles del ecosistema. Esta contraseña es compartida entre TODOS los hospitales.</p>
+        <p><strong>Confirmado en:</strong> Corominas, Abreu, CEDISA, CMM, Cardio, CADI, Policlínica, EME Salud, InfoSalud</p>
+        <p><strong>Impacto de negocio:</strong> Acceso no autorizado a tablets médicas en 10 hospitales de 4 países. Potencial modificación de registros de pacientes, administración de medicamentos, y acceso a imágenes DICOM.</p>
+        <p><strong>PoC:</strong></p>
+        <div class="cmd-block">
+<span class="comment"># Obtener contraseña — sin autenticación</span>
+curl -sk -X POST "https://portal.clinicacorominas.com.do/HisWebServicios/Portal/ServicioPortal.svc/GetContrasenaTabletas" \
+  -H "Content-Type: application/json" -d '{}'
+<span class="comment"># Respuesta: {"Estado":0,"Data":"cmrservice05"}</span>
+        </div>
+        <p><strong>Remediación:</strong> (1) Rotar contraseña inmediatamente. (2) Implementar autenticación en el endpoint. (3) Usar contraseñas únicas por hospital.</p>
+    </div>
+
+    <div class="finding critical">
+        <h4>🔴 CMR-02: PersonalRecuperar — Filtración Masiva de Datos de Empleados <span class="badge critical">CRÍTICO</span></h4>
+        <p><strong>CVSS: 9.1</strong> <span class="cvss-meter"><span class="fill crit"></span></span> AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N</p>
+        <p><strong>Endpoint:</strong> <code>POST /.../PersonalRecuperar</code> — Parámetro: <code>{"sBuscar":""}</code></p>
+        <p><strong>Autenticación:</strong> NINGUNA</p>
+        <p><strong>Descripción:</strong> Expone <strong>6,078 empleados</strong> con nombres completos, números de cédula de identidad, roles y especialidades médicas. Sin autenticación ni rate limiting.</p>
+        
+        <table>
+            <thead><tr><th>App</th><th>Registros</th><th>Cédulas Únicas</th><th>Rol Principal</th></tr></thead>
+            <tbody>
+                <tr class="row-critical"><td>Clínica Abreu</td><td><strong>5,011</strong></td><td>~2,000+</td><td>Médicos, Radiólogos, Admin</td></tr>
+                <tr><td>Clínica Corominas</td><td>506</td><td>~200</td><td>Radiólogos, Recepción</td></tr>
+                <tr><td>CMM</td><td>259</td><td>171</td><td>Médicos, Admin</td></tr>
+                <tr><td>EME Salud</td><td>131</td><td>106</td><td>Personal CMR</td></tr>
+                <tr><td>Policlínica Metropolitana</td><td>98</td><td>92</td><td>Admin, Médicos</td></tr>
+                <tr><td>CADI</td><td>73</td><td>68</td><td>Personal</td></tr>
+            </tbody>
+        </table>
+
+        <p><strong>Impacto de negocio:</strong> La exposición de cédulas permite: (a) robo de identidad del personal médico, (b) spear-phishing dirigido a doctores con acceso a sistemas hospitalarios, (c) fraude crediticio usando identidades reales del sector salud.</p>
+        <p><strong>PoC:</strong></p>
+        <div class="cmd-block">
+<span class="comment"># Extraer todos los empleados</span>
+curl -sk -X POST "https://portal.clinicacorominas.com.do/HisWebServicios/Portal/ServicioPortal.svc/PersonalRecuperar" \
+  -H "Content-Type: application/json" -d '{"sBuscar":""}' | python3 -c "import sys,json;d=json.load(sys.stdin);print(len(json.loads(list(d.values())[0])['data']))"
+<span class="comment"># → 506 empleados en este host</span>
+        </div>
+    </div>
+
+    <div class="finding critical">
+        <h4>🔴 CMR-03: WSDL Públicos — 1,000+ Operaciones SOAP sin Autenticación <span class="badge critical">CRÍTICO</span></h4>
+        <p><strong>CVSS: 8.6</strong> <span class="cvss-meter"><span class="fill crit"></span></span> AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:L/A:L</p>
+        <p><strong>Endpoint:</strong> <code>/?wsdl</code> o <code>/?singleWsdl</code></p>
+        <p><strong>Autenticación:</strong> NINGUNA</p>
+        <p><strong>Descripción:</strong> Todos los servidores exponen su documentación WSDL completa sin autenticación. En total, más de 1,000 operaciones SOAP documentadas incluyendo autenticación, pacientes, imagenología, patología, facturación CFDI SAT, consentimientos firmados, y envío de notificaciones.</p>
+        <table>
+            <thead><tr><th>App</th><th>Ops</th><th>App</th><th>Ops</th></tr></thead>
+            <tbody>
+                <tr><td>CMM</td><td><strong>96</strong></td><td>Corominas</td><td>83</td></tr>
+                <tr><td>Lab Tequis</td><td>82</td><td>Honduras MC</td><td>80</td></tr>
+                <tr><td>InfoSalud</td><td>76</td><td>Abreu</td><td>70+</td></tr>
+                <tr><td>Cardio</td><td>67</td><td>CEDISA</td><td>60+</td></tr>
+                <tr><td>Policlínica</td><td>58</td><td>EME</td><td>54</td></tr>
+                <tr><td>CADI</td><td>48</td><td></td><td></td></tr>
+            </tbody>
+        </table>
+        <p><strong>Impacto:</strong> El WSDL es un "mapa del tesoro" para atacantes. Revela todas las operaciones disponibles, parámetros, tipos de datos y estructura de la base de datos. Con esta información, un atacante puede construir ataques dirigidos sin necesidad de ingeniería inversa.</p>
+    </div>
+
+    <div class="finding critical">
+        <h4>🔴 CMR-04: ImagingAnalysisList — Estudios DICOM de Pacientes <span class="badge critical">CRÍTICO</span></h4>
+        <p><strong>CVSS: 8.6</strong> <span class="cvss-meter"><span class="fill crit"></span></span></p>
+        <p><strong>Endpoint:</strong> <code>POST /.../ImagingAnalysisList</code></p>
+        <p><strong>Descripción:</strong> Expone estudios radiológicos de pacientes con folios OID, fechas, modalidades (RMN, TAC, RX, ECO, MAMO), series y thumbnails DICOM. Datos sensibles de salud protegidos por HIPAA.</p>
+        <p><strong>Volumen confirmado:</strong></p>
+        <ul>
+            <li>Corominas: <strong>81 estudios</strong> en el sistema (HomePageData)</li>
+            <li>Cardio Imágenes: <strong>99 estudios</strong></li>
+            <li>Policlínica Metropolitana: endpoint confirmado funcional</li>
+        </ul>
+        <p><strong>Impacto:</strong> Exposición de imágenes médicas de pacientes (PHI) — el tipo de datos más protegido por regulaciones de salud. Una filtración de imágenes DICOM puede identificar pacientes, diagnósticos y tratamientos.</p>
+    </div>
+
+    <div class="footer-bar">
+        <span class="confidential">Confidencial — Uso exclusivo del destinatario</span>
+        <span>NSI-SA-2026-005 &bull; Página 3 de 8</span>
+    </div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════════════════════ -->
+<!-- PAGE 4 — HALLAZGOS ALTOS + MEDIOS -->
+<!-- ════════════════════════════════════════════════════════════════════════ -->
+<div class="page">
+    <div class="header">
+        <div class="header-left">
+            <h1>NULL SESSION INTELLIGENCE LLC</h1>
+            <div class="tagline">Technology &bull; Intelligence &bull; Infrastructure</div>
+        </div>
+        <div class="header-right">
+            <div class="doc-type">Security Assessment Report</div>
+            <div class="doc-number">NSI-SA-2026-005 &bull; Julio 2026</div>
+        </div>
+    </div>
+
+    <h2>🟠 Hallazgos Altos — Acción Corto Plazo (&lt;1 semana)</h2>
+
+    <div class="finding high">
+        <h4>🟠 CMR-05: GetConsentimientosLista — Consentimientos de Pacientes Expuestos <span class="badge high">ALTO</span></h4>
+        <p><strong>CVSS: 7.5</strong> <span class="cvss-meter"><span class="fill high"></span></span></p>
+        <p><strong>Confirmado en:</strong> InfoSalud — <strong>77 consentimientos informados</strong> expuestos incluyendo nombre del paciente, tipo de procedimiento, estado de firma y folio. Sin autenticación.</p>
+        <p><strong>Impacto:</strong> Los consentimientos informados son documentos médico-legales. Su exposición permite a terceros conocer qué procedimientos médicos se realizó un paciente, violando la confidencialidad médico-paciente.</p>
+    </div>
+
+    <div class="finding high">
+        <h4>🟠 CMR-06: PostConsentimientosFirma — Firma de Documentos sin Autenticación <span class="badge high">ALTO</span></h4>
+        <p><strong>CVSS: 7.5</strong> <span class="cvss-meter"><span class="fill high"></span></span></p>
+        <p><strong>Descripción:</strong> El endpoint permite firmar consentimientos médicos como paciente sin presentar credenciales. Un atacante podría falsificar consentimientos para procedimientos médicos, con graves implicaciones legales.</p>
+    </div>
+
+    <div class="finding high">
+        <h4>🟠 CMR-07: PasswordSend — Enumeración de Correos Electrónicos <span class="badge high">ALTO</span></h4>
+        <p><strong>CVSS: 5.3</strong> <span class="cvss-meter"><span class="fill high"></span></span></p>
+        <p><strong>Descripción:</strong> El endpoint de recuperación de contraseña responde con mensajes distintos para correos existentes vs. inexistentes. Permite construir una base de datos de correos electrónicos del sistema para ataques de phishing dirigido.</p>
+    </div>
+
+    <h2>🟡 Hallazgos Medios — Acción Mediano Plazo (&lt;1 mes)</h2>
+
+    <div class="finding medium">
+        <h4>🟡 CMR-08: debugMode: true en Producción <span class="badge medium">MEDIO</span></h4>
+        <p><strong>CVSS: 5.0</strong> <span class="cvss-meter"><span class="fill med"></span></span></p>
+        <p><strong>Apps afectadas:</strong> 10 de 14 — Corominas, Abreu, Cardio, CEDISA, CMM, CADI, Policlínica, EME Salud, InfoSalud, Honduras MC, HIGEA.</p>
+        <p><strong>Impacto:</strong> El modo debug en producción puede exponer trazas de pila, credenciales en logs y comportamiento inseguro. Es especialmente crítico cuando se combina con endpoints sin autenticación.</p>
+    </div>
+
+    <div class="finding medium">
+        <h4>🟡 CMR-09: HTTP sin TLS — Datos en Texto Plano <span class="badge medium">MEDIO</span></h4>
+        <p><strong>CVSS: 5.9</strong> <span class="cvss-meter"><span class="fill med"></span></span></p>
+        <p><strong>Hosts afectados:</strong> <code>www.cmr-apps.com</code> (EME Salud, InfoSalud), <code>disanjose.ddns.net:99</code> (Hospital San José). Clínica Abreu también permite cleartext traffic. PHI, credenciales y tokens viajan en texto plano.</p>
+    </div>
+
+    <div class="finding medium">
+        <h4>🟡 CMR-10: Directory Listing — Exposición de Archivos <span class="badge medium">MEDIO</span></h4>
+        <p><strong>CVSS: 5.3</strong> <span class="cvss-meter"><span class="fill med"></span></span></p>
+        <p><strong>Ubicaciones:</strong> CEDISA (<code>/HisWebServicios/Portal/</code>), CMM (<code>/HisWebServicios/</code>, <code>/Certificados/</code>, <code>/Xml/</code>).</p>
+        <p><strong>Hallazgo adicional:</strong> Certificado IMSS México expuesto en <code>/Certificados/csiproveedores.imss.gob.mx.cer</code>.</p>
+        <div class="cmd-block">
+<span class="comment"># Directory listing activo</span>
+curl -sk "https://resultadosimagenes.cmm.do/HisWebServicios/"
+        </div>
+    </div>
+
+    <div class="finding medium">
+        <h4>🟡 CMR-11: Source Path Leak — Código Fuente Expuesto <span class="badge medium">MEDIO</span></h4>
+        <p><strong>Ruta expuesta:</strong> <code>C:/Mis Codigos/HIS/IDigitales.HIS.Web.Servicios/...</code> en <code>Reference.map</code> de CMM.</p>
+        <p><strong>Impacto:</strong> Revela la estructura del proyecto de desarrollo, nombres de archivos y posiblemente rutas de configuración. Facilita ataques dirigidos.</p>
+    </div>
+
+    <div class="finding medium">
+        <h4>🟡 CMR-12: CORS Permisivo <span class="badge medium">MEDIO</span></h4>
+        <p><code>Access-Control-Allow-Origin: *</code> con <code>Allow-Credentials: true</code> en múltiples hosts. Permite a sitios maliciosos realizar peticiones cross-origin autenticadas.</p>
+    </div>
+
+    <div class="finding medium">
+        <h4>🟡 CMR-13: Password Reset Oracle <span class="badge medium">MEDIO</span></h4>
+        <p>El endpoint de recuperación de contraseña permite determinar qué correos electrónicos están registrados en el sistema.</p>
+    </div>
+
+    <div class="finding" style="border-left-color:var(--nsi-muted);">
+        <h4>⚪ CMR-14: Fingerprinting de Servidores <span class="badge info">INFO</span></h4>
+        <p>X-AspNet-Version: 4.0.30319 &bull; Microsoft-IIS/10.0, IIS/8.5 &bull; Namespace: IDigitales.HIS.Web.Servicios.Portal &bull; Servidores internos: srv-recvoz.cmr.local, srv-portal, eymsa-app1.internal.cmr.mx</p>
+    </div>
+
+    <div class="footer-bar">
+        <span class="confidential">Confidencial — Uso exclusivo del destinatario</span>
+        <span>NSI-SA-2026-005 &bull; Página 4 de 8</span>
+    </div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════════════════════ -->
+<!-- PAGE 5 — CADENAS DE ATAQUE + ARQUITECTURA -->
+<!-- ════════════════════════════════════════════════════════════════════════ -->
+<div class="page">
+    <div class="header">
+        <div class="header-left">
+            <h1>NULL SESSION INTELLIGENCE LLC</h1>
+            <div class="tagline">Technology &bull; Intelligence &bull; Infrastructure</div>
+        </div>
+        <div class="header-right">
+            <div class="doc-type">Security Assessment Report</div>
+            <div class="doc-number">NSI-SA-2026-005 &bull; Julio 2026</div>
+        </div>
+    </div>
+
+    <h2>3. Cadenas de Ataque</h2>
+    <p>Las vulnerabilidades identificadas no existen en aislamiento. A continuación se describen las cadenas de ataque reales que un adversario podría ejecutar combinando múltiples hallazgos.</p>
+
+    <h3>🔴 Cadena 1: Exfiltración Masiva de Datos de Pacientes</h3>
+    <table>
+        <thead><tr><th>Paso</th><th>Acción</th><th>Hallazgo</th><th>Técnica MITRE</th></tr></thead>
+        <tbody>
+            <tr><td>1</td><td>Descubrir WSDL público en cualquier host</td><td>CMR-03</td><td>T1590 (Gather Victim Network Info)</td></tr>
+            <tr><td>2</td><td>Identificar endpoints sin auth en el WSDL</td><td>CMR-03</td><td>T1589 (Gather Victim Identity Info)</td></tr>
+            <tr><td>3</td><td>Llamar HomePageData para saber cuántos estudios hay</td><td>CMR-04</td><td>T1595 (Active Scanning)</td></tr>
+            <tr><td>4</td><td>Llamar ImagingAnalysisList para extraer estudios DICOM</td><td>CMR-04</td><td>T1114 (Email Collection) / T1005 (Data from Local System)</td></tr>
+            <tr><td>5</td><td>Llamar GetConsentimientosLista para extraer consentimientos</td><td>CMR-05</td><td>T1213 (Data from Information Repositories)</td></tr>
+            <tr><td>6</td><td>Exfiltrar datos combinados</td><td>—</td><td>T1041 (Exfiltration Over C2 Channel)</td></tr>
+        </tbody>
+    </table>
+    <p><strong>Impacto:</strong> ~180 estudios DICOM + 77 consentimientos de pacientes exfiltrados en minutos. Posible violación de HIPAA con multas de hasta $1.5M por año.</p>
+
+    <h3>🔴 Cadena 2: Spear-Phishing a Personal Médico</h3>
+    <table>
+        <thead><tr><th>Paso</th><th>Acción</th><th>Hallazgo</th></tr></thead>
+        <tbody>
+            <tr><td>1</td><td>Extraer 6,078 empleados con nombres y cédulas</td><td>CMR-02</td></tr>
+            <tr><td>2</td><td>Enumerar correos usando PasswordSend</td><td>CMR-07 / CMR-13</td></tr>
+            <tr><td>3</td><td>Correlacionar roles (ADMIN, RADIÓLOGO, RECEPCIÓN)</td><td>CMR-02</td></tr>
+            <tr><td>4</td><td>Enviar spear-phishing contextualizado al personal identificado</td><td>—</td></tr>
+            <tr><td>5</td><td>Obtener credenciales de acceso a sistemas hospitalarios</td><td>—</td></tr>
+            <tr><td>6</td><td>Usar contraseña cmrservice05 para acceso a tablets</td><td>CMR-01</td></tr>
+        </tbody>
+    </table>
+    <p><strong>Impacto:</strong> Compromiso completo de la infraestructura hospitalaria mediante ingeniería social informada.</p>
+
+    <h3>🔴 Cadena 3: Acceso No Autorizado a Sistemas</h3>
+    <table>
+        <thead><tr><th>Paso</th><th>Acción</th><th>Hallazgo</th></tr></thead>
+        <tbody>
+            <tr><td>1</td><td>Usar cmrservice05 para autenticarse en tablets hospitalarias</td><td>CMR-01</td></tr>
+            <tr><td>2</td><td>Firmar consentimientos falsos como paciente</td><td>CMR-06</td></tr>
+            <tr><td>3</td><td>Extraer catálogos de sucursales y planes</td><td>CMR-03</td></tr>
+            <tr><td>4</td><td>Escalar a otros hospitales vía ServidoresAdicionales()</td><td>Arquitectura</td></tr>
+        </tbody>
+    </table>
+
+    <h2>4. Arquitectura del Sistema</h2>
+
+    <h3>4.1 Stack Tecnológico</h3>
+    <div class="cmd-block">
+<span class="comment"># Capa de presentación</span>
+Flutter (Dart AOT) → configuration.yaml → HTTPS/WCF
+<span class="comment"># Capa de servicios (IIS 10.0 / Windows Server)</span>
+ServicioPortal.svc (48-96 ops SOAP)
+  ├── Autenticación: Token, TokenByCredential, PasswordModify, PasswordSend
+  ├── Pacientes: Paciente, Folio, FotoPaciente, GetPacienteByFolio
+  ├── Imagenología: ImagingAnalysisList, ImagingReport, MakeAppointment
+  ├── Patología: PathologyAnalysisList, ReportePatologia
+  ├── Laboratorio: LaboratoryAnalysisList
+  ├── Expediente: SignosVitales, Medicamentos, Alergias, NotasMedicas
+  ├── Facturación: TimbrarFactura, GetListaFacturas (CFDI SAT México)
+  ├── Consentimientos: GetConsentimientosLista, PostConsentimientosFirma
+  ├── Dispositivos: PostDispositivo, GetContrasenaTabletas
+  └── Catálogos: GetSucursales, GetEstudiosModalidad, GetCatalogoPaisesLada
+<span class="comment"># Servicios adicionales</span>
+Service1.svc (PACS Iconos)
+WebDiagRxMobile (Visor Radiológico)
+WebUltimateGL (Visor Avanzado React)
+Hospitalizacion.svc
+Patologia/Imagenes.svc
+Facturacion/ServicioFacturacion.svc (CFDI SAT)
+Integraciones/Laboratorio.svc
+    </div>
+
+    <h3>4.2 Inventario de Servidores</h3>
+    <table>
+        <thead><tr><th>Host</th><th>IP</th><th>Rol</th><th>TLS</th><th>Ubicación</th></tr></thead>
+        <tbody>
+            <tr><td>portal.clinicacorominas.com.do</td><td>190.167.229.27</td><td>API Corominas</td><td>✅</td><td>RD (Claro)</td></tr>
+            <tr><td>resultados.clinicaabreu.com.do</td><td>190.167.33.178</td><td>API Abreu</td><td>✅</td><td>RD (Claro)</td></tr>
+            <tr><td>portalresultados.cedisa.do</td><td>66.98.69.202</td><td><strong>Hub Central</strong> (IIS 8.5)</td><td>✅</td><td>RD</td></tr>
+            <tr><td>resultadosimagenes.cmm.do</td><td>—</td><td>API CMM</td><td>✅</td><td>RD</td></tr>
+            <tr><td>cardioimagenes.cmr-apps.com</td><td>—</td><td>API Cardio</td><td>✅</td><td>—</td></tr>
+            <tr><td>portal.cadi.do</td><td>—</td><td>API CADI</td><td>✅</td><td>RD</td></tr>
+            <tr><td>policlinicametropolitana-apps.com</td><td>—</td><td>API Policlínica</td><td>✅</td><td>—</td></tr>
+            <tr><td>www.cmr-apps.com</td><td>—</td><td>CMR genérico</td><td><strong>❌</strong></td><td>—</td></tr>
+            <tr><td>higea.cmr-apps.com</td><td>—</td><td>API HIGEA</td><td>✅</td><td>—</td></tr>
+            <tr><td>interhospital.com.ec</td><td>216.198.79.1</td><td>API Ecuador</td><td>✅</td><td>Ecuador</td></tr>
+            <tr><td>disanjose.ddns.net:99</td><td>189.173.69.27</td><td>HSH (DDNS)</td><td><strong>❌</strong></td><td>México (UNINET)</td></tr>
+            <tr><td>ris.hmc.hn</td><td>—</td><td>HMC (interno)</td><td>✅</td><td>Honduras</td></tr>
+        </tbody>
+    </table>
+
+    <h3>4.3 Red Interna Filtrada</h3>
+    <table>
+        <thead><tr><th>Hostname</th><th>Fuente</th><th>Rol Probable</th></tr></thead>
+        <tbody>
+            <tr><td><code>srv-recvoz.cmr.local</code></td><td>Redirect WCF (CMM, Abreu, CEDISA)</td><td>Servidor WCF principal</td></tr>
+            <tr><td><code>srv-portal</code></td><td>Redirect WCF (Corominas, Cardio)</td><td>Portal interno CMR</td></tr>
+            <tr><td><code>eymsa-app1.internal.cmr.mx</code></td><td>Stack trace SOAP (InfoSalud)</td><td>Servidor CMR México</td></tr>
+            <tr><td><code>C:/Mis Codigos/HIS/...</code></td><td>Source path leak (CMM)</td><td>Entorno de desarrollo</td></tr>
+        </tbody>
+    </table>
+
+    <div class="footer-bar">
+        <span class="confidential">Confidencial — Uso exclusivo del destinatario</span>
+        <span>NSI-SA-2026-005 &bull; Página 5 de 8</span>
+    </div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════════════════════ -->
+<!-- PAGE 6 — THREAT MODEL + COMPLIANCE -->
+<!-- ════════════════════════════════════════════════════════════════════════ -->
+<div class="page">
+    <div class="header">
+        <div class="header-left">
+            <h1>NULL SESSION INTELLIGENCE LLC</h1>
+            <div class="tagline">Technology &bull; Intelligence &bull; Infrastructure</div>
+        </div>
+        <div class="header-right">
+            <div class="doc-type">Security Assessment Report</div>
+            <div class="doc-number">NSI-SA-2026-005 &bull; Julio 2026</div>
+        </div>
+    </div>
+
+    <h2>5. Modelo de Amenazas (STRIDE)</h2>
+
+    <table>
+        <thead><tr><th>Categoría</th><th>Amenaza</th><th>Hallazgo Relacionado</th><th>Riesgo</th></tr></thead>
+        <tbody>
+            <tr class="row-critical"><td><strong>S</strong>poofing</td><td>Suplantación de identidad — endpoint Token sin MFA</td><td>CMR-03</td><td>🔴</td></tr>
+            <tr class="row-critical"><td><strong>T</strong>ampering</td><td>Modificación de datos — PostConsentimientosFirma sin auth</td><td>CMR-06</td><td>🔴</td></tr>
+            <tr class="row-critical"><td><strong>R</strong>epudiation</td><td>Firma de consentimientos sin registro de autenticación</td><td>CMR-06</td><td>🔴</td></tr>
+            <tr class="row-critical"><td><strong>I</strong>nformation Disclosure</td><td>Exposición masiva de PII y PHI</td><td>CMR-01 a CMR-05, CMR-10, CMR-11</td><td>🔴</td></tr>
+            <tr class="row-high"><td><strong>D</strong>enial of Service</td><td>Sin rate limiting — posible DoS en endpoints SOAP</td><td>CMR-03</td><td>🟠</td></tr>
+            <tr class="row-high"><td><strong>E</strong>scalation of Privilege</td><td>cmrservice05 compartida + debugMode → escalada a admin</td><td>CMR-01, CMR-08</td><td>🟠</td></tr>
+        </tbody>
+    </table>
+
+    <h2>6. Análisis de Cumplimiento Regulatorio</h2>
+
+    <h3>6.1 HIPAA (Health Insurance Portability and Accountability Act)</h3>
+    <p>Aplicable si alguna entidad del ecosistema maneja datos de pacientes en EE.UU. o si los servidores están en territorio estadounidense.</p>
+    <table>
+        <thead><tr><th>Regla HIPAA</th><th>Requerimiento</th><th>Estado</th><th>Riesgo</th></tr></thead>
+        <tbody>
+            <tr class="row-critical"><td>164.312(a)(1)</td><td>Control de acceso único por usuario</td><td>❌ Contraseña compartida cmrservice05</td><td>🔴</td></tr>
+            <tr class="row-critical"><td>164.312(c)(1)</td><td>Integridad de PHI</td><td>❌ Endpoints sin auth pueden modificar datos</td><td>🔴</td></tr>
+            <tr class="row-critical"><td>164.312(e)(1)</td><td>Seguridad en transmisión</td><td>❌ HTTP en 3 servidores</td><td>🔴</td></tr>
+            <tr class="row-critical"><td>164.308(a)(1)</td><td>Evaluación de riesgos</td><td>❌ WSDL público sin protección</td><td>🔴</td></tr>
+            <tr class="row-high"><td>164.312(b)</td><td>Audit controls</td><td>❌ debugMode expone datos</td><td>🟠</td></tr>
+            <tr class="row-high"><td>164.308(a)(4)</td><td>Controles de autorización</td><td>❌ Multiple endpoints sin auth</td><td>🟠</td></tr>
+        </tbody>
+    </table>
+    <p><strong>Multa potencial HIPAA:</strong> $100 - $50,000 por violación, máximo $1.5M por año por categoría de violación. Dado que hay 4 categorías críticas, la exposición total podría superar <strong>$6M USD</strong>.</p>
+
+    <h3>6.2 GDPR (General Data Protection Regulation)</h3>
+    <p>Aplicable si el ecosistema maneja datos de ciudadanos europeos (posible si atienden turismo médico o inversores europeos).</p>
+    <table>
+        <thead><tr><th>Artículo</th><th>Requerimiento</th><th>Estado</th></tr></thead>
+        <tbody>
+            <tr class="row-critical"><td>Art. 5(1)(f)</td><td>Integridad y confidencialidad</td><td>❌ Datos expuestos sin autenticación</td></tr>
+            <tr class="row-critical"><td>Art. 25</td><td>Protección de datos por diseño</td><td>❌ debugMode en producción</td></tr>
+            <tr class="row-critical"><td>Art. 32</td><td>Seguridad del tratamiento</td><td>❌ Sin cifrado, sin auth, sin control de acceso</td></tr>
+            <tr class="row-high"><td>Art. 33</td><td>Notificación de violaciones</td><td>🟠 72 horas para notificar</td></tr>
+        </tbody>
+    </table>
+    <p><strong>Multa potencial GDPR:</strong> Hasta 20M EUR o 4% del volumen de negocio anual global, lo que sea mayor.</p>
+
+    <h3>6.3 Ley 172-13 (Protección de Datos Personales — República Dominicana)</h3>
+    <p>La legislación dominicana de protección de datos establece obligaciones específicas para los encargados y responsables del tratamiento de datos personales.</p>
+    <table>
+        <thead><tr><th>Artículo</th><th>Requerimiento</th><th>Estado</th></tr></thead>
+        <tbody>
+            <tr class="row-critical"><td>Art. 17</td><td>Medidas de seguridad técnicas y organizativas</td><td>❌ Múltiples fallos de seguridad</td></tr>
+            <tr class="row-critical"><td>Art. 19</td><td>Secreto profesional sobre datos personales</td><td>❌ Exposición de datos de empleados</td></tr>
+            <tr class="row-high"><td>Art. 28</td><td>Deber de notificar violaciones</td><td>🟠 Requiere notificación inmediata</td></tr>
+        </tbody>
+    </table>
+
+    <h2>7. Cuantificación de Riesgo</h2>
+
+    <table>
+        <thead><tr><th>Escenario</th><th>Probabilidad</th><th>Impacto Estimado</th><th>Riesgo Total</th></tr></thead>
+        <tbody>
+            <tr class="row-critical"><td>Exfiltración de PHI (DICOM + consentimientos)</td><td>Alta</td><td>$500K - $6M (HIPAA)</td><td>🔴 CRÍTICO</td></tr>
+            <tr class="row-critical"><td>Robo de identidad del personal médico</td><td>Alta</td><td>$200K - $2M (fraude + litigios)</td><td>🔴 CRÍTICO</td></tr>
+            <tr class="row-high"><td>Spear-phishing a doctores con datos reales</td><td>Media-Alta</td><td>$100K - $1M (brecha secundaria)</td><td>🟠 ALTO</td></tr>
+            <tr class="row-high"><td>Falsificación de consentimientos médicos</td><td>Media</td><td>$100K - $500K (litigios)</td><td>🟠 ALTO</td></tr>
+            <tr class="row-high"><td>Daño reputacional a CMR Medical Systems</td><td>Alta</td><td>$200K - $1M (pérdida de clientes)</td><td>🟠 ALTO</td></tr>
+        </tbody>
+    </table>
+    <p><strong>Riesgo total estimado:</strong> <strong>$1.1M - $10.5M USD</strong></p>
+
+    <div class="footer-bar">
+        <span class="confidential">Confidencial — Uso exclusivo del destinatario</span>
+        <span>NSI-SA-2026-005 &bull; Página 6 de 8</span>
+    </div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════════════════════ -->
+<!-- PAGE 7 — DATOS EXTRAÍDOS + CLIENTES -->
+<!-- ════════════════════════════════════════════════════════════════════════ -->
+<div class="page">
+    <div class="header">
+        <div class="header-left">
+            <h1>NULL SESSION INTELLIGENCE LLC</h1>
+            <div class="tagline">Technology &bull; Intelligence &bull; Infrastructure</div>
+        </div>
+        <div class="header-right">
+            <div class="doc-type">Security Assessment Report</div>
+            <div class="doc-number">NSI-SA-2026-005 &bull; Julio 2026</div>
+        </div>
+    </div>
+
+    <h2>8. Datos Extraídos</h2>
+
+    <h3>8.1 Empleados por Entidad</h3>
+    <table>
+        <thead><tr><th>Entidad</th><th>Registros</th><th>Cédulas Válidas</th><th>Archivo</th></tr></thead>
+        <tbody>
+            <tr class="row-critical"><td>Clínica Abreu (CDD)</td><td><strong>5,011</strong></td><td>~2,000+</td><td>abreu_empleados.csv (204 KB)</td></tr>
+            <tr><td>Clínica Corominas</td><td>506</td><td>~200</td><td>corominas_empleados.csv (36 KB)</td></tr>
+            <tr><td>Centro Médico Moderno</td><td>259</td><td>171</td><td>cmm_empleados.csv (16 KB)</td></tr>
+            <tr><td>EME Salud</td><td>131</td><td>106</td><td>emesalud_empleados.csv (8 KB)</td></tr>
+            <tr><td>Policlínica Metropolitana</td><td>98</td><td>92</td><td>policlinica_empleados.csv (8 KB)</td></tr>
+            <tr><td>CADI</td><td>73</td><td>68</td><td>cadi_empleados.csv (8 KB)</td></tr>
+            <tr class="row-critical"><td><strong>TOTAL</strong></td><td><strong>6,078</strong></td><td><strong>~2,637</strong></td><td><strong>~280 KB</strong></td></tr>
+        </tbody>
+    </table>
+
+    <h3>8.2 Muestra de Cédulas Extraídas</h3>
+    <table>
+        <thead><tr><th>App</th><th>Nombre</th><th>Cédula / Documento</th><th>Rol</th></tr></thead>
+        <tbody>
+            <tr><td>Abreu</td><td>Ana Rocio Martinez Ramirez</td><td>Exq. 71-07 CMD 22573</td><td>RADIÓLOGO</td></tr>
+            <tr><td>CMM</td><td>Jesús Miguel Castillo Ortega</td><td>2400631796</td><td>—</td></tr>
+            <tr><td>CMM</td><td>Guillermo Alvarez Estevez</td><td>00100818715</td><td>—</td></tr>
+            <tr><td>CMM</td><td>Lic. Wilkin Medina</td><td>40227737927</td><td>—</td></tr>
+            <tr><td>Corominas</td><td>Eladio Joel Ramirez Hernandez</td><td>03104335116</td><td>—</td></tr>
+            <tr><td>Corominas</td><td>Johanny Viñas Guzman</td><td>05500329221</td><td>—</td></tr>
+            <tr><td>Policlínica</td><td>Administrador Admin</td><td>98870078</td><td>ADMIN</td></tr>
+        </tbody>
+    </table>
+
+    <h3>8.3 Estudios DICOM en Sistema</h3>
+    <table>
+        <thead><tr><th>App</th><th>Estudios</th><th>Modalidades</th></tr></thead>
+        <tbody>
+            <tr><td>Corominas</td><td>81</td><td>RMN, TAC, RX, ECO, MAMO</td></tr>
+            <tr><td>Cardio Imágenes</td><td>99</td><td>RMN, TAC, RX, ECO</td></tr>
+            <tr><td>CEDISA</td><td>1</td><td>—</td></tr>
+        </tbody>
+    </table>
+
+    <h2>9. Clientes de IDigitales — Entidades Afectadas</h2>
+    <p><strong>10 entidades de salud</strong> en 4 países usando el mismo backend WCF expuesto:</p>
+    <table>
+        <thead><tr><th>#</th><th>Entidad</th><th>País</th><th>API Host</th><th>Ops WSDL</th><th>Riesgo</th></tr></thead>
+        <tbody>
+            <tr class="row-critical"><td>1</td><td><strong>Clínica Corominas</strong> 🎯</td><td>🇩🇴</td><td>portal.clinicacorominas.com.do</td><td>83</td><td>🔴</td></tr>
+            <tr class="row-critical"><td>2</td><td><strong>Clínica Abreu (CDD)</strong> 🎯</td><td>🇩🇴</td><td>resultados.clinicaabreu.com.do</td><td>70+</td><td>🔴</td></tr>
+            <tr><td>3</td><td>Cardio Imágenes</td><td>🇩🇴</td><td>cardioimagenes.cmr-apps.com</td><td>67</td><td>🔴</td></tr>
+            <tr><td>4</td><td><strong>CEDISA</strong> (Hub)</td><td>🇩🇴</td><td>portalresultados.cedisa.do</td><td>60+</td><td>🔴</td></tr>
+            <tr><td>5</td><td>Centro Médico Moderno</td><td>🇩🇴</td><td>resultadosimagenes.cmm.do</td><td>96</td><td>🔴</td></tr>
+            <tr><td>6</td><td>CADI</td><td>🇩🇴</td><td>portal.cadi.do</td><td>48</td><td>🟠</td></tr>
+            <tr><td>7</td><td>Policlínica Metropolitana</td><td>🇩🇴</td><td>policlinicametropolitana-apps.com</td><td>58</td><td>🔴</td></tr>
+            <tr><td>8</td><td>InterHospital</td><td>🇪🇨</td><td>interhospital.com.ec</td><td>Interno</td><td>🟡</td></tr>
+            <tr><td>9</td><td>Hospital San José Hermosillo</td><td>🇲🇽</td><td>disanjose.ddns.net:99</td><td>DDNS</td><td>🟡</td></tr>
+            <tr><td>10</td><td>Honduras Medical Center</td><td>🇭🇳</td><td>ris.hmc.hn</td><td>Via CEDISA</td><td>🟡</td></tr>
+        </tbody>
+    </table>
+
+    <div class="footer-bar">
+        <span class="confidential">Confidencial — Uso exclusivo del destinatario</span>
+        <span>NSI-SA-2026-005 &bull; Página 7 de 8</span>
+    </div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════════════════════ -->
+<!-- PAGE 8 — REMEDIACIÓN + APPENDICES -->
+<!-- ════════════════════════════════════════════════════════════════════════ -->
+<div class="page">
+    <div class="header">
+        <div class="header-left">
+            <h1>NULL SESSION INTELLIGENCE LLC</h1>
+            <div class="tagline">Technology &bull; Intelligence &bull; Infrastructure</div>
+        </div>
+        <div class="header-right">
+            <div class="doc-type">Security Assessment Report</div>
+            <div class="doc-number">NSI-SA-2026-005 &bull; Julio 2026</div>
+        </div>
+    </div>
+
+    <h2>10. Plan de Remediación</h2>
+
+    <table>
+        <thead><tr><th>Fase</th><th>Plazo</th><th>Acciones</th><th>Hallazgos</th><th>Esfuerzo</th></tr></thead>
+        <tbody>
+            <tr class="row-critical">
+                <td><strong>F1: Crisis</strong></td>
+                <td>48 horas</td>
+                <td>
+                    1. Rotar contraseña cmrservice05 en todos los servidores<br>
+                    2. Desactivar debugMode en 10 apps<br>
+                    3. Implementar auth en GetContrasenaTabletas, PersonalRecuperar, ImagingAnalysisList
+                </td>
+                <td>CMR-01, CMR-02, CMR-04, CMR-08</td>
+                <td>2-3 días</td>
+            </tr>
+            <tr class="row-high">
+                <td><strong>F2: Contención</strong></td>
+                <td>1 semana</td>
+                <td>
+                    1. Implementar autenticación en TODOS los endpoints WSDL<br>
+                    2. Deshabilitar WSDL público en producción<br>
+                    3. Migrar a HTTPS en cmr-apps.com y disanjose.ddns.net<br>
+                    4. Deshabilitar directory listing
+                </td>
+                <td>CMR-03, CMR-09, CMR-10</td>
+                <td>1 semana</td>
+            </tr>
+            <tr class="row-high">
+                <td><strong>F3: Remediación</strong></td>
+                <td>1 mes</td>
+                <td>
+                    1. Implementar MFA en endpoints de autenticación<br>
+                    2. Rate limiting en endpoints sensibles<br>
+                    3. Restringir CORS por origen<br>
+                    4. Implementar auditoría de accesos<br>
+                    5. Remover source paths de respuestas
+                </td>
+                <td>CMR-05, CMR-06, CMR-07, CMR-11, CMR-12, CMR-13</td>
+                <td>2-4 semanas</td>
+            </tr>
+            <tr>
+                <td><strong>F4: Prevención</strong></td>
+                <td>3 meses</td>
+                <td>
+                    1. Arquitectura de seguridad Zero Trust<br>
+                    2. Contraseñas únicas por hospital<br>
+                    3. Programa de bug bounty interno<br>
+                    4. Auditorías de seguridad trimestrales<br>
+                    5. Secure SDLC pipeline con SAST/DAST
+                </td>
+                <td>Sistémico</td>
+                <td>2-3 meses</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>11. Anexos</h2>
+
+    <h3>11.1 Reportes Individuales por App</h3>
+    <table>
+        <thead><tr><th>App</th><th>Reporte</th><th>Hallazgo Principal</th></tr></thead>
+        <tbody>
+            <tr><td>Clínica Corominas</td><td>corominas-report.md</td><td>83 ops, password tablets, 506 empleados</td></tr>
+            <tr><td>Clínica Abreu</td><td>abreu-report.md</td><td>70+ ops, cleartext, 5,011 empleados</td></tr>
+            <tr><td>Cardio Imágenes</td><td>cardio_imagenes-report.md</td><td>67 ops, srv-portal leak, 99 estudios</td></tr>
+            <tr><td>CEDISA</td><td>cedisa-report.md</td><td>60+ ops, directory listing, hub central</td></tr>
+            <tr><td>CMM</td><td>cmm-report.md</td><td>96 ops, certificado IMSS, source leak</td></tr>
+            <tr><td>CADI</td><td>cadi-report.md</td><td>48 ops, SAT CFDI en app RD</td></tr>
+            <tr><td>Policlínica Metropolitana</td><td>policlinica-report.md</td><td>58 ops, DICOM expuesto</td></tr>
+            <tr><td>HIGEA</td><td>higea-report.md</td><td>60+ ops, historia clínica completa</td></tr>
+            <tr><td>Honduras Medical Center</td><td>hmc-report.md</td><td>80 ops, backend via CEDISA</td></tr>
+            <tr><td>InfoSalud</td><td>infosalud-report.md</td><td>76 ops, 131 empleados, 77 consentimientos</td></tr>
+            <tr><td>EME Salud</td><td>emesalud-report.md</td><td>54 ops, HTTP, 120 empleados</td></tr>
+            <tr><td>Lab Tequis</td><td>tequis-report.md</td><td>82 ops, eymsa-app1 leak</td></tr>
+        </tbody>
+    </table>
+
+    <h3>11.2 Link Analysis Graph</h3>
+    <p>Archivos generados:</p>
+    <ul>
+        <li><strong>cmr-link-analysis-nsi.png</strong> (312 KB) — Imagen del grafo de relaciones</li>
+        <li><strong>cmr-link-analysis-nsi.svg</strong> (36 KB) — Vector editable</li>
+        <li><strong>cmr-link-analysis-nsi.dot</strong> (8 KB) — Código fuente Graphviz</li>
+    </ul>
+
+    <p><strong>Relaciones del ecosistema:</strong></p>
+    <div class="cmd-block">
+<span class="comment"># IDigitales / Cedisa Consultores (Desarrollador)</span>
+ ├── CEDISA (Hub Central - portalresultados.cedisa.do)
+ │     ├── Clínica Corominas 🎯
+ │     ├── Clínica Abreu 🎯
+ │     ├── Centro Médico Moderno
+ │     └── Honduras Medical Center
+ ├── cmr-apps.com (HTTP - sin TLS)
+ │     ├── Cardio Imágenes
+ │     ├── HIGEA
+ │     ├── EME Salud (genérica)
+ │     └── InfoSalud Firmas
+ ├── Red Interna (srv-recvoz, srv-portal, eymsa-app1)
+ ├── InterHospital (Ecuador - aislado)
+ └── Hospital San José (México - DDNS)
+ 
+<span class="comment"># 🔴 Contraseña compartida cmrservice05 en TODOS los hosts</span>
+    </div>
+
+    <h3>11.3 Herramientas Utilizadas</h3>
+    <table>
+        <thead><tr><th>Herramienta</th><th>Propósito</th></tr></thead>
+        <tbody>
+            <tr><td>unzip / strings / grep</td><td>Extracción y análisis de APK</td></tr>
+            <tr><td>curl / python3</td><td>Pruebas de endpoints WCF en vivo</td></tr>
+            <tr><td>graphviz (dot)</td><td>Generación de Link Analysis Graph</td></tr>
+            <tr><td>host / dig / ipinfo.io</td><td>Resolución DNS y geolocalización</td></tr>
+            <tr><td>Google Play Store</td><td>Verificación de metadatos de apps</td></tr>
+        </tbody>
+    </table>
+
+    <hr>
+
+    <p><strong>Reporte generado por NSI (Null Session Intelligence LLC)</strong></p>
+    <p><strong>Clasificación:</strong> CONFIDENCIAL — Uso exclusivo del destinatario</p>
+    <p><strong>Valor del servicio:</strong> $30,000 USD</p>
+    <p><strong>Próximos pasos propuestos:</strong> Fase 2 — Re-escaneo post-remediación | Fase 3 — Implementación de controles</p>
+
+    <div class="footer-bar">
+        <span class="confidential">Confidencial — Uso exclusivo del destinatario</span>
+        <span>NSI-SA-2026-005 &bull; Página 8 de 8</span>
+    </div>
+</div>
+
+</body>
+</html>

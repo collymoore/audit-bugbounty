@@ -1,0 +1,149 @@
+digraph CMR_Ecosystem {
+    rankdir=TB;
+    splines=polyline;
+    compound=true;
+    bgcolor="#1a1a2e";
+    fontcolor="white";
+    fontname="Arial";
+    label="CMR Medical Systems / IDigitales — Link Analysis Graph";
+    labelloc=t;
+    fontsize=20;
+    style=filled;
+    fillcolor="#1a1a2e";
+    pad=0.5;
+
+    node [shape=box, style="filled,rounded", fontname="Arial", fontsize=11];
+
+    // ============ DEVELOPER LAYER ============
+    subgraph cluster_dev {
+        label="DESARROLLADOR";
+        fontcolor="#e94560";
+        fontsize=14;
+        style=filled;
+        fillcolor="#16213e";
+        color="#e94560";
+        
+        idigitales [label="IDigitales / Cedisa Consultores\nNamespace: IDigitales.HIS.Web.Servicios.Portal", fillcolor="#e94560", fontcolor="white", shape=hexagon];
+        cmr_publisher [label="CMR Medical Systems\nGoogle Play Publisher\n14 apps publicadas", fillcolor="#e94560", fontcolor="white", shape=hexagon];
+    }
+
+    // ============ INFRASTRUCTURE LAYER ============
+    subgraph cluster_infra {
+        label="INFRAESTRUCTURA";
+        fontcolor="#0f3460";
+        fontsize=14;
+        style=filled;
+        fillcolor="#16213e";
+        color="#0f3460";
+
+        cedisa_host [label="CEDISA (Hub Central)\nportalresultados.cedisa.do\n66.98.69.202 · IIS 8.5\nWCF: 60+ ops · Directory Listing", fillcolor="#0f3460", fontcolor="white"];
+        cmr_apps [label="CMR Apps Server\nwww.cmr-apps.com\nHTTP (sin TLS)\ndebugMode: true", fillcolor="#0f3460", fontcolor="white"];
+        
+        internal_srv [label="RED INTERNA\nsrv-recvoz.cmr.local\neymsa-app1.internal.cmr.mx\nsrv-portal", fillcolor="#533483", fontcolor="white", shape=note];
+    }
+
+    // ============ DOMINICAN REPUBLIC ============
+    subgraph cluster_rd {
+        label="REPÚBLICA DOMINICANA 🇩🇴";
+        fontcolor="#53d769";
+        fontsize=14;
+        style=filled;
+        fillcolor="#16213e";
+        color="#53d769";
+
+        corominas [label="Clínica Corominas\nportal.clinicacorominas.com.do\n190.167.229.27\n83 ops WSDL", fillcolor="#e94560", fontcolor="white"];
+        abreu [label="Clínica Abreu (CDD)\nresultados.clinicaabreu.com.do\n190.167.33.178\n70+ ops WSDL", fillcolor="#e94560", fontcolor="white"];
+        cardio [label="Cardio Imágenes\ncardioimagenes.cmr-apps.com\ncardioimagenes.com.do\n67 ops WSDL", fillcolor="#533483", fontcolor="white"];
+        cmm [label="Centro Médico Moderno\nresultadosimagenes.cmm.do\n96 ops WSDL\nCertificado IMSS leak", fillcolor="#533483", fontcolor="white"];
+        cadi [label="CADI\nportal.cadi.do\n48 ops WSDL\nSAT CFDI en app RD", fillcolor="#533483", fontcolor="white"];
+        policlinica [label="Policlínica Metropolitana\npoliclinicametropolitana-apps.com\n58 ops WSDL", fillcolor="#533483", fontcolor="white"];
+        higea [label="HIGEA\nhigea.cmr-apps.com\n60+ ops WSDL", fillcolor="#533483", fontcolor="white"];
+    }
+
+    // ============ INTERNATIONAL ============
+    subgraph cluster_intl {
+        label="INTERNACIONAL";
+        fontcolor="#ffd700";
+        fontsize=14;
+        style=filled;
+        fillcolor="#16213e";
+        color="#ffd700";
+
+        interhospital [label="InterHospital 🇪🇨\ninterhospital.com.ec\n216.198.79.1\nWCF interno", fillcolor="#533483", fontcolor="white"];
+        hsh [label="Hospital San José 🇲🇽\ndisanjose.ddns.net:99\n189.173.69.27\nDDNS · HTTP · Interno", fillcolor="#533483", fontcolor="white"];
+        hmc [label="Honduras Medical Center 🇭🇳\nris.hmc.hn\nBackend via CEDISA", fillcolor="#533483", fontcolor="white"];
+    }
+
+    // ============ GENERIC APPS ============
+    subgraph cluster_generic {
+        label="APPS CMR GENÉRICAS";
+        fontcolor="#53d769";
+        fontsize=14;
+        style=filled;
+        fillcolor="#16213e";
+        color="#53d769";
+
+        emesalud [label="EME Salud (Genérica)\nwww.cmr-apps.com\nHTTP · debugMode · 54 ops", fillcolor="#e94560", fontcolor="white"];
+        infosalud [label="InfoSalud Firmas\nwww.cmr-apps.com\nHTTP · 76 ops\n131 empleados · 77 consentimientos", fillcolor="#e94560", fontcolor="white"];
+        lab_tequis [label="Lab Tequis / Centro Médico CMR\n82 ops WSDL", fillcolor="#533483", fontcolor="white"];
+    }
+
+    // ============ EDGES ============
+    edge [color="white", penwidth=1.5, fontsize=9, fontcolor="#cccccc"];
+
+    // Developer → infrastructure
+    idigitales -> cedisa_host [label="desarrolla/alberga", color="#e94560"];
+    idigitales -> cmr_apps [label="desarrolla/alberga", color="#e94560"];
+    idigitales -> internal_srv [label="red interna", color="#e94560", style=dashed];
+    cmr_publisher -> idigitales [label="misma entidad", color="#ffd700", style=dotted];
+
+    // CEDISA Hub → clients
+    cedisa_host -> corominas [label="ServidoresAdicionales()", color="#53d769"];
+    cedisa_host -> abreu [label="ServidoresAdicionales()", color="#53d769"];
+    cedisa_host -> cmm [label="ServidoresAdicionales()", color="#53d769"];
+    cedisa_host -> hmc [label="backend proxy", color="#ffd700", style=dashed];
+
+    // cmr-apps → clients
+    cmr_apps -> cardio [label="alberga", color="#53d769"];
+    cmr_apps -> higea [label="alberga", color="#53d769"];
+    cmr_apps -> emesalud [label="alberga (HTTP)", color="#e94560", style=bold];
+    cmr_apps -> infosalud [label="alberga (HTTP)", color="#e94560", style=bold];
+
+    // Internal network
+    internal_srv -> cedisa_host [label="resuelve internamente", color="#533483", style=dashed];
+
+    // Cross-connections
+    corominas -> internal_srv [label="redirect a srv-portal", color="#533483", style=dotted, dir=both];
+    abreu -> internal_srv [label="redirect a srv-recvoz", color="#533483", style=dotted, dir=both];
+    cmm -> internal_srv [label="redirect a srv-recvoz", color="#533483", style=dotted, dir=both];
+    cardio -> internal_srv [label="redirect a srv-portal", color="#533483", style=dotted, dir=both];
+
+    // International - isolated but same WSDL
+    interhospital -> idigitales [label="mismo namespace WCF", color="#ffd700", style=dotted];
+    hsh -> idigitales [label="mismo namespace WCF", color="#ffd700", style=dotted];
+
+    // Shared vulnerability label
+    cmrservice05 [label="🔴 cmrservice05\nContraseña compartida\nGetContrasenaTabletas\n9/9 hosts", 
+                  shape=note, fillcolor="#e94560", fontcolor="white", fontsize=12];
+    cmrservice05 -> cedisa_host [label="password leak", color="#e94560", style=bold, constraint=false];
+    cmrservice05 -> cmr_apps [label="password leak", color="#e94560", style=bold, constraint=false];
+
+    // Legend
+    subgraph cluster_legend {
+        label="LEYENDA";
+        fontcolor="white";
+        fontsize=11;
+        style=filled;
+        fillcolor="#16213e";
+        color="gray";
+        fontname="Arial";
+
+        legend_node1 [label="🔴 CRÍTICO / Target NSI", fillcolor="#e94560", fontcolor="white"];
+        legend_node2 [label="🟣 Infraestructura", fillcolor="#533483", fontcolor="white"];
+        legend_node3 [label="🔵 Hospital / Clínica", fillcolor="#0f3460", fontcolor="white"];
+        legend_node4 [label="🟢 Host / Servidor", fillcolor="#53d769", fontcolor="white"];
+        legend_edge1 [label="--- conexión directa", shape=none, fillcolor="none"];
+        legend_edge2 [label="- - - conexión interna", shape=none, fillcolor="none"];
+        legend_edge3 [label="····· referencia débil", shape=none, fillcolor="none"];
+    }
+}

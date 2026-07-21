@@ -1,0 +1,4778 @@
+[
+  {
+    "IdDocumento": 85581,
+    "Fecha": "2017-06-24T08:00:33.87",
+    "Nombre": "90904",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\90904.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 85582,
+    "Fecha": "2017-06-24T08:07:31.377",
+    "Nombre": "90905",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\90905.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 85583,
+    "Fecha": "2017-06-24T08:07:31.377",
+    "Nombre": "90906",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\90906.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 85584,
+    "Fecha": "2017-06-24T08:23:20.98",
+    "Nombre": "90907",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\90907.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 85587,
+    "Fecha": "2017-06-24T08:33:04.03",
+    "Nombre": "90910",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\90910.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 85592,
+    "Fecha": "2017-06-24T08:42:41.823",
+    "Nombre": "90915",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\90915.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 85593,
+    "Fecha": "2017-06-24T08:46:43.047",
+    "Nombre": "90916",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\90916.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 85597,
+    "Fecha": "2017-06-24T08:49:22.43",
+    "Nombre": "90920",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\90920.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 85679,
+    "Fecha": "2017-06-26T07:37:20.467",
+    "Nombre": "91010",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\91010.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 85680,
+    "Fecha": "2017-06-26T07:42:44.397",
+    "Nombre": "91012",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\91012.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 85682,
+    "Fecha": "2017-06-26T07:43:50.307",
+    "Nombre": "91013",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\91013.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 85683,
+    "Fecha": "2017-06-26T07:44:54.697",
+    "Nombre": "91014",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\91014.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 85687,
+    "Fecha": "2017-06-26T07:52:58.447",
+    "Nombre": "91017",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\91017.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 85689,
+    "Fecha": "2017-06-26T07:57:21.497",
+    "Nombre": "91020",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\91020.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 86445,
+    "Fecha": "2017-06-27T14:27:04.117",
+    "Nombre": "91815",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\91815.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 86449,
+    "Fecha": "2017-06-27T14:36:06.813",
+    "Nombre": "91819",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\91819.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 86450,
+    "Fecha": "2017-06-27T14:36:06.813",
+    "Nombre": "91820",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\91820.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 86454,
+    "Fecha": "2017-06-27T14:43:30.463",
+    "Nombre": "91824",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\91824.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 86567,
+    "Fecha": "2017-06-28T07:39:23.573",
+    "Nombre": "91944",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\91944.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 86568,
+    "Fecha": "2017-06-28T07:42:42.5",
+    "Nombre": "91945",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\91945.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 86569,
+    "Fecha": "2017-06-28T07:44:19.35",
+    "Nombre": "91946",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\91946.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 86570,
+    "Fecha": "2017-06-28T07:50:56.077",
+    "Nombre": "91947",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\91947.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 86571,
+    "Fecha": "2017-06-28T07:54:29.677",
+    "Nombre": "91948",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\91948.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 87346,
+    "Fecha": "2017-06-30T07:44:32.7",
+    "Nombre": "92774",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\92774.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 87347,
+    "Fecha": "2017-06-30T07:44:32.7",
+    "Nombre": "92775",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\92775.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 87348,
+    "Fecha": "2017-06-30T07:52:35.03",
+    "Nombre": "92776",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\92776.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 87349,
+    "Fecha": "2017-06-30T07:53:21.95",
+    "Nombre": "92777",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\92777.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 87734,
+    "Fecha": "2017-07-03T07:34:50.02",
+    "Nombre": "93184",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\93184.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 87735,
+    "Fecha": "2017-07-03T07:34:50.02",
+    "Nombre": "93185",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\93185.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 87736,
+    "Fecha": "2017-07-03T07:36:41.97",
+    "Nombre": "93186",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\93186.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 87737,
+    "Fecha": "2017-07-03T07:39:44.907",
+    "Nombre": "93187",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\93187.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 87738,
+    "Fecha": "2017-07-03T07:45:15.877",
+    "Nombre": "93188",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\93188.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 87739,
+    "Fecha": "2017-07-03T07:49:33.41",
+    "Nombre": "93189",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\93189.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 87743,
+    "Fecha": "2017-07-03T08:00:02.443",
+    "Nombre": "93193",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\93193.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 87744,
+    "Fecha": "2017-07-03T08:01:38.397",
+    "Nombre": "93194",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\93194.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 87745,
+    "Fecha": "2017-07-03T08:03:20.077",
+    "Nombre": "93195",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\93195.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 87747,
+    "Fecha": "2017-07-03T08:05:30.177",
+    "Nombre": "93197",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\93197.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 87753,
+    "Fecha": "2017-07-03T08:20:44.597",
+    "Nombre": "93203",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\93203.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 87763,
+    "Fecha": "2017-07-03T08:33:48.933",
+    "Nombre": "93213",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\93213.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 87764,
+    "Fecha": "2017-07-03T08:34:52.933",
+    "Nombre": "93214",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\93214.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 87780,
+    "Fecha": "2017-07-03T08:51:32.58",
+    "Nombre": "93230",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\93230.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 87786,
+    "Fecha": "2017-07-03T08:57:03.447",
+    "Nombre": "93235",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\93235.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 87792,
+    "Fecha": "2017-07-03T09:01:50.52",
+    "Nombre": "93241",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\93241.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 87798,
+    "Fecha": "2017-07-03T09:07:45.103",
+    "Nombre": "93246",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\93246.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 87799,
+    "Fecha": "2017-07-03T09:07:45.103",
+    "Nombre": "93248",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\93248.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 87802,
+    "Fecha": "2017-07-03T09:12:14.693",
+    "Nombre": "93251",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\93251.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 87803,
+    "Fecha": "2017-07-03T09:12:14.693",
+    "Nombre": "93252",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\93252.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 87807,
+    "Fecha": "2017-07-03T09:14:56.303",
+    "Nombre": "93258",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\93258.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 87808,
+    "Fecha": "2017-07-03T09:14:56.303",
+    "Nombre": "93261",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\93261.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 87815,
+    "Fecha": "2017-07-03T09:22:17.48",
+    "Nombre": "93267",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\93267.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 87822,
+    "Fecha": "2017-07-03T09:31:55.657",
+    "Nombre": "93274",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\93274.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 87824,
+    "Fecha": "2017-07-03T09:32:34.707",
+    "Nombre": "93276",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\93276.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 87832,
+    "Fecha": "2017-07-03T09:38:51.67",
+    "Nombre": "93284",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\93284.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 87838,
+    "Fecha": "2017-07-03T09:44:53.28",
+    "Nombre": "93289",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\93289.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 87839,
+    "Fecha": "2017-07-03T09:44:53.28",
+    "Nombre": "93291",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\93291.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 87843,
+    "Fecha": "2017-07-03T09:48:32.717",
+    "Nombre": "93295",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\93295.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 87846,
+    "Fecha": "2017-07-03T09:55:45.037",
+    "Nombre": "93299",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\93299.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 87855,
+    "Fecha": "2017-07-03T10:12:29.957",
+    "Nombre": "93308",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\93308.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 87859,
+    "Fecha": "2017-07-03T10:15:37.677",
+    "Nombre": "93312",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\93312.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 88162,
+    "Fecha": "2017-07-04T07:39:27.277",
+    "Nombre": "93635",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\93635.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 88163,
+    "Fecha": "2017-07-04T07:39:27.277",
+    "Nombre": "93636",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\93636.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 88164,
+    "Fecha": "2017-07-04T07:39:27.277",
+    "Nombre": "93637",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\93637.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 88165,
+    "Fecha": "2017-07-04T07:42:41.397",
+    "Nombre": "93638",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\93638.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 88166,
+    "Fecha": "2017-07-04T07:47:48.413",
+    "Nombre": "93639",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\93639.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 88167,
+    "Fecha": "2017-07-04T07:53:41.813",
+    "Nombre": "93640",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\93640.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 88168,
+    "Fecha": "2017-07-04T07:59:00.87",
+    "Nombre": "93641",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\93641.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 88171,
+    "Fecha": "2017-07-04T08:02:44.547",
+    "Nombre": "93644",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\93644.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 88176,
+    "Fecha": "2017-07-04T08:11:57.49",
+    "Nombre": "93649",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\93649.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 88177,
+    "Fecha": "2017-07-04T08:13:21.343",
+    "Nombre": "93650",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\93650.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 88184,
+    "Fecha": "2017-07-04T08:25:01.387",
+    "Nombre": "93660",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\93660.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 88185,
+    "Fecha": "2017-07-04T08:25:26.427",
+    "Nombre": "93663",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\93663.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 88188,
+    "Fecha": "2017-07-04T08:28:25.19",
+    "Nombre": "93665",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\93665.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 88205,
+    "Fecha": "2017-07-04T08:48:53.137",
+    "Nombre": "93683",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\93683.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 88206,
+    "Fecha": "2017-07-04T08:50:14.127",
+    "Nombre": "93684",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\93684.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 88988,
+    "Fecha": "2017-07-06T07:45:20.447",
+    "Nombre": "94514",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\94514.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 88990,
+    "Fecha": "2017-07-06T07:49:22.807",
+    "Nombre": "94516",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\94516.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 88993,
+    "Fecha": "2017-07-06T07:57:14.477",
+    "Nombre": "94519",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\94519.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 88994,
+    "Fecha": "2017-07-06T07:59:17.81",
+    "Nombre": "94520",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\94520.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 88996,
+    "Fecha": "2017-07-06T08:00:58.197",
+    "Nombre": "94522",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\94522.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 89398,
+    "Fecha": "2017-07-07T07:37:59.44",
+    "Nombre": "94961",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\94961.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 89399,
+    "Fecha": "2017-07-07T07:37:59.44",
+    "Nombre": "94962",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\94962.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 89400,
+    "Fecha": "2017-07-07T07:41:08.833",
+    "Nombre": "94963",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\94963.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 89636,
+    "Fecha": "2017-07-07T13:47:04.09",
+    "Nombre": "95216",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\95216.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 89638,
+    "Fecha": "2017-07-07T13:51:08.343",
+    "Nombre": "95218",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\95218.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 89639,
+    "Fecha": "2017-07-07T13:53:25.31",
+    "Nombre": "95219",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\95219.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 89640,
+    "Fecha": "2017-07-07T13:54:23.977",
+    "Nombre": "95220",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\95220.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 89642,
+    "Fecha": "2017-07-07T14:05:07.23",
+    "Nombre": "95221",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\95221.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 89643,
+    "Fecha": "2017-07-07T14:05:07.23",
+    "Nombre": "95223",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\95223.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 89647,
+    "Fecha": "2017-07-07T14:11:28.2",
+    "Nombre": "95227",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\95227.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 89648,
+    "Fecha": "2017-07-07T14:12:23.78",
+    "Nombre": "95230",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\95230.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 89651,
+    "Fecha": "2017-07-07T14:16:10.66",
+    "Nombre": "95231",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\95231.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 89810,
+    "Fecha": "2017-07-10T07:37:11.36",
+    "Nombre": "95404",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\95404.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 89811,
+    "Fecha": "2017-07-10T07:47:40.42",
+    "Nombre": "95405",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\95405.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 89812,
+    "Fecha": "2017-07-10T07:50:51.083",
+    "Nombre": "95406",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\95406.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 89818,
+    "Fecha": "2017-07-10T08:05:23.7",
+    "Nombre": "95412",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\95412.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 89819,
+    "Fecha": "2017-07-10T08:08:12.823",
+    "Nombre": "95413",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\95413.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 89824,
+    "Fecha": "2017-07-10T08:17:59.483",
+    "Nombre": "95418",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\95418.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 89834,
+    "Fecha": "2017-07-10T08:36:24.83",
+    "Nombre": "95428",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\95428.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 89835,
+    "Fecha": "2017-07-10T08:36:24.83",
+    "Nombre": "95429",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\95429.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 89836,
+    "Fecha": "2017-07-10T08:36:24.83",
+    "Nombre": "95430",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\95430.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 89837,
+    "Fecha": "2017-07-10T08:36:24.83",
+    "Nombre": "95431",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\95431.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 89839,
+    "Fecha": "2017-07-10T08:42:04.46",
+    "Nombre": "95434",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\95434.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 89844,
+    "Fecha": "2017-07-10T08:46:07.237",
+    "Nombre": "95442",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\95442.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 89863,
+    "Fecha": "2017-07-10T09:06:59.437",
+    "Nombre": "95463",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\95463.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 89864,
+    "Fecha": "2017-07-10T09:07:28.62",
+    "Nombre": "95464",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\95464.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 89865,
+    "Fecha": "2017-07-10T09:08:15.733",
+    "Nombre": "95465",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\95465.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 89871,
+    "Fecha": "2017-07-10T09:12:26.527",
+    "Nombre": "95471",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\95471.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 89874,
+    "Fecha": "2017-07-10T09:20:29.207",
+    "Nombre": "95474",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\95474.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 89877,
+    "Fecha": "2017-07-10T09:24:46.007",
+    "Nombre": "95477",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\95477.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 89883,
+    "Fecha": "2017-07-10T09:30:03.633",
+    "Nombre": "95483",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\95483.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 89884,
+    "Fecha": "2017-07-10T09:30:03.633",
+    "Nombre": "95484",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\95484.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 89893,
+    "Fecha": "2017-07-10T09:37:04.133",
+    "Nombre": "95493",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\95493.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 89894,
+    "Fecha": "2017-07-10T09:37:04.133",
+    "Nombre": "95495",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\95495.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 89897,
+    "Fecha": "2017-07-10T09:39:53.367",
+    "Nombre": "95497",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\95497.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 89920,
+    "Fecha": "2017-07-10T10:12:55.553",
+    "Nombre": "95521",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\95521.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 89924,
+    "Fecha": "2017-07-10T10:14:30.187",
+    "Nombre": "95527",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\95527.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 89929,
+    "Fecha": "2017-07-10T10:19:06.283",
+    "Nombre": "95532",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\95532.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 89933,
+    "Fecha": "2017-07-10T10:26:37.817",
+    "Nombre": "95536",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\95536.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 89934,
+    "Fecha": "2017-07-10T10:26:37.817",
+    "Nombre": "95537",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\95537.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 89939,
+    "Fecha": "2017-07-10T10:33:54.84",
+    "Nombre": "95542",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\95542.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 90485,
+    "Fecha": "2017-07-11T12:27:35.427",
+    "Nombre": "96142",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\96142.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 90487,
+    "Fecha": "2017-07-11T12:30:14.437",
+    "Nombre": "96144",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\96144.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 90489,
+    "Fecha": "2017-07-11T12:35:18.627",
+    "Nombre": "96146",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\96146.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 90493,
+    "Fecha": "2017-07-11T12:39:25.61",
+    "Nombre": "96151",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\96151.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 90496,
+    "Fecha": "2017-07-11T12:46:41.033",
+    "Nombre": "96156",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\96156.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 90501,
+    "Fecha": "2017-07-11T12:50:15.797",
+    "Nombre": "96161",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\96161.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 90503,
+    "Fecha": "2017-07-11T12:52:23.253",
+    "Nombre": "96163",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\96163.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 90507,
+    "Fecha": "2017-07-11T12:58:50.203",
+    "Nombre": "96166",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\96166.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 90510,
+    "Fecha": "2017-07-11T13:02:41.027",
+    "Nombre": "96172",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\96172.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 90511,
+    "Fecha": "2017-07-11T13:07:07.607",
+    "Nombre": "96173",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\96173.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 90516,
+    "Fecha": "2017-07-11T13:14:36.857",
+    "Nombre": "96177",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\96177.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 90517,
+    "Fecha": "2017-07-11T13:14:36.857",
+    "Nombre": "96179",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\96179.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 90524,
+    "Fecha": "2017-07-11T13:28:50.337",
+    "Nombre": "96188",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\96188.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 90526,
+    "Fecha": "2017-07-11T13:32:41.947",
+    "Nombre": "96190",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\96190.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 90527,
+    "Fecha": "2017-07-11T13:37:39.633",
+    "Nombre": "96193",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\96193.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 90530,
+    "Fecha": "2017-07-11T13:41:39.79",
+    "Nombre": "96195",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\96195.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 92015,
+    "Fecha": "2017-07-17T07:36:09.22",
+    "Nombre": "97780",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\97780.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 92017,
+    "Fecha": "2017-07-17T07:42:08.783",
+    "Nombre": "97782",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\97782.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 92021,
+    "Fecha": "2017-07-17T07:46:44.187",
+    "Nombre": "97786",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\97786.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 92022,
+    "Fecha": "2017-07-17T07:49:30.977",
+    "Nombre": "97789",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\97789.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 92029,
+    "Fecha": "2017-07-17T07:58:48.897",
+    "Nombre": "97794",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\97794.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 92030,
+    "Fecha": "2017-07-17T07:58:48.897",
+    "Nombre": "97795",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\97795.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 92031,
+    "Fecha": "2017-07-17T08:00:21.483",
+    "Nombre": "97796",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\97796.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 92035,
+    "Fecha": "2017-07-17T08:04:01.06",
+    "Nombre": "97802",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\97802.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 92038,
+    "Fecha": "2017-07-17T08:04:52.55",
+    "Nombre": "97803",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\97803.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 92040,
+    "Fecha": "2017-07-17T08:07:51.137",
+    "Nombre": "97805",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\97805.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 92043,
+    "Fecha": "2017-07-17T08:11:36.983",
+    "Nombre": "97808",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\97808.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 92044,
+    "Fecha": "2017-07-17T08:19:53.62",
+    "Nombre": "97815",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\97815.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 92045,
+    "Fecha": "2017-07-17T08:26:03.657",
+    "Nombre": "97816",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\97816.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 92047,
+    "Fecha": "2017-07-17T08:31:18.187",
+    "Nombre": "97820",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\97820.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 92048,
+    "Fecha": "2017-07-17T08:33:24.997",
+    "Nombre": "97821",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\97821.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 92050,
+    "Fecha": "2017-07-17T08:35:13.373",
+    "Nombre": "97823",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\97823.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 92055,
+    "Fecha": "2017-07-17T08:45:16.297",
+    "Nombre": "97830",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\97830.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 92060,
+    "Fecha": "2017-07-17T08:52:25.53",
+    "Nombre": "97839",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\97839.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 92065,
+    "Fecha": "2017-07-17T08:58:02.433",
+    "Nombre": "97846",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\97846.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 92067,
+    "Fecha": "2017-07-17T09:01:20.893",
+    "Nombre": "97849",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\97849.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 92071,
+    "Fecha": "2017-07-17T09:09:17.923",
+    "Nombre": "97853",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\97853.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 92075,
+    "Fecha": "2017-07-17T09:13:01.377",
+    "Nombre": "97858",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\97858.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 92078,
+    "Fecha": "2017-07-17T09:17:34.35",
+    "Nombre": "97862",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\97862.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 92089,
+    "Fecha": "2017-07-17T09:24:20.267",
+    "Nombre": "97873",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\97873.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 92103,
+    "Fecha": "2017-07-17T09:41:01.967",
+    "Nombre": "97887",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\97887.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 92108,
+    "Fecha": "2017-07-17T09:46:51.25",
+    "Nombre": "97893",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\97893.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 92109,
+    "Fecha": "2017-07-17T09:46:51.25",
+    "Nombre": "97894",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\97894.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 92114,
+    "Fecha": "2017-07-17T09:53:31.677",
+    "Nombre": "97899",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\97899.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 92120,
+    "Fecha": "2017-07-17T09:57:36.333",
+    "Nombre": "97904",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\97904.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 92126,
+    "Fecha": "2017-07-17T10:03:12.397",
+    "Nombre": "97910",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\97910.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 92132,
+    "Fecha": "2017-07-17T10:06:28.27",
+    "Nombre": "97916",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\97916.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 92139,
+    "Fecha": "2017-07-17T10:12:09.04",
+    "Nombre": "97924",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\97924.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 92142,
+    "Fecha": "2017-07-17T10:16:11.79",
+    "Nombre": "97927",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\97927.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 92151,
+    "Fecha": "2017-07-17T10:23:37.697",
+    "Nombre": "97936",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\97936.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 92524,
+    "Fecha": "2017-07-18T07:37:15.49",
+    "Nombre": "98325",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\98325.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 92531,
+    "Fecha": "2017-07-18T07:44:53.48",
+    "Nombre": "98332",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\98332.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 92532,
+    "Fecha": "2017-07-18T07:47:55.003",
+    "Nombre": "98335",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\98335.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 92535,
+    "Fecha": "2017-07-18T07:56:35.197",
+    "Nombre": "98339",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\98339.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 92536,
+    "Fecha": "2017-07-18T07:56:35.197",
+    "Nombre": "98340",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\98340.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 92537,
+    "Fecha": "2017-07-18T08:01:04.75",
+    "Nombre": "98341",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\98341.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 92538,
+    "Fecha": "2017-07-18T08:05:17.583",
+    "Nombre": "98342",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\98342.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 92540,
+    "Fecha": "2017-07-18T08:08:44.91",
+    "Nombre": "98344",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\98344.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 92542,
+    "Fecha": "2017-07-18T08:16:59.53",
+    "Nombre": "98346",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\98346.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 92544,
+    "Fecha": "2017-07-18T08:23:49.197",
+    "Nombre": "98348",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\98348.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 92555,
+    "Fecha": "2017-07-18T08:48:35.07",
+    "Nombre": "98361",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\98361.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 92560,
+    "Fecha": "2017-07-18T08:53:59.81",
+    "Nombre": "98366",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\98366.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 92568,
+    "Fecha": "2017-07-18T09:00:38.103",
+    "Nombre": "98379",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\98379.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 92572,
+    "Fecha": "2017-07-18T09:01:25.41",
+    "Nombre": "98381",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\98381.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 92581,
+    "Fecha": "2017-07-18T09:09:44.727",
+    "Nombre": "98392",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\98392.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 92590,
+    "Fecha": "2017-07-18T09:16:42.12",
+    "Nombre": "98402",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\98402.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 92593,
+    "Fecha": "2017-07-18T09:21:34.673",
+    "Nombre": "98404",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\98404.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 92605,
+    "Fecha": "2017-07-18T09:30:13.88",
+    "Nombre": "98415",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\98415.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 92612,
+    "Fecha": "2017-07-18T09:35:25.287",
+    "Nombre": "98426",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\98426.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 92616,
+    "Fecha": "2017-07-18T09:40:00.457",
+    "Nombre": "98429",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\98429.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 92619,
+    "Fecha": "2017-07-18T09:44:26.573",
+    "Nombre": "98432",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\98432.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 92620,
+    "Fecha": "2017-07-18T09:44:50.11",
+    "Nombre": "98435",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\98435.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 92626,
+    "Fecha": "2017-07-18T09:49:37.373",
+    "Nombre": "98441",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\98441.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 92627,
+    "Fecha": "2017-07-18T09:49:37.373",
+    "Nombre": "98443",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\98443.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 93010,
+    "Fecha": "2017-07-19T07:35:47.843",
+    "Nombre": "98835",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\98835.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 93012,
+    "Fecha": "2017-07-19T07:39:35.843",
+    "Nombre": "98837",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\98837.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 93155,
+    "Fecha": "2017-07-19T11:21:50.087",
+    "Nombre": "99011",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\99011.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 93156,
+    "Fecha": "2017-07-19T11:21:50.377",
+    "Nombre": "99011",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\99011.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 93159,
+    "Fecha": "2017-07-19T11:25:04.34",
+    "Nombre": "99014",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\99014.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 93163,
+    "Fecha": "2017-07-19T11:29:18.883",
+    "Nombre": "99018",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\99018.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 93168,
+    "Fecha": "2017-07-19T11:31:54.137",
+    "Nombre": "99023",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\99023.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 93172,
+    "Fecha": "2017-07-19T11:34:55.587",
+    "Nombre": "99028",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\99028.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 93180,
+    "Fecha": "2017-07-19T11:41:26.753",
+    "Nombre": "99035",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\99035.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 93182,
+    "Fecha": "2017-07-19T11:43:48.087",
+    "Nombre": "99037",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\99037.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 93185,
+    "Fecha": "2017-07-19T11:48:36.413",
+    "Nombre": "99040",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\99040.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 93196,
+    "Fecha": "2017-07-19T11:56:34.893",
+    "Nombre": "99050",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\99050.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 93197,
+    "Fecha": "2017-07-19T11:56:34.893",
+    "Nombre": "99052",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\99052.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 93199,
+    "Fecha": "2017-07-19T12:01:29.813",
+    "Nombre": "99053",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\99053.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 93202,
+    "Fecha": "2017-07-19T12:05:19.933",
+    "Nombre": "99057",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\99057.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 93207,
+    "Fecha": "2017-07-19T12:13:10.977",
+    "Nombre": "99062",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\99062.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 93211,
+    "Fecha": "2017-07-19T12:18:35.873",
+    "Nombre": "99066",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\99066.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 93214,
+    "Fecha": "2017-07-19T12:20:41.55",
+    "Nombre": "99069",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\99069.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 93220,
+    "Fecha": "2017-07-19T12:28:53.143",
+    "Nombre": "99075",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\99075.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 93440,
+    "Fecha": "2017-07-20T07:32:24.933",
+    "Nombre": "99299",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\99299.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 93443,
+    "Fecha": "2017-07-20T07:42:14.937",
+    "Nombre": "99303",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\99303.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 93450,
+    "Fecha": "2017-07-20T07:50:43.09",
+    "Nombre": "99309",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\99309.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 93451,
+    "Fecha": "2017-07-20T07:50:43.09",
+    "Nombre": "99310",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\99310.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 93456,
+    "Fecha": "2017-07-20T07:58:00.267",
+    "Nombre": "99315",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\99315.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 93457,
+    "Fecha": "2017-07-20T07:58:00.267",
+    "Nombre": "99316",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\99316.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 93960,
+    "Fecha": "2017-07-21T10:37:11.103",
+    "Nombre": "99842",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\99842.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 93966,
+    "Fecha": "2017-07-21T10:48:13.75",
+    "Nombre": "99848",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\99848.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 93967,
+    "Fecha": "2017-07-21T10:53:09.497",
+    "Nombre": "99849",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\99849.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 94730,
+    "Fecha": "2017-07-25T07:47:13.767",
+    "Nombre": "100654",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\100654.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 94734,
+    "Fecha": "2017-07-25T07:52:57.147",
+    "Nombre": "100658",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\100658.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 94738,
+    "Fecha": "2017-07-25T08:02:33.293",
+    "Nombre": "100662",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\100662.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 94742,
+    "Fecha": "2017-07-25T08:08:29.43",
+    "Nombre": "100666",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\100666.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 94743,
+    "Fecha": "2017-07-25T08:09:24.14",
+    "Nombre": "100667",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\100667.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 94745,
+    "Fecha": "2017-07-25T08:20:08.873",
+    "Nombre": "100669",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\100669.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 94746,
+    "Fecha": "2017-07-25T08:20:08.873",
+    "Nombre": "100670",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\100670.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 94751,
+    "Fecha": "2017-07-25T08:26:23.393",
+    "Nombre": "100675",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\100675.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 94762,
+    "Fecha": "2017-07-25T08:36:15.817",
+    "Nombre": "100687",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\100687.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 94763,
+    "Fecha": "2017-07-25T08:36:15.817",
+    "Nombre": "100688",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\100688.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 94770,
+    "Fecha": "2017-07-25T08:44:27.743",
+    "Nombre": "100695",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\100695.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 94771,
+    "Fecha": "2017-07-25T08:44:27.743",
+    "Nombre": "100697",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\100697.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 94775,
+    "Fecha": "2017-07-25T08:48:52.147",
+    "Nombre": "100699",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\100699.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 94784,
+    "Fecha": "2017-07-25T08:58:22.137",
+    "Nombre": "100708",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\100708.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 94789,
+    "Fecha": "2017-07-25T09:03:05.51",
+    "Nombre": "100714",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\100714.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 94792,
+    "Fecha": "2017-07-25T09:06:21.977",
+    "Nombre": "100719",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\100719.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 94799,
+    "Fecha": "2017-07-25T09:16:07.99",
+    "Nombre": "100722",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\100722.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 94800,
+    "Fecha": "2017-07-25T09:16:07.99",
+    "Nombre": "100724",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\100724.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 95590,
+    "Fecha": "2017-07-27T07:26:50.907",
+    "Nombre": "101561",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\101561.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 95591,
+    "Fecha": "2017-07-27T07:28:07.233",
+    "Nombre": "101562",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\101562.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 95593,
+    "Fecha": "2017-07-27T07:32:45.017",
+    "Nombre": "101564",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\101564.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 95595,
+    "Fecha": "2017-07-27T07:42:04.103",
+    "Nombre": "101566",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\101566.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 95596,
+    "Fecha": "2017-07-27T07:43:16.62",
+    "Nombre": "101567",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\101567.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 95597,
+    "Fecha": "2017-07-27T07:47:45.81",
+    "Nombre": "101568",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\101568.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 95598,
+    "Fecha": "2017-07-27T07:54:31.44",
+    "Nombre": "101569",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\101569.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 95599,
+    "Fecha": "2017-07-27T08:05:40.277",
+    "Nombre": "101570",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\101570.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 95600,
+    "Fecha": "2017-07-27T08:05:40.277",
+    "Nombre": "101571",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\101571.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 95601,
+    "Fecha": "2017-07-27T08:09:59.42",
+    "Nombre": "101573",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\101573.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 95604,
+    "Fecha": "2017-07-27T08:13:33.837",
+    "Nombre": "101576",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\101576.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 95610,
+    "Fecha": "2017-07-27T08:19:03.05",
+    "Nombre": "101583",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\101583.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 95612,
+    "Fecha": "2017-07-27T08:21:02.343",
+    "Nombre": "101585",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\101585.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 95613,
+    "Fecha": "2017-07-27T08:22:26.15",
+    "Nombre": "101586",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\101586.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 95621,
+    "Fecha": "2017-07-27T08:25:57.553",
+    "Nombre": "101596",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\101596.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 95622,
+    "Fecha": "2017-07-27T08:30:03.73",
+    "Nombre": "101600",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\101600.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 95623,
+    "Fecha": "2017-07-27T08:30:03.73",
+    "Nombre": "101601",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\101601.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 95630,
+    "Fecha": "2017-07-27T08:39:44.637",
+    "Nombre": "101605",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\101605.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 95642,
+    "Fecha": "2017-07-27T08:47:28.157",
+    "Nombre": "101618",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\101618.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 95653,
+    "Fecha": "2017-07-27T09:02:24.167",
+    "Nombre": "101628",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\101628.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 95654,
+    "Fecha": "2017-07-27T09:02:24.167",
+    "Nombre": "101630",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\101630.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 95659,
+    "Fecha": "2017-07-27T09:08:14.003",
+    "Nombre": "101636",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\101636.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 100670,
+    "Fecha": "2017-08-18T09:26:56.18",
+    "Nombre": "107271",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\107271.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 102932,
+    "Fecha": "2017-08-24T15:37:35.427",
+    "Nombre": "109637",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\109637.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 102933,
+    "Fecha": "2017-08-24T15:39:40.61",
+    "Nombre": "109639",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\109639.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 102941,
+    "Fecha": "2017-08-24T16:01:58.817",
+    "Nombre": "109648",
+    "Ruta": "C:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\109648.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 110082,
+    "Fecha": "2017-09-15T14:44:12.237",
+    "Nombre": "117323",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\117323.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 110083,
+    "Fecha": "2017-09-15T14:44:12.237",
+    "Nombre": "117324",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\117324.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 110087,
+    "Fecha": "2017-09-15T14:54:37.097",
+    "Nombre": "117328",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\117328.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 114444,
+    "Fecha": "2017-09-29T14:13:46.163",
+    "Nombre": "122044",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\122044.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 114450,
+    "Fecha": "2017-09-29T14:22:09.413",
+    "Nombre": "122050",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\122050.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 114452,
+    "Fecha": "2017-09-29T14:28:20.36",
+    "Nombre": "122052",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\122052.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 115680,
+    "Fecha": "2017-10-03T17:48:42.687",
+    "Nombre": "123413",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\123413.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 115681,
+    "Fecha": "2017-10-03T17:57:36.263",
+    "Nombre": "123414",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\123414.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 115683,
+    "Fecha": "2017-10-03T18:06:59.837",
+    "Nombre": "123417",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\123417.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 115686,
+    "Fecha": "2017-10-03T18:11:06.57",
+    "Nombre": "123421",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\123421.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 119309,
+    "Fecha": "2017-10-16T09:18:15.183",
+    "Nombre": "127444",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\127444.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 119317,
+    "Fecha": "2017-10-16T09:22:30.673",
+    "Nombre": "127450",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\127450.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 119318,
+    "Fecha": "2017-10-16T09:26:31.537",
+    "Nombre": "127452",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\127452.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 119342,
+    "Fecha": "2017-10-16T09:56:11.803",
+    "Nombre": "127478",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\127478.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 119353,
+    "Fecha": "2017-10-16T10:05:09.98",
+    "Nombre": "127490",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\127490.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 119364,
+    "Fecha": "2017-10-16T10:12:39.41",
+    "Nombre": "127505",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\127505.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 119365,
+    "Fecha": "2017-10-16T10:12:39.997",
+    "Nombre": "127505",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\127505.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 131396,
+    "Fecha": "2017-11-22T12:04:40.597",
+    "Nombre": "140589",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\140589.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 144111,
+    "Fecha": "2018-01-04T09:05:57.94",
+    "Nombre": "154042",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\154042.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 144123,
+    "Fecha": "2018-01-04T09:21:51.12",
+    "Nombre": "154054",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\154054.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 144128,
+    "Fecha": "2018-01-04T09:27:15.88",
+    "Nombre": "154060",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\154060.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 144136,
+    "Fecha": "2018-01-04T09:40:50.86",
+    "Nombre": "154068",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\154068.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 144138,
+    "Fecha": "2018-01-04T09:45:26.957",
+    "Nombre": "154070",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\154070.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 144149,
+    "Fecha": "2018-01-04T09:56:13.097",
+    "Nombre": "154081",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\154081.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 144152,
+    "Fecha": "2018-01-04T09:59:43.907",
+    "Nombre": "154084",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\154084.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 144154,
+    "Fecha": "2018-01-04T10:04:06.817",
+    "Nombre": "154086",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\154086.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 144161,
+    "Fecha": "2018-01-04T10:11:57.247",
+    "Nombre": "154093",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\154093.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 144162,
+    "Fecha": "2018-01-04T10:14:36.14",
+    "Nombre": "154095",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\154095.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 144168,
+    "Fecha": "2018-01-04T10:20:42.74",
+    "Nombre": "154100",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\154100.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 164102,
+    "Fecha": "2018-03-08T13:44:35.193",
+    "Nombre": "175155",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\175155.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 164104,
+    "Fecha": "2018-03-08T13:47:51.043",
+    "Nombre": "175157",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\175157.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 164107,
+    "Fecha": "2018-03-08T13:55:46.633",
+    "Nombre": "175160",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\175160.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 164109,
+    "Fecha": "2018-03-08T13:58:10.983",
+    "Nombre": "175162",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\175162.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 173116,
+    "Fecha": "2018-04-12T08:34:48.053",
+    "Nombre": "184658",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\184658.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 173120,
+    "Fecha": "2018-04-12T08:35:46.033",
+    "Nombre": "184660",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\184660.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 173125,
+    "Fecha": "2018-04-12T08:39:17.087",
+    "Nombre": "184664",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\184664.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 173126,
+    "Fecha": "2018-04-12T08:39:17.087",
+    "Nombre": "184666",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\184666.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 173130,
+    "Fecha": "2018-04-12T08:47:17.34",
+    "Nombre": "184671",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\184671.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 173143,
+    "Fecha": "2018-04-12T08:57:01.553",
+    "Nombre": "184682",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\184682.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 173144,
+    "Fecha": "2018-04-12T08:57:01.553",
+    "Nombre": "184683",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\184683.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 173145,
+    "Fecha": "2018-04-12T08:57:01.553",
+    "Nombre": "184684",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\184684.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 173149,
+    "Fecha": "2018-04-12T09:02:06.38",
+    "Nombre": "184689",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\184689.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 173153,
+    "Fecha": "2018-04-12T09:05:56.517",
+    "Nombre": "184693",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\184693.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 176060,
+    "Fecha": "2018-04-23T10:42:50.523",
+    "Nombre": "187775",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\187775.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 176092,
+    "Fecha": "2018-04-23T11:17:58.18",
+    "Nombre": "187810",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\187810.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 176098,
+    "Fecha": "2018-04-23T11:19:32.71",
+    "Nombre": "187814",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\187814.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 176115,
+    "Fecha": "2018-04-23T11:43:36.723",
+    "Nombre": "187832",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\187832.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 176118,
+    "Fecha": "2018-04-23T11:45:26.933",
+    "Nombre": "187834",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\187834.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 176121,
+    "Fecha": "2018-04-23T11:47:20.137",
+    "Nombre": "187837",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\187837.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 176132,
+    "Fecha": "2018-04-23T12:08:41.517",
+    "Nombre": "187849",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\187849.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 176134,
+    "Fecha": "2018-04-23T12:10:09.943",
+    "Nombre": "187851",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\187851.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 176136,
+    "Fecha": "2018-04-23T12:11:36.807",
+    "Nombre": "187853",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\187853.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 176161,
+    "Fecha": "2018-04-23T12:58:32.08",
+    "Nombre": "187880",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\187880.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 176196,
+    "Fecha": "2018-04-23T14:34:08.947",
+    "Nombre": "187915",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\187915.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 181100,
+    "Fecha": "2018-05-11T10:44:04.547",
+    "Nombre": "193120",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\193120.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 181101,
+    "Fecha": "2018-05-11T10:47:07.577",
+    "Nombre": "193121",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\193121.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 181104,
+    "Fecha": "2018-05-11T10:52:24.333",
+    "Nombre": "193124",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\193124.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 181110,
+    "Fecha": "2018-05-11T10:58:44.203",
+    "Nombre": "193130",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\193130.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 181120,
+    "Fecha": "2018-05-11T11:25:50.847",
+    "Nombre": "193140",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\193140.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 181125,
+    "Fecha": "2018-05-11T11:39:48.193",
+    "Nombre": "193146",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\193146.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 181128,
+    "Fecha": "2018-05-11T11:49:52.657",
+    "Nombre": "193150",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\193150.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 181132,
+    "Fecha": "2018-05-11T11:56:00.483",
+    "Nombre": "193154",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\193154.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 181135,
+    "Fecha": "2018-05-11T12:01:56.657",
+    "Nombre": "193157",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\193157.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 181136,
+    "Fecha": "2018-05-11T12:03:44.733",
+    "Nombre": "193158",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\193158.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 181153,
+    "Fecha": "2018-05-11T12:49:31.887",
+    "Nombre": "193181",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\193181.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 181154,
+    "Fecha": "2018-05-11T12:53:59.657",
+    "Nombre": "193182",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\193182.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 181158,
+    "Fecha": "2018-05-11T13:03:31.607",
+    "Nombre": "193186",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\193186.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 185172,
+    "Fecha": "2018-05-25T10:38:24.517",
+    "Nombre": "197448",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\197448.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 185180,
+    "Fecha": "2018-05-25T10:55:08.947",
+    "Nombre": "197457",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\197457.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 185187,
+    "Fecha": "2018-05-25T11:01:01.39",
+    "Nombre": "197464",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\197464.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 185193,
+    "Fecha": "2018-05-25T11:10:20.297",
+    "Nombre": "197470",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\197470.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 185194,
+    "Fecha": "2018-05-25T11:11:44.167",
+    "Nombre": "197471",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\197471.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 185200,
+    "Fecha": "2018-05-25T11:20:54.143",
+    "Nombre": "197477",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\197477.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 185205,
+    "Fecha": "2018-05-25T11:24:43.577",
+    "Nombre": "197482",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\197482.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 185208,
+    "Fecha": "2018-05-25T11:30:09.443",
+    "Nombre": "197485",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\197485.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 185209,
+    "Fecha": "2018-05-25T11:30:09.443",
+    "Nombre": "197486",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\197486.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 185232,
+    "Fecha": "2018-05-25T12:15:12.797",
+    "Nombre": "197518",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\197518.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 185237,
+    "Fecha": "2018-05-25T12:23:44.723",
+    "Nombre": "197522",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\197522.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 185242,
+    "Fecha": "2018-05-25T12:43:22.48",
+    "Nombre": "197533",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\197533.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 185243,
+    "Fecha": "2018-05-25T12:53:47.207",
+    "Nombre": "197534",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\197534.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 185244,
+    "Fecha": "2018-05-25T13:00:42.683",
+    "Nombre": "197535",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\197535.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 185247,
+    "Fecha": "2018-05-25T13:10:15.793",
+    "Nombre": "197538",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\197538.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 189115,
+    "Fecha": "2018-06-07T13:53:07.85",
+    "Nombre": "201668",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\201668.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 189116,
+    "Fecha": "2018-06-07T13:54:59.6",
+    "Nombre": "201669",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\201669.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 189118,
+    "Fecha": "2018-06-07T14:00:26.563",
+    "Nombre": "201671",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\201671.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 189119,
+    "Fecha": "2018-06-07T14:05:46.01",
+    "Nombre": "201672",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\201672.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 189122,
+    "Fecha": "2018-06-07T14:28:12.197",
+    "Nombre": "201675",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\201675.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 189123,
+    "Fecha": "2018-06-07T14:29:38.353",
+    "Nombre": "201676",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\201676.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 189125,
+    "Fecha": "2018-06-07T14:36:01.347",
+    "Nombre": "201678",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\201678.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 189130,
+    "Fecha": "2018-06-07T14:50:09.56",
+    "Nombre": "201683",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\201683.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 189132,
+    "Fecha": "2018-06-07T14:54:29.99",
+    "Nombre": "201685",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\201685.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 189133,
+    "Fecha": "2018-06-07T15:03:22.46",
+    "Nombre": "201687",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\201687.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 189134,
+    "Fecha": "2018-06-07T15:08:11.257",
+    "Nombre": "201688",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\201688.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 189135,
+    "Fecha": "2018-06-07T15:13:13.78",
+    "Nombre": "201689",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\201689.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 189136,
+    "Fecha": "2018-06-07T15:13:13.78",
+    "Nombre": "201690",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\201690.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 189137,
+    "Fecha": "2018-06-07T15:16:28.28",
+    "Nombre": "201691",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\201691.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 189139,
+    "Fecha": "2018-06-07T15:20:54.983",
+    "Nombre": "201693",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\201693.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 189140,
+    "Fecha": "2018-06-07T15:22:51.763",
+    "Nombre": "201694",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\201694.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 189142,
+    "Fecha": "2018-06-07T15:27:23.567",
+    "Nombre": "201696",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\201696.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 189144,
+    "Fecha": "2018-06-07T15:34:18.897",
+    "Nombre": "201698",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\201698.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 189145,
+    "Fecha": "2018-06-07T15:45:01.62",
+    "Nombre": "201699",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\201699.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 189148,
+    "Fecha": "2018-06-07T15:49:48.167",
+    "Nombre": "201702",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\201702.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 189154,
+    "Fecha": "2018-06-07T16:05:04.88",
+    "Nombre": "201710",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\201710.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 197053,
+    "Fecha": "2018-07-05T08:30:31.12",
+    "Nombre": "210107",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\210107.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 197060,
+    "Fecha": "2018-07-05T08:34:50.023",
+    "Nombre": "210113",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\210113.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 197065,
+    "Fecha": "2018-07-05T08:44:18.32",
+    "Nombre": "210120",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\210120.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 197069,
+    "Fecha": "2018-07-05T08:49:28.987",
+    "Nombre": "210123",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\210123.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 197072,
+    "Fecha": "2018-07-05T08:52:23.157",
+    "Nombre": "210127",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\210127.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 197076,
+    "Fecha": "2018-07-05T08:54:58.38",
+    "Nombre": "210131",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\210131.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 197177,
+    "Fecha": "2018-07-05T11:49:56.707",
+    "Nombre": "210248",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\210248.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 197181,
+    "Fecha": "2018-07-05T11:55:16.787",
+    "Nombre": "210252",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\210252.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 197184,
+    "Fecha": "2018-07-05T11:59:30.217",
+    "Nombre": "210256",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\210256.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 197602,
+    "Fecha": "2018-07-06T14:25:46.817",
+    "Nombre": "210728",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\210728.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 197603,
+    "Fecha": "2018-07-06T14:26:26.357",
+    "Nombre": "210729",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\210729.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 204266,
+    "Fecha": "2018-08-01T11:57:05.84",
+    "Nombre": "217824",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\217824.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 204268,
+    "Fecha": "2018-08-01T12:00:55.48",
+    "Nombre": "217826",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\217826.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 221500,
+    "Fecha": "2018-09-21T14:27:20.057",
+    "Nombre": "236311",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\236311.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 221501,
+    "Fecha": "2018-09-21T14:27:20.057",
+    "Nombre": "236312",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\236312.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 221502,
+    "Fecha": "2018-09-21T14:31:26.357",
+    "Nombre": "236313",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\236313.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 221503,
+    "Fecha": "2018-09-21T14:38:08.593",
+    "Nombre": "236314",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\236314.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 221504,
+    "Fecha": "2018-09-21T14:44:09.783",
+    "Nombre": "236315",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\236315.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 224203,
+    "Fecha": "2018-09-29T08:35:25.513",
+    "Nombre": "239099",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\239099.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 224204,
+    "Fecha": "2018-09-29T08:35:25.513",
+    "Nombre": "239100",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\239100.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 224205,
+    "Fecha": "2018-09-29T08:35:25.513",
+    "Nombre": "239101",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\239101.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 224208,
+    "Fecha": "2018-09-29T08:37:28.457",
+    "Nombre": "239104",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\239104.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 224210,
+    "Fecha": "2018-09-29T08:41:01.233",
+    "Nombre": "239106",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\239106.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 224211,
+    "Fecha": "2018-09-29T08:41:01.233",
+    "Nombre": "239107",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\239107.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 224212,
+    "Fecha": "2018-09-29T08:44:33.637",
+    "Nombre": "239108",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\239108.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 224214,
+    "Fecha": "2018-09-29T08:48:38.467",
+    "Nombre": "239110",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\239110.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 224219,
+    "Fecha": "2018-09-29T09:01:50.637",
+    "Nombre": "239115",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\239115.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 224221,
+    "Fecha": "2018-09-29T09:07:19.39",
+    "Nombre": "239117",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\239117.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 224228,
+    "Fecha": "2018-09-29T09:26:16.68",
+    "Nombre": "239127",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\239127.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 224231,
+    "Fecha": "2018-09-29T09:28:45.637",
+    "Nombre": "239130",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\239130.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 224233,
+    "Fecha": "2018-09-29T09:34:04.583",
+    "Nombre": "239132",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\239132.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 224235,
+    "Fecha": "2018-09-29T09:39:32.947",
+    "Nombre": "239134",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\239134.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 224236,
+    "Fecha": "2018-09-29T09:44:37.03",
+    "Nombre": "239135",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\239135.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 224237,
+    "Fecha": "2018-09-29T10:06:29.71",
+    "Nombre": "239136",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\239136.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 224238,
+    "Fecha": "2018-09-29T10:08:03.02",
+    "Nombre": "239137",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\239137.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 224239,
+    "Fecha": "2018-09-29T10:08:03.02",
+    "Nombre": "239138",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\239138.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 224241,
+    "Fecha": "2018-09-29T10:10:19.333",
+    "Nombre": "239140",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\239140.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 224242,
+    "Fecha": "2018-09-29T10:12:31.777",
+    "Nombre": "239141",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\239141.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 224244,
+    "Fecha": "2018-09-29T10:23:22.363",
+    "Nombre": "239143",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\239143.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 224246,
+    "Fecha": "2018-09-29T10:26:21.46",
+    "Nombre": "239145",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\239145.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 224247,
+    "Fecha": "2018-09-29T10:28:33.967",
+    "Nombre": "239146",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\239146.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 224248,
+    "Fecha": "2018-09-29T10:36:51.12",
+    "Nombre": "239147",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\239147.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 224249,
+    "Fecha": "2018-09-29T10:39:00.897",
+    "Nombre": "239148",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\239148.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 224252,
+    "Fecha": "2018-09-29T10:58:40.917",
+    "Nombre": "239151",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\239151.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 224254,
+    "Fecha": "2018-09-29T11:04:09.69",
+    "Nombre": "239153",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\239153.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 224257,
+    "Fecha": "2018-09-29T11:16:22.54",
+    "Nombre": "239157",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\239157.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 224258,
+    "Fecha": "2018-09-29T11:21:32.52",
+    "Nombre": "239158",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\239158.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 224259,
+    "Fecha": "2018-09-29T11:23:39.927",
+    "Nombre": "239159",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\239159.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 224260,
+    "Fecha": "2018-09-29T11:23:39.927",
+    "Nombre": "239160",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\239160.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 224261,
+    "Fecha": "2018-09-29T11:26:14.603",
+    "Nombre": "239161",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\239161.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 224263,
+    "Fecha": "2018-09-29T11:31:17.933",
+    "Nombre": "239163",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\239163.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 224264,
+    "Fecha": "2018-09-29T11:45:36.877",
+    "Nombre": "239164",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\239164.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 224265,
+    "Fecha": "2018-09-29T11:48:44.67",
+    "Nombre": "239165",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\239165.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 224266,
+    "Fecha": "2018-09-29T11:53:22.097",
+    "Nombre": "239167",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\239167.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 224267,
+    "Fecha": "2018-09-29T12:01:47.837",
+    "Nombre": "239168",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\239168.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 224504,
+    "Fecha": "2018-10-01T11:20:25.117",
+    "Nombre": "239416",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\239416.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 224511,
+    "Fecha": "2018-10-01T11:28:10.663",
+    "Nombre": "239423",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\239423.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 225687,
+    "Fecha": "2018-10-04T07:27:39.953",
+    "Nombre": "240678",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\240678.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 225688,
+    "Fecha": "2018-10-04T07:38:59.267",
+    "Nombre": "240680",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\240680.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 225694,
+    "Fecha": "2018-10-04T07:46:57.67",
+    "Nombre": "240687",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\240687.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 225698,
+    "Fecha": "2018-10-04T07:50:35.013",
+    "Nombre": "240691",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\240691.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 225700,
+    "Fecha": "2018-10-04T07:54:38.533",
+    "Nombre": "240693",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\240693.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 225706,
+    "Fecha": "2018-10-04T08:04:32.937",
+    "Nombre": "240699",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\240699.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 225707,
+    "Fecha": "2018-10-04T08:04:32.937",
+    "Nombre": "240700",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\240700.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 225708,
+    "Fecha": "2018-10-04T08:04:32.937",
+    "Nombre": "240701",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\240701.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 225711,
+    "Fecha": "2018-10-04T08:10:03.313",
+    "Nombre": "240704",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\240704.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 225719,
+    "Fecha": "2018-10-04T08:17:46.037",
+    "Nombre": "240711",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\240711.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 225724,
+    "Fecha": "2018-10-04T08:25:18.093",
+    "Nombre": "240717",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\240717.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 231861,
+    "Fecha": "2018-10-24T12:25:15.4",
+    "Nombre": "247305",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\247305.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 233933,
+    "Fecha": "2018-11-01T09:54:55.557",
+    "Nombre": "249490",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\249490.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 233943,
+    "Fecha": "2018-11-01T10:06:01.19",
+    "Nombre": "249500",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\249500.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 234196,
+    "Fecha": "2018-11-02T07:31:58.73",
+    "Nombre": "249779",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\249779.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 234200,
+    "Fecha": "2018-11-02T07:37:10.603",
+    "Nombre": "249782",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\249782.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 234201,
+    "Fecha": "2018-11-02T07:37:10.603",
+    "Nombre": "249783",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\249783.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 234202,
+    "Fecha": "2018-11-02T07:40:40.797",
+    "Nombre": "249784",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\249784.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 234205,
+    "Fecha": "2018-11-02T07:44:11.183",
+    "Nombre": "249787",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\249787.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 234206,
+    "Fecha": "2018-11-02T07:47:24.55",
+    "Nombre": "249788",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\249788.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 234207,
+    "Fecha": "2018-11-02T07:52:04.857",
+    "Nombre": "249789",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\249789.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 234210,
+    "Fecha": "2018-11-02T07:58:05.067",
+    "Nombre": "249792",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\249792.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 234215,
+    "Fecha": "2018-11-02T08:04:26.457",
+    "Nombre": "249796",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\249796.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 234217,
+    "Fecha": "2018-11-02T08:08:32.86",
+    "Nombre": "249798",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\249798.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 234222,
+    "Fecha": "2018-11-02T08:14:17.833",
+    "Nombre": "249803",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\249803.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 234234,
+    "Fecha": "2018-11-02T08:34:14.803",
+    "Nombre": "249815",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\249815.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 234243,
+    "Fecha": "2018-11-02T08:49:34.45",
+    "Nombre": "249830",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\249830.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 236804,
+    "Fecha": "2018-11-13T11:02:51.403",
+    "Nombre": "252587",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\252587.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 236809,
+    "Fecha": "2018-11-13T11:13:52.747",
+    "Nombre": "252591",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\252591.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 236817,
+    "Fecha": "2018-11-13T11:33:22.03",
+    "Nombre": "252605",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\252605.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 237230,
+    "Fecha": "2018-11-15T08:03:57.47",
+    "Nombre": "253057",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\253057.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 237232,
+    "Fecha": "2018-11-15T08:09:44.447",
+    "Nombre": "253058",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\253058.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 237855,
+    "Fecha": "2018-11-19T07:15:43.66",
+    "Nombre": "253733",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\253733.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 237856,
+    "Fecha": "2018-11-19T07:20:45.447",
+    "Nombre": "253734",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\253734.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 237857,
+    "Fecha": "2018-11-19T07:26:37.67",
+    "Nombre": "253735",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\253735.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 237858,
+    "Fecha": "2018-11-19T07:26:37.67",
+    "Nombre": "253736",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\253736.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 237859,
+    "Fecha": "2018-11-19T07:31:48.533",
+    "Nombre": "253737",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\253737.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 237860,
+    "Fecha": "2018-11-19T07:36:16.73",
+    "Nombre": "253738",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\253738.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 237861,
+    "Fecha": "2018-11-19T07:40:35.557",
+    "Nombre": "253739",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\253739.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 237862,
+    "Fecha": "2018-11-19T07:43:53.937",
+    "Nombre": "253740",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\253740.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 237863,
+    "Fecha": "2018-11-19T07:48:49.49",
+    "Nombre": "253741",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\253741.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 240848,
+    "Fecha": "2018-11-30T09:39:58.973",
+    "Nombre": "256962",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\256962.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 240849,
+    "Fecha": "2018-11-30T09:39:58.973",
+    "Nombre": "256963",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\256963.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 240863,
+    "Fecha": "2018-11-30T10:26:40.463",
+    "Nombre": "256977",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\256977.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 240864,
+    "Fecha": "2018-11-30T10:28:08.873",
+    "Nombre": "256978",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\256978.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 240868,
+    "Fecha": "2018-11-30T10:33:49.963",
+    "Nombre": "256982",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\256982.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 240869,
+    "Fecha": "2018-11-30T10:38:54.94",
+    "Nombre": "256983",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\256983.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 240872,
+    "Fecha": "2018-11-30T10:43:33.85",
+    "Nombre": "256986",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\256986.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 240880,
+    "Fecha": "2018-11-30T10:50:45.147",
+    "Nombre": "256994",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\256994.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 240883,
+    "Fecha": "2018-11-30T10:55:35.83",
+    "Nombre": "256998",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\256998.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 242692,
+    "Fecha": "2018-12-07T11:06:42.91",
+    "Nombre": "258932",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\258932.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 242693,
+    "Fecha": "2018-12-07T11:08:39.96",
+    "Nombre": "258933",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\258933.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 242695,
+    "Fecha": "2018-12-07T11:16:32.74",
+    "Nombre": "258935",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\258935.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 242697,
+    "Fecha": "2018-12-07T11:26:20.573",
+    "Nombre": "258937",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\258937.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 242703,
+    "Fecha": "2018-12-07T11:35:44.107",
+    "Nombre": "258943",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\258943.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 242706,
+    "Fecha": "2018-12-07T11:41:36.897",
+    "Nombre": "258946",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\258946.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 242711,
+    "Fecha": "2018-12-07T11:52:25.87",
+    "Nombre": "258951",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\258951.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 242716,
+    "Fecha": "2018-12-07T12:00:50.11",
+    "Nombre": "258957",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\258957.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 242718,
+    "Fecha": "2018-12-07T12:07:26.023",
+    "Nombre": "258959",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\258959.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 242721,
+    "Fecha": "2018-12-07T12:12:30.687",
+    "Nombre": "258962",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\258962.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 242723,
+    "Fecha": "2018-12-07T12:13:57.023",
+    "Nombre": "258964",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\258964.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 242726,
+    "Fecha": "2018-12-07T12:16:21.887",
+    "Nombre": "258967",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\258967.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 242731,
+    "Fecha": "2018-12-07T12:22:19.007",
+    "Nombre": "258972",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\258972.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 242734,
+    "Fecha": "2018-12-07T12:24:55.967",
+    "Nombre": "258975",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\258975.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 242745,
+    "Fecha": "2018-12-07T13:02:25.43",
+    "Nombre": "258986",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\258986.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 245981,
+    "Fecha": "2018-12-21T12:44:57.01",
+    "Nombre": "262461",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\262461.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 245989,
+    "Fecha": "2018-12-21T13:02:45.383",
+    "Nombre": "262469",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\262469.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 245993,
+    "Fecha": "2018-12-21T13:08:04.443",
+    "Nombre": "262473",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\262473.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 245996,
+    "Fecha": "2018-12-21T13:25:13.373",
+    "Nombre": "262476",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\262476.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 246637,
+    "Fecha": "2018-12-27T09:16:56.2",
+    "Nombre": "263165",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\263165.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 246638,
+    "Fecha": "2018-12-27T09:16:56.2",
+    "Nombre": "263166",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\263166.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 246639,
+    "Fecha": "2018-12-27T09:16:56.2",
+    "Nombre": "263167",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\263167.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 246644,
+    "Fecha": "2018-12-27T09:23:19.01",
+    "Nombre": "263172",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\263172.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 246645,
+    "Fecha": "2018-12-27T09:27:23.757",
+    "Nombre": "263173",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\263173.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 246648,
+    "Fecha": "2018-12-27T09:32:21.697",
+    "Nombre": "263176",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\263176.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 255052,
+    "Fecha": "2019-02-01T09:05:51.563",
+    "Nombre": "272312",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\272312.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 255055,
+    "Fecha": "2019-02-01T09:11:41.067",
+    "Nombre": "272314",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\272314.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 255205,
+    "Fecha": "2019-02-01T14:23:18.95",
+    "Nombre": "272479",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\272479.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 255206,
+    "Fecha": "2019-02-01T14:32:14.577",
+    "Nombre": "272480",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\272480.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 255898,
+    "Fecha": "2019-02-05T10:11:26.77",
+    "Nombre": "273242",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\273242.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 256754,
+    "Fecha": "2019-02-08T10:05:52.703",
+    "Nombre": "274182",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\274182.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 256755,
+    "Fecha": "2019-02-08T10:07:39.203",
+    "Nombre": "274183",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\274183.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 257166,
+    "Fecha": "2019-02-11T10:23:22.083",
+    "Nombre": "274626",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\274626.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 257167,
+    "Fecha": "2019-02-11T10:23:22.083",
+    "Nombre": "274627",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\274627.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 257170,
+    "Fecha": "2019-02-11T10:33:32.363",
+    "Nombre": "274630",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\274630.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 257174,
+    "Fecha": "2019-02-11T10:46:30.067",
+    "Nombre": "274635",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\274635.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 257175,
+    "Fecha": "2019-02-11T10:46:30.067",
+    "Nombre": "274636",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\274636.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 257176,
+    "Fecha": "2019-02-11T10:46:30.067",
+    "Nombre": "274637",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\274637.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 257178,
+    "Fecha": "2019-02-11T10:51:52.62",
+    "Nombre": "274639",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\274639.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 257179,
+    "Fecha": "2019-02-11T10:56:17.827",
+    "Nombre": "274640",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\274640.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 257729,
+    "Fecha": "2019-02-13T08:20:00.2",
+    "Nombre": "275218",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\275218.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 257730,
+    "Fecha": "2019-02-13T08:20:00.2",
+    "Nombre": "275219",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\275219.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 257731,
+    "Fecha": "2019-02-13T08:20:00.2",
+    "Nombre": "275220",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\275220.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 257744,
+    "Fecha": "2019-02-13T08:38:50.747",
+    "Nombre": "275233",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\275233.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 257747,
+    "Fecha": "2019-02-13T08:46:54.373",
+    "Nombre": "275236",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\275236.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 257748,
+    "Fecha": "2019-02-13T08:51:16.767",
+    "Nombre": "275237",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\275237.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 257756,
+    "Fecha": "2019-02-13T09:05:35.837",
+    "Nombre": "275245",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\275245.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 257758,
+    "Fecha": "2019-02-13T09:07:40.293",
+    "Nombre": "275247",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\275247.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 257760,
+    "Fecha": "2019-02-13T09:12:35.963",
+    "Nombre": "275249",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\275249.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 258078,
+    "Fecha": "2019-02-14T08:52:52.84",
+    "Nombre": "275585",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\275585.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 258083,
+    "Fecha": "2019-02-14T09:15:30.733",
+    "Nombre": "275591",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\275591.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 258084,
+    "Fecha": "2019-02-14T09:15:30.733",
+    "Nombre": "275592",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\275592.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 258085,
+    "Fecha": "2019-02-14T09:19:53.247",
+    "Nombre": "275593",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\275593.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 258086,
+    "Fecha": "2019-02-14T09:19:53.247",
+    "Nombre": "275594",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\275594.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 258088,
+    "Fecha": "2019-02-14T09:25:15.457",
+    "Nombre": "275597",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\275597.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 258089,
+    "Fecha": "2019-02-14T09:25:15.457",
+    "Nombre": "275598",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\275598.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 265172,
+    "Fecha": "2019-03-15T18:57:43.48",
+    "Nombre": "283532",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\283532.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 265173,
+    "Fecha": "2019-03-15T19:00:04.92",
+    "Nombre": "283533",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\283533.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 268314,
+    "Fecha": "2019-03-29T08:24:26.073",
+    "Nombre": "287111",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\287111.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 268315,
+    "Fecha": "2019-03-29T08:25:25.51",
+    "Nombre": "287112",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\287112.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 268319,
+    "Fecha": "2019-03-29T08:43:34.137",
+    "Nombre": "287116",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\287116.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 271681,
+    "Fecha": "2019-04-11T08:53:01.447",
+    "Nombre": "291084",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\291084.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 271682,
+    "Fecha": "2019-04-11T08:53:01.447",
+    "Nombre": "291085",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\291085.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 271683,
+    "Fecha": "2019-04-11T08:53:01.447",
+    "Nombre": "291087",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\291087.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 272393,
+    "Fecha": "2019-04-13T08:37:32.277",
+    "Nombre": "291892",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\291892.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 272521,
+    "Fecha": "2019-04-15T08:24:07.097",
+    "Nombre": "292019",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\292019.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 272522,
+    "Fecha": "2019-04-15T08:24:07.097",
+    "Nombre": "292021",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\292021.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 272531,
+    "Fecha": "2019-04-15T08:44:35.303",
+    "Nombre": "292032",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\292032.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 272535,
+    "Fecha": "2019-04-15T08:50:20.34",
+    "Nombre": "292036",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\292036.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 272541,
+    "Fecha": "2019-04-15T08:55:30.323",
+    "Nombre": "292042",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\292042.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 272550,
+    "Fecha": "2019-04-15T09:08:43.247",
+    "Nombre": "292051",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\292051.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 274426,
+    "Fecha": "2019-04-23T08:51:10.527",
+    "Nombre": "294090",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\294090.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 274427,
+    "Fecha": "2019-04-23T08:51:10.527",
+    "Nombre": "294091",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\294091.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 274428,
+    "Fecha": "2019-04-23T08:51:10.527",
+    "Nombre": "294092",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\294092.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 275924,
+    "Fecha": "2019-04-30T10:18:37.487",
+    "Nombre": "295709",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\295709.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 275926,
+    "Fecha": "2019-04-30T10:24:05.19",
+    "Nombre": "295710",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\295710.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 275929,
+    "Fecha": "2019-04-30T10:29:13.337",
+    "Nombre": "295713",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\295713.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 289244,
+    "Fecha": "2019-07-02T10:14:00.07",
+    "Nombre": "BERMARDA PAULINO 001.png",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\\\BERMARDA PAULINO 001.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 289245,
+    "Fecha": "2019-07-02T10:17:12.143",
+    "Nombre": "BERMARDA PAULINO 001_1.png",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\BERMARDA PAULINO 001_1.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 302875,
+    "Fecha": "2019-09-11T16:29:26.607",
+    "Nombre": "326531",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\326531.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 310788,
+    "Fecha": "2019-10-08T12:32:59.443",
+    "Nombre": "335745",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\335745.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 310789,
+    "Fecha": "2019-10-08T12:32:59.443",
+    "Nombre": "335746",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\335746.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 310790,
+    "Fecha": "2019-10-08T12:37:26.697",
+    "Nombre": "335747",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\335747.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 310791,
+    "Fecha": "2019-10-08T12:37:26.697",
+    "Nombre": "335749",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\335749.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 310796,
+    "Fecha": "2019-10-08T12:46:50.387",
+    "Nombre": "335755",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\335755.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 310797,
+    "Fecha": "2019-10-08T12:46:50.387",
+    "Nombre": "335756",
+    "Ruta": "D:\\HisWeb\\\\Expedientes\\0\\Imagenologia\\Citas\\335756.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 654326,
+    "Fecha": "2023-06-06T10:22:43.16",
+    "Nombre": "747475",
+    "Ruta": "R:\\HisWeb\\Expedientes\\0\\Imagenologia\\Citas\\747475.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 654327,
+    "Fecha": "2023-06-06T10:22:43.16",
+    "Nombre": "747477",
+    "Ruta": "R:\\HisWeb\\Expedientes\\0\\Imagenologia\\Citas\\747477.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 654328,
+    "Fecha": "2023-06-06T10:22:43.16",
+    "Nombre": "747478",
+    "Ruta": "R:\\HisWeb\\Expedientes\\0\\Imagenologia\\Citas\\747478.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 666736,
+    "Fecha": "2023-07-17T09:36:57.483",
+    "Nombre": "760472",
+    "Ruta": "R:\\HisWeb\\Expedientes\\0\\Imagenologia\\Citas\\760472.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 666737,
+    "Fecha": "2023-07-17T09:36:57.483",
+    "Nombre": "760474",
+    "Ruta": "R:\\HisWeb\\Expedientes\\0\\Imagenologia\\Citas\\760474.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 667733,
+    "Fecha": "2023-07-19T10:17:19.05",
+    "Nombre": "761491",
+    "Ruta": "R:\\HisWeb\\Expedientes\\0\\Imagenologia\\Citas\\761491.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 685836,
+    "Fecha": "2023-09-19T10:23:51.833",
+    "Nombre": "780418",
+    "Ruta": "R:\\HisWeb\\Expedientes\\0\\Imagenologia\\Citas\\780418.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 685837,
+    "Fecha": "2023-09-19T10:23:51.833",
+    "Nombre": "780421",
+    "Ruta": "R:\\HisWeb\\Expedientes\\0\\Imagenologia\\Citas\\780421.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 711140,
+    "Fecha": "2023-12-11T10:19:58.84",
+    "Nombre": "804890",
+    "Ruta": "R:\\HisWeb\\Expedientes\\0\\Imagenologia\\Citas\\804890.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 711141,
+    "Fecha": "2023-12-11T10:19:58.84",
+    "Nombre": "804891",
+    "Ruta": "R:\\HisWeb\\Expedientes\\0\\Imagenologia\\Citas\\804891.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 711142,
+    "Fecha": "2023-12-11T10:19:58.84",
+    "Nombre": "804892",
+    "Ruta": "R:\\HisWeb\\Expedientes\\0\\Imagenologia\\Citas\\804892.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 721896,
+    "Fecha": "2024-01-22T11:15:48.437",
+    "Nombre": "816464",
+    "Ruta": "R:\\HisWeb\\Expedientes\\0\\Imagenologia\\Citas\\816464.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 721897,
+    "Fecha": "2024-01-22T11:15:48.437",
+    "Nombre": "816465",
+    "Ruta": "R:\\HisWeb\\Expedientes\\0\\Imagenologia\\Citas\\816465.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 739087,
+    "Fecha": "2024-03-25T09:45:33.127",
+    "Nombre": "834697",
+    "Ruta": "R:\\HisWeb\\Expedientes\\0\\Imagenologia\\Citas\\834697.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 739088,
+    "Fecha": "2024-03-25T09:45:33.127",
+    "Nombre": "834698",
+    "Ruta": "R:\\HisWeb\\Expedientes\\0\\Imagenologia\\Citas\\834698.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 739311,
+    "Fecha": "2024-03-25T14:48:47.897",
+    "Nombre": "834933",
+    "Ruta": "R:\\HisWeb\\Expedientes\\0\\Imagenologia\\Citas\\834933.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 739312,
+    "Fecha": "2024-03-25T14:48:47.897",
+    "Nombre": "834934",
+    "Ruta": "R:\\HisWeb\\Expedientes\\0\\Imagenologia\\Citas\\834934.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 741434,
+    "Fecha": "2024-04-03T11:55:50.747",
+    "Nombre": "837434",
+    "Ruta": "R:\\HisWeb\\Expedientes\\0\\Imagenologia\\Citas\\837434.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 741435,
+    "Fecha": "2024-04-03T11:55:50.747",
+    "Nombre": "837435",
+    "Ruta": "R:\\HisWeb\\Expedientes\\0\\Imagenologia\\Citas\\837435.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 768251,
+    "Fecha": "2024-07-09T11:15:00.85",
+    "Nombre": "868225",
+    "Ruta": "R:\\HisWeb\\Expedientes\\0\\Imagenologia\\Citas\\868225.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 768254,
+    "Fecha": "2024-07-09T11:15:00.85",
+    "Nombre": "868227",
+    "Ruta": "R:\\HisWeb\\Expedientes\\0\\Imagenologia\\Citas\\868227.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 775101,
+    "Fecha": "2024-08-05T10:40:03.227",
+    "Nombre": "876127",
+    "Ruta": "R:\\HisWeb\\Expedientes\\0\\Imagenologia\\Citas\\876127.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 775102,
+    "Fecha": "2024-08-05T10:40:03.227",
+    "Nombre": "876129",
+    "Ruta": "R:\\HisWeb\\Expedientes\\0\\Imagenologia\\Citas\\876129.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 784329,
+    "Fecha": "2024-09-10T14:35:22.86",
+    "Nombre": "885596",
+    "Ruta": "R:\\HisWeb\\Expedientes\\0\\Imagenologia\\Citas\\885596.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 784330,
+    "Fecha": "2024-09-10T14:35:22.86",
+    "Nombre": "885597",
+    "Ruta": "R:\\HisWeb\\Expedientes\\0\\Imagenologia\\Citas\\885597.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 792765,
+    "Fecha": "2024-10-15T09:56:20.93",
+    "Nombre": "894234",
+    "Ruta": "R:\\HisWeb\\Expedientes\\0\\Imagenologia\\Citas\\894234.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 800085,
+    "Fecha": "2024-11-13T12:48:20.513",
+    "Nombre": "901877",
+    "Ruta": "R:\\HisWeb\\Expedientes\\0\\Imagenologia\\Citas\\901877.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 800086,
+    "Fecha": "2024-11-13T12:48:20.513",
+    "Nombre": "901879",
+    "Ruta": "R:\\HisWeb\\Expedientes\\0\\Imagenologia\\Citas\\901879.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 802180,
+    "Fecha": "2024-11-22T11:33:24.823",
+    "Nombre": "903980",
+    "Ruta": "R:\\HisWeb\\Expedientes\\0\\Imagenologia\\Citas\\903980.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 802181,
+    "Fecha": "2024-11-22T11:33:24.823",
+    "Nombre": "903982",
+    "Ruta": "R:\\HisWeb\\Expedientes\\0\\Imagenologia\\Citas\\903982.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 804810,
+    "Fecha": "2024-12-04T09:17:18.1",
+    "Nombre": "906639",
+    "Ruta": "R:\\HisWeb\\Expedientes\\0\\Imagenologia\\Citas\\906639.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 929199,
+    "Fecha": "2026-04-17T11:36:21.52",
+    "Nombre": "1035831",
+    "Ruta": "R:\\HisWeb\\Expedientes\\0\\Imagenologia\\Citas\\1035831.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 929200,
+    "Fecha": "2026-04-17T11:36:21.52",
+    "Nombre": "1035833",
+    "Ruta": "R:\\HisWeb\\Expedientes\\0\\Imagenologia\\Citas\\1035833.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 931071,
+    "Fecha": "2026-04-23T16:51:51.977",
+    "Nombre": "1037757",
+    "Ruta": "R:\\HisWeb\\Expedientes\\0\\Imagenologia\\Citas\\1037757.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  },
+  {
+    "IdDocumento": 931072,
+    "Fecha": "2026-04-23T16:51:51.977",
+    "Nombre": "1037758",
+    "Ruta": "R:\\HisWeb\\Expedientes\\0\\Imagenologia\\Citas\\1037758.png",
+    "Descripcion": null,
+    "Procedencia": "ImagenologiaCitas"
+  }
+]

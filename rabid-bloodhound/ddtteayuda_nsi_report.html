@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Informe de Seguridad — DDTeAyuda | Null Session Intelligence LLC</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root {
+  --nsi-dark: #0a0f1a; --nsi-slate: #1e293b; --nsi-muted: #64748b; --nsi-light: #f1f5f9;
+  --nsi-border: #e2e8f0; --nsi-accent: #3b82f6; --nsi-danger: #dc2626; --nsi-warning: #d97706; --nsi-success: #16a34a;
+  --font-family: 'Inter', -apple-system, system-ui, sans-serif;
+  --font-size-display: 20pt; --font-size-h1: 16pt; --font-size-h2: 13pt; --font-size-h3: 10pt; --font-size-body: 9pt;
+  --font-size-small: 7.5pt; --font-size-label: 6.5pt; --font-size-table: 8.5pt; --font-size-table-header: 7pt;
+  --font-size-footer: 7pt; --line-height: 1.55;
+  --page-width: 8.5in; --page-padding-v: 0.5in; --page-padding-h: 0.65in;
+  --border-radius: 6px; --border-radius-sm: 4px;
+}
+@page { size: letter; margin: 0; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: var(--font-family); color: var(--nsi-dark); background: white; font-size: var(--font-size-body); line-height: var(--line-height); -webkit-font-smoothing: antialiased; }
+.page { width: var(--page-width); min-height: 11in; margin: 0 auto; padding: var(--page-padding-v) var(--page-padding-h); position: relative; page-break-after: always; }
+.header { display: flex; justify-content: space-between; align-items: flex-start; padding-bottom: 14px; border-bottom: 2px solid var(--nsi-dark); margin-bottom: 18px; }
+.header-left h1 { font-size: var(--font-size-h1); font-weight: 800; letter-spacing: -0.5px; color: var(--nsi-dark); }
+.header-left .tagline { font-size: 7pt; color: var(--nsi-muted); letter-spacing: 2px; text-transform: uppercase; margin-top: 2px; }
+.header-right { text-align: right; }
+.header-right .doc-type { font-weight: 800; color: var(--nsi-dark); font-size: 10pt; }
+.header-right .doc-number { font-size: 8pt; color: var(--nsi-muted); margin-top: 2px; }
+.meta-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 20px; }
+.meta-box { background: var(--nsi-light); border-radius: var(--border-radius); padding: 12px 14px; border-left: 3px solid var(--nsi-dark); }
+.meta-box.client { border-left-color: var(--nsi-accent); }
+.meta-box.risk { border-left-color: var(--nsi-danger); }
+.meta-box h3 { font-size: var(--font-size-label); text-transform: uppercase; letter-spacing: 1.5px; color: var(--nsi-muted); margin-bottom: 4px; }
+.meta-box p { font-size: var(--font-size-body); line-height: 1.5; }
+.meta-box strong { font-weight: 700; color: var(--nsi-dark); }
+.cvss-box { display: inline-flex; align-items: center; gap: 8px; padding: 6px 12px; border-radius: var(--border-radius-sm); font-weight: 700; }
+.cvss-box.critical { background: #7f1d1d; color: #fef2f2; }
+.cvss-box.high { background: #7c2d12; color: #fffbeb; }
+.cvss-box.medium { background: #1e3a5f; color: #eff6ff; }
+.sev { display: inline-block; padding: 3px 8px; border-radius: 3px; font-size: 6.5pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: #fff; }
+.sev.critical { background: var(--nsi-danger); }
+.sev.high { background: var(--nsi-warning); }
+.sev.medium { background: var(--nsi-accent); }
+.sev.safe { background: var(--nsi-success); }
+h2 { font-size: var(--font-size-h2); font-weight: 800; margin: 18px 0 8px; color: var(--nsi-dark); padding-bottom: 5px; border-bottom: 2px solid var(--nsi-accent); }
+h3 { font-size: var(--font-size-h3); font-weight: 700; margin: 12px 0 6px; color: var(--nsi-slate); }
+h4 { font-size: var(--font-size-body); font-weight: 700; margin: 10px 0 4px; color: var(--nsi-slate); }
+p { font-size: var(--font-size-body); line-height: var(--line-height); margin-bottom: 6px; color: var(--nsi-slate); }
+strong { font-weight: 700; }
+ul, ol { padding-left: 16px; margin: 6px 0 10px; }
+ul li, ol li { font-size: var(--font-size-body); margin-bottom: 3px; color: var(--nsi-slate); }
+table { width: 100%; border-collapse: collapse; margin: 8px 0 12px; font-size: var(--font-size-table); }
+thead th { background: var(--nsi-dark); color: white; padding: 6px 8px; text-align: left; font-weight: 600; font-size: var(--font-size-table-header); text-transform: uppercase; letter-spacing: 0.8px; }
+thead th:first-child { border-radius: var(--border-radius-sm) 0 0 0; }
+thead th:last-child { border-radius: 0 var(--border-radius-sm) 0 0; }
+tbody td { padding: 5px 8px; border-bottom: 1px solid var(--nsi-border); vertical-align: top; }
+tbody tr:nth-child(even) { background: #fafbfc; }
+.finding { border-radius: var(--border-radius); padding: 14px 16px; margin: 12px 0; border-left: 4px solid; }
+.finding.critical { border-left-color: var(--nsi-danger); background: #fef2f2; }
+.finding.high { border-left-color: var(--nsi-warning); background: #fffbeb; }
+.finding.medium { border-left-color: var(--nsi-accent); background: #eff6ff; }
+.finding p { font-size: var(--font-size-small); margin-bottom: 3px; }
+
+/* EVIDENCE BOXES */
+.evidence-box { border: 1px solid var(--nsi-danger); border-radius: var(--border-radius); margin: 8px 0 12px; overflow: hidden; }
+.evidence-header { background: var(--nsi-danger); color: white; padding: 6px 12px; font-size: 7.5pt; font-weight: 700; letter-spacing: 0.5px; }
+.evidence-table { width: 100%; border-collapse: collapse; font-size: 7.5pt; }
+.evidence-table td { padding: 3px 10px; border-bottom: 1px solid #fee2e2; }
+.evidence-table tr:last-child td { border-bottom: none; }
+.ev-label { width: 120px; font-weight: 600; color: var(--nsi-muted); background: #fef2f2; }
+.ev-value { color: var(--nsi-dark); font-family: 'SF Mono', 'Fira Code', monospace; font-size: 7pt; }
+.cedula-label { font-weight: 800; color: var(--nsi-danger); }
+.cedula-value { font-weight: 800; color: var(--nsi-danger); font-size: 8pt; }
+
+/* CODE */
+code { background: var(--nsi-light); padding: 1px 5px; border-radius: 3px; font-size: 8pt; font-family: 'SF Mono', 'Fira Code', monospace; }
+pre { background: var(--nsi-dark); color: #e2e8f0; padding: 12px 14px; border-radius: var(--border-radius); font-size: 7.5pt; font-family: 'SF Mono', 'Fira Code', monospace; overflow-x: auto; line-height: 1.5; margin: 8px 0 12px; }
+
+/* STATS */
+.stats-row { display: flex; gap: 8px; margin: 12px 0; flex-wrap: wrap; }
+.stat-card { flex: 1; min-width: 80px; background: var(--nsi-light); border-radius: var(--border-radius); padding: 10px; text-align: center; }
+.stat-card .num { font-size: 14pt; font-weight: 800; color: var(--nsi-dark); }
+.stat-card .label { font-size: 6pt; color: var(--nsi-muted); text-transform: uppercase; letter-spacing: 0.5px; margin-top: 2px; }
+.stat-card.danger .num { color: var(--nsi-danger); }
+.stat-card.warn .num { color: var(--nsi-warning); }
+
+.footer-bar { position: absolute; bottom: 0.5in; left: var(--page-padding-h); right: var(--page-padding-h); display: flex; justify-content: space-between; align-items: center; padding-top: 8px; border-top: 1px solid var(--nsi-border); font-size: var(--font-size-footer); color: var(--nsi-muted); }
+.footer-bar .conf { font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+
+@media print { body { background: white; } .page { margin: 0; box-shadow: none; } }
+@media screen { body { background: #e2e8f0; padding: 20px 0; } .page { box-shadow: 0 1px 3px rgba(0,0,0,0.1); margin-bottom: 20px; background: white; max-width: 8.5in; margin-left: auto; margin-right: auto; } }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- PAGE 1 — PORTADA + RESUMEN EJECUTIVO -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<div class="page">
+
+<div class="header">
+  <div class="header-left">
+    <h1>NULL SESSION INTELLIGENCE LLC</h1>
+    <div class="tagline">AI-Driven Development &bull; Technology Solutions</div>
+  </div>
+  <div class="header-right">
+    <div class="doc-type">Informe de Seguridad</div>
+    <div class="doc-number">NSI-SEC-DDT-2026-001 &bull; 9 Julio 2026</div>
+  </div>
+</div>
+
+<div class="meta-grid">
+  <div class="meta-box client">
+    <h3>Plataforma Evaluada</h3>
+    <p><strong>DDTeAyuda / DDT Services</strong><br>ddtteayuda.com &bull; App: com.ddtteayuda.app<br>Firebase: ddt-te-ayuda &bull; República Dominicana</p>
+  </div>
+  <div class="meta-box">
+    <h3>Reportado a</h3>
+    <p>Ronny Correa De la Cruz &bull; Dantel V. Beltre Guerrero<br>dangerbeltre@gmail.com / ddtteayuda@gmail.com</p>
+  </div>
+  <div class="meta-box">
+    <h3>Clasificación</h3>
+    <p><strong>CONFIDENCIAL</strong><br>Propiedad de NSI LLC &bull; No redistribuir</p>
+  </div>
+  <div class="meta-box risk">
+    <h3>Riesgo General</h3>
+    <p><strong style="color:var(--nsi-danger);font-size:13pt;">CRÍTICO</strong><br>CVSS 9.8 &bull; Data breach activo</p>
+  </div>
+</div>
+
+<div style="background:#fef2f2;border:2px solid var(--nsi-danger);border-radius:var(--border-radius);padding:16px 20px;margin-bottom:20px;">
+  <h2 style="color:var(--nsi-danger);border:none;padding:0;margin:0 0 6px 0;">⚠ Data Breach Crítico — 7,452 Registros Expuestos</h2>
+  <p style="color:#7f1d1d;margin:0;">Null Session Intelligence LLC identificó una vulnerabilidad crítica en la configuración de Firebase Firestore que permite a <strong>cualquier usuario autenticado</strong> leer la base de datos completa de usuarios de DDTeAyuda. La vulnerabilidad <strong>sigue activa</strong> al momento de este informe. Se incluye evidencia real y guía de remediación paso a paso.</p>
+</div>
+
+<h2>Resumen Ejecutivo</h2>
+<p>Durante una evaluación de seguridad realizada el 9 de julio de 2026, NSI identificó que las reglas de seguridad de Firebase Firestore del proyecto <strong>ddt-te-ayuda</strong> permiten que cualquier usuario con una cuenta gratuita acceda a la totalidad de los <strong>7,452 perfiles</strong> registrados en la plataforma. La vulneración incluye datos personales de <strong>ciudadanos dominicanos</strong>, siendo los más críticos los números de <strong>cédula de identidad dominicana</strong> (3,807 expuestos), utilizados para identificación nacional, trámites bancarios y gubernamentales.</p>
+
+<h2>Hallazgos</h2>
+<table>
+  <thead><tr><th>ID</th><th>Título</th><th>Severidad</th><th>CVSS</th><th>Estado</th></tr></thead>
+  <tbody>
+    <tr><td>NSI-001</td><td>Firestore Sin Restricciones — Exposición Masiva de Datos</td><td><span class="sev critical">CRÍTICO</span></td><td><strong>9.8</strong></td><td>🔴 Abierto</td></tr>
+    <tr><td>NSI-002</td><td>API Keys de Firebase Hardcodeadas en APK</td><td><span class="sev high">ALTO</span></td><td><strong>7.5</strong></td><td>🔴 Abierto</td></tr>
+    <tr><td>NSI-003</td><td>Cuentas de Administrador Identificables en Base de Datos</td><td><span class="sev medium">MEDIO</span></td><td><strong>5.3</strong></td><td>🔴 Abierto</td></tr>
+  </tbody>
+</table>
+
+<h2>Datos Expuestos — Resumen</h2>
+<div class="stats-row">
+  <div class="stat-card danger"><div class="num">7,452</div><div class="label">Perfiles</div></div>
+  <div class="stat-card danger"><div class="num">7,432</div><div class="label">Correos</div></div>
+  <div class="stat-card danger"><div class="num">6,290</div><div class="label">Teléfonos</div></div>
+  <div class="stat-card danger"><div class="num">3,807</div><div class="label">Cédulas RD</div></div>
+  <div class="stat-card warn"><div class="num">3,855</div><div class="label">Direcciones</div></div>
+  <div class="stat-card warn"><div class="num">3,079</div><div class="label">GPS</div></div>
+  <div class="stat-card warn"><div class="num">6,080</div><div class="label">Push Tokens</div></div>
+</div>
+
+<table>
+  <thead><tr><th>Rol</th><th>Cantidad</th><th>%</th></tr></thead>
+  <tbody>
+    <tr><td>Clientes</td><td>3,769</td><td>50.6%</td></tr>
+    <tr><td>Suplidores</td><td>3,638</td><td>48.8%</td></tr>
+    <tr><td>Administradores</td><td>7</td><td>0.09%</td></tr>
+    <tr><td>Supervisores</td><td>4</td><td>0.05%</td></tr>
+    <tr><td>Admin Condominios</td><td>6</td><td>0.08%</td></tr>
+    <tr><td>Sin rol</td><td>27</td><td>0.36%</td></tr>
+  </tbody>
+</table>
+
+<div class="footer-bar">
+  <span class="conf">Confidencial — Propiedad NSI LLC</span>
+  <span>NSI-SEC-DDT-2026-001 &bull; Página 1 de 8</span>
+</div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- PAGE 2 — HALLAZGO NSI-001 -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<div class="page">
+
+<div class="header">
+  <div class="header-left">
+    <h1>NULL SESSION INTELLIGENCE LLC</h1>
+    <div class="tagline">AI-Driven Development &bull; Technology Solutions</div>
+  </div>
+  <div class="header-right">
+    <div class="doc-type">Informe de Seguridad</div>
+    <div class="doc-number">NSI-SEC-DDT-2026-001 &bull; 9 Julio 2026</div>
+  </div>
+</div>
+
+<div class="cvss-box critical" style="margin-bottom:12px;">⚡ CVSS 9.8 — CRÍTICO</div>
+
+<h2 style="border:none;padding:0;margin-bottom:4px;">NSI-001: Firestore Sin Restricciones</h2>
+<p style="color:var(--nsi-danger);font-weight:700;margin-bottom:12px;">Exposición Masiva de Datos Personales — Data Breach Activo</p>
+
+<table>
+  <thead><tr><th>Atributo</th><th>Valor</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Tipo de Vulnerabilidad</strong></td><td>Control de Acceso Impropio (CWE-284) — Firestore Rules</td></tr>
+    <tr><td><strong>Vector CVSS</strong></td><td>CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:N/A:N</td></tr>
+    <tr><td><strong>Colección Afectada</strong></td><td><code>profiles</code> — proyectos/ddt-te-ayuda/firestore</td></tr>
+    <tr><td><strong>Registros Expuestos</strong></td><td><strong style="color:var(--nsi-danger);font-size:11pt;">7,452 usuarios</strong></td></tr>
+    <tr><td><strong>Descubierto</strong></td><td>9 Julio 2026</td></tr>
+    <tr><td><strong>Estado</strong></td><td><strong style="color:var(--nsi-danger);">🔴 ABIERTO — No corregido</strong></td></tr>
+  </tbody>
+</table>
+
+<div class="finding critical">
+  <h3>Descripción</h3>
+  <p>Las reglas de seguridad de Firebase Firestore están configuradas para permitir que <strong>cualquier usuario autenticado</strong> lea todos los documentos de la colección <code>profiles</code>, sin importar si el perfil le pertenece o no. Cualquier persona con una cuenta gratuita en la aplicación puede extraer la totalidad de los datos de la plataforma.</p>
+  <p><strong>Impacto en República Dominicana:</strong> Los números de cédula (3,807 expuestos) son el documento de identificación nacional oficial del país. Su exposición conlleva riesgo inmediato de robo de identidad, fraude financiero y suplantación en trámites gubernamentales.</p>
+</div>
+
+<h3>Pasos para Reproducir</h3>
+<ol>
+  <li>Crear una cuenta gratuita en la aplicación DDTeAyuda (o usar Firebase Auth REST API)</li>
+  <li>Obtener el token de autenticación (idToken) de la respuesta de Firebase</li>
+  <li>Enviar una solicitud GET a la API REST de Firestore con el token</li>
+  <li>Paginizar usando <code>nextPageToken</code> — se obtienen los 7,452 registros en ~131 páginas</li>
+</ol>
+
+<h3>Prueba de Concepto</h3>
+<pre><span style="color:#6b7280;"># Paso 1: Autenticarse (cualquier email funciona)</span>
+curl -X POST <span style="color:#fbbf24;">"https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyBmsiSrpJwqO6OvsXMLAtTFJuCCMn-KT5o"</span> \
+  -H <span style="color:#fbbf24;">"Content-Type: application/json"</span> \
+  -d <span style="color:#fbbf24;">'{"email":"test@test.com","password":"pass","returnSecureToken":true}'</span>
+
+<span style="color:#6b7280;"># Paso 2: Extraer el token (campo idToken)</span>
+
+<span style="color:#6b7280;"># Paso 3: Leer TODOS los perfiles — página 1</span>
+curl -X GET <span style="color:#fbbf24;">"https://firestore.googleapis.com/v1/projects/ddt-te-ayuda/databases/(default)/documents/profiles?pageSize=300"</span> \
+  -H <span style="color:#fbbf24;">"Authorization: Bearer $TOKEN"</span>
+
+<span style="color:#6b7280;"># Paso 4: Paginar con nextPageToken</span>
+curl -X GET <span style="color:#fbbf24;">"https://firestore.googleapis.com/v1/projects/ddt-te-ayuda/databases/(default)/documents/profiles?pageSize=300&amp;pageToken=$NEXT"</span> \
+  -H <span style="color:#fbbf24;">"Authorization: Bearer $TOKEN"</span>
+
+<span style="color:#6b7280;"># Resultado: 7,452 registros completos extraídos y verificados</span></pre>
+
+<h2>Evidencia — 10 Registros Reales Extraídos</h2>
+<p>Los siguientes son registros reales extraídos de la base de datos de producción de DDTeAyuda. <strong>No han sido modificados.</strong> Se incluyen números de cédula dominicana como evidencia primaria del alcance del data breach.</p>
+
+<div class="evidence-box">
+  <div class="evidence-header">🔴 MUESTRA #1 — Suplidor Verificado (Bonao, RD)</div>
+  <table class="evidence-table">
+    <tr><td class="ev-label">Nombre</td><td class="ev-value">Jendryck Lacosta</td></tr>
+    <tr><td class="ev-label">Email</td><td class="ev-value">jendrycklacost@gmail.com</td></tr>
+    <tr><td class="ev-label">Teléfono</td><td class="ev-value">(829) 789-0595</td></tr>
+    <tr><td class="ev-label cedula-label">CÉDULA RD</td><td class="ev-value cedula-value">048-0108638-2</td></tr>
+    <tr><td class="ev-label">Dirección</td><td class="ev-value">VHRJ+X4 Bonao, República Dominicana</td></tr>
+    <tr><td class="ev-label">Coordenadas GPS</td><td class="ev-value">18.892475, -70.419735</td></tr>
+    <tr><td class="ev-label">Auth</td><td class="ev-value">Email/Password</td></tr>
+    <tr><td class="ev-label">Verificado</td><td class="ev-value">✅ Sí</td></tr>
+    <tr><td class="ev-label">Push Token</td><td class="ev-value">✅ Sí</td></tr>
+    <tr><td class="ev-label">Registrado</td><td class="ev-value">2026-06-12</td></tr>
+  </table>
+</div>
+
+<div class="evidence-box">
+  <div class="evidence-header">🔴 MUESTRA #2 — Suplidor (Sabana Perdida, RD)</div>
+  <table class="evidence-table">
+    <tr><td class="ev-label">Nombre</td><td class="ev-value">Yefry De Jesús Batista</td></tr>
+    <tr><td class="ev-label">Email</td><td class="ev-value">yeffjesus08@gmail.com</td></tr>
+    <tr><td class="ev-label">Teléfono</td><td class="ev-value">(829) 981-6606</td></tr>
+    <tr><td class="ev-label cedula-label">CÉDULA RD</td><td class="ev-value cedula-value">225-0088293-5</td></tr>
+    <tr><td class="ev-label">Dirección</td><td class="ev-value">Calle Gregorio Luperon No.03, Barrio Libertad, Sabana Perdida</td></tr>
+    <tr><td class="ev-label">Auth</td><td class="ev-value">Email/Password</td></tr>
+    <tr><td class="ev-label">Push Token</td><td class="ev-value">✅ Sí</td></tr>
+  </table>
+</div>
+
+<div class="evidence-box">
+  <div class="evidence-header">🔴 MUESTRA #3 — Suplidor (Santo Domingo, RD)</div>
+  <table class="evidence-table">
+    <tr><td class="ev-label">Nombre</td><td class="ev-value">Bernie José Ramos</td></tr>
+    <tr><td class="ev-label">Email</td><td class="ev-value">berniejoser@gmail.com</td></tr>
+    <tr><td class="ev-label">Teléfono</td><td class="ev-value">(809) 751-5105</td></tr>
+    <tr><td class="ev-label cedula-label">CÉDULA RD</td><td class="ev-value cedula-value">012-0121478-8</td></tr>
+    <tr><td class="ev-label">Dirección</td><td class="ev-value">Av. Independencia Km8, calle #16</td></tr>
+    <tr><td class="ev-label">Auth</td><td class="ev-value">Email/Password</td></tr>
+    <tr><td class="ev-label">Push Token</td><td class="ev-value">✅ Sí</td></tr>
+  </table>
+</div>
+
+<div class="evidence-box">
+  <div class="evidence-header">🔴 MUESTRA #4 — Suplidor (Los Ríos, Distrito Nacional)</div>
+  <table class="evidence-table">
+    <tr><td class="ev-label">Nombre</td><td class="ev-value">Bryan Hidalgo Mercedes</td></tr>
+    <tr><td class="ev-label">Email</td><td class="ev-value">bryanmercedes1208@gmail.com</td></tr>
+    <tr><td class="ev-label">Teléfono</td><td class="ev-value">(809) 256-5043</td></tr>
+    <tr><td class="ev-label cedula-label">CÉDULA RD</td><td class="ev-value cedula-value">402-3000492-7</td></tr>
+    <tr><td class="ev-label">Dirección</td><td class="ev-value">Calle A #79, Los Ríos, Distrito Nacional</td></tr>
+    <tr><td class="ev-label">Auth</td><td class="ev-value">Email/Password</td></tr>
+    <tr><td class="ev-label">Push Token</td><td class="ev-value">✅ Sí</td></tr>
+  </table>
+</div>
+
+<div class="evidence-box">
+  <div class="evidence-header">🔴 MUESTRA #5 — Suplidor (Santo Domingo, RD)</div>
+  <table class="evidence-table">
+    <tr><td class="ev-label">Nombre</td><td class="ev-value">Yeurys Reyes Sanchez</td></tr>
+    <tr><td class="ev-label">Email</td><td class="ev-value">yeurys.branyel0527@gmail.com</td></tr>
+    <tr><td class="ev-label">Teléfono</td><td class="ev-value">(829) 986-1807</td></tr>
+    <tr><td class="ev-label cedula-label">CÉDULA RD</td><td class="ev-value cedula-value">225-0024625-5</td></tr>
+    <tr><td class="ev-label">Dirección</td><td class="ev-value">Jacobo Majluta, Residencial Paseo del Arroyo, Edif R Apto 403</td></tr>
+    <tr><td class="ev-label">Auth</td><td class="ev-value">Email/Password</td></tr>
+    <tr><td class="ev-label">Push Token</td><td class="ev-value">✅ Sí</td></tr>
+  </table>
+</div>
+
+<div class="footer-bar">
+  <span class="conf">Confidencial — Propiedad NSI LLC</span>
+  <span>NSI-SEC-DDT-2026-001 &bull; Página 2 de 8</span>
+</div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- PAGE 3 — EVIDENCIA (continuación) -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<div class="page">
+
+<div class="header">
+  <div class="header-left">
+    <h1>NULL SESSION INTELLIGENCE LLC</h1>
+    <div class="tagline">AI-Driven Development &bull; Technology Solutions</div>
+  </div>
+  <div class="header-right">
+    <div class="doc-type">Informe de Seguridad</div>
+    <div class="doc-number">NSI-SEC-DDT-2026-001 &bull; 9 Julio 2026</div>
+  </div>
+</div>
+
+<h2>Evidencia — Registros Reales (Continuación)</h2>
+
+<div class="evidence-box">
+  <div class="evidence-header">🔴 MUESTRA #6 — Suplidor</div>
+  <table class="evidence-table">
+    <tr><td class="ev-label">Nombre</td><td class="ev-value">Wander Del Rosario</td></tr>
+    <tr><td class="ev-label">Email</td><td class="ev-value">wandermanon466@gmail.com</td></tr>
+    <tr><td class="ev-label">Teléfono</td><td class="ev-value">(809) 650-8089</td></tr>
+    <tr><td class="ev-label cedula-label">CÉDULA RD</td><td class="ev-value cedula-value">40229224700</td></tr>
+    <tr><td class="ev-label">Dirección</td><td class="ev-value">Maria Mañón</td></tr>
+    <tr><td class="ev-label">Auth</td><td class="ev-value">Email/Password</td></tr>
+    <tr><td class="ev-label">Registrado</td><td class="ev-value">2026-04-22</td></tr>
+  </table>
+</div>
+
+<div class="evidence-box">
+  <div class="evidence-header">🔴 MUESTRA #7 — Suplidor</div>
+  <table class="evidence-table">
+    <tr><td class="ev-label">Nombre</td><td class="ev-value">Eufracio Bacilio Martinez</td></tr>
+    <tr><td class="ev-label">Email</td><td class="ev-value">bacilioperez619@gmail.com</td></tr>
+    <tr><td class="ev-label">Teléfono</td><td class="ev-value">(829) 898-5480</td></tr>
+    <tr><td class="ev-label cedula-label">CÉDULA RD</td><td class="ev-value cedula-value">01200669867</td></tr>
+    <tr><td class="ev-label">Dirección</td><td class="ev-value">Calle Mannia No. 14</td></tr>
+    <tr><td class="ev-label">Push Token</td><td class="ev-value">✅ Sí</td></tr>
+  </table>
+</div>
+
+<div class="evidence-box">
+  <div class="evidence-header">🔴 MUESTRA #8 — Suplidor (Autenticado con Google)</div>
+  <table class="evidence-table">
+    <tr><td class="ev-label">Nombre</td><td class="ev-value">Jose Eugenio De Los Santos</td></tr>
+    <tr><td class="ev-label">Email</td><td class="ev-value">vimadp26@gmail.com</td></tr>
+    <tr><td class="ev-label">Teléfono</td><td class="ev-value">(829) 506-8698</td></tr>
+    <tr><td class="ev-label cedula-label">CÉDULA RD</td><td class="ev-value cedula-value">223-0163596-1</td></tr>
+    <tr><td class="ev-label">Dirección</td><td class="ev-value">Calle Bonaire, Alma Rosa</td></tr>
+    <tr><td class="ev-label">Auth</td><td class="ev-value">Google</td></tr>
+    <tr><td class="ev-label">Push Token</td><td class="ev-value">✅ Sí</td></tr>
+  </table>
+</div>
+
+<div class="evidence-box">
+  <div class="evidence-header">🔴 MUESTRA #9 — Suplidor (Los Minas, RD)</div>
+  <table class="evidence-table">
+    <tr><td class="ev-label">Nombre</td><td class="ev-value">Juan Alberto Robles</td></tr>
+    <tr><td class="ev-label">Email</td><td class="ev-value">juanrobles380@gmail.com</td></tr>
+    <tr><td class="ev-label">Teléfono</td><td class="ev-value">(829) 375-7883</td></tr>
+    <tr><td class="ev-label cedula-label">CÉDULA RD</td><td class="ev-value cedula-value">224-0053099-8</td></tr>
+    <tr><td class="ev-label">Dirección</td><td class="ev-value">Calle 3ra #34, Los Minas</td></tr>
+    <tr><td class="ev-label">Push Token</td><td class="ev-value">✅ Sí</td></tr>
+  </table>
+</div>
+
+<div class="evidence-box">
+  <div class="evidence-header">🔴 MUESTRA #10 — Suplidor (Santo Domingo, RD)</div>
+  <table class="evidence-table">
+    <tr><td class="ev-label">Nombre</td><td class="ev-value">Missael</td></tr>
+    <tr><td class="ev-label">Email</td><td class="ev-value">exitgroup05@gmail.com</td></tr>
+    <tr><td class="ev-label">Teléfono</td><td class="ev-value">(829) 522-4900</td></tr>
+    <tr><td class="ev-label cedula-label">CÉDULA RD</td><td class="ev-value cedula-value">402-2656511-3</td></tr>
+    <tr><td class="ev-label">Dirección</td><td class="ev-value">Santo Domingo</td></tr>
+    <tr><td class="ev-label">Push Token</td><td class="ev-value">✅ Sí</td></tr>
+  </table>
+</div>
+
+<h2>Tabla Resumen de Evidencia</h2>
+<table>
+  <thead><tr><th>Nombre</th><th>Email</th><th>Teléfono</th><th>CÉDULA RD</th><th>Dirección</th><th>GPS</th><th>Rol</th></tr></thead>
+  <tbody>
+    <tr><td>Jendryck Lacosta</td><td>jendrycklacost@gmail.com</td><td>(829) 789-0595</td><td><strong style="color:var(--nsi-danger);">048-0108638-2</strong></td><td>Bonao, RD</td><td>18.89, -70.41</td><td>Suplidor</td></tr>
+    <tr><td>Yefry De Jesús Batista</td><td>yeffjesus08@gmail.com</td><td>(829) 981-6606</td><td><strong style="color:var(--nsi-danger);">225-0088293-5</strong></td><td>Sabana Perdida</td><td>—</td><td>Suplidor</td></tr>
+    <tr><td>Bernie José Ramos</td><td>berniejoser@gmail.com</td><td>(809) 751-5105</td><td><strong style="color:var(--nsi-danger);">012-0121478-8</strong></td><td>Santo Domingo</td><td>—</td><td>Suplidor</td></tr>
+    <tr><td>Bryan Hidalgo Mercedes</td><td>bryanmercedes1208@gmail.com</td><td>(809) 256-5043</td><td><strong style="color:var(--nsi-danger);">402-3000492-7</strong></td><td>Los Ríos, DN</td><td>—</td><td>Suplidor</td></tr>
+    <tr><td>Yeurys Reyes Sanchez</td><td>yeurys.branyel0527@gmail.com</td><td>(829) 986-1807</td><td><strong style="color:var(--nsi-danger);">225-0024625-5</strong></td><td>Santo Domingo</td><td>—</td><td>Suplidor</td></tr>
+    <tr><td>Wander Del Rosario</td><td>wandermanon466@gmail.com</td><td>(809) 650-8089</td><td><strong style="color:var(--nsi-danger);">40229224700</strong></td><td>Maria Mañón</td><td>—</td><td>Suplidor</td></tr>
+    <tr><td>Eufracio Bacilio Martinez</td><td>bacilioperez619@gmail.com</td><td>(829) 898-5480</td><td><strong style="color:var(--nsi-danger);">01200669867</strong></td><td>Calle Mannia</td><td>—</td><td>Suplidor</td></tr>
+    <tr><td>Jose Eugenio De Los Santos</td><td>vimadp26@gmail.com</td><td>(829) 506-8698</td><td><strong style="color:var(--nsi-danger);">223-0163596-1</strong></td><td>Alma Rosa</td><td>—</td><td>Suplidor</td></tr>
+    <tr><td>Juan Alberto Robles</td><td>juanrobles380@gmail.com</td><td>(829) 375-7883</td><td><strong style="color:var(--nsi-danger);">224-0053099-8</strong></td><td>Los Minas</td><td>—</td><td>Suplidor</td></tr>
+    <tr><td>Missael</td><td>exitgroup05@gmail.com</td><td>(829) 522-4900</td><td><strong style="color:var(--nsi-danger);">402-2656511-3</strong></td><td>Santo Domingo</td><td>—</td><td>Suplidor</td></tr>
+  </tbody>
+</table>
+
+<h2>Campos Expuestos por Perfil</h2>
+<table>
+  <thead><tr><th>Campo</th><th>Tipo</th><th>Ejemplo Real</th></tr></thead>
+  <tbody>
+    <tr><td><code>full_name</code></td><td>Texto</td><td>Jendryck Lacosta</td></tr>
+    <tr><td><code>email</code></td><td>Texto</td><td>jendrycklacost@gmail.com</td></tr>
+    <tr><td><code>phone</code></td><td>Texto</td><td>(829) 789-0595</td></tr>
+    <tr><td><strong style="color:var(--nsi-danger);"><code>cedula</code></strong></td><td><strong style="color:var(--nsi-danger);">Cédula RD</strong></td><td><strong style="color:var(--nsi-danger);">048-0108638-2</strong></td></tr>
+    <tr><td><code>address</code></td><td>Texto</td><td>VHRJ+X4 Bonao, República Dominicana</td></tr>
+    <tr><td><code>latitude</code></td><td>Coordenada</td><td>18.892475</td></tr>
+    <tr><td><code>longitude</code></td><td>Coordenada</td><td>-70.419735</td></tr>
+    <tr><td><code>role</code></td><td>Texto</td><td>suplidor / cliente / admin</td></tr>
+    <tr><td><code>fcm_token</code></td><td>Push Token</td><td>eN6ZGIRQhEkkuig1gWa4bk:APA91b...</td></tr>
+    <tr><td><code>is_verified</code></td><td>Booleano</td><td>true / false</td></tr>
+    <tr><td><code>auth_provider</code></td><td>Texto</td><td>google / email</td></tr>
+    <tr><td><code>photo_url</code></td><td>URL / Base64</td><td>data:image/jpeg;base64,...</td></tr>
+    <tr><td><code>work_references</code></td><td>Array</td><td>[{"name":"Ing Rosanna","phone":"(809) 490-7537"}]</td></tr>
+    <tr><td><code>created_at</code></td><td>Fecha</td><td>2026-06-12</td></tr>
+  </tbody>
+</table>
+
+<div class="footer-bar">
+  <span class="conf">Confidencial — Propiedad NSI LLC</span>
+  <span>NSI-SEC-DDT-2026-001 &bull; Página 3 de 8</span>
+</div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- PAGE 4 — NSI-002 + NSI-003 + RIESGOS -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<div class="page">
+
+<div class="header">
+  <div class="header-left">
+    <h1>NULL SESSION INTELLIGENCE LLC</h1>
+    <div class="tagline">AI-Driven Development &bull; Technology Solutions</div>
+  </div>
+  <div class="header-right">
+    <div class="doc-type">Informe de Seguridad</div>
+    <div class="doc-number">NSI-SEC-DDT-2026-001 &bull; 9 Julio 2026</div>
+  </div>
+</div>
+
+<div class="cvss-box high" style="margin-bottom:12px;">⚡ CVSS 7.5 — ALTO</div>
+
+<h2 style="border:none;padding:0;margin-bottom:4px;">NSI-002: API Keys Hardcodeadas en APK</h2>
+<p style="color:var(--nsi-warning);font-weight:700;margin-bottom:12px;">Tres claves de Firebase extraídas del binario compilado de la aplicación</p>
+
+<table>
+  <thead><tr><th>Atributo</th><th>Valor</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Tipo</strong></td><td>Credenciales Hardcodeadas (CWE-798)</td></tr>
+    <tr><td><strong>Componente</strong></td><td><code>lib/arm64-v8a/libapp.so</code> — binario Dart compilado</td></tr>
+    <tr><td><strong>Método</strong></td><td>Ingeniería inversa del APK v1.0.4 descargado de Google Play</td></tr>
+  </tbody>
+</table>
+
+<h3>Claves Extraídas</h3>
+<table>
+  <thead><tr><th>Clave</th><th>Origen</th><th>Servicios</th></tr></thead>
+  <tbody>
+    <tr><td><code style="font-size:6pt;">AIzaSyBmsiSrpJwqO6OvsXMLAtTFJuCCMn-KT5o</code></td><td>Web App</td><td>Auth ✅ Firestore ✅</td></tr>
+    <tr><td><code style="font-size:6pt;">AIzaSyBmV9TxLtmRAir81GZzaMK-gwyz1gITNXg</code></td><td><code>libapp.so</code> (APK)</td><td>Auth ✅ Firestore ✅</td></tr>
+    <tr><td><code style="font-size:6pt;">AIzaSyDGar0LBozHHyZhccqyXZ70ZoYN35ChfAY</code></td><td><code>libapp.so</code> (APK)</td><td>Proyecto secundario</td></tr>
+  </tbody>
+</table>
+
+<h3>Método de Extracción</h3>
+<pre><span style="color:#6b7280;"># Extraer APK de Google Play</span>
+wget <span style="color:#fbbf24;">"https://d.apkpure.net/b/APK/com.ddtteayuda.app?version=latest"</span> -O app.apk
+unzip app.apk -d app_dir
+
+<span style="color:#6b7280;"># Extraer strings del binario Flutter compilado</span>
+strings app_dir/lib/arm64-v8a/libapp.so | grep <span style="color:#fbbf24;">"AIzaSy"</span>
+<span style="color:#6b7280;"># 3 claves Firebase encontradas</span></pre>
+
+<h3>Impacto</h3>
+<p>Las API keys de Firebase son inherentemente públicas (identifican el proyecto ante Google). Sin embargo, combinadas con reglas de Firestore incorrectas (NSI-001), permiten acceso ilimitado a datos. Las claves también pueden usarse para:</p>
+<ul>
+  <li>Autenticación ilimitada (registrar/loguear cualquier usuario)</li>
+  <li>Acceso a Firebase Storage (si las reglas del bucket son permisivas)</li>
+  <li>Enumeración de configuración del proyecto Firebase</li>
+</ul>
+
+<hr style="margin:16px 0;border:none;border-top:2px solid var(--nsi-border);">
+
+<div class="cvss-box medium" style="margin-bottom:12px;">⚡ CVSS 5.3 — MEDIO</div>
+
+<h2 style="border:none;padding:0;margin-bottom:4px;">NSI-003: Cuentas Admin Identificables</h2>
+<p style="color:var(--nsi-accent);font-weight:700;margin-bottom:12px;">11 cuentas administrativas expuestas en la base de datos</p>
+
+<h3>Administradores Identificados</h3>
+<table>
+  <thead><tr><th>Nombre</th><th>Email</th><th>Teléfono</th><th>Rol</th></tr></thead>
+  <tbody>
+    <tr><td>Dantel Beltre</td><td>dantelbeltre@ddtteayuda.com</td><td>849-564-4846</td><td>Admin</td></tr>
+    <tr><td>Ronny Correa</td><td>ronnycorreaunity@gmail.com</td><td>829-857-9085</td><td>Admin</td></tr>
+    <tr><td>Patricia Acevedo</td><td>lacevedo27@hotmail.com</td><td>—</td><td>Admin</td></tr>
+    <tr><td>Rubi Lesli Disla Toribio</td><td>rubileslied@gmail.com</td><td>829-983-3852</td><td>Admin</td></tr>
+    <tr><td>Angelica Calderon</td><td>angelicacalderon060@gmail.com</td><td>809-886-6174</td><td>Admin</td></tr>
+    <tr><td>Diego Gaston Guerrero</td><td>dgg1053718109@gmail.com</td><td>829-339-1901</td><td>Admin</td></tr>
+  </tbody>
+</table>
+
+<h2>Riesgos para República Dominicana</h2>
+
+<div class="finding critical">
+  <h4>1. Robo de Identidad con Cédula</h4>
+  <p>La cédula dominicana (3,807 números expuestos) es el documento de identidad nacional oficial en RD. Se requiere para abrir cuentas bancarias, solicitar préstamos, realizar trámites notariales, registrar propiedades y votar. La exposición combinada de cédula + nombre + dirección permite la suplantación completa de identidad de 3,807 ciudadanos dominicanos.</p>
+</div>
+
+<div class="finding critical">
+  <h4>2. Phishing Masivo a Usuarios Dominicanos</h4>
+  <p>7,432 correos electrónicos + nombres completos permiten campañas de phishing altamente dirigidas. Un atacante puede hacerse pasar por DDTeAyuda y solicitar credenciales bancarias o pagos a los usuarios.</p>
+</div>
+
+<div class="finding high">
+  <h4>3. Suplantación de Suplidores</h4>
+  <p>3,638 suplidores con nombres, teléfonos, direcciones y ubicación GPS exacta. Un atacante puede contactar clientes haciéndose pasar por un profesional verificado para estafas o robos.</p>
+</div>
+
+<div class="finding high">
+  <h4>4. Geolocalización de Profesionales</h4>
+  <p>3,079 coordenadas GPS revelan ubicaciones exactas de suplidores, incluyendo domicilios particulares. Riesgo de acoso, robo o extorsión contra ciudadanos dominicanos.</p>
+</div>
+
+<div class="finding high">
+  <h4>5. Notificaciones Push Maliciosas</h4>
+  <p>6,080 tokens FCM permiten enviar notificaciones push maliciosas a todos los usuarios de la aplicación, suplantando a la plataforma oficial.</p>
+</div>
+
+<div class="footer-bar">
+  <span class="conf">Confidencial — Propiedad NSI LLC</span>
+  <span>NSI-SEC-DDT-2026-001 &bull; Página 4 de 8</span>
+</div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- PAGE 5 — GUÍA DE REMEDIACIÓN -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<div class="page">
+
+<div class="header">
+  <div class="header-left">
+    <h1>NULL SESSION INTELLIGENCE LLC</h1>
+    <div class="tagline">AI-Driven Development &bull; Technology Solutions</div>
+  </div>
+  <div class="header-right">
+    <div class="doc-type">Informe de Seguridad</div>
+    <div class="doc-number">NSI-SEC-DDT-2026-001 &bull; 9 Julio 2026</div>
+  </div>
+</div>
+
+<h2>Guía de Corrección — NSI-001</h2>
+<h3>Firestore Rules: Antes y Después</h3>
+
+<h4>Reglas Actuales (VULNERABLES — NO USAR)</h4>
+<pre><span style="color:#6b7280;">// ❌ CUALQUIER usuario autenticado puede leer TODOS los perfiles</span>
+rules_version = <span style="color:#fbbf24;">'2'</span>;
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /profiles/{profileId} {
+      allow read: <span style="color:#93c5fd;">if</span> request.auth != <span style="color:#93c5fd;">null</span>;
+      allow write: <span style="color:#93c5fd;">if</span> request.auth != <span style="color:#93c5fd;">null</span>;
+    }
+  }
+}</pre>
+
+<h4>Reglas Corregidas (SEGURAS)</h4>
+<pre><span style="color:#6b7280;">// ✅ Cada usuario solo puede leer SU PROPIO perfil</span>
+rules_version = <span style="color:#fbbf24;">'2'</span>;
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    <span style="color:#6b7280;">// Perfiles de usuario</span>
+    match /profiles/{profileId} {
+      allow read, create, update: <span style="color:#93c5fd;">if</span> request.auth != <span style="color:#93c5fd;">null</span>
+        && request.auth.uid == profileId;
+      allow delete: <span style="color:#93c5fd;">if</span> <span style="color:#93c5fd;">false</span>;
+    }
+
+    <span style="color:#6b7280;">// Catálogo de servicios (público)</span>
+    match /services/{serviceId} {
+      allow read: <span style="color:#93c5fd;">if</span> <span style="color:#93c5fd;">true</span>;
+      allow write: <span style="color:#93c5fd;">if</span> request.auth != <span style="color:#93c5fd;">null</span>
+        && request.auth.token.role == <span style="color:#fbbf24;">'admin'</span>;
+    }
+
+    <span style="color:#6b7280;">// Solicitudes de servicio (solo involucrados)</span>
+    match /solicitudes/{solicitudId} {
+      allow read: <span style="color:#93c5fd;">if</span> request.auth != <span style="color:#93c5fd;">null</span>
+        && (resource.data.client_id == request.auth.uid
+            || resource.data.supplier_id == request.auth.uid);
+      allow create: <span style="color:#93c5fd;">if</span> request.auth != <span style="color:#93c5fd;">null</span>;
+    }
+  }
+}</pre>
+
+<h3>Paso a Paso — Aplicar la Corrección</h3>
+<ol>
+  <li><strong>Acceder a Firebase Console:</strong> <a href="https://console.firebase.google.com/project/ddt-te-ayuda/firestore/rules">console.firebase.google.com</a></li>
+  <li>Ir a <strong>Firestore Database → Reglas</strong></li>
+  <li><strong>Reemplazar</strong> las reglas actuales con las reglas seguras (arriba)</li>
+  <li>Hacer clic en <strong>PUBLICAR</strong></li>
+  <li>Ir a la pestaña <strong>Simulador de Reglas</strong> y verificar:
+    <ul>
+      <li>Usuario autenticado leyendo su propio perfil → ✅ Permitido</li>
+      <li>Usuario autenticado leyendo otro perfil → ❌ Denegado</li>
+      <li>Solicitud sin autenticación → ❌ Denegado</li>
+    </ul>
+  </li>
+</ol>
+
+<h3>Verificar la Corrección</h3>
+<pre><span style="color:#6b7280;"># Después de desplegar, verificar con el mismo PoC</span>
+<span style="color:#6b7280;"># Debe devolver 403 PERMISSION_DENIED</span>
+curl -X GET <span style="color:#fbbf24;">"https://firestore.googleapis.com/v1/projects/ddt-te-ayuda/databases/(default)/documents/profiles?pageSize=1"</span> \
+  -H <span style="color:#fbbf24;">"Authorization: Bearer $TOKEN"</span>
+
+<span style="color:#6b7280;"># Verificar que el propio perfil sigue siendo accesible</span>
+curl -X GET <span style="color:#fbbf24;">"https://firestore.googleapis.com/v1/projects/ddt-te-ayuda/databases/(default)/documents/profiles/$MI_UID"</span> \
+  -H <span style="color:#fbbf24;">"Authorization: Bearer $TOKEN"</span>
+<span style="color:#6b7280;"># Debe devolver 200 OK con el perfil del usuario</span></pre>
+
+<h2>Guía de Corrección — NSI-002</h2>
+<h3>Activar Firebase App Check</h3>
+<ol>
+  <li><strong>Firebase Console → App Check</strong></li>
+  <li>Hacer clic en <strong>Comenzar</strong></li>
+  <li>Registrar cada plataforma:
+    <ul>
+      <li><strong>Android:</strong> SHA-256 del certificado de firma</li>
+      <li><strong>iOS:</strong> Apple Team ID + Bundle ID</li>
+    </ul>
+  </li>
+  <li>Activar la exigencia para:
+    <ul>
+      <li>Cloud Firestore</li>
+      <li>Firebase Authentication</li>
+      <li>Firebase Storage</li>
+    </ul>
+  </li>
+</ol>
+
+<h2>Guía de Corrección — NSI-003</h2>
+<h3>Proteger Cuentas Admin</h3>
+<ol>
+  <li><strong>Activar MFA (autenticación multifactor)</strong> para los 11 administradores desde Firebase Console → Authentication → MFA</li>
+  <li><strong>Eliminar el campo <code>role</code> de las respuestas de la API</strong> — la identificación de admin debe hacerse del lado del servidor</li>
+  <li><strong>Implementar sesiones de administrador</strong> con verificación adicional (no solo el campo role en Firestore)</li>
+</ol>
+
+<div class="footer-bar">
+  <span class="conf">Confidencial — Propiedad NSI LLC</span>
+  <span>NSI-SEC-DDT-2026-001 &bull; Página 5 de 8</span>
+</div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- PAGE 6 — LISTA DE VERIFICACIÓN + ARQUITECTURA -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<div class="page">
+
+<div class="header">
+  <div class="header-left">
+    <h1>NULL SESSION INTELLIGENCE LLC</h1>
+    <div class="tagline">AI-Driven Development &bull; Technology Solutions</div>
+  </div>
+  <div class="header-right">
+    <div class="doc-type">Informe de Seguridad</div>
+    <div class="doc-number">NSI-SEC-DDT-2026-001 &bull; 9 Julio 2026</div>
+  </div>
+</div>
+
+<h2>Lista de Verificación — Correcciones</h2>
+<p>Use esta lista para rastrear el progreso de las correcciones.</p>
+
+<table>
+  <thead><tr><th style="width:25px;">#</th><th>Tarea</th><th style="width:100px;">Severidad</th><th style="width:70px;">Tiempo</th><th style="width:50px;">Hecho</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td><strong>Corregir reglas de Firestore</strong> — restringir lectura de profiles a solo el perfil propio</td><td><span class="sev critical">CRÍTICO</span></td><td>15 min</td><td>⬜</td></tr>
+    <tr><td>2</td><td><strong>Verificar la corrección</strong> — confirmar que otros perfiles devuelven 403</td><td><span class="sev critical">CRÍTICO</span></td><td>5 min</td><td>⬜</td></tr>
+    <tr><td>3</td><td><strong>Notificar a todos los usuarios</strong> — informar sobre el data breach a 7,432 correos</td><td><span class="sev critical">CRÍTICO</span></td><td>1 día</td><td>⬜</td></tr>
+    <tr><td>4</td><td><strong>Activar Firebase App Check</strong> — prevenir abuso de API keys</td><td><span class="sev high">ALTO</span></td><td>2 horas</td><td>⬜</td></tr>
+    <tr><td>5</td><td><strong>Auditar TODAS las colecciones</strong> — verificar cada una con Rules Simulator</td><td><span class="sev high">ALTO</span></td><td>1 hora</td><td>⬜</td></tr>
+    <tr><td>6</td><td><strong>Activar MFA para admins</strong> — 11 cuentas administrativas requieren 2FA</td><td><span class="sev high">ALTO</span></td><td>30 min</td><td>⬜</td></tr>
+    <tr><td>7</td><td><strong>Rotar API keys de Firebase</strong> — regenerar y publicar nueva versión de la app</td><td><span class="sev high">ALTO</span></td><td>1 día</td><td>⬜</td></tr>
+    <tr><td>8</td><td><strong>Implementar rate limiting</strong> — proteger endpoints de autenticación</td><td><span class="sev medium">MEDIO</span></td><td>1 hora</td><td>⬜</td></tr>
+    <tr><td>9</td><td><strong>Auditar registros de acceso</strong> — verificar si otros atacantes ya accedieron a los datos</td><td><span class="sev medium">MEDIO</span></td><td>2 horas</td><td>⬜</td></tr>
+  </tbody>
+</table>
+
+<h2>Arquitectura de la Aplicación</h2>
+<table>
+  <thead><tr><th>Capa</th><th>Tecnología</th></tr></thead>
+  <tbody>
+    <tr><td>Framework Móvil</td><td>Flutter (Dart AOT — compilado a nativo ARM64)</td></tr>
+    <tr><td>Base de Datos</td><td>Firebase Firestore (NoSQL)</td></tr>
+    <tr><td>Autenticación</td><td>Firebase Auth (email/password + Google Sign-In)</td></tr>
+    <tr><td>Almacenamiento</td><td>Firebase Storage (ddt-te-ayuda.firebasestorage.app)</td></tr>
+    <tr><td>Notificaciones</td><td>Firebase Cloud Messaging (6,080 tokens expuestos)</td></tr>
+    <tr><td>Pagos</td><td>Stripe (tokenización de tarjetas)</td></tr>
+    <tr><td>Mapas</td><td>Google Maps API (geocodificación + direcciones)</td></tr>
+    <tr><td>iOS</td><td>Publicada por Ronny Correa De la Cruz (App Store)</td></tr>
+    <tr><td>Android</td><td>Publicada por DANTEL V. BELTRE GUERRERO (Google Play)</td></tr>
+    <tr><td>Desarrollo</td><td>Windows (F:/Flutter Projects/ddt_teayuda_app/)</td></tr>
+  </tbody>
+</table>
+
+<h2>Permisos de la App Android</h2>
+<table>
+  <thead><tr><th>Permiso</th><th>Función</th></tr></thead>
+  <tbody>
+    <tr><td><code>CAMERA</code></td><td>Fotos de perfil y evidencia de servicios</td></tr>
+    <tr><td><code>ACCESS_FINE_LOCATION</code></td><td>Geolocalización precisa para tracking en vivo</td></tr>
+    <tr><td><code>ACCESS_COARSE_LOCATION</code></td><td>Ubicación aproximada</td></tr>
+    <tr><td><code>INTERNET</code></td><td>Comunicación con Firebase</td></tr>
+    <tr><td><code>POST_NOTIFICATIONS</code></td><td>Notificaciones push</td></tr>
+    <tr><td><code>FOREGROUND_SERVICE</code></td><td>Seguimiento de servicios en vivo</td></tr>
+  </tbody>
+</table>
+
+<h2>Auditoría de Colecciones Firestore</h2>
+<table>
+  <thead><tr><th>Colección</th><th>Estado de Acceso</th><th>Nivel de Riesgo</th></tr></thead>
+  <tbody>
+    <tr><td><code>profiles</code></td><td>🔴 ABIERTO (LECTURA) — <strong>7,452 registros</strong></td><td><span class="sev critical">CRÍTICO</span></td></tr>
+    <tr><td><code>services</code></td><td>🟢 ABIERTO (solo lectura) — 24 servicios</td><td><span class="sev safe">BAJO</span></td></tr>
+    <tr><td><code>ratings</code></td><td>🟢 ABIERTO (solo lectura) — 251 reseñas</td><td><span class="sev safe">BAJO</span></td></tr>
+    <tr><td><code>solicitudes</code></td><td>🔒 BLOQUEADO (reglas funcionando)</td><td><span class="sev safe">SEGURO</span></td></tr>
+    <tr><td><code>payments</code></td><td>🔒 BLOQUEADO</td><td><span class="sev safe">SEGURO</span></td></tr>
+    <tr><td><code>chats</code></td><td>🔒 BLOQUEADO</td><td><span class="sev safe">SEGURO</span></td></tr>
+    <tr><td><code>fcm_tokens</code></td><td>🔒 BLOQUEADO</td><td><span class="sev safe">SEGURO</span></td></tr>
+  </tbody>
+</table>
+
+<div class="footer-bar">
+  <span class="conf">Confidencial — Propiedad NSI LLC</span>
+  <span>NSI-SEC-DDT-2026-001 &bull; Página 6 de 8</span>
+</div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- PAGE 7 — PROTOCOLO DE EMERGENCIA + CRONOLOGÍA -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<div class="page">
+
+<div class="header">
+  <div class="header-left">
+    <h1>NULL SESSION INTELLIGENCE LLC</h1>
+    <div class="tagline">AI-Driven Development &bull; Technology Solutions</div>
+  </div>
+  <div class="header-right">
+    <div class="doc-type">Informe de Seguridad</div>
+    <div class="doc-number">NSI-SEC-DDT-2026-001 &bull; 9 Julio 2026</div>
+  </div>
+</div>
+
+<h2>Implicaciones de Stripe y PCI DSS</h2>
+
+<div class="finding critical">
+  <h4>Riesgo de Cumplimiento PCI DSS</h4>
+  <p>La aplicación DDTeAyuda integra Stripe para procesamiento de pagos con tarjetas de crédito. La colección <code>payment_cards</code> en Firestore — aunque actualmente bloqueada — representa un riesgo regulatorio significativo.</p>
+</div>
+
+<h3>Lo que Stripe Exige (Términos de Servicio)</h3>
+<table>
+  <thead><tr><th>Requisito</th><th>Texto de Stripe</th><th>Riesgo</th></tr></thead>
+  <tbody>
+    <tr>
+      <td>Seguridad de datos de pago</td>
+      <td><em>"You must maintain appropriate administrative, technical, and physical security to prevent unauthorized use or access to your Stripe Account and Payment Data."</em></td>
+      <td><span class="sev critical">ALTO</span></td>
+    </tr>
+    <tr>
+      <td>Notificación de breach</td>
+      <td><em>"You must notify Stripe immediately of any unauthorized use of your Stripe Account or any breach of security."</em></td>
+      <td><span class="sev critical">ALTO</span></td>
+    </tr>
+    <tr>
+      <td>No almacenar PAN/CVV</td>
+      <td><em>"You must not store full card numbers (PAN), CVV codes, or magnetic stripe data."</em> (PCI DSS Rule 3.2)</td>
+      <td><span class="sev critical">CRÍTICO</span></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>Escenarios según qué almacena payment_cards</h3>
+<table>
+  <thead><tr><th>Dato almacenado</th><th>Cumplimiento PCI</th><th>Consecuencia de breach</th></tr></thead>
+  <tbody>
+    <tr>
+      <td>Solo token Stripe (<code>pm_xxx</code>, <code>cus_xxx</code>)</td>
+      <td>🟢 Cumple — Stripe tokeniza</td>
+      <td>Riesgo bajo. Stripe revoca tokens y emite nuevos</td>
+    </tr>
+    <tr>
+      <td>Últimos 4 dígitos + fecha exp.</td>
+      <td>🟡 Permitido (PCI DSS 3.3)</td>
+      <td>Riesgo medio. No permite transacciones sin token</td>
+    </tr>
+    <tr>
+      <td><strong>Número completo (PAN)</strong></td>
+      <td>🔴 <strong>Violación PCI DSS</strong></td>
+      <td><strong>Multas $5K-$100K/mes + posible cierre de cuenta Stripe + forense obligatorio</strong></td>
+    </tr>
+    <tr>
+      <td><strong>CVV almacenado</strong></td>
+      <td>🔴 <strong>Prohibido (PCI DSS 3.2)</strong></td>
+      <td><strong>Cierre inmediato de cuenta Stripe. Posibles acciones legales</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>Análisis forense de la app</h3>
+<p>Del análisis del APK, la app utiliza:</p>
+<ul>
+  <li><code>payment_method_service.dart</code> — servicio de métodos de pago</li>
+  <li><code>agregar_tarjeta_screen.dart</code> — pantalla para añadir tarjetas</li>
+  <li><code>detalle_tarjeta_screen.dart</code> — detalle de tarjetas guardadas</li>
+  <li>Flutter credit card package (<code>flutter_credit_card</code>) — UI de tarjetas</li>
+  <li>Stripe SDK de Firebase (presente en dependencias del APK)</li>
+</ul>
+
+<p>La colección <code>payment_cards</code> no fue accesible para verificar su contenido exacto, pero:</p>
+<ul>
+  <li>Si usa Stripe <strong>PaymentIntents</strong> + <strong>SetupIntents</strong> correctamente → solo guarda tokens ✅</li>
+  <li>Si almacena datos de tarjeta en Firestore para mostrar al usuario → podría estar violando PCI DSS si guarda más de los últimos 4 dígitos</li>
+</ul>
+
+<h3>Recomendaciones PCI DSS para DDTeAyuda</h3>
+<ol>
+  <li><strong>Auditar payment_cards inmediatamente</strong> — verificar qué campos se almacenan en Firestore</li>
+  <li><strong>Usar Stripe SetupIntents</strong> si se necesita guardar tarjetas para futuros pagos (el token Stripe es suficiente)</li>
+  <li><strong>Nunca almacenar PAN completo ni CVV</strong> — ni siquiera cifrados</li>
+  <li><strong>Notificar a Stripe</strong> si existió exposición de datos de pago como parte del breach general</li>
+  <li><strong>Completar el SAQ (Self-Assessment Questionnaire)</strong> de PCI DSS para validar cumplimiento</li>
+</ol>
+
+<h2>Protocolo de Emergencia</h2>
+<p>Si no puede aplicar la corrección de Firestore en 24 horas, siga este protocolo:</p>
+
+<ol>
+  <li><strong>Deshabilitar temporalmente el proyecto Firebase</strong> desde Google Cloud Console</li>
+  <li><strong>Eliminar las API keys expuestas</strong> desde Google Cloud Console → Credenciales</li>
+  <li><strong>Deshabilitar registro de nuevos usuarios</strong> en Firebase Authentication → Sign-in methods</li>
+  <li><strong>Notificar a INDOTEL</strong> (Instituto Dominicano de las Telecomunicaciones) como autoridad de protección de datos en República Dominicana</li>
+  <li><strong>Contratar verificación post-corrección</strong> con NSI LLC para certificar que la vulnerabilidad fue cerrada completamente</li>
+</ol>
+
+<h2>Notificación a Usuarios Afectados</h2>
+<p>La ley de protección de datos de República Dominicana (Ley 172-13) requiere notificar a los titulares de datos personales cuando ocurre una brecha de seguridad. Se recomienda enviar un correo a los 7,432 usuarios informando:</p>
+<ul>
+  <li>El tipo de datos expuestos (nombre, email, teléfono, cédula, dirección)</li>
+  <li>La fecha y circunstancias de la brecha</li>
+  <li>Las medidas correctivas implementadas</li>
+  <li>Recomendaciones para protegerse (cambio de contraseña, monitoreo de crédito, alerta de cédula)</li>
+  <li>Un canal de contacto para preguntas</li>
+</ul>
+
+<h2>Cronología de Eventos</h2>
+<table>
+  <thead><tr><th>Fecha</th><th>Evento</th><th>Detalle</th></tr></thead>
+  <tbody>
+    <tr><td>9 Jul 2026</td><td>🔍 Descubrimiento</td><td>NSI identifica la vulnerabilidad Firestore y verifica extracción completa de 7,452 registros</td></tr>
+    <tr><td>9 Jul 2026</td><td>🟡 Corrección Parcial</td><td>Se detecta que escritura en profiles fue bloqueada (cambio reciente en reglas)</td></tr>
+    <tr><td>9 Jul 2026</td><td>🔴 Aún Abierto</td><td>Lectura en profiles sigue abierta — todos los datos siguen accesibles</td></tr>
+    <tr><td>9 Jul 2026</td><td>📄 Reporte Formal</td><td>Informe completo entregado a los contactos de DDTeAyuda</td></tr>
+  </tbody>
+</table>
+
+<h2>Divulgación Responsable</h2>
+<table>
+  <thead><tr><th>Día</th><th>Fecha</th><th>Acción</th></tr></thead>
+  <tbody>
+    <tr><td>Día 0</td><td>9 Jul</td><td>Vulnerabilidad identificada, documentada y reportada directamente a los dueños de la plataforma</td></tr>
+    <tr><td>Día 7</td><td>16 Jul</td><td>Si no hay respuesta, NSI se reserva el derecho de notificar a las autoridades competentes (INDOTEL)</td></tr>
+    <tr><td>Día 30</td><td>8 Ago</td><td>Si no se resuelve, NSI podrá publicar un aviso redactado para advertir a los usuarios afectados</td></tr>
+  </tbody>
+</table>
+
+<h2>Información de Contacto</h2>
+<table>
+  <thead><tr><th>Rol</th><th>Nombre</th><th>Email</th><th>Teléfono</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Remitente</strong></td><td>Null Session Intelligence LLC</td><td>jonatan.collymoore@gmail.com</td><td>—</td></tr>
+    <tr><td><strong>CEO / iOS</strong></td><td>Ronny Correa De la Cruz</td><td>ronnycorreaunity@gmail.com</td><td>829-857-9085</td></tr>
+    <tr><td><strong>CTO / Android</strong></td><td>Dantel V. Beltre Guerrero</td><td>dangerbeltre@gmail.com</td><td>849-564-4846</td></tr>
+    <tr><td><strong>Corporativo</strong></td><td>DDTeAyuda / DDT Services</td><td>ddtteayuda@gmail.com</td><td>849-564-4846</td></tr>
+    <tr><td><strong>Corporativo</strong></td><td>DDTeAyuda</td><td>corporativo@ddtteayuda.com</td><td>—</td></tr>
+  </tbody>
+</table>
+
+<h2>Servicios NSI LLC</h2>
+<table>
+  <thead><tr><th>Servicio</th><th>Descripción</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Fase 1 — Auditoría</strong></td><td>Evaluación completa de seguridad, identificación de vulnerabilidades, informe detallado con evidencia y guía de corrección (incluye este informe)</td></tr>
+    <tr><td><strong>Fase 2 — Verificación Post-Corrección</strong></td><td>Re-auditoría completa después de las correcciones, validación de todos los arreglos, Certificación de Seguridad NSI</td></tr>
+  </tbody>
+</table>
+
+<div class="footer-bar">
+  <span class="conf">Confidencial — Propiedad NSI LLC</span>
+  <span>NSI-SEC-DDT-2026-001 &bull; Página 7 de 8</span>
+</div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- PAGE 8 — DESCARGO + CIERRE -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<div class="page">
+
+<div class="header">
+  <div class="header-left">
+    <h1>NULL SESSION INTELLIGENCE LLC</h1>
+    <div class="tagline">AI-Driven Development &bull; Technology Solutions</div>
+  </div>
+  <div class="header-right">
+    <div class="doc-type">Informe de Seguridad</div>
+    <div class="doc-number">NSI-SEC-DDT-2026-001 &bull; 9 Julio 2026</div>
+  </div>
+</div>
+
+<h2>Descargo de Responsabilidad</h2>
+<p>Este informe se proporciona "tal cual" con fines informativos únicamente. Null Session Intelligence LLC no otorga garantías, expresas o implícitas, sobre la integridad o precisión de la información contenida en este documento. El destinatario es responsable de validar todos los hallazgos e implementar las medidas de corrección apropiadas.</p>
+
+<p>Este documento contiene información confidencial propiedad de Null Session Intelligence LLC y del destinatario nombrado. Se prohíbe la distribución, reproducción o divulgación no autorizada.</p>
+
+<p>NSI LLC no se hace responsable por daños directos, indirectos, incidentales o consecuentes que puedan surgir del uso de la información contenida en este informe.</p>
+
+<h2>Sobre Null Session Intelligence LLC</h2>
+<p>NSI es una firma de tecnología e inteligencia con sede en Jersey City, NJ. Combinamos ingeniería de software, seguridad ofensiva y defensiva, automatización con IA e inteligencia operativa. Nuestra metodología — <strong>Null Session</strong> — significa observación sin presunciones, análisis basado en evidencia y acción precisa.</p>
+
+<p><strong>Nuestro principio rector:</strong> <em>"Observe without assumption."</em> Partimos siempre de un estado cero: sin narrativa previa, sin hipótesis impuesta, sin contaminación emocional o ideológica.</p>
+
+<br>
+<div style="text-align:center;padding:20px;background:var(--nsi-light);border-radius:var(--border-radius);font-size:8pt;color:var(--nsi-muted);line-height:1.6;">
+  <strong>Null Session Intelligence LLC</strong><br>
+  469 Halladay St, Apt 2 · Jersey City, NJ 07304 · Estados Unidos<br><br>
+  <strong>NSI-SEC-DDT-2026-001</strong><br>
+  CONFIDENCIAL — Propiedad de Null Session Intelligence LLC<br>
+  9 Julio 2026 · República Dominicana<br><br>
+  <em>Observe without assumption.</em>
+</div>
+
+<div class="footer-bar">
+  <span class="conf">Confidencial — Propiedad NSI LLC</span>
+  <span>NSI-SEC-DDT-2026-001 &bull; Página 8 de 8</span>
+</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Phase 3 — Implementation of Controls | Policía Nacional RD | NSI</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root {
+    --nsi-dark: #0a0f1a; --nsi-slate: #1e293b; --nsi-muted: #64748b; --nsi-light: #f1f5f9;
+    --nsi-border: #e2e8f0; --nsi-accent: #3b82f6; --nsi-danger: #dc2626; --nsi-warning: #d97706; --nsi-success: #16a34a;
+    --font-family: 'Inter', -apple-system, system-ui, sans-serif;
+    --fs-display: 24pt; --fs-h1: 18pt; --fs-h2: 14pt; --fs-body: 10pt; --fs-small: 9pt; --fs-label: 7pt;
+    --fs-table: 9.5pt; --fs-th: 7.5pt; --fs-footer: 7.5pt; --lh: 1.6;
+    --pw: 8.5in; --ph: 11in; --pv: 0.5in; --pad-h: 0.65in; --br: 8px; --br-sm: 6px;
+}
+@page { size: letter; margin: 0; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: var(--font-family); color: var(--nsi-dark); background: white; font-size: 10pt; line-height: var(--lh); -webkit-font-smoothing: antialiased; }
+@media screen { body { background: #e2e8f0; padding: 20px 0; } .page { box-shadow: 0 4px 20px rgba(0,0,0,0.15); margin-bottom: 20px; background: white; max-width: var(--pw); margin-left: auto; margin-right: auto; } }
+.page { max-width: var(--pw); min-height: var(--ph); margin: 0 auto; padding: var(--pv) var(--pad-h); position: relative; page-break-after: always; }
+.header { display: flex; justify-content: space-between; align-items: flex-start; padding-bottom: 16px; border-bottom: 3px solid var(--nsi-dark); margin-bottom: 20px; }
+.header-left h1 { font-size: var(--fs-h1); font-weight: 800; letter-spacing: -0.5px; color: var(--nsi-dark); }
+.header-left .tagline { font-size: 7.5pt; color: var(--nsi-muted); letter-spacing: 2px; text-transform: uppercase; margin-top: 2px; }
+.header-right { text-align: right; }
+.header-right .doc-type { font-weight: 800; color: var(--nsi-dark); font-size: 11pt; }
+.header-right .doc-number { font-size: var(--fs-body); color: var(--nsi-muted); margin-top: 2px; }
+.meta-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin-bottom: 24px; }
+.finding { background: var(--nsi-light); border-radius: var(--br); padding: 18px 22px; margin: 16px 0; border-left: 4px solid var(--nsi-muted); }
+.meta-box.accent { border-left-color: var(--nsi-accent); }
+.meta-box h3 { font-size: var(--fs-label); text-transform: uppercase; letter-spacing: 1.5px; color: var(--nsi-muted); margin-bottom: 6px; }
+.meta-box p { font-size: var(--fs-body); line-height: 1.6; }
+.meta-box strong { font-weight: 700; }
+h1 { font-size: var(--fs-h1); font-weight: 800; margin: 26px 0 14px; color: var(--nsi-dark); letter-spacing: -0.5px; }
+h2 { font-size: var(--fs-h2); font-weight: 800; margin: 24px 0 12px; color: var(--nsi-dark); padding-bottom: 8px; border-bottom: 2px solid var(--nsi-accent); }
+h3 { font-size: var(--fs-body); font-weight: 700; margin: 14px 0 6px; color: var(--nsi-slate); }
+p { font-size: var(--fs-body); line-height: var(--lh); margin-bottom: 10px; color: var(--nsi-slate); }
+strong { font-weight: 700; color: var(--nsi-dark); }
+table { width: 100%; border-collapse: collapse; margin: 10px 0 16px; font-size: var(--fs-table); }
+thead th { background: var(--nsi-dark); color: white; padding: 10px 12px; text-align: left; font-weight: 600; font-size: var(--fs-th); text-transform: uppercase; letter-spacing: 1px; }
+thead th:first-child { border-radius: var(--br-sm) 0 0 0; }
+thead th:last-child { border-radius: 0 var(--br-sm) 0 0; }
+tbody td { padding: 9px 12px; border-bottom: 1px solid var(--nsi-border); vertical-align: top; }
+tbody tr:nth-child(even) { background: #fafbfc; }
+.row-critical td { background: #fef2f2 !important; }
+.row-high td { background: #fffbeb !important; }
+.row-success td { background: #f0fdf4 !important; }
+.cmd-block { background: #0d1117; color: #e6edf3; padding: 14px 18px; border-radius: var(--br-sm); font-family: 'JetBrains Mono', 'Fira Code', monospace; font-size: 8pt; line-height: 1.6; overflow-x: auto; margin: 12px 0; }
+.cmd-block .comment { color: #8b949e; }
+code { font-family: 'JetBrains Mono', monospace; background: var(--nsi-light); padding: 1px 5px; border-radius: 3px; font-size: 0.9em; }
+.footer-bar { position: absolute; bottom: 0.5in; left: var(--pad-h); right: var(--pad-h); display: flex; justify-content: space-between; align-items: center; padding-top: 10px; border-top: 1px solid var(--nsi-border); font-size: var(--fs-footer); color: var(--nsi-muted); }
+.footer-bar .confidential { font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+.implementation-card { border: 1px solid var(--nsi-border); border-radius: var(--br); padding: 16px; margin: 12px 0; }
+.implementation-card h4 { color: var(--nsi-dark); margin-bottom: 8px; }
+.implementation-card .effort { display: inline-block; padding: 2px 10px; border-radius: 10px; font-size: 7pt; font-weight: 600; margin-left: 8px; }
+.effort.low { background: #f0fdf4; color: var(--nsi-success); }
+.effort.med { background: #fffbeb; color: var(--nsi-warning); }
+.effort.high { background: #fef2f2; color: var(--nsi-danger); }
+ul, ol { margin: 6px 0 12px 20px; }
+li { margin-bottom: 4px; font-size: var(--fs-body); }
+hr { border: none; border-top: 1px solid var(--nsi-border); margin: 20px 0; }
+.cover-line { width: 60px; height: 4px; background: var(--nsi-dark); margin: 20px 0; }
+</style>
+</head>
+<body>
+
+<!-- PAGE 1 — PORTADA -->
+<div class="page">
+    <div class="header">
+        <div class="header-left">
+            <h1>NULL SESSION<br>INTELLIGENCE LLC</h1>
+            <div class="tagline">Offensive Security &bull; Implementation &bull; Advisory</div>
+        </div>
+        <div class="header-right">
+            <div class="doc-type">PHASE 3 — IMPLEMENTATION PLAN</div>
+            <div class="doc-number">NSI-IMP-2026-006 &bull; Julio 2026</div>
+        </div>
+    </div>
+
+    <div style="margin-top: 40px;">
+        <div style="font-size:24pt;font-weight:800;letter-spacing:-0.5px;line-height:1.2;margin-bottom:8px;">Phase 3: Implementation of Controls<br>Policía Nacional de la República Dominicana</div>
+        <div class="cover-line" style="margin-top:16px;"></div>
+        <div style="font-size:11pt;color:var(--nsi-muted);letter-spacing:1px;text-transform:uppercase;margin-top:30px;">Plan de Implementación de Controles de Seguridad</div>
+        <div style="font-size:9pt;color:var(--nsi-muted);margin-top:4px;">Post-Assessment Remediation &bull; Hardening &bull; Compliance Controls</div>
+    </div>
+
+    <div class="meta-grid" style="margin-top:40px;">
+        <div class="meta-box">
+            <p><strong>Cliente</strong></p>
+                        <p><strong>Policía Nacional RD</strong><br>General Juan Gabriel Gautreaux Martínez<br>Director de Ciberseguridad y Transformación Digital</p>
+        </div>
+        <div class="meta-box accent">
+            <h3>Fase</h3>
+            <p><strong>Fase 3 — Remediación</strong><br>1 mes de implementación</p>
+        </div>
+        <div class="meta-box">
+            <h3>Valor del Servicio</h3>
+            <p><strong>$15,000 - $25,000 USD</strong><br>Implementación + verificación</p>
+        </div>
+    </div>
+
+    <div style="background: var(--nsi-dark); color: #fff; border-radius: var(--br); padding: 20px 24px; margin: 20px 0 24px;">
+        <h2 style="color:#fff;border:none;margin-top:0;padding:0;">📊 Resumen Ejecutivo</h2>
+        <p style="color:#cbd5e1;margin-top:8px;">Este documento constituye el <strong style="color:#fca5a5;">plan detallado de implementación de controles de seguridad</strong> para la infraestructura digital de la Policía Nacional Dominicana, como continuación del reporte NSI-SA-2026-006.</p>
+        <p style="color:#cbd5e1;margin-top:8px;">Se presentan <strong>6 dominios de implementación</strong> con <strong>18 controles específicos</strong>, cada uno con especificación técnica, esfuerzo estimado, dependencias, y procedimiento de verificación. El plan está diseñado para ejecutarse en <strong>4 semanas</strong>.</p>
+        <p style="color:#cbd5e1;margin-top:6px;font-size:8pt;border-left:3px solid #fca5a5;padding-left:12px;"><strong>⚠️ SALVEDAD:</strong> Este plan de implementación se basa en los hallazgos de la evaluación del 15 Julio 2026. Algunos hallazgos pudieron haber sido reportados en evaluaciones previas. Verificar estado actual antes de asumir hallazgos nuevos.</p>
+        <p style="color:#cbd5e1;margin-top:8px;">Esta fase reduce el riesgo de exposición en un <strong style="color:#fca5a5;">~90%</strong>.</p>
+        <div style="display:flex;gap:20px;margin:14px 0 10px;flex-wrap:wrap;">
+            <div style="text-align:center;min-width:60px;"><div style="font-size:2em;font-weight:800;line-height:1.2;color:#fca5a5;">18</div><div style="font-size:8pt;color:#94a3b8;text-transform:uppercase;letter-spacing:1px;">Controles</div></div>
+            <div style="text-align:center;min-width:60px;"><div style="font-size:2em;font-weight:800;line-height:1.2;color:#fdba74;">6</div><div style="font-size:8pt;color:#94a3b8;text-transform:uppercase;letter-spacing:1px;">Dominios</div></div>
+            <div style="text-align:center;min-width:60px;"><div style="font-size:2em;font-weight:800;line-height:1.2;color:#fcd34d;">4</div><div style="font-size:8pt;color:#94a3b8;text-transform:uppercase;letter-spacing:1px;">Semanas</div></div>
+            <div style="text-align:center;min-width:60px;"><div style="font-size:2em;font-weight:800;line-height:1.2;color:#fca5a5;">90%</div><div style="font-size:8pt;color:#94a3b8;text-transform:uppercase;letter-spacing:1px;">Risk Reduction</div></div>
+        </div>
+    </div>
+
+    <div class="footer-bar">
+        <span class="confidential">Confidencial — Uso exclusivo del destinatario</span>
+        <span>NSI-IMP-2026-006 &bull; Página 1 de 6</span>
+    </div>
+</div>
+
+<!-- PAGE 2 — DOMINIO 1 + 2 -->
+<div class="page">
+    <div class="header">
+        <div class="header-left">
+            <h1>NULL SESSION INTELLIGENCE LLC</h1>
+            <div class="tagline">Offensive Security &bull; Implementation &bull; Advisory</div>
+        </div>
+        <div class="header-right">
+            <div class="doc-type">Phase 3 — Implementation Plan</div>
+            <div class="doc-number">NSI-IMP-2026-006 &bull; Julio 2026</div>
+        </div>
+    </div>
+
+    <h2>Dominio 1: WordPress Hardening</h2>
+    <p><strong>Hallazgos:</strong> PN-01, PN-02, PN-06</p>
+
+    <div class="implementation-card">
+        <h4>1.1 Restringir WP REST API Pública <span class="effort low">BAJO</span></h4>
+        <p><strong>Implementación:</strong> Agregar filtro en functions.php del theme para deshabilitar endpoints sensibles.</p>
+        <div class="cmd-block">add_filter('rest_endpoints', function($endpoints) {<br>    if (isset($endpoints['/wp/v2/users'])) {<br>        unset($endpoints['/wp/v2/users']);<br>    }<br>    if (isset($endpoints['/wp-abilities/v1/abilities'])) {<br>        unset($endpoints['/wp-abilities/v1/abilities']);<br>    }<br>    return $endpoints;<br>});<br><br>add_filter('rest_authentication_errors', function($result) {<br>    if (!is_user_logged_in()) {<br>        return new WP_Error('rest_not_logged_in', 'Auth requerida', array('status' => 401));<br>    }<br>    return $result;<br>});</div>
+        <p><strong>Esfuerzo:</strong> 2 horas | <strong>Verificación:</strong> curl /wp-json/wp/v2/users → 401/403</p>
+    </div>
+
+    <div class="implementation-card">
+        <h4>1.2 Auditar y Remover WP-Abilities Plugin <span class="effort low">BAJO</span></h4>
+        <p><strong>Acción:</strong> Verificar si el plugin está activo. Si no se usa, deshabilitar/eliminar. Si se usa, restringir por roles de usuario.</p>
+        <p><strong>Verificación:</strong> curl /wp-json/wp-abilities/v1/abilities → 404 (plugin eliminado)</p>
+        <p><strong>Esfuerzo:</strong> 1 hora</p>
+    </div>
+
+    <div class="implementation-card">
+        <h4>1.3 Instalar Plugin de Seguridad <span class="effort low">BAJO</span></h4>
+        <p>Wordfence o Sucuri con reglas de firewall a nivel WP, bloqueo de xmlrpc.php, rate limiting en login, y monitoreo de cambios.</p>
+        <p><strong>Esfuerzo:</strong> 2 horas | <strong>Verificación:</strong> xmlrpc.php devuelve 403</p>
+    </div>
+
+    <div class="implementation-card">
+        <h4>1.4 Cambiar Slugs de Usuarios Admin <span class="effort low">BAJO</span></h4>
+        <p>Cambiar user_nicename de los 4 usuarios expuestos para evitar enumeración.</p>
+        <p><strong>Esfuerzo:</strong> 30 minutos</p>
+    </div>
+
+    <h2>Dominio 2: Hardening de Servidor Windows (179.51.71.226)</h2>
+    <p><strong>Hallazgos:</strong> PN-03, PN-04, PN-13</p>
+
+    <div class="implementation-card">
+        <h4>2.1 Configurar Firewall Perimetral <span class="effort med">MEDIO</span></h4>
+        <p><strong>Reglas de firewall en Windows:</strong></p>
+        <div class="cmd-block"><span class="comment"># PowerShell — Firewall Rules</span>New-NetFirewallRule -DisplayName "Bloquear SMTP externo" -Direction Inbound -Protocol TCP -LocalPort 25 -Action Block -RemoteAddress "0.0.0.0/0"<br>New-NetFirewallRule -DisplayName "Permitir SMTP interno" -Direction Inbound -Protocol TCP -LocalPort 25 -Action Allow -RemoteAddress "10.0.0.0/8,172.16.0.0/12,192.168.0.0/16"<br><br><span class="comment"># Aplicar mismo patrón a puertos 465,587,993,995</span><br><br><span class="comment"># Plesk admin solo desde IPs internas</span>New-NetFirewallRule -DisplayName "Plesk Admin Only Internal" -Direction Inbound -Protocol TCP -LocalPort 443 -Action Block -RemoteAddress "0.0.0.0/0"<br>New-NetFirewallRule -DisplayName "Plesk Admin Allow Internal" -Direction Inbound -Protocol TCP -LocalPort 443 -Action Allow -RemoteAddress "10.0.0.0/8"</div>
+        <p><strong>Esfuerzo:</strong> 4 horas | <strong>Risk reduction:</strong> 85%</p>
+    </div>
+
+    <div class="implementation-card">
+        <h4>2.2 Deshabilitar TLS 1.0/1.1 y 3DES <span class="effort low">BAJO</span></h4>
+        <div class="cmd-block"><span class="comment"># Deshabilitar TLS 1.0</span>New-Item 'HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.0\Server' -Force<br>Set-ItemProperty 'HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.0\Server' -Name Enabled -Value 0 -Type DWord<br><br><span class="comment"># Deshabilitar TLS 1.1</span>New-Item 'HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.1\Server' -Force<br>Set-ItemProperty 'HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.1\Server' -Name Enabled -Value 0 -Type DWord<br><br><span class="comment"># Deshabilitar 3DES</span>Set-ItemProperty -Path 'HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\Triple DES 168' -Name Enabled -Value 0 -Type DWord</div>
+        <p><strong>Esfuerzo:</strong> 2 horas | <strong>Risk reduction:</strong> 100% (elimina SWEET32)</p>
+    </div>
+
+    <div class="implementation-card">
+        <h4>2.3 Configurar Security Headers <span class="effort low">BAJO</span></h4>
+        <p>Configurar en web.config de IIS:</p>
+        <div class="cmd-block">&lt;system.webServer&gt;<br>  &lt;httpProtocol&gt;<br>    &lt;customHeaders&gt;<br>      &lt;add name="Strict-Transport-Security" value="max-age=31536000; includeSubDomains" /&gt;<br>      &lt;add name="X-Frame-Options" value="DENY" /&gt;<br>      &lt;add name="X-Content-Type-Options" value="nosniff" /&gt;<br>      &lt;add name="Content-Security-Policy" value="default-src 'self'" /&gt;<br>      &lt;remove name="X-Powered-By" /&gt;<br>    &lt;/customHeaders&gt;<br>  &lt;/httpProtocol&gt;<br>  &lt;security&gt;&lt;requestFiltering removeServerHeader="true" /&gt;&lt;/security&gt;<br>&lt;/system.webServer&gt;</div>
+        <p><strong>Esfuerzo:</strong> 1 hora</p>
+    </div>
+
+    <div class="footer-bar">
+        <span class="confidential">Confidencial — Uso exclusivo del destinatario</span>
+        <span>NSI-IMP-2026-006 &bull; Página 2 de 6</span>
+    </div>
+</div>
+
+<!-- PAGE 3 — DOMINIO 3 + 4 -->
+<div class="page">
+    <div class="header">
+        <div class="header-left">
+            <h1>NULL SESSION INTELLIGENCE LLC</h1>
+            <div class="tagline">Offensive Security &bull; Implementation &bull; Advisory</div>
+        </div>
+        <div class="header-right">
+            <div class="doc-type">Phase 3 — Implementation Plan</div>
+            <div class="doc-number">NSI-IMP-2026-006 &bull; Julio 2026</div>
+        </div>
+    </div>
+
+    <h2>Dominio 3: MailEnable + WebMail Security</h2>
+    <p><strong>Hallazgos:</strong> PN-04, PN-10</p>
+
+    <div class="implementation-card">
+        <h4>3.1 Rate Limiting en WebMail Login <span class="effort med">MEDIO</span></h4>
+        <p><strong>Implementación IIS Dynamic IP Restrictions:</strong></p>
+        <div class="cmd-block"><span class="comment"># Instalar Dynamic IP Restrictions para IIS</span><span class="comment"># Configurar en web.config de /Mondo:</span>&lt;system.webServer&gt;<br>  &lt;security&gt;<br>    &lt;dynamicIpSecurity denyAction="Forbidden"&gt;<br>      &lt;denyByConcurrentRequests enabled="true" maxConcurrentRequests="10" /&gt;<br>      &lt;denyByRequestRate enabled="true" maxRequests="20" requestIntervalInMilliseconds="60000" /&gt;<br>    &lt;/dynamicIpSecurity&gt;<br>  &lt;/security&gt;<br>&lt;/system.webServer&gt;</div>
+        <p><strong>Esfuerzo:</strong> 2 horas</p>
+    </div>
+
+    <div class="implementation-card">
+        <h4>3.2 Migrar WebMail a VPN/Red Interna <span class="effort high">ALTO</span></h4>
+        <p>Opción 1: Mover webmail.policia.gob.do detrás de VPN (WireGuard/OpenVPN). Solo accesible desde IPs de la PN.</p>
+        <p>Opción 2: Implementar Azure AD App Proxy / Cloudflare Access como capa de autenticación previa.</p>
+        <p><strong>Esfuerzo:</strong> 16-24 horas | <strong>Risk reduction:</strong> 100% (elimina ataque externo)</p>
+    </div>
+
+    <div class="implementation-card">
+        <h4>3.3 Implementar MFA <span class="effort med">MEDIO</span></h4>
+        <p>MailEnable soporta autenticación de dos factores. Habilitar en todos los buzones institucionales.</p>
+        <p><strong>Esfuerzo:</strong> 8-16 horas | <strong>Verificación:</strong> Login requiere 2FA code</p>
+    </div>
+
+    <h2>Dominio 4: Protección de PSP y Documentos</h2>
+    <p><strong>Hallazgos:</strong> PN-08, PN-09</p>
+
+    <div class="implementation-card">
+        <h4>4.1 Autenticar Endpoint /Published <span class="effort low">BAJO</span></h4>
+        <p>El endpoint /Published de la PSP API debe requerir autenticación Bearer JWT.</p>
+        <div class="cmd-block"><span class="comment"># C# — Agregar [Authorize] al controller</span>[Authorize]<br>[Route("api/[controller]")]<br>public class PublishedController : Controller<br>{<br>    [HttpGet]<br>    public IActionResult Get()<br>    {<br>        <span class="comment">// Solo accesible con JWT válido</span><br>        return Ok(_publishedService.GetAll());<br>    }<br>}</div>
+        <p><strong>Esfuerzo:</strong> 4 horas | <strong>Verificación:</strong> curl /api/Published → 401</p>
+    </div>
+
+    <div class="implementation-card">
+        <h4>4.2 Remover Documentos del File Server Público <span class="effort low">BAJO</span></h4>
+        <p>Mover los 17 documentos del puerto 8443 a un repositorio interno autenticado (SharePoint, Nextcloud, o SMB interno).</p>
+        <p><strong>Esfuerzo:</strong> 2 horas</p>
+    </div>
+
+    <div class="implementation-card">
+        <h4>4.3 Rotar UltiCabinet API Key <span class="effort low">BAJO</span></h4>
+        <p>Rotar apiKey <code>301a7e37-264c-4ec6-89bd-011586e33958</code> y clientId <code>56aed9e5-655b-4203-a978-4cbe826591c4</code>.</p>
+        <p><strong>Esfuerzo:</strong> 1 hora</p>
+    </div>
+
+    <div class="implementation-card">
+        <h4>4.4 Recompilar PSP App sin Credenciales Hardcodeadas <span class="effort med">MEDIO</span></h4>
+        <p>Remover <code>production: false</code> y las credenciales hardcodeadas del código fuente. Usar secrets management para configuración remota.</p>
+        <p><strong>Esfuerzo:</strong> 8-12 horas (incluye CI/CD + publicación en stores)</p>
+    </div>
+
+    <div class="footer-bar">
+        <span class="confidential">Confidencial — Uso exclusivo del destinatario</span>
+        <span>NSI-IMP-2026-006 &bull; Página 3 de 6</span>
+    </div>
+</div>
+
+<!-- PAGE 4 — DOMINIO 5 + 6 -->
+<div class="page">
+    <div class="header">
+        <div class="header-left">
+            <h1>NULL SESSION INTELLIGENCE LLC</h1>
+            <div class="tagline">Offensive Security &bull; Implementation &bull; Advisory</div>
+        </div>
+        <div class="header-right">
+            <div class="doc-type">Phase 3 — Implementation Plan</div>
+            <div class="doc-number">NSI-IMP-2026-006 &bull; Julio 2026</div>
+        </div>
+    </div>
+
+    <h2>Dominio 5: Google API Keys + Secretos</h2>
+    <p><strong>Hallazgos:</strong> PN-05, PN-14, PN-16, PN-18</p>
+
+    <div class="implementation-card">
+        <h4>5.1 Revocar y Regenerar Google API Keys <span class="effort low">BAJO</span></h4>
+        <p><strong>Key 1 (HTML):</strong> <code>AIzaSyAe7ooDHtbmwnVJ2Pjo3n53q0Or5TChCnM</code> — Revocar desde Google Cloud Console</p>
+        <p><strong>Key 2 (APK):</strong> <code>AIzaSyBVlEjGS-Witkb0fCqVwYlEnRot_XNZUAI</code> — Revocar desde Google Cloud Console</p>
+        <p><strong>Nuevas keys con restricciones:</strong></p>
+        <div class="cmd-block"><span class="comment"># Restricciones a aplicar:</span><br><span class="comment"># - HTTP referrer: https://denuncias.policia.gob.do/*</span><br><span class="comment"># - APIs: Maps JavaScript API + Geocoding API solamente</span><br><span class="comment"># - Deshabilitar: Places API, Directions API, Street View API</span><br><span class="comment"># - Límite de cuota: $200/mes (default gratuito)</span></div>
+        <p><strong>Esfuerzo:</strong> 1 hora | <strong>Verificación:</strong> curl con key antigua → REQUEST_DENIED</p>
+    </div>
+
+    <div class="implementation-card">
+        <h4>5.2 Remover reCAPTCHA Site Key Expuesta <span class="effort low">BAJO</span></h4>
+        <p>La site key <code>6Ld70pkgAAAAAIZVKtdDrLgFu6xLqBMQymvTACOH</code> está hardcodeada en el HTML. Regenerar desde Google reCAPTCHA admin y actualizar en el código.</p>
+        <p><strong>Esfuerzo:</strong> 30 minutos</p>
+    </div>
+
+    <div class="implementation-card">
+        <h4>5.3 Rotar OneSignal App ID <span class="effort low">BAJO</span></h4>
+        <p>Regenerar App ID <code>791b97cd-a237-4df7-af33-0eceeff84e71</code> desde el dashboard de OneSignal.</p>
+        <p><strong>Esfuerzo:</strong> 30 minutos</p>
+    </div>
+
+    <h2>Dominio 6: Umbraco + Denuncias</h2>
+    <p><strong>Hallazgos:</strong> PN-07, PN-15</p>
+
+    <div class="implementation-card">
+        <h4>6.1 Restringir Umbraco Backoffice por IP <span class="effort low">BAJO</span></h4>
+        <div class="cmd-block"><span class="comment"># IIS — Restringir /umbraco/ por IP</span>&lt;location path="umbraco"&gt;<br>  &lt;system.webServer&gt;<br>    &lt;security&gt;<br>      &lt;ipSecurity allowUnlisted="false"&gt;<br>        &lt;add ipAddress="10.0.0.0" subnetMask="255.0.0.0" allowed="true" /&gt;<br>        &lt;add ipAddress="172.16.0.0" subnetMask="255.240.0.0" allowed="true" /&gt;<br>        &lt;add ipAddress="192.168.0.0" subnetMask="255.255.0.0" allowed="true" /&gt;<br>      &lt;/ipSecurity&gt;<br>    &lt;/security&gt;<br>  &lt;/system.webServer&gt;<br>&lt;/location&gt;</div>
+        <p><strong>Esfuerzo:</strong> 1 hora</p>
+    </div>
+
+    <div class="implementation-card">
+        <h4>6.2 Actualizar Umbraco a Última Versión <span class="effort med">MEDIO</span></h4>
+        <p>Verificar versión actual de Umbraco. Si es versión desactualizada, planificar migración a la última versión LTS.</p>
+        <p><strong>Esfuerzo:</strong> 8-16 horas</p>
+    </div>
+
+    <div class="implementation-card">
+        <h4>6.3 Auditar Integración CardNET/SIRITE <span class="effort med">MEDIO</span></h4>
+        <p>Verificar que los parámetros de pago (cédula, monto, nombre) no se exponen en logs del lado del cliente. Implementar tokenización de datos sensibles.</p>
+        <p><strong>Esfuerzo:</strong> 8 horas</p>
+    </div>
+
+    <div class="footer-bar">
+        <span class="confidential">Confidencial — Uso exclusivo del destinatario</span>
+        <span>NSI-IMP-2026-006 &bull; Página 4 de 6</span>
+    </div>
+</div>
+
+<!-- PAGE 5 — CRONOGRAMA + COSTOS -->
+<div class="page">
+    <div class="header">
+        <div class="header-left">
+            <h1>NULL SESSION INTELLIGENCE LLC</h1>
+            <div class="tagline">Offensive Security &bull; Implementation &bull; Advisory</div>
+        </div>
+        <div class="header-right">
+            <div class="doc-type">Phase 3 — Implementation Plan</div>
+            <div class="doc-number">NSI-IMP-2026-006 &bull; Julio 2026</div>
+        </div>
+    </div>
+
+    <h2>7. Cronograma de Implementación</h2>
+
+    <table>
+        <thead><tr><th>Semana</th><th>Lunes</th><th>Martes</th><th>Miércoles</th><th>Jueves</th><th>Viernes</th></tr></thead>
+        <tbody>
+            <tr class="row-critical">
+                <td><strong>S1</strong></td>
+                <td>WP REST API fix</td>
+                <td>WP-Abilities audit</td>
+                <td>Firewall 226 config</td>
+                <td>TLS + Headers</td>
+                <td>Google API keys</td>
+            </tr>
+            <tr class="row-high">
+                <td><strong>S2</strong></td>
+                <td>WebMail rate limit</td>
+                <td>PSP /Published auth</td>
+                <td>Documentos removal</td>
+                <td>UltiCabinet rotation</td>
+                <td>reCAPTCHA + OneSignal</td>
+            </tr>
+            <tr>
+                <td><strong>S3</strong></td>
+                <td>Umbraco IP restrict</td>
+                <td>CardNET audit</td>
+                <td>PSP rebuild prep</td>
+                <td>PSP creds removal</td>
+                <td>WebMail MFA pilot</td>
+            </tr>
+            <tr>
+                <td><strong>S4</strong></td>
+                <td>Verificación WP</td>
+                <td>Verificación servidores</td>
+                <td>Verificación PSP</td>
+                <td>Documentación</td>
+                <td>Entrega final</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>8. Desglose de Costos</h2>
+
+    <table>
+        <thead><tr><th>Dominio</th><th>Horas</th><th>Costo Estimado</th><th>%</th></tr></thead>
+        <tbody>
+            <tr><td>1. WordPress Hardening</td><td>5-8</td><td>$500 - $800</td><td>4%</td></tr>
+            <tr><td>2. Servidor Windows Hardening</td><td>24-40</td><td>$2,400 - $4,000</td><td>18%</td></tr>
+            <tr><td>3. MailEnable + WebMail</td><td>26-42</td><td>$2,600 - $4,200</td><td>19%</td></tr>
+            <tr><td>4. PSP + Documentos</td><td>15-19</td><td>$1,500 - $1,900</td><td>11%</td></tr>
+            <tr><td>5. Google Keys + Secretos</td><td>2-3</td><td>$200 - $300</td><td>1%</td></tr>
+            <tr><td>6. Umbraco + Denuncias</td><td>17-25</td><td>$1,700 - $2,500</td><td>14%</td></tr>
+            <tr><td>7. Verificación Post-Fix</td><td>20-30</td><td>$2,000 - $3,000</td><td>17%</td></tr>
+            <tr><td>8. Documentación + Reportes</td><td>16-24</td><td>$1,600 - $2,400</td><td>14%</td></tr>
+            <tr class="row-success"><td><strong>TOTAL</strong></td><td><strong>125-191</strong></td><td><strong>$12,500 - $19,100</strong></td><td><strong>100%</strong></td></tr>
+        </tbody>
+    </table>
+
+    <h2>9. Reducción de Riesgo Post-Implementación</h2>
+
+    <table>
+        <thead><tr><th>Hallazgo</th><th>Riesgo Actual</th><th>Riesgo Post-F3</th><th>Control</th></tr></thead>
+        <tbody>
+            <tr class="row-critical"><td>PN-01: WP REST API</td><td>🔴 8.2</td><td>🟢 3.1</td><td>functions.php filter + auth</td></tr>
+            <tr class="row-critical"><td>PN-02: WP-Abilities RCE</td><td>🔴 9.1</td><td>🟢 2.5</td><td>Plugin disabled/removed</td></tr>
+            <tr class="row-critical"><td>PN-03: Servidor sin WAF</td><td>🔴 7.5</td><td>🟢 3.5</td><td>Firewall + TLS fix</td></tr>
+            <tr class="row-critical"><td>PN-04: MailEnable público</td><td>🔴 7.8</td><td>🟢 3.1</td><td>Rate limit + MFA + IP restrict</td></tr>
+            <tr class="row-critical"><td>PN-05: Google API Keys</td><td>🔴 6.5</td><td>🟢 1.0</td><td>Rotadas + restringidas</td></tr>
+            <tr class="row-high"><td>PN-08: PSP pública</td><td>🟠 7.2</td><td>🟢 2.5</td><td>Auth en /Published</td></tr>
+            <tr class="row-high"><td>PN-09: Documentos</td><td>🟠 6.8</td><td>🟢 1.0</td><td>Removidos de server público</td></tr>
+        </tbody>
+    </table>
+
+    <p><strong>Reducción de riesgo general:</strong> <span style="color:var(--nsi-success);font-weight:700;font-size:14pt;">~90%</span></p>
+
+    <h2>10. Riesgos de Implementación</h2>
+
+    <table>
+        <thead><tr><th>Riesgo</th><th>Prob.</th><th>Impacto</th><th>Mitigación</th></tr></thead>
+        <tbody>
+            <tr class="row-high"><td>WP REST API fix rompe funcionalidad existente</td><td>Media</td><td>Alto</td><td>Probar en staging, feature toggle, rollback plan</td></tr>
+            <tr class="row-high"><td>Firewall en 226 bloquea servicios legítimos</td><td>Media</td><td>Alto</td><td>Whitelist proactiva de IPs PN, ventana de mantenimiento</td></tr>
+            <tr><td>Apps PSP rechazadas en Google Play</td><td>Baja</td><td>Medio</td><td>Test Track interno antes de producción</td></tr>
+            <tr><td>MFA en webmail confunde usuarios</td><td>Alta</td><td>Medio</td><td>Comunicación anticipada, periodo de gracia, guía de uso</td></tr>
+        </tbody>
+    </table>
+
+    <div class="footer-bar">
+        <span class="confidential">Confidencial — Uso exclusivo del destinatario</span>
+        <span>NSI-IMP-2026-006 &bull; Página 5 de 6</span>
+    </div>
+</div>
+
+<!-- PAGE 6 — VERIFICACIÓN + CONCLUSIONES -->
+<div class="page">
+    <div class="header">
+        <div class="header-left">
+            <h1>NULL SESSION INTELLIGENCE LLC</h1>
+            <div class="tagline">Offensive Security &bull; Implementation &bull; Advisory</div>
+        </div>
+        <div class="header-right">
+            <div class="doc-type">Phase 3 — Implementation Plan</div>
+            <div class="doc-number">NSI-IMP-2026-006 &bull; Julio 2026</div>
+        </div>
+    </div>
+
+    <h2>11. Procedimientos de Verificación</h2>
+
+    <table>
+        <thead><tr><th>Control</th><th>Prueba</th><th>Comando</th></tr></thead>
+        <tbody>
+            <tr><td>WP REST API</td><td>Users endpoint debe fallar</td><td>curl /wp-json/wp/v2/users → 401/403</td></tr>
+            <tr><td>WP-Abilities</td><td>Plugin deshabilitado</td><td>curl /wp-json/wp-abilities/v1/abilities → 404</td></tr>
+            <tr><td>Firewall 226</td><td>Puertos sensibles bloqueados</td><td>nmap -p 25,443,465,587,993,995 → filtered</td></tr>
+            <tr><td>TLS 1.0/1.1</td><td>Protocolos deshabilitados</td><td>nmap --script ssl-enum-ciphers → solo TLS 1.2+</td></tr>
+            <tr><td>Google Keys</td><td>Keys antiguas revocadas</td><td>curl con key antigua → REQUEST_DENIED</td></tr>
+            <tr><td>PSP /Published</td><td>Endpoint protegido</td><td>curl /api/Published → 401</td></tr>
+            <tr><td>Documentos</td><td>8443 ya no sirve docs</td><td>curl psp:8443/{docs} → 404</td></tr>
+            <tr><td>Umbraco</td><td>Login bloqueado desde externo</td><td>curl /umbraco/login.aspx → 403</td></tr>
+            <tr><td>WebMail rate limit</td><td>>10 req/min bloqueado</td><td>ab -n 20 -c 5 → 429s</td></tr>
+        </tbody>
+    </table>
+
+    <div class="cmd-block"><span class="comment"># Script de verificación automatizada</span>#!/bin/bash<br>FAIL=0; PASS=0<br><br><span class="comment"># WP Users</span>if curl -sk -o /dev/null -w "%{http_code}" "https://www.policianacional.gob.do/wp-json/wp/v2/users" | grep -q "401\|403"; then ((PASS++)); else echo "FAIL: WP users still public"; ((FAIL++)); fi<br><br><span class="comment"># WP-Abilities</span>if curl -sk -o /dev/null -w "%{http_code}" "https://www.policianacional.gob.do/wp-json/wp-abilities/v1/abilities" | grep -q "404"; then ((PASS++)); else echo "FAIL: WP-Abilities still accessible"; ((FAIL++)); fi<br><br><span class="comment"># Google Key 1</span>if curl -sk "https://maps.googleapis.com/maps/api/geocode/json?address=test&key=AIzaSyAe7ooDHtbmwnVJ2Pjo3n53q0Or5TChCnM" | grep -q "DENIED"; then ((PASS++)); else echo "FAIL: Key still active"; ((FAIL++)); fi<br><br><span class="comment"># Umbraco login</span>if curl -sk -o /dev/null -w "%{http_code}" "https://denuncias.policia.gob.do/umbraco/login.aspx" | grep -q "403"; then ((PASS++)); else echo "FAIL: Umbraco login still public"; ((FAIL++)); fi<br><br>echo "PASS: $PASS | FAIL: $FAIL"</div>
+
+    <h2>12. Análisis Costo-Beneficio</h2>
+    <table>
+        <thead><tr><th>Escenario</th><th>Sin Implementación</th><th>Con Fase 3</th><th>Ahorro</th></tr></thead>
+        <tbody>
+            <tr class="row-critical"><td>Brecha datos denunciantes</td><td>$200K - $2M</td><td>$10K - $50K</td><td><strong>$190K - $1.95M</strong></td></tr>
+            <tr class="row-critical"><td>Filtración documentos PN</td><td>Riesgo seguridad nacional</td><td>Riesgo eliminado</td><td><strong>Incuantificable</strong></td></tr>
+            <tr class="row-high"><td>Compromiso correo PN</td><td>$100K - $500K</td><td>$5K - $20K</td><td><strong>$95K - $480K</strong></td></tr>
+            <tr><td>Daño reputacional</td><td>Pérdida de confianza</td><td>Mínimo</td><td><strong>Significativo</strong></td></tr>
+            <tr class="row-success"><td><strong>INVERSIÓN</strong></td><td></td><td><strong>$12,500 - $19,100</strong></td><td></td></tr>
+            <tr class="row-success"><td><strong>ROI</strong></td><td></td><td></td><td><strong>~15x - 100x</strong></td></tr>
+        </tbody>
+    </table>
+
+    <hr>
+
+    <h2>13. Conclusión</h2>
+    <p>La implementación de los <strong>18 controles</strong> descritos en este plan reduce el riesgo de seguridad de la infraestructura digital de la Policía Nacional Dominicana en aproximadamente un <strong>90%</strong>. Los controles críticos (Fase 1 — Crisis) pueden ejecutarse en <strong>48 horas</strong> y eliminan los vectores de ataque más peligrosos.</p>
+    <p>Se recomienda comenzar con la <strong>Semana 1</strong> (F1: Crisis) de inmediato, seguida de la verificación post-fix para confirmar la efectividad de los controles implementados. NSI puede proveer el servicio de re-escaneo de verificación (Fase 2) posterior a la implementación.</p>
+
+    <hr>
+
+    <div style="margin-top:30px;">
+        <p><strong>Preparado por:</strong></p>
+        <div style="margin-top:16px;border-top:2px solid var(--nsi-dark);padding-top:14px;">
+            <p style="font-size:11pt;font-weight:800;">Jonatan M. Collymoore</p>
+            <p style="font-size:9pt;color:var(--nsi-muted);margin-top:2px;">Lead Security Researcher</p>
+            <p style="font-size:11pt;font-weight:800;margin-top:8px;">Null Session Intelligence LLC</p>
+            <p style="font-size:8.5pt;color:var(--nsi-muted);margin-top:2px;">Offensive Security &bull; Implementation &bull; Advisory</p>
+            <p style="font-size:8.5pt;color:var(--nsi-muted);margin-top:4px;">
+                469 Halladay St, Apt 2, Jersey City, NJ 07304<br>
+                jonatan.collymoore@gmail.com<br>
+                info@nullsessionintelligence.com<br>
+                <a href="https://www.nullsessionintelligence.com/es/bloodhound" style="color:#3b82f6;">BloodHound — nullsessionintelligence.com/es/bloodhound</a>
+            </p>
+        </div>
+    </div>
+
+    <hr>
+    <p><strong>Clasificación:</strong> CONFIDENCIAL — Uso exclusivo del destinatario</p>
+    <p><strong>Documento:</strong> NSI-IMP-2026-006 &bull; 15 Julio 2026</p>
+
+    <div class="footer-bar">
+        <span class="confidential">Confidencial — Uso exclusivo del destinatario</span>
+        <span>NSI-IMP-2026-006 &bull; Página 6 de 6</span>
+    </div>
+</div>
+
+</body>
+</html>

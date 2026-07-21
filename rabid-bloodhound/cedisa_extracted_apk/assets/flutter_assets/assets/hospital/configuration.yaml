@@ -1,0 +1,37 @@
+androidAppId: com.CMR.eme_salud_cedisa
+iosAppId: com.CMR.eme.salud.cedisa
+
+name: CEDISA
+nameShort: CEDISA
+webpage: https://www.cedisa.do/
+ip: portalresultados.cedisa.do
+usesHttps: true
+
+contact_telephone: "8096212020"
+contact_email: citas@cedisa.do/info@cedisa.do
+contact_hours: 6.a.m. a 9 p.m.
+contact_address: "Pedro Ignacio Espaillat #55"
+
+baseUrl: /HisWebServicios/Portal/ServicioPortal.svc
+baseUrlPACS: /visorhtml5/WcfServiceIconos/Service1.svc
+baseVisorPACS: /WebUltimateGL/App/Vistas/index.html
+
+iconBackgroundColor: "#ffffff"
+
+color_primary: 0xff001489
+color_accent: 0xffc8102e
+color_primaryDark: 0xff00005b
+color_accentDark: 0xff8f0007
+color_primaryLight: 0xff0085CA
+color_accentLight: 0xffff5357
+color_loadingGrey: 0xffffffff
+
+debugMode: true
+hasImaging: true
+hasLaboratory: false
+hasPathology: false
+hasDirectory: false
+canMakeAppointmets: false
+hasBanner: false
+hasRecord: false
+showAppointments: false

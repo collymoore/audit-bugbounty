@@ -1,0 +1,10 @@
+{
+    "id": "eme_salud", 
+    "nombre": "Centro Médico CMR",
+    "webpage": "http://www.cmr-rx.com/site2016/#inicio/",
+    "primaryColor": "0xff00c1d5",
+    "accentColor": "0xffff8674",
+    "appleId": "com.CMR.eme.salud",
+    "googleId": "com.CMR.eme_salud",
+    "serverVersion": 5
+}

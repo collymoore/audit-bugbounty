@@ -1,0 +1,1033 @@
+{
+  "documents": [
+    {
+      "name": "projects/tocaahora-1cf7f/databases/(default)/documents/activities/6RIcpq0vbHlSFB9k5tYn",
+      "fields": {
+        "songsPlayed": {
+          "arrayValue": {
+            "values": [
+              {
+                "stringValue": "La Jumba"
+              },
+              {
+                "stringValue": "Darte un Beso"
+              },
+              {
+                "stringValue": "A Pedir Su Mano"
+              },
+              {
+                "stringValue": "Vivir Mi Vida"
+              },
+              {
+                "stringValue": "La Gozadera"
+              },
+              {
+                "stringValue": "Bailando"
+              },
+              {
+                "stringValue": "El Perdedor"
+              }
+            ]
+          }
+        },
+        "accessPin": {
+          "nullValue": null
+        },
+        "status": {
+          "stringValue": "completed"
+        },
+        "metrics": {
+          "mapValue": {
+            "fields": {
+              "reactionCount": {
+                "integerValue": "33"
+              }
+            }
+          }
+        },
+        "createdAt": {
+          "timestampValue": "2026-01-11T22:13:50.810Z"
+        },
+        "orchestraId": {
+          "stringValue": "OwoRl9LIShBUw2IQFjqw"
+        },
+        "venue": {
+          "stringValue": "FERRO"
+        },
+        "location": {
+          "stringValue": "DN"
+        },
+        "date": {
+          "timestampValue": "2026-01-11T16:00:00Z"
+        },
+        "isRequestsPaused": {
+          "booleanValue": true
+        },
+        "startedAt": {
+          "timestampValue": "2026-01-11T22:13:50.810Z"
+        },
+        "name": {
+          "stringValue": "TEST"
+        },
+        "revenue": {
+          "mapValue": {
+            "fields": {
+              "tips": {
+                "integerValue": "0"
+              },
+              "total": {
+                "integerValue": "0"
+              },
+              "priority": {
+                "integerValue": "0"
+              },
+              "challenges": {
+                "integerValue": "0"
+              },
+              "requests": {
+                "integerValue": "19"
+              }
+            }
+          }
+        },
+        "completedAt": {
+          "timestampValue": "2026-01-22T23:30:57.644Z"
+        },
+        "updatedAt": {
+          "timestampValue": "2026-01-22T23:30:57.644Z"
+        }
+      },
+      "createTime": "2026-01-11T22:13:50.845113Z",
+      "updateTime": "2026-01-22T23:42:10.093223Z"
+    },
+    {
+      "name": "projects/tocaahora-1cf7f/databases/(default)/documents/activities/7Hjc3mCrLZh9CUwZt9Ru",
+      "fields": {
+        "updatedAt": {
+          "timestampValue": "2026-01-11T20:26:55.758Z"
+        },
+        "completedAt": {
+          "timestampValue": "2026-01-11T20:26:55.758Z"
+        },
+        "name": {
+          "stringValue": "Domingos de Jalao"
+        },
+        "revenue": {
+          "mapValue": {
+            "fields": {
+              "total": {
+                "integerValue": "0"
+              },
+              "tips": {
+                "integerValue": "0"
+              },
+              "requests": {
+                "integerValue": "3"
+              },
+              "priority": {
+                "integerValue": "0"
+              },
+              "challenges": {
+                "integerValue": "0"
+              }
+            }
+          }
+        },
+        "startedAt": {
+          "timestampValue": "2026-01-11T18:45:18.851Z"
+        },
+        "isRequestsPaused": {
+          "booleanValue": true
+        },
+        "date": {
+          "timestampValue": "2026-01-11T16:00:00Z"
+        },
+        "location": {
+          "stringValue": "Zona Colonial, Santo Domingo"
+        },
+        "venue": {
+          "stringValue": "Jalao"
+        },
+        "orchestraId": {
+          "stringValue": "5VnpLIWMoWZGoJTDQp6I"
+        },
+        "createdAt": {
+          "timestampValue": "2026-01-11T18:45:18.851Z"
+        },
+        "metrics": {
+          "mapValue": {
+            "fields": {
+              "reactionCount": {
+                "integerValue": "1"
+              }
+            }
+          }
+        },
+        "status": {
+          "stringValue": "completed"
+        },
+        "songsPlayed": {
+          "arrayValue": {
+            "values": [
+              {
+                "stringValue": "Idilio"
+              },
+              {
+                "stringValue": "25 Horas"
+              },
+              {
+                "stringValue": "Rosa blanca"
+              },
+              {
+                "stringValue": "A dónde vayas"
+              },
+              {
+                "stringValue": "Seré."
+              },
+              {
+                "stringValue": "A pasito lento."
+              }
+            ]
+          }
+        }
+      },
+      "createTime": "2026-01-11T18:45:18.884553Z",
+      "updateTime": "2026-01-11T20:26:55.789908Z"
+    },
+    {
+      "name": "projects/tocaahora-1cf7f/databases/(default)/documents/activities/DwH3qx7UGqZFbOBqJRrh",
+      "fields": {
+        "createdAt": {
+          "timestampValue": "2026-06-02T21:11:20.532Z"
+        },
+        "status": {
+          "stringValue": "active"
+        },
+        "metrics": {
+          "mapValue": {
+            "fields": {
+              "reactionCount": {
+                "integerValue": "20"
+              }
+            }
+          }
+        },
+        "accessPin": {
+          "nullValue": null
+        },
+        "songsPlayed": {
+          "arrayValue": {
+            "values": [
+              {
+                "stringValue": "MIA (feat. Drake)"
+              },
+              {
+                "stringValue": "Corazón"
+              },
+              {
+                "stringValue": "Burbujas de Amor"
+              },
+              {
+                "stringValue": "Se me hace imposible olvidarte :("
+              }
+            ]
+          }
+        },
+        "location": {
+          "stringValue": "La misma"
+        },
+        "orchestraId": {
+          "stringValue": "WIRuNn0DirVdxf1uB4RW"
+        },
+        "venue": {
+          "stringValue": "El mismo"
+        },
+        "startedAt": {
+          "timestampValue": "2026-06-02T21:11:20.532Z"
+        },
+        "date": {
+          "timestampValue": "2026-06-02T16:00:00Z"
+        },
+        "updatedAt": {
+          "timestampValue": "2026-06-02T21:11:20.532Z"
+        },
+        "completedAt": {
+          "nullValue": null
+        },
+        "name": {
+          "stringValue": "lunes"
+        },
+        "revenue": {
+          "mapValue": {
+            "fields": {
+              "total": {
+                "integerValue": "400"
+              },
+              "tips": {
+                "integerValue": "0"
+              },
+              "requests": {
+                "integerValue": "7"
+              },
+              "challenges": {
+                "integerValue": "0"
+              },
+              "priority": {
+                "integerValue": "400"
+              }
+            }
+          }
+        }
+      },
+      "createTime": "2026-06-02T21:11:20.586909Z",
+      "updateTime": "2026-06-12T19:23:43.339417Z"
+    },
+    {
+      "name": "projects/tocaahora-1cf7f/databases/(default)/documents/activities/HzP5kyFIDZeY3UWmBkXK",
+      "fields": {
+        "name": {
+          "stringValue": "JALAO"
+        },
+        "revenue": {
+          "mapValue": {
+            "fields": {
+              "tips": {
+                "integerValue": "0"
+              },
+              "total": {
+                "integerValue": "0"
+              },
+              "challenges": {
+                "integerValue": "0"
+              },
+              "priority": {
+                "integerValue": "0"
+              },
+              "requests": {
+                "integerValue": "2"
+              }
+            }
+          }
+        },
+        "completedAt": {
+          "timestampValue": "2026-03-22T18:00:01.923Z"
+        },
+        "updatedAt": {
+          "timestampValue": "2026-03-22T18:00:01.923Z"
+        },
+        "date": {
+          "timestampValue": "2026-03-12T16:00:00Z"
+        },
+        "isRequestsPaused": {
+          "booleanValue": false
+        },
+        "startedAt": {
+          "timestampValue": "2026-03-12T23:27:46.934Z"
+        },
+        "orchestraId": {
+          "stringValue": "OwoRl9LIShBUw2IQFjqw"
+        },
+        "venue": {
+          "stringValue": "ZONA COLONIAL"
+        },
+        "location": {
+          "stringValue": "ZONA COLONIAL"
+        },
+        "songsPlayed": {
+          "arrayValue": {
+            "values": [
+              {
+                "stringValue": "La Gozadera"
+              },
+              {
+                "stringValue": "Darte un Beso"
+              },
+              {
+                "stringValue": "Eres Tú"
+              },
+              {
+                "stringValue": "Échame la Culpa"
+              },
+              {
+                "stringValue": "Obsesión"
+              }
+            ]
+          }
+        },
+        "accessPin": {
+          "stringValue": "1111"
+        },
+        "status": {
+          "stringValue": "completed"
+        },
+        "createdAt": {
+          "timestampValue": "2026-03-12T23:27:46.934Z"
+        }
+      },
+      "createTime": "2026-03-12T23:27:47.001634Z",
+      "updateTime": "2026-03-22T18:00:01.966718Z"
+    },
+    {
+      "name": "projects/tocaahora-1cf7f/databases/(default)/documents/activities/KGr6QlBuvSIvecAeMWZv",
+      "fields": {
+        "date": {
+          "timestampValue": "2026-01-22T16:00:00Z"
+        },
+        "startedAt": {
+          "timestampValue": "2026-01-22T23:31:38.869Z"
+        },
+        "isRequestsPaused": {
+          "booleanValue": false
+        },
+        "revenue": {
+          "mapValue": {
+            "fields": {
+              "tips": {
+                "integerValue": "0"
+              },
+              "total": {
+                "integerValue": "0"
+              },
+              "priority": {
+                "integerValue": "0"
+              },
+              "challenges": {
+                "integerValue": "0"
+              },
+              "requests": {
+                "integerValue": "11"
+              }
+            }
+          }
+        },
+        "name": {
+          "stringValue": "AURA TOURS"
+        },
+        "updatedAt": {
+          "timestampValue": "2026-02-08T18:38:52.237Z"
+        },
+        "completedAt": {
+          "timestampValue": "2026-02-08T18:38:52.237Z"
+        },
+        "accessPin": {
+          "stringValue": "1111"
+        },
+        "songsPlayed": {
+          "arrayValue": {
+            "values": [
+              {
+                "stringValue": "Eres Tú"
+              },
+              {
+                "stringValue": "La Gozadera"
+              },
+              {
+                "stringValue": "Darte un Beso"
+              },
+              {
+                "stringValue": "Obsesión"
+              },
+              {
+                "stringValue": "Échame la Culpa"
+              }
+            ]
+          }
+        },
+        "createdAt": {
+          "timestampValue": "2026-01-22T23:31:38.869Z"
+        },
+        "status": {
+          "stringValue": "completed"
+        },
+        "orchestraId": {
+          "stringValue": "OwoRl9LIShBUw2IQFjqw"
+        },
+        "venue": {
+          "stringValue": "FERRO"
+        },
+        "location": {
+          "stringValue": "DISTRITO "
+        }
+      },
+      "createTime": "2026-01-22T23:31:38.908019Z",
+      "updateTime": "2026-02-08T18:38:52.276205Z"
+    },
+    {
+      "name": "projects/tocaahora-1cf7f/databases/(default)/documents/activities/V9ppRocpUyBzi07elMKC",
+      "fields": {
+        "location": {
+          "stringValue": "zona colonial"
+        },
+        "venue": {
+          "stringValue": "JALAO"
+        },
+        "orchestraId": {
+          "stringValue": "OwoRl9LIShBUw2IQFjqw"
+        },
+        "status": {
+          "stringValue": "active"
+        },
+        "createdAt": {
+          "timestampValue": "2026-07-14T00:14:16.580Z"
+        },
+        "accessPin": {
+          "nullValue": null
+        },
+        "songsPlayed": {
+          "arrayValue": {
+            "values": [
+              {
+                "stringValue": "Darte un Beso"
+              }
+            ]
+          }
+        },
+        "completedAt": {
+          "nullValue": null
+        },
+        "updatedAt": {
+          "timestampValue": "2026-07-14T00:14:16.580Z"
+        },
+        "revenue": {
+          "mapValue": {
+            "fields": {
+              "total": {
+                "integerValue": "0"
+              },
+              "tips": {
+                "integerValue": "0"
+              },
+              "requests": {
+                "integerValue": "5"
+              },
+              "challenges": {
+                "integerValue": "0"
+              },
+              "priority": {
+                "integerValue": "0"
+              }
+            }
+          }
+        },
+        "name": {
+          "stringValue": "Show 13 jul"
+        },
+        "startedAt": {
+          "timestampValue": "2026-07-14T00:14:16.580Z"
+        },
+        "date": {
+          "timestampValue": "2026-07-14T16:00:00Z"
+        }
+      },
+      "createTime": "2026-07-14T00:14:16.648657Z",
+      "updateTime": "2026-07-14T00:58:53.211112Z"
+    },
+    {
+      "name": "projects/tocaahora-1cf7f/databases/(default)/documents/activities/WyKYwzttKXdqbojb4HL6",
+      "fields": {
+        "createdAt": {
+          "timestampValue": "2026-02-16T00:10:12.472Z"
+        },
+        "status": {
+          "stringValue": "completed"
+        },
+        "accessPin": {
+          "stringValue": "1111"
+        },
+        "songsPlayed": {
+          "arrayValue": {}
+        },
+        "location": {
+          "stringValue": "Malexon"
+        },
+        "venue": {
+          "stringValue": "Mixer"
+        },
+        "orchestraId": {
+          "stringValue": "OwoRl9LIShBUw2IQFjqw"
+        },
+        "startedAt": {
+          "timestampValue": "2026-02-16T00:10:12.472Z"
+        },
+        "date": {
+          "timestampValue": "2026-02-16T16:00:00Z"
+        },
+        "updatedAt": {
+          "timestampValue": "2026-02-16T00:27:26.983Z"
+        },
+        "completedAt": {
+          "timestampValue": "2026-02-16T00:27:26.983Z"
+        },
+        "name": {
+          "stringValue": "Pru3ba abyi"
+        },
+        "revenue": {
+          "mapValue": {
+            "fields": {
+              "tips": {
+                "integerValue": "0"
+              },
+              "total": {
+                "integerValue": "0"
+              },
+              "challenges": {
+                "integerValue": "0"
+              },
+              "priority": {
+                "integerValue": "0"
+              },
+              "requests": {
+                "integerValue": "0"
+              }
+            }
+          }
+        }
+      },
+      "createTime": "2026-02-16T00:10:12.529668Z",
+      "updateTime": "2026-02-16T00:27:27.013095Z"
+    },
+    {
+      "name": "projects/tocaahora-1cf7f/databases/(default)/documents/activities/XNL8Uq5FG8181PPTSFoD",
+      "fields": {
+        "createdAt": {
+          "timestampValue": "2026-01-08T18:50:44.498Z"
+        },
+        "status": {
+          "stringValue": "completed"
+        },
+        "metrics": {
+          "mapValue": {
+            "fields": {
+              "reactionCount": {
+                "integerValue": "142"
+              }
+            }
+          }
+        },
+        "accessPin": {
+          "stringValue": "1111"
+        },
+        "songsPlayed": {
+          "arrayValue": {
+            "values": [
+              {
+                "stringValue": "Propuesta Indecente"
+              },
+              {
+                "stringValue": "A Pedir Su Mano"
+              },
+              {
+                "stringValue": "La Jumba"
+              },
+              {
+                "stringValue": "Darte un Beso"
+              },
+              {
+                "stringValue": "La Gozadera"
+              }
+            ]
+          }
+        },
+        "location": {
+          "stringValue": "CALLE X"
+        },
+        "orchestraId": {
+          "stringValue": "OwoRl9LIShBUw2IQFjqw"
+        },
+        "venue": {
+          "stringValue": "FERRO"
+        },
+        "startedAt": {
+          "timestampValue": "2026-01-08T18:50:44.498Z"
+        },
+        "date": {
+          "timestampValue": "2026-01-08T16:00:00Z"
+        },
+        "updatedAt": {
+          "timestampValue": "2026-01-08T21:16:40.663Z"
+        },
+        "completedAt": {
+          "timestampValue": "2026-01-08T21:16:40.663Z"
+        },
+        "name": {
+          "stringValue": "PRUEBA"
+        },
+        "revenue": {
+          "mapValue": {
+            "fields": {
+              "challenges": {
+                "integerValue": "0"
+              },
+              "priority": {
+                "integerValue": "200"
+              },
+              "requests": {
+                "integerValue": "1"
+              },
+              "tips": {
+                "integerValue": "0"
+              },
+              "total": {
+                "integerValue": "200"
+              }
+            }
+          }
+        }
+      },
+      "createTime": "2026-01-08T18:50:44.534203Z",
+      "updateTime": "2026-01-08T21:16:40.680054Z"
+    },
+    {
+      "name": "projects/tocaahora-1cf7f/databases/(default)/documents/activities/XVFjby1R45KfWIPWu3NT",
+      "fields": {
+        "updatedAt": {
+          "timestampValue": "2026-02-17T02:55:42.253Z"
+        },
+        "completedAt": {
+          "timestampValue": "2026-02-17T02:55:42.253Z"
+        },
+        "name": {
+          "stringValue": "Show en Sanchez"
+        },
+        "revenue": {
+          "mapValue": {
+            "fields": {
+              "tips": {
+                "integerValue": "0"
+              },
+              "total": {
+                "integerValue": "0"
+              },
+              "priority": {
+                "integerValue": "0"
+              },
+              "challenges": {
+                "integerValue": "0"
+              },
+              "requests": {
+                "integerValue": "0"
+              }
+            }
+          }
+        },
+        "startedAt": {
+          "timestampValue": "2026-02-17T02:43:12.977Z"
+        },
+        "date": {
+          "timestampValue": "2026-02-17T16:00:00Z"
+        },
+        "location": {
+          "stringValue": "Sanchez Samana"
+        },
+        "venue": {
+          "stringValue": "Casa"
+        },
+        "orchestraId": {
+          "stringValue": "OwoRl9LIShBUw2IQFjqw"
+        },
+        "createdAt": {
+          "timestampValue": "2026-02-17T02:43:12.977Z"
+        },
+        "status": {
+          "stringValue": "completed"
+        },
+        "accessPin": {
+          "stringValue": "1111"
+        },
+        "songsPlayed": {
+          "arrayValue": {}
+        }
+      },
+      "createTime": "2026-02-17T02:43:13.009756Z",
+      "updateTime": "2026-02-17T02:55:42.296404Z"
+    },
+    {
+      "name": "projects/tocaahora-1cf7f/databases/(default)/documents/activities/eiszD5R9rX8t98vKkscV",
+      "fields": {
+        "revenue": {
+          "mapValue": {
+            "fields": {
+              "challenges": {
+                "integerValue": "0"
+              },
+              "priority": {
+                "integerValue": "0"
+              },
+              "requests": {
+                "integerValue": "2"
+              },
+              "tips": {
+                "integerValue": "0"
+              },
+              "total": {
+                "integerValue": "0"
+              }
+            }
+          }
+        },
+        "name": {
+          "stringValue": "Show en Zona Colonial"
+        },
+        "completedAt": {
+          "timestampValue": "2026-06-16T16:13:09.577Z"
+        },
+        "updatedAt": {
+          "timestampValue": "2026-06-16T16:13:09.577Z"
+        },
+        "date": {
+          "timestampValue": "2026-03-22T16:00:00Z"
+        },
+        "isRequestsPaused": {
+          "booleanValue": false
+        },
+        "autoClosed": {
+          "booleanValue": true
+        },
+        "startedAt": {
+          "timestampValue": "2026-03-22T18:00:34.279Z"
+        },
+        "orchestraId": {
+          "stringValue": "OwoRl9LIShBUw2IQFjqw"
+        },
+        "venue": {
+          "stringValue": "JALAO"
+        },
+        "location": {
+          "stringValue": "zona colonial"
+        },
+        "songsPlayed": {
+          "arrayValue": {
+            "values": [
+              {
+                "stringValue": "Eres Tú"
+              },
+              {
+                "stringValue": "El Perdedor"
+              },
+              {
+                "stringValue": "Darte un Beso"
+              },
+              {
+                "stringValue": "Propuesta Indecente"
+              },
+              {
+                "stringValue": "La Jumba"
+              },
+              {
+                "stringValue": "Bailando"
+              },
+              {
+                "stringValue": "Échame la Culpa"
+              },
+              {
+                "stringValue": "La Bilirrubina"
+              },
+              {
+                "stringValue": "La Gozadera"
+              },
+              {
+                "stringValue": "Obsesión"
+              }
+            ]
+          }
+        },
+        "accessPin": {
+          "nullValue": null
+        },
+        "status": {
+          "stringValue": "completed"
+        },
+        "createdAt": {
+          "timestampValue": "2026-03-22T18:00:34.279Z"
+        }
+      },
+      "createTime": "2026-03-22T18:00:34.319636Z",
+      "updateTime": "2026-06-16T16:13:09.625021Z"
+    },
+    {
+      "name": "projects/tocaahora-1cf7f/databases/(default)/documents/activities/pmzloHounmasJtA2Pikz",
+      "fields": {
+        "updatedAt": {
+          "timestampValue": "2026-02-08T20:29:02.762Z"
+        },
+        "completedAt": {
+          "timestampValue": "2026-02-08T20:29:02.762Z"
+        },
+        "name": {
+          "stringValue": "Jalao"
+        },
+        "revenue": {
+          "mapValue": {
+            "fields": {
+              "priority": {
+                "integerValue": "0"
+              },
+              "challenges": {
+                "integerValue": "0"
+              },
+              "requests": {
+                "integerValue": "3"
+              },
+              "tips": {
+                "integerValue": "0"
+              },
+              "total": {
+                "integerValue": "0"
+              }
+            }
+          }
+        },
+        "startedAt": {
+          "timestampValue": "2026-02-08T18:38:19.739Z"
+        },
+        "isRequestsPaused": {
+          "booleanValue": true
+        },
+        "date": {
+          "timestampValue": "2026-02-08T16:00:00Z"
+        },
+        "location": {
+          "stringValue": "Calle Conde"
+        },
+        "venue": {
+          "stringValue": "Jalao - Zona Colonial"
+        },
+        "orchestraId": {
+          "stringValue": "5VnpLIWMoWZGoJTDQp6I"
+        },
+        "createdAt": {
+          "timestampValue": "2026-02-08T18:38:19.739Z"
+        },
+        "status": {
+          "stringValue": "completed"
+        },
+        "accessPin": {
+          "nullValue": null
+        },
+        "songsPlayed": {
+          "arrayValue": {
+            "values": [
+              {
+                "stringValue": "Amor Narcotico"
+              },
+              {
+                "stringValue": "Te amo demasiado."
+              },
+              {
+                "stringValue": "25 Horas"
+              },
+              {
+                "stringValue": "Mal de amor"
+              },
+              {
+                "stringValue": "Micaela"
+              },
+              {
+                "stringValue": "Cuando tú estás cerca de mí."
+              },
+              {
+                "stringValue": "A pasito lento."
+              },
+              {
+                "stringValue": "Flor pálida."
+              },
+              {
+                "stringValue": "Amorio"
+              },
+              {
+                "stringValue": "Esta noche"
+              }
+            ]
+          }
+        }
+      },
+      "createTime": "2026-02-08T18:38:19.790539Z",
+      "updateTime": "2026-02-08T20:29:02.795999Z"
+    },
+    {
+      "name": "projects/tocaahora-1cf7f/databases/(default)/documents/activities/v4GdtJ1SMLFBaSQbribU",
+      "fields": {
+        "completedAt": {
+          "timestampValue": "2026-01-11T21:47:09.767Z"
+        },
+        "updatedAt": {
+          "timestampValue": "2026-01-11T21:47:09.767Z"
+        },
+        "name": {
+          "stringValue": "PRUEBA SU"
+        },
+        "revenue": {
+          "mapValue": {
+            "fields": {
+              "total": {
+                "integerValue": "200"
+              },
+              "tips": {
+                "integerValue": "0"
+              },
+              "requests": {
+                "integerValue": "7"
+              },
+              "priority": {
+                "integerValue": "200"
+              },
+              "challenges": {
+                "integerValue": "0"
+              }
+            }
+          }
+        },
+        "isRequestsPaused": {
+          "booleanValue": false
+        },
+        "startedAt": {
+          "timestampValue": "2026-01-08T23:02:30.374Z"
+        },
+        "date": {
+          "timestampValue": "2026-01-08T16:00:00Z"
+        },
+        "location": {
+          "stringValue": "CALLE X"
+        },
+        "orchestraId": {
+          "stringValue": "OwoRl9LIShBUw2IQFjqw"
+        },
+        "venue": {
+          "stringValue": "MIRED"
+        },
+        "status": {
+          "stringValue": "completed"
+        },
+        "metrics": {
+          "mapValue": {
+            "fields": {
+              "reactionCount": {
+                "integerValue": "2"
+              }
+            }
+          }
+        },
+        "createdAt": {
+          "timestampValue": "2026-01-08T23:02:30.374Z"
+        },
+        "songsPlayed": {
+          "arrayValue": {
+            "values": [
+              {
+                "stringValue": "La Jumba"
+              },
+              {
+                "stringValue": "Bailando"
+              }
+            ]
+          }
+        },
+        "accessPin": {
+          "stringValue": "1111"
+        }
+      },
+      "createTime": "2026-01-08T23:02:30.413830Z",
+      "updateTime": "2026-01-11T21:47:09.786021Z"
+    }
+  ]
+}

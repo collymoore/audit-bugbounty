@@ -1,0 +1,41 @@
+androidAppId: com.CMR.emesalud_cadi
+iosAppId: com.CMR.emesalud.cadi
+
+name: CADI
+nameShort: CADI
+webpage: https://cmm.do/
+ip: portal.cadi.do
+usesHttps: true
+
+contact_telephone: "(809) 255-2234"
+contact_email: info@cadi.do
+contact_hours: De Lunes a Viernes de 8 A.M. a 7 P.M. y Sábados de 8 A.M. a 1 P.M.
+contact_address: C/ Arístides García Mella, esquina Calle Ercilia Ozuna 11 Sector Mirador Sur, Santo Domingo, República Dominicana
+
+baseUrl: /HisWebServicios/Portal/ServicioPortal.svc
+baseUrlPACS: /visorhtml5/WcfServiceIconos/Service1.svc
+baseVisorPACS: /WebUltimateGL/App/Vistas/index.html
+
+iconBackgroundColor: "#bee4ed"
+
+color_primary: 0xff0068b6
+color_accent: 0xff363635
+color_primaryDark: 0xff003e86
+color_accentDark: 0xff10100f
+color_primaryLight: 0xff5695e9
+color_accentLight: 0xff60605f
+color_loadingGrey: 0xffffffff
+
+debugMode: true
+hasImaging: true
+hasLaboratory: false
+hasPathology: false
+hasDirectory: false
+canMakeAppointmets: true
+hasBanner: true
+hasRecord: false
+showAppointments: true
+
+hasEmail: false
+hasPhoneNumber: true
+

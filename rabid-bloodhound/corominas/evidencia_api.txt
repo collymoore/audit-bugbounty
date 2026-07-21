@@ -1,0 +1,8 @@
+=== EVIDENCIA 1: GetContrasenaTabletas ===
+{"GetContrasenaTabletasResult":"{\"Estado\":0,\"Data\":\"cmrservice05\",\"Error\":null}"}
+=== EVIDENCIA 2: ActualizaPaciente ===
+{"ActualizaPacienteResult":"{\"Estado\":0,\"Data\":{\"Result\":-1,\"Id\":16075,\"Exception\":null,\"Status\":5,\"IsCanceled\":false,\"IsCompleted\":true,\"CreationOptions\":0,\"AsyncState\":null,\"IsFaulted\":false},\"Error\":null}"}
+=== EVIDENCIA 3: EnviarNotificacion ===
+{"EnviarNotificacionResult":"{\"Successful\":false,\"Response\":null,\"Error\":{\"ClassName\":\"System.Net.WebException\",\"Message\":\"Error en el servidor remoto: (404) No se encontró.\",\"Data\":null,\"InnerException\":null,\"HelpURL\":null,\"StackTraceString\":\"   en System.Net.HttpWebRequest.GetResponse()\\r\\n   en IDigitales.HIS.Web.Servicios.Portal.Bussines.FCMNotification.Send(String topic, String title, String body)\",\"RemoteStackTraceString\":null,\"RemoteStackIndex\":0,\"ExceptionMethod\":\"8\\nGetResponse\\nSystem, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089\\nSystem.Net.HttpWebRequest\\nSystem.Net.WebResponse GetResponse()\",\"HResult\":-2146233079,\"Source\":\"System\",\"WatsonBuckets\":null}}"}
+=== EVIDENCIA 4: HomePageData ===
+{"HomePageDataResult":"{\"Folio\":null,\"EstudiosImagenCount\":80,\"EstudiosPatoCount\":0,\"EstudiosLaboCount\":0}"}

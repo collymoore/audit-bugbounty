@@ -1,0 +1,37 @@
+androidAppId: com.CMR.emesalud_abreu
+iosAppId: com.CMR.emesalud.abreu
+
+name: Clínica Abreu
+nameShort: Abreu
+webpage: https://www.clinicaabreu.com.do/
+ip: resultados.clinicaabreu.com.do
+usesHttps: true
+
+contact_telephone: 809 688 4411
+contact_email: informacion@clinicaabreu.com.do
+contact_hours: 
+contact_address: Arzobispo Portes Santo Domingo, Santo Domingo, 10208 República Dominicana
+
+baseUrl: /HisWebServicios/Portal/ServicioPortal.svc
+baseUrlPACS: /visorhtml5/WcfServiceIconos/Service1.svc
+baseVisorPACS: /WebUltimateGL/App/Vistas/index.html
+
+iconBackgroundColor: "#bee4ed"
+
+color_primary: 0xff2C798C
+color_accent: 0xff234570
+color_primaryDark: 0xffA7AAAD
+color_accentDark: 0xff10100f
+color_primaryLight: 0xff5695e9
+color_accentLight: 0xff60605f
+color_loadingGrey: 0xffffffff
+
+debugMode: true
+hasImaging: true
+hasLaboratory: false
+hasPathology: false
+hasDirectory: false
+canMakeAppointmets: false
+hasBanner: true
+hasRecord: false
+showAppointments: false

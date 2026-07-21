@@ -1,0 +1,10 @@
+app.starbucks.com
+openapi.starbucks.com
+secureui.starbucks.com
+www.starbucks.com
+api.starbucks.com
+giftcards.starbucks.com
+auth.starbucks.com
+securepayment.starbucks.com
+store.starbucks.com
+orders.starbucks.com

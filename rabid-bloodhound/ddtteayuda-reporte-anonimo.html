@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Informe de Seguridad — DDTeAyuda</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+  background:#e2e8f0;
+  color:#1e293b;
+  font-size:14px;
+  line-height:1.6;
+  display:flex;
+  justify-content:center;
+  min-height:100vh;
+  margin:0;
+  padding:20px
+}
+.wrap{
+  max-width:960px;
+  width:100%;
+  background:#fff;
+  box-shadow:0 1px 4px rgba(0,0,0,.12)
+}
+.hd{
+  background:#0a0f1a;
+  color:#fff;
+  padding:28px 40px;
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start
+}
+.hd-l h1{font-size:16px;font-weight:600;letter-spacing:.5px;margin-bottom:2px;color:#94a3b8}
+.hd-l .t{font-size:24px;font-weight:700;color:#fff;margin-top:4px}
+.hd-l p{font-size:11px;color:#64748b}
+.hd-r{text-align:right}
+.hd-r .ref{font-size:10px;color:#64748b;margin-top:2px;font-family:monospace}
+.bd{padding:32px 40px}
+.tag{
+  display:inline-block;
+  padding:4px 14px;
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+  margin-bottom:20px
+}
+.tag-crit{background:#dc2626;color:#fff}
+h1{
+  font-size:24px;
+  font-weight:700;
+  color:#0a0f1a;
+  margin-bottom:6px;
+  line-height:1.2
+}
+h1+p{font-size:13px;color:#64748b;margin-bottom:16px}
+.meta{display:flex;flex-wrap:wrap;gap:4px 24px;font-size:12px;margin-bottom:24px;padding-bottom:16px;border-bottom:1px solid #e2e8f0}
+.meta span{color:#64748b}
+.meta strong{color:#1e293b;font-weight:600}
+h2{
+  font-size:15px;
+  font-weight:600;
+  color:#0a0f1a;
+  margin:28px 0 12px;
+  padding-bottom:6px;
+  border-bottom:2px solid #0a0f1a;
+  text-transform:uppercase;
+  letter-spacing:.5px
+}
+h2:first-of-type{margin-top:0}
+p,li{font-size:13px;margin-bottom:6px}
+ul,ol{padding-left:18px;margin-bottom:10px}
+ul li,ol li{margin-bottom:3px}
+.v{
+  border:1px solid #e2e8f0;
+  margin-bottom:14px;
+  border-radius:4px;
+  overflow:hidden
+}
+.v-h{
+  padding:10px 14px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  font-size:13px;
+  font-weight:600;
+  border-left:4px solid
+}
+.v-b{padding:12px 14px;font-size:13px}
+.v-b p{margin-bottom:6px}
+.v-b code,.v-b .ev{
+  background:#0a0f1a;
+  color:#e2e8f0;
+  padding:8px 10px;
+  font-family:monospace;
+  font-size:11px;
+  border-radius:3px;
+  display:block;
+  margin:6px 0;
+  white-space:pre-wrap;
+  word-break:break-all;
+  line-height:1.5
+}
+.v-b .ev{background:#1e293b}
+.crit-b{border-left-color:#dc2626;background:#fef2f2}
+.high-b{border-left-color:#c2410c;background:#fff7ed}
+.med-b{border-left-color:#d97706;background:#fffbeb}
+.sg{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:10px;margin:12px 0}
+.sc{background:#f1f5f9;border:1px solid #e2e8f0;padding:14px;text-align:center}
+.sc .n{font-size:26px;font-weight:700;color:#0a0f1a;line-height:1}
+.sc .l{font-size:10px;color:#64748b;margin-top:3px;text-transform:uppercase;letter-spacing:.5px}
+.sc.danger .n{color:#dc2626}
+.sc.warn .n{color:#c2410c}
+table{width:100%;border-collapse:collapse;margin:10px 0;font-size:12px}
+th{background:#0a0f1a;color:#fff;padding:7px 10px;text-align:left;font-weight:500;text-transform:uppercase;font-size:10px;letter-spacing:.5px}
+td{padding:7px 10px;border-bottom:1px solid #e2e8f0}
+tr:nth-child(even) td{background:#f1f5f9}
+.cr{color:#dc2626;font-weight:600}
+.hi{color:#c2410c;font-weight:600}
+.md{color:#d97706;font-weight:600}
+.lw{color:#16a34a;font-weight:600}
+.s{display:inline-block;padding:2px 8px;font-size:10px;font-weight:600;border-radius:2px;text-transform:uppercase;letter-spacing:.5px}
+.s-crit{background:#7f1d1d;color:#fca5a5}
+.s-high{background:#7c2d12;color:#fdba74}
+.s-med{background:#713f12;color:#fde68a}
+.s-low{background:#14532d;color:#86efac}
+.ft{
+  padding:16px 40px;
+  border-top:1px solid #e2e8f0;
+  text-align:center;
+  font-size:9px;
+  color:#94a3b8
+}
+.callout{
+  background:#f1f5f9;
+  border-left:4px solid #3b82f6;
+  padding:12px 16px;
+  margin:12px 0;
+  font-size:12px;
+  border-radius:0 4px 4px 0
+}
+.callout strong{color:#1e293b}
+@media print{
+  body{background:#fff;padding:0}
+  .wrap{box-shadow:none}
+  th,.v-h,.tag,.hd{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="hd">
+  <div class="hd-l">
+    <h1>INFORME DE SEGURIDAD</h1>
+    <div class="t">Data Breach en Plataforma de Servicios</div>
+    <p>Marketplace Dominicano — Exposición Total de Base de Usuarios</p>
+  </div>
+  <div class="hd-r">
+    <div class="ref">SEC-2026-001</div>
+    <div class="ref">09 Julio 2026</div>
+  </div>
+</div>
+
+<div class="bd">
+
+<div class="tag tag-crit">CRÍTICO — Data Breach Confirmado</div>
+
+<h1>7,452 perfiles de usuarios expuestos</h1>
+<p>Plataforma dominicana de servicios del hogar — Firestore sin restricciones permitió acceso total a la base de datos de usuarios.</p>
+
+<div class="meta">
+  <span>Clasificación: <strong>🔴 CRÍTICO</strong></span>
+  <span>CVSS: <strong>9.1</strong></span>
+  <span>Plataforma: <strong>ddtteayuda.com</strong></span>
+  <span>Tipo: <strong>Firebase Firestore Data Breach</strong></span>
+  <span>Estado: <strong style="color:#dc2626">CORREGIDO (10 Jul 2026)</strong></span>
+</div>
+
+<div class="callout">
+  <strong>Resumen Ejecutivo:</strong> La colección <code>profiles</code> de Firebase Firestore permitía a <strong>cualquier usuario autenticado</strong> leer la totalidad de los 7,452 perfiles registrados en la plataforma. No se requería rol administrativo ni privilegio especial. No existía verificación de pertenencia del dato. La vulnerabilidad fue corregida aproximadamente 24 horas después de la notificación.
+</div>
+
+<h2>Estadísticas del Data Breach</h2>
+
+<div class="sg">
+  <div class="sc danger"><div class="n">7,452</div><div class="l">Perfiles Expuestos</div></div>
+  <div class="sc danger"><div class="n">7,432</div><div class="l">Correos Electrónicos</div></div>
+  <div class="sc danger"><div class="n">6,290</div><div class="l">Teléfonos</div></div>
+  <div class="sc danger"><div class="n">3,807</div><div class="l">Cédulas Dominicanas</div></div>
+  <div class="sc warn"><div class="n">3,855</div><div class="l">Direcciones Físicas</div></div>
+  <div class="sc warn"><div class="n">3,079</div><div class="l">Coordenadas GPS</div></div>
+  <div class="sc warn"><div class="n">6,080</div><div class="l">Tokens Push FCM</div></div>
+  <div class="sc"><div class="n">11</div><div class="l">Admins Expuestos</div></div>
+</div>
+
+<h3>Distribución por Rol</h3>
+<table>
+  <tr><th>Rol</th><th>Cantidad</th><th>%</th></tr>
+  <tr><td>Clientes</td><td>3,769</td><td>50.6%</td></tr>
+  <tr><td>Suplidores (proveedores de servicios)</td><td>3,638</td><td>48.8%</td></tr>
+  <tr><td>Admins</td><td>7</td><td>0.09%</td></tr>
+  <tr><td>Supervisores</td><td>4</td><td>0.05%</td></tr>
+  <tr><td>Admin Condominios</td><td>6</td><td>0.08%</td></tr>
+  <tr><td>Sin rol asignado</td><td>27</td><td>0.36%</td></tr>
+</table>
+
+<h2>Vulnerabilidades Identificadas</h2>
+
+<div class="v">
+  <div class="v-h crit-b"><span>VULN-01: Firestore Data Breach — Colección "profiles" Expuesta</span><span class="s s-crit">CRÍTICO</span></div>
+  <div class="v-b">
+    <p><strong>Descripción:</strong> Reglas de seguridad de Firestore permitían a cualquier usuario autenticado leer la colección <code>profiles</code> completa, sin filtrar por propietario del dato.</p>
+    <p><strong>Regla vulnerada:</strong> <code>allow read: if request.auth != null;</code> — sin verificación de <code>request.auth.uid == resource.id</code></p>
+    <p><strong>Datos expuestos por perfil:</strong></p>
+    <table>
+      <tr><th>Campo</th><th>Tipo</th><th>Ejemplo</th></tr>
+      <tr><td>full_name</td><td>string</td><td>Nombre completo del usuario</td></tr>
+      <tr><td>email</td><td>string</td><td>usuario@correo.com</td></tr>
+      <tr><td>phone</td><td>string</td><td>(809) 555-1234</td></tr>
+      <tr><td>cedula</td><td>string</td><td>001-1234567-8</td></tr>
+      <tr><td>address</td><td>string</td><td>Calle X, Santo Domingo</td></tr>
+      <tr><td>latitude / longitude</td><td>double</td><td>18.47, -69.94</td></tr>
+      <tr><td>role</td><td>string</td><td>cliente / suplidor / admin</td></tr>
+      <tr><td>fcm_token</td><td>map</td><td>Push notification token</td></tr>
+      <tr><td>created_at</td><td>timestamp</td><td>2026-01-15</td></tr>
+    </table>
+  </div>
+</div>
+
+<div class="v">
+  <div class="v-h high-b"><span>VULN-02: Registro de Cuentas Sin Protección</span><span class="s s-high">ALTA</span></div>
+  <div class="v-b">
+    <p>Firebase Auth permitía crear cuentas vía REST API sin CAPTCHA, verificación de email ni rate limiting. Cualquier atacante puede crear cuentas masivamente para probar accesos.</p>
+    <code>POST /v1/accounts:signUp?key=AIzaSyBmsiSrpJwqO6OvsXMLAtTFJuCCMn-KT5o<br>{"email":"x@y.com","password":"Pass123!","returnSecureToken":true}</code>
+    <p><strong>Verificado:</strong> 4 cuentas creadas en menos de 10 segundos.</p>
+  </div>
+</div>
+
+<div class="v">
+  <div class="v-h high-b"><span>VULN-03: Autenticación Sin Rate Limiting</span><span class="s s-high">ALTA</span></div>
+  <div class="v-b">
+    <p>5 intentos de inicio de sesión con contraseña incorrecta en menos de 1 segundo sin bloqueo ni degradación. Permite ataques de fuerza bruta contra cuentas de usuario.</p>
+    <code>POST /v1/accounts:signInWithPassword?key=AIzaSyBmsiSrpJwqO6OvsXMLAtTFJuCCMn-KT5o<br>{"email":"usuario@test.com","password":"WRONG","returnSecureToken":true}<br><br>Respuesta: INVALID_LOGIN_CREDENTIALS (x5 en 0.8s)</code>
+  </div>
+</div>
+
+<div class="v">
+  <div class="v-h med-b"><span>VULN-04: API Key Expuesta en Código Cliente</span><span class="s s-med">MEDIA</span></div>
+  <div class="v-b">
+    <p>Clave de API de Firebase Web hardcodeada en el bundle JavaScript de Vite, accesible públicamente desde el navegador.</p>
+    <code>API Key: AIzaSyBmsiSrpJwqO6OvsXMLAtTFJuCCMn-KT5o<br>Project ID: ddt-te-ayuda<br>Ubicación: /assets/index-*.js</code>
+    <p>Se identificaron 4 API keys adicionales mediante ingeniería inversa del APK de la aplicación Android (Flutter AOT).</p>
+  </div>
+</div>
+
+<h2>Línea de Tiempo</h2>
+<table>
+  <tr><th>Fecha</th><th>Evento</th></tr>
+  <tr><td>09 Jul 2026</td><td>🔍 Identificación de la vulnerabilidad — verificación de acceso total a datos</td></tr>
+  <tr><td>09 Jul 2026</td><td>💾 Extracción completa del dataset de perfiles como evidencia</td></tr>
+  <tr><td>09 Jul 2026</td><td>📧 Notificación a los responsables de la plataforma</td></tr>
+  <tr><td>10 Jul 2026</td><td>✅ Verificación de corrección — Firestore rules actualizadas, acceso denegado</td></tr>
+</table>
+
+<h2>Impacto Potencial</h2>
+<table>
+  <tr><th>Riesgo</th><th>Descripción</th><th>Severidad</th></tr>
+  <tr><td class="cr">Phishing masivo</td><td>7,432 correos electrónicos + nombres completos para campañas dirigidas</td><td class="cr">CRÍTICO</td></tr>
+  <tr><td class="cr">Robo de identidad</td><td>3,807 cédulas dominicanas para suplantación y fraude crediticio</td><td class="cr">CRÍTICO</td></tr>
+  <tr><td class="hi">Suplantación de proveedores</td><td>3,638 suplidores con nombres, direcciones y ubicación GPS exacta</td><td class="hi">ALTO</td></tr>
+  <tr><td class="hi">Spam vía notificaciones push</td><td>6,080 tokens FCM para enviar notificaciones maliciosas a dispositivos</td><td class="hi">ALTO</td></tr>
+  <tr><td class="hi">Geolocalización de personas</td><td>3,079 coordenadas GPS de suplidores — riesgo de acoso o robo</td><td class="hi">ALTO</td></tr>
+</table>
+
+<h2>Detalles Técnicos</h2>
+<table>
+  <tr><th>Componente</th><th>Valor</th></tr>
+  <tr><td>URL</td><td>ddtteayuda.com</td></tr>
+  <tr><td>Stack</td><td>React (Vite) + Firebase Auth + Firestore + Fastly CDN</td></tr>
+  <tr><td>Proyecto Firebase</td><td>ddt-te-ayuda</td></tr>
+  <tr><td>API Key (web)</td><td>AIzaSyBmsiSrpJwqO6OvsXMLAtTFJuCCMn-KT5o</td></tr>
+  <tr><td>Firestore leak path</td><td>/projects/ddt-te-ayuda/databases/(default)/documents/profiles</td></tr>
+  <tr><td>Android</td><td>com.ddtteayuda.app</td></tr>
+  <tr><td>iOS</td><td>DDT Te Ayuda v1.0.4</td></tr>
+  <tr><td>Infraestructura</td><td>Fastly CDN → Google Cloud</td></tr>
+</table>
+
+<h2>Recomendaciones</h2>
+<ol>
+  <li><strong>Reglas de Firestore:</strong> Restringir lectura de <code>profiles</code> a <code>request.auth.uid == resource.id</code> — cada usuario solo puede leer su propio perfil</li>
+  <li><strong>Rotar API Keys:</strong> Regenerar todas las claves Firebase y aplicar restricciones por plataforma (web, iOS, Android)</li>
+  <li><strong>Notificar a usuarios:</strong> Comunicar a los 7,452 usuarios sobre la exposición de sus datos personales</li>
+  <li><strong>Firebase App Check:</strong> Implementar verificación para asegurar que solo la app legítima pueda acceder</li>
+  <li><strong>Rate limiting:</strong> Configurar protección contra abuso en endpoints de autenticación</li>
+  <li><strong>Auditar todas las colecciones:</strong> Verificar que ninguna otra colección esté expuesta</li>
+  <li><strong>Revisar reglas de Storage:</strong> Verificar acceso a Firebase Storage</li>
+</ol>
+
+<h2>Estado de Corrección (Post-Verificación)</h2>
+
+<table>
+  <tr><th>Vector</th><th>Estado</th><th>Verificado</th></tr>
+  <tr><td>GET /profiles (lista)</td><td>✅ 403 PERMISSION_DENIED</td><td>10 Jul 2026</td></tr>
+  <tr><td>GET /profiles/$UID (individual)</td><td>✅ 403/404</td><td>10 Jul 2026</td></tr>
+  <tr><td>runQuery profiles</td><td>✅ 403</td><td>10 Jul 2026</td></tr>
+  <tr><td>Otras colecciones (ratings, chats, etc.)</td><td>✅ 403</td><td>10 Jul 2026</td></tr>
+  <tr><td>Servicios (catálogo público)</td><td>⚠️ 200 (intencional)</td><td>10 Jul 2026</td></tr>
+  <tr><td>Registro de cuentas</td><td>⚠️ Sigue abierto (requiere Referer header)</td><td>10 Jul 2026</td></tr>
+  <tr><td>API Key</td><td>❌ Sin rotar</td><td>10 Jul 2026</td></tr>
+</table>
+
+<h2>Datos de Muestra (Anonimizados)</h2>
+
+<table>
+  <tr><th>Rol</th><th>Campos Expuestos</th></tr>
+  <tr><td>Cliente</td><td>nombre, email, teléfono, dirección, rol</td></tr>
+  <tr><td>Suplidor</td><td>nombre, email, teléfono, cédula, dirección, GPS (lat/lng)</td></tr>
+  <tr><td>Admin</td><td>nombre, email, teléfono, cédula, dirección</td></tr>
+</table>
+
+<div class="callout">
+  <strong>Nota:</strong> Este informe documenta una vulnerabilidad de seguridad identificada en la plataforma ddtteayuda.com. La vulnerabilidad fue corregida por los responsables de la plataforma. Este documento se publica con el propósito de transparencia y concienciación sobre seguridad en aplicaciones Firebase. No se incluyen datos personales identificables de los usuarios afectados.
+</div>
+
+</div>
+
+<div class="ft">
+  Documento generado el 09 Julio 2026 — SEC-2026-001
+</div>
+
+</div>
+</body>
+</html>

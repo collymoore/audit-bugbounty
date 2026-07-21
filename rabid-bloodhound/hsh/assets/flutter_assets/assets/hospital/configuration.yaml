@@ -1,0 +1,37 @@
+androidAppId: com.CMR.eme_salud_jose
+iosAppId: com.CMR.eme.salud.jose
+
+name: Hospital San José Hermosillo
+nameShort: San José
+
+webpage: "https://hospitalsanjosehermosillo.com/"
+ip: disanjose.ddns.net:99
+usesHttps: false
+
+contact_telephone: "5555555555"
+contact_email: contacto@cmr3.com
+contact_hours: De lunes a viernes de 7 a 20 hrs
+contact_address: Revolucion 756
+
+baseUrl: /HisWebServicios/Portal/ServicioPortal.svc
+baseUrlPACS: /visorhtml5/WcfServiceIconos/Service1.svc
+baseVisorPACS: /visorhtml5/WebDiagRxMobile
+
+iconBackgroundColor: "#ffffff"
+
+color_primary: 0xff17a584
+color_accent: 0xffa91313
+color_primaryDark: 0xff007557
+color_accentDark: 0xff730000
+color_primaryLight: 0xff5bd7b4
+color_accentLight: 0xffe24e3c
+color_loadingGrey: 0xffffffff
+
+debugMode: false
+hasImaging: true
+hasLaboratory: false
+hasPathology: false
+hasDirectory: false
+canMakeAppointmets: false
+hasBanner: true
+hasRecord: false

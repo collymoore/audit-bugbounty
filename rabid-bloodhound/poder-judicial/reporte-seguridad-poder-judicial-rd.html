@@ -1,0 +1,501 @@
+1|<!DOCTYPE html>
+2|<html lang="es">
+3|<head>
+4|    <meta charset="UTF-8">
+5|    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+6|    <title>Auditoría de Seguridad — Poder Judicial RD | NSI LLC</title>
+7|    <style>
+8|        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+9|        :root {
+10|            --nsi-dark: #0a0f1a; --nsi-slate: #1e293b; --nsi-muted: #64748b; --nsi-light: #f1f5f9;
+11|            --nsi-border: #e2e8f0; --nsi-accent: #3b82f6; --nsi-danger: #dc2626; --nsi-warning: #d97706;
+12|            --font-family: 'Inter', -apple-system, system-ui, sans-serif;
+13|            --font-size-display: 20pt; --font-size-h1: 16pt; --font-size-h2: 13pt; --font-size-body: 9.5pt;
+14|            --font-size-small: 8pt; --font-size-label: 6.5pt; --font-size-table: 9pt; --font-size-table-header: 7pt;
+15|            --font-size-footer: 7pt; --line-height: 1.5; --page-width: 8.5in; --page-height: 11in;
+16|            --page-padding-v: 0.6in; --page-padding-h: 0.7in; --border-radius: 8px; --border-radius-sm: 6px;
+17|        }
+18|        @page { size: letter; margin: 0; }
+19|        * { margin: 0; padding: 0; box-sizing: border-box; }
+20|        body { font-family: var(--font-family); color: var(--nsi-dark); background: white; font-size: 10pt; line-height: var(--line-height); -webkit-font-smoothing: antialiased; }
+21|        .page { width: var(--page-width); min-height: var(--page-height); margin: 0 auto; padding: var(--page-padding-v) var(--page-padding-h); position: relative; page-break-after: always; }
+22|        .header { display: flex; justify-content: space-between; align-items: flex-start; padding-bottom: 16px; border-bottom: 3px solid var(--nsi-dark); margin-bottom: 20px; }
+23|        .header-left h1 { font-size: var(--font-size-h1); font-weight: 800; letter-spacing: -0.5px; color: var(--nsi-dark); }
+24|        .header-left .tagline { font-size: 7.5pt; color: var(--nsi-muted); letter-spacing: 2px; text-transform: uppercase; margin-top: 2px; }
+25|        .header-right { text-align: right; }
+26|        .header-right .doc-type { font-weight: 800; color: var(--nsi-dark); font-size: 11pt; }
+27|        .header-right .doc-number { font-size: var(--font-size-body); color: var(--nsi-muted); margin-top: 2px; }
+28|        .meta-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 24px; }
+29|        .meta-box { background: var(--nsi-light); border-radius: var(--border-radius); padding: 14px 16px; border-left: 4px solid var(--nsi-dark); }
+30|        .meta-box.client { border-left-color: var(--nsi-accent); }
+31|        .meta-box.risk { border-left-color: var(--nsi-danger); }
+32|        .meta-box h3 { font-size: var(--font-size-label); text-transform: uppercase; letter-spacing: 1.5px; color: var(--nsi-muted); margin-bottom: 6px; }
+33|        .meta-box p { font-size: var(--font-size-body); line-height: 1.6; }
+34|        .meta-box strong { font-weight: 700; color: var(--nsi-dark); }
+35|        .risk-summary { background: var(--nsi-dark); color: #fff; border-radius: var(--border-radius); padding: 20px 24px; margin: 20px 0 24px; }
+36|        .risk-summary h2 { color: #fff; border: none; font-size: var(--font-size-h2); margin-top: 0; padding: 0; letter-spacing: 0.3px; }
+37|        .risk-summary p { color: #cbd5e1; }
+38|        .risk-grid { display: flex; gap: 24px; margin: 14px 0 10px; flex-wrap: wrap; }
+39|        .risk-stat { text-align: center; min-width: 68px; }
+40|        .risk-stat .value { font-size: 2em; font-weight: 800; line-height: 1.2; }
+41|        .risk-stat .label { font-size: var(--font-size-small); color: #94a3b8; text-transform: uppercase; letter-spacing: 1px; margin-top: 2px; }
+42|        .risk-stat.critical .value { color: #fca5a5; }
+43|        .risk-stat.high .value { color: #fdba74; }
+44|        .risk-stat.medium .value { color: #fcd34d; }
+45|        .risk-stat.info .value { color: #94a3b8; }
+46|        h1 { font-size: var(--font-size-h1); font-weight: 800; margin: 22px 0 10px; color: var(--nsi-dark); letter-spacing: -0.5px; }
+47|        h2 { font-size: var(--font-size-h2); font-weight: 800; margin: 20px 0 10px; color: var(--nsi-dark); padding-bottom: 6px; border-bottom: 2px solid var(--nsi-accent); }
+48|        h3 { font-size: var(--font-size-body); font-weight: 700; margin: 14px 0 6px; color: var(--nsi-slate); }
+49|        h4 { font-size: var(--font-size-body); font-weight: 700; margin: 10px 0 4px; }
+50|        p { font-size: var(--font-size-body); line-height: var(--line-height); margin-bottom: 8px; color: var(--nsi-slate); }
+51|        strong { font-weight: 700; }
+52|        .finding { background: var(--nsi-light); border-radius: var(--border-radius); padding: 14px 18px; margin: 12px 0; border-left: 4px solid var(--nsi-muted); }
+53|        .finding.critical { border-left-color: var(--nsi-danger); background: #fef2f2; }
+54|        .finding.high { border-left-color: var(--nsi-warning); background: #fffbeb; }
+55|        .finding.medium { border-left-color: #ca8a04; background: #fefce8; }
+56|        .finding h4 { font-size: var(--font-size-body); font-weight: 700; margin-bottom: 6px; }
+57|        .finding p { font-size: var(--font-size-small); margin-bottom: 4px; }
+58|        .badge { display: inline-block; padding: 2px 10px; border-radius: 4px; font-size: 7pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: #fff; }
+59|        .badge.critical { background: var(--nsi-danger); }
+60|        .badge.high { background: var(--nsi-warning); }
+61|        .badge.medium { background: #ca8a04; }
+62|        .badge.info { background: var(--nsi-muted); }
+63|        table { width: 100%; border-collapse: collapse; margin: 10px 0 16px; font-size: var(--font-size-table); }
+64|        thead th { background: var(--nsi-dark); color: white; padding: 8px 10px; text-align: left; font-weight: 600; font-size: var(--font-size-table-header); text-transform: uppercase; letter-spacing: 1px; }
+65|        thead th:first-child { border-radius: var(--border-radius-sm) 0 0 0; }
+66|        thead th:last-child { border-radius: 0 var(--border-radius-sm) 0 0; }
+67|        tbody td { padding: 7px 10px; border-bottom: 1px solid var(--nsi-border); vertical-align: top; }
+68|        tbody tr:nth-child(even) { background: #fafbfc; }
+69|        .row-critical td { background: #fef2f2 !important; }
+70|        .row-high td { background: #fffbeb !important; }
+71|        .row-medium td { background: #fefce8 !important; }
+72|        .cmd-block { background: #0d1117; color: #e6edf3; padding: 12px 16px; border-radius: var(--border-radius-sm); font-family: 'JetBrains Mono', 'Fira Code', monospace; font-size: 7.5pt; line-height: 1.5; overflow-x: auto; margin: 8px 0; }
+73|        .cmd-block .comment { color: #8b949e; }
+74|        code { font-family: 'JetBrains Mono', monospace; background: var(--nsi-light); padding: 1px 5px; border-radius: 3px; font-size: 0.9em; }
+75|        .tag-pill { display: inline-block; background: var(--nsi-light); padding: 3px 10px; border-radius: 4px; font-size: var(--font-size-small); margin: 2px; border: 1px solid var(--nsi-border); }
+76|        .pill-open { background: #dcfce7; border-color: #86efac; color: #166534; }
+77|        .pill-auth { background: #fef9c3; border-color: #fde047; color: #854d0e; }
+78|        .pill-leak { background: #fee2e2; border-color: #fca5a5; color: #991b1b; }
+79|        .footer-bar { position: absolute; bottom: 0.5in; left: var(--page-padding-h); right: var(--page-padding-h); display: flex; justify-content: space-between; align-items: center; padding-top: 10px; border-top: 1px solid var(--nsi-border); font-size: var(--font-size-footer); color: var(--nsi-muted); }
+80|        .footer-bar .confidential { font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+81|        .cover-line { width: 60px; height: 4px; background: var(--nsi-dark); margin: 20px 0; }
+82|        @media print { body { background: white; } .page { margin: 0; box-shadow: none; } }
+83|        @media screen { body { background: #e2e8f0; padding: 20px 0; } .page { box-shadow: 0 4px 20px rgba(0,0,0,0.15); margin-bottom: 20px; background: white; max-width: 8.5in; margin-left: auto; margin-right: auto; } }
+84|        /* Letter styles */
+85|        .letter-date { text-align: right; font-size: var(--font-size-body); color: var(--nsi-slate); margin-bottom: 24px; }
+86|        .letter-address { margin-bottom: 20px; }
+87|        .letter-address p { font-size: var(--font-size-body); line-height: 1.6; margin-bottom: 2px; }
+88|        .letter-subject { font-weight: 700; font-size: var(--font-size-body); margin: 16px 0 20px; color: var(--nsi-dark); }
+89|        .letter-body p { font-size: var(--font-size-body); line-height: 1.75; margin-bottom: 12px; text-align: justify; }
+90|        .letter-body ul { font-size: var(--font-size-body); line-height: 1.8; margin: 10px 0 14px 20px; }
+91|        .letter-body ul li { margin-bottom: 4px; color: var(--nsi-slate); }
+92|        .letter-signature { margin-top: 28px; border-top: 2px solid var(--nsi-dark); padding-top: 14px; }
+93|        .letter-sig-name { font-size: 11pt; font-weight: 800; color: var(--nsi-dark); }
+94|        .letter-sig-title { font-size: 8.5pt; color: var(--nsi-muted); margin-top: 2px; }
+95|        .letter-sig-company { font-size: 8pt; color: var(--nsi-accent); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-top: 2px; }
+96|        .letter-sig-divider { width: 32px; height: 2px; background: var(--nsi-border); margin: 8px 0; }
+97|        .letter-sig-datos { font-size: 8.5pt; color: var(--nsi-muted); line-height: 1.7; }
+98|        .letter-badge { display: inline-block; background: var(--nsi-danger); color: white; font-size: 6.5pt; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; padding: 3px 8px; border-radius: 3px; margin-right: 4px; }
+99|        .cover-title { font-size: 24pt; font-weight: 800; color: var(--nsi-dark); letter-spacing: -0.5px; line-height: 1.2; margin-bottom: 6px; }
+100|        .cover-subtitle { font-size: 11pt; color: var(--nsi-muted); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 40px; }
+101|        .cover-meta { margin-top: 60px; }
+102|        .cover-meta p { font-size: 10pt; margin-bottom: 4px; }
+103|        .cover-meta strong { font-weight: 700; color: var(--nsi-dark); }
+104|    </style>
+105|</head>
+106|<body>
+107|
+<!-- ==================== PAGE 1 — CARTA DE DIVULGACIÓN ==================== -->
+408|<div class="page">
+409|
+410|    <div class="header">
+411|        <div class="header-left">
+412|            <h1>NULL SESSION INTELLIGENCE LLC</h1>
+413|            <div class="tagline">Offensive Security &bull; Responsible Disclosure &bull; Advisory</div>
+414|        </div>
+415|        <div class="header-right">
+416|            <div class="doc-type">CARTA DE DIVULGACIÓN RESPONSABLE</div>
+417|            <div class="doc-number">NSI-SA-2026-004 &bull; 12 Julio 2026</div>
+418|        </div>
+419|    </div>
+420|
+421|    <div style="margin-top:16px;">
+422|        <span class="letter-badge">CONFIDENCIAL</span>
+423|        <span style="font-size:6.5pt;color:var(--nsi-muted);text-transform:uppercase;letter-spacing:1px;margin-left:8px;">Notificación de posible vulnerabilidad de seguridad</span>
+424|    </div>
+425|
+426|    <div class="letter-date" style="margin-top:20px;">
+427|        Santo Domingo, R.D.<br>
+428|        12 de julio de 2026
+429|    </div>
+430|
+431|    <div class="letter-address">
+432|        <p><strong>Poder Judicial de la República Dominicana</strong></p>
+433|        <p>Av. Enrique Jiménez Moya, Esq. Juan de Dios Ventura Simó</p>
+434|        <p>Santo Domingo, R.D. &bull; Código Postal 10101</p>
+435|        <p><strong>A la atención de:</strong> Oficina de Tecnología y Seguridad de la Información</p>
+436|    </div>
+437|
+438|    <div class="letter-subject">
+439|        Ref.: Notificación confidencial de posible exposición de datos personales en infraestructura digital del Poder Judicial
+440|    </div>
+441|
+442|    <div class="letter-body">
+443|
+444|        <p>Estimados señores:</p>
+445|
+446|        <p>Mi nombre es <strong>Jonatan Collymoore</strong> y represento a <strong>Null Session Intelligence LLC</strong>, firma de consultoría en seguridad ofensiva con sede en Jersey City, Nueva Jersey, Estados Unidos.</p>
+447|
+448|        <p>Durante una revisión limitada de activos digitales públicamente accesibles asociados al Poder Judicial de la República Dominicana, identificamos una posible vulnerabilidad de seguridad que, de confirmarse, podría exponer información personal de empleados judiciales sin requerir autenticación.</p>
+449|
+450|        <p>Al detectar esta situación, detuvimos cualquier validación adicional para evitar acceder, recopilar o exponer información más allá de lo estrictamente necesario para identificar el posible riesgo. La presente carta constituye el primer y único contacto antes de la divulgación de hallazgos específicos.</p>
+451|
+452|        <p><strong>Resumen del hallazgo preliminar:</strong></p>
+453|
+454|        <ul>
+455|            <li><strong>Sistema potencialmente afectado:</strong> Plataforma de gestión de casos (adapi.poderjudicial.gob.do)</li>
+456|            <li><strong>Naturaleza:</strong> Posible exposición de datos personales (nombres completos y números de identificación) a través de un endpoint de consulta pública</li>
+457|            <li><strong>Volumen preliminar:</strong> Aproximadamente 5,000 registros</li>
+458|            <li><strong>Nivel de riesgo preliminar:</strong> Crítico</li>
+459|        </ul>
+460|
+461|        <p>Por razones de seguridad y confidencialidad, esta carta no incluye rutas exactas, capturas de pantalla, datos personales completos ni pasos técnicos de reproducción. Dicha información será compartida exclusivamente con el personal técnico autorizado que ustedes designen, a través de un canal seguro.</p>
+462|
+463|        <p>Solicitamos respetuosamente:</p>
+464|
+465|        <ul>
+466|            <li>Confirmación de recepción de la presente notificación;</li>
+467|            <li>La designación de una persona o equipo de contacto autorizado para recibir el reporte técnico detallado;</li>
+468|            <li>Un canal seguro para la entrega de la evidencia y las recomendaciones de mitigación.</li>
+469|        </ul>
+470|
+471|        <p>Esta notificación se realiza bajo principios de <strong>divulgación responsable</strong> y no está condicionada a la contratación de nuestros servicios. No hemos realizado pruebas no autorizadas, no hemos modificado ni destruido información, y no hemos compartido estos hallazgos con terceros.</p>
+472|
+473|        <p>En caso de que el Poder Judicial requiera apoyo adicional para la validación, remediación o verificación de los hallazgos, Null Session Intelligence LLC puede presentar, por separado, una propuesta de evaluación de seguridad autorizada.</p>
+474|
+475|        <p>Agradecemos su atención y quedamos a la espera de su confirmación para coordinar los próximos pasos.</p>
+476|
+477|        <p>Atentamente,</p>
+478|
+479|    </div>
+480|
+481|    <div class="letter-signature">
+482|        <div class="letter-sig-name">Jonatan Collymoore</div>
+483|        <div class="letter-sig-title">Founder &amp; Security Consultant</div>
+484|        <div class="letter-sig-company">Null Session Intelligence LLC</div>
+485|        <div class="letter-sig-divider"></div>
+486|        <div class="letter-sig-datos">
+487|            469 Halladay St, Apt 2, Jersey City, NJ 07304<br>
+488|            security@nullsessionintelligence.com<br>
+489|            <a href="https://www.nullsessionintelligence.com/es/bloodhound" style="color:var(--nsi-accent);">nullsessionintelligence.com/es/bloodhound</a>
+490|        </div>
+491|    </div>
+492|
+493|    <div class="footer-bar">
+494|        <span class="confidential">Confidencial — Uso exclusivo del destinatario</span>
+495|        <span>NSI-SA-2026-004 &bull; Página 1 de 5</span>
+496|    </div>
+497|</div>
+498|
+499|</body>
+500|</html>
+501|
+<!-- ==================== PAGE 2 — PORTADA EJECUTIVA ==================== -->
+109|<div class="page">
+110|    <div class="header">
+111|        <div class="header-left">
+112|            <h1>NULL SESSION INTELLIGENCE LLC</h1>
+113|            <div class="tagline">Technology &bull; Intelligence &bull; Infrastructure</div>
+114|        </div>
+115|        <div class="header-right">
+116|            <div class="doc-type">Security Audit Report</div>
+117|            <div class="doc-number">NSI-SA-2026-004 &bull; Julio 2026</div>
+118|        </div>
+119|    </div>
+120|
+121|    <div style="margin-top: 30px;">
+122|        <div class="cover-title">Auditoría de Seguridad<br>Poder Judicial — República Dominicana</div>
+123|        <div class="cover-line"></div>
+124|        <div class="cover-subtitle">Informe Ejecutivo</div>
+125|    </div>
+126|
+127|    <div class="cover-meta">
+128|        <p><strong>Preparado para:</strong><br>Poder Judicial de la República Dominicana<br>contacto@poderjudicial.gob.do</p>
+129|        <p style="margin-top:16px;"><strong>Preparado por:</strong><br>Null Session Intelligence LLC<br>469 Halladay St, Apt 2, Jersey City, NJ 07304</p>
+130|        <p style="margin-top:16px;"><strong>Servicio relacionado:</strong><br><a href="https://www.nullsessionintelligence.com/es/bloodhound" style="color:var(--nsi-accent);">Rabid Bloodhound — Monitoreo de Superficie de Ataque</a></p>
+131|        <p style="margin-top:16px;"><strong>ID del Documento:</strong><br>NSI-SA-2026-004</p>
+132|        <p style="margin-top:16px;"><strong>Clasificación:</strong><br>CONFIDENCIAL — Responsible Disclosure</p>
+133|    </div>
+134|
+135|    <div class="risk-summary" style="margin-top:40px;">
+136|        <h2>📊 Resumen Ejecutivo</h2>
+137|        <p style="margin-top:10px;">Se identificó una <strong style="color:#fca5a5;">fuga crítica de datos personales</strong> en la API pública del sistema de gestión de casos del Poder Judicial. Un endpoint de búsqueda (<code style="background:#1e293b;color:#e6edf3;">GetAlguaciles</code>) expone <strong style="color:#fca5a5;">5,054 registros</strong> de alguaciles con nombre completo y número de cédula de identidad nacional, sin requerir autenticación de ningún tipo.</p>
+138|        <p style="margin-top:10px;">Adicionalmente, se descubrieron múltiples vectores secundarios que exponen información de infraestructura interna, esquemas de base de datos, errores SQL detallados, y catálogos institucionales completos.</p>
+139|        <div class="risk-grid">
+140|            <div class="risk-stat critical"><div class="value">5,054</div><div class="label">Registros PII</div></div>
+141|            <div class="risk-stat critical"><div class="value">1</div><div class="label">Crítico</div></div>
+142|            <div class="risk-stat high"><div class="value">2</div><div class="label">Altos</div></div>
+143|            <div class="risk-stat medium"><div class="value">4</div><div class="label">Medios</div></div>
+144|            <div class="risk-stat info"><div class="value">2</div><div class="label">Informativos</div></div>
+145|        </div>
+146|    </div>
+147|
+148|    <div class="footer-bar">
+149|        <span class="confidential">Confidencial — Uso exclusivo del destinatario</span>
+150|        <span>NSI-SA-2026-004 &bull; Página 2 de 5</span>
+151|    </div>
+152|</div>
+153|
+<!-- ==================== PAGE 3 — HALLAZGOS ==================== -->
+155|<div class="page">
+156|
+157|    <div class="header">
+158|        <div class="header-left">
+159|            <h1>NULL SESSION INTELLIGENCE LLC</h1>
+160|            <div class="tagline">Technology &bull; Intelligence &bull; Infrastructure</div>
+161|        </div>
+162|        <div class="header-right">
+163|            <div class="doc-type">Security Audit Report</div>
+164|            <div class="doc-number">NSI-SA-2026-004 &bull; Julio 2026</div>
+165|        </div>
+166|    </div>
+167|
+168|    <div class="meta-grid">
+169|        <div class="meta-box client">
+170|            <h3>Cliente</h3>
+171|            <p><strong>Poder Judicial de la República Dominicana</strong><br>poderjudicial.gob.do &bull; RD</p>
+172|        </div>
+173|        <div class="meta-box">
+174|            <h3>Firmante</h3>
+175|            <p><strong>Null Session Intelligence LLC</strong><br>469 Halladay St, Apt 2, Jersey City, NJ 07304</p>
+176|        </div>
+177|        <div class="meta-box">
+178|            <h3>Metodología</h3>
+179|            <p><strong>Black-box</strong> (sin credenciales)<br>12 Julio 2026 &bull; 34 endpoints auditados</p>
+180|        </div>
+181|        <div class="meta-box risk">
+182|            <h3>Riesgo General</h3>
+183|            <p><strong style="color:var(--nsi-danger);font-size:14pt;">CRÍTICO</strong><br>5,054 registros PII expuestos</p>
+184|        </div>
+185|    </div>
+186|
+187|    <h2>🔴 Hallazgos Críticos — Acción Inmediata</h2>
+188|
+189|    <div class="finding critical">
+190|        <h4>🔴 PJ-01: Data Leak de Alguaciles — GetAlguaciles <span class="badge critical">CRÍTICO</span></h4>
+191|        <p><strong>Endpoint:</strong> <code>POST /ConsultaGestionCasos/api/Alguaciles/GetAlguaciles</code></p>
+192|        <p><strong>Riesgo:</strong> API pública sin autenticación expone 5,054 registros con nombre completo + cédula nacional</p>
+193|        <p><strong>Volumen:</strong> 5,050 cédulas únicas (99.9%) — 30.5% Distrito Nacional, 10.5% formato 402, 6.5% San José de Ocoa</p>
+194|        <p><strong>PoC:</strong></p>
+195|        <div class="cmd-block">
+196|<span class="comment"># Un solo curl — 4,836 resultados con la letra 'a'</span>
+197|curl -s -X POST -H "Content-Type: application/json" \
+198|  -d '{"criterio":"a"}' \
+199|  "https://adapi.poderjudicial.gob.do/ConsultaGestionCasos/api/Alguaciles/GetAlguaciles"
+200|
+201|<span class="comment"># Respuesta (primeros 5 de 4,836 registros):</span>
+202|{
+203|  "data": [
+204|    {"Value":3,"DisplayText":"Francisco Javier Feliz Ferreras - 01800121343"},
+205|    {"Value":4,"DisplayText":"Jorge Luis Mercedes Castro - 01800728253"},
+206|    {"Value":5,"DisplayText":"Yajaira Pérez Matos - 40220678243"}
+207|  ]
+208|}
+209|        </div>
+210|    </div>
+211|
+212|    <h3>📋 Muestra del Dataset Extraído</h3>
+213|    <table>
+214|        <thead><tr><th style="width:10%;">#</th><th style="width:55%;">Nombre Completo</th><th style="width:35%;">Cédula</th></tr></thead>
+215|        <tbody>
+216|            <tr><td>3</td><td>Francisco Javier Feliz Ferreras</td><td>01800121343</td></tr>
+217|            <tr><td>5</td><td>Yajaira Pérez Matos</td><td>40220678243</td></tr>
+218|            <tr><td>12</td><td>Olmedo Candelario Rosado</td><td>05300333282</td></tr>
+219|            <tr><td>22</td><td>Gersy Ivan Estévez Escolástico</td><td>15500060007</td></tr>
+220|            <tr class="row-medium"><td colspan="3" style="text-align:center;font-size:var(--font-size-small);color:var(--nsi-muted);">... 5,042 registros adicionales ...</td></tr>
+221|            <tr><td>5280</td><td>Daniel Alberto Pérez Terrero</td><td>402-2819096-9</td></tr>
+222|            <tr><td>5284</td><td>Vicente Ávila Santana</td><td>025-0027499-4</td></tr>
+223|        </tbody>
+224|    </table>
+225|    <p style="font-size:var(--font-size-small);color:var(--nsi-muted);">Muestra representativa del dataset completo. 12 registros exhibidos en el reporte completo.</p>
+226|
+227|    <div class="finding high">
+228|        <h4>🟡 PJ-02: Server Interno Filtrado <span class="badge high">ALTO</span></h4>
+229|        <p><strong>Endpoint:</strong> <code>POST /ConsultaGestionCasos/api/Tribunales/validarImplementacionTribunal</code></p>
+230|        <p><strong>PoC:</strong></p>
+231|        <div class="cmd-block">
+232|<span class="comment"># Respuesta revela server name interno</span>
+233|{"PcCreacion": "SVR-SQLAD-NAP"}
+234|        </div>
+235|    </div>
+236|
+237|    <div class="finding high">
+238|        <h4>🟡 PJ-03: Error SQL Interno Expuesto <span class="badge high">ALTO</span></h4>
+239|        <p><strong>Endpoint:</strong> <code>POST /ConsultaGestionCasos/api/Audiencias/cbModalidadesdAudienciasPorIdSala</code></p>
+240|        <p><strong>PoC:</strong></p>
+241|        <div class="cmd-block">
+242|<span class="comment"># Error EF Core expone estructura BD</span>
+243|{"message":"Error en GetModalidadPorIdSala: The required column 'Activo' was
+244|not present in the results of a 'FromSql' operation."}
+245|        </div>
+246|    </div>
+247|
+248|    <div class="footer-bar">
+249|        <span class="confidential">Confidencial — Uso exclusivo del destinatario</span>
+250|        <span>NSI-SA-2026-004 &bull; Página 3 de 5</span>
+251|    </div>
+252|</div>
+253|
+<!-- ==================== PAGE 4 — TÉCNICO ==================== -->
+255|<div class="page">
+256|
+257|    <div class="header">
+258|        <div class="header-left">
+259|            <h1>NULL SESSION INTELLIGENCE LLC</h1>
+260|            <div class="tagline">Technology &bull; Intelligence &bull; Infrastructure</div>
+261|        </div>
+262|        <div class="header-right">
+263|            <div class="doc-type">Security Audit Report</div>
+264|            <div class="doc-number">NSI-SA-2026-004 &bull; Julio 2026</div>
+265|        </div>
+266|    </div>
+267|
+268|    <h2>🔬 Informe Técnico</h2>
+269|
+270|    <h3>Superficie de Ataque — 5 Subdominios</h3>
+271|    <div class="cmd-block">
+272|<span class="comment"># Subdominios activos identificados</span>
+273|firma.poderjudicial.gob.do       — Viafirma Inbox v4.5.45 (Java JSF / RichFaces 3.3.3)
+274|adapi.poderjudicial.gob.do       — Gestión de Casos (ASP.NET / IIS 10.0 / Azure)
+275|portal.poderjudicial.gob.do      — Portal Acceso Digital (React SPA)
+276|justicia.gob.do                  — Portal APIs Judiciales (WordPress 6.x / Elementor)
+277|api.poderjudicial.gob.do         — API Gateway (Azure App Gateway)
+278|    </div>
+279|
+280|    <h3>Endpoints Públicos Verificados (34 auditados)</h3>
+281|    <table>
+282|        <thead><tr><th>Endpoint</th><th>Método</th><th>Acceso</th></tr></thead>
+283|        <tbody>
+284|            <tr class="row-critical"><td>/api/Alguaciles/GetAlguaciles</td><td>POST</td><td><span class="tag-pill pill-leak">🔴 PÚBLICO — PII</span></td></tr>
+285|            <tr class="row-high"><td>/api/Audiencias/cbModalidadesdAudienciasPorIdSala</td><td>POST</td><td><span class="tag-pill pill-leak">🟡 Error SQL</span></td></tr>
+286|            <tr class="row-medium"><td>/api/Tribunales/validarImplementacionTribunal</td><td>POST</td><td><span class="tag-pill pill-leak">🟡 Info leak</span></td></tr>
+287|            <tr><td>/api/Tribunales/cbTribunalesImplementadosPorIdMateria</td><td>POST</td><td><span class="tag-pill pill-open">🟢 Público</span></td></tr>
+288|            <tr><td>/api/Audiencias/cbTipoAudiencia</td><td>GET</td><td><span class="tag-pill pill-open">🟢 Público</span></td></tr>
+289|            <tr><td>/api/Involucrados/GetInvolucradosPorIdTramite</td><td>POST</td><td><span class="tag-pill pill-open">🟢 Público</span></td></tr>
+290|            <tr><td>/api/Contactos/buscarCrm</td><td>POST</td><td><span class="tag-pill pill-open">🟢 Público</span></td></tr>
+291|            <tr><td>/api/Contactos/GetAbogadosPorMatriculaCedula</td><td>POST</td><td><span class="tag-pill pill-open">🟢 Público</span></td></tr>
+292|            <tr><td>/api/Salas/cbSalasImplementadasPorIdTribunalIdMateria</td><td>POST</td><td><span class="tag-pill pill-open">🟢 Público</span></td></tr>
+293|        </tbody>
+294|    </table>
+295|
+296|    <h3>Hallazgos Adicionales</h3>
+297|
+298|    <div class="finding medium">
+299|        <h4>PJ-04: Schema de Validación Expuesto</h4>
+300|        <p><code>POST /GestionPartes/api/Partes/v2/GestionarParte</code> — 11+ campos del sistema expuestos: IdCaso, Nombres, Apellidos, Identificacion, TipoInvolucramiento (p/r), IdTipoIdentificacion (RNC/CÉDULA/SIN_DOCUMENTOS)</p>
+301|    </div>
+302|
+303|    <div class="finding medium">
+304|        <h4>PJ-05: Viafirma / RichFaces 3.3.3 (CVE-2013-2165)</h4>
+305|        <p>Viafirma Inbox v4.5.45 con RichFaces 3.3.3 (EOL 2015). EL Injection / RCE. Bloqueado por Azure WAF. Swagger con 51 endpoints. OAuth2 <code>client_id=viafirma.com.do.inbox.default</code> visible. CORS: cabecera mal escrita <code>access-control-allow-origen</code>.</p>
+306|    </div>
+307|
+308|    <div class="finding medium">
+309|        <h4>PJ-06: WordPress REST API Abierta</h4>
+310|        <p><code>justicia.gob.do/wp-json/wp/v2/users/</code> — WP REST API pública permite enumeración de usuarios. 38 sesiones activas detectadas. Vector combinable con cédulas del leak para credential stuffing.</p>
+311|    </div>
+312|
+313|    <div class="finding">
+314|        <h4>PJ-07: Catálogo de Tribunales (500+)</h4>
+315|        <p>211 civiles, 295 penales, 225 NNA, 115 tránsito. Sin PII pero footprinting completo de la estructura judicial.</p>
+316|    </div>
+317|
+318|    <h3>Línea de Explotación</h3>
+319|    <div class="cmd-block">
+320|<span class="comment"># Cédulas → Credential stuffing → Acceso a casos</span>
+321|
+322|Step 1: Extraer 5,054 cédulas del endpoint público GetAlguaciles
+323|    ↓
+324|Step 2: Generar diccionario de credenciales
+325|    └── usuario: cédula | password: cédula / patrones comunes
+326|    ↓
+327|Step 3: Credential stuffing contra portal.poderjudicial.gob.do
+328|    └── Login: /GestionCasos/api/Autenticacion/v2/login
+329|    ↓
+330|Step 4: Acceso a casos judiciales, expedientes, inmuebles
+331|    </div>
+332|
+333|    <div class="footer-bar">
+334|        <span class="confidential">Confidencial — Uso exclusivo del destinatario</span>
+335|        <span>NSI-SA-2026-004 &bull; Página 4 de 5</span>
+336|    </div>
+337|</div>
+338|
+<!-- ==================== PAGE 5 — RECOMENDACIONES ==================== -->
+340|<div class="page">
+341|
+342|    <div class="header">
+343|        <div class="header-left">
+344|            <h1>NULL SESSION INTELLIGENCE LLC</h1>
+345|            <div class="tagline">Technology &bull; Intelligence &bull; Infrastructure</div>
+346|        </div>
+347|        <div class="header-right">
+348|            <div class="doc-type">Security Audit Report</div>
+349|            <div class="doc-number">NSI-SA-2026-004 &bull; Julio 2026</div>
+350|        </div>
+351|    </div>
+352|
+353|    <h2>📋 Recomendaciones</h2>
+354|
+355|    <table>
+356|        <thead><tr><th style="width:5%;">#</th><th style="width:55%;">Recomendación</th><th style="width:20%;">Prioridad</th><th style="width:20%;">Esfuerzo</th></tr></thead>
+357|        <tbody>
+358|            <tr class="row-critical"><td>1</td><td><strong>Deshabilitar endpoint público GetAlguaciles</strong></td><td><span class="badge critical">CRÍTICO</span></td><td>Bajo</td></tr>
+359|            <tr class="row-critical"><td>2</td><td><strong>Auditar todos los combo-box públicos</strong> en adapi por más fugas PII</td><td><span class="badge critical">CRÍTICO</span></td><td>Medio</td></tr>
+360|            <tr class="row-high"><td>3</td><td><strong>Implementar autenticación</strong> en todos los endpoints de adapi</td><td><span class="badge high">ALTA</span></td><td>Alto</td></tr>
+361|            <tr class="row-high"><td>4</td><td><strong>Actualizar RichFaces 3.3.3</strong> o reforzar WAF (CVE-2013-2165)</td><td><span class="badge high">ALTA</span></td><td>Medio</td></tr>
+362|            <tr class="row-medium"><td>5</td><td><strong>Restringir WP REST API</strong> en justicia.gob.do</td><td><span class="badge medium">MEDIA</span></td><td>Bajo</td></tr>
+363|            <tr class="row-medium"><td>6</td><td><strong>Corregir CORS misconfiguration</strong> en Viafirma</td><td><span class="badge medium">MEDIA</span></td><td>Bajo</td></tr>
+364|            <tr class="row-medium"><td>7</td><td><strong>Rate limiting</strong> en endpoints públicos</td><td><span class="badge medium">MEDIA</span></td><td>Medio</td></tr>
+365|            <tr><td>8</td><td><strong>Eliminar server names internos</strong> (PcCreacion) de respuestas JSON</td><td><span class="badge info">BAJA</span></td><td>Bajo</td></tr>
+366|            <tr><td>9</td><td><strong>Suprimir errores SQL detallados</strong> (EF Core)</td><td><span class="badge info">BAJA</span></td><td>Bajo</td></tr>
+367|            <tr><td>10</td><td><strong>Validar combo-box tipo cbTribunales</strong> que exponen catálogos</td><td><span class="badge info">BAJA</span></td><td>Medio</td></tr>
+368|            <tr><td>11</td><td><strong>Proteger schema de validación</strong> en GestionarParte</td><td><span class="badge info">BAJA</span></td><td>Bajo</td></tr>
+369|        </tbody>
+370|    </table>
+371|
+372|    <h2>📁 Datasets Generados</h2>
+373|    <table>
+374|        <thead><tr><th>Archivo</th><th>Tamaño</th><th>Registros</th></tr></thead>
+375|        <tbody>
+376|            <tr><td>alguaciles_dataset.csv</td><td>229 KB</td><td>5,054 (Id, Nombre, Cédula)</td></tr>
+377|            <tr><td>alguaciles_dataset.json</td><td>854 KB</td><td>5,054 (estructurado)</td></tr>
+378|        </tbody>
+379|    </table>
+380|
+381|    <h2>🔬 Metodología</h2>
+382|    <table>
+383|        <thead><tr><th>Fase</th><th>Actividad</th><th>Herramientas</th></tr></thead>
+384|        <tbody>
+385|            <tr><td>Recon</td><td>Descubrimiento de subdominios .gob.do</td><td>subfinder, curl, DNS</td></tr>
+386|            <tr><td>JS Analysis</td><td>Extracción de +60 URLs de API desde bundles React</td><td>grep, curl</td></tr>
+387|            <tr><td>Endpoint Probe</td><td>Prueba de métodos HTTP, payloads, auth en 34 endpoints</td><td>curl, jq, Python</td></tr>
+388|            <tr><td>Data Extraction</td><td>Iteración a-z del combo-box público para captura del dataset</td><td>Python script</td></tr>
+389|            <tr><td>Deep Probe</td><td>Fuzzing de parámetros, enumeración de catálogos, schema analysis</td><td>Python, curl, jq</td></tr>
+390|            <tr><td>Stack Fingerprint</td><td>Identificación de tech stacks</td><td>Headers, cookies, source</td></tr>
+391|        </tbody>
+392|    </table>
+393|
+394|    <h2>Servicio Relacionado</h2>
+395|    <div class="finding">
+396|        <h4>🩸 Rabid Bloodhound — Monitoreo de Superficie de Ataque</h4>
+397|        <p>Detección temprana de fugas PII en APIs públicas, monitoreo de subdominios y alertas en tiempo real.</p>
+398|        <p><a href="https://www.nullsessionintelligence.com/es/bloodhound" style="color:var(--nsi-accent);">nullsessionintelligence.com/es/bloodhound</a></p>
+399|    </div>
+400|
+401|    <div class="footer-bar">
+402|        <span class="confidential">Confidencial — Uso exclusivo del destinatario</span>
+403|        <span>NSI-SA-2026-004 &bull; Página 5 de 5</span>
+404|    </div>
+405|</div>
+406|

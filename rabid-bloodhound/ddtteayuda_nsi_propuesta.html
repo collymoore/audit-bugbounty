@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Propuesta de Servicios — DDTeAyuda | NSI LLC</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root {
+  --nsi-dark: #0a0f1a; --nsi-slate: #1e293b; --nsi-muted: #64748b; --nsi-light: #f1f5f9;
+  --nsi-border: #e2e8f0; --nsi-accent: #3b82f6; --nsi-danger: #dc2626; --nsi-warning: #d97706; --nsi-success: #16a34a;
+  --font-family: 'Inter', -apple-system, system-ui, sans-serif;
+  --font-size-display: 20pt; --font-size-h1: 16pt; --font-size-h2: 13pt; --font-size-body: 9.5pt;
+  --font-size-small: 8pt; --font-size-label: 6.5pt; --font-size-table: 9pt; --font-size-table-header: 7pt;
+  --font-size-footer: 7pt; --line-height: 1.5;
+  --page-width: 8.5in; --page-padding-v: 0.6in; --page-padding-h: 0.7in;
+  --border-radius: 8px; --border-radius-sm: 6px;
+}
+@page { size: letter; margin: 0; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: var(--font-family); color: var(--nsi-dark); background: white; font-size: 10pt; line-height: var(--line-height); -webkit-font-smoothing: antialiased; }
+.page { width: var(--page-width); min-height: 11in; margin: 0 auto; padding: var(--page-padding-v) var(--page-padding-h); position: relative; page-break-after: always; }
+.header { display: flex; justify-content: space-between; align-items: flex-start; padding-bottom: 16px; border-bottom: 3px solid var(--nsi-dark); margin-bottom: 20px; }
+.header-left h1 { font-size: var(--font-size-h1); font-weight: 800; letter-spacing: -0.5px; color: var(--nsi-dark); }
+.header-left .tagline { font-size: 7.5pt; color: var(--nsi-muted); letter-spacing: 2px; text-transform: uppercase; margin-top: 2px; }
+.header-right { text-align: right; }
+.header-right .doc-type { font-weight: 800; color: var(--nsi-dark); font-size: 11pt; }
+.header-right .doc-number { font-size: var(--font-size-body); color: var(--nsi-muted); margin-top: 2px; }
+.meta-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 24px; }
+.meta-box { background: var(--nsi-light); border-radius: var(--border-radius); padding: 14px 16px; border-left: 4px solid var(--nsi-dark); }
+.meta-box.client { border-left-color: var(--nsi-accent); }
+.meta-box.risk { border-left-color: var(--nsi-danger); }
+.meta-box h3 { font-size: var(--font-size-label); text-transform: uppercase; letter-spacing: 1.5px; color: var(--nsi-muted); margin-bottom: 6px; }
+.meta-box p { font-size: var(--font-size-body); line-height: 1.6; }
+.meta-box strong { font-weight: 700; color: var(--nsi-dark); }
+.alert-banner { background: #fef2f2; border: 2px solid var(--nsi-danger); border-radius: var(--border-radius); padding: 18px 22px; margin-bottom: 24px; }
+.alert-banner h2 { color: var(--nsi-danger); font-size: 14pt; font-weight: 800; margin-bottom: 4px; border: none; padding: 0; }
+.alert-banner p { font-size: var(--font-size-body); color: #7f1d1d; }
+h2 { font-size: var(--font-size-h2); font-weight: 800; margin: 20px 0 10px; color: var(--nsi-dark); padding-bottom: 6px; border-bottom: 2px solid var(--nsi-accent); }
+h3 { font-size: var(--font-size-body); font-weight: 700; margin: 14px 0 6px; color: var(--nsi-slate); }
+p { font-size: var(--font-size-body); line-height: var(--line-height); margin-bottom: 8px; color: var(--nsi-slate); }
+strong { font-weight: 700; }
+ul { padding-left: 18px; margin: 8px 0 14px; }
+ul li { font-size: var(--font-size-body); margin-bottom: 4px; color: var(--nsi-slate); }
+table { width: 100%; border-collapse: collapse; margin: 10px 0 16px; font-size: var(--font-size-table); }
+thead th { background: var(--nsi-dark); color: white; padding: 8px 10px; text-align: left; font-weight: 600; font-size: var(--font-size-table-header); text-transform: uppercase; letter-spacing: 1px; }
+thead th:first-child { border-radius: var(--border-radius-sm) 0 0 0; }
+thead th:last-child { border-radius: 0 var(--border-radius-sm) 0 0; }
+tbody td { padding: 7px 10px; border-bottom: 1px solid var(--nsi-border); vertical-align: top; }
+tbody tr:nth-child(even) { background: #fafbfc; }
+.price-cell { text-align: right; font-weight: 600; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.finding { background: var(--nsi-light); border-radius: var(--border-radius); padding: 14px 18px; margin: 12px 0; border-left: 4px solid var(--nsi-muted); }
+.finding.critical { border-left-color: var(--nsi-danger); background: #fef2f2; }
+.finding h4 { font-size: var(--font-size-body); font-weight: 700; margin-bottom: 6px; }
+.finding p { font-size: var(--font-size-small); margin-bottom: 4px; }
+.badge { display: inline-block; padding: 2px 10px; border-radius: 4px; font-size: 7pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: #fff; }
+.badge.critical { background: var(--nsi-danger); }
+.badge.high { background: var(--nsi-warning); }
+.offer-card { background: var(--nsi-light); border-radius: var(--border-radius); padding: 16px 20px; margin: 10px 0; border-left: 4px solid var(--nsi-accent); }
+.offer-card h4 { font-size: var(--font-size-body); font-weight: 700; margin-bottom: 4px; color: var(--nsi-dark); }
+.offer-card p { font-size: var(--font-size-small); margin-bottom: 2px; }
+.footer-bar { position: absolute; bottom: 0.5in; left: var(--page-padding-h); right: var(--page-padding-h); display: flex; justify-content: space-between; align-items: center; padding-top: 10px; border-top: 1px solid var(--nsi-border); font-size: var(--font-size-footer); color: var(--nsi-muted); }
+.footer-bar .confidential { font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+@media print { body { background: white; } .page { margin: 0; box-shadow: none; } }
+@media screen { body { background: #e2e8f0; padding: 20px 0; } .page { box-shadow: 0 4px 20px rgba(0,0,0,0.15); margin-bottom: 20px; background: white; max-width: 8.5in; margin-left: auto; margin-right: auto; } }
+</style>
+</head>
+<body>
+
+<!-- PAGE 1 -->
+<div class="page">
+
+<div class="header">
+  <div class="header-left">
+    <h1>NULL SESSION INTELLIGENCE LLC</h1>
+    <div class="tagline">AI-Driven Development &bull; Technology Solutions</div>
+  </div>
+  <div class="header-right">
+    <div class="doc-type">Propuesta de Servicios</div>
+    <div class="doc-number">NSI-PROP-DDT-2026-001 &bull; Julio 2026</div>
+  </div>
+</div>
+
+<div class="meta-grid">
+  <div class="meta-box client">
+    <h3>Destinatario</h3>
+    <p><strong>Ronny Correa De la Cruz</strong><br>DDTeAyuda &bull; ddtteayuda.com<br>Bajos de Haina, República Dominicana</p>
+  </div>
+  <div class="meta-box">
+    <h3>Remitente</h3>
+    <p><strong>Null Session Intelligence LLC</strong><br>469 Halladay St, Apt 2<br>Jersey City, NJ 07304</p>
+  </div>
+  <div class="meta-box">
+    <h3>Fecha</h3>
+    <p>9 de Julio, 2026</p>
+  </div>
+  <div class="meta-box risk">
+    <h3>Prioridad</h3>
+    <p><strong style="color:var(--nsi-danger);font-size:12pt;">URGENTE</strong><br>Ventana de respuesta: 7 días</p>
+  </div>
+</div>
+
+<div class="alert-banner">
+  <h2>⚠ Vulnerabilidad Crítica Detectada en su Plataforma</h2>
+  <p>Null Session Intelligence LLC ha identificado una vulnerabilidad de seguridad crítica en ddtteayuda.com que expone datos personales de usuarios de la plataforma. Este documento constituye una notificación formal y una propuesta de servicios para la remediación completa del hallazgo. <strong>No se incluyen detalles técnicos específicos en este documento.</strong></p>
+</div>
+
+<h2>Resumen del Hallazgo</h2>
+<p>Durante un análisis de seguridad rutinario realizado el 9 de julio de 2026, nuestros investigadores identificaron una vulnerabilidad en la infraestructura de <strong>DDTeAyuda</strong> que permite el acceso no autorizado a datos sensibles de usuarios de la plataforma.</p>
+
+<div class="finding critical">
+  <h4>Vulnerabilidad de Seguridad Crítica <span class="badge critical">CRÍTICO</span></h4>
+  <p><strong>Tipo:</strong> Falla en reglas de seguridad de base de datos — Exposición masiva de datos de usuarios.</p>
+  <p><strong>Alcance:</strong> La totalidad de los usuarios registrados en la plataforma se encuentran potencialmente expuestos. Esto incluye información personal identificable de <strong>clientes, proveedores de servicios y administradores</strong> de la plataforma.</p>
+  <p><strong>Vector de ataque:</strong> La vulnerabilidad puede ser explotada por cualquier persona con una cuenta gratuita en la plataforma, sin requerir privilegios especiales ni conocimientos técnicos avanzados.</p>
+  <p><strong>Riesgo de negocio:</strong> Fuga masiva de datos, robo de identidad de usuarios dominicanos, suplantación de proveedores, phishing dirigido, daño reputacional irreversible y potenciales acciones legales bajo leyes de protección de datos.</p>
+</div>
+
+<h2>Servicios Propuestos</h2>
+
+<div class="offer-card">
+  <h4>Fase 1 — Auditoría de Seguridad Completa</h4>
+  <p>Análisis exhaustivo de toda la infraestructura de DDTeAyuda incluyendo: reglas de Firestore, configuración de Firebase Auth, API Keys, Cloud Functions, aplicaciones móviles (Android/iOS), dependencias y buenas prácticas de seguridad. Entrega de informe detallado con todos los hallazgos, evidencia completa, vectores de ataque y <strong>recomendaciones accionables</strong> para que el equipo técnico de DDTeAyuda realice las correcciones.</p>
+</div>
+
+<div class="offer-card">
+  <h4>Fase 2 — Auditoría de Verificación Post-Corrección</h4>
+  <p>Una vez que el equipo de DDTeAyuda confirme haber implementado las correcciones, NSI realiza una segunda auditoría completa para verificar que todas las vulnerabilidades han sido cerradas correctamente. Incluye pruebas de validación, escaneo completo y certificación de seguridad emitida por Null Session Intelligence LLC.</p>
+  <p><em>Incluye: asesoría para notificación a usuarios afectados y autoridades de protección de datos de República Dominicana.</em></p>
+</div>
+
+<h2>Inversión</h2>
+<table>
+  <thead><tr><th>Fase</th><th>Descripción</th><th class="price-cell">Inversión</th></tr></thead>
+  <tbody>
+    <tr><td>Fase 1</td><td>Auditoría de Seguridad Completa + Informe Detallado + Recomendaciones</td><td class="price-cell">$3,000.00</td></tr>
+    <tr><td>Fase 2</td><td>Auditoría de Verificación Post-Corrección + Certificación NSI</td><td class="price-cell">$3,000.00</td></tr>
+    <tr><td colspan="2"><strong>Inversión Total — Paquete Completo (Fases 1+2)</strong></td><td class="price-cell"><strong style="font-size:12pt;color:var(--nsi-accent);">$6,000.00</strong></td></tr>
+  </tbody>
+</table>
+<p style="font-size:var(--font-size-small);color:var(--nsi-muted);">Precios en USD. Facturación: 50% al inicio de cada fase, 50% contra entrega de resultados.</p>
+
+<div class="footer-bar">
+  <span class="confidential">Confidencial — Uso exclusivo del destinatario</span>
+  <span>NSI-PROP-DDT-2026-001 &bull; Página 1 de 2</span>
+</div>
+</div>
+
+<!-- PAGE 2 -->
+<div class="page">
+
+<div class="header">
+  <div class="header-left">
+    <h1>NULL SESSION INTELLIGENCE LLC</h1>
+    <div class="tagline">AI-Driven Development &bull; Technology Solutions</div>
+  </div>
+  <div class="header-right">
+    <div class="doc-type">Propuesta de Servicios</div>
+    <div class="doc-number">NSI-PROP-DDT-2026-001 &bull; Julio 2026</div>
+  </div>
+</div>
+
+<h2>Por qué Null Session Intelligence LLC</h2>
+<p>NSI es una firma de tecnología e inteligencia con sede en Jersey City, NJ. Nuestro equipo combina experiencia en desarrollo de software, seguridad ofensiva y defensiva, automatización e inteligencia artificial. Hemos realizado auditorías de seguridad para organizaciones en los sectores financiero, salud, comercio electrónico y gobierno.</p>
+<p>Nuestro enfoque se basa en la metodología de <strong>Null Session</strong>: observación sin presunciones, análisis basado en evidencia y acción precisa. No especulamos — verificamos.</p>
+
+<h2>Próximos Pasos</h2>
+<table>
+  <thead><tr><th>#</th><th>Acción</th><th>Responsable</th><th>Plazo</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td>Revisión de esta propuesta</td><td>DDTeAyuda</td><td>7 días</td></tr>
+    <tr><td>2</td><td>Confirmación de interés y firma de NDA</td><td>Ambas partes</td><td>—</td></tr>
+    <tr><td>3</td><td>Definición de alcance y montos finales</td><td>NSI + DDTeAyuda</td><td>—</td></tr>
+    <tr><td>4</td><td>Ejecución de Fase 1 (Auditoría)</td><td>NSI</td><td>48-72h hábiles</td></tr>
+    <tr><td>5</td><td>Entrega de resultados y Fase 2</td><td>NSI</td><td>Según alcance</td></tr>
+  </tbody>
+</table>
+
+<h2>Términos y Condiciones</h2>
+<ul>
+  <li><strong>Confidencialidad:</strong> Toda la información compartida entre las partes está cubierta por acuerdo de confidencialidad mutua.</li>
+  <li><strong>Alcance:</strong> El alcance detallado de cada fase se definirá en un Statement of Work (SOW) específico antes del inicio.</li>
+  <li><strong>Pago:</strong> 50% al inicio de cada fase, 50% contra entrega de resultados.</li>
+  <li><strong>Propiedad intelectual:</strong> Los hallazgos de seguridad y el código de remediación pasan a ser propiedad del cliente una vez pagados en su totalidad.</li>
+  <li><strong>Responsabilidad:</strong> NSI no se hace responsable por vulnerabilidades no identificadas debido a limitaciones de alcance acordado.</li>
+  <li><strong>Divulgación responsable:</strong> NSI se compromete a no divulgar las vulnerabilidades encontradas a terceros sin autorización del cliente, salvo que la ley lo requiera.</li>
+</ul>
+
+<h2>Contacto</h2>
+<p><strong>Null Session Intelligence LLC</strong><br>
+469 Halladay St, Apt 2, Jersey City, NJ 07304<br>
+Estados Unidos</p>
+<p><em>Para consultas sobre esta propuesta, responder al correo electrónico desde el cual fue recibido.</em></p>
+
+<div class="footer-bar">
+  <span class="confidential">Confidencial — Uso exclusivo del destinatario</span>
+  <span>NSI-PROP-DDT-2026-001 &bull; Página 2 de 2</span>
+</div>
+</div>
+
+</body>
+</html>

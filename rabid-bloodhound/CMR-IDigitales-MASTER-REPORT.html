@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CMR Medical Systems / IDigitales — Security Assessment</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', -apple-system, sans-serif; background: #0a0a1a; color: #e0e0e0; line-height: 1.7; }
+  .container { max-width: 960px; margin: 0 auto; padding: 40px 24px; }
+  h1 { font-size: 2.2em; font-weight: 800; color: #ff4757; margin-bottom: 8px; letter-spacing: -1px; }
+  h2 { font-size: 1.5em; font-weight: 700; color: #ff6b81; margin-top: 48px; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid #ff4757; }
+  h3 { font-size: 1.15em; font-weight: 600; color: #ffa502; margin-top: 32px; margin-bottom: 12px; }
+  p { margin-bottom: 16px; color: #c0c0d0; }
+  table { width: 100%; border-collapse: collapse; margin: 16px 0 24px 0; font-size: 0.9em; background: #12122a; border-radius: 8px; overflow: hidden; }
+  th { background: #1a1a3e; color: #ffa502; font-weight: 600; text-align: left; padding: 12px 16px; }
+  td { padding: 10px 16px; border-bottom: 1px solid #1e1e40; }
+  tr:hover td { background: #1a1a35; }
+  code { background: #1e1e3a; color: #7bed9f; padding: 2px 8px; border-radius: 4px; font-size: 0.85em; }
+  pre { background: #0d0d22; border: 1px solid #1e1e40; border-radius: 8px; padding: 16px; overflow-x: auto; margin: 16px 0; }
+  pre code { background: none; padding: 0; }
+  blockquote { border-left: 4px solid #ff4757; padding-left: 16px; margin: 16px 0; color: #a0a0b5; }
+  .badge { display: inline-block; padding: 2px 10px; border-radius: 12px; font-size: 0.75em; font-weight: 700; margin-right: 4px; }
+  .crit { background: #ff4757; color: white; }
+  .high { background: #ff6348; color: white; }
+  .med { background: #ffa502; color: #000; }
+  .low { background: #2ed573; color: #000; }
+  .info { background: #3742fa; color: white; }
+  .header-bg { background: linear-gradient(135deg, #0a0a1a 0%, #1a0a2e 50%, #2a0a3e 100%); padding: 60px 0 40px; border-bottom: 3px solid #ff4757; text-align: center; }
+  .header-bg h1 { font-size: 2.5em; }
+  .header-bg .subtitle { color: #ffa502; font-size: 1.1em; margin-top: 4px; }
+  .header-bg .meta { color: #7f8fa6; font-size: 0.85em; margin-top: 12px; }
+  .classification { display: inline-block; border: 2px solid #ff4757; color: #ff4757; padding: 4px 16px; border-radius: 20px; font-weight: 700; font-size: 0.85em; margin-bottom: 12px; letter-spacing: 2px; }
+  .findings-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 12px; margin: 16px 0; }
+  .finding-card { background: #12122a; border: 1px solid #1e1e40; border-radius: 8px; padding: 16px; }
+  .finding-card.crit { border-color: #ff4757; }
+  .finding-card.high { border-color: #ff6348; }
+  .finding-card .sev { font-weight: 700; font-size: 0.8em; text-transform: uppercase; }
+  .finding-card .title { font-weight: 600; color: #e0e0f0; margin-top: 4px; }
+  @media (max-width: 600px) { .container { padding: 20px 16px; } h1 { font-size: 1.6em; } }
+  ul, ol { margin: 8px 0 16px 24px; color: #c0c0d0; }
+  li { margin-bottom: 4px; }
+  strong { color: #f0f0ff; }
+  hr { border: none; border-top: 1px solid #1e1e40; margin: 32px 0; }
+</style>
+</head>
+<body>
+<div class="header-bg">
+  <div class="classification">CONFIDENCIAL</div>
+  <h1>CMR Medical Systems / IDigitales</h1>
+  <div class="subtitle">Security Assessment Report — Link Analysis &amp; Findings</div>
+  <div class="meta">14 aplicaciones · 10 entidades de salud · 4 países · 14 Julio 2026</div>
+</div>
+<div class="container">
+<h1 id="cmr-medical-systems-idigitales-security-assessment-report">CMR Medical Systems / IDigitales — Security Assessment Report</h1>
+<p><strong>Fecha:</strong> 14 Julio 2026
+<strong>Clasificación:</strong> CONFIDENCIAL — Para uso exclusivo del equipo de seguridad</p>
+<hr />
+<h2 id="executive-summary">Executive Summary</h2>
+<p>Se analizaron <strong>14 aplicaciones Android</strong> del ecosistema <strong>CMR Medical Systems / IDigitales</strong> — todas white-label Flutter con backend WCF (.NET SOAP) sobre IIS. El backend, desarrollado por <strong>IDigitales / Cedisa Consultores (RD)</strong>, expone información médica protegida (PHI), datos personales (PII), y credenciales compartidas <strong>sin autenticación</strong>.</p>
+<p><strong>Hallazgos críticos:</strong>
+- 🔴 <strong>Contraseña compartida</strong> <code>cmrservice05</code> en 9/9 hosts accesibles
+- 🔴 <strong>6,078 empleados</strong> con nombres, cédulas, roles y especialidades expuestos
+- 🔴 <strong>Estudios DICOM de pacientes</strong> accesibles sin auth
+- 🔴 <strong>Consentimientos médicos firmados</strong> expuestos
+- 🔴 <strong>HTTP plano</strong> en 3 servidores productivos
+- 🔴 <strong>debugMode: true</strong> en 10/14 aplicaciones</p>
+<hr />
+<h2 id="1-alcance">1. ALCANCE</h2>
+<h3 id="11-apps-analizadas-14">1.1 Apps Analizadas (14)</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">#</th>
+<th style="text-align: left;">App</th>
+<th style="text-align: left;">Package</th>
+<th style="text-align: center;">Versión</th>
+<th style="text-align: center;">País</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">InterHospital</td>
+<td style="text-align: left;"><code>com.CMR.eme_salud_interhospital</code></td>
+<td style="text-align: center;">1.0.6</td>
+<td style="text-align: center;">🇪🇨</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td style="text-align: left;">Hospital San José Hermosillo</td>
+<td style="text-align: left;"><code>com.CMR.eme_salud_jose</code></td>
+<td style="text-align: center;">2.2.2</td>
+<td style="text-align: center;">🇲🇽</td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td style="text-align: left;">Clínica Corominas</td>
+<td style="text-align: left;"><code>com.CMR.emesalud_cmrcorominas</code></td>
+<td style="text-align: center;">2.7.3</td>
+<td style="text-align: center;">🇩🇴</td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td style="text-align: left;">Clínica Abreu (CDD)</td>
+<td style="text-align: left;"><code>com.CMR.emesalud_abreu</code></td>
+<td style="text-align: center;">2.6.3</td>
+<td style="text-align: center;">🇩🇴</td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td style="text-align: left;">Cardio Imágenes</td>
+<td style="text-align: left;"><code>com.CMR.emesalud_cardioimagenes</code></td>
+<td style="text-align: center;">2.6.4</td>
+<td style="text-align: center;">🇩🇴</td>
+</tr>
+<tr>
+<td style="text-align: center;">6</td>
+<td style="text-align: left;">CEDISA</td>
+<td style="text-align: left;"><code>com.CMR.eme_salud_cedisa</code></td>
+<td style="text-align: center;">2.6.2</td>
+<td style="text-align: center;">🇩🇴</td>
+</tr>
+<tr>
+<td style="text-align: center;">7</td>
+<td style="text-align: left;">Centro Médico Moderno (CMM)</td>
+<td style="text-align: left;"><code>com.CMR.emesalud_cmm</code></td>
+<td style="text-align: center;">2.6.3</td>
+<td style="text-align: center;">🇩🇴</td>
+</tr>
+<tr>
+<td style="text-align: center;">8</td>
+<td style="text-align: left;">CADI</td>
+<td style="text-align: left;"><code>com.CMR.emesalud_cadi</code></td>
+<td style="text-align: center;">2.6.2</td>
+<td style="text-align: center;">🇩🇴</td>
+</tr>
+<tr>
+<td style="text-align: center;">9</td>
+<td style="text-align: left;">Policlínica Metropolitana</td>
+<td style="text-align: left;"><code>com.CMR.eme_salud_cmr_Policlinica</code></td>
+<td style="text-align: center;">2.7.2</td>
+<td style="text-align: center;">🇩🇴</td>
+</tr>
+<tr>
+<td style="text-align: center;">10</td>
+<td style="text-align: left;">Honduras Medical Center (HMC)</td>
+<td style="text-align: left;"><code>com.CMR.emesalud_hmc</code></td>
+<td style="text-align: center;">2.6.2</td>
+<td style="text-align: center;">🇭🇳</td>
+</tr>
+<tr>
+<td style="text-align: center;">11</td>
+<td style="text-align: left;">HIGEA</td>
+<td style="text-align: left;"><code>com.CMR.emesalud_higea</code></td>
+<td style="text-align: center;">2.7.4</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td style="text-align: center;">12</td>
+<td style="text-align: left;">InfoSalud Firmas</td>
+<td style="text-align: left;"><code>com.CMR.firmas_infosalud</code></td>
+<td style="text-align: center;">1.2.9</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td style="text-align: center;">13</td>
+<td style="text-align: left;">EME Salud (generic)</td>
+<td style="text-align: left;"><code>com.CMR.eme_salud_cmr</code></td>
+<td style="text-align: center;">2.6.0</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td style="text-align: center;">14</td>
+<td style="text-align: left;">Lab Tequis / Centro Médico CMR</td>
+<td style="text-align: left;"><code>com.CMR.eme_salud</code></td>
+<td style="text-align: center;">1.6.0</td>
+<td style="text-align: center;">—</td>
+</tr>
+</tbody>
+</table>
+<h3 id="12-descargas-estimadas-google-play">1.2 Descargas Estimadas (Google Play)</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">App</th>
+<th style="text-align: center;">Descargas</th>
+<th style="text-align: center;">Rating</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">HIGEA</td>
+<td style="text-align: center;">10K+</td>
+<td style="text-align: center;">N/A</td>
+</tr>
+<tr>
+<td style="text-align: left;">Policlínica Metropolitana</td>
+<td style="text-align: center;">5K+</td>
+<td style="text-align: center;">N/A</td>
+</tr>
+<tr>
+<td style="text-align: left;">Centro Médico Moderno</td>
+<td style="text-align: center;">1K+</td>
+<td style="text-align: center;">N/A</td>
+</tr>
+<tr>
+<td style="text-align: left;">CEDISA</td>
+<td style="text-align: center;">1K+</td>
+<td style="text-align: center;">N/A</td>
+</tr>
+<tr>
+<td style="text-align: left;">Clínica Abreu</td>
+<td style="text-align: center;">100+</td>
+<td style="text-align: center;">N/A</td>
+</tr>
+<tr>
+<td style="text-align: left;">InfoSalud</td>
+<td style="text-align: center;">100+</td>
+<td style="text-align: center;">N/A</td>
+</tr>
+<tr>
+<td style="text-align: left;">EMESALUD</td>
+<td style="text-align: center;">100+</td>
+<td style="text-align: center;">N/A</td>
+</tr>
+<tr>
+<td style="text-align: left;">Hospital San José</td>
+<td style="text-align: center;">100+</td>
+<td style="text-align: center;">N/A</td>
+</tr>
+<tr>
+<td style="text-align: left;">Lab Tequis</td>
+<td style="text-align: center;">100+</td>
+<td style="text-align: center;">5.0★</td>
+</tr>
+<tr>
+<td style="text-align: left;">CADI</td>
+<td style="text-align: center;">50+</td>
+<td style="text-align: center;">N/A</td>
+</tr>
+<tr>
+<td style="text-align: left;">Corominas</td>
+<td style="text-align: center;">10+</td>
+<td style="text-align: center;">N/A</td>
+</tr>
+<tr>
+<td style="text-align: left;">Honduras Medical Center</td>
+<td style="text-align: center;">10+</td>
+<td style="text-align: center;">N/A</td>
+</tr>
+<tr>
+<td style="text-align: left;">Cardio Imágenes</td>
+<td style="text-align: center;">10+</td>
+<td style="text-align: center;">N/A</td>
+</tr>
+<tr>
+<td style="text-align: left;">InterHospital</td>
+<td style="text-align: center;">10+</td>
+<td style="text-align: center;">5.0★</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>TOTAL</strong></td>
+<td style="text-align: center;"><strong>~18K+</strong></td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+<h3 id="13-clientes-de-idigitales">1.3 Clientes de IDigitales</h3>
+<p>Son <strong>10 entidades de salud</strong> en 4 países usando el sistema HIS de IDigitales:</p>
+<p><strong>🇩🇴 República Dominicana (7)</strong>
+1. Clínica Corominas — <code>portal.clinicacorominas.com.do</code> (190.167.229.27)
+2. Clínica Abreu (CDD) — <code>resultados.clinicaabreu.com.do</code> (190.167.33.178)
+3. Cardio Imágenes Especializadas — <code>cardioimagenes.cmr-apps.com</code>
+4. CEDISA — <code>portalresultados.cedisa.do</code> (66.98.69.202) — <strong>hub central</strong>
+5. Centro Médico Moderno (CMM) — <code>resultadosimagenes.cmm.do</code>
+6. CADI — <code>portal.cadi.do</code>
+7. Policlínica Metropolitana — <code>policlinicametropolitana-apps.com</code></p>
+<p><strong>🇪🇨 Ecuador</strong>
+8. InterHospital — <code>interhospital.com.ec</code> (216.198.79.1)</p>
+<p><strong>🇲🇽 México</strong>
+9. Hospital San José Hermosillo — <code>disanjose.ddns.net:99</code> (189.173.69.27)</p>
+<p><strong>🇭🇳 Honduras</strong>
+10. Honduras Medical Center — <code>ris.hmc.hn</code> (backend via CEDISA)</p>
+<hr />
+<h2 id="2-arquitectura-del-sistema">2. ARQUITECTURA DEL SISTEMA</h2>
+<h3 id="21-stack-tecnologico">2.1 Stack Tecnológico</h3>
+<div class="codehilite"><pre><span></span><code><span class="err">┌─────────────────────────────────────────────────────────┐</span>
+<span class="err">│</span>                    <span class="n">APPS</span> <span class="p">(</span><span class="n">Flutter</span><span class="p">)</span>                        <span class="err">│</span>
+<span class="err">│</span>  <span class="err">┌──────────┐</span>  <span class="err">┌──────────┐</span>  <span class="err">┌──────────┐</span>  <span class="err">┌──────────┐│</span>
+<span class="err">│</span>  <span class="err">│</span><span class="n">Corominas</span> <span class="err">│</span>  <span class="err">│</span>  <span class="n">Abreu</span>   <span class="err">│</span>  <span class="err">│</span>  <span class="n">CEDISA</span>  <span class="err">│</span>  <span class="err">│</span>  <span class="n">CMM</span>     <span class="err">││</span>
+<span class="err">│</span>  <span class="err">└────┬─────┘</span>  <span class="err">└────┬─────┘</span>  <span class="err">└────┬─────┘</span>  <span class="err">└────┬─────┘│</span>
+<span class="err">│</span>       <span class="err">│</span>              <span class="err">│</span>              <span class="err">│</span>              <span class="err">│</span>       <span class="err">│</span>
+<span class="err">│</span>  <span class="err">┌────┴──────────────┴──────────────┴──────────────┴────┐</span> <span class="err">│</span>
+<span class="err">│</span>  <span class="err">│</span>           <span class="n">configuration</span><span class="p">.</span><span class="n">yaml</span>                         <span class="err">│</span> <span class="err">│</span>
+<span class="err">│</span>  <span class="err">│</span>  <span class="n">ip</span><span class="p">:</span> <span class="n">portal</span><span class="p">.</span><span class="n">clinicacorominas</span><span class="p">.</span><span class="n">com</span><span class="p">.</span><span class="n">do</span>                  <span class="err">│</span> <span class="err">│</span>
+<span class="err">│</span>  <span class="err">│</span>  <span class="n">baseUrl</span><span class="p">:</span> <span class="o">/</span><span class="n">HisWebServicios</span><span class="o">/</span><span class="n">Portal</span><span class="o">/</span><span class="n">ServicioPortal</span><span class="p">.</span><span class="n">svc</span> <span class="err">│</span> <span class="err">│</span>
+<span class="err">│</span>  <span class="err">└────────────────────────┬─────────────────────────────┘</span> <span class="err">│</span>
+<span class="err">└───────────────────────────┼───────────────────────────────┘</span>
+                            <span class="err">│</span>
+<span class="err">┌───────────────────────────┴───────────────────────────────┐</span>
+<span class="err">│</span>                  <span class="n">BACKEND</span> <span class="n">WCF</span> <span class="p">(</span><span class="n">IIS</span> <span class="mf">10.0</span><span class="p">)</span>                    <span class="err">│</span>
+<span class="err">│</span>  <span class="err">┌─────────────────────────────────────────────────────┐</span>  <span class="err">│</span>
+<span class="err">│</span>  <span class="err">│</span>  <span class="n">ServicioPortal</span><span class="p">.</span><span class="n">svc</span> <span class="p">(</span><span class="mi">48</span><span class="o">-</span><span class="mi">96</span> <span class="n">ops</span> <span class="n">c</span><span class="o">/</span><span class="n">u</span><span class="p">)</span>                  <span class="err">│</span>  <span class="err">│</span>
+<span class="err">│</span>  <span class="err">│</span>  <span class="n">Namespace</span><span class="p">:</span> <span class="n">IDigitales</span><span class="p">.</span><span class="n">HIS</span><span class="p">.</span><span class="n">Web</span><span class="p">.</span><span class="n">Servicios</span><span class="p">.</span><span class="n">Portal</span>      <span class="err">│</span>  <span class="err">│</span>
+<span class="err">│</span>  <span class="err">├─────────────────────────────────────────────────────┤</span>  <span class="err">│</span>
+<span class="err">│</span>  <span class="err">│</span>  <span class="n">Service1</span><span class="p">.</span><span class="n">svc</span> <span class="p">(</span><span class="n">PACS</span> <span class="n">Iconos</span><span class="p">)</span>                         <span class="err">│</span>  <span class="err">│</span>
+<span class="err">│</span>  <span class="err">│</span>  <span class="n">WebDiagRxMobile</span> <span class="p">(</span><span class="n">Visor</span> <span class="n">Radiológico</span><span class="p">)</span>                <span class="err">│</span>  <span class="err">│</span>
+<span class="err">│</span>  <span class="err">│</span>  <span class="n">WebUltimateGL</span> <span class="p">(</span><span class="n">Visor</span> <span class="n">Avanzado</span> <span class="n">React</span><span class="p">)</span>               <span class="err">│</span>  <span class="err">│</span>
+<span class="err">│</span>  <span class="err">│</span>  <span class="n">Hospitalizacion</span><span class="p">.</span><span class="n">svc</span>                                <span class="err">│</span>  <span class="err">│</span>
+<span class="err">│</span>  <span class="err">│</span>  <span class="n">Patologia</span><span class="o">/</span><span class="n">Imagenes</span><span class="p">.</span><span class="n">svc</span>                             <span class="err">│</span>  <span class="err">│</span>
+<span class="err">│</span>  <span class="err">│</span>  <span class="n">Facturacion</span><span class="o">/</span><span class="n">ServicioFacturacion</span><span class="p">.</span><span class="n">svc</span> <span class="p">(</span><span class="n">CFDI</span> <span class="n">SAT</span><span class="p">)</span>     <span class="err">│</span>  <span class="err">│</span>
+<span class="err">│</span>  <span class="err">│</span>  <span class="n">Integraciones</span><span class="o">/</span><span class="n">Laboratorio</span><span class="p">.</span><span class="n">svc</span>                      <span class="err">│</span>  <span class="err">│</span>
+<span class="err">│</span>  <span class="err">└─────────────────────────────────────────────────────┘</span>  <span class="err">│</span>
+<span class="err">└───────────────────────────────────────────────────────────┘</span>
+</code></pre></div>
+
+<h3 id="22-hosts-identificados">2.2 Hosts Identificados</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Host</th>
+<th style="text-align: center;">IP</th>
+<th style="text-align: left;">Rol</th>
+<th style="text-align: center;">TLS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>portal.clinicacorominas.com.do</code></td>
+<td style="text-align: center;">190.167.229.27</td>
+<td style="text-align: left;">API Corominas</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>resultados.clinicaabreu.com.do</code></td>
+<td style="text-align: center;">190.167.33.178</td>
+<td style="text-align: left;">API Abreu</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>portalresultados.cedisa.do</code></td>
+<td style="text-align: center;">66.98.69.202</td>
+<td style="text-align: left;"><strong>Hub Central</strong> — IIS 8.5</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>resultadosimagenes.cmm.do</code></td>
+<td style="text-align: center;">—</td>
+<td style="text-align: left;">API CMM</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>cardioimagenes.cmr-apps.com</code></td>
+<td style="text-align: center;">—</td>
+<td style="text-align: left;">API Cardio</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>portal.cadi.do</code></td>
+<td style="text-align: center;">—</td>
+<td style="text-align: left;">API CADI</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>www.policlinicametropolitana-apps.com</code></td>
+<td style="text-align: center;">—</td>
+<td style="text-align: left;">API Policlínica</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>higea.cmr-apps.com</code></td>
+<td style="text-align: center;">—</td>
+<td style="text-align: left;">API HIGEA</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>www.cmr-apps.com</code></td>
+<td style="text-align: center;">—</td>
+<td style="text-align: left;">CMR genérico</td>
+<td style="text-align: center;">❌ HTTP</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>interhospital.com.ec</code></td>
+<td style="text-align: center;">216.198.79.1</td>
+<td style="text-align: left;">InterHospital</td>
+<td style="text-align: center;">✅ (interno)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>disanjose.ddns.net:99</code></td>
+<td style="text-align: center;">189.173.69.27</td>
+<td style="text-align: left;">HSH (DDNS)</td>
+<td style="text-align: center;">❌ HTTP</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>ris.hmc.hn</code></td>
+<td style="text-align: center;">—</td>
+<td style="text-align: left;">HMC (interno)</td>
+<td style="text-align: center;">✅</td>
+</tr>
+</tbody>
+</table>
+<h3 id="23-red-interna-filtrada">2.3 Red Interna Filtrada</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Hostname</th>
+<th style="text-align: left;">Fuente</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>srv-recvoz.cmr.local</code></td>
+<td style="text-align: left;">Redirect WCF (CMM, Abreu, CEDISA)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>srv-portal</code></td>
+<td style="text-align: left;">Redirect WCF (Corominas, Cardio)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>eymsa-app1.internal.cmr.mx</code></td>
+<td style="text-align: left;">Stack trace (InfoSalud)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>C:/Mis Codigos/HIS/...</code></td>
+<td style="text-align: left;">Source path leak (CMM)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="3-vulnerabilidades-y-hallazgos">3. VULNERABILIDADES Y HALLAZGOS</h2>
+<h3 id="h01-getcontrasenatabletas-contrasena-compartida-critico">🔴 H01 — GetContrasenaTabletas: Contraseña Compartida (CRÍTICO)</h3>
+<p><strong>Endpoint:</strong> <code>POST /HisWebServicios/Portal/ServicioPortal.svc/GetContrasenaTabletas</code>
+<strong>Auth:</strong> Ninguna — sin parámetros
+<strong>Valor:</strong> <code>cmrservice05</code>
+<strong>Confirmado en:</strong> <strong>9/9 hosts accesibles</strong></p>
+<div class="codehilite"><pre><span></span><code>curl<span class="w"> </span>-sk<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s2">&quot;https://portal.clinicacorominas.com.do/HisWebServicios/Portal/ServicioPortal.svc/GetContrasenaTabletas&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span>-d<span class="w"> </span><span class="s1">&#39;{}&#39;</span>
+<span class="c1"># → {&quot;Estado&quot;:0,&quot;Data&quot;:&quot;cmrservice05&quot;}</span>
+</code></pre></div>
+
+<p><strong>Impacto:</strong> Contraseña de tablets del sistema compartida entre TODOS los hospitales del ecosistema. Permite acceso no autorizado a dispositivos médicos.</p>
+<h3 id="h02-personalrecuperar-filtracion-masiva-de-empleados-critico">🔴 H02 — PersonalRecuperar: Filtración Masiva de Empleados (CRÍTICO)</h3>
+<p><strong>Endpoint:</strong> <code>POST /HisWebServicios/Portal/ServicioPortal.svc/PersonalRecuperar</code>
+<strong>Auth:</strong> Ninguna
+<strong>Parámetro:</strong> <code>{"sBuscar": ""}</code></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">App</th>
+<th style="text-align: center;">Empleados</th>
+<th style="text-align: left;">Datos expuestos</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Clínica Abreu</td>
+<td style="text-align: center;"><strong>5,011</strong></td>
+<td style="text-align: left;">Nombres, cédulas, roles, especialidades</td>
+</tr>
+<tr>
+<td style="text-align: left;">Clínica Corominas</td>
+<td style="text-align: center;">506</td>
+<td style="text-align: left;">Nombres, cédulas, roles</td>
+</tr>
+<tr>
+<td style="text-align: left;">Centro Médico Moderno</td>
+<td style="text-align: center;">259</td>
+<td style="text-align: left;">Nombres, cédulas, roles (171 válidas)</td>
+</tr>
+<tr>
+<td style="text-align: left;">EME Salud</td>
+<td style="text-align: center;">131</td>
+<td style="text-align: left;">Nombres, cédulas, roles (106 válidas)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Policlínica Metropolitana</td>
+<td style="text-align: center;">98</td>
+<td style="text-align: left;">Nombres, cédulas, roles</td>
+</tr>
+<tr>
+<td style="text-align: left;">CADI</td>
+<td style="text-align: center;">73</td>
+<td style="text-align: left;">Nombres, cédulas, roles</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>TOTAL</strong></td>
+<td style="text-align: center;"><strong>6,078</strong></td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<h3 id="h03-wsdl-publicos-critico">🔴 H03 — WSDL Públicos (CRÍTICO)</h3>
+<p>TODOS los hosts exponen el WSDL completo sin autenticación:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">App</th>
+<th style="text-align: center;">Operaciones SOAP</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Centro Médico Moderno</td>
+<td style="text-align: center;"><strong>96</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">Clínica Corominas</td>
+<td style="text-align: center;">83</td>
+</tr>
+<tr>
+<td style="text-align: left;">Lab Tequis</td>
+<td style="text-align: center;">82</td>
+</tr>
+<tr>
+<td style="text-align: left;">Honduras Medical Center</td>
+<td style="text-align: center;">80</td>
+</tr>
+<tr>
+<td style="text-align: left;">InfoSalud</td>
+<td style="text-align: center;">76</td>
+</tr>
+<tr>
+<td style="text-align: left;">Clínica Abreu</td>
+<td style="text-align: center;">70+</td>
+</tr>
+<tr>
+<td style="text-align: left;">Cardio Imágenes</td>
+<td style="text-align: center;">67</td>
+</tr>
+<tr>
+<td style="text-align: left;">CEDISA</td>
+<td style="text-align: center;">60+</td>
+</tr>
+<tr>
+<td style="text-align: left;">Policlínica Metropolitana</td>
+<td style="text-align: center;">58</td>
+</tr>
+<tr>
+<td style="text-align: left;">EME Salud</td>
+<td style="text-align: center;">54</td>
+</tr>
+<tr>
+<td style="text-align: left;">CADI</td>
+<td style="text-align: center;">48</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Endpoint:</strong> <code>/?wsdl</code> o <code>/?singleWsdl</code></p>
+<div class="codehilite"><pre><span></span><code>curl<span class="w"> </span>-sk<span class="w"> </span><span class="s2">&quot;https://portal.clinicacorominas.com.do/HisWebServicios/Portal/ServicioPortal.svc?wsdl&quot;</span>
+</code></pre></div>
+
+<h3 id="h04-imaginganalysislist-datos-dicom-de-pacientes-critico">🔴 H04 — ImagingAnalysisList: Datos DICOM de Pacientes (CRÍTICO)</h3>
+<p><strong>Endpoint:</strong> <code>POST /HisWebServicios/Portal/ServicioPortal.svc/ImagingAnalysisList</code>
+<strong>Auth:</strong> Ninguna</p>
+<p><strong>Confirmado en:</strong> Policlínica Metropolitana, Corominas, Cardio Imágenes
+- Corominas: 81 estudios en el sistema (HomePageData)
+- Cardio Imágenes: 99 estudios</p>
+<p>Expone: folios OID, fechas, series, modalidades (RMN, TAC, RX, ECO, MAMO), thumbnails de imágenes DICOM</p>
+<h3 id="h05-getconsentimientoslista-consentimientos-de-pacientes-alto">🟠 H05 — GetConsentimientosLista: Consentimientos de Pacientes (ALTO)</h3>
+<p><strong>Endpoint:</strong> <code>POST /HisWebServicios/Portal/ServicioPortal.svc/GetConsentimientosLista</code>
+<strong>Auth:</strong> Ninguna</p>
+<p><strong>Confirmado en:</strong> InfoSalud (77 consentimientos)
+Datos: nombre paciente, folio, tipo de consentimiento, estado de firma</p>
+<h3 id="h06-postconsentimientosfirma-firma-sin-auth-alto">🟠 H06 — PostConsentimientosFirma: Firma sin Auth (ALTO)</h3>
+<p><strong>Endpoint:</strong> <code>POST /HisWebServicios/Portal/ServicioPortal.svc/PostConsentimientosFirma</code>
+<strong>Auth:</strong> Ninguna
+Permite firmar consentimientos como paciente sin autenticación.</p>
+<h3 id="h07-passwordsend-enumeracion-de-correos-alto">🟠 H07 — PasswordSend: Enumeración de Correos (ALTO)</h3>
+<p><strong>Endpoint:</strong> <code>POST /HisWebServicios/Portal/ServicioPortal.svc/PasswordSend</code>
+<strong>Auth:</strong> Ninguna
+Mensaje de error "Correo no válido" vs confirmación — permite validar emails.</p>
+<h3 id="h08-debugmode-true-en-produccion-medio">🟡 H08 — debugMode: true en Producción (MEDIO)</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">App</th>
+<th style="text-align: center;">debugMode</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Corominas</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td style="text-align: left;">Abreu</td>
+<td style="text-align: center;">✅ (cleartext)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Cardio Imágenes</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td style="text-align: left;">CEDISA</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td style="text-align: left;">CMM</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td style="text-align: left;">CADI</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td style="text-align: left;">Policlínica Metropolitana</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td style="text-align: left;">EME Salud</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td style="text-align: left;">InfoSalud</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td style="text-align: left;">Honduras Medical Center</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td style="text-align: left;">HIGEA</td>
+<td style="text-align: center;">✅</td>
+</tr>
+</tbody>
+</table>
+<h3 id="h09-http-sin-tls-medio">🟡 H09 — HTTP sin TLS (MEDIO)</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Host</th>
+<th style="text-align: center;">Protocolo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>www.cmr-apps.com</code></td>
+<td style="text-align: center;">❌ HTTP</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>disanjose.ddns.net:99</code></td>
+<td style="text-align: center;">❌ HTTP</td>
+</tr>
+<tr>
+<td style="text-align: left;">Clínica Abreu</td>
+<td style="text-align: center;"><code>usesCleartextTraffic="true"</code></td>
+</tr>
+</tbody>
+</table>
+<p>PHI viaja en texto plano.</p>
+<h3 id="h10-directory-listing-medio">🟡 H10 — Directory Listing (MEDIO)</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Servidor</th>
+<th style="text-align: left;">Ruta</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">CEDISA</td>
+<td style="text-align: left;"><code>/HisWebServicios/Portal/</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">CMM</td>
+<td style="text-align: left;"><code>/HisWebServicios/</code>, <code>/Certificados/</code>, <code>/Xml/</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Hallazgo:</strong> Certificado IMSS expuesto en <code>/Certificados/</code></p>
+<div class="codehilite"><pre><span></span><code>/Certificados/csiproveedores.imss.gob.mx.cer
+</code></pre></div>
+
+<h3 id="h11-source-path-leak-medio">🟡 H11 — Source Path Leak (MEDIO)</h3>
+<p>CMM expone ruta de código fuente en <code>Reference.map</code>:</p>
+<div class="codehilite"><pre><span></span><code>C:/Mis Codigos/HIS/IDigitales.HIS.Web.Servicios/...
+</code></pre></div>
+
+<h3 id="h12-cors-permisivo-bajo">🟡 H12 — CORS Permisivo (BAJO)</h3>
+<p>Múltiples hosts responden con:</p>
+<div class="codehilite"><pre><span></span><code>Access-Control-Allow-Origin: *
+Access-Control-Allow-Credentials: true
+</code></pre></div>
+
+<h3 id="h13-password-reset-oracle-medio">🟡 H13 — Password Reset Oracle (MEDIO)</h3>
+<p><code>PasswordSend</code> valida existencia de cuentas por correo electrónico.</p>
+<h3 id="h14-fingerprinting-tecnologico-info">⚪ H14 — Fingerprinting Tecnológico (INFO)</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Header</th>
+<th style="text-align: left;">Valor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>X-AspNet-Version</code></td>
+<td style="text-align: left;">4.0.30319</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Server</code></td>
+<td style="text-align: left;">Microsoft-IIS/10.0, Microsoft-IIS/8.5, Microsoft-HTTPAPI/2.0</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>X-Powered-By</code></td>
+<td style="text-align: left;">ASP.NET</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="4-metadata-extraida">4. METADATA EXTRAÍDA</h2>
+<h3 id="41-empleados-con-cedulas-muestra">4.1 Empleados con Cédulas (Muestra)</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">App</th>
+<th style="text-align: left;">Nombre</th>
+<th style="text-align: center;">Cédula</th>
+<th style="text-align: left;">Rol</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Abreu</td>
+<td style="text-align: left;">Ana Rocio Martinez Ramirez</td>
+<td style="text-align: center;">Exq. 71-07 CMD 22573</td>
+<td style="text-align: left;">RADIÓLOGO</td>
+</tr>
+<tr>
+<td style="text-align: left;">Abreu</td>
+<td style="text-align: left;">Maricela Segura Custodio</td>
+<td style="text-align: center;">Exq 230-07 CMD 19849</td>
+<td style="text-align: left;">RADIÓLOGO</td>
+</tr>
+<tr>
+<td style="text-align: left;">CMM</td>
+<td style="text-align: left;">Jesús Miguel Castillo Ortega</td>
+<td style="text-align: center;">2400631796</td>
+<td style="text-align: left;">—</td>
+</tr>
+<tr>
+<td style="text-align: left;">CMM</td>
+<td style="text-align: left;">Guillermo Alvarez Estevez</td>
+<td style="text-align: center;">00100818715</td>
+<td style="text-align: left;">—</td>
+</tr>
+<tr>
+<td style="text-align: left;">CMM</td>
+<td style="text-align: left;">Lic. Wilkin Medina</td>
+<td style="text-align: center;">40227737927</td>
+<td style="text-align: left;">—</td>
+</tr>
+<tr>
+<td style="text-align: left;">Corominas</td>
+<td style="text-align: left;">Eladio Joel Ramirez Hernandez</td>
+<td style="text-align: center;">03104335116</td>
+<td style="text-align: left;">—</td>
+</tr>
+<tr>
+<td style="text-align: left;">Corominas</td>
+<td style="text-align: left;">Johanny Viñas Guzman</td>
+<td style="text-align: center;">05500329221</td>
+<td style="text-align: left;">—</td>
+</tr>
+<tr>
+<td style="text-align: left;">Policlínica</td>
+<td style="text-align: left;">Administrador Admin</td>
+<td style="text-align: center;">98870078</td>
+<td style="text-align: left;">ADMIN</td>
+</tr>
+</tbody>
+</table>
+<h3 id="42-sucursales">4.2 Sucursales</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Cliente</th>
+<th style="text-align: left;">Sucursal</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Corominas</td>
+<td style="text-align: left;">CLINICA COROMINAS</td>
+</tr>
+<tr>
+<td style="text-align: left;">Abreu</td>
+<td style="text-align: left;">CLÍNICA ABREU CDD</td>
+</tr>
+<tr>
+<td style="text-align: left;">CEDISA</td>
+<td style="text-align: left;">CENTRO DIAGNOSTICO ESPECIALIZADO</td>
+</tr>
+<tr>
+<td style="text-align: left;">Policlínica</td>
+<td style="text-align: left;">Policlínica Metropolitana</td>
+</tr>
+</tbody>
+</table>
+<h3 id="43-contrasena-compartida">4.3 Contraseña Compartida</h3>
+<div class="codehilite"><pre><span></span><code>GetContrasenaTabletas → &quot;cmrservice05&quot;
+</code></pre></div>
+
+<p>Confirmada en: Corominas, Abreu, CEDISA, CMM, Cardio, CADI, Policlínica, EME Salud, InfoSalud (9/9 hosts)</p>
+<hr />
+<h2 id="5-link-analysis-graph">5. LINK ANALYSIS GRAPH</h2>
+<p>El grafo de relaciones se generó como archivo independiente.</p>
+<p><strong>Archivos:</strong>
+- <code>cmr-link-analysis.svg</code> (36 KB) — Vector editable
+- <code>cmr-link-analysis.png</code> (352 KB) — Preview
+- <code>cmr-link-analysis.dot</code> — Código fuente Graphviz</p>
+<h3 id="51-relaciones-clave">5.1 Relaciones Clave</h3>
+<div class="codehilite"><pre><span></span><code><span class="nv">IDigitales</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nv">Cedisa</span><span class="w"> </span><span class="nv">Consultores</span><span class="w"> </span><span class="ss">(</span><span class="nv">Desarrollador</span><span class="ss">)</span>
+<span class="w">  </span>├──<span class="w"> </span><span class="nv">CEDISA</span><span class="w"> </span><span class="ss">(</span><span class="nv">Hub</span><span class="w"> </span><span class="nv">Central</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nv">portalresultados</span>.<span class="nv">cedisa</span>.<span class="k">do</span><span class="ss">)</span>
+<span class="w">  </span>│<span class="w">     </span>├──<span class="w"> </span><span class="nv">Cl</span>í<span class="nv">nica</span><span class="w"> </span><span class="nv">Corominas</span>
+<span class="w">  </span>│<span class="w">     </span>├──<span class="w"> </span><span class="nv">Cl</span>í<span class="nv">nica</span><span class="w"> </span><span class="nv">Abreu</span>
+<span class="w">  </span>│<span class="w">     </span>├──<span class="w"> </span><span class="nv">Centro</span><span class="w"> </span><span class="nv">M</span>é<span class="nv">dico</span><span class="w"> </span><span class="nv">Moderno</span>
+<span class="w">  </span>│<span class="w">     </span>└──<span class="w"> </span><span class="nv">Honduras</span><span class="w"> </span><span class="nv">Medical</span><span class="w"> </span><span class="nv">Center</span>
+<span class="w">  </span>├──<span class="w"> </span><span class="nv">cmr</span><span class="o">-</span><span class="nv">apps</span>.<span class="nv">com</span><span class="w"> </span><span class="ss">(</span><span class="nv">Host</span><span class="w"> </span><span class="nv">HTTP</span><span class="ss">)</span>
+<span class="w">  </span>│<span class="w">     </span>├──<span class="w"> </span><span class="nv">Cardio</span><span class="w"> </span><span class="nv">Im</span>á<span class="nv">genes</span>
+<span class="w">  </span>│<span class="w">     </span>├──<span class="w"> </span><span class="nv">HIGEA</span>
+<span class="w">  </span>│<span class="w">     </span>├──<span class="w"> </span><span class="nv">EME</span><span class="w"> </span><span class="nv">Salud</span><span class="w"> </span><span class="ss">(</span><span class="nv">gen</span>é<span class="nv">rica</span><span class="ss">)</span>
+<span class="w">  </span>│<span class="w">     </span>└──<span class="w"> </span><span class="nv">InfoSalud</span><span class="w"> </span><span class="nv">Firmas</span>
+<span class="w">  </span>├──<span class="w"> </span><span class="nv">Red</span><span class="w"> </span><span class="nv">Interna</span>
+<span class="w">  </span>│<span class="w">     </span>├──<span class="w"> </span><span class="nv">srv</span><span class="o">-</span><span class="nv">recvoz</span>.<span class="nv">cmr</span>.<span class="nv">local</span>
+<span class="w">  </span>│<span class="w">     </span>├──<span class="w"> </span><span class="nv">srv</span><span class="o">-</span><span class="nv">portal</span>
+<span class="w">  </span>│<span class="w">     </span>└──<span class="w"> </span><span class="nv">eymsa</span><span class="o">-</span><span class="nv">app1</span>.<span class="nv">internal</span>.<span class="nv">cmr</span>.<span class="nv">mx</span>
+<span class="w">  </span>├──<span class="w"> </span><span class="nv">InterHospital</span><span class="w"> </span><span class="ss">(</span><span class="nv">Ecuador</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nv">aislado</span><span class="ss">)</span>
+<span class="w">  </span>└──<span class="w"> </span><span class="nv">Hospital</span><span class="w"> </span><span class="nv">San</span><span class="w"> </span><span class="nv">Jos</span>é<span class="w"> </span><span class="nv">Hermosillo</span><span class="w"> </span><span class="ss">(</span><span class="nv">M</span>é<span class="nv">xico</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nv">aislado</span><span class="ss">)</span>
+</code></pre></div>
+
+<h3 id="52-patron-de-conexion">5.2 Patrón de Conexión</h3>
+<ul>
+<li><strong>TODAS</strong> las apps comparten el mismo namespace WCF: <code>IDigitales.HIS.Web.Servicios.Portal</code></li>
+<li><strong>TODAS</strong> las apps responden con la misma contraseña: <code>cmrservice05</code></li>
+<li>CEDISA actúa como <strong>hub central</strong> — los demás hospitales son descubiertos dinámicamente via <code>ServidoresAdicionales()</code></li>
+<li>2 hosts (InterHospital, HSH) tienen backends internos inaccesibles públicamente</li>
+</ul>
+<hr />
+<h2 id="6-reportes-individuales">6. REPORTES INDIVIDUALES</h2>
+<p>Cada app analizada tiene su reporte detallado independiente:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Archivo</th>
+<th style="text-align: left;">App</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>/root/bounty/corominas-report.md</code></td>
+<td style="text-align: left;">Clínica Corominas</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/root/bounty/abreu-report.md</code></td>
+<td style="text-align: left;">Clínica Abreu</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/root/bounty/cardio_imagenes-report.md</code></td>
+<td style="text-align: left;">Cardio Imágenes</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/root/bounty/cedisa-report.md</code></td>
+<td style="text-align: left;">CEDISA</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/root/bounty/cmm-report.md</code></td>
+<td style="text-align: left;">Centro Médico Moderno</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/root/bounty/cadi-report.md</code></td>
+<td style="text-align: left;">CADI</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/root/bounty/policlinica-report.md</code></td>
+<td style="text-align: left;">Policlínica Metropolitana</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/root/bounty/higea-report.md</code></td>
+<td style="text-align: left;">HIGEA</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/root/bounty/hmc-report.md</code></td>
+<td style="text-align: left;">Honduras Medical Center</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/root/bounty/infosalud-report.md</code></td>
+<td style="text-align: left;">InfoSalud Firmas</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/root/bounty/emesalud-report.md</code></td>
+<td style="text-align: left;">EME Salud</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/root/bounty/tequis-report.md</code></td>
+<td style="text-align: left;">Lab Tequis</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/root/bounty/cmr-ecosystem-report.md</code></td>
+<td style="text-align: left;">Resumen del ecosistema</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="7-data-extraida">7. DATA EXTRAÍDA</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Dataset</th>
+<th style="text-align: left;">Archivo</th>
+<th style="text-align: center;">Tamaño</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Empleados Clínica Abreu</td>
+<td style="text-align: left;"><code>pii_extractions/abreu_empleados.csv</code></td>
+<td style="text-align: center;">204 KB</td>
+</tr>
+<tr>
+<td style="text-align: left;">Empleados Corominas</td>
+<td style="text-align: left;"><code>pii_extractions/corominas_empleados.csv</code></td>
+<td style="text-align: center;">36 KB</td>
+</tr>
+<tr>
+<td style="text-align: left;">Empleados CMM</td>
+<td style="text-align: left;"><code>pii_extractions/cmm_empleados.csv</code></td>
+<td style="text-align: center;">16 KB</td>
+</tr>
+<tr>
+<td style="text-align: left;">Empleados EME Salud</td>
+<td style="text-align: left;"><code>pii_extractions/emesalud_empleados.csv</code></td>
+<td style="text-align: center;">8 KB</td>
+</tr>
+<tr>
+<td style="text-align: left;">Empleados Policlínica</td>
+<td style="text-align: left;"><code>pii_extractions/policlinica_empleados.csv</code></td>
+<td style="text-align: center;">8 KB</td>
+</tr>
+<tr>
+<td style="text-align: left;">Empleados CADI</td>
+<td style="text-align: left;"><code>pii_extractions/cadi_empleados.csv</code></td>
+<td style="text-align: center;">8 KB</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Total</strong></td>
+<td style="text-align: left;"><strong>6,078 empleados</strong></td>
+<td style="text-align: center;"><strong>~280 KB</strong></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="8-recomendaciones">8. RECOMENDACIONES</h2>
+<ol>
+<li><strong>CRÍTICO:</strong> Implementar autenticación en TODOS los endpoints WCF</li>
+<li><strong>CRÍTICO:</strong> Rotar contraseña <code>cmrservice05</code> en todos los hospitales</li>
+<li><strong>CRÍTICO:</strong> Desactivar debugMode en producción</li>
+<li><strong>ALTO:</strong> Migrar a HTTPS en <code>www.cmr-apps.com</code></li>
+<li><strong>ALTO:</strong> Deshabilitar directory listing en CEDISA y CMM</li>
+<li><strong>ALTO:</strong> Restringir CORS a orígenes específicos</li>
+<li><strong>MEDIO:</strong> Implementar rate limiting en endpoints de autenticación</li>
+<li><strong>MEDIO:</strong> Remover información de servidor interno de mensajes de error</li>
+</ol>
+<hr />
+<p><em>Reporte generado el 14 de Julio de 2026 — 14 aplicaciones analizadas, 10 entidades de salud, 4 países.</em></p>
+</div>
+</body>
+</html>

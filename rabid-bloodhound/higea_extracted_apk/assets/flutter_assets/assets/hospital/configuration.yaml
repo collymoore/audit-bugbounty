@@ -1,0 +1,37 @@
+androidAppId: com.CMR.emesalud_higea
+iosAppId: com.CMR.emesalud.higea
+
+name: CENTRO DIAGNÓSTICO HIGEA
+nameShort: HIGEA
+webpage: https://www.centrodiagnosticohigea.com/
+ip: higea.cmr-apps.com
+usesHttps: true
+
+contact_telephone: "0800 (44432) 00"
+contact_email: atencionalpaciente@centrodiagnosticohigea.com
+contact_hours: 7:30 am a 7:00 p.m. (Lun- Vie) y 8:00 a.m. a 4:00 p.m. (Sábado)
+contact_address: Av. La Salle con Florencio Jiménez C.C. Metrópolis Barquisimeto, P.B.Estado Lara – Venezuela
+
+baseUrl: /HisWebServicios/Portal/ServicioPortal.svc
+baseUrlPACS: /visorhtml5/WcfServiceIconos/Service1.svc
+baseVisorPACS: /WebUltimateGL/App/Vistas/index.html
+
+iconBackgroundColor: "#bee4ed"
+
+color_primary: 0xff005EB8
+color_accent: 0xffDA291C
+color_primaryDark: 0xff212120
+color_accentDark: 0xff10100f
+color_primaryLight: 0xff5695e9
+color_accentLight: 0xff60605f
+color_loadingGrey: 0xffffffff
+
+debugMode: true
+hasImaging: true
+hasLaboratory: false
+hasPathology: false
+hasDirectory: false
+canMakeAppointmets: false
+hasBanner: true
+hasRecord: false
+showAppointments: false

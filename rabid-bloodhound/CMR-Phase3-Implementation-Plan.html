@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Phase 3 — Implementation of Controls | CMR Medical Systems / IDigitales | NSI</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root {
+    --nsi-dark: #0a0f1a; --nsi-slate: #1e293b; --nsi-muted: #64748b; --nsi-light: #f1f5f9;
+    --nsi-border: #e2e8f0; --nsi-accent: #3b82f6; --nsi-danger: #dc2626; --nsi-warning: #d97706; --nsi-success: #16a34a;
+    --font-family: 'Inter', -apple-system, system-ui, sans-serif;
+    --fs-display: 20pt; --fs-h1: 16pt; --fs-h2: 13pt; --fs-body: 9.5pt; --fs-small: 8pt; --fs-label: 6.5pt;
+    --fs-table: 9pt; --fs-th: 7pt; --fs-footer: 7pt; --lh: 1.5;
+    --pw: 8.5in; --ph: 11in; --pv: 0.6in; --pad-h: 0.7in; --br: 8px; --br-sm: 6px;
+}
+@page { size: letter; margin: 0; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: var(--font-family); color: var(--nsi-dark); background: white; font-size: 10pt; line-height: var(--lh); -webkit-font-smoothing: antialiased; }
+@media screen { body { background: #e2e8f0; padding: 20px 0; } .page { box-shadow: 0 4px 20px rgba(0,0,0,0.15); margin-bottom: 20px; background: white; max-width: var(--pw); margin-left: auto; margin-right: auto; } }
+.page { max-width: var(--pw); min-height: var(--ph); margin: 0 auto; padding: var(--pv) var(--pad-h); position: relative; page-break-after: always; }
+.header { display: flex; justify-content: space-between; align-items: flex-start; padding-bottom: 16px; border-bottom: 3px solid var(--nsi-dark); margin-bottom: 20px; }
+.header-left h1 { font-size: var(--fs-h1); font-weight: 800; letter-spacing: -0.5px; color: var(--nsi-dark); }
+.header-left .tagline { font-size: 7.5pt; color: var(--nsi-muted); letter-spacing: 2px; text-transform: uppercase; margin-top: 2px; }
+.header-right { text-align: right; }
+.header-right .doc-type { font-weight: 800; color: var(--nsi-dark); font-size: 11pt; }
+.header-right .doc-number { font-size: var(--fs-body); color: var(--nsi-muted); margin-top: 2px; }
+.meta-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin-bottom: 24px; }
+.meta-box { background: var(--nsi-light); border-radius: var(--br); padding: 14px 16px; border-left: 4px solid var(--nsi-dark); }
+.meta-box.accent { border-left-color: var(--nsi-accent); }
+.meta-box h3 { font-size: var(--fs-label); text-transform: uppercase; letter-spacing: 1.5px; color: var(--nsi-muted); margin-bottom: 6px; }
+.meta-box p { font-size: var(--fs-body); line-height: 1.6; }
+.meta-box strong { font-weight: 700; }
+h1 { font-size: var(--fs-h1); font-weight: 800; margin: 22px 0 10px; letter-spacing: -0.5px; }
+h2 { font-size: var(--fs-h2); font-weight: 800; margin: 20px 0 10px; padding-bottom: 6px; border-bottom: 2px solid var(--nsi-accent); }
+h3 { font-size: var(--fs-body); font-weight: 700; margin: 14px 0 6px; color: var(--nsi-slate); }
+h4 { font-size: var(--fs-body); font-weight: 700; margin: 10px 0 4px; }
+p { font-size: var(--fs-body); line-height: var(--lh); margin-bottom: 8px; color: var(--nsi-slate); }
+strong { font-weight: 700; color: var(--nsi-dark); }
+table { width: 100%; border-collapse: collapse; margin: 10px 0 16px; font-size: var(--fs-table); }
+thead th { background: var(--nsi-dark); color: white; padding: 8px 10px; text-align: left; font-weight: 600; font-size: var(--fs-th); text-transform: uppercase; letter-spacing: 1px; }
+thead th:first-child { border-radius: var(--br-sm) 0 0 0; }
+thead th:last-child { border-radius: 0 var(--br-sm) 0 0; }
+tbody td { padding: 7px 10px; border-bottom: 1px solid var(--nsi-border); vertical-align: top; }
+tbody tr:nth-child(even) { background: #fafbfc; }
+.row-critical td { background: #fef2f2 !important; }
+.row-high td { background: #fffbeb !important; }
+.row-success td { background: #f0fdf4 !important; }
+.cmd-block { background: #0d1117; color: #e6edf3; padding: 12px 16px; border-radius: var(--br-sm); font-family: 'JetBrains Mono', 'Fira Code', monospace; font-size: 7.5pt; line-height: 1.5; overflow-x: auto; margin: 8px 0; }
+.cmd-block .comment { color: #8b949e; }
+code { font-family: 'JetBrains Mono', monospace; background: var(--nsi-light); padding: 1px 5px; border-radius: 3px; font-size: 0.9em; }
+.footer-bar { position: absolute; bottom: 0.5in; left: var(--pad-h); right: var(--pad-h); display: flex; justify-content: space-between; align-items: center; padding-top: 10px; border-top: 1px solid var(--nsi-border); font-size: var(--fs-footer); color: var(--nsi-muted); }
+.footer-bar .confidential { font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+.implementation-card { border: 1px solid var(--nsi-border); border-radius: var(--br); padding: 16px; margin: 12px 0; }
+.implementation-card h4 { color: var(--nsi-dark); margin-bottom: 8px; }
+.implementation-card .effort { display: inline-block; padding: 2px 10px; border-radius: 10px; font-size: 7pt; font-weight: 600; margin-left: 8px; }
+.effort.low { background: #f0fdf4; color: var(--nsi-success); }
+.effort.med { background: #fffbeb; color: var(--nsi-warning); }
+.effort.high { background: #fef2f2; color: var(--nsi-danger); }
+ul, ol { margin: 6px 0 12px 20px; }
+li { margin-bottom: 4px; font-size: var(--fs-body); }
+hr { border: none; border-top: 1px solid var(--nsi-border); margin: 20px 0; }
+.cover-line { width: 60px; height: 4px; background: var(--nsi-dark); margin: 20px 0; }
+</style>
+</head>
+<body>
+
+<!-- ════════════════════════════════════════════════════════════════════════ -->
+<!-- P1: PORTADA -->
+<!-- ════════════════════════════════════════════════════════════════════════ -->
+<div class="page">
+    <div class="header">
+        <div class="header-left">
+            <h1>NULL SESSION<br>INTELLIGENCE LLC</h1>
+            <div class="tagline">Offensive Security &bull; Implementation &bull; Advisory</div>
+        </div>
+        <div class="header-right">
+            <div class="doc-type">PHASE 3 — IMPLEMENTATION PLAN</div>
+            <div class="doc-number">NSI-IMP-2026-005 &bull; Julio 2026</div>
+        </div>
+    </div>
+
+    <div style="margin-top: 40px;">
+        <div style="font-size:24pt;font-weight:800;letter-spacing:-0.5px;line-height:1.2;margin-bottom:8px;">Phase 3: Implementation of Controls<br>CMR Medical Systems / IDigitales</div>
+        <div class="cover-line" style="margin-top:16px;"></div>
+        <div style="font-size:11pt;color:var(--nsi-muted);letter-spacing:1px;text-transform:uppercase;margin-top:30px;">Plan de Implementación de Controles de Seguridad</div>
+        <div style="font-size:9pt;color:var(--nsi-muted);margin-top:4px;">Post-Assessment Remediation &bull; Zero Trust Architecture &bull; Compliance Controls</div>
+    </div>
+
+    <div class="meta-grid" style="margin-top:40px;">
+        <div class="meta-box">
+            <h3>Cliente</h3>
+            <p><strong>CMR Medical Systems</strong><br>IDigitales / Cedisa Consultores</p>
+        </div>
+        <div class="meta-box accent">
+            <h3>Fase</h3>
+            <p><strong>Fase 3 — Remediación</strong><br>1 mes de implementación</p>
+        </div>
+        <div class="meta-box">
+            <h3>Valor del Servicio</h3>
+            <p><strong>$30,000 USD</strong><br>Implementación completa + verificación</p>
+        </div>
+    </div>
+
+    <div style="background: var(--nsi-dark); color: #fff; border-radius: var(--br); padding: 20px 24px; margin: 20px 0 24px;">
+        <h2 style="color:#fff;border:none;margin-top:0;padding:0;">📊 Resumen Ejecutivo</h2>
+        <p style="color:#cbd5e1;margin-top:8px;">Este documento constituye el <strong style="color:#fca5a5;">plan detallado de implementación de controles de seguridad</strong> para el ecosistema CMR Medical Systems / IDigitales, como continuación de la Fase 1 (Contención) y Fase 2 (Remediación) identificadas en el reporte NSI-SA-2026-005.</p>
+        <p style="color:#cbd5e1;margin-top:8px;">Se presentan <strong>8 dominios de implementación</strong> con <strong>24 controles específicos</strong>, cada uno con: especificación técnica detallada, esfuerzo estimado en horas/hombre, dependencias, impacto en reducción de riesgo, y procedimiento de verificación. El plan está diseñado para ejecutarse en <strong>4 semanas</strong> con un equipo de 3-4 ingenieros.</p>
+        <p style="color:#cbd5e1;margin-top:8px;">Esta fase implementa las correcciones estructurales que eliminan la raíz de las 14 vulnerabilidades identificadas, reduce el riesgo de exposición PHI/PII en un <strong style="color:#fca5a5;">~95%</strong>, y establece las bases para un modelo de seguridad Zero Trust sostenible.</p>
+        <div style="display:flex;gap:20px;margin:14px 0 10px;flex-wrap:wrap;">
+            <div style="text-align:center;min-width:60px;"><div style="font-size:2em;font-weight:800;line-height:1.2;color:#fca5a5;">24</div><div style="font-size:8pt;color:#94a3b8;text-transform:uppercase;letter-spacing:1px;">Controles</div></div>
+            <div style="text-align:center;min-width:60px;"><div style="font-size:2em;font-weight:800;line-height:1.2;color:#fdba74;">8</div><div style="font-size:8pt;color:#94a3b8;text-transform:uppercase;letter-spacing:1px;">Dominios</div></div>
+            <div style="text-align:center;min-width:60px;"><div style="font-size:2em;font-weight:800;line-height:1.2;color:#fcd34d;">4</div><div style="font-size:8pt;color:#94a3b8;text-transform:uppercase;letter-spacing:1px;">Semanas</div></div>
+            <div style="text-align:center;min-width:60px;"><div style="font-size:2em;font-weight:800;line-height:1.2;color:#fca5a5;">95%</div><div style="font-size:8pt;color:#94a3b8;text-transform:uppercase;letter-spacing:1px;">Risk Reduction</div></div>
+        </div>
+    </div>
+
+    <div class="footer-bar">
+        <span class="confidential">Confidencial — Uso exclusivo del destinatario</span>
+        <span>NSI-IMP-2026-005 &bull; Página 1 de 8</span>
+    </div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════════════════════ -->
+<!-- P2: DOMINIO 1 — ARQUITECTURA ZERO TRUST -->
+<!-- ════════════════════════════════════════════════════════════════════════ -->
+<div class="page">
+    <div class="header">
+        <div class="header-left">
+            <h1>NULL SESSION INTELLIGENCE LLC</h1>
+            <div class="tagline">Offensive Security &bull; Implementation &bull; Advisory</div>
+        </div>
+        <div class="header-right">
+            <div class="doc-type">Phase 3 — Implementation Plan</div>
+            <div class="doc-number">NSI-IMP-2026-005 &bull; Julio 2026</div>
+        </div>
+    </div>
+
+    <h2>Dominio 1: Arquitectura de Seguridad Zero Trust</h2>
+    <p><strong>Objetivo:</strong> Reemplazar el modelo actual de confianza implícita (cualquiera puede llamar cualquier endpoint) por un modelo de verificación continua.</p>
+    <p><strong>Hallazgos referenciados:</strong> CMR-01, CMR-02, CMR-03, CMR-04, CMR-05, CMR-06</p>
+
+    <div class="implementation-card">
+        <h4>1.1 API Gateway con Autenticación Centralizada <span class="effort high">ALTO</span></h4>
+        <p><strong>Problema:</strong> 9 servidores WCF exponen endpoints directamente sin capa de autenticación previa.</p>
+        <p><strong>Solución:</strong> Implementar API Gateway (Ocelot para .NET / Kong / Apache APISIX) como punto único de entrada. El Gateway valida tokens JWT antes de enrutar a los servicios WCF internos.</p>
+        <p><strong>Implementación:</strong></p>
+        <div class="cmd-block">
+<span class="comment"># Arquitectura propuesta</span>
+<span class="comment"># Antes:</span>
+Cliente → WCF Endpoint (sin auth)
+<span class="comment"># Después:</span>
+Cliente → API Gateway (valida JWT) → WCF Endpoint (confía en Gateway)
+          ↑
+    Identity Provider (Auth0/Keycloak/.NET Identity)
+        </div>
+        <p><strong>Configuración Ocelot (ejemplo para .NET):</strong></p>
+        <div class="cmd-block">
+{
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/HisWebServicios/Portal/ServicioPortal.svc/{everything}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [{"Host": "localhost", "Port": 8081}],
+      "UpstreamPathTemplate": "/api/v1/{everything}",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "RateLimitOptions": {
+        "ClientWhitelist": [],
+        "EnableRateLimiting": true,
+        "Period": "1m",
+        "PeriodTimespan": 60,
+        "Limit": 30
+      }
+    }
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "https://api.cmrmedical.com"
+  }
+}
+        </div>
+        <p><strong>Esfuerzo:</strong> 40-60 horas-hombre | <strong>Dependencias:</strong> Identity Provider, Gateway server | <strong>Risk reduction:</strong> 90%</p>
+    </div>
+
+    <div class="implementation-card">
+        <h4>1.2 Autenticación JWT para Endpoints SOAP <span class="effort med">MEDIO</span></h4>
+        <p><strong>Problema:</strong> Los endpoints WCF actualmente no requieren autenticación.</p>
+        <p><strong>Solución:</strong> Implementar WCF Custom Authorization Manager que valida tokens JWT en el header HTTP Authorization antes de procesar cualquier operación.</p>
+        <p><strong>Código de implementación (C# WCF):</strong></p>
+        <div class="cmd-block">
+<span class="comment">// Custom Authorization Manager para WCF</span>
+public class JwtAuthorizationManager : ServiceAuthorizationManager
+{
+    protected override bool CheckAccessCore(OperationContext operationContext)
+    {
+        var request = operationContext.RequestContext.RequestMessage;
+        var property = request.Properties[HttpRequestMessageProperty.Name] as HttpRequestMessageProperty;
+        var authHeader = property?.Headers["Authorization"];
+
+        if (string.IsNullOrEmpty(authHeader) || !authHeader.StartsWith("Bearer "))
+            return false; <span class="comment">// 401 Unauthorized</span>
+
+        var token = authHeader.Substring("Bearer ".Length).Trim();
+
+        try {
+            var principal = ValidateAndDecodeJwt(token);
+            operationContext.IncomingMessageProperties["Principal"] = principal;
+            return true;
+        } catch {
+            return false;
+        }
+    }
+
+    private IPrincipal ValidateAndDecodeJwt(string token)
+    {
+        var handler = new JwtSecurityTokenHandler();
+        var key = Encoding.UTF8.GetBytes(_configuration["Jwt:SecretKey"]);
+        handler.ValidateToken(token, new TokenValidationParameters {
+            ValidateIssuerSigningKey = true,
+            IssuerSigningKey = new SymmetricSecurityKey(key),
+            ValidateIssuer = true,
+            ValidIssuer = _configuration["Jwt:Issuer"],
+            ValidateAudience = true,
+            ValidAudience = _configuration["Jwt:Audience"],
+            ClockSkew = TimeSpan.Zero
+        }, out _);
+        // Return claims principal with role information
+    }
+}
+        </div>
+        <p><strong>Esfuerzo:</strong> 20-30 horas-hombre | <strong>Risk reduction:</strong> 95% (elimina acceso anónimo)</p>
+    </div>
+
+    <div class="implementation-card">
+        <h4>1.3 Aislamiento de Credenciales por Hospital <span class="effort med">MEDIO</span></h4>
+        <p><strong>Problema:</strong> Contraseña cmrservice05 compartida entre 9 servidores y 10 hospitales.</p>
+        <p><strong>Solución:</strong> Implementar sistema de gestión de secretos (HashiCorp Vault / AWS Secrets Manager) con rotación automática y credenciales únicas por hospital.</p>
+        <p><strong>Implementación:</strong></p>
+        <div class="cmd-block">
+<span class="comment"># Política de Vault para CMR</span>
+path "secret/cmr/*" {
+  capabilities = ["read", "list"]
+}
+
+path "secret/cmr/corominas" {
+  capabilities = ["read"]
+  control_group = {
+    factor "approval" {
+      identity {
+        group = "security-team"
+      }
+    }
+  }
+}
+
+<span class="comment"># Rotación automática cada 30 días</span>
+vault write secret/cmr/corominas/tablet-password \
+  value=$(openssl rand -base64 32) \
+  ttl="720h"
+        </div>
+        <p><strong>Esfuerzo:</strong> 30-40 horas-hombre | <strong>Risk reduction:</strong> 100% (elimina riesgo de password compartido)</p>
+    </div>
+
+    <div class="footer-bar">
+        <span class="confidential">Confidencial — Uso exclusivo del destinatario</span>
+        <span>NSI-IMP-2026-005 &bull; Página 2 de 8</span>
+    </div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════════════════════ -->
+<!-- P3: DOMINIO 2 + 3 -->
+<!-- ════════════════════════════════════════════════════════════════════════ -->
+<div class="page">
+    <div class="header">
+        <div class="header-left">
+            <h1>NULL SESSION INTELLIGENCE LLC</h1>
+            <div class="tagline">Offensive Security &bull; Implementation &bull; Advisory</div>
+        </div>
+        <div class="header-right">
+            <div class="doc-type">Phase 3 — Implementation Plan</div>
+            <div class="doc-number">NSI-IMP-2026-005 &bull; Julio 2026</div>
+        </div>
+    </div>
+
+    <h2>Dominio 2: Hardening de Infraestructura</h2>
+    <p><strong>Objetivo:</strong> Eliminar exposición innecesaria de información de servidores, directorios y metadatos.</p>
+    <p><strong>Hallazgos referenciados:</strong> CMR-09, CMR-10, CMR-11, CMR-12</p>
+
+    <div class="implementation-card">
+        <h4>2.1 Migración Completa a HTTPS <span class="effort high">ALTO</span></h4>
+        <p><strong>Hosts afectados:</strong> www.cmr-apps.com, disanjose.ddns.net:99</p>
+        <p><strong>Implementación:</strong> Certificados Let's Encrypt vía Certbot + renovación automática. Configuración de redirect HTTP→HTTPS a nivel de aplicación y firewall.</p>
+        <div class="cmd-block">
+<span class="comment"># Nginx - redirect HTTP a HTTPS</span>
+server {
+    listen 80;
+    server_name www.cmr-apps.com;
+    return 301 https://$server_name$request_uri;
+}
+
+server {
+    listen 443 ssl;
+    server_name www.cmr-apps.com;
+    ssl_certificate /etc/letsencrypt/live/www.cmr-apps.com/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/www.cmr-apps.com/privkey.pem;
+    <span class="comment"># TLS 1.3 only + HSTS</span>
+    ssl_protocols TLSv1.3;
+    add_header Strict-Transport-Security "max-age=63072000" always;
+}
+        </div>
+        <p><strong>Esfuerzo:</strong> 8-16 horas-hombre | <strong>Risk reduction:</strong> 100% (elimina PHI en texto plano)</p>
+    </div>
+
+    <div class="implementation-card">
+        <h4>2.2 Deshabilitar Directory Listing <span class="effort low">BAJO</span></h4>
+        <p><strong>Servidores afectados:</strong> CEDISA (IIS 8.5), CMM (IIS 10.0)</p>
+        <div class="cmd-block">
+<span class="comment"># IIS web.config - deshabilitar directory listing</span>
+&lt;configuration&gt;
+  &lt;system.webServer&gt;
+    &lt;directoryBrowse enabled="false" /&gt;
+    &lt;security&gt;
+      &lt;requestFiltering&gt;
+        &lt;hiddenSegments&gt;
+          &lt;add segment="Certificados" /&gt;
+          &lt;add segment="Xml" /&gt;
+        &lt;/hiddenSegments&gt;
+      &lt;/requestFiltering&gt;
+    &lt;/security&gt;
+  &lt;/system.webServer&gt;
+&lt;/configuration&gt;
+        </div>
+        <p><strong>Esfuerzo:</strong> 2 horas-hombre | <strong>Risk reduction:</strong> 100%</p>
+    </div>
+
+    <div class="implementation-card">
+        <h4>2.3 Remover Server Headers y Fingerprinting <span class="effort low">BAJO</span></h4>
+        <p><strong>Implementación:</strong> Eliminar headers X-AspNet-Version, X-Powered-By, Server de las respuestas HTTP.</p>
+        <div class="cmd-block">
+<span class="comment"># IIS - URL Rewrite para remover headers</span>
+&lt;system.webServer&gt;
+  &lt;httpProtocol&gt;
+    &lt;customHeaders&gt;
+      &lt;remove name="X-Powered-By" /&gt;
+      &lt;remove name="Server" /&gt;
+    &lt;/customHeaders&gt;
+  &lt;/httpProtocol&gt;
+  &lt;security&gt;
+    &lt;requestFiltering removeServerHeader="true" /&gt;
+  &lt;/security&gt;
+&lt;/system.webServer&gt;
+        </div>
+        <p><strong>Esfuerzo:</strong> 2 horas-hombre | <strong>Risk reduction:</strong> 30% (dificulta fingerprinting)</p>
+    </div>
+
+    <h2>Dominio 3: Seguridad de Aplicaciones</h2>
+    <p><strong>Objetivo:</strong> Eliminar configuraciones inseguras en las apps Flutter.</p>
+    <p><strong>Hallazgos referenciados:</strong> CMR-08, CMR-14</p>
+
+    <div class="implementation-card">
+        <h4>3.1 Desactivar debugMode en Producción <span class="effort med">MEDIO</span></h4>
+        <p><strong>Apps afectadas:</strong> 10 de 14 apps Flutter</p>
+        <p><strong>Implementación:</strong> Modificar configuration.yaml en cada app. El proceso requiere rebuild y publicación de nuevas versiones en Google Play.</p>
+        <div class="cmd-block">
+<span class="comment"># configuration.yaml - antes</span>
+debugMode: true
+
+<span class="comment"># configuration.yaml - después</span>
+debugMode: false
+        </div>
+        <p><strong>Esfuerzo:</strong> 16-24 horas-hombre (incluye CI/CD + publicación en stores) | <strong>Risk reduction:</strong> 60%</p>
+    </div>
+
+    <div class="implementation-card">
+        <h4>3.2 Remover usesCleartextTraffic <span class="effort low">BAJO</span></h4>
+        <p><strong>App afectada:</strong> Clínica Abreu</p>
+        <div class="cmd-block">
+<span class="comment"># AndroidManifest.xml - antes</span>
+&lt;application android:usesCleartextTraffic="true" ...&gt;
+
+<span class="comment"># AndroidManifest.xml - después</span>
+&lt;application android:usesCleartextTraffic="false" ...&gt;
+        </div>
+        <p><strong>Esfuerzo:</strong> 2 horas-hombre | <strong>Risk reduction:</strong> 100%</p>
+    </div>
+
+    <div class="implementation-card">
+        <h4>3.3 Implementar Network Security Config <span class="effort low">BAJO</span></h4>
+        <p>Configuración de seguridad de red en Android para permitir solo conexiones HTTPS con certificados de confianza.</p>
+        <div class="cmd-block">
+<span class="comment"># res/xml/network_security_config.xml</span>
+&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;network-security-config&gt;
+    &lt;base-config cleartextTrafficPermitted="false"&gt;
+        &lt;trust-anchors&gt;
+            &lt;certificates src="system" /&gt;
+        &lt;/trust-anchors&gt;
+    &lt;/base-config&gt;
+&lt;/network-security-config&gt;
+        </div>
+    </div>
+
+    <div class="footer-bar">
+        <span class="confidential">Confidencial — Uso exclusivo del destinatario</span>
+        <span>NSI-IMP-2026-005 &bull; Página 3 de 8</span>
+    </div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════════════════════ -->
+<!-- P4: DOMINIO 4 + 5 -->
+<!-- ════════════════════════════════════════════════════════════════════════ -->
+<div class="page">
+    <div class="header">
+        <div class="header-left">
+            <h1>NULL SESSION INTELLIGENCE LLC</h1>
+            <div class="tagline">Offensive Security &bull; Implementation &bull; Advisory</div>
+        </div>
+        <div class="header-right">
+            <div class="doc-type">Phase 3 — Implementation Plan</div>
+            <div class="doc-number">NSI-IMP-2026-005 &bull; Julio 2026</div>
+        </div>
+    </div>
+
+    <h2>Dominio 4: Rate Limiting y Protección WSDL</h2>
+    <p><strong>Hallazgos referenciados:</strong> CMR-03, CMR-07, CMR-13</p>
+
+    <div class="implementation-card">
+        <h4>4.1 Rate Limiting por Endpoint y Cliente <span class="effort med">MEDIO</span></h4>
+        <p><strong>Implementación WCF:</strong> Usar WCF Extensibility con IEndpointBehavior para implementar throttling por IP y por token.</p>
+        <div class="cmd-block">
+<span class="comment">// WCF Rate Limiting Behavior</span>
+public class RateLimitingBehavior : IEndpointBehavior
+{
+    private readonly MemoryCache _cache = MemoryCache.Default;
+    private readonly int _maxRequests = 30;
+    private readonly int _windowSeconds = 60;
+
+    public void ApplyDispatchBehavior(ServiceEndpoint endpoint, 
+        EndpointDispatcher endpointDispatcher)
+    {
+        endpointDispatcher.DispatchRuntime.MessageInspectors.Add(
+            new RateLimitingInspector(_cache, _maxRequests, _windowSeconds));
+    }
+}
+
+public class RateLimitingInspector : IDispatchMessageInspector
+{
+    public object AfterReceiveRequest(ref Message request, 
+        IClientChannel channel, InstanceContext instanceContext)
+    {
+        var ip = GetClientIp();
+        var key = $"ratelimit:{ip}";
+        var count = (int?)_cache.Get(key) ?? 0;
+
+        if (count >= _maxRequests)
+            throw new FaultException("Rate limit exceeded. Try again later.");
+
+        _cache.Set(key, count + 1, 
+            DateTimeOffset.UtcNow.AddSeconds(_windowSeconds));
+        return null;
+    }
+}
+        </div>
+        <p><strong>Esfuerzo:</strong> 16-24 horas-hombre | <strong>Risk reduction:</strong> 80% contra fuerza bruta</p>
+    </div>
+
+    <div class="implementation-card">
+        <h4>4.2 Protección de WSDL <span class="effort low">BAJO</span></h4>
+        <p><strong>Opción 1:</strong> Deshabilitar metadata exchange en producción.</p>
+        <div class="cmd-block">
+<span class="comment"># Web.config - deshabilitar serviceMetadata</span>
+&lt;behaviors&gt;
+  &lt;serviceBehaviors&gt;
+    &lt;behavior name="SecureBehavior"&gt;
+      <span class="comment">&lt;!-- REMOVER o comentar esta línea --&gt;</span>
+      <span class="comment">&lt;serviceMetadata httpGetEnabled="true" /&gt;</span>
+    &lt;/behavior&gt;
+  &lt;/serviceBehaviors&gt;
+&lt;/behaviors&gt;
+        </div>
+        <p><strong>Opción 2:</strong> Restringir acceso por IP al metadata endpoint.</p>
+        <div class="cmd-block">
+<span class="comment"># IIS - Restringir WSDL por IP</span>
+&lt;location path="ServicioPortal.svc"&gt;
+  &lt;system.webServer&gt;
+    &lt;security&gt;
+      &lt;ipSecurity allowUnlisted="false"&gt;
+        &lt;add ipAddress="192.168.0.0" subnetMask="255.255.0.0" allowed="true" /&gt;
+        &lt;add ipAddress="10.200.200.0" subnetMask="255.255.255.0" allowed="true" /&gt;
+      &lt;/ipSecurity&gt;
+    &lt;/security&gt;
+  &lt;/system.webServer&gt;
+&lt;/location&gt;
+        </div>
+        <p><strong>Esfuerzo:</strong> 2-4 horas-hombre | <strong>Risk reduction:</strong> 100% (elimina mapa de ataque público)</p>
+    </div>
+
+    <h2>Dominio 5: Monitoreo y Detección</h2>
+    <p><strong>Objetivo:</strong> Implementar capacidad de detección de intrusiones y respuesta a incidentes.</p>
+    <p><strong>Hallazgos referenciados:</strong> CMR-08, CMR-14 (sistémico)</p>
+
+    <div class="implementation-card">
+        <h4>5.1 SIEM Centralizado con WCF Logging <span class="effort high">ALTO</span></h4>
+        <p><strong>Implementación:</strong> WCF custom MessageInspector que loggea TODAS las llamadas a endpoints (IP, método, timestamp, éxito/fallo) a un SIEM central (Wazuh / ELK / Sentinel).</p>
+        <div class="cmd-block">
+<span class="comment"># Log format (JSON a SIEM):</span>
+{
+  "timestamp": "2026-07-14T22:00:00Z",
+  "endpoint": "PersonalRecuperar",
+  "client_ip": "190.167.33.178",
+  "auth_type": "none",
+  "success": true,
+  "records_returned": 506,
+  "server": "portal.clinicacorominas.com.do",
+  "hospital": "corominas"
+}
+
+<span class="comment"># Reglas de alerta SIEM:</span>
+<span class="comment"># ALERT: >100 llamadas/min a PersonalRecuperar → posible exfiltración</span>
+<span class="comment"># ALERT: Llamada a GetContrasenaTabletas desde IP externa → breach</span>
+<span class="comment"># ALERT: Misma IP llamando a >3 hospitales diferentes → attacker scanning</span>
+        </div>
+        <p><strong>Esfuerzo:</strong> 40-60 horas-hombre | <strong>Risk reduction:</strong> 85% (detección temprana)</p>
+    </div>
+
+    <div class="implementation-card">
+        <h4>5.2 Endpoint Detection and Response (EDR) <span class="effort high">ALTO</span></h4>
+        <p>Instalar Wazuh agent en todos los servidores Windows (IIS) para monitoreo de integridad de archivos, detección de malware y correlación de eventos de seguridad.</p>
+        <p><strong>Esfuerzo:</strong> 20-30 horas-hombre | <strong>Risk reduction:</strong> 70%</p>
+    </div>
+
+    <div class="implementation-card">
+        <h4>5.3 Playbooks de Respuesta a Incidentes <span class="effort med">MEDIO</span></h4>
+        <p>Desarrollar playbooks documentados para cada tipo de incidente identificado:</p>
+        <ol>
+            <li><strong>IR-01:</strong> Exfiltración de datos vía PersonalRecuperar</li>
+            <li><strong>IR-02:</strong> Uso no autorizado de cmrservice05</li>
+            <li><strong>IR-03:</strong> Ataque de fuerza bruta a endpoints WCF</li>
+            <li><strong>IR-04:</strong> Acceso a estudios DICOM sin autorización</li>
+            <li><strong>IR-05:</strong> Falsificación de consentimientos vía PostConsentimientosFirma</li>
+        </ol>
+        <p><strong>Esfuerzo:</strong> 16-24 horas-hombre | <strong>Risk reduction:</strong> 60% (reduce tiempo de respuesta)</p>
+    </div>
+
+    <div class="footer-bar">
+        <span class="confidential">Confidencial — Uso exclusivo del destinatario</span>
+        <span>NSI-IMP-2026-005 &bull; Página 4 de 8</span>
+    </div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════════════════════ -->
+<!-- P5: DOMINIO 6 + 7 -->
+<!-- ════════════════════════════════════════════════════════════════════════ -->
+<div class="page">
+    <div class="header">
+        <div class="header-left">
+            <h1>NULL SESSION INTELLIGENCE LLC</h1>
+            <div class="tagline">Offensive Security &bull; Implementation &bull; Advisory</div>
+        </div>
+        <div class="header-right">
+            <div class="doc-type">Phase 3 — Implementation Plan</div>
+            <div class="doc-number">NSI-IMP-2026-005 &bull; Julio 2026</div>
+        </div>
+    </div>
+
+    <h2>Dominio 6: Cumplimiento Regulatorio</h2>
+    <p><strong>Objetivo:</strong> Implementar controles técnicos que cumplan con HIPAA, GDPR y Ley 172-13.</p>
+
+    <div class="implementation-card">
+        <h4>6.1 Controles Técnicos HIPAA <span class="effort high">ALTO</span></h4>
+        <table>
+            <thead><tr><th>Estándar HIPAA</th><th>Control a Implementar</th><th>Estado Actual</th></tr></thead>
+            <tbody>
+                <tr class="row-critical"><td>164.312(a)(1) — Control de Acceso</td><td>Autenticación única por usuario (JWT + MFA)</td><td>❌ Sin auth</td></tr>
+                <tr class="row-critical"><td>164.312(a)(2)(i) — ID de Usuario Único</td><td>Credenciales individuales no compartidas</td><td>❌ cmrservice05 compartida</td></tr>
+                <tr class="row-critical"><td>164.312(c)(1) — Integridad</td><td>Firma digital de registros médicos</td><td>❌ Endpoints sin auth modifican datos</td></tr>
+                <tr class="row-critical"><td>164.312(e)(1) — Seguridad Transmisión</td><td>HTTPS obligatorio + cifrado extremo a extremo</td><td>❌ HTTP en 3 servidores</td></tr>
+                <tr class="row-high"><td>164.312(b) — Auditoría</td><td>Logs de acceso a PHI con SIEM</td><td>⚠️ No implementado</td></tr>
+                <tr class="row-high"><td>164.312(d) — Autenticación de Entidad</td><td>Certificados de cliente mutuos (mTLS)</td><td>⚠️ No implementado</td></tr>
+            </tbody>
+        </table>
+        <p><strong>Esfuerzo:</strong> 40-60 horas-hombre | <strong>Multa evitada:</strong> Hasta $1.5M/año</p>
+    </div>
+
+    <div class="implementation-card">
+        <h4>6.2 Controles GDPR <span class="effort med">MEDIO</span></h4>
+        <table>
+            <thead><tr><th>Artículo</th><th>Control</th><th>Implementación</th></tr></thead>
+            <tbody>
+                <tr><td>Art. 17</td><td>Derecho al olvido</td><td>Endpoint de borrado lógico de datos personales</td></tr>
+                <tr><td>Art. 20</td><td>Portabilidad de datos</td><td>API de exportación de datos en formato estándar</td></tr>
+                <tr><td>Art. 25</td><td>Privacy by Design</td><td>Minimización de datos en respuestas de API</td></tr>
+                <tr><td>Art. 32</td><td>Seguridad del tratamiento</td><td>Cifrado, control de acceso, pseudonimización</td></tr>
+                <tr><td>Art. 33</td><td>Notificación de breaches</td><td>Protocolo de notificación en 72 horas</td></tr>
+            </tbody>
+        </table>
+        <p><strong>Esfuerzo:</strong> 30-40 horas-hombre | <strong>Multa evitada:</strong> Hasta 20M EUR o 4% revenue</p>
+    </div>
+
+    <div class="implementation-card">
+        <h4>6.3 Cumplimiento Ley 172-13 (RD) <span class="effort med">MEDIO</span></h4>
+        <p>Controles requeridos por la ley de protección de datos personales dominicana:</p>
+        <ul>
+            <li>Registro de bases de datos personales ante la DGPDP</li>
+            <li>Designación de Oficial de Protección de Datos</li>
+            <li>Implementación de consentimiento informado electrónico</li>
+            <li>Política de retención y destrucción de datos</li>
+            <li>Acuerdo de encargo de tratamiento con CMR/IDigitales</li>
+        </ul>
+        <p><strong>Esfuerzo:</strong> 20-30 horas-hombre</p>
+    </div>
+
+    <h2>Dominio 7: Secure SDLC y Prevención</h2>
+    <p><strong>Objetivo:</strong> Prevenir la recurrencia de vulnerabilidades similares en el futuro.</p>
+
+    <div class="implementation-card">
+        <h4>7.1 Security Pipeline (SAST/DAST) <span class="effort high">ALTO</span></h4>
+        <p>Integrar análisis de seguridad en el pipeline CI/CD:</p>
+        <div class="cmd-block">
+<span class="comment"># GitHub Actions - Security Scan</span>
+security-scan:
+  runs-on: ubuntu-latest
+  steps:
+    - uses: actions/checkout@v4
+    - name: SAST Scan
+      uses: github/codeql-action/analyze@v3
+      with:
+        languages: csharp, dart
+    - name: Dependency Scan
+      run: dotnet list package --vulnerable
+    - name: Secret Scan
+      uses: trufflesecurity/trufflehog@v3
+      with:
+        extra_args: --results=verified,unknown
+        </div>
+        <p><strong>Esfuerzo:</strong> 20-30 horas-hombre | <strong>Risk reduction:</strong> 70% (previene nuevas vulns)</p>
+    </div>
+
+    <div class="implementation-card">
+        <h4>7.2 Programa de Bug Bounty Interno <span class="effort med">MEDIO</span></h4>
+        <p>Establecer un programa de bug bounty privado para investigadores de seguridad, con recompensas de $100-$2,500 por hallazgo válido.</p>
+        <p><strong>Esfuerzo:</strong> 8-16 horas-hombre (setup) | <strong>Risk reduction:</strong> 50% (detección continua)</p>
+    </div>
+
+    <div class="footer-bar">
+        <span class="confidential">Confidencial — Uso exclusivo del destinatario</span>
+        <span>NSI-IMP-2026-005 &bull; Página 5 de 8</span>
+    </div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════════════════════ -->
+<!-- P6: CRONOGRAMA + COSTOS -->
+<!-- ════════════════════════════════════════════════════════════════════════ -->
+<div class="page">
+    <div class="header">
+        <div class="header-left">
+            <h1>NULL SESSION INTELLIGENCE LLC</h1>
+            <div class="tagline">Offensive Security &bull; Implementation &bull; Advisory</div>
+        </div>
+        <div class="header-right">
+            <div class="doc-type">Phase 3 — Implementation Plan</div>
+            <div class="doc-number">NSI-IMP-2026-005 &bull; Julio 2026</div>
+        </div>
+    </div>
+
+    <h2>8. Cronograma de Implementación</h2>
+
+    <table>
+        <thead><tr><th>Semana</th><th>Lunes</th><th>Martes</th><th>Miércoles</th><th>Jueves</th><th>Viernes</th></tr></thead>
+        <tbody>
+            <tr class="row-critical">
+                <td><strong>S1</strong></td>
+                <td>API Gateway setup</td>
+                <td>JWT auth WCF</td>
+                <td>Vault + creds rotation</td>
+                <td>HTTPS migration</td>
+                <td>Directory listing + headers</td>
+            </tr>
+            <tr class="row-high">
+                <td><strong>S2</strong></td>
+                <td>Rate limiting WCF</td>
+                <td>WSDL protection</td>
+                <td>SIEM + WCF logging</td>
+                <td>debugMode removal</td>
+                <td>Flutter rebuild + publish</td>
+            </tr>
+            <tr class="row-high">
+                <td><strong>S3</strong></td>
+                <td>HIPAA controls</td>
+                <td>GDPR compliance</td>
+                <td>Ley 172-13 docs</td>
+                <td>EDR installation</td>
+                <td>Incident playbooks</td>
+            </tr>
+            <tr>
+                <td><strong>S4</strong></td>
+                <td>SAST/DAST pipeline</td>
+                <td>Bug bounty setup</td>
+                <td>Pentest verification</td>
+                <td>Documentation</td>
+                <td>Final report + delivery</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>9. Desglose de Costos</h2>
+
+    <table>
+        <thead><tr><th>Dominio</th><th>Horas</th><th>Costo Estimado</th><th>% del Total</th></tr></thead>
+        <tbody>
+            <tr><td>1. Zero Trust Architecture</td><td>90-130</td><td>$9,000 - $13,000</td><td>35%</td></tr>
+            <tr><td>2. Infrastructure Hardening</td><td>12-22</td><td>$1,200 - $2,200</td><td>5%</td></tr>
+            <tr><td>3. Application Security</td><td>20-30</td><td>$2,000 - $3,000</td><td>8%</td></tr>
+            <tr><td>4. Rate Limiting + WSDL</td><td>18-28</td><td>$1,800 - $2,800</td><td>7%</td></tr>
+            <tr><td>5. Monitoring + Detection</td><td>76-114</td><td>$7,600 - $11,400</td><td>30%</td></tr>
+            <tr><td>6. Compliance Controls</td><td>90-130</td><td>$9,000 - $13,000</td><td>35%</td></tr>
+            <tr><td>7. Secure SDLC</td><td>28-46</td><td>$2,800 - $4,600</td><td>12%</td></tr>
+            <tr><td><strong>TOTAL</strong></td><td><strong>334-500</strong></td><td><strong>$33,400 - $50,000</strong></td><td><strong>100%</strong></td></tr>
+        </tbody>
+    </table>
+
+    <p><em>Nota: Los costos incluyen implementación técnica, configuración, documentación y verificación. No incluyen licencias de software de terceros (Vault, SIEM, EDR) ni costos de infraestructura cloud.</em></p>
+
+    <h2>10. Reducción de Riesgo Post-Implementación</h2>
+
+    <table>
+        <thead><tr><th>Hallazgo</th><th>Riesgo Actual</th><th>Riesgo Post-F3</th><th>Control Implementado</th></tr></thead>
+        <tbody>
+            <tr class="row-critical"><td>CMR-01: Contraseña compartida</td><td>🔴 Crítico (9.8)</td><td>🟢 Bajo (2.1)</td><td>Vault + credenciales únicas + auth JWT</td></tr>
+            <tr class="row-critical"><td>CMR-02: Exposición PII</td><td>🔴 Crítico (9.1)</td><td>🟢 Bajo (3.1)</td><td>Auth obligatoria en PersonalRecuperar</td></tr>
+            <tr class="row-critical"><td>CMR-03: WSDL público</td><td>🔴 Crítico (8.6)</td><td>🟢 Bajo (2.5)</td><td>Restricción IP + metadata disabled</td></tr>
+            <tr class="row-critical"><td>CMR-04: DICOM expuesto</td><td>🔴 Crítico (8.6)</td><td>🟢 Bajo (2.5)</td><td>Auth en ImagingAnalysisList</td></tr>
+            <tr class="row-high"><td>CMR-05: Consentimientos</td><td>🟠 Alto (7.5)</td><td>🟢 Bajo (2.5)</td><td>Auth + firma digital</td></tr>
+            <tr class="row-high"><td>CMR-06: Firma sin auth</td><td>🟠 Alto (7.5)</td><td>🟢 Bajo (2.1)</td><td>Auth obligatoria + logging</td></tr>
+            <tr class="row-high"><td>CMR-09: HTTP plano</td><td>🟡 Medio (5.9)</td><td>🟢 Bajo (1.0)</td><td>HTTPS + HSTS</td></tr>
+        </tbody>
+    </table>
+
+    <p><strong>Reducción de riesgo general:</strong> <span style="color:var(--nsi-success);font-weight:700;font-size:14pt;">~95%</span></p>
+    <p><strong>Riesgo residual estimado:</strong> Medio-Bajo (enfocado en error humano y configuraciones futuras)</p>
+
+    <div class="footer-bar">
+        <span class="confidential">Confidencial — Uso exclusivo del destinatario</span>
+        <span>NSI-IMP-2026-005 &bull; Página 6 de 8</span>
+    </div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════════════════════ -->
+<!-- P7: VERIFICACIÓN + ENTREGABLES -->
+<!-- ════════════════════════════════════════════════════════════════════════ -->
+<div class="page">
+    <div class="header">
+        <div class="header-left">
+            <h1>NULL SESSION INTELLIGENCE LLC</h1>
+            <div class="tagline">Offensive Security &bull; Implementation &bull; Advisory</div>
+        </div>
+        <div class="header-right">
+            <div class="doc-type">Phase 3 — Implementation Plan</div>
+            <div class="doc-number">NSI-IMP-2026-005 &bull; Julio 2026</div>
+        </div>
+    </div>
+
+    <h2>11. Procedimientos de Verificación</h2>
+    <p>Cada control implementado debe ser verificado mediante pruebas específicas antes de darlo por cerrado.</p>
+
+    <table>
+        <thead><tr><th>Control</th><th>Prueba de Verificación</th><th>Comando / Método</th></tr></thead>
+        <tbody>
+            <tr><td>Auth en GetContrasenaTabletas</td><td>Endpoint debe rechazar peticiones sin token</td><td>curl → 401</td></tr>
+            <tr><td>Auth en PersonalRecuperar</td><td>Endpoint debe rechazar peticiones sin token</td><td>curl → 401</td></tr>
+            <tr><td>WSDL protegido</td><td>WSDL devuelve 403/404 desde IP externa</td><td>curl → no 200</td></tr>
+            <tr><td>HTTPS migration</td><td>HTTP redirect a HTTPS + HSTS header</td><td>curl -I → 301 + STS</td></tr>
+            <tr><td>Directory listing off</td><td>Listado de directorio devuelve 403/404</td><td>curl → no lista</td></tr>
+            <tr><td>Rate limiting</td><td>>30 req/min devuelve 429</td><td>ab -n 50 -c 5 → 429s</td></tr>
+            <tr><td>debugMode off</td><td>Respuestas sin stack traces</td><td>Error trigger → no trace</td></tr>
+            <tr><td>SIEM logging</td><td>Endpoint log registrado en SIEM</td><td>Query SIEM → evento visible</td></tr>
+            <tr><td>Vault creds rotadas</td><td>cmrservice05 ya no funciona en ningún host</td><td>curl → 401</td></tr>
+        </tbody>
+    </table>
+
+    <div class="cmd-block">
+<span class="comment"># Script de verificación automatizada post-fix</span>
+#!/bin/bash
+FAIL=0
+PASS=0
+
+<span class="comment"># Test 1: GetContrasenaTabletas sin auth debe fallar</span>
+if curl -sk -X POST "https://portal.clinicacorominas.com.do/HisWebServicios/Portal/ServicioPortal.svc/GetContrasenaTabletas" \
+  -H "Content-Type: application/json" -d '{}' -w "%{http_code}" | grep -q "401\|403"; then
+  ((PASS++))
+else
+  echo "FAIL: GetContrasenaTabletas still accessible"
+  ((FAIL++))
+fi
+
+<span class="comment"># Test 2: WSDL debe devolver 403</span>
+if curl -sk -o /dev/null -w "%{http_code}" "https://portal.clinicacorominas.com.do/HisWebServicios/Portal/ServicioPortal.svc?wsdl" | grep -q "403\|404"; then
+  ((PASS++))
+else
+  echo "FAIL: WSDL still public"
+  ((FAIL++))
+fi
+
+echo "PASS: $PASS | FAIL: $FAIL"
+    </div>
+
+    <h2>12. Entregables de la Fase 3</h2>
+
+    <table>
+        <thead><tr><th>#</th><th>Entregable</th><th>Formato</th><th>Responsable</th></tr></thead>
+        <tbody>
+            <tr><td>1</td><td>API Gateway configurado y operativo</td><td>Servidor + Documentación</td><td>NSI + Cliente</td></tr>
+            <tr><td>2</td><td>Código WCF con autenticación JWT</td><td>Source code + Deploy</td><td>NSI</td></tr>
+            <tr><td>3</td><td>Vault cluster con secretos rotados</td><td>Servidor + Políticas</td><td>NSI</td></tr>
+            <tr><td>4</td><td>Certificados HTTPS + configuración</td><td>Config server</td><td>NSI</td></tr>
+            <tr><td>5</td><td>SIEM operativo con reglas de alerta</td><td>Servidor + Dashboards</td><td>NSI</td></tr>
+            <tr><td>6</td><td>Playbooks de respuesta a incidentes</td><td>Documento PDF</td><td>NSI</td></tr>
+            <tr><td>7</td><td>Reporte de verificación post-fix</td><td>Documento PDF</td><td>NSI</td></tr>
+            <tr><td>8</td><td>Documentación de compliance (HIPAA/GDPR)</td><td>Documento PDF</td><td>NSI</td></tr>
+            <tr><td>9</td><td>App Flutter re-publicadas sin debugMode</td><td>Google Play</td><td>Cliente</td></tr>
+            <tr><td>10</td><td>CI/CD pipeline con security scanning</td><td>GitHub Actions</td><td>NSI</td></tr>
+        </tbody>
+    </table>
+
+    <h2>13. Riesgos de la Implementación</h2>
+
+    <table>
+        <thead><tr><th>Riesgo</th><th>Probabilidad</th><th>Impacto</th><th>Mitigación</th></tr></thead>
+        <tbody>
+            <tr class="row-high"><td>Downtime durante migración HTTPS</td><td>Media</td><td>Alto</td><td>Blue-green deployment, ventana de mantenimiento</td></tr>
+            <tr class="row-high"><td>Apps Flutter rechazadas en Google Play</td><td>Baja</td><td>Medio</td><td>Probar en Test Track antes de producción</td></tr>
+            <tr class="row-high"><td>WCF auth break cambios existentes</td><td>Media</td><td>Alto</td><td>Rollback plan, pruebas en staging, feature flags</td></tr>
+            <tr><td>Rotación de credenciales afecta tablets</td><td>Media</td><td>Medio</td><td>Comunicación con hospitales, ventana de actualización</td></tr>
+            <tr><td>SIEM genera falsos positivos</td><td>Alta</td><td>Bajo</td><td>Tuning de reglas durante primera semana</td></tr>
+        </tbody>
+    </table>
+
+    <div class="footer-bar">
+        <span class="confidential">Confidencial — Uso exclusivo del destinatario</span>
+        <span>NSI-IMP-2026-005 &bull; Página 7 de 8</span>
+    </div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════════════════════ -->
+<!-- P8: CONCLUSIONES + FIRMA -->
+<!-- ════════════════════════════════════════════════════════════════════════ -->
+<div class="page">
+    <div class="header">
+        <div class="header-left">
+            <h1>NULL SESSION INTELLIGENCE LLC</h1>
+            <div class="tagline">Offensive Security &bull; Implementation &bull; Advisory</div>
+        </div>
+        <div class="header-right">
+            <div class="doc-type">Phase 3 — Implementation Plan</div>
+            <div class="doc-number">NSI-IMP-2026-005 &bull; Julio 2026</div>
+        </div>
+    </div>
+
+    <h2>14. Análisis Costo-Beneficio</h2>
+
+    <table>
+        <thead><tr><th>Escenario</th><th>Sin Implementación</th><th>Con Fase 3</th><th>Ahorro Neto</th></tr></thead>
+        <tbody>
+            <tr class="row-critical"><td>Brecha de datos PHI/PII</td><td>$1.1M - $10.5M</td><td>$50K - $200K (residual)</td><td><strong>$1M - $10.3M</strong></td></tr>
+            <tr class="row-high"><td>Multa HIPAA (4 violaciones)</td><td>Hasta $6M</td><td>$0 (cumplimiento)</td><td><strong>$6M</strong></td></tr>
+            <tr class="row-high"><td>Multa GDPR (si aplica)</td><td>Hasta 20M EUR</td><td>$0 (cumplimiento)</td><td><strong>~$22M</strong></td></tr>
+            <tr><td>Daño reputacional</td><td>Pérdida de 30-50% clientes</td><td>Pérdida mínima</td><td><strong>$500K - $2M</strong></td></tr>
+            <tr><td>Litigios de pacientes afectados</td><td>$100K - $500K</td><td>$0</td><td><strong>$100K - $500K</strong></td></tr>
+            <tr class="row-success"><td><strong>COSTO DE IMPLEMENTACIÓN</strong></td><td></td><td><strong>$30,000</strong></td><td></td></tr>
+            <tr class="row-success"><td><strong>RETORNO DE INVERSIÓN (ROI)</strong></td><td></td><td></td><td><strong>~33x - 1,033x</strong></td></tr>
+        </tbody>
+    </table>
+
+    <p style="font-size:11pt;font-weight:600;color:var(--nsi-success);text-align:center;margin:24px 0;">
+        Por cada $1 invertido en esta fase, se estima un ahorro potencial de $33 a $1,033 en costos de brecha.
+    </p>
+
+    <hr>
+
+    <h2>15. Conclusión y Próximos Pasos</h2>
+
+    <p>La Fase 3 aquí descrita constituye un plan de implementación completo y detallado que, ejecutado en su totalidad, reduce el riesgo de seguridad del ecosistema CMR Medical Systems / IDigitales en aproximadamente un <strong>95%</strong>. Las 14 vulnerabilidades identificadas en la fase de evaluación quedarían efectivamente remediadas con controles técnicos verificables.</p>
+
+    <p>Los controles propuestos no solo resuelven los hallazgos actuales, sino que establecen una <strong>arquitectura de seguridad sostenible</strong> (Zero Trust, monitoreo continuo, CI/CD seguro) que previene la recurrencia de vulnerabilidades similares y prepara a la organización para cumplir con las principales regulaciones de protección de datos.</p>
+
+    <p><strong>Próximos pasos recomendados:</strong></p>
+    <ol>
+        <li><strong>Inmediato:</strong> Aprobación del plan de implementación y asignación de recursos</li>
+        <li><strong>Semana 1:</strong> Ejecución de controles críticos (API Gateway, JWT auth, Vault)</li>
+        <li><strong>Semana 2:</strong> Hardening de infraestructura + monitoreo</li>
+        <li><strong>Semana 3:</strong> Controles de cumplimiento + playbooks</li>
+        <li><strong>Semana 4:</strong> Verificación post-fix + entrega de documentación</li>
+        <li><strong>Post-F3:</strong> Re-escaneo de validación (Fase 2 — Auditoría post-remediación)</li>
+    </ol>
+
+    <hr>
+
+    <div style="margin-top:30px;">
+        <p><strong>Preparado por:</strong></p>
+        <div style="margin-top:16px;border-top:2px solid var(--nsi-dark);padding-top:14px;">
+            <p style="font-size:11pt;font-weight:800;">Null Session Intelligence LLC</p>
+            <p style="font-size:8.5pt;color:var(--nsi-muted);margin-top:2px;">Offensive Security &bull; Implementation &bull; Advisory</p>
+            <div style="width:32px;height:2px;background:var(--nsi-border);margin:8px 0;"></div>
+            <p style="font-size:8.5pt;color:var(--nsi-muted);line-height:1.7;">
+                469 Halladay St, Apt 2, Jersey City, NJ 07304<br>
+                security@nullsessionintelligence.com<br>
+                nullsessionintelligence.com
+            </p>
+        </div>
+    </div>
+
+    <hr>
+
+    <p><strong>Clasificación:</strong> CONFIDENCIAL — Uso exclusivo del destinatario</p>
+    <p><strong>Documento:</strong> NSI-IMP-2026-005 &bull; 14 Julio 2026</p>
+    <p><strong>Valor del servicio:</strong> $30,000 USD (Incluye implementación completa + verificación + documentación + 30 días de soporte post-implementación)</p>
+
+    <div class="footer-bar">
+        <span class="confidential">Confidencial — Uso exclusivo del destinatario</span>
+        <span>NSI-IMP-2026-005 &bull; Página 8 de 8</span>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Security Audit Report — SEC-2026-003</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { 
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Arial, sans-serif;
+  background: #0a0e17;
+  color: #e0e0e0;
+  line-height: 1.6;
+}
+.container { max-width: 1100px; margin: 0 auto; padding: 0 30px; }
+
+/* Header */
+.header {
+  background: linear-gradient(135deg, #0d1b2a 0%, #1b2838 50%, #0d1b2a 100%);
+  border-bottom: 3px solid #c9a84c;
+  padding: 60px 0 40px;
+  text-align: center;
+}
+.header h1 { color: #c9a84c; font-size: 28px; font-weight: 300; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px; }
+.header .subtitle { color: #8899aa; font-size: 14px; letter-spacing: 4px; text-transform: uppercase; }
+.header .divider { width: 60px; height: 2px; background: #c9a84c; margin: 20px auto; }
+.header .meta { color: #667788; font-size: 13px; }
+.header .meta span { color: #c9a84c; }
+
+/* Content */
+.content { padding: 40px 0; }
+h2 { color: #c9a84c; font-size: 22px; font-weight: 400; letter-spacing: 1px; margin: 40px 0 20px; padding-bottom: 10px; border-bottom: 1px solid #1e3050; }
+h3 { color: #e8d48b; font-size: 17px; font-weight: 500; margin: 25px 0 12px; }
+h4 { color: #c9a84c; font-size: 14px; font-weight: 600; margin: 15px 0 8px; text-transform: uppercase; letter-spacing: 1px; }
+p { margin-bottom: 12px; text-align: justify; }
+a { color: #c9a84c; text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* Severity badges */
+.sev-critical { display:inline-block; background:linear-gradient(135deg,#8b0000,#cc0000); color:#fff; padding:3px 12px; border-radius:3px; font-size:11px; font-weight:700; letter-spacing:1px; text-transform:uppercase; }
+.sev-high { display:inline-block; background:linear-gradient(135deg,#cc4400,#ff6600); color:#fff; padding:3px 12px; border-radius:3px; font-size:11px; font-weight:700; letter-spacing:1px; text-transform:uppercase; }
+.sev-medium { display:inline-block; background:linear-gradient(135deg,#ccaa00,#eedd00); color:#1a1a1a; padding:3px 12px; border-radius:3px; font-size:11px; font-weight:700; letter-spacing:1px; text-transform:uppercase; }
+.sev-low { display:inline-block; background:linear-gradient(135deg,#336633,#44aa44); color:#fff; padding:3px 12px; border-radius:3px; font-size:11px; font-weight:700; letter-spacing:1px; text-transform:uppercase; }
+.sev-info { display:inline-block; background:linear-gradient(135deg,#2a4a7a,#4477bb); color:#fff; padding:3px 12px; border-radius:3px; font-size:11px; font-weight:700; letter-spacing:1px; text-transform:uppercase; }
+
+/* Tables */
+table { width:100%; border-collapse:collapse; margin:20px 0; font-size:13px; }
+th { background:#1e3050; color:#c9a84c; padding:10px 12px; text-align:left; font-weight:600; border:1px solid #2a4060; font-size:12px; text-transform:uppercase; letter-spacing:0.5px; }
+td { padding:8px 12px; border:1px solid #1e3050; color:#d0d0d0; }
+tr:nth-child(even) td { background:#0f1a2a; }
+tr:hover td { background:#142638; }
+
+/* Code */
+code { background:#141e30; color:#c9d4e0; padding:2px 6px; border-radius:3px; font-family:Consolas,Monaco,'Courier New',monospace; font-size:12px; border:1px solid #1e3050; }
+pre { background:#0d1520; color:#d0d8e0; padding:16px; border-radius:5px; overflow-x:auto; font-size:12px; line-height:1.5; border:1px solid #1e3050; margin:15px 0; border-left:3px solid #c9a84c; }
+pre code { background:none; border:none; padding:0; color:#d0d8e0; }
+ul, ol { margin:10px 0 15px 25px; }
+li { margin-bottom:6px; }
+blockquote { border-left:3px solid #c9a84c; padding:10px 15px; margin:15px 0; background:#0f1a2a; color:#b0b8c0; }
+
+/* Finding cards */
+.finding { background:#0f1a2a; border:1px solid #1e3050; border-left:4px solid #c9a84c; border-radius:0 5px 5px 0; padding:20px; margin:25px 0; }
+.finding.f-critical { border-left-color:#cc0000; }
+.finding.f-high { border-left-color:#ff6600; }
+.finding.f-medium { border-left-color:#eedd00; }
+.finding.f-low { border-left-color:#44aa44; }
+.finding.f-info { border-left-color:#4477bb; }
+.finding-header { display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; flex-wrap:wrap; gap:10px; }
+.finding-header h3 { margin:0; }
+.finding hr { border:none; border-top:1px solid #1e3050; margin:15px 0; }
+.finding strong { color:#c9d4e0; }
+
+/* Footer */
+.footer { text-align:center; padding:30px 0; border-top:1px solid #1e3050; margin-top:40px; color:#556677; font-size:12px; letter-spacing:1px; }
+.footer .gold { color:#c9a84c; }
+
+@media print {
+  body { background:#fff; color:#333; }
+  .header { background:#1b2838 !important; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  .header h1 { color:#c9a84c; }
+  .finding { background:#fafafa; border-color:#ddd; }
+  td, th { border-color:#ccc; }
+  th { background:#1e3050; color:#c9a84c; }
+  pre { background:#f5f5f5; border-color:#ddd; }
+  pre code { color:#333; }
+  code { background:#f0f0f0; }
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="container">
+    <p class="subtitle">Security Assessment</p>
+    <div class="divider"></div>
+    <h1>Security Audit Report</h1>
+    <p style="color:#c9a84c;font-size:16px;letter-spacing:1px;">Ecosistema Digital</p>
+    <div class="divider"></div>
+    <p class="meta"><span>Clasificación:</span> CONFIDENCIAL &nbsp;·&nbsp; <span>ID:</span> SEC-2026-003 &nbsp;·&nbsp; <span>Fecha:</span> 10 Julio 2026</p>
+  </div>
+</div>
+
+<div class="container content">
+
+<h1>Security Audit Report — Ecosistema Digital PN</h1>
+<p><strong>Clasificación:</strong> CONFIDENCIAL
+<strong>Fecha:</strong> 10 Julio 2026
+<strong>ID:</strong> SEC-2026-003</p>
+<hr>
+<h2>1. Executive Summary</h2>
+<p>Se realizó un assessment de seguridad externo sobre la infraestructura digital de una institución gubernamental de orden público. El assessment abarcó aplicaciones móviles (Android/iOS), APIs REST, portales web, servidores de archivos y servicios de correo electrónico.</p>
+<p>Se identificaron <strong>13 hallazgos</strong> de severidad variable, incluyendo:</p>
+<ul>
+<li><strong>1 hallazgo <span class="sev-critical">CRÍTICO</span></strong>: API pública que expone preguntas de seguridad con sus respuestas</li>
+<li><strong>3 hallazgos <span class="sev-high">ALTOS</span></strong>: API keys funcionales sin restricciones, documentos internos publicados sin autenticación</li>
+<li><strong>5 hallazgos <span class="sev-medium">MEDIOS</span></strong>: Exposición de infraestructura, endpoints de autenticación sin rate limiting, JWT obtenido</li>
+<li><strong>4 hallazgos <span class="sev-low">BAJOS</span> / <span class="sev-info">INFORMATIVOS</span></strong></li>
+</ul>
+<hr>
+<h2>2. Perfil del Objetivo</h2>
+<table>
+<thead><tr><th>Atributo</th><th>Valor</th></tr></thead>
+<tbody>
+<tr><td>Aplicación PSP</td><td><code>com.policiard.psp</code> (5,000+ descargas)</td></tr>
+<tr><td>Aplicación Denuncias</td><td><code>com.policianacional.denunciavirtual</code> (75,888 descargas)</td></tr>
+<tr><td>Stack</td><td>Ionic/Angular + Capacitor, .NET ASP.NET MVC 5.2, IIS 10.0</td></tr>
+<tr><td>Servidores</td><td><code>psp.policia.gob.do</code>, <code>denuncias.policia.gob.do</code>, <code>pn-vcomplaint-service.policia.gob.do</code></td></tr>
+<tr><td>Email</td><td><code>webmail.policia.gob.do</code> (MailEnable 10.55)</td></tr>
+<tr><td>CDN/WAF</td><td>Imperva/Incapsula (parcial)</td></tr>
+</tbody>
+</table>
+<hr>
+<h2>3. Hallazgos</h2>
+
+<hr>
+<h3 id="h01">H-01: Security Questions Endpoint Expone Preguntas y Respuestas</h3>
+<p><strong>Severidad:</strong> <span class="sev-critical">🔴 CRÍTICO</span> (CVSS 8.2)</p>
+<p><strong>Estado:</strong> ✅ Confirmado</p>
+<p><strong>Descripción:</strong><br>
+El endpoint <code>GET /api/v1.0/user/questions/{cedula}</code> del backend <code>pn-vcomplaint-service.policia.gob.do:8021</code> expone las preguntas de seguridad <strong>y sus respuestas</strong> para cualquier número de cédula registrado en el sistema. No requiere autenticación adicional más allá de la firma HMAC estática extraída del APK.</p>
+<p><strong>Endpoint vulnerable:</strong></p>
+<pre>GET https://pn-vcomplaint-service.policia.gob.do:8021/api/v1.0/user/questions/{cedula}
+Authorization: Basic {apiKey}:{hmac}:{timestamp}
+SourceId: 1</pre>
+<p><strong>Evidencia — Respuesta del servidor:</strong></p>
+<pre>[
+  {
+    "question": {
+      "questionId": 5,
+      "name": "Lugar de Nacimiento",
+      "question": "¿Cuál es tu lugar de nacimiento?"
+    },
+    "answers": ["BONAO, R.D.", "SABANA DE LA MAR R.D", "EL PINO DAJABON", "VALVERDE, MAO, R.D."]
+  },
+  {
+    "question": {
+      "questionId": 8,
+      "name": "Ocupación",
+      "question": "¿Cuál es su ocupación?"
+    },
+    "answers": [".", "MAESTRO (A)", "ESTADISTICO", "LIC. EN COMUNICACION SOCIAL"]
+  },
+  {
+    "question": {
+      "questionId": 4,
+      "name": "Nombre de la Madre",
+      "question": "¿Cuál es el nombre de tu madre?"
+    },
+    "answers": ["CARMEN MIRLIA", "VIRJINIA AMALIA", "MERCEDES", "SANTA"]
+  }
+]</pre>
+<p><strong>Impacto:</strong></p>
+<ul>
+<li>Account takeover completo: con la cédula y las respuestas de seguridad, un atacante puede resetear la contraseña de cualquier usuario</li>
+<li>Exposición de información personal: nombres de familiares (madre), lugar de nacimiento, ocupación</li>
+<li>Escalable: puede automatizarse para extraer datos de miles de usuarios registrados</li>
+</ul>
+<p><strong>Remediación:</strong></p>
+<ol>
+<li>Eliminar las respuestas del response del endpoint — solo devolver las preguntas</li>
+<li>Requerir autenticación de usuario (token) para acceder a este endpoint</li>
+<li>Implementar rate limiting por IP y por cédula</li>
+<li>Rotar el apiKey y apiValue actuales (comprometidos)</li>
+</ol>
+
+<hr>
+<h3 id="h02">H-02: Google Maps API Key Sin Restricciones</h3>
+<p><strong>Severidad:</strong> <span class="sev-high">🔴 ALTO</span> (CVSS 7.5)</p>
+<p><strong>Estado:</strong> ✅ Confirmado</p>
+<p><strong>Descripción:</strong><br>
+La aplicación Denuncias Virtuales contiene una API Key de Google Maps embebida en el código fuente. La key no tiene restricciones de IP, HTTP referrer, ni de servicios, permitiendo su uso para cualquier API de Google Maps.</p>
+<p><strong>Key extraída del APK:</strong></p>
+<pre>AIzaSyBVlEjGS-Witkb0fCqVwYlEnRot_XNZUAI</pre>
+<p><strong>Servicios verificados como funcionales:</strong></p>
+<table>
+<thead><tr><th>API</th><th>Estado</th><th>Uso potencial</th></tr></thead>
+<tbody>
+<tr><td>Geocoding</td><td>✅ OK</td><td>Consulta de direcciones ilimitada</td></tr>
+<tr><td>Places</td><td>✅ OK (20 resultados)</td><td>Búsqueda de lugares</td></tr>
+<tr><td>Static Maps</td><td>✅ OK (32KB imagen)</td><td>Generación de mapas</td></tr>
+<tr><td>Geolocation</td><td>✅ OK</td><td>Geolocalización por IP</td></tr>
+</tbody>
+</table>
+<p><strong>Evidencia — Test de Geocoding:</strong></p>
+<pre>GET https://maps.googleapis.com/maps/api/geocode/json?address=Santo+Domingo&key=AIzaSyBVlEjGS-Witkb0fCqVwYlEnRot_XNZUAI
+→ Status: OK
+→ Result: "Santo Domingo, Dominican Republic"</pre>
+<p><strong>Impacto:</strong></p>
+<ul>
+<li>Abuso financiero: uso no autorizado de APIs de Google con costo asociado</li>
+<li>Geolocalización de usuarios sin consentimiento</li>
+<li>Potencial fuga de datos de ubicación</li>
+</ul>
+<p><strong>Remediación:</strong></p>
+<ol>
+<li>Restringir la API Key por HTTP referrer a solo los dominios oficiales</li>
+<li>Restringir por IP a los servidores de la institución</li>
+<li>Rotar la key actual y emitir una nueva con restricciones</li>
+<li>Monitorear uso en Google Cloud Console para detectar abuso</li>
+</ol>
+
+<hr>
+<h3 id="h03">H-03: Documentos Internos Publicados Sin Autenticación</h3>
+<p><strong>Severidad:</strong> <span class="sev-high">🔴 ALTO</span> (CVSS 6.5)</p>
+<p><strong>Estado:</strong> ✅ Confirmado</p>
+<p><strong>Descripción:</strong><br>
+El endpoint <code>GET /api/Published</code> del servidor <code>psp.policia.gob.do:8081</code> expone 17 documentos internos sin requerir autenticación. Los documentos incluyen manuales operativos, protocolos y reglamentos institucionales.</p>
+<p><strong>Endpoint público:</strong></p>
+<pre>GET https://psp.policia.gob.do:8081/api/Published?page=1&pageSize=50</pre>
+<p><strong>Documentos expuestos:</strong></p>
+<table>
+<thead><tr><th>ID</th><th>Documento</th></tr></thead>
+<tbody>
+<tr><td>9</td><td>Constitución de la República Dominicana 2024</td></tr>
+<tr><td>10</td><td>Ley Orgánica Policía Nacional</td></tr>
+<tr><td>11</td><td>Manual de Taser</td></tr>
+<tr><td>12</td><td>Manual de Bolsillo — Guía práctica para el Agente Policial</td></tr>
+<tr><td>14</td><td>Reglamento de Aplicación Ley No.590-16</td></tr>
+<tr><td>18</td><td>GUIA DE USUARIOS TAM</td></tr>
+<tr><td>20</td><td>Decálogo del comandante de policía</td></tr>
+<tr><td>21</td><td>GUIA PARA CAMBIO DE TURNO DEL PATRULLAJE POLICIAL</td></tr>
+<tr><td>22</td><td>GUIA PARA LA SUPERVISIÓN Y CONTROL DEL PATRULLAJE</td></tr>
+<tr><td>23</td><td>INSTRUCTIVO SUPERVISIÓN Y RESPUESTA EVENTOS 9-1-1</td></tr>
+<tr><td>24</td><td>SISTEMA DE LISTA DE SERVICIO</td></tr>
+<tr><td>25</td><td>GUÍA PRÁCTICA EJECUCIÓN PLANES ESPECIALES</td></tr>
+<tr><td>26</td><td>GUÍA ENCUENTROS COMUNITARIOS POLICÍA NACIONAL</td></tr>
+<tr><td>27</td><td>GUÍA PLANEACIÓN OPERATIVA NMSP</td></tr>
+<tr><td>28</td><td>GUIA PARA EL USO DEL UNIFORME E INDUMENTARIAS</td></tr>
+<tr><td>29</td><td>PROTOCOLO CENTROS DE ANÁLISIS Y PLANEACIÓN OPERACIONAL</td></tr>
+<tr><td>30</td><td>GUÍA PRÁCTICA ABORDAJE Y PROCEDIMIENTOS AGENTE POLICIAL</td></tr>
+</tbody>
+</table>
+<p><strong>URL de descarga de PDFs:</strong> <code>https://psp.policia.gob.do:8443/{Resources}</code></p>
+<p><strong>Impacto:</strong></p>
+<ul>
+<li>Exposición de manuales tácticos (Manual Taser, protocolos operativos)</li>
+<li>Exposición de guías de patrullaje y supervisión</li>
+<li>Ingeniería social: conocimiento de procedimientos internos</li>
+</ul>
+<p><strong>Remediación:</strong></p>
+<ol>
+<li>Requerir autenticación (Bearer token) para acceder al endpoint <code>/api/Published</code></li>
+<li>Implementar autorización por roles para documentos sensibles</li>
+<li>Mover documentos clasificados a un repositorio interno sin acceso público</li>
+</ol>
+
+<hr>
+<h3 id="h04">H-04: Credenciales Estáticas Embebidas en APK</h3>
+<p><strong>Severidad:</strong> <span class="sev-medium">🟡 MEDIO</span> (CVSS 5.3)</p>
+<p><strong>Estado:</strong> ✅ Confirmado</p>
+<p><strong>Descripción:</strong><br>
+Ambas aplicaciones móviles (PSP y Denuncias Virtuales) contienen credenciales estáticas embebidas en el código fuente. Estas credenciales permiten acceso no autenticado a múltiples endpoints de la API.</p>
+<p><strong>Credenciales extraídas del APK Denuncias Virtuales:</strong></p>
+<pre>{
+  "baseUrl": "https://pn-vcomplaint-service.policia.gob.do:8021",
+  "apiVersion": "1.0",
+  "apiKey": "febec4e46af24677bdd5ed84c65ece75",
+  "apiValue": "SzbgTwNIoFN6MyySi60DaLzYbaBivwW850mHniR/9s0=",
+  "sourceId": "1"
+}</pre>
+<p><strong>Credenciales extraídas del APK PSP:</strong></p>
+<pre>{
+  "apiKey": "301a7e37-264c-4ec6-89bd-011586e33958",
+  "clientId": "56aed9e5-655b-4203-a978-4cbe826591c4",
+  "userId": "PSP",
+  "password": "Policia1936@",
+  "production": false
+}</pre>
+<p><strong>Impacto:</strong></p>
+<ul>
+<li>Acceso a APIs internas usando credenciales del APK</li>
+<li>Imposibilidad de rotar credenciales sin actualizar la aplicación</li>
+<li>Exposición de infraestructura (production: false)</li>
+</ul>
+<p><strong>Remediación:</strong></p>
+<ol>
+<li>Implementar autenticación por token dinámico (JWT con expiración)</li>
+<li>NO embeber credenciales estáticas en el código de las aplicaciones</li>
+<li>Usar servicios de autenticación como Firebase Auth o IdentityServer</li>
+<li>Corregir flag <code>production: false</code> y validar configuración de entorno</li>
+</ol>
+
+<hr>
+<h3 id="h05">H-05: OneSignal App ID Expuesto</h3>
+<p><strong>Severidad:</strong> <span class="sev-medium">🟡 MEDIO</span> (CVSS 5.0)</p>
+<p><strong>Estado:</strong> ✅ Confirmado</p>
+<p><strong>Descripción:</strong><br>
+La aplicación Denuncias Virtuales contiene el App ID de OneSignal (servicio de push notifications) en el código fuente. Esto permite a un atacante enviar notificaciones push a los 75,888 usuarios registrados.</p>
+<p><strong>ID expuesto:</strong> <code>791b97cd-a237-4df7-af33-0eceeff84e71</code></p>
+<p><strong>Código vulnerable:</strong></p>
+<pre>window.plugins.OneSignal.startInit("791b97cd-a237-4df7-af33-0eceeff84e71").endInit()</pre>
+<p><strong>Impacto:</strong></p>
+<ul>
+<li>Phishing dirigido: envío de notificaciones falsas a 75K+ usuarios</li>
+<li>Ingeniería social a gran escala</li>
+<li>Daño a la reputación institucional</li>
+</ul>
+<p><strong>Remediación:</strong></p>
+<ol>
+<li>Rotar el App ID de OneSignal</li>
+<li>Restringir la REST API Key de OneSignal por IP</li>
+<li>NO exponer el App ID en el código de la aplicación</li>
+</ol>
+
+<hr>
+<h3 id="h06">H-06: JWT Token Obtenido del Sistema UltiCabinet</h3>
+<p><strong>Severidad:</strong> <span class="sev-medium">🟡 MEDIO</span> (CVSS 5.0)</p>
+<p><strong>Estado:</strong> ✅ Confirmado</p>
+<p><strong>Descripción:</strong><br>
+Usando las credenciales extraídas del APK de PSP, se obtuvo un JWT token del servicio externo <code>api.ulticabinet.com/v1/auth/token</code>.</p>
+<p><strong>Credenciales utilizadas:</strong></p>
+<pre>POST https://api.ulticabinet.com/v1/auth/token
+Body: {"apiKey":"301a7e37-264c-4ec6-89bd-011586e33958","clientId":"56aed9e5-655b-4203-a978-4cbe826591c4"}
+→ 200 ✅ JWT token obtenido</pre>
+<p><strong>Impacto:</strong> Autenticación válida contra sistemas externos usando credenciales estáticas. Potencial pivoting a otros servicios.</p>
+<p><strong>Remediación:</strong> Rotar apiKey y clientId de UltiCabinet. Implementar autenticación OAuth2.</p>
+
+<hr>
+<h3 id="h07">H-07: Enumeración de Cédulas (Identity Validation)</h3>
+<p><strong>Severidad:</strong> <span class="sev-medium">🟡 MEDIO</span> (CVSS 4.3)</p>
+<p><strong>Estado:</strong> ✅ Confirmado</p>
+<p><strong>Descripción:</strong><br>
+El endpoint <code>POST /api/v1.0/user/registrationcode</code> permite validar si un número de cédula existe en el sistema. Las respuestas del servidor cambian según si la cédula está registrada o no.</p>
+<p><strong>Oráculo de validación:</strong></p>
+<ul>
+<li><strong>Cédula no registrada:</strong> <code>400 "La cédula no existe"</code></li>
+<li><strong>Cédula registrada:</strong> <code>400 "El teléfono es requerido"</code></li>
+</ul>
+<p><strong>Impacto:</strong> Enumeración de ciudadanos registrados. Posible identificación de víctimas para ataques dirigidos.</p>
+<p><strong>Remediación:</strong> Usar mensajes de error genéricos. Implementar rate limiting por IP. Agregar CAPTCHA.</p>
+
+<hr>
+<h3 id="h08">H-08: API HMAC Authentication Comprometida</h3>
+<p><strong>Severidad:</strong> <span class="sev-medium">🟡 MEDIO</span> (CVSS 4.0)</p>
+<p><strong>Estado:</strong> ✅ Confirmado</p>
+<p><strong>Descripción:</strong><br>
+El backend <code>pn-vcomplaint-service.policia.gob.do:8021</code> utiliza autenticación HMAC-SHA256 firmada con una clave estática extraída del APK. Cualquier persona con acceso al APK puede firmar requests.</p>
+<p><strong>Esquema de autenticación:</strong></p>
+<pre>Authorization: Basic {apiKey}:{base64(hmac-sha256(apiValue, endpoint + timestamp))}:{timestamp}</pre>
+<p><strong>Endpoints públicos accesibles:</strong></p>
+<table>
+<thead><tr><th>Endpoint</th><th>Método</th><th>Respuesta</th></tr></thead>
+<tbody>
+<tr><td><code>/api/v1.0/user/termsandconditions</code></td><td>GET</td><td>200 ✅</td></tr>
+<tr><td><code>/api/v1.0/user/privacypolicies</code></td><td>GET</td><td>200 ✅</td></tr>
+<tr><td><code>/api/v1.0/user/login</code></td><td>POST</td><td>400 (Procesa)</td></tr>
+<tr><td><code>/api/v1.0/user/registrationcode</code></td><td>POST</td><td>400 (Procesa)</td></tr>
+<tr><td><code>/api/v1.0/user/questions/{cedula}</code></td><td>GET</td><td>200 ✅ CRÍTICO</td></tr>
+</tbody>
+</table>
+<p><strong>Remediación:</strong> Migrar a OAuth2 con refresh tokens. Implementar expiración de claves API.</p>
+
+<hr>
+<h3 id="h09">H-09: Servidor FTP Expuesto (Puerto 21)</h3>
+<p><strong>Severidad:</strong> <span class="sev-low">🟢 BAJO</span> (CVSS 3.7)</p>
+<p><strong>Estado:</strong> ✅ Confirmado</p>
+<p><strong>Banner obtenido:</strong> <code>Pure-FTPd [privsep] [TLS]</code> en <code>psp.policia.gob.do:21</code></p>
+<p><strong>Puertos abiertos:</strong> 21 (FTP), 80 (HTTP), 443 (HTTPS), 8081 (API), 8443 (File Server)</p>
+<p><strong>Remediación:</strong> Restringir FTP a IPs internas. Deshabilitar FTP y migrar a SFTP.</p>
+
+<hr>
+<h3 id="h10">H-10: MailEnable 10.55 Expuesto</h3>
+<p><strong>Severidad:</strong> <span class="sev-info">🟢 INFORMATIVO</span></p>
+<p><strong>URL:</strong> <code>https://webmail.policia.gob.do/Mondo/lang/sys/login.aspx</code></p>
+<p><strong>Versión:</strong> 10.55 (confirmada via CSS)</p>
+
+<hr>
+<h3 id="h11">H-11: Config Dev Expuesta en Producción</h3>
+<p><strong>Severidad:</strong> <span class="sev-low">🟢 BAJO</span> (CVSS 3.3)</p>
+<p><strong>Config expuesta:</strong> <code>production: false</code> en PSP. Headers: <code>X-AspNet-Version: 4.0.30319</code>, <code>X-AspNetMvc-Version: 5.2</code></p>
+<p><strong>Remediación:</strong> Validar configuración de producción. Ocultar versiones de servidor.</p>
+
+<hr>
+<h3 id="h12">H-12: Certificado SSL Próximo a Expirar</h3>
+<p><strong>Severidad:</strong> <span class="sev-info">🟢 INFORMATIVO</span></p>
+<p>Certificado Let's Encrypt expira el 31 Julio 2026.</p>
+
+<hr>
+<h3 id="h13">H-13: ModSecurity Detectado</h3>
+<p><strong>Severidad:</strong> <span class="sev-info">🟢 INFORMATIVO</span></p>
+<p>Se detectó ModSecurity y Sucuri Security en algunos servidores. Efectivo en bloquear fuerza bruta.</p>
+
+<hr>
+<h2>4. Resumen de Hallazgos</h2>
+<table>
+<thead><tr><th>ID</th><th>Hallazgo</th><th>Severidad</th><th>Estado</th></tr></thead>
+<tbody>
+<tr><td>H-01</td><td>Security Questions — Preguntas y Respuestas Expuestas</td><td><span class="sev-critical">CRÍTICO</span></td><td>✅</td></tr>
+<tr><td>H-02</td><td>Google Maps API Key Sin Restricciones</td><td><span class="sev-high">ALTO</span></td><td>✅</td></tr>
+<tr><td>H-03</td><td>Documentos Internos Publicados Sin Autenticación</td><td><span class="sev-high">ALTO</span></td><td>✅</td></tr>
+<tr><td>H-04</td><td>Credenciales Estáticas Embebidas en APK</td><td><span class="sev-medium">MEDIO</span></td><td>✅</td></tr>
+<tr><td>H-05</td><td>OneSignal App ID Expuesto</td><td><span class="sev-medium">MEDIO</span></td><td>✅</td></tr>
+<tr><td>H-06</td><td>JWT Token Obtenido de UltiCabinet</td><td><span class="sev-medium">MEDIO</span></td><td>✅</td></tr>
+<tr><td>H-07</td><td>Enumeración de Cédulas</td><td><span class="sev-medium">MEDIO</span></td><td>✅</td></tr>
+<tr><td>H-08</td><td>API HMAC Authentication Comprometida</td><td><span class="sev-medium">MEDIO</span></td><td>✅</td></tr>
+<tr><td>H-09</td><td>Servidor FTP Expuesto</td><td><span class="sev-low">BAJO</span></td><td>✅</td></tr>
+<tr><td>H-10</td><td>MailEnable 10.55 Expuesto</td><td><span class="sev-info">INFO</span></td><td>✅</td></tr>
+<tr><td>H-11</td><td>Config Dev Expuesta en Producción</td><td><span class="sev-low">BAJO</span></td><td>✅</td></tr>
+<tr><td>H-12</td><td>Certificado SSL Próximo a Expirar</td><td><span class="sev-info">INFO</span></td><td>✅</td></tr>
+<tr><td>H-13</td><td>ModSecurity Detectado</td><td><span class="sev-info">INFO</span></td><td>✅</td></tr>
+</tbody>
+</table>
+
+<hr>
+<h2>5. Recomendaciones y Soluciones</h2>
+
+<h3>5.1 Prioridad Inmediata (Semanas 1-2)</h3>
+<table>
+<thead><tr><th>#</th><th>Recomendación</th><th>Hallazgo</th></tr></thead>
+<tbody>
+<tr><td>1</td><td><strong>Eliminar respuestas del endpoint /questions/{cedula}</strong> — Modificar el backend para devolver solo las preguntas, sin las respuestas. Agregar autenticación.</td><td>H-01</td></tr>
+<tr><td>2</td><td><strong>Rotar Google Maps API Key</strong> — Emitir nueva key con restricciones de referrer HTTP y/o IP. Monitorear uso en Google Cloud Console.</td><td>H-02</td></tr>
+<tr><td>3</td><td><strong>Proteger documentos internos</strong> — Agregar autenticación Bearer token al endpoint /api/Published.</td><td>H-03</td></tr>
+</tbody>
+</table>
+
+<h3>5.2 Corto Plazo (Semanas 3-6)</h3>
+<table>
+<thead><tr><th>#</th><th>Recomendación</th><th>Hallazgo</th></tr></thead>
+<tbody>
+<tr><td>4</td><td>Migrar a autenticación dinámica — OAuth2 con JWT de corta duración</td><td>H-04, H-08</td></tr>
+<tr><td>5</td><td>Proteger mensajes de error de validación — mensajes genéricos</td><td>H-07</td></tr>
+<tr><td>6</td><td>Rotar OneSignal App ID</td><td>H-05</td></tr>
+<tr><td>7</td><td>Restringir FTP por firewall</td><td>H-09</td></tr>
+</tbody>
+</table>
+
+<h3>5.3 Mediano Plazo (Meses 2-3)</h3>
+<table>
+<thead><tr><th>#</th><th>Recomendación</th><th>Hallazgo</th></tr></thead>
+<tbody>
+<tr><td>8</td><td>Implementar sistema de actualización remota de configuración (Remote Config)</td><td>H-04, H-08</td></tr>
+<tr><td>9</td><td>Ocultar versiones de servidor en headers HTTP</td><td>H-11</td></tr>
+<tr><td>10</td><td>Extender protección WAF a todos los subdominios</td><td>H-07, H-09</td></tr>
+<tr><td>11</td><td>Evaluar exposición de MailEnable — VPN interna vs público</td><td>H-10</td></tr>
+<tr><td>12</td><td>Auditar todos los endpoints del backend para identificar otros vectores</td><td>H-01, H-08</td></tr>
+</tbody>
+</table>
+
+<h3>5.4 Checklist de Cumplimiento</h3>
+<table>
+<thead><tr><th>Acción</th><th>Prioridad</th></tr></thead>
+<tbody>
+<tr><td>Rotar apiKey y apiValue del APK Denuncias</td><td><span class="sev-critical">Inmediata</span></td></tr>
+<tr><td>Rotar apiKey, clientId y password del APK PSP</td><td><span class="sev-critical">Inmediata</span></td></tr>
+<tr><td>Eliminar respuestas del endpoint de preguntas</td><td><span class="sev-critical">Inmediata</span></td></tr>
+<tr><td>Restringir Google Maps API Key</td><td><span class="sev-critical">Inmediata</span></td></tr>
+<tr><td>Agregar auth al endpoint /api/Published</td><td><span class="sev-critical">Inmediata</span></td></tr>
+<tr><td>Mensajes de error genéricos en validación</td><td><span class="sev-medium">Corto plazo</span></td></tr>
+<tr><td>Migrar a OAuth2</td><td><span class="sev-medium">Corto plazo</span></td></tr>
+<tr><td>Ocultar versiones de servidor</td><td><span class="sev-low">Mediano plazo</span></td></tr>
+</tbody>
+</table>
+
+<hr>
+<h2>6. Metodología</h2>
+<table>
+<thead><tr><th>Fase</th><th>Actividades</th></tr></thead>
+<tbody>
+<tr><td>Reconocimiento</td><td>DNS, WHOIS, subdominios, puertos, fingerprinting</td></tr>
+<tr><td>Análisis de APK</td><td>Extracción de assets, búsqueda de credenciales y endpoints</td></tr>
+<tr><td>Explotación</td><td>Autenticación HMAC, endpoints públicos, API probing</td></tr>
+<tr><td>Documentación</td><td>Verificación de hallazgos, captura de evidencia</td></tr>
+</tbody>
+</table>
+<p><strong>Herramientas:</strong> curl, nmap, dig, whois, APKTool, unzip, strings, Python, openssl, google-play-scraper</p>
+
+<hr>
+<h2>7. Timeline</h2>
+<table>
+<thead><tr><th>Fecha</th><th>Actividad</th></tr></thead>
+<tbody>
+<tr><td>09 Jul 2026</td><td>Inicio — APK PSP extraído, credenciales obtenidas, JWT emitido</td></tr>
+<tr><td>09 Jul 2026</td><td>17 documentos internos descubiertos</td></tr>
+<tr><td>10 Jul 2026</td><td>Denuncias APK extraído (v1.0.21 y v1.0.24)</td></tr>
+<tr><td>10 Jul 2026</td><td>API backend descubierto: pn-vcomplaint-service:8021</td></tr>
+<tr><td>10 Jul 2026</td><td>Google Maps API Key funcional sin restricciones</td></tr>
+<tr><td>10 Jul 2026</td><td>Endpoint /questions/{cedula} — data leak crítico</td></tr>
+</tbody>
+</table>
+
+<hr>
+<h2>8. Evidencia</h2>
+<table>
+<thead><tr><th>Tipo</th><th>Archivo</th></tr></thead>
+<tbody>
+<tr><td>Reporte completo</td><td>SEC-2026-003</td></tr>
+<tr><td>APK Denuncias v1.0.21</td><td>20MB</td></tr>
+<tr><td>APK Denuncias v1.0.24</td><td>19MB</td></tr>
+</tbody>
+</table>
+
+<hr>
+<p style="text-align:center;color:#556677;"><em>Documento generado como parte de un assessment de seguridad autorizado.</em></p>
+
+</div>
+
+<div class="footer">
+  <div class="container">
+    <p><span class="gold">✦</span> SEC-2026-003 &nbsp;·&nbsp; CONFIDENCIAL <span class="gold">✦</span></p>
+    <p style="margin-top:8px;">Documento generado como parte de un assessment de seguridad autorizado.</p>
+  </div>
+</div>
+
+</body>
+</html>

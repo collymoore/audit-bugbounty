@@ -1,0 +1,37 @@
+androidAppId: com.CMR.eme_salud_cmr_Policlinica
+iosAppId: com.CMR.eme.salud.PCM
+
+name: Policlinica Metropolitana
+nameShort: PCM
+webpage: https://policlinicametropolitana.org/
+ip: www.policlinicametropolitana-apps.com
+usesHttps: true
+
+contact_telephone: "5555555555"
+contact_email: contacto@cmr3.com
+contact_hours: De lunes a viernes de 7 a 20 hrs
+contact_address: Revolucion 756
+
+baseUrl: /HisWebServicios/Portal/ServicioPortal.svc
+baseUrlPACS: /visorhtml5/WcfServiceIconos/Service1.svc
+baseVisorPACS: /WebUltimateGL/App/Vistas/index.html
+
+iconBackgroundColor: "#bee4ed"
+
+color_primary: 0xfff0af00
+color_accent: 0xff00109c
+color_primaryDark: 0xffb88000
+color_accentDark: 0xff00006c
+color_primaryLight: 0xffffe14b
+color_accentLight: 0xff543cce
+color_loadingGrey: 0xffffffff
+
+debugMode: true
+hasImaging: true
+hasLaboratory: false
+hasPathology: false
+hasDirectory: false
+canMakeAppointmets: false
+hasBanner: true
+hasRecord: false
+showAppointments: false

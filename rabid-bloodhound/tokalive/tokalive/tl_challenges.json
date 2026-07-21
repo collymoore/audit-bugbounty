@@ -1,0 +1,5186 @@
+{
+  "documents": [
+    {
+      "name": "projects/tocaahora-1cf7f/databases/(default)/documents/challenges/0JXF5f5gFMrix0q7SHA8",
+      "fields": {
+        "completedAt": {
+          "timestampValue": "2026-01-08T19:54:25.446Z"
+        },
+        "eventId": {
+          "stringValue": "OwoRl9LIShBUw2IQFjqw"
+        },
+        "duration": {
+          "integerValue": "120"
+        },
+        "endsAt": {
+          "timestampValue": "2026-01-08T19:56:09.488Z"
+        },
+        "winner": {
+          "stringValue": "AhxVIqWlYyHdkyP13P8S"
+        },
+        "songA": {
+          "mapValue": {
+            "fields": {
+              "tipTotal": {
+                "integerValue": "0"
+              },
+              "id": {
+                "stringValue": "AhxVIqWlYyHdkyP13P8S"
+              },
+              "title": {
+                "stringValue": "Darte un Beso"
+              },
+              "votes": {
+                "integerValue": "0"
+              }
+            }
+          }
+        },
+        "startedAt": {
+          "timestampValue": "2026-01-08T19:54:09.601Z"
+        },
+        "songB": {
+          "mapValue": {
+            "fields": {
+              "id": {
+                "stringValue": "XBH0Q0cywLxdOByeshYK"
+              },
+              "tipTotal": {
+                "integerValue": "0"
+              },
+              "votes": {
+                "integerValue": "0"
+              },
+              "title": {
+                "stringValue": "Bailando"
+              }
+            }
+          }
+        },
+        "status": {
+          "stringValue": "completed"
+        }
+      },
+      "createTime": "2026-01-08T19:54:09.639119Z",
+      "updateTime": "2026-01-08T19:54:25.474812Z"
+    },
+    {
+      "name": "projects/tocaahora-1cf7f/databases/(default)/documents/challenges/1GJL4ItJGC5B7EA7lj4L",
+      "fields": {
+        "winnerVotes": {
+          "integerValue": "1"
+        },
+        "endsAt": {
+          "timestampValue": "2026-06-12T17:11:48.304Z"
+        },
+        "songA": {
+          "mapValue": {
+            "fields": {
+              "tipTotal": {
+                "integerValue": "0"
+              },
+              "votes": {
+                "integerValue": "1"
+              },
+              "title": {
+                "stringValue": "El Perdedor"
+              },
+              "id": {
+                "stringValue": "OweFLYsd8ZJYNwPr3qyd"
+              },
+              "artist": {
+                "stringValue": "Maluma ft. Yandel"
+              }
+            }
+          }
+        },
+        "winner": {
+          "stringValue": "OweFLYsd8ZJYNwPr3qyd"
+        },
+        "startedAt": {
+          "timestampValue": "2026-06-12T17:09:48.260Z"
+        },
+        "songB": {
+          "mapValue": {
+            "fields": {
+              "tipTotal": {
+                "integerValue": "0"
+              },
+              "votes": {
+                "integerValue": "0"
+              },
+              "title": {
+                "stringValue": "Vivir Mi Vida"
+              },
+              "artist": {
+                "stringValue": "Marc Anthony"
+              },
+              "id": {
+                "stringValue": "kW0aIndbcTA9HISjaw7v"
+              }
+            }
+          }
+        },
+        "status": {
+          "stringValue": "completed"
+        },
+        "eventId": {
+          "stringValue": "OwoRl9LIShBUw2IQFjqw"
+        },
+        "type": {
+          "stringValue": "song"
+        },
+        "completedAt": {
+          "timestampValue": "2026-06-12T17:09:59.177Z"
+        },
+        "duration": {
+          "integerValue": "120"
+        }
+      },
+      "createTime": "2026-06-12T17:09:48.316650Z",
+      "updateTime": "2026-06-12T17:09:59.220875Z"
+    },
+    {
+      "name": "projects/tocaahora-1cf7f/databases/(default)/documents/challenges/1USb9xZMSXo5w3RpI9Fm",
+      "fields": {
+        "endsAt": {
+          "timestampValue": "2026-01-11T20:13:14.004Z"
+        },
+        "winner": {
+          "stringValue": "NaMmX9PPO2LqqsCZTmTD"
+        },
+        "songA": {
+          "mapValue": {
+            "fields": {
+              "votes": {
+                "integerValue": "0"
+              },
+              "title": {
+                "stringValue": "A pasito lento."
+              },
+              "id": {
+                "stringValue": "NaMmX9PPO2LqqsCZTmTD"
+              },
+              "tipTotal": {
+                "integerValue": "0"
+              }
+            }
+          }
+        },
+        "status": {
+          "stringValue": "completed"
+        },
+        "startedAt": {
+          "timestampValue": "2026-01-11T20:11:14.779Z"
+        },
+        "songB": {
+          "mapValue": {
+            "fields": {
+              "votes": {
+                "integerValue": "0"
+              },
+              "title": {
+                "stringValue": "Loca conmigo."
+              },
+              "id": {
+                "stringValue": "FDpsS0RgYhPFtT97SChT"
+              },
+              "tipTotal": {
+                "integerValue": "0"
+              }
+            }
+          }
+        },
+        "duration": {
+          "integerValue": "120"
+        },
+        "completedAt": {
+          "timestampValue": "2026-01-11T20:13:15.265Z"
+        },
+        "eventId": {
+          "stringValue": "5VnpLIWMoWZGoJTDQp6I"
+        }
+      },
+      "createTime": "2026-01-11T20:11:14.796259Z",
+      "updateTime": "2026-01-11T20:13:15.302915Z"
+    },
+    {
+      "name": "projects/tocaahora-1cf7f/databases/(default)/documents/challenges/3IvISWmx4UV5XQOYeSqw",
+      "fields": {
+        "winner": {
+          "stringValue": "Salsa"
+        },
+        "genreA": {
+          "mapValue": {
+            "fields": {
+              "name": {
+                "stringValue": "Bachata"
+              },
+              "emoji": {
+                "stringValue": "❤️"
+              },
+              "votes": {
+                "integerValue": "0"
+              },
+              "tipTotal": {
+                "integerValue": "0"
+              }
+            }
+          }
+        },
+        "endsAt": {
+          "timestampValue": "2026-03-13T00:30:32.316Z"
+        },
+        "winnerVotes": {
+          "integerValue": "0"
+        },
+        "status": {
+          "stringValue": "completed"
+        },
+        "startedAt": {
+          "timestampValue": "2026-03-13T00:29:56.244Z"
+        },
+        "isOvertime": {
+          "booleanValue": true
+        },
+        "duration": {
+          "integerValue": "120"
+        },
+        "eventId": {
+          "stringValue": "OwoRl9LIShBUw2IQFjqw"
+        },
+        "type": {
+          "stringValue": "genre"
+        },
+        "completedAt": {
+          "timestampValue": "2026-03-13T00:30:08.406Z"
+        },
+        "genreB": {
+          "mapValue": {
+            "fields": {
+              "tipTotal": {
+                "integerValue": "0"
+              },
+              "name": {
+                "stringValue": "Salsa"
+              },
+              "votes": {
+                "integerValue": "0"
+              },
+              "emoji": {
+                "stringValue": "🔥"
+              }
+            }
+          }
+        }
+      },
+      "createTime": "2026-03-13T00:29:56.296528Z",
+      "updateTime": "2026-03-13T00:30:08.443213Z"
+    },
+    {
+      "name": "projects/tocaahora-1cf7f/databases/(default)/documents/challenges/3p1jLH9dufDbKBXDi8tn",
+      "fields": {
+        "completedAt": {
+          "timestampValue": "2026-01-08T01:48:26.175Z"
+        },
+        "eventId": {
+          "stringValue": "5VnpLIWMoWZGoJTDQp6I"
+        },
+        "duration": {
+          "integerValue": "120"
+        },
+        "endsAt": {
+          "timestampValue": "2026-01-08T01:49:57.336Z"
+        },
+        "winner": {
+          "stringValue": "J971q6DE6wrIQFBoRkj4"
+        },
+        "songA": {
+          "mapValue": {
+            "fields": {
+              "id": {
+                "stringValue": "J971q6DE6wrIQFBoRkj4"
+              },
+              "tipTotal": {
+                "integerValue": "0"
+              },
+              "votes": {
+                "integerValue": "0"
+              },
+              "title": {
+                "stringValue": "Mi bendición"
+              }
+            }
+          }
+        },
+        "startedAt": {
+          "timestampValue": "2026-01-08T01:47:57.380Z"
+        },
+        "songB": {
+          "mapValue": {
+            "fields": {
+              "votes": {
+                "integerValue": "0"
+              },
+              "title": {
+                "stringValue": "¡Pero que va!"
+              },
+              "id": {
+                "stringValue": "LTZEHgWNsabb3i9FZUID"
+              },
+              "tipTotal": {
+                "integerValue": "0"
+              }
+            }
+          }
+        },
+        "status": {
+          "stringValue": "completed"
+        }
+      },
+      "createTime": "2026-01-08T01:47:57.422281Z",
+      "updateTime": "2026-01-08T01:48:26.212931Z"
+    },
+    {
+      "name": "projects/tocaahora-1cf7f/databases/(default)/documents/challenges/6c11eHzUQfUh4jV7QpQk",
+      "fields": {
+        "duration": {
+          "integerValue": "120"
+        },
+        "eventId": {
+          "stringValue": "OwoRl9LIShBUw2IQFjqw"
+        },
+        "completedAt": {
+          "timestampValue": "2026-01-08T19:37:07.104Z"
+        },
+        "songA": {
+          "mapValue": {
+            "fields": {
+              "id": {
+                "stringValue": "AhxVIqWlYyHdkyP13P8S"
+              },
+              "tipTotal": {
+                "integerValue": "0"
+              },
+              "votes": {
+                "integerValue": "1"
+              },
+              "title": {
+                "stringValue": "Darte un Beso"
+              }
+            }
+          }
+        },
+        "winner": {
+          "stringValue": "AhxVIqWlYyHdkyP13P8S"
+        },
+        "endsAt": {
+          "timestampValue": "2026-01-08T19:37:06.637Z"
+        },
+        "status": {
+          "stringValue": "completed"
+        },
+        "songB": {
+          "mapValue": {
+            "fields": {
+              "tipTotal": {
+                "integerValue": "0"
+              },
+              "id": {
+                "stringValue": "Sp5KERG8LK6GdjLQspb9"
+              },
+              "title": {
+                "stringValue": "La Gozadera"
+              },
+              "votes": {
+                "integerValue": "0"
+              }
+            }
+          }
+        },
+        "startedAt": {
+          "timestampValue": "2026-01-08T19:35:07.007Z"
+        }
+      },
+      "createTime": "2026-01-08T19:35:07.041168Z",
+      "updateTime": "2026-01-08T19:37:07.139330Z"
+    },
+    {
+      "name": "projects/tocaahora-1cf7f/databases/(default)/documents/challenges/70kNNviOMY4pNYv83rIX",
+      "fields": {
+        "eventId": {
+          "stringValue": "OwoRl9LIShBUw2IQFjqw"
+        },
+        "type": {
+          "stringValue": "song"
+        },
+        "completedAt": {
+          "timestampValue": "2026-06-12T17:09:13.496Z"
+        },
+        "duration": {
+          "integerValue": "120"
+        },
+        "winnerVotes": {
+          "integerValue": "1"
+        },
+        "endsAt": {
+          "timestampValue": "2026-06-12T17:11:00.766Z"
+        },
+        "winner": {
+          "stringValue": "OweFLYsd8ZJYNwPr3qyd"
+        },
+        "songA": {
+          "mapValue": {
+            "fields": {
+              "artist": {
+                "stringValue": "Prince Royce"
+              },
+              "id": {
+                "stringValue": "AhxVIqWlYyHdkyP13P8S"
+              },
+              "tipTotal": {
+                "integerValue": "0"
+              },
+              "votes": {
+                "integerValue": "0"
+              },
+              "title": {
+                "stringValue": "Darte un Beso"
+              }
+            }
+          }
+        },
+        "startedAt": {
+          "timestampValue": "2026-06-12T17:09:00.726Z"
+        },
+        "songB": {
+          "mapValue": {
+            "fields": {
+              "votes": {
+                "integerValue": "1"
+              },
+              "title": {
+                "stringValue": "El Perdedor"
+              },
+              "tipTotal": {
+                "integerValue": "0"
+              },
+              "id": {
+                "stringValue": "OweFLYsd8ZJYNwPr3qyd"
+              },
+              "artist": {
+                "stringValue": "Maluma ft. Yandel"
+              }
+            }
+          }
+        },
+        "status": {
+          "stringValue": "completed"
+        }
+      },
+      "createTime": "2026-06-12T17:09:00.778230Z",
+      "updateTime": "2026-06-12T17:09:13.538971Z"
+    },
+    {
+      "name": "projects/tocaahora-1cf7f/databases/(default)/documents/challenges/77FfbpDojZylnHz4Ra1V",
+      "fields": {
+        "endsAt": {
+          "timestampValue": "2026-01-11T23:21:41.182Z"
+        },
+        "winner": {
+          "stringValue": "Sp5KERG8LK6GdjLQspb9"
+        },
+        "songA": {
+          "mapValue": {
+            "fields": {
+              "tipTotal": {
+                "integerValue": "0"
+              },
+              "votes": {
+                "integerValue": "0"
+              },
+              "title": {
+                "stringValue": "Darte un Beso"
+              },
+              "id": {
+                "stringValue": "AhxVIqWlYyHdkyP13P8S"
+              },
+              "artist": {
+                "stringValue": "Prince Royce"
+              }
+            }
+          }
+        },
+        "winnerVotes": {
+          "integerValue": "1"
+        },
+        "status": {
+          "stringValue": "completed"
+        },
+        "startedAt": {
+          "timestampValue": "2026-01-11T23:19:41.249Z"
+        },
+        "songB": {
+          "mapValue": {
+            "fields": {
+              "id": {
+                "stringValue": "Sp5KERG8LK6GdjLQspb9"
+              },
+              "artist": {
+                "stringValue": "Gente de Zona"
+              },
+              "votes": {
+                "integerValue": "1"
+              },
+              "title": {
+                "stringValue": "La Gozadera"
+              },
+              "tipTotal": {
+                "integerValue": "0"
+              }
+            }
+          }
+        },
+        "duration": {
+          "integerValue": "120"
+        },
+        "eventId": {
+          "stringValue": "OwoRl9LIShBUw2IQFjqw"
+        },
+        "completedAt": {
+          "timestampValue": "2026-01-11T23:19:51.228Z"
+        }
+      },
+      "createTime": "2026-01-11T23:19:41.279960Z",
+      "updateTime": "2026-01-11T23:19:51.255765Z"
+    },
+    {
+      "name": "projects/tocaahora-1cf7f/databases/(default)/documents/challenges/8OihaJuAwWKBC9LzYvN1",
+      "fields": {
+        "duration": {
+          "integerValue": "120"
+        },
+        "eventId": {
+          "stringValue": "OwoRl9LIShBUw2IQFjqw"
+        },
+        "completedAt": {
+          "timestampValue": "2026-06-12T17:22:45.570Z"
+        },
+        "type": {
+          "stringValue": "song"
+        },
+        "status": {
+          "stringValue": "completed"
+        },
+        "songB": {
+          "mapValue": {
+            "fields": {
+              "tipTotal": {
+                "integerValue": "0"
+              },
+              "title": {
+                "stringValue": "Obsesión"
+              },
+              "votes": {
+                "integerValue": "1"
+              },
+              "id": {
+                "stringValue": "upGh9FZgdSdb4FutZyQp"
+              },
+              "artist": {
+                "stringValue": "Aventura"
+              }
+            }
+          }
+        },
+        "startedAt": {
+          "timestampValue": "2026-06-12T17:22:25.879Z"
+        },
+        "songA": {
+          "mapValue": {
+            "fields": {
+              "tipTotal": {
+                "integerValue": "0"
+              },
+              "title": {
+                "stringValue": "El Perdedor"
+              },
+              "votes": {
+                "integerValue": "0"
+              },
+              "id": {
+                "stringValue": "OweFLYsd8ZJYNwPr3qyd"
+              },
+              "artist": {
+                "stringValue": "Maluma ft. Yandel"
+              }
+            }
+          }
+        },
+        "winner": {
+          "stringValue": "upGh9FZgdSdb4FutZyQp"
+        },
+        "endsAt": {
+          "timestampValue": "2026-06-12T17:24:25.525Z"
+        },
+        "winnerVotes": {
+          "integerValue": "1"
+        }
+      },
+      "createTime": "2026-06-12T17:22:25.921003Z",
+      "updateTime": "2026-06-12T17:22:45.613405Z"
+    },
+    {
+      "name": "projects/tocaahora-1cf7f/databases/(default)/documents/challenges/BbhdYeIv4WrHsEAL2FcT",
+      "fields": {
+        "winnerVotes": {
+          "integerValue": "1"
+        },
+        "songA": {
+          "mapValue": {
+            "fields": {
+              "id": {
+                "stringValue": "NFOi9mG27d0ICeWMiFyx"
+              },
+              "artist": {
+                "stringValue": "Juan Luis Guerra"
+              },
+              "tipTotal": {
+                "integerValue": "0"
+              },
+              "title": {
+                "stringValue": "A Pedir Su Mano"
+              },
+              "votes": {
+                "integerValue": "1"
+              }
+            }
+          }
+        },
+        "winner": {
+          "stringValue": "NFOi9mG27d0ICeWMiFyx"
+        },
+        "endsAt": {
+          "timestampValue": "2026-01-11T23:20:07.974Z"
+        },
+        "songB": {
+          "mapValue": {
+            "fields": {
+              "title": {
+                "stringValue": "A Pedir Su Mano"
+              },
+              "votes": {
+                "integerValue": "0"
+              },
+              "tipTotal": {
+                "integerValue": "0"
+              },
+              "artist": {
+                "stringValue": "Juan Luis Guerra"
+              },
+              "id": {
+                "stringValue": "NFOi9mG27d0ICeWMiFyx"
+              }
+            }
+          }
+        },
+        "startedAt": {
+          "timestampValue": "2026-01-11T23:18:08.347Z"
+        },
+        "status": {
+          "stringValue": "completed"
+        },
+        "eventId": {
+          "stringValue": "OwoRl9LIShBUw2IQFjqw"
+        },
+        "completedAt": {
+          "timestampValue": "2026-01-11T23:18:23.066Z"
+        },
+        "duration": {
+          "integerValue": "120"
+        }
+      },
+      "createTime": "2026-01-11T23:18:08.376822Z",
+      "updateTime": "2026-01-11T23:18:23.099906Z"
+    },
+    {
+      "name": "projects/tocaahora-1cf7f/databases/(default)/documents/challenges/Bgr6np3C11VDYIycuBuC",
+      "fields": {
+        "startedAt": {
+          "timestampValue": "2026-03-21T21:15:13.191Z"
+        },
+        "songB": {
+          "mapValue": {
+            "fields": {
+              "artist": {
+                "stringValue": "Carla Morrison"
+              },
+              "id": {
+                "stringValue": "gFDvAfniWvieKpHbx1VH"
+              },
+              "title": {
+                "stringValue": "Eres Tú"
+              },
+              "votes": {
+                "integerValue": "1"
+              },
+              "tipTotal": {
+                "integerValue": "0"
+              }
+            }
+          }
+        },
+        "status": {
+          "stringValue": "completed"
+        },
+        "winnerVotes": {
+          "integerValue": "1"
+        },
+        "endsAt": {
+          "timestampValue": "2026-03-21T21:17:13.156Z"
+        },
+        "winner": {
+          "stringValue": "gFDvAfniWvieKpHbx1VH"
+        },
+        "songA": {
+          "mapValue": {
+            "fields": {
+              "id": {
+                "stringValue": "Sp5KERG8LK6GdjLQspb9"
+              },
+              "artist": {
+                "stringValue": "Gente de Zona"
+              },
+              "title": {
+                "stringValue": "La Gozadera"
+              },
+              "votes": {
+                "integerValue": "0"
+              },
+              "tipTotal": {
+                "integerValue": "0"
+              }
+            }
+          }
+        },
+        "eventId": {
+          "stringValue": "OwoRl9LIShBUw2IQFjqw"
+        },
+        "type": {
+          "stringValue": "song"
+        },
+        "completedAt": {
+          "timestampValue": "2026-03-21T21:15:49.468Z"
+        },
+        "duration": {
+          "integerValue": "120"
+        }
+      },
+      "createTime": "2026-03-21T21:15:13.253620Z",
+      "updateTime": "2026-03-21T21:15:49.513404Z"
+    },
+    {
+      "name": "projects/tocaahora-1cf7f/databases/(default)/documents/challenges/CbF6rv1JQ3m28NzG7YpT",
+      "fields": {
+        "winnerVotes": {
+          "integerValue": "1"
+        },
+        "winner": {
+          "stringValue": "Reggaetón"
+        },
+        "endsAt": {
+          "timestampValue": "2026-07-14T00:54:19.597Z"
+        },
+        "genreA": {
+          "mapValue": {
+            "fields": {
+              "tipTotal": {
+                "integerValue": "0"
+              },
+              "name": {
+                "stringValue": "Salsa"
+              },
+              "emoji": {
+                "stringValue": "🔥"
+              },
+              "votes": {
+                "integerValue": "0"
+              }
+            }
+          }
+        },
+        "startedAt": {
+          "timestampValue": "2026-07-14T00:52:19.940Z"
+        },
+        "status": {
+          "stringValue": "completed"
+        },
+        "eventId": {
+          "stringValue": "OwoRl9LIShBUw2IQFjqw"
+        },
+        "type": {
+          "stringValue": "genre"
+        },
+        "completedAt": {
+          "timestampValue": "2026-07-14T00:55:53.583Z"
+        },
+        "genreB": {
+          "mapValue": {
+            "fields": {
+              "name": {
+                "stringValue": "Reggaetón"
+              },
+              "emoji": {
+                "stringValue": "🎧"
+              },
+              "votes": {
+                "integerValue": "1"
+              },
+              "tipTotal": {
+                "integerValue": "0"
+              }
+            }
+          }
+        },
+        "duration": {
+          "integerValue": "120"
+        }
+      },
+      "createTime": "2026-07-14T00:52:19.992276Z",
+      "updateTime": "2026-07-14T00:55:53.634219Z"
+    },
+    {
+      "name": "projects/tocaahora-1cf7f/databases/(default)/documents/challenges/DT00Ung2GpzMi2KBURcb",
+      "fields": {
+        "genreB": {
+          "mapValue": {
+            "fields": {
+              "tipTotal": {
+                "integerValue": "0"
+              },
+              "name": {
+                "stringValue": "Merengue"
+              },
+              "emoji": {
+                "stringValue": "💃"
+              },
+              "votes": {
+                "integerValue": "1"
+              }
+            }
+          }
+        },
+        "eventId": {
+          "stringValue": "OwoRl9LIShBUw2IQFjqw"
+        },
+        "type": {
+          "stringValue": "genre"
+        },
+        "completedAt": {
+          "timestampValue": "2026-06-12T17:05:50.452Z"
+        },
+        "duration": {
+          "integerValue": "120"
+        },
+        "startedAt": {
+          "timestampValue": "2026-06-12T17:05:18.474Z"
+        },
+        "status": {
+          "stringValue": "completed"
+        },
+        "winnerVotes": {
+          "integerValue": "1"
+        },
+        "genreA": {
+          "mapValue": {
+            "fields": {
+              "name": {
+                "stringValue": "Bachata"
+              },
+              "emoji": {
+                "stringValue": "❤️"
+              },
+              "votes": {
+                "integerValue": "0"
+              },
+              "tipTotal": {
+                "integerValue": "0"
+              }
+            }
+          }
+        },
+        "endsAt": {
+          "timestampValue": "2026-06-12T17:07:18.379Z"
+        },
+        "winner": {
+          "stringValue": "Merengue"
+        }
+      },
+      "createTime": "2026-06-12T17:05:18.523103Z",
+      "updateTime": "2026-06-12T17:05:50.501359Z"
+    },
+    {
+      "name": "projects/tocaahora-1cf7f/databases/(default)/documents/challenges/E56uxfTFs8bydWkoPoLh",
+      "fields": {
+        "winner": {
+          "stringValue": "Salsa"
+        },
+        "endsAt": {
+          "timestampValue": "2026-02-05T23:59:43.316Z"
+        },
+        "genreA": {
+          "mapValue": {
+            "fields": {
+              "tipTotal": {
+                "integerValue": "0"
+              },
+              "name": {
+                "stringValue": "Salsa"
+              },
+              "votes": {
+                "integerValue": "1"
+              },
+              "emoji": {
+                "stringValue": "🔥"
+              }
+            }
+          }
+        },
+        "winnerVotes": {
+          "integerValue": "1"
+        },
+        "status": {
+          "stringValue": "completed"
+        },
+        "startedAt": {
+          "timestampValue": "2026-02-05T23:57:43.782Z"
+        },
+        "duration": {
+          "integerValue": "120"
+        },
+        "eventId": {
+          "stringValue": "OwoRl9LIShBUw2IQFjqw"
+        },
+        "completedAt": {
+          "timestampValue": "2026-02-05T23:58:02.292Z"
+        },
+        "type": {
+          "stringValue": "genre"
+        },
+        "genreB": {
+          "mapValue": {
+            "fields": {
+              "tipTotal": {
+                "integerValue": "0"
+              },
+              "name": {
+                "stringValue": "Pop"
+              },
+              "votes": {
+                "integerValue": "0"
+              },
+              "emoji": {
+                "stringValue": "🎵"
+              }
+            }
+          }
+        }
+      },
+      "createTime": "2026-02-05T23:57:43.806121Z",
+      "updateTime": "2026-02-05T23:58:02.336275Z"
+    },
+    {
+      "name": "projects/tocaahora-1cf7f/databases/(default)/documents/challenges/F63yNFdoAXxbjJnEB5a2",
+      "fields": {
+        "winner": {
+          "stringValue": "Salsa"
+        },
+        "genreA": {
+          "mapValue": {
+            "fields": {
+              "tipTotal": {
+                "integerValue": "0"
+              },
+              "name": {
+                "stringValue": "Bachata"
+              },
+              "emoji": {
+                "stringValue": "❤️"
+              },
+              "votes": {
+                "integerValue": "0"
+              }
+            }
+          }
+        },
+        "endsAt": {
+          "timestampValue": "2026-03-21T21:19:40.949Z"
+        },
+        "winnerVotes": {
+          "integerValue": "1"
+        },
+        "status": {
+          "stringValue": "completed"
+        },
+        "startedAt": {
+          "timestampValue": "2026-03-21T21:17:40.541Z"
+        },
+        "duration": {
+          "integerValue": "120"
+        },
+        "type": {
+          "stringValue": "genre"
+        },
+        "completedAt": {
+          "timestampValue": "2026-03-21T21:18:09.497Z"
+        },
+        "eventId": {
+          "stringValue": "OwoRl9LIShBUw2IQFjqw"
+        },
+        "genreB": {
+          "mapValue": {
+            "fields": {
+              "name": {
+                "stringValue": "Salsa"
+              },
+              "emoji": {
+                "stringValue": "🔥"
+              },
+              "votes": {
+                "integerValue": "1"
+              },
+              "tipTotal": {
+                "integerValue": "0"
+              }
+            }
+          }
+        }
+      },
+      "createTime": "2026-03-21T21:17:40.583827Z",
+      "updateTime": "2026-03-21T21:18:09.613768Z"
+    },
+    {
+      "name": "projects/tocaahora-1cf7f/databases/(default)/documents/challenges/GmegjzAAoEcscTBQNAaJ",
+      "fields": {
+        "genreA": {
+          "mapValue": {
+            "fields": {
+              "tipTotal": {
+                "integerValue": "0"
+              },
+              "name": {
+                "stringValue": "Bachata"
+              },
+              "emoji": {
+                "stringValue": "❤️"
+              },
+              "votes": {
+                "integerValue": "0"
+              }
+            }
+          }
+        },
+        "endsAt": {
+          "timestampValue": "2026-02-05T23:51:03.205Z"
+        },
+        "winner": {
+          "stringValue": "Pop"
+        },
+        "winnerVotes": {
+          "integerValue": "1"
+        },
+        "status": {
+          "stringValue": "completed"
+        },
+        "startedAt": {
+          "timestampValue": "2026-02-05T23:49:03.594Z"
+        },
+        "duration": {
+          "integerValue": "120"
+        },
+        "genreB": {
+          "mapValue": {
+            "fields": {
+              "name": {
+                "stringValue": "Pop"
+              },
+              "votes": {
+                "integerValue": "1"
+              },
+              "emoji": {
+                "stringValue": "🎵"
+              },
+              "tipTotal": {
+                "integerValue": "0"
+              }
+            }
+          }
+        },
+        "eventId": {
+          "stringValue": "OwoRl9LIShBUw2IQFjqw"
+        },
+        "type": {
+          "stringValue": "genre"
+        },
+        "completedAt": {
+          "timestampValue": "2026-02-05T23:49:20.035Z"
+        }
+      },
+      "createTime": "2026-02-05T23:49:03.622357Z",
+      "updateTime": "2026-02-05T23:49:20.103921Z"
+    },
+    {
+      "name": "projects/tocaahora-1cf7f/databases/(default)/documents/challenges/GuNgZ2LKTVDc9kKey0OP",
+      "fields": {
+        "eventId": {
+          "stringValue": "OwoRl9LIShBUw2IQFjqw"
+        },
+        "completedAt": {
+          "timestampValue": "2026-01-08T19:54:42.185Z"
+        },
+        "duration": {
+          "integerValue": "120"
+        },
+        "startedAt": {
+          "timestampValue": "2026-01-08T19:53:21.170Z"
+        },
+        "songB": {
+          "mapValue": {
+            "fields": {
+              "tipTotal": {
+                "integerValue": "0"
+              },
+              "id": {
+                "stringValue": "Sp5KERG8LK6GdjLQspb9"
+              },
+              "title": {
+                "stringValue": "La Gozadera"
+              },
+              "votes": {
+                "integerValue": "0"
+              }
+            }
+          }
+        },
+        "status": {
+          "stringValue": "completed"
+        },
+        "endsAt": {
+          "timestampValue": "2026-01-08T19:55:20.785Z"
+        },
+        "songA": {
+          "mapValue": {
+            "fields": {
+              "id": {
+                "stringValue": "NFOi9mG27d0ICeWMiFyx"
+              },
+              "tipTotal": {
+                "integerValue": "0"
+              },
+              "votes": {
+                "integerValue": "2"
+              },
+              "title": {
+                "stringValue": "A Pedir Su Mano"
+              }
+            }
+          }
+        },
+        "winner": {
+          "stringValue": "NFOi9mG27d0ICeWMiFyx"
+        }
+      },
+      "createTime": "2026-01-08T19:53:21.206597Z",
+      "updateTime": "2026-01-08T19:54:42.219635Z"
+    },
+    {
+      "name": "projects/tocaahora-1cf7f/databases/(default)/documents/challenges/I7IamrOHRalCWXe83D3l",
+      "fields": {
+        "duration": {
+          "integerValue": "120"
+        },
+        "completedAt": {
+          "timestampValue": "2026-01-08T19:52:17.431Z"
+        },
+        "eventId": {
+          "stringValue": "OwoRl9LIShBUw2IQFjqw"
+        },
+        "winner": {
+          "stringValue": "NFOi9mG27d0ICeWMiFyx"
+        },
+        "songA": {
+          "mapValue": {
+            "fields": {
+              "id": {
+                "stringValue": "NFOi9mG27d0ICeWMiFyx"
+              },
+              "tipTotal": {
+                "integerValue": "0"
+              },
+              "votes": {
+                "integerValue": "2"
+              },
+              "title": {
+                "stringValue": "A Pedir Su Mano"
+              }
+            }
+          }
+        },
+        "endsAt": {
+          "timestampValue": "2026-01-08T19:50:02.286Z"
+        },
+        "status": {
+          "stringValue": "completed"
+        },
+        "songB": {
+          "mapValue": {
+            "fields": {
+              "tipTotal": {
+                "integerValue": "0"
+              },
+              "id": {
+                "stringValue": "Sp5KERG8LK6GdjLQspb9"
+              },
+              "title": {
+                "stringValue": "La Gozadera"
+              },
+              "votes": {
+                "integerValue": "0"
+              }
+            }
+          }
+        },
+        "startedAt": {
+          "timestampValue": "2026-01-08T19:48:02.373Z"
+        }
+      },
+      "createTime": "2026-01-08T19:48:02.400123Z",
+      "updateTime": "2026-01-08T19:52:17.462435Z"
+    },
+    {
+      "name": "projects/tocaahora-1cf7f/databases/(default)/documents/challenges/IOF2eHxndu0GXYSxzk4g",
+      "fields": {
+        "duration": {
+          "integerValue": "120"
+        },
+        "genreB": {
+          "mapValue": {
+            "fields": {
+              "name": {
+                "stringValue": "Salsa"
+              },
+              "emoji": {
+                "stringValue": "🔥"
+              },
+              "votes": {
+                "integerValue": "0"
+              },
+              "tipTotal": {
+                "integerValue": "0"
+              }
+            }
+          }
+        },
+        "type": {
+          "stringValue": "genre"
+        },
+        "completedAt": {
+          "timestampValue": "2026-02-05T22:29:21.153Z"
+        },
+        "eventId": {
+          "stringValue": "OwoRl9LIShBUw2IQFjqw"
+        },
+        "endsAt": {
+          "timestampValue": "2026-02-05T22:30:18.332Z"
+        },
+        "genreA": {
+          "mapValue": {
+            "fields": {
+              "name": {
+                "stringValue": "Bachata"
+              },
+              "emoji": {
+                "stringValue": "❤️"
+              },
+              "votes": {
+                "integerValue": "1"
+              },
+              "tipTotal": {
+                "integerValue": "0"
+              }
+            }
+          }
+        },
+        "winner": {
+          "stringValue": "Bachata"
+        },
+        "winnerVotes": {
+          "integerValue": "1"
+        },
+        "status": {
+          "stringValue": "completed"
+        },
+        "startedAt": {
+          "timestampValue": "2026-02-05T22:28:18.629Z"
+        }
+      },
+      "createTime": "2026-02-05T22:28:18.673992Z",
+      "updateTime": "2026-02-05T22:29:21.185876Z"
+    },
+    {
+      "name": "projects/tocaahora-1cf7f/databases/(default)/documents/challenges/JuRY3v5txWCRDK9sDxFf",
+      "fields": {
+        "winnerVotes": {
+          "integerValue": "16"
+        },
+        "winner": {
+          "stringValue": "Bachata"
+        },
+        "endsAt": {
+          "timestampValue": "2026-02-08T19:53:14.428Z"
+        },
+        "genreA": {
+          "mapValue": {
+            "fields": {
+              "name": {
+                "stringValue": "Merengue"
+              },
+              "votes": {
+                "integerValue": "15"
+              },
+              "emoji": {
+                "stringValue": "💃"
+              },
+              "tipTotal": {
+                "integerValue": "0"
+              }
+            }
+          }
+        },
+        "startedAt": {
+          "timestampValue": "2026-02-08T19:48:15.977Z"
+        },
+        "status": {
+          "stringValue": "completed"
+        },
+        "eventId": {
+          "stringValue": "5VnpLIWMoWZGoJTDQp6I"
+        },
+        "completedAt": {
+          "timestampValue": "2026-02-08T19:53:21.387Z"
+        },
+        "type": {
+          "stringValue": "genre"
+        },
+        "genreB": {
+          "mapValue": {
+            "fields": {
+              "tipTotal": {
+                "integerValue": "0"
+              },
+              "name": {
+                "stringValue": "Bachata"
+              },
+              "votes": {
+                "integerValue": "16"
+              },
+              "emoji": {
+                "stringValue": "❤️"
+              }
+            }
+          }
+        },
+        "duration": {
+          "integerValue": "300"
+        }
+      },
+      "createTime": "2026-02-08T19:48:16.013246Z",
+      "updateTime": "2026-02-08T19:53:21.413389Z"
+    },
+    {
+      "name": "projects/tocaahora-1cf7f/databases/(default)/documents/challenges/KNIw26rtq4h9ebEyDhII",
+      "fields": {
+        "eventId": {
+          "stringValue": "OwoRl9LIShBUw2IQFjqw"
+        },
+        "completedAt": {
+          "timestampValue": "2026-02-03T22:44:29.452Z"
+        },
+        "duration": {
+          "integerValue": "120"
+        },
+        "isOvertime": {
+          "booleanValue": true
+        },
+        "startedAt": {
+          "timestampValue": "2026-02-03T22:43:34.417Z"
+        },
+        "songB": {
+          "mapValue": {
+            "fields": {
+              "title": {
+                "stringValue": "Obsesión"
+              },
+              "votes": {
+                "integerValue": "0"
+              },
+              "tipTotal": {
+                "integerValue": "0"
+              },
+              "artist": {
+                "stringValue": "Aventura"
+              },
+              "id": {
+                "stringValue": "upGh9FZgdSdb4FutZyQp"
+              }
+            }
+          }
+        },
+        "status": {
+          "stringValue": "completed"
+        },
+        "winnerVotes": {
+          "integerValue": "0"
+        },
+        "endsAt": {
+          "timestampValue": "2026-02-03T22:44:55.102Z"
+        },
+        "winner": {
+          "stringValue": "Sp5KERG8LK6GdjLQspb9"
+        },
+        "songA": {
+          "mapValue": {
+            "fields": {
+              "votes": {
+                "integerValue": "0"
+              },
+              "title": {
+                "stringValue": "La Gozadera"
+              },
+              "tipTotal": {
+                "integerValue": "0"
+              },
+              "artist": {
+                "stringValue": "Gente de Zona"
+              },
+              "id": {
+                "stringValue": "Sp5KERG8LK6GdjLQspb9"
+              }
+            }
+          }
+        }
+      },
+      "createTime": "2026-02-03T22:43:34.449738Z",
+      "updateTime": "2026-02-03T22:44:29.461071Z"
+    },
+    {
+      "name": "projects/tocaahora-1cf7f/databases/(default)/documents/challenges/KzsKDipPe72BRnayqelq",
+      "fields": {
+        "winnerVotes": {
+          "integerValue": "1"
+        },
+        "winner": {
+          "stringValue": "NFOi9mG27d0ICeWMiFyx"
+        },
+        "songA": {
+          "mapValue": {
+            "fields": {
+              "tipTotal": {
+                "integerValue": "0"
+              },
+              "title": {
+                "stringValue": "A Pedir Su Mano"
+              },
+              "votes": {
+                "integerValue": "0"
+              },
+              "id": {
+                "stringValue": "NFOi9mG27d0ICeWMiFyx"
+              },
+              "artist": {
+                "stringValue": "Juan Luis Guerra"
+              }
+            }
+          }
+        },
+        "endsAt": {
+          "timestampValue": "2026-01-12T23:27:23.117Z"
+        },
+        "songB": {
+          "mapValue": {
+            "fields": {
+              "id": {
+                "stringValue": "NFOi9mG27d0ICeWMiFyx"
+              },
+              "artist": {
+                "stringValue": "Juan Luis Guerra"
+              },
+              "tipTotal": {
+                "integerValue": "0"
+              },
+              "title": {
+                "stringValue": "A Pedir Su Mano"
+              },
+              "votes": {
+                "integerValue": "1"
+              }
+            }
+          }
+        },
+        "startedAt": {
+          "timestampValue": "2026-01-12T23:25:23.544Z"
+        },
+        "status": {
+          "stringValue": "completed"
+        },
+        "eventId": {
+          "stringValue": "OwoRl9LIShBUw2IQFjqw"
+        },
+        "completedAt": {
+          "timestampValue": "2026-01-12T23:26:46.429Z"
+        },
+        "duration": {
+          "integerValue": "120"
+        }
+      },
+      "createTime": "2026-01-12T23:25:23.577530Z",
+      "updateTime": "2026-01-12T23:26:49.651102Z"
+    },
+    {
+      "name": "projects/tocaahora-1cf7f/databases/(default)/documents/challenges/NcOKbNkm6u81pM3iLHx8",
+      "fields": {
+        "duration": {
+          "integerValue": "120"
+        },
+        "eventId": {
+          "stringValue": "OwoRl9LIShBUw2IQFjqw"
+        },
+        "completedAt": {
+          "timestampValue": "2026-01-11T23:24:05.644Z"
+        },
+        "status": {
+          "stringValue": "completed"
+        },
+        "songB": {
+          "mapValue": {
+            "fields": {
+              "artist": {
+                "stringValue": "Gente de Zona"
+              },
+              "id": {
+                "stringValue": "Sp5KERG8LK6GdjLQspb9"
+              },
+              "votes": {
+                "integerValue": "0"
+              },
+              "title": {
+                "stringValue": "La Gozadera"
+              },
+              "tipTotal": {
+                "integerValue": "0"
+              }
+            }
+          }
+        },
+        "startedAt": {
+          "timestampValue": "2026-01-11T23:23:47.514Z"
+        },
+        "winner": {
+          "stringValue": "AhxVIqWlYyHdkyP13P8S"
+        },
+        "songA": {
+          "mapValue": {
+            "fields": {
+              "tipTotal": {
+                "integerValue": "0"
+              },
+              "votes": {
+                "integerValue": "1"
+              },
+              "title": {
+                "stringValue": "Darte un Beso"
+              },
+              "id": {
+                "stringValue": "AhxVIqWlYyHdkyP13P8S"
+              },
+              "artist": {
+                "stringValue": "Prince Royce"
+              }
+            }
+          }
+        },
+        "endsAt": {
+          "timestampValue": "2026-01-11T23:25:47.084Z"
+        },
+        "winnerVotes": {
+          "integerValue": "1"
+        }
+      },
+      "createTime": "2026-01-11T23:23:47.565805Z",
+      "updateTime": "2026-01-11T23:24:05.687089Z"
+    },
+    {
+      "name": "projects/tocaahora-1cf7f/databases/(default)/documents/challenges/O6koNLlypfDTL6FLx4TW",
+      "fields": {
+        "genreB": {
+          "mapValue": {
+            "fields": {
+              "name": {
+                "stringValue": "Salsa"
+              },
+              "emoji": {
+                "stringValue": "🔥"
+              },
+              "votes": {
+                "integerValue": "0"
+              },
+              "tipTotal": {
+                "integerValue": "0"
+              }
+            }
+          }
+        },
+        "eventId": {
+          "stringValue": "OwoRl9LIShBUw2IQFjqw"
+        },
+        "completedAt": {
+          "timestampValue": "2026-02-05T23:39:05.669Z"
+        },
+        "type": {
+          "stringValue": "genre"
+        },
+        "isOvertime": {
+          "booleanValue": true
+        },
+        "duration": {
+          "integerValue": "120"
+        },
+        "startedAt": {
+          "timestampValue": "2026-02-05T23:38:58.600Z"
+        },
+        "status": {
+          "stringValue": "completed"
+        },
+        "winnerVotes": {
+          "integerValue": "0"
+        },
+        "genreA": {
+          "mapValue": {
+            "fields": {
+              "name": {
+                "stringValue": "Bachata"
+              },
+              "emoji": {
+                "stringValue": "❤️"
+              },
+              "votes": {
+                "integerValue": "0"
+              },
+              "tipTotal": {
+                "integerValue": "0"
+              }
+            }
+          }
+        },
+        "endsAt": {
+          "timestampValue": "2026-02-05T23:39:32.099Z"
+        },
+        "winner": {
+          "stringValue": "Salsa"
+        }
+      },
+      "createTime": "2026-02-05T23:38:58.645927Z",
+      "updateTime": "2026-02-05T23:39:05.704375Z"
+    },
+    {
+      "name": "projects/tocaahora-1cf7f/databases/(default)/documents/challenges/Obwj4jal89AM7bxlad06",
+      "fields": {
+        "duration": {
+          "integerValue": "120"
+        },
+        "eventId": {
+          "stringValue": "OwoRl9LIShBUw2IQFjqw"
+        },
+        "type": {
+          "stringValue": "song"
+        },
+        "completedAt": {
+          "timestampValue": "2026-03-13T00:33:57.809Z"
+        },
+        "status": {
+          "stringValue": "completed"
+        },
+        "startedAt": {
+          "timestampValue": "2026-03-13T00:33:45.469Z"
+        },
+        "songB": {
+          "mapValue": {
+            "fields": {
+              "id": {
+                "stringValue": "Sp5KERG8LK6GdjLQspb9"
+              },
+              "artist": {
+                "stringValue": "Gente de Zona"
+              },
+              "tipTotal": {
+                "integerValue": "0"
+              },
+              "votes": {
+                "integerValue": "0"
+              },
+              "title": {
+                "stringValue": "La Gozadera"
+              }
+            }
+          }
+        },
+        "endsAt": {
+          "timestampValue": "2026-03-13T00:35:45.162Z"
+        },
+        "songA": {
+          "mapValue": {
+            "fields": {
+              "votes": {
+                "integerValue": "1"
+              },
+              "title": {
+                "stringValue": "Darte un Beso"
+              },
+              "tipTotal": {
+                "integerValue": "0"
+              },
+              "artist": {
+                "stringValue": "Prince Royce"
+              },
+              "id": {
+                "stringValue": "AhxVIqWlYyHdkyP13P8S"
+              }
+            }
+          }
+        },
+        "winner": {
+          "stringValue": "AhxVIqWlYyHdkyP13P8S"
+        },
+        "winnerVotes": {
+          "integerValue": "1"
+        }
+      },
+      "createTime": "2026-03-13T00:33:45.519702Z",
+      "updateTime": "2026-03-13T00:33:57.852253Z"
+    },
+    {
+      "name": "projects/tocaahora-1cf7f/databases/(default)/documents/challenges/Q01kKyy2x9QXLkUjiOIx",
+      "fields": {
+        "genreB": {
+          "mapValue": {
+            "fields": {
+              "tipTotal": {
+                "integerValue": "0"
+              },
+              "name": {
+                "stringValue": "Mambo"
+              },
+              "emoji": {
+                "stringValue": "🎵"
+              },
+              "votes": {
+                "integerValue": "0"
+              }
+            }
+          }
+        },
+        "type": {
+          "stringValue": "genre"
+        },
+        "completedAt": {
+          "timestampValue": "2026-06-12T17:07:16.608Z"
+        },
+        "eventId": {
+          "stringValue": "OwoRl9LIShBUw2IQFjqw"
+        },
+        "duration": {
+          "integerValue": "120"
+        },
+        "winnerVotes": {
+          "integerValue": "1"
+        },
+        "endsAt": {
+          "timestampValue": "2026-06-12T17:08:52.997Z"
+        },
+        "genreA": {
+          "mapValue": {
+            "fields": {
+              "tipTotal": {
+                "integerValue": "0"
+              },
+              "name": {
+                "stringValue": "Urbano"
+              },
+              "emoji": {
+                "stringValue": "🎵"
+              },
+              "votes": {
+                "integerValue": "1"
+              }
+            }
+          }
+        },
+        "winner": {
+          "stringValue": "Urbano"
+        },
+        "startedAt": {
+          "timestampValue": "2026-06-12T17:06:52.958Z"
+        },
+        "status": {
+          "stringValue": "completed"
+        }
+      },
+      "createTime": "2026-06-12T17:06:52.998256Z",
+      "updateTime": "2026-06-12T17:07:16.660579Z"
+    },
+    {
+      "name": "projects/tocaahora-1cf7f/databases/(default)/documents/challenges/T52yywkGlvtuV0atmPAR",
+      "fields": {
+        "status": {
+          "stringValue": "completed"
+        },
+        "songB": {
+          "mapValue": {
+            "fields": {
+              "id": {
+                "stringValue": "XBH0Q0cywLxdOByeshYK"
+              },
+              "artist": {
+                "stringValue": "Enrique Iglesias"
+              },
+              "votes": {
+                "integerValue": "0"
+              },
+              "title": {
+                "stringValue": "Bailando"
+              },
+              "tipTotal": {
+                "integerValue": "0"
+              }
+            }
+          }
+        },
+        "startedAt": {
+          "timestampValue": "2026-01-11T22:59:35.912Z"
+        },
+        "winner": {
+          "stringValue": "NFOi9mG27d0ICeWMiFyx"
+        },
+        "songA": {
+          "mapValue": {
+            "fields": {
+              "votes": {
+                "integerValue": "1"
+              },
+              "title": {
+                "stringValue": "A Pedir Su Mano"
+              },
+              "tipTotal": {
+                "integerValue": "0"
+              },
+              "artist": {
+                "stringValue": "Juan Luis Guerra"
+              },
+              "id": {
+                "stringValue": "NFOi9mG27d0ICeWMiFyx"
+              }
+            }
+          }
+        },
+        "endsAt": {
+          "timestampValue": "2026-01-11T23:01:35.539Z"
+        },
+        "winnerVotes": {
+          "integerValue": "1"
+        },
+        "duration": {
+          "integerValue": "120"
+        },
+        "eventId": {
+          "stringValue": "OwoRl9LIShBUw2IQFjqw"
+        },
+        "completedAt": {
+          "timestampValue": "2026-01-11T23:00:42.848Z"
+        }
+      },
+      "createTime": "2026-01-11T22:59:35.941609Z",
+      "updateTime": "2026-01-11T23:00:42.924067Z"
+    },
+    {
+      "name": "projects/tocaahora-1cf7f/databases/(default)/documents/challenges/TeDpwW2ay9EaQD9NJzOb",
+      "fields": {
+        "winnerVotes": {
+          "integerValue": "1"
+        },
+        "endsAt": {
+          "timestampValue": "2026-02-04T00:31:58.622Z"
+        },
+        "winner": {
+          "stringValue": "Sp5KERG8LK6GdjLQspb9"
+        },
+        "songA": {
+          "mapValue": {
+            "fields": {
+              "id": {
+                "stringValue": "Sp5KERG8LK6GdjLQspb9"
+              },
+              "artist": {
+                "stringValue": "Gente de Zona"
+              },
+              "tipTotal": {
+                "integerValue": "0"
+              },
+              "votes": {
+                "integerValue": "1"
+              },
+              "title": {
+                "stringValue": "La Gozadera"
+              }
+            }
+          }
+        },
+        "startedAt": {
+          "timestampValue": "2026-02-04T00:29:58.999Z"
+        },
+        "songB": {
+          "mapValue": {
+            "fields": {
+              "artist": {
+                "stringValue": "Aventura"
+              },
+              "id": {
+                "stringValue": "upGh9FZgdSdb4FutZyQp"
+              },
+              "tipTotal": {
+                "integerValue": "0"
+              },
+              "title": {
+                "stringValue": "Obsesión"
+              },
+              "votes": {
+                "integerValue": "0"
+              }
+            }
+          }
+        },
+        "status": {
+          "stringValue": "completed"
+        },
+        "eventId": {
+          "stringValue": "OwoRl9LIShBUw2IQFjqw"
+        },
+        "completedAt": {
+          "timestampValue": "2026-02-04T01:04:07.969Z"
+        },
+        "duration": {
+          "integerValue": "120"
+        }
+      },
+      "createTime": "2026-02-04T00:29:59.065117Z",
+      "updateTime": "2026-02-04T01:04:08.075194Z"
+    },
+    {
+      "name": "projects/tocaahora-1cf7f/databases/(default)/documents/challenges/UKq8UylNoebuAaZA5aQL",
+      "fields": {
+        "winnerVotes": {
+          "integerValue": "1"
+        },
+        "endsAt": {
+          "timestampValue": "2026-01-12T23:52:24.172Z"
+        },
+        "winner": {
+          "stringValue": "Sp5KERG8LK6GdjLQspb9"
+        },
+        "songA": {
+          "mapValue": {
+            "fields": {
+              "id": {
+                "stringValue": "Sp5KERG8LK6GdjLQspb9"
+              },
+              "artist": {
+                "stringValue": "Gente de Zona"
+              },
+              "votes": {
+                "integerValue": "1"
+              },
+              "title": {
+                "stringValue": "La Gozadera"
+              },
+              "tipTotal": {
+                "integerValue": "0"
+              }
+            }
+          }
+        },
+        "startedAt": {
+          "timestampValue": "2026-01-12T23:42:24.485Z"
+        },
+        "songB": {
+          "mapValue": {
+            "fields": {
+              "title": {
+                "stringValue": "A Pedir Su Mano"
+              },
+              "votes": {
+                "integerValue": "0"
+              },
+              "tipTotal": {
+                "integerValue": "0"
+              },
+              "artist": {
+                "stringValue": "Juan Luis Guerra"
+              },
+              "id": {
+                "stringValue": "NFOi9mG27d0ICeWMiFyx"
+              }
+            }
+          }
+        },
+        "status": {
+          "stringValue": "completed"
+        },
+        "completedAt": {
+          "timestampValue": "2026-01-12T23:42:53.418Z"
+        },
+        "eventId": {
+          "stringValue": "OwoRl9LIShBUw2IQFjqw"
+        },
+        "duration": {
+          "integerValue": "600"
+        }
+      },
+      "createTime": "2026-01-12T23:42:24.524285Z",
+      "updateTime": "2026-01-12T23:42:53.453656Z"
+    },
+    {
+      "name": "projects/tocaahora-1cf7f/databases/(default)/documents/challenges/XLP79MsHK2Lu0HtrgN4M",
+      "fields": {
+        "status": {
+          "stringValue": "completed"
+        },
+        "startedAt": {
+          "timestampValue": "2026-06-12T17:01:05.870Z"
+        },
+        "genreA": {
+          "mapValue": {
+            "fields": {
+              "tipTotal": {
+                "integerValue": "0"
+              },
+              "name": {
+                "stringValue": "Bachata"
+              },
+              "votes": {
+                "integerValue": "0"
+              },
+              "emoji": {
+                "stringValue": "❤️"
+              }
+            }
+          }
+        },
+        "endsAt": {
+          "timestampValue": "2026-06-12T17:03:05.878Z"
+        },
+        "winner": {
+          "stringValue": "Merengue"
+        },
+        "winnerVotes": {
+          "integerValue": "1"
+        },
+        "duration": {
+          "integerValue": "120"
+        },
+        "genreB": {
+          "mapValue": {
+            "fields": {
+              "name": {
+                "stringValue": "Merengue"
+              },
+              "votes": {
+                "integerValue": "1"
+              },
+              "emoji": {
+                "stringValue": "💃"
+              },
+              "tipTotal": {
+                "integerValue": "0"
+              }
+            }
+          }
+        },
+        "eventId": {
+          "stringValue": "OwoRl9LIShBUw2IQFjqw"
+        },
+        "type": {
+          "stringValue": "genre"
+        },
+        "completedAt": {
+          "timestampValue": "2026-06-12T17:03:06.307Z"
+        }
+      },
+      "createTime": "2026-06-12T17:01:05.944219Z",
+      "updateTime": "2026-06-12T17:03:06.366955Z"
+    },
+    {
+      "name": "projects/tocaahora-1cf7f/databases/(default)/documents/challenges/Y1E2tbsyjlvYluzXs28Y",
+      "fields": {
+        "endsAt": {
+          "timestampValue": "2026-01-11T18:00:16.895Z"
+        },
+        "winner": {
+          "stringValue": "XBH0Q0cywLxdOByeshYK"
+        },
+        "songA": {
+          "mapValue": {
+            "fields": {
+              "votes": {
+                "integerValue": "0"
+              },
+              "title": {
+                "stringValue": "A Pedir Su Mano"
+              },
+              "id": {
+                "stringValue": "NFOi9mG27d0ICeWMiFyx"
+              },
+              "tipTotal": {
+                "integerValue": "0"
+              }
+            }
+          }
+        },
+        "startedAt": {
+          "timestampValue": "2026-01-11T17:58:16.972Z"
+        },
+        "songB": {
+          "mapValue": {
+            "fields": {
+              "tipTotal": {
+                "integerValue": "0"
+              },
+              "id": {
+                "stringValue": "XBH0Q0cywLxdOByeshYK"
+              },
+              "title": {
+                "stringValue": "Bailando"
+              },
+              "votes": {
+                "integerValue": "1"
+              }
+            }
+          }
+        },
+        "status": {
+          "stringValue": "completed"
+        },
+        "completedAt": {
+          "timestampValue": "2026-01-11T17:58:41.100Z"
+        },
+        "eventId": {
+          "stringValue": "OwoRl9LIShBUw2IQFjqw"
+        },
+        "duration": {
+          "integerValue": "120"
+        }
+      },
+      "createTime": "2026-01-11T17:58:17.006151Z",
+      "updateTime": "2026-01-11T17:58:41.211613Z"
+    },
+    {
+      "name": "projects/tocaahora-1cf7f/databases/(default)/documents/challenges/YR3lpI22wrEvzeyDzS3M",
+      "fields": {
+        "eventId": {
+          "stringValue": "OwoRl9LIShBUw2IQFjqw"
+        },
+        "completedAt": {
+          "timestampValue": "2026-06-12T17:18:42.712Z"
+        },
+        "type": {
+          "stringValue": "genre"
+        },
+        "genreB": {
+          "mapValue": {
+            "fields": {
+              "name": {
+                "stringValue": "Mambo"
+              },
+              "emoji": {
+                "stringValue": "🎵"
+              },
+              "votes": {
+                "integerValue": "1"
+              },
+              "tipTotal": {
+                "integerValue": "0"
+              }
+            }
+          }
+        },
+        "duration": {
+          "integerValue": "120"
+        },
+        "startedAt": {
+          "timestampValue": "2026-06-12T17:18:29.422Z"
+        },
+        "status": {
+          "stringValue": "completed"
+        },
+        "winnerVotes": {
+          "integerValue": "1"
+        },
+        "winner": {
+          "stringValue": "Mambo"
+        },
+        "endsAt": {
+          "timestampValue": "2026-06-12T17:20:29.210Z"
+        },
+        "genreA": {
+          "mapValue": {
+            "fields": {
+              "tipTotal": {
+                "integerValue": "0"
+              },
+              "name": {
+                "stringValue": "Merengue"
+              },
+              "emoji": {
+                "stringValue": "💃"
+              },
+              "votes": {
+                "integerValue": "0"
+              }
+            }
+          }
+        }
+      },
+      "createTime": "2026-06-12T17:18:29.467667Z",
+      "updateTime": "2026-06-12T17:18:42.755985Z"
+    },
+    {
+      "name": "projects/tocaahora-1cf7f/databases/(default)/documents/challenges/Yvf8NGc7sPLQNi8V7bNp",
+      "fields": {
+        "winnerVotes": {
+          "integerValue": "1"
+        },
+        "endsAt": {
+          "timestampValue": "2026-01-22T23:30:40.315Z"
+        },
+        "songA": {
+          "mapValue": {
+            "fields": {
+              "artist": {
+                "stringValue": "Omega"
+              },
+              "id": {
+                "stringValue": "2cNho6aOr9Fqrq0s9S7V"
+              },
+              "tipTotal": {
+                "integerValue": "0"
+              },
+              "title": {
+                "stringValue": "La Jumba"
+              },
+              "votes": {
+                "integerValue": "1"
+              }
+            }
+          }
+        },
+        "winner": {
+          "stringValue": "2cNho6aOr9Fqrq0s9S7V"
+        },
+        "startedAt": {
+          "timestampValue": "2026-01-22T23:28:40.400Z"
+        },
+        "songB": {
+          "mapValue": {
+            "fields": {
+              "artist": {
+                "stringValue": "Proyecto Uno"
+              },
+              "id": {
+                "stringValue": "NREBgXlxABsMqhKcNleT"
+              },
+              "title": {
+                "stringValue": "El Tiburón"
+              },
+              "votes": {
+                "integerValue": "1"
+              },
+              "tipTotal": {
+                "integerValue": "0"
+              }
+            }
+          }
+        },
+        "status": {
+          "stringValue": "completed"
+        },
+        "completedAt": {
+          "timestampValue": "2026-01-22T23:29:56.345Z"
+        },
+        "eventId": {
+          "stringValue": "OwoRl9LIShBUw2IQFjqw"
+        },
+        "duration": {
+          "integerValue": "120"
+        }
+      },
+      "createTime": "2026-01-22T23:28:40.432397Z",
+      "updateTime": "2026-01-22T23:29:56.388565Z"
+    },
+    {
+      "name": "projects/tocaahora-1cf7f/databases/(default)/documents/challenges/ZXowL7STCyVowMH5kS1U",
+      "fields": {
+        "songA": {
+          "mapValue": {
+            "fields": {
+              "id": {
+                "stringValue": "Sp5KERG8LK6GdjLQspb9"
+              },
+              "artist": {
+                "stringValue": "Gente de Zona"
+              },
+              "tipTotal": {
+                "integerValue": "0"
+              },
+              "votes": {
+                "integerValue": "1"
+              },
+              "title": {
+                "stringValue": "La Gozadera"
+              }
+            }
+          }
+        },
+        "winner": {
+          "stringValue": "Sp5KERG8LK6GdjLQspb9"
+        },
+        "endsAt": {
+          "timestampValue": "2026-02-05T23:42:04.264Z"
+        },
+        "winnerVotes": {
+          "integerValue": "1"
+        },
+        "status": {
+          "stringValue": "completed"
+        },
+        "songB": {
+          "mapValue": {
+            "fields": {
+              "tipTotal": {
+                "integerValue": "0"
+              },
+              "votes": {
+                "integerValue": "0"
+              },
+              "title": {
+                "stringValue": "La Gozadera"
+              },
+              "id": {
+                "stringValue": "Sp5KERG8LK6GdjLQspb9"
+              },
+              "artist": {
+                "stringValue": "Gente de Zona"
+              }
+            }
+          }
+        },
+        "startedAt": {
+          "timestampValue": "2026-02-05T23:40:04.340Z"
+        },
+        "duration": {
+          "integerValue": "120"
+        },
+        "eventId": {
+          "stringValue": "OwoRl9LIShBUw2IQFjqw"
+        },
+        "type": {
+          "stringValue": "song"
+        },
+        "completedAt": {
+          "timestampValue": "2026-02-05T23:40:19.024Z"
+        }
+      },
+      "createTime": "2026-02-05T23:40:04.373207Z",
+      "updateTime": "2026-02-05T23:40:19.058242Z"
+    },
+    {
+      "name": "projects/tocaahora-1cf7f/databases/(default)/documents/challenges/aSbyWZQ1RaZzWpwaOlvo",
+      "fields": {
+        "duration": {
+          "integerValue": "120"
+        },
+        "eventId": {
+          "stringValue": "OwoRl9LIShBUw2IQFjqw"
+        },
+        "completedAt": {
+          "timestampValue": "2026-02-16T00:19:25.034Z"
+        },
+        "type": {
+          "stringValue": "song"
+        },
+        "status": {
+          "stringValue": "completed"
+        },
+        "startedAt": {
+          "timestampValue": "2026-02-16T00:19:10.355Z"
+        },
+        "songB": {
+          "mapValue": {
+            "fields": {
+              "votes": {
+                "integerValue": "0"
+              },
+              "title": {
+                "stringValue": "Obsesión"
+              },
+              "tipTotal": {
+                "integerValue": "0"
+              },
+              "id": {
+                "stringValue": "upGh9FZgdSdb4FutZyQp"
+              },
+              "artist": {
+                "stringValue": "Aventura"
+              }
+            }
+          }
+        },
+        "endsAt": {
+          "timestampValue": "2026-02-16T00:21:10.404Z"
+        },
+        "songA": {
+          "mapValue": {
+            "fields": {
+              "artist": {
+                "stringValue": "Gente de Zona"
+              },
+              "id": {
+                "stringValue": "Sp5KERG8LK6GdjLQspb9"
+              },
+              "tipTotal": {
+                "integerValue": "0"
+              },
+              "title": {
+                "stringValue": "La Gozadera"
+              },
+              "votes": {
+                "integerValue": "1"
+              }
+            }
+          }
+        },
+        "winner": {
+          "stringValue": "Sp5KERG8LK6GdjLQspb9"
+        },
+        "winnerVotes": {
+          "integerValue": "1"
+        }
+      },
+      "createTime": "2026-02-16T00:19:10.397016Z",
+      "updateTime": "2026-02-16T00:19:25.069107Z"
+    },
+    {
+      "name": "projects/tocaahora-1cf7f/databases/(default)/documents/challenges/bVxIej0nw7aJNX7mHEXQ",
+      "fields": {
+        "duration": {
+          "integerValue": "120"
+        },
+        "isOvertime": {
+          "booleanValue": true
+        },
+        "genreB": {
+          "mapValue": {
+            "fields": {
+              "tipTotal": {
+                "integerValue": "0"
+              },
+              "name": {
+                "stringValue": "Salsa"
+              },
+              "votes": {
+                "integerValue": "1"
+              },
+              "emoji": {
+                "stringValue": "🔥"
+              }
+            }
+          }
+        },
+        "eventId": {
+          "stringValue": "OwoRl9LIShBUw2IQFjqw"
+        },
+        "completedAt": {
+          "timestampValue": "2026-02-17T02:54:05.545Z"
+        },
+        "type": {
+          "stringValue": "genre"
+        },
+        "status": {
+          "stringValue": "completed"
+        },
+        "startedAt": {
+          "timestampValue": "2026-02-17T02:52:29.590Z"
+        },
+        "genreA": {
+          "mapValue": {
+            "fields": {
+              "tipTotal": {
+                "integerValue": "0"
+              },
+              "name": {
+                "stringValue": "Bachata"
+              },
+              "emoji": {
+                "stringValue": "❤️"
+              },
+              "votes": {
+                "integerValue": "0"
+              }
+            }
+          }
+        },
+        "endsAt": {
+          "timestampValue": "2026-02-17T02:54:10.409Z"
+        },
+        "winner": {
+          "stringValue": "Salsa"
+        },
+        "winnerVotes": {
+          "integerValue": "1"
+        }
+      },
+      "createTime": "2026-02-17T02:52:29.628677Z",
+      "updateTime": "2026-02-17T02:54:05.571222Z"
+    },
+    {
+      "name": "projects/tocaahora-1cf7f/databases/(default)/documents/challenges/bZI38joXqV2sbzHyAFdu",
+      "fields": {
+        "completedAt": {
+          "timestampValue": "2026-01-08T19:16:36.668Z"
+        },
+        "eventId": {
+          "stringValue": "OwoRl9LIShBUw2IQFjqw"
+        },
+        "duration": {
+          "integerValue": "120"
+        },
+        "winner": {
+          "stringValue": "2cNho6aOr9Fqrq0s9S7V"
+        },
+        "songA": {
+          "mapValue": {
+            "fields": {
+              "tipTotal": {
+                "integerValue": "0"
+              },
+              "id": {
+                "stringValue": "2cNho6aOr9Fqrq0s9S7V"
+              },
+              "title": {
+                "stringValue": "La Jumba"
+              },
+              "votes": {
+                "integerValue": "3"
+              }
+            }
+          }
+        },
+        "endsAt": {
+          "timestampValue": "2026-01-08T19:16:36.310Z"
+        },
+        "songB": {
+          "mapValue": {
+            "fields": {
+              "votes": {
+                "integerValue": "2"
+              },
+              "title": {
+                "stringValue": "Te Extraño"
+              },
+              "id": {
+                "stringValue": "mZq6qLfVP8g5LBgwvXZJ"
+              },
+              "tipTotal": {
+                "integerValue": "0"
+              }
+            }
+          }
+        },
+        "startedAt": {
+          "timestampValue": "2026-01-08T19:14:36.459Z"
+        },
+        "status": {
+          "stringValue": "completed"
+        }
+      },
+      "createTime": "2026-01-08T19:14:36.492484Z",
+      "updateTime": "2026-01-08T19:16:36.701970Z"
+    },
+    {
+      "name": "projects/tocaahora-1cf7f/databases/(default)/documents/challenges/e4P4GGVaLmuQifr0w7NF",
+      "fields": {
+        "duration": {
+          "integerValue": "120"
+        },
+        "completedAt": {
+          "timestampValue": "2026-01-08T19:46:50.306Z"
+        },
+        "eventId": {
+          "stringValue": "OwoRl9LIShBUw2IQFjqw"
+        },
+        "endsAt": {
+          "timestampValue": "2026-01-08T19:44:37.678Z"
+        },
+        "winner": {
+          "stringValue": "NFOi9mG27d0ICeWMiFyx"
+        },
+        "songA": {
+          "mapValue": {
+            "fields": {
+              "id": {
+                "stringValue": "NFOi9mG27d0ICeWMiFyx"
+              },
+              "tipTotal": {
+                "integerValue": "0"
+              },
+              "votes": {
+                "integerValue": "0"
+              },
+              "title": {
+                "stringValue": "A Pedir Su Mano"
+              }
+            }
+          }
+        },
+        "status": {
+          "stringValue": "completed"
+        },
+        "startedAt": {
+          "timestampValue": "2026-01-08T19:42:37.931Z"
+        },
+        "songB": {
+          "mapValue": {
+            "fields": {
+              "votes": {
+                "integerValue": "0"
+              },
+              "title": {
+                "stringValue": "La Gozadera"
+              },
+              "id": {
+                "stringValue": "Sp5KERG8LK6GdjLQspb9"
+              },
+              "tipTotal": {
+                "integerValue": "0"
+              }
+            }
+          }
+        }
+      },
+      "createTime": "2026-01-08T19:42:37.974032Z",
+      "updateTime": "2026-01-08T19:46:50.335928Z"
+    },
+    {
+      "name": "projects/tocaahora-1cf7f/databases/(default)/documents/challenges/eSoCBDYM1wjAzrwZYVdZ",
+      "fields": {
+        "duration": {
+          "integerValue": "300"
+        },
+        "isOvertime": {
+          "booleanValue": true
+        },
+        "genreB": {
+          "mapValue": {
+            "fields": {
+              "tipTotal": {
+                "integerValue": "0"
+              },
+              "name": {
+                "stringValue": "Bachata"
+              },
+              "emoji": {
+                "stringValue": "❤️"
+              },
+              "votes": {
+                "integerValue": "0"
+              }
+            }
+          }
+        },
+        "eventId": {
+          "stringValue": "5VnpLIWMoWZGoJTDQp6I"
+        },
+        "type": {
+          "stringValue": "genre"
+        },
+        "completedAt": {
+          "timestampValue": "2026-02-08T19:53:21.435Z"
+        },
+        "status": {
+          "stringValue": "completed"
+        },
+        "startedAt": {
+          "timestampValue": "2026-02-08T19:47:46.651Z"
+        },
+        "genreA": {
+          "mapValue": {
+            "fields": {
+              "name": {
+                "stringValue": "Merengue"
+              },
+              "emoji": {
+                "stringValue": "💃"
+              },
+              "votes": {
+                "integerValue": "1"
+              },
+              "tipTotal": {
+                "integerValue": "0"
+              }
+            }
+          }
+        },
+        "endsAt": {
+          "timestampValue": "2026-02-08T19:48:31.680Z"
+        },
+        "winner": {
+          "stringValue": "Merengue"
+        },
+        "winnerVotes": {
+          "integerValue": "1"
+        }
+      },
+      "createTime": "2026-02-08T19:47:46.691150Z",
+      "updateTime": "2026-02-08T19:53:21.442385Z"
+    },
+    {
+      "name": "projects/tocaahora-1cf7f/databases/(default)/documents/challenges/fK2Fz92yUXhRL3IIkLVN",
+      "fields": {
+        "duration": {
+          "integerValue": "600"
+        },
+        "completedAt": {
+          "timestampValue": "2026-01-17T17:23:11.741Z"
+        },
+        "eventId": {
+          "stringValue": "OwoRl9LIShBUw2IQFjqw"
+        },
+        "status": {
+          "stringValue": "completed"
+        },
+        "songB": {
+          "mapValue": {
+            "fields": {
+              "id": {
+                "stringValue": "kW0aIndbcTA9HISjaw7v"
+              },
+              "artist": {
+                "stringValue": "Marc Anthony"
+              },
+              "votes": {
+                "integerValue": "0"
+              },
+              "title": {
+                "stringValue": "Vivir Mi Vida"
+              },
+              "tipTotal": {
+                "integerValue": "0"
+              }
+            }
+          }
+        },
+        "startedAt": {
+          "timestampValue": "2026-01-17T17:22:36.061Z"
+        },
+        "winner": {
+          "stringValue": "NFOi9mG27d0ICeWMiFyx"
+        },
+        "songA": {
+          "mapValue": {
+            "fields": {
+              "tipTotal": {
+                "integerValue": "0"
+              },
+              "title": {
+                "stringValue": "A Pedir Su Mano"
+              },
+              "votes": {
+                "integerValue": "1"
+              },
+              "artist": {
+                "stringValue": "Juan Luis Guerra"
+              },
+              "id": {
+                "stringValue": "NFOi9mG27d0ICeWMiFyx"
+              }
+            }
+          }
+        },
+        "endsAt": {
+          "timestampValue": "2026-01-17T17:32:34.825Z"
+        },
+        "winnerVotes": {
+          "integerValue": "1"
+        }
+      },
+      "createTime": "2026-01-17T17:22:36.095829Z",
+      "updateTime": "2026-01-17T17:23:11.760516Z"
+    },
+    {
+      "name": "projects/tocaahora-1cf7f/databases/(default)/documents/challenges/fNqRh6PyVvcCKjVlnFvZ",
+      "fields": {
+        "winnerVotes": {
+          "integerValue": "0"
+        },
+        "endsAt": {
+          "timestampValue": "2026-02-04T00:17:26.069Z"
+        },
+        "songA": {
+          "mapValue": {
+            "fields": {
+              "tipTotal": {
+                "integerValue": "0"
+              },
+              "votes": {
+                "integerValue": "0"
+              },
+              "title": {
+                "stringValue": "La Gozadera"
+              },
+              "artist": {
+                "stringValue": "Gente de Zona"
+              },
+              "id": {
+                "stringValue": "Sp5KERG8LK6GdjLQspb9"
+              }
+            }
+          }
+        },
+        "winner": {
+          "stringValue": "upGh9FZgdSdb4FutZyQp"
+        },
+        "startedAt": {
+          "timestampValue": "2026-02-04T00:14:56.905Z"
+        },
+        "songB": {
+          "mapValue": {
+            "fields": {
+              "artist": {
+                "stringValue": "Aventura"
+              },
+              "id": {
+                "stringValue": "upGh9FZgdSdb4FutZyQp"
+              },
+              "tipTotal": {
+                "integerValue": "0"
+              },
+              "votes": {
+                "integerValue": "0"
+              },
+              "title": {
+                "stringValue": "Obsesión"
+              }
+            }
+          }
+        },
+        "status": {
+          "stringValue": "completed"
+        },
+        "eventId": {
+          "stringValue": "OwoRl9LIShBUw2IQFjqw"
+        },
+        "completedAt": {
+          "timestampValue": "2026-02-04T00:26:42.962Z"
+        },
+        "duration": {
+          "integerValue": "120"
+        },
+        "isOvertime": {
+          "booleanValue": true
+        }
+      },
+      "createTime": "2026-02-04T00:14:56.942543Z",
+      "updateTime": "2026-02-04T00:26:43.020695Z"
+    },
+    {
+      "name": "projects/tocaahora-1cf7f/databases/(default)/documents/challenges/fb9fNw73u6uqwFOBItaB",
+      "fields": {
+        "duration": {
+          "integerValue": "300"
+        },
+        "eventId": {
+          "stringValue": "OwoRl9LIShBUw2IQFjqw"
+        },
+        "type": {
+          "stringValue": "song"
+        },
+        "completedAt": {
+          "timestampValue": "2026-02-08T01:34:04.190Z"
+        },
+        "endsAt": {
+          "timestampValue": "2026-02-08T01:38:33.577Z"
+        },
+        "songA": {
+          "mapValue": {
+            "fields": {
+              "artist": {
+                "stringValue": "Gente de Zona"
+              },
+              "id": {
+                "stringValue": "Sp5KERG8LK6GdjLQspb9"
+              },
+              "tipTotal": {
+                "integerValue": "0"
+              },
+              "votes": {
+                "integerValue": "1"
+              },
+              "title": {
+                "stringValue": "La Gozadera"
+              }
+            }
+          }
+        },
+        "winner": {
+          "stringValue": "Sp5KERG8LK6GdjLQspb9"
+        },
+        "winnerVotes": {
+          "integerValue": "1"
+        },
+        "status": {
+          "stringValue": "completed"
+        },
+        "startedAt": {
+          "timestampValue": "2026-02-08T01:33:33.600Z"
+        },
+        "songB": {
+          "mapValue": {
+            "fields": {
+              "votes": {
+                "integerValue": "0"
+              },
+              "title": {
+                "stringValue": "Échame la Culpa"
+              },
+              "tipTotal": {
+                "integerValue": "0"
+              },
+              "artist": {
+                "stringValue": "Luis Fonsi & Demi Lovato"
+              },
+              "id": {
+                "stringValue": "yKYpUP2ySpYdyxPrGu7j"
+              }
+            }
+          }
+        }
+      },
+      "createTime": "2026-02-08T01:33:33.638021Z",
+      "updateTime": "2026-02-08T01:34:04.227500Z"
+    },
+    {
+      "name": "projects/tocaahora-1cf7f/databases/(default)/documents/challenges/fnU5mMd0ZLAcw5EnH5ZW",
+      "fields": {
+        "endsAt": {
+          "timestampValue": "2026-01-12T23:31:56.206Z"
+        },
+        "winner": {
+          "stringValue": "NFOi9mG27d0ICeWMiFyx"
+        },
+        "songA": {
+          "mapValue": {
+            "fields": {
+              "tipTotal": {
+                "integerValue": "0"
+              },
+              "votes": {
+                "integerValue": "1"
+              },
+              "title": {
+                "stringValue": "A Pedir Su Mano"
+              },
+              "artist": {
+                "stringValue": "Juan Luis Guerra"
+              },
+              "id": {
+                "stringValue": "NFOi9mG27d0ICeWMiFyx"
+              }
+            }
+          }
+        },
+        "winnerVotes": {
+          "integerValue": "1"
+        },
+        "status": {
+          "stringValue": "completed"
+        },
+        "startedAt": {
+          "timestampValue": "2026-01-12T23:29:56.672Z"
+        },
+        "songB": {
+          "mapValue": {
+            "fields": {
+              "votes": {
+                "integerValue": "0"
+              },
+              "title": {
+                "stringValue": "A Pedir Su Mano"
+              },
+              "tipTotal": {
+                "integerValue": "0"
+              },
+              "artist": {
+                "stringValue": "Juan Luis Guerra"
+              },
+              "id": {
+                "stringValue": "NFOi9mG27d0ICeWMiFyx"
+              }
+            }
+          }
+        },
+        "duration": {
+          "integerValue": "120"
+        },
+        "eventId": {
+          "stringValue": "OwoRl9LIShBUw2IQFjqw"
+        },
+        "completedAt": {
+          "timestampValue": "2026-01-12T23:31:11.918Z"
+        }
+      },
+      "createTime": "2026-01-12T23:29:56.703536Z",
+      "updateTime": "2026-01-12T23:31:11.942798Z"
+    },
+    {
+      "name": "projects/tocaahora-1cf7f/databases/(default)/documents/challenges/fwKUidUGROHCI7O8WF2l",
+      "fields": {
+        "isOvertime": {
+          "booleanValue": true
+        },
+        "duration": {
+          "integerValue": "120"
+        },
+        "eventId": {
+          "stringValue": "OwoRl9LIShBUw2IQFjqw"
+        },
+        "completedAt": {
+          "timestampValue": "2026-06-12T15:32:03.310Z"
+        },
+        "type": {
+          "stringValue": "genre"
+        },
+        "genreB": {
+          "mapValue": {
+            "fields": {
+              "name": {
+                "stringValue": "Merengue"
+              },
+              "emoji": {
+                "stringValue": "💃"
+              },
+              "votes": {
+                "integerValue": "0"
+              },
+              "tipTotal": {
+                "integerValue": "0"
+              }
+            }
+          }
+        },
+        "winner": {
+          "stringValue": "Merengue"
+        },
+        "genreA": {
+          "mapValue": {
+            "fields": {
+              "name": {
+                "stringValue": "Bachata"
+              },
+              "votes": {
+                "integerValue": "0"
+              },
+              "emoji": {
+                "stringValue": "❤️"
+              },
+              "tipTotal": {
+                "integerValue": "0"
+              }
+            }
+          }
+        },
+        "endsAt": {
+          "timestampValue": "2026-06-12T15:30:23.515Z"
+        },
+        "winnerVotes": {
+          "integerValue": "0"
+        },
+        "status": {
+          "stringValue": "completed"
+        },
+        "startedAt": {
+          "timestampValue": "2026-06-12T15:30:42.024Z"
+        }
+      },
+      "createTime": "2026-06-12T15:30:42.072549Z",
+      "updateTime": "2026-06-12T15:32:03.352501Z"
+    },
+    {
+      "name": "projects/tocaahora-1cf7f/databases/(default)/documents/challenges/iPRFbiorEXVwg3xexpPh",
+      "fields": {
+        "songB": {
+          "mapValue": {
+            "fields": {
+              "id": {
+                "stringValue": "OweFLYsd8ZJYNwPr3qyd"
+              },
+              "artist": {
+                "stringValue": "Maluma ft. Yandel"
+              },
+              "title": {
+                "stringValue": "El Perdedor"
+              },
+              "votes": {
+                "integerValue": "1"
+              },
+              "tipTotal": {
+                "integerValue": "0"
+              }
+            }
+          }
+        },
+        "startedAt": {
+          "timestampValue": "2026-04-26T01:08:20.562Z"
+        },
+        "status": {
+          "stringValue": "completed"
+        },
+        "winnerVotes": {
+          "integerValue": "1"
+        },
+        "winner": {
+          "stringValue": "OweFLYsd8ZJYNwPr3qyd"
+        },
+        "songA": {
+          "mapValue": {
+            "fields": {
+              "tipTotal": {
+                "integerValue": "0"
+              },
+              "votes": {
+                "integerValue": "0"
+              },
+              "title": {
+                "stringValue": "El Tiburón"
+              },
+              "id": {
+                "stringValue": "NREBgXlxABsMqhKcNleT"
+              },
+              "artist": {
+                "stringValue": "Proyecto Uno"
+              }
+            }
+          }
+        },
+        "endsAt": {
+          "timestampValue": "2026-04-26T01:10:20.070Z"
+        },
+        "eventId": {
+          "stringValue": "OwoRl9LIShBUw2IQFjqw"
+        },
+        "type": {
+          "stringValue": "song"
+        },
+        "completedAt": {
+          "timestampValue": "2026-04-26T01:08:59.277Z"
+        },
+        "duration": {
+          "integerValue": "120"
+        }
+      },
+      "createTime": "2026-04-26T01:08:20.605979Z",
+      "updateTime": "2026-04-26T01:08:59.311501Z"
+    },
+    {
+      "name": "projects/tocaahora-1cf7f/databases/(default)/documents/challenges/j9KuXR9iQWjQRYx7WUAk",
+      "fields": {
+        "startedAt": {
+          "timestampValue": "2026-06-12T19:21:39.557Z"
+        },
+        "status": {
+          "stringValue": "completed"
+        },
+        "winnerVotes": {
+          "integerValue": "1"
+        },
+        "genreA": {
+          "mapValue": {
+            "fields": {
+              "name": {
+                "stringValue": "Merengue"
+              },
+              "votes": {
+                "integerValue": "0"
+              },
+              "emoji": {
+                "stringValue": "💃"
+              },
+              "tipTotal": {
+                "integerValue": "0"
+              }
+            }
+          }
+        },
+        "endsAt": {
+          "timestampValue": "2026-06-12T19:23:39.280Z"
+        },
+        "winner": {
+          "stringValue": "Dembow"
+        },
+        "genreB": {
+          "mapValue": {
+            "fields": {
+              "name": {
+                "stringValue": "Dembow"
+              },
+              "emoji": {
+                "stringValue": "⚡"
+              },
+              "votes": {
+                "integerValue": "1"
+              },
+              "tipTotal": {
+                "integerValue": "0"
+              }
+            }
+          }
+        },
+        "eventId": {
+          "stringValue": "WIRuNn0DirVdxf1uB4RW"
+        },
+        "type": {
+          "stringValue": "genre"
+        },
+        "completedAt": {
+          "timestampValue": "2026-06-12T19:21:48.514Z"
+        },
+        "duration": {
+          "integerValue": "120"
+        }
+      },
+      "createTime": "2026-06-12T19:21:39.593636Z",
+      "updateTime": "2026-06-12T19:21:48.640591Z"
+    },
+    {
+      "name": "projects/tocaahora-1cf7f/databases/(default)/documents/challenges/l4YvPkaArRr3JzJCpJB3",
+      "fields": {
+        "eventId": {
+          "stringValue": "OwoRl9LIShBUw2IQFjqw"
+        },
+        "type": {
+          "stringValue": "genre"
+        },
+        "completedAt": {
+          "timestampValue": "2026-06-12T15:32:54.592Z"
+        },
+        "genreB": {
+          "mapValue": {
+            "fields": {
+              "name": {
+                "stringValue": "Merengue"
+              },
+              "emoji": {
+                "stringValue": "💃"
+              },
+              "votes": {
+                "integerValue": "0"
+              },
+              "tipTotal": {
+                "integerValue": "0"
+              }
+            }
+          }
+        },
+        "isOvertime": {
+          "booleanValue": true
+        },
+        "duration": {
+          "integerValue": "120"
+        },
+        "startedAt": {
+          "timestampValue": "2026-06-12T15:31:43.828Z"
+        },
+        "status": {
+          "stringValue": "completed"
+        },
+        "winnerVotes": {
+          "integerValue": "0"
+        },
+        "winner": {
+          "stringValue": "Mambo"
+        },
+        "genreA": {
+          "mapValue": {
+            "fields": {
+              "name": {
+                "stringValue": "Mambo"
+              },
+              "votes": {
+                "integerValue": "0"
+              },
+              "emoji": {
+                "stringValue": "🎵"
+              },
+              "tipTotal": {
+                "integerValue": "0"
+              }
+            }
+          }
+        },
+        "endsAt": {
+          "timestampValue": "2026-06-12T15:31:38.344Z"
+        }
+      },
+      "createTime": "2026-06-12T15:31:43.961965Z",
+      "updateTime": "2026-06-12T15:32:54.632810Z"
+    },
+    {
+      "name": "projects/tocaahora-1cf7f/databases/(default)/documents/challenges/lMdET3aqnIrn64euzXgf",
+      "fields": {
+        "eventId": {
+          "stringValue": "OwoRl9LIShBUw2IQFjqw"
+        },
+        "completedAt": {
+          "timestampValue": "2026-01-19T02:26:12.120Z"
+        },
+        "duration": {
+          "integerValue": "600"
+        },
+        "startedAt": {
+          "timestampValue": "2026-01-19T02:25:48.441Z"
+        },
+        "songB": {
+          "mapValue": {
+            "fields": {
+              "artist": {
+                "stringValue": "Maluma ft. Yandel"
+              },
+              "id": {
+                "stringValue": "OweFLYsd8ZJYNwPr3qyd"
+              },
+              "votes": {
+                "integerValue": "0"
+              },
+              "title": {
+                "stringValue": "El Perdedor"
+              },
+              "tipTotal": {
+                "integerValue": "0"
+              }
+            }
+          }
+        },
+        "status": {
+          "stringValue": "completed"
+        },
+        "winnerVotes": {
+          "integerValue": "0"
+        },
+        "endsAt": {
+          "timestampValue": "2026-01-19T02:35:48.525Z"
+        },
+        "songA": {
+          "mapValue": {
+            "fields": {
+              "title": {
+                "stringValue": "El Perdedor"
+              },
+              "votes": {
+                "integerValue": "0"
+              },
+              "tipTotal": {
+                "integerValue": "0"
+              },
+              "id": {
+                "stringValue": "OweFLYsd8ZJYNwPr3qyd"
+              },
+              "artist": {
+                "stringValue": "Maluma ft. Yandel"
+              }
+            }
+          }
+        },
+        "winner": {
+          "stringValue": "OweFLYsd8ZJYNwPr3qyd"
+        }
+      },
+      "createTime": "2026-01-19T02:25:48.484087Z",
+      "updateTime": "2026-01-19T02:26:12.165488Z"
+    },
+    {
+      "name": "projects/tocaahora-1cf7f/databases/(default)/documents/challenges/lkD7ai8cUD05jtBukvk2",
+      "fields": {
+        "eventId": {
+          "stringValue": "VzVJydhHnQLEkvdLRGLO"
+        },
+        "completedAt": {
+          "timestampValue": "2026-01-07T23:17:32.188Z"
+        },
+        "duration": {
+          "integerValue": "120"
+        },
+        "endsAt": {
+          "timestampValue": "2026-01-07T23:19:17.007Z"
+        },
+        "winner": {
+          "stringValue": "4FhDls2qi9hXPjJjVjy2"
+        },
+        "songA": {
+          "mapValue": {
+            "fields": {
+              "tipTotal": {
+                "integerValue": "0"
+              },
+              "id": {
+                "stringValue": "0AEa02Xuyr3vUa9Z9qez"
+              },
+              "title": {
+                "stringValue": "Vive."
+              },
+              "votes": {
+                "integerValue": "0"
+              }
+            }
+          }
+        },
+        "startedAt": {
+          "timestampValue": "2026-01-07T23:17:17.478Z"
+        },
+        "songB": {
+          "mapValue": {
+            "fields": {
+              "id": {
+                "stringValue": "4FhDls2qi9hXPjJjVjy2"
+              },
+              "tipTotal": {
+                "integerValue": "0"
+              },
+              "votes": {
+                "integerValue": "1"
+              },
+              "title": {
+                "stringValue": "Idilio"
+              }
+            }
+          }
+        },
+        "status": {
+          "stringValue": "completed"
+        }
+      },
+      "createTime": "2026-01-07T23:17:17.520892Z",
+      "updateTime": "2026-01-07T23:17:32.231248Z"
+    },
+    {
+      "name": "projects/tocaahora-1cf7f/databases/(default)/documents/challenges/llH9tkihD73Kab1Fk3Kw",
+      "fields": {
+        "isOvertime": {
+          "booleanValue": true
+        },
+        "duration": {
+          "integerValue": "120"
+        },
+        "genreB": {
+          "mapValue": {
+            "fields": {
+              "name": {
+                "stringValue": "Pop"
+              },
+              "votes": {
+                "integerValue": "0"
+              },
+              "emoji": {
+                "stringValue": "🎵"
+              },
+              "tipTotal": {
+                "integerValue": "0"
+              }
+            }
+          }
+        },
+        "eventId": {
+          "stringValue": "OwoRl9LIShBUw2IQFjqw"
+        },
+        "completedAt": {
+          "timestampValue": "2026-02-07T00:10:41.448Z"
+        },
+        "type": {
+          "stringValue": "genre"
+        },
+        "genreA": {
+          "mapValue": {
+            "fields": {
+              "name": {
+                "stringValue": "Bachata"
+              },
+              "votes": {
+                "integerValue": "0"
+              },
+              "emoji": {
+                "stringValue": "❤️"
+              },
+              "tipTotal": {
+                "integerValue": "0"
+              }
+            }
+          }
+        },
+        "endsAt": {
+          "timestampValue": "2026-02-07T00:10:42.310Z"
+        },
+        "winner": {
+          "stringValue": "Bachata"
+        },
+        "winnerVotes": {
+          "integerValue": "0"
+        },
+        "status": {
+          "stringValue": "completed"
+        },
+        "startedAt": {
+          "timestampValue": "2026-02-07T00:10:01.469Z"
+        }
+      },
+      "createTime": "2026-02-07T00:10:01.501855Z",
+      "updateTime": "2026-02-07T00:10:41.484597Z"
+    },
+    {
+      "name": "projects/tocaahora-1cf7f/databases/(default)/documents/challenges/m3fKkNAF05S7q5s6ElLg",
+      "fields": {
+        "duration": {
+          "integerValue": "120"
+        },
+        "eventId": {
+          "stringValue": "OwoRl9LIShBUw2IQFjqw"
+        },
+        "type": {
+          "stringValue": "song"
+        },
+        "completedAt": {
+          "timestampValue": "2026-06-12T17:20:11.896Z"
+        },
+        "status": {
+          "stringValue": "completed"
+        },
+        "startedAt": {
+          "timestampValue": "2026-06-12T17:19:46.284Z"
+        },
+        "songB": {
+          "mapValue": {
+            "fields": {
+              "tipTotal": {
+                "integerValue": "0"
+              },
+              "votes": {
+                "integerValue": "0"
+              },
+              "title": {
+                "stringValue": "A Pedir Su Mano"
+              },
+              "artist": {
+                "stringValue": "Juan Luis Guerra"
+              },
+              "id": {
+                "stringValue": "NFOi9mG27d0ICeWMiFyx"
+              }
+            }
+          }
+        },
+        "endsAt": {
+          "timestampValue": "2026-06-12T17:21:46.358Z"
+        },
+        "winner": {
+          "stringValue": "2cNho6aOr9Fqrq0s9S7V"
+        },
+        "songA": {
+          "mapValue": {
+            "fields": {
+              "tipTotal": {
+                "integerValue": "0"
+              },
+              "votes": {
+                "integerValue": "1"
+              },
+              "title": {
+                "stringValue": "La Jumba"
+              },
+              "id": {
+                "stringValue": "2cNho6aOr9Fqrq0s9S7V"
+              },
+              "artist": {
+                "stringValue": "Omega"
+              }
+            }
+          }
+        },
+        "winnerVotes": {
+          "integerValue": "1"
+        }
+      },
+      "createTime": "2026-06-12T17:19:46.321509Z",
+      "updateTime": "2026-06-12T17:20:11.934400Z"
+    },
+    {
+      "name": "projects/tocaahora-1cf7f/databases/(default)/documents/challenges/mOnG0Bi37bTnnkNh3fep",
+      "fields": {
+        "winner": {
+          "stringValue": "Salsa"
+        },
+        "genreA": {
+          "mapValue": {
+            "fields": {
+              "name": {
+                "stringValue": "Salsa"
+              },
+              "emoji": {
+                "stringValue": "🔥"
+              },
+              "votes": {
+                "integerValue": "1"
+              },
+              "tipTotal": {
+                "integerValue": "0"
+              }
+            }
+          }
+        },
+        "endsAt": {
+          "timestampValue": "2026-02-08T01:39:26.691Z"
+        },
+        "winnerVotes": {
+          "integerValue": "1"
+        },
+        "status": {
+          "stringValue": "completed"
+        },
+        "startedAt": {
+          "timestampValue": "2026-02-08T01:34:26.696Z"
+        },
+        "duration": {
+          "integerValue": "300"
+        },
+        "type": {
+          "stringValue": "genre"
+        },
+        "completedAt": {
+          "timestampValue": "2026-02-08T01:34:47.036Z"
+        },
+        "eventId": {
+          "stringValue": "OwoRl9LIShBUw2IQFjqw"
+        },
+        "genreB": {
+          "mapValue": {
+            "fields": {
+              "name": {
+                "stringValue": "Pop"
+              },
+              "emoji": {
+                "stringValue": "🎵"
+              },
+              "votes": {
+                "integerValue": "0"
+              },
+              "tipTotal": {
+                "integerValue": "0"
+              }
+            }
+          }
+        }
+      },
+      "createTime": "2026-02-08T01:34:26.733452Z",
+      "updateTime": "2026-02-08T01:34:47.081787Z"
+    },
+    {
+      "name": "projects/tocaahora-1cf7f/databases/(default)/documents/challenges/ntHTsNTSIOAIUbK4pCbm",
+      "fields": {
+        "eventId": {
+          "stringValue": "OwoRl9LIShBUw2IQFjqw"
+        },
+        "completedAt": {
+          "timestampValue": "2026-01-11T22:53:28.394Z"
+        },
+        "duration": {
+          "integerValue": "120"
+        },
+        "songB": {
+          "mapValue": {
+            "fields": {
+              "title": {
+                "stringValue": "A Pedir Su Mano"
+              },
+              "votes": {
+                "integerValue": "1"
+              },
+              "tipTotal": {
+                "integerValue": "0"
+              },
+              "id": {
+                "stringValue": "NFOi9mG27d0ICeWMiFyx"
+              }
+            }
+          }
+        },
+        "startedAt": {
+          "timestampValue": "2026-01-11T22:53:15.863Z"
+        },
+        "status": {
+          "stringValue": "completed"
+        },
+        "winnerVotes": {
+          "integerValue": "1"
+        },
+        "songA": {
+          "mapValue": {
+            "fields": {
+              "tipTotal": {
+                "integerValue": "0"
+              },
+              "id": {
+                "stringValue": "AhxVIqWlYyHdkyP13P8S"
+              },
+              "title": {
+                "stringValue": "Darte un Beso"
+              },
+              "votes": {
+                "integerValue": "0"
+              }
+            }
+          }
+        },
+        "winner": {
+          "stringValue": "NFOi9mG27d0ICeWMiFyx"
+        },
+        "endsAt": {
+          "timestampValue": "2026-01-11T22:55:15.797Z"
+        }
+      },
+      "createTime": "2026-01-11T22:53:15.895920Z",
+      "updateTime": "2026-01-11T22:53:28.426139Z"
+    },
+    {
+      "name": "projects/tocaahora-1cf7f/databases/(default)/documents/challenges/pbq29HGiaBYkVLLmLc3s",
+      "fields": {
+        "completedAt": {
+          "timestampValue": "2026-01-08T19:47:52.425Z"
+        },
+        "eventId": {
+          "stringValue": "OwoRl9LIShBUw2IQFjqw"
+        },
+        "duration": {
+          "integerValue": "120"
+        },
+        "endsAt": {
+          "timestampValue": "2026-01-08T19:48:59.425Z"
+        },
+        "winner": {
+          "stringValue": "AhxVIqWlYyHdkyP13P8S"
+        },
+        "songA": {
+          "mapValue": {
+            "fields": {
+              "tipTotal": {
+                "integerValue": "0"
+              },
+              "id": {
+                "stringValue": "AhxVIqWlYyHdkyP13P8S"
+              },
+              "title": {
+                "stringValue": "Darte un Beso"
+              },
+              "votes": {
+                "integerValue": "1"
+              }
+            }
+          }
+        },
+        "startedAt": {
+          "timestampValue": "2026-01-08T19:46:59.524Z"
+        },
+        "songB": {
+          "mapValue": {
+            "fields": {
+              "id": {
+                "stringValue": "XBH0Q0cywLxdOByeshYK"
+              },
+              "tipTotal": {
+                "integerValue": "0"
+              },
+              "votes": {
+                "integerValue": "1"
+              },
+              "title": {
+                "stringValue": "Bailando"
+              }
+            }
+          }
+        },
+        "status": {
+          "stringValue": "completed"
+        }
+      },
+      "createTime": "2026-01-08T19:46:59.556015Z",
+      "updateTime": "2026-01-08T19:47:52.460017Z"
+    },
+    {
+      "name": "projects/tocaahora-1cf7f/databases/(default)/documents/challenges/pinxXlyes9c0yXEpn4QS",
+      "fields": {
+        "songA": {
+          "mapValue": {
+            "fields": {
+              "tipTotal": {
+                "integerValue": "0"
+              },
+              "title": {
+                "stringValue": "La Gozadera"
+              },
+              "votes": {
+                "integerValue": "1"
+              },
+              "id": {
+                "stringValue": "Sp5KERG8LK6GdjLQspb9"
+              },
+              "artist": {
+                "stringValue": "Gente de Zona"
+              }
+            }
+          }
+        },
+        "winner": {
+          "stringValue": "Sp5KERG8LK6GdjLQspb9"
+        },
+        "endsAt": {
+          "timestampValue": "2026-01-28T15:39:17.001Z"
+        },
+        "winnerVotes": {
+          "integerValue": "1"
+        },
+        "status": {
+          "stringValue": "completed"
+        },
+        "songB": {
+          "mapValue": {
+            "fields": {
+              "votes": {
+                "integerValue": "1"
+              },
+              "title": {
+                "stringValue": "Darte un Beso"
+              },
+              "tipTotal": {
+                "integerValue": "0"
+              },
+              "id": {
+                "stringValue": "AhxVIqWlYyHdkyP13P8S"
+              },
+              "artist": {
+                "stringValue": "Prince Royce"
+              }
+            }
+          }
+        },
+        "startedAt": {
+          "timestampValue": "2026-01-28T15:36:48.138Z"
+        },
+        "duration": {
+          "integerValue": "120"
+        },
+        "isOvertime": {
+          "booleanValue": true
+        },
+        "completedAt": {
+          "timestampValue": "2026-01-28T15:39:16.384Z"
+        },
+        "eventId": {
+          "stringValue": "OwoRl9LIShBUw2IQFjqw"
+        }
+      },
+      "createTime": "2026-01-28T15:36:48.171825Z",
+      "updateTime": "2026-01-28T15:39:16.420832Z"
+    },
+    {
+      "name": "projects/tocaahora-1cf7f/databases/(default)/documents/challenges/pso5PJfWNRZvzYReG4qt",
+      "fields": {
+        "duration": {
+          "integerValue": "120"
+        },
+        "genreB": {
+          "mapValue": {
+            "fields": {
+              "tipTotal": {
+                "integerValue": "0"
+              },
+              "name": {
+                "stringValue": "Salsa"
+              },
+              "votes": {
+                "integerValue": "0"
+              },
+              "emoji": {
+                "stringValue": "🔥"
+              }
+            }
+          }
+        },
+        "eventId": {
+          "stringValue": "OwoRl9LIShBUw2IQFjqw"
+        },
+        "type": {
+          "stringValue": "genre"
+        },
+        "completedAt": {
+          "timestampValue": "2026-02-05T23:47:52.544Z"
+        },
+        "endsAt": {
+          "timestampValue": "2026-02-05T23:49:32.733Z"
+        },
+        "genreA": {
+          "mapValue": {
+            "fields": {
+              "name": {
+                "stringValue": "Bachata"
+              },
+              "votes": {
+                "integerValue": "1"
+              },
+              "emoji": {
+                "stringValue": "❤️"
+              },
+              "tipTotal": {
+                "integerValue": "0"
+              }
+            }
+          }
+        },
+        "winner": {
+          "stringValue": "Bachata"
+        },
+        "winnerVotes": {
+          "integerValue": "1"
+        },
+        "status": {
+          "stringValue": "completed"
+        },
+        "startedAt": {
+          "timestampValue": "2026-02-05T23:47:33.210Z"
+        }
+      },
+      "createTime": "2026-02-05T23:47:33.247671Z",
+      "updateTime": "2026-02-05T23:47:52.581935Z"
+    },
+    {
+      "name": "projects/tocaahora-1cf7f/databases/(default)/documents/challenges/qHBqi1Mpxwcs8RI2Nnfi",
+      "fields": {
+        "genreA": {
+          "mapValue": {
+            "fields": {
+              "tipTotal": {
+                "integerValue": "0"
+              },
+              "name": {
+                "stringValue": "Salsa"
+              },
+              "emoji": {
+                "stringValue": "🔥"
+              },
+              "votes": {
+                "integerValue": "0"
+              }
+            }
+          }
+        },
+        "endsAt": {
+          "timestampValue": "2026-03-13T00:51:23.024Z"
+        },
+        "winner": {
+          "stringValue": "Pop"
+        },
+        "winnerVotes": {
+          "integerValue": "0"
+        },
+        "status": {
+          "stringValue": "completed"
+        },
+        "startedAt": {
+          "timestampValue": "2026-03-13T00:50:48.621Z"
+        },
+        "duration": {
+          "integerValue": "120"
+        },
+        "isOvertime": {
+          "booleanValue": true
+        },
+        "genreB": {
+          "mapValue": {
+            "fields": {
+              "tipTotal": {
+                "integerValue": "0"
+              },
+              "name": {
+                "stringValue": "Pop"
+              },
+              "emoji": {
+                "stringValue": "🎵"
+              },
+              "votes": {
+                "integerValue": "0"
+              }
+            }
+          }
+        },
+        "eventId": {
+          "stringValue": "OwoRl9LIShBUw2IQFjqw"
+        },
+        "completedAt": {
+          "timestampValue": "2026-03-13T00:50:56.905Z"
+        },
+        "type": {
+          "stringValue": "genre"
+        }
+      },
+      "createTime": "2026-03-13T00:50:48.667437Z",
+      "updateTime": "2026-03-13T00:50:56.954139Z"
+    },
+    {
+      "name": "projects/tocaahora-1cf7f/databases/(default)/documents/challenges/rCpIDo33NcvAJy7GkHv5",
+      "fields": {
+        "eventId": {
+          "stringValue": "OwoRl9LIShBUw2IQFjqw"
+        },
+        "completedAt": {
+          "timestampValue": "2026-01-08T21:09:04.813Z"
+        },
+        "duration": {
+          "integerValue": "120"
+        },
+        "winner": {
+          "stringValue": "Sp5KERG8LK6GdjLQspb9"
+        },
+        "songA": {
+          "mapValue": {
+            "fields": {
+              "title": {
+                "stringValue": "A Pedir Su Mano"
+              },
+              "votes": {
+                "integerValue": "0"
+              },
+              "tipTotal": {
+                "integerValue": "0"
+              },
+              "id": {
+                "stringValue": "NFOi9mG27d0ICeWMiFyx"
+              }
+            }
+          }
+        },
+        "endsAt": {
+          "timestampValue": "2026-01-08T19:56:47.839Z"
+        },
+        "songB": {
+          "mapValue": {
+            "fields": {
+              "tipTotal": {
+                "integerValue": "0"
+              },
+              "id": {
+                "stringValue": "Sp5KERG8LK6GdjLQspb9"
+              },
+              "title": {
+                "stringValue": "La Gozadera"
+              },
+              "votes": {
+                "integerValue": "1"
+              }
+            }
+          }
+        },
+        "startedAt": {
+          "timestampValue": "2026-01-08T19:54:47.954Z"
+        },
+        "status": {
+          "stringValue": "completed"
+        }
+      },
+      "createTime": "2026-01-08T19:54:47.984838Z",
+      "updateTime": "2026-01-08T21:09:04.861103Z"
+    },
+    {
+      "name": "projects/tocaahora-1cf7f/databases/(default)/documents/challenges/ruzeFJb6805X7GKn9e1M",
+      "fields": {
+        "status": {
+          "stringValue": "completed"
+        },
+        "startedAt": {
+          "timestampValue": "2026-02-05T23:58:17.318Z"
+        },
+        "winner": {
+          "stringValue": "Pop"
+        },
+        "endsAt": {
+          "timestampValue": "2026-02-06T00:00:17.242Z"
+        },
+        "genreA": {
+          "mapValue": {
+            "fields": {
+              "tipTotal": {
+                "integerValue": "0"
+              },
+              "name": {
+                "stringValue": "Pop"
+              },
+              "votes": {
+                "integerValue": "1"
+              },
+              "emoji": {
+                "stringValue": "🎵"
+              }
+            }
+          }
+        },
+        "winnerVotes": {
+          "integerValue": "1"
+        },
+        "duration": {
+          "integerValue": "120"
+        },
+        "eventId": {
+          "stringValue": "OwoRl9LIShBUw2IQFjqw"
+        },
+        "completedAt": {
+          "timestampValue": "2026-02-05T23:58:31.968Z"
+        },
+        "type": {
+          "stringValue": "genre"
+        },
+        "genreB": {
+          "mapValue": {
+            "fields": {
+              "name": {
+                "stringValue": "Salsa"
+              },
+              "emoji": {
+                "stringValue": "🔥"
+              },
+              "votes": {
+                "integerValue": "0"
+              },
+              "tipTotal": {
+                "integerValue": "0"
+              }
+            }
+          }
+        }
+      },
+      "createTime": "2026-02-05T23:58:17.347697Z",
+      "updateTime": "2026-02-05T23:58:32.000775Z"
+    },
+    {
+      "name": "projects/tocaahora-1cf7f/databases/(default)/documents/challenges/sBNy8cp4QRSz9IeuGtR5",
+      "fields": {
+        "winnerVotes": {
+          "integerValue": "2"
+        },
+        "winner": {
+          "stringValue": "Salsa"
+        },
+        "genreA": {
+          "mapValue": {
+            "fields": {
+              "tipTotal": {
+                "integerValue": "0"
+              },
+              "name": {
+                "stringValue": "Merengue"
+              },
+              "votes": {
+                "integerValue": "0"
+              },
+              "emoji": {
+                "stringValue": "💃"
+              }
+            }
+          }
+        },
+        "endsAt": {
+          "timestampValue": "2026-06-12T15:34:27.782Z"
+        },
+        "startedAt": {
+          "timestampValue": "2026-06-12T15:33:08.401Z"
+        },
+        "status": {
+          "stringValue": "completed"
+        },
+        "eventId": {
+          "stringValue": "OwoRl9LIShBUw2IQFjqw"
+        },
+        "type": {
+          "stringValue": "genre"
+        },
+        "completedAt": {
+          "timestampValue": "2026-06-12T15:34:19.763Z"
+        },
+        "genreB": {
+          "mapValue": {
+            "fields": {
+              "name": {
+                "stringValue": "Salsa"
+              },
+              "votes": {
+                "integerValue": "2"
+              },
+              "emoji": {
+                "stringValue": "🔥"
+              },
+              "tipTotal": {
+                "integerValue": "0"
+              }
+            }
+          }
+        },
+        "duration": {
+          "integerValue": "180"
+        }
+      },
+      "createTime": "2026-06-12T15:33:08.440589Z",
+      "updateTime": "2026-06-12T15:34:19.805364Z"
+    },
+    {
+      "name": "projects/tocaahora-1cf7f/databases/(default)/documents/challenges/sfCBwBdrWoZ40e32RzKL",
+      "fields": {
+        "status": {
+          "stringValue": "completed"
+        },
+        "startedAt": {
+          "timestampValue": "2026-02-16T00:18:33.371Z"
+        },
+        "genreA": {
+          "mapValue": {
+            "fields": {
+              "tipTotal": {
+                "integerValue": "0"
+              },
+              "name": {
+                "stringValue": "Bachata"
+              },
+              "emoji": {
+                "stringValue": "❤️"
+              },
+              "votes": {
+                "integerValue": "1"
+              }
+            }
+          }
+        },
+        "endsAt": {
+          "timestampValue": "2026-02-16T00:20:32.962Z"
+        },
+        "winner": {
+          "stringValue": "Bachata"
+        },
+        "winnerVotes": {
+          "integerValue": "1"
+        },
+        "duration": {
+          "integerValue": "120"
+        },
+        "genreB": {
+          "mapValue": {
+            "fields": {
+              "name": {
+                "stringValue": "Salsa"
+              },
+              "votes": {
+                "integerValue": "0"
+              },
+              "emoji": {
+                "stringValue": "🔥"
+              },
+              "tipTotal": {
+                "integerValue": "0"
+              }
+            }
+          }
+        },
+        "eventId": {
+          "stringValue": "OwoRl9LIShBUw2IQFjqw"
+        },
+        "type": {
+          "stringValue": "genre"
+        },
+        "completedAt": {
+          "timestampValue": "2026-02-16T00:18:53.194Z"
+        }
+      },
+      "createTime": "2026-02-16T00:18:33.413240Z",
+      "updateTime": "2026-02-16T00:18:53.232122Z"
+    },
+    {
+      "name": "projects/tocaahora-1cf7f/databases/(default)/documents/challenges/t0Xjoa1Z1yhZlLrpUI0i",
+      "fields": {
+        "duration": {
+          "integerValue": "120"
+        },
+        "eventId": {
+          "stringValue": "OwoRl9LIShBUw2IQFjqw"
+        },
+        "type": {
+          "stringValue": "genre"
+        },
+        "completedAt": {
+          "timestampValue": "2026-02-05T22:30:57.741Z"
+        },
+        "genreB": {
+          "mapValue": {
+            "fields": {
+              "name": {
+                "stringValue": "Bachata"
+              },
+              "votes": {
+                "integerValue": "0"
+              },
+              "emoji": {
+                "stringValue": "❤️"
+              },
+              "tipTotal": {
+                "integerValue": "0"
+              }
+            }
+          }
+        },
+        "status": {
+          "stringValue": "completed"
+        },
+        "startedAt": {
+          "timestampValue": "2026-02-05T22:30:46.458Z"
+        },
+        "winner": {
+          "stringValue": "Salsa"
+        },
+        "genreA": {
+          "mapValue": {
+            "fields": {
+              "name": {
+                "stringValue": "Salsa"
+              },
+              "votes": {
+                "integerValue": "1"
+              },
+              "emoji": {
+                "stringValue": "🔥"
+              },
+              "tipTotal": {
+                "integerValue": "0"
+              }
+            }
+          }
+        },
+        "endsAt": {
+          "timestampValue": "2026-02-05T22:32:46.387Z"
+        },
+        "winnerVotes": {
+          "integerValue": "1"
+        }
+      },
+      "createTime": "2026-02-05T22:30:46.489780Z",
+      "updateTime": "2026-02-05T22:30:57.779097Z"
+    },
+    {
+      "name": "projects/tocaahora-1cf7f/databases/(default)/documents/challenges/t3Mfzyhrrn2CdZdalAw4",
+      "fields": {
+        "isOvertime": {
+          "booleanValue": true
+        },
+        "duration": {
+          "integerValue": "120"
+        },
+        "type": {
+          "stringValue": "song"
+        },
+        "completedAt": {
+          "timestampValue": "2026-06-12T17:21:57.440Z"
+        },
+        "eventId": {
+          "stringValue": "OwoRl9LIShBUw2IQFjqw"
+        },
+        "endsAt": {
+          "timestampValue": "2026-06-12T17:22:08.063Z"
+        },
+        "winner": {
+          "stringValue": "NFOi9mG27d0ICeWMiFyx"
+        },
+        "songA": {
+          "mapValue": {
+            "fields": {
+              "artist": {
+                "stringValue": "Juan Luis Guerra"
+              },
+              "id": {
+                "stringValue": "NFOi9mG27d0ICeWMiFyx"
+              },
+              "title": {
+                "stringValue": "A Pedir Su Mano"
+              },
+              "votes": {
+                "integerValue": "1"
+              },
+              "tipTotal": {
+                "integerValue": "0"
+              }
+            }
+          }
+        },
+        "winnerVotes": {
+          "integerValue": "1"
+        },
+        "status": {
+          "stringValue": "completed"
+        },
+        "startedAt": {
+          "timestampValue": "2026-06-12T17:20:52.943Z"
+        },
+        "songB": {
+          "mapValue": {
+            "fields": {
+              "id": {
+                "stringValue": "mMJ7cb0etsicRoJ6yEFH"
+              },
+              "artist": {
+                "stringValue": "Juan Luis Guerra"
+              },
+              "tipTotal": {
+                "integerValue": "0"
+              },
+              "votes": {
+                "integerValue": "0"
+              },
+              "title": {
+                "stringValue": "La Bilirrubina"
+              }
+            }
+          }
+        }
+      },
+      "createTime": "2026-06-12T17:20:52.983590Z",
+      "updateTime": "2026-06-12T17:21:57.486428Z"
+    },
+    {
+      "name": "projects/tocaahora-1cf7f/databases/(default)/documents/challenges/tA0wEatq17a0MPlnCVTV",
+      "fields": {
+        "winnerVotes": {
+          "integerValue": "1"
+        },
+        "endsAt": {
+          "timestampValue": "2026-03-12T23:35:44.430Z"
+        },
+        "genreA": {
+          "mapValue": {
+            "fields": {
+              "name": {
+                "stringValue": "Bachata"
+              },
+              "votes": {
+                "integerValue": "1"
+              },
+              "emoji": {
+                "stringValue": "❤️"
+              },
+              "tipTotal": {
+                "integerValue": "0"
+              }
+            }
+          }
+        },
+        "winner": {
+          "stringValue": "Bachata"
+        },
+        "startedAt": {
+          "timestampValue": "2026-03-12T23:33:42.853Z"
+        },
+        "status": {
+          "stringValue": "completed"
+        },
+        "genreB": {
+          "mapValue": {
+            "fields": {
+              "tipTotal": {
+                "integerValue": "0"
+              },
+              "name": {
+                "stringValue": "Salsa"
+              },
+              "emoji": {
+                "stringValue": "🔥"
+              },
+              "votes": {
+                "integerValue": "0"
+              }
+            }
+          }
+        },
+        "eventId": {
+          "stringValue": "OwoRl9LIShBUw2IQFjqw"
+        },
+        "type": {
+          "stringValue": "genre"
+        },
+        "completedAt": {
+          "timestampValue": "2026-03-12T23:33:53.612Z"
+        },
+        "duration": {
+          "integerValue": "120"
+        }
+      },
+      "createTime": "2026-03-12T23:33:42.894544Z",
+      "updateTime": "2026-03-12T23:33:53.652901Z"
+    },
+    {
+      "name": "projects/tocaahora-1cf7f/databases/(default)/documents/challenges/uPb6jODZq0gMRTMSUiWk",
+      "fields": {
+        "duration": {
+          "integerValue": "120"
+        },
+        "eventId": {
+          "stringValue": "OwoRl9LIShBUw2IQFjqw"
+        },
+        "completedAt": {
+          "timestampValue": "2026-01-12T23:36:21.700Z"
+        },
+        "endsAt": {
+          "timestampValue": "2026-01-12T23:36:20.763Z"
+        },
+        "songA": {
+          "mapValue": {
+            "fields": {
+              "id": {
+                "stringValue": "AhxVIqWlYyHdkyP13P8S"
+              },
+              "artist": {
+                "stringValue": "Prince Royce"
+              },
+              "tipTotal": {
+                "integerValue": "0"
+              },
+              "votes": {
+                "integerValue": "0"
+              },
+              "title": {
+                "stringValue": "Darte un Beso"
+              }
+            }
+          }
+        },
+        "winner": {
+          "stringValue": "XBH0Q0cywLxdOByeshYK"
+        },
+        "winnerVotes": {
+          "integerValue": "1"
+        },
+        "status": {
+          "stringValue": "completed"
+        },
+        "startedAt": {
+          "timestampValue": "2026-01-12T23:34:21.199Z"
+        },
+        "songB": {
+          "mapValue": {
+            "fields": {
+              "artist": {
+                "stringValue": "Enrique Iglesias"
+              },
+              "id": {
+                "stringValue": "XBH0Q0cywLxdOByeshYK"
+              },
+              "tipTotal": {
+                "integerValue": "0"
+              },
+              "title": {
+                "stringValue": "Bailando"
+              },
+              "votes": {
+                "integerValue": "1"
+              }
+            }
+          }
+        }
+      },
+      "createTime": "2026-01-12T23:34:21.231691Z",
+      "updateTime": "2026-01-12T23:36:21.731926Z"
+    },
+    {
+      "name": "projects/tocaahora-1cf7f/databases/(default)/documents/challenges/ujQviYuX5ZIvB0G7w6A4",
+      "fields": {
+        "genreB": {
+          "mapValue": {
+            "fields": {
+              "tipTotal": {
+                "integerValue": "0"
+              },
+              "name": {
+                "stringValue": "Salsa"
+              },
+              "votes": {
+                "integerValue": "4"
+              },
+              "emoji": {
+                "stringValue": "🔥"
+              }
+            }
+          }
+        },
+        "eventId": {
+          "stringValue": "5VnpLIWMoWZGoJTDQp6I"
+        },
+        "type": {
+          "stringValue": "genre"
+        },
+        "completedAt": {
+          "timestampValue": "2026-02-08T20:20:05.375Z"
+        },
+        "duration": {
+          "integerValue": "60"
+        },
+        "startedAt": {
+          "timestampValue": "2026-02-08T20:19:06.374Z"
+        },
+        "status": {
+          "stringValue": "completed"
+        },
+        "winnerVotes": {
+          "integerValue": "4"
+        },
+        "genreA": {
+          "mapValue": {
+            "fields": {
+              "tipTotal": {
+                "integerValue": "0"
+              },
+              "name": {
+                "stringValue": "Bachata"
+              },
+              "votes": {
+                "integerValue": "2"
+              },
+              "emoji": {
+                "stringValue": "❤️"
+              }
+            }
+          }
+        },
+        "endsAt": {
+          "timestampValue": "2026-02-08T20:20:04.378Z"
+        },
+        "winner": {
+          "stringValue": "Salsa"
+        }
+      },
+      "createTime": "2026-02-08T20:19:06.401728Z",
+      "updateTime": "2026-02-08T20:20:05.404011Z"
+    },
+    {
+      "name": "projects/tocaahora-1cf7f/databases/(default)/documents/challenges/uqziSpme8LilZiBkxXKU",
+      "fields": {
+        "eventId": {
+          "stringValue": "OwoRl9LIShBUw2IQFjqw"
+        },
+        "completedAt": {
+          "timestampValue": "2026-02-07T00:09:40.588Z"
+        },
+        "type": {
+          "stringValue": "song"
+        },
+        "duration": {
+          "integerValue": "120"
+        },
+        "startedAt": {
+          "timestampValue": "2026-02-07T00:09:17.512Z"
+        },
+        "songB": {
+          "mapValue": {
+            "fields": {
+              "id": {
+                "stringValue": "upGh9FZgdSdb4FutZyQp"
+              },
+              "artist": {
+                "stringValue": "Aventura"
+              },
+              "title": {
+                "stringValue": "Obsesión"
+              },
+              "votes": {
+                "integerValue": "1"
+              },
+              "tipTotal": {
+                "integerValue": "0"
+              }
+            }
+          }
+        },
+        "status": {
+          "stringValue": "completed"
+        },
+        "winnerVotes": {
+          "integerValue": "1"
+        },
+        "endsAt": {
+          "timestampValue": "2026-02-07T00:11:17.449Z"
+        },
+        "winner": {
+          "stringValue": "upGh9FZgdSdb4FutZyQp"
+        },
+        "songA": {
+          "mapValue": {
+            "fields": {
+              "id": {
+                "stringValue": "Sp5KERG8LK6GdjLQspb9"
+              },
+              "artist": {
+                "stringValue": "Gente de Zona"
+              },
+              "votes": {
+                "integerValue": "0"
+              },
+              "title": {
+                "stringValue": "La Gozadera"
+              },
+              "tipTotal": {
+                "integerValue": "0"
+              }
+            }
+          }
+        }
+      },
+      "createTime": "2026-02-07T00:09:17.552007Z",
+      "updateTime": "2026-02-07T00:09:40.623746Z"
+    },
+    {
+      "name": "projects/tocaahora-1cf7f/databases/(default)/documents/challenges/wZ5nSYAELaWrgjOcNZnX",
+      "fields": {
+        "startedAt": {
+          "timestampValue": "2026-03-13T00:36:47.273Z"
+        },
+        "status": {
+          "stringValue": "completed"
+        },
+        "winnerVotes": {
+          "integerValue": "1"
+        },
+        "winner": {
+          "stringValue": "Bachata"
+        },
+        "endsAt": {
+          "timestampValue": "2026-03-13T00:38:46.755Z"
+        },
+        "genreA": {
+          "mapValue": {
+            "fields": {
+              "tipTotal": {
+                "integerValue": "0"
+              },
+              "name": {
+                "stringValue": "Bachata"
+              },
+              "emoji": {
+                "stringValue": "❤️"
+              },
+              "votes": {
+                "integerValue": "1"
+              }
+            }
+          }
+        },
+        "eventId": {
+          "stringValue": "OwoRl9LIShBUw2IQFjqw"
+        },
+        "type": {
+          "stringValue": "genre"
+        },
+        "completedAt": {
+          "timestampValue": "2026-03-13T00:37:00.446Z"
+        },
+        "genreB": {
+          "mapValue": {
+            "fields": {
+              "name": {
+                "stringValue": "Salsa"
+              },
+              "emoji": {
+                "stringValue": "🔥"
+              },
+              "votes": {
+                "integerValue": "0"
+              },
+              "tipTotal": {
+                "integerValue": "0"
+              }
+            }
+          }
+        },
+        "duration": {
+          "integerValue": "120"
+        }
+      },
+      "createTime": "2026-03-13T00:36:47.316665Z",
+      "updateTime": "2026-03-13T00:37:00.490681Z"
+    },
+    {
+      "name": "projects/tocaahora-1cf7f/databases/(default)/documents/challenges/x5Kfilhn3wmYtWbQpb29",
+      "fields": {
+        "duration": {
+          "integerValue": "120"
+        },
+        "eventId": {
+          "stringValue": "OwoRl9LIShBUw2IQFjqw"
+        },
+        "completedAt": {
+          "timestampValue": "2026-02-05T23:41:04.232Z"
+        },
+        "type": {
+          "stringValue": "genre"
+        },
+        "genreB": {
+          "mapValue": {
+            "fields": {
+              "name": {
+                "stringValue": "Bachata"
+              },
+              "votes": {
+                "integerValue": "1"
+              },
+              "emoji": {
+                "stringValue": "❤️"
+              },
+              "tipTotal": {
+                "integerValue": "0"
+              }
+            }
+          }
+        },
+        "status": {
+          "stringValue": "completed"
+        },
+        "startedAt": {
+          "timestampValue": "2026-02-05T23:40:44.760Z"
+        },
+        "winner": {
+          "stringValue": "Bachata"
+        },
+        "endsAt": {
+          "timestampValue": "2026-02-05T23:42:44.681Z"
+        },
+        "genreA": {
+          "mapValue": {
+            "fields": {
+              "name": {
+                "stringValue": "Salsa"
+              },
+              "emoji": {
+                "stringValue": "🔥"
+              },
+              "votes": {
+                "integerValue": "0"
+              },
+              "tipTotal": {
+                "integerValue": "0"
+              }
+            }
+          }
+        },
+        "winnerVotes": {
+          "integerValue": "1"
+        }
+      },
+      "createTime": "2026-02-05T23:40:44.786272Z",
+      "updateTime": "2026-02-05T23:41:04.259969Z"
+    },
+    {
+      "name": "projects/tocaahora-1cf7f/databases/(default)/documents/challenges/xrTmSBrcw8DrWdBnkzGZ",
+      "fields": {
+        "status": {
+          "stringValue": "completed"
+        },
+        "songB": {
+          "mapValue": {
+            "fields": {
+              "tipTotal": {
+                "integerValue": "0"
+              },
+              "title": {
+                "stringValue": "Eres Tú"
+              },
+              "votes": {
+                "integerValue": "0"
+              },
+              "artist": {
+                "stringValue": "Carla Morrison"
+              },
+              "id": {
+                "stringValue": "gFDvAfniWvieKpHbx1VH"
+              }
+            }
+          }
+        },
+        "startedAt": {
+          "timestampValue": "2026-02-01T16:13:29.472Z"
+        },
+        "winner": {
+          "stringValue": "Sp5KERG8LK6GdjLQspb9"
+        },
+        "songA": {
+          "mapValue": {
+            "fields": {
+              "votes": {
+                "integerValue": "1"
+              },
+              "title": {
+                "stringValue": "La Gozadera"
+              },
+              "tipTotal": {
+                "integerValue": "0"
+              },
+              "artist": {
+                "stringValue": "Gente de Zona"
+              },
+              "id": {
+                "stringValue": "Sp5KERG8LK6GdjLQspb9"
+              }
+            }
+          }
+        },
+        "endsAt": {
+          "timestampValue": "2026-02-01T16:15:29.184Z"
+        },
+        "winnerVotes": {
+          "integerValue": "1"
+        },
+        "duration": {
+          "integerValue": "120"
+        },
+        "eventId": {
+          "stringValue": "OwoRl9LIShBUw2IQFjqw"
+        },
+        "completedAt": {
+          "timestampValue": "2026-02-01T17:15:36.694Z"
+        }
+      },
+      "createTime": "2026-02-01T16:13:29.505808Z",
+      "updateTime": "2026-02-01T17:15:36.725125Z"
+    },
+    {
+      "name": "projects/tocaahora-1cf7f/databases/(default)/documents/challenges/z78VDaeXMj9EzXkzew0S",
+      "fields": {
+        "endsAt": {
+          "timestampValue": "2026-01-11T22:50:21.963Z"
+        },
+        "songA": {
+          "mapValue": {
+            "fields": {
+              "tipTotal": {
+                "integerValue": "0"
+              },
+              "id": {
+                "stringValue": "AhxVIqWlYyHdkyP13P8S"
+              },
+              "title": {
+                "stringValue": "Darte un Beso"
+              },
+              "votes": {
+                "integerValue": "1"
+              }
+            }
+          }
+        },
+        "winner": {
+          "stringValue": "AhxVIqWlYyHdkyP13P8S"
+        },
+        "winnerVotes": {
+          "integerValue": "1"
+        },
+        "status": {
+          "stringValue": "completed"
+        },
+        "startedAt": {
+          "timestampValue": "2026-01-11T22:48:22.307Z"
+        },
+        "songB": {
+          "mapValue": {
+            "fields": {
+              "tipTotal": {
+                "integerValue": "0"
+              },
+              "id": {
+                "stringValue": "XBH0Q0cywLxdOByeshYK"
+              },
+              "title": {
+                "stringValue": "Bailando"
+              },
+              "votes": {
+                "integerValue": "0"
+              }
+            }
+          }
+        },
+        "duration": {
+          "integerValue": "120"
+        },
+        "eventId": {
+          "stringValue": "OwoRl9LIShBUw2IQFjqw"
+        },
+        "completedAt": {
+          "timestampValue": "2026-01-11T22:48:53.125Z"
+        }
+      },
+      "createTime": "2026-01-11T22:48:22.355998Z",
+      "updateTime": "2026-01-11T22:48:53.154188Z"
+    },
+    {
+      "name": "projects/tocaahora-1cf7f/databases/(default)/documents/challenges/zZcMU4airqldfBXmMsMH",
+      "fields": {
+        "duration": {
+          "integerValue": "120"
+        },
+        "eventId": {
+          "stringValue": "OwoRl9LIShBUw2IQFjqw"
+        },
+        "completedAt": {
+          "timestampValue": "2026-02-05T23:53:06.509Z"
+        },
+        "type": {
+          "stringValue": "genre"
+        },
+        "genreB": {
+          "mapValue": {
+            "fields": {
+              "tipTotal": {
+                "integerValue": "0"
+              },
+              "name": {
+                "stringValue": "Salsa"
+              },
+              "votes": {
+                "integerValue": "1"
+              },
+              "emoji": {
+                "stringValue": "🔥"
+              }
+            }
+          }
+        },
+        "winner": {
+          "stringValue": "Salsa"
+        },
+        "endsAt": {
+          "timestampValue": "2026-02-05T23:54:50.173Z"
+        },
+        "genreA": {
+          "mapValue": {
+            "fields": {
+              "name": {
+                "stringValue": "Bachata"
+              },
+              "votes": {
+                "integerValue": "0"
+              },
+              "emoji": {
+                "stringValue": "❤️"
+              },
+              "tipTotal": {
+                "integerValue": "0"
+              }
+            }
+          }
+        },
+        "winnerVotes": {
+          "integerValue": "1"
+        },
+        "status": {
+          "stringValue": "completed"
+        },
+        "startedAt": {
+          "timestampValue": "2026-02-05T23:52:50.652Z"
+        }
+      },
+      "createTime": "2026-02-05T23:52:50.683815Z",
+      "updateTime": "2026-02-05T23:53:06.548577Z"
+    },
+    {
+      "name": "projects/tocaahora-1cf7f/databases/(default)/documents/challenges/zhsQ3kpDM5vUO3FGmup4",
+      "fields": {
+        "winner": {
+          "stringValue": "4QHEt0fqijG0iCbYoZ2t"
+        },
+        "songA": {
+          "mapValue": {
+            "fields": {
+              "id": {
+                "stringValue": "4QHEt0fqijG0iCbYoZ2t"
+              },
+              "tipTotal": {
+                "integerValue": "0"
+              },
+              "votes": {
+                "integerValue": "1"
+              },
+              "title": {
+                "stringValue": "Bonifacio"
+              }
+            }
+          }
+        },
+        "endsAt": {
+          "timestampValue": "2026-01-08T00:21:30.850Z"
+        },
+        "songB": {
+          "mapValue": {
+            "fields": {
+              "title": {
+                "stringValue": "Tabaco Y Chanel"
+              },
+              "votes": {
+                "integerValue": "0"
+              },
+              "tipTotal": {
+                "integerValue": "0"
+              },
+              "id": {
+                "stringValue": "R3dJOo76eIzfQLEkV4r0"
+              }
+            }
+          }
+        },
+        "startedAt": {
+          "timestampValue": "2026-01-08T00:19:30.985Z"
+        },
+        "status": {
+          "stringValue": "completed"
+        },
+        "completedAt": {
+          "timestampValue": "2026-01-08T00:20:01.192Z"
+        },
+        "eventId": {
+          "stringValue": "5VnpLIWMoWZGoJTDQp6I"
+        },
+        "duration": {
+          "integerValue": "120"
+        }
+      },
+      "createTime": "2026-01-08T00:19:31.016560Z",
+      "updateTime": "2026-01-08T00:20:01.226062Z"
+    }
+  ]
+}

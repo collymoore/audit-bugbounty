@@ -1,0 +1,38 @@
+androidAppId: com.CMR.emesalud_cmm
+iosAppId: com.CMR.emesalud.cmm
+
+name: Centro Médico Moderno
+nameShort: CMM
+webpage: https://cmm.do/
+ip: resultadosimagenes.cmm.do
+usesHttps: true
+
+
+contact_telephone: "(809) 548-3131"
+contact_email: Plebreault@cmm.do
+contact_hours: 24 horas
+contact_address: Av. Charles Sumner Esq. C/ Jose Lopez, Los Prados
+
+baseUrl: /HisWebServicios/Portal/ServicioPortal.svc
+baseUrlPACS: /visorhtml5/WcfServiceIconos/Service1.svc
+baseVisorPACS: /WebUltimateGL/App/Vistas/index.html
+
+iconBackgroundColor: "#bee4ed"
+
+color_primary: 0xff0068b6
+color_accent: 0xff363635
+color_primaryDark: 0xff003e86
+color_accentDark: 0xff10100f
+color_primaryLight: 0xff5695e9
+color_accentLight: 0xff60605f
+color_loadingGrey: 0xffffffff
+
+debugMode: true
+hasImaging: true
+hasLaboratory: false
+hasPathology: false
+hasDirectory: false
+canMakeAppointmets: false
+hasBanner: true
+hasRecord: false
+showAppointments: false

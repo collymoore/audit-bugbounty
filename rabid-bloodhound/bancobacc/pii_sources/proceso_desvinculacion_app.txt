@@ -1,0 +1,186 @@
+Nombre del
+documento:
+
+Procedimiento de eliminación y
+desvinculación de usuario APP
+móvil
+
+Versión:
+Fecha de
+emisión:
+
+1.0
+Abril 2026
+
+Nombre del
+documento:
+
+Procedimiento de eliminación y
+desvinculación de usuario APP
+móvil
+
+Versión:
+Fecha de
+emisión:
+
+1.0
+Abril 2026
+
+1. Objetivo
+Establecer el proceso mediante el cual un cliente puede solicitar la eliminación de su cuenta
+digital (usuario de la app y banca en línea), así como definir el tratamiento de los datos
+asociados, en cumplimiento con las políticas de Google Play, App Store y la normativa vigente
+aplicable al sector financiero.
+2. Alcance
+Este procedimiento aplica a:
+● Usuarios registrados en la aplicación móvil del banco.
+● Usuarios de banca en línea (portal web) asociados a las mismas credenciales.
+● Clientes que deseen finalizar el uso de los canales digitales, independientemente de su
+relación activa o no con productos financieros.
+3. Marco normativo y cumplimiento
+Este procedimiento se establece en cumplimiento de:
+●
+●
+●
+●
+
+Políticas de User Data y Account Deletion de Google Play
+Requisitos de Account Deletion de Apple App Store
+Normativas locales de protección de datos personales
+Regulaciones del sector financiero relativas a:
+○ Prevención de fraude
+○ Conservación de información
+○ Auditoría y trazabilidad
+
+4. Definiciones
+•
+•
+•
+•
+
+Cuenta digital: Conjunto de credenciales (usuario y contraseña) creadas por el cliente
+para acceder a los canales digitales del banco.
+Eliminación de cuenta digital: Proceso mediante el cual se deshabilita
+permanentemente el acceso del usuario y se eliminan o anonimizar los datos personales
+asociados, conforme a la normativa aplicable.
+Desvinculación digital: Proceso de eliminación del acceso del cliente a los canales
+digitales sin afectar necesariamente su relación contractual con el banco.
+Datos retenidos: Información que, por disposición legal o regulatoria, debe conservarse
+aun después de la eliminación de la cuenta digital.
+
+5. Canales habilitados para la solicitud
+El cliente podrá solicitar la eliminación de su cuenta digital a través de los siguientes medios:
+
+Nombre del
+documento:
+
+Procedimiento de eliminación y
+desvinculación de usuario APP
+móvil
+
+Versión:
+Fecha de
+emisión:
+
+1.0
+Abril 2026
+
+● Correo Electrónico
+● Canales de atención al cliente:
+○ Servicio al cliente
+○ Correo electrónico oficial
+○ Oficinas físicas (si aplica)
+6. Descripción del proceso
+6.1. Inicio de la solicitud
+El cliente inicia la solicitud proporcionando la siguiente información:
+● Tipo y número de documento de identidad
+● Nombre y apellido
+● Correo electrónico registrado
+El cliente deberá completar un formulario explicando el motivo de la solicitud, el cual
+servidora como evidencia para su control.
+6.2. Validación de identidad
+Con el objetivo de prevenir accesos no autorizados o solicitudes fraudulentas, se
+realizará:
+● Validación de los datos contra los registros del banco
+● Confirmación explícita por parte del cliente, a través de un formulario de control
+digital o escrito.
+En caso de inconsistencias, la solicitud será rechazada o escalada para validación
+manual.
+6.3. Ejecución del proceso de eliminación
+Una vez realizada la solicitud y validado los datos de la cuenta a ser eliminada.
+6.3.1. Eliminación de acceso digital
+Se procederá a:
+●
+●
+●
+●
+
+Eliminación del usuario (Usuario y Password)
+Revocación de sesiones activas
+Eliminación de estados de cuenta.
+Eliminación de configuraciones y preferencias del usuario
+
+Nombre del
+documento:
+
+Procedimiento de eliminación y
+desvinculación de usuario APP
+móvil
+
+Versión:
+Fecha de
+emisión:
+
+1.0
+Abril 2026
+
+6.3.2. Tratamiento de datos personales
+Se aplicará el siguiente criterio:
+Datos a eliminar:
+● Datos de perfil en la app
+● Preferencias de usuario
+6.3.3. Confirmación al cliente
+Una vez completado el proceso:
+● Se enviará una notificación al cliente vía correo electrónico
+● Se informará:
+○ Fecha de ejecución
+○ Resultado del proceso
+○ Alcance de la eliminación
+6.4. Tiempos de ejecución
+● El tiempo máximo de respuesta será de 2 a 5 días.
+● El cliente podrá consultar el estado de su solicitud mediante los canales habilitados
+(WhatsApp, Sucursales, Correo Electrónico o Llamadas Telefónicas )
+Nota: Whatsapp: 829-222-2744; Télefono: 809-562-6473; Correo:
+servicioalcliente@bancobacc.com.do
+7. Controles y seguridad
+Para garantizar la integridad del proceso:
+● Todas las solicitudes deben ser registradas y auditables
+● Se deben mantener logs del proceso
+● El acceso al proceso estará restringido a personal autorizado
+8. Publicación y transparencia
+El banco se compromete a:
+● Publicar este procedimiento en su sitio web
+● Mantener disponible un enlace público accesible
+● Garantizar claridad y accesibilidad del proceso para el cliente
+
+Nombre del
+documento:
+
+Procedimiento de eliminación y
+desvinculación de usuario APP
+móvil
+
+9. Cumplimiento con plataformas
+Este procedimiento asegura el cumplimiento de:
+● Requisitos de eliminación de cuentas de Google Play
+● Lineamientos de Apple App Store
+● Buenas prácticas de protección de datos
+
+Versión:
+Fecha de
+emisión:
+
+1.0
+Abril 2026
+
+

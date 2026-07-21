@@ -1,0 +1,20 @@
+debugMode: false
+
+name: InfoSalud
+ip: http://www.cmr-apps.com
+
+
+iconBackgroundColor: #bee4ed
+color_primary: 0xfff0af00
+color_accent: 0xff00109c
+color_primaryDark: 0xffb88000
+color_accentDark: 0xff00006c
+color_primaryLight: 0xffffe14b
+color_accentLight: 0xff543cce
+color_loadingGrey: 0xffffffff
+
+
+
+splashScreen: assets/app/splash/doctor2.gif
+loginLogoIzq: assets/app/launcher_icon.png
+loginLogoRight: assets/app/cmr_logo.png
