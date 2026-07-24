@@ -1,0 +1,7153 @@
+{
+  "openapi": "3.0.4",
+  "info": {
+    "title": "Universal.ARS.SISAC.API",
+    "description": "Ambiente: Contingencia",
+    "version": "v1"
+  },
+  "paths": {
+    "/api/Apolo/ConsultarRol/{moduloId}/{userId}": {
+      "get": {
+        "tags": [
+          "Apolo"
+        ],
+        "parameters": [
+          {
+            "name": "moduloId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "userId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Caja/obtenerEstadosAperturaCajas": {
+      "get": {
+        "tags": [
+          "Caja"
+        ],
+        "summary": "obtenerEstadosAperturaCajas: Lista de Estados de Apertura. pkg de referencia SvcCajBoxEstApe_Pkg.SvcCajBoxEstApe",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Caja/obtenerInformacionAperturaCajas": {
+      "post": {
+        "tags": [
+          "Caja"
+        ],
+        "summary": "obtenerInformacionAperturaCajas: Selecciona la información de las aperturas de caja. Pkg de referencia EPS.SVCCAJSELAPE_PKG.SVCCAJSELAPE",
+        "description": "ExampleJSON:\r\n{\r\n  \"fecha\": \"\",\r\n  \"cajero\": \"\",\r\n  \"tipoUsuarioCajero\": \"A\",\r\n  \"usuarioActual\": \"U11940\"\r\n}",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InCjAperturaCaja"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InCjAperturaCaja"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/InCjAperturaCaja"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Caja/ObtenerFacturas": {
+      "get": {
+        "tags": [
+          "Caja"
+        ],
+        "summary": "ObtenerFacturas: Retorna facturas pendiantes de contrato o identificacion indicada. Pkg de referencia EPS.svcgrlselfac_pkg.SvcGrlSelFac",
+        "description": "Example: \r\n \"criterio\": \"03087351\"",
+        "parameters": [
+          {
+            "name": "criterio",
+            "in": "query",
+            "description": "",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Caja/ObtenerCaja": {
+      "get": {
+        "tags": [
+          "Caja"
+        ],
+        "summary": "Retorna la caja abierta del cajero si existe",
+        "parameters": [
+          {
+            "name": "usuario",
+            "in": "query",
+            "description": "",
+            "schema": {
+              "type": "string",
+              "default": "U30242"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Caja/CreaRecibo": {
+      "post": {
+        "tags": [
+          "Caja"
+        ],
+        "summary": "Crea recibo de caja",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Recibo"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Recibo"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Recibo"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Caja/CreaDetalle": {
+      "post": {
+        "tags": [
+          "Caja"
+        ],
+        "summary": "Crea detalle de recibo de caja",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReciboDetallado"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReciboDetallado"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReciboDetallado"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Caja/CreaReciboCompleto": {
+      "post": {
+        "tags": [
+          "Caja"
+        ],
+        "summary": "CreaReciboCompleto: Trae la información de apertura de caja. Pkg de referencia SvcCajGetApe_Pkg.SvcCajGetApe",
+        "description": "Example:\r\n            \r\n    \"estadoRecibo\": 1,\r\n    \"fechaApertura\": \"2022/12/09 16:48:51\",\r\n    \"codigoCaja\": \"U28540  \",\r\n    \"idCaja\": 36951,\r\n    \"numeroContrato\": \"03087351                 \",\r\n    \"numeroDocumento\": \"0302872956\",\r\n    \"valorPagar\": 18497.32,\r\n    \"codigoFormaPago\": \"EF   \",\r\n    \"codigoBanco\": \"\",\r\n    \"tipoIdentificacion\": \"RN   \",\r\n    \"numeroIdentificacion\": \"130786412      \",\r\n    \"nombre\": \"LAPRIN- EUROFARMA DOMINICANA SRL        \",\r\n    \"tipoPersona\": \"J\",\r\n    \"codigoCompania\": \"02\",\r\n    \"numeroCheque\": \"\",\r\n    \"codigoTipoTarjeta\": \"\",\r\n    \"fechaCheque\": \"2022/12/13\",\r\n    \"idPersona\": 1885600,\r\n    \"numeroRecibo\": 0,\r\n    \"recibido\": 19000,\r\n    \"cambio\": 502.6800000000003",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReciboResumido"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReciboResumido"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReciboResumido"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Caja/actualizarRecibo": {
+      "post": {
+        "tags": [
+          "Caja"
+        ],
+        "summary": "Actualizar Recibo :  SVCCAJUPDREC_PKG.SvcCajUpdRec   Actualiza la informacion del recibo de caja",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReciboResumido"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReciboResumido"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReciboResumido"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Caja/AgregaFacturaAPagar": {
+      "post": {
+        "tags": [
+          "Caja"
+        ],
+        "summary": "Agrega factura a pagar",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FacturaAPagar"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FacturaAPagar"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/FacturaAPagar"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Caja/RemueveFacturaAPagar": {
+      "post": {
+        "tags": [
+          "Caja"
+        ],
+        "summary": "Remueve Factura a pagar",
+        "parameters": [
+          {
+            "name": "factura",
+            "in": "query",
+            "description": "",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Caja/ActualizaSaldoPagar": {
+      "post": {
+        "tags": [
+          "Caja"
+        ],
+        "summary": "Actualiza saldo a pagar de factura",
+        "parameters": [
+          {
+            "name": "factura",
+            "in": "query",
+            "description": "",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "saldo",
+            "in": "query",
+            "description": "",
+            "schema": {
+              "type": "number",
+              "format": "double"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Caja/actualizarEstadoReciboCaja": {
+      "post": {
+        "tags": [
+          "Caja"
+        ],
+        "summary": "",
+        "description": "Example:\r\n            \r\n    \"estadoRecibo\": 1,\r\n    \"NumeroReciboCaja\": 983933,",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InActualizacionReciboCaja"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InActualizacionReciboCaja"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/InActualizacionReciboCaja"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Caja/insertarAperturarCaja": {
+      "post": {
+        "tags": [
+          "Caja"
+        ],
+        "summary": "insertarAperturarCaja: Inserta la información de apertura de caja. Pkg de referencia svccajinsape_pkg.SvcCajInsApe",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InCjInsertarAperturarCaja"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InCjInsertarAperturarCaja"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/InCjInsertarAperturarCaja"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Caja/cerrarCaja": {
+      "post": {
+        "tags": [
+          "Caja"
+        ],
+        "summary": "cerrarCaja: ACTUALIZA LA INFORMACIÓN DE LA APERTURA DE CAJA",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CierreCaja"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CierreCaja"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CierreCaja"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Caja/ObtenerInformacionAperturaDeCaja": {
+      "get": {
+        "tags": [
+          "Caja"
+        ],
+        "summary": "ObtenerInformacionAperturaDeCaja: Trae la información de apertura de caja. Pkg de referencia SvcCajGetApe_Pkg.SvcCajGetApe",
+        "description": "Example:\r\n\r\n    \"codigoCajero\": \"U28645\"\r\n    \"fechaHoraApertura\": \"2013/08/12 09:55:41AM\"",
+        "parameters": [
+          {
+            "name": "codigoCajero",
+            "in": "query",
+            "description": "",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "fechaHoraApertura",
+            "in": "query",
+            "description": "",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Caja/SeleccionarEstadoAbterioCierreFinal": {
+      "get": {
+        "tags": [
+          "Caja"
+        ],
+        "summary": "SeleccionarEstadoAbterioCierreFinal: SvcCajGetEstAnt_Pkg.SvcCajGetEstAnt",
+        "parameters": [
+          {
+            "name": "codigoCajero",
+            "in": "query",
+            "description": "",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "fechaHoraApertura",
+            "in": "query",
+            "description": "",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Caja/seleccionaInformacionRecibosCaja": {
+      "post": {
+        "tags": [
+          "Caja"
+        ],
+        "summary": "",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InformacionRecibosCajasFilter"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InformacionRecibosCajasFilter"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/InformacionRecibosCajasFilter"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Caja/obtenerListaCajeros": {
+      "get": {
+        "tags": [
+          "Caja"
+        ],
+        "summary": "obtenerListaCajeros: Lista de Cajas por Sucursal. Pkg de referencia SvcCajBoxPagCaj_Pkg.SvcCajBoxPagCaj",
+        "description": "Example:\r\n\r\n    \"codigoSucursal\": \"1\", \"11\", \"27\", \"31\"",
+        "parameters": [
+          {
+            "name": "codigoSucursal",
+            "in": "query",
+            "description": "",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Caja/obtenerNovedadesAperturaDeCaja": {
+      "post": {
+        "tags": [
+          "Caja"
+        ],
+        "summary": "obtenerNovedadesAperturaDeCaja: Selecciona las novedades de la apertura de caja. Pkg de referencia SvcCajSelNovApe_Pkg.SvcCajSelNovApe",
+        "description": "Example:\r\n\r\n    \"indiceCriterioBusqueda\": 0,\r\n    \"fechaNovedadAperturaCaja\": \"2003/08/29\",\r\n    \"auxiliarCodigoTipoNovedadCaja\": \" \",\r\n    \"codigoNovedadCaja\": 214,\r\n    \"codigoCajero\": \"U20545\",\r\n    \"fechaHoraApertura\": \"2003/08/29 08:44:56AM\"",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InfoNovedadesAperturaDeCajaFilter"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InfoNovedadesAperturaDeCajaFilter"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/InfoNovedadesAperturaDeCajaFilter"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Caja/obtenerTipoNovedadesCaja": {
+      "get": {
+        "tags": [
+          "Caja"
+        ],
+        "summary": "obtenerTipoNovedadesCaja: Pkg de referencia SvcCajBoxTipNovCaj_pkg.SvcCajBoxTipNovCaj",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Caja/obtenerTipoUsuarioCaja": {
+      "get": {
+        "tags": [
+          "Caja"
+        ],
+        "summary": "obtenerTipoUsuarioCaja:",
+        "parameters": [
+          {
+            "name": "codigoCajero",
+            "in": "query",
+            "description": "",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Onboarding/GetOnboardingInfo": {
+      "get": {
+        "tags": [
+          "Onboarding"
+        ],
+        "parameters": [
+          {
+            "name": "Crtcon",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Onboarding/CreateAndSendLinkOnboarding": {
+      "post": {
+        "tags": [
+          "Onboarding"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InEmailOnboarding"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InEmailOnboarding"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/InEmailOnboarding"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/obtenerNombreAmbiente": {
+      "get": {
+        "tags": [
+          "Sisac"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/obtenerUrlsPorAmbientes": {
+      "get": {
+        "tags": [
+          "Sisac"
+        ],
+        "summary": "Verifica los url del appsetting del ambiente",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/obtenerUsuarioInformacion": {
+      "get": {
+        "tags": [
+          "Sisac"
+        ],
+        "summary": "Obtiene la información del usuario\r\nProcedure: prc_Sisacusuper",
+        "parameters": [
+          {
+            "name": "codigoUsuario",
+            "in": "query",
+            "description": "",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/obtenerSolicitanteUsuario": {
+      "get": {
+        "tags": [
+          "Sisac"
+        ],
+        "summary": "Consulta las informaciones del Solicitante\r\nProcedure: prc_selivrcall",
+        "parameters": [
+          {
+            "name": "codigoUsuario",
+            "in": "query",
+            "description": "",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/obtenerBusquedaInformacion": {
+      "get": {
+        "tags": [
+          "Sisac"
+        ],
+        "summary": "Obtiene la busqueda de información personal\r\nProcedure: prc_busquedainf",
+        "parameters": [
+          {
+            "name": "entrada",
+            "in": "query",
+            "description": "",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "tipoEntrada",
+            "in": "query",
+            "description": "",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/guardarFiltro": {
+      "post": {
+        "tags": [
+          "Sisac"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GuardaFiltrosFilters"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GuardaFiltrosFilters"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/GuardaFiltrosFilters"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/obtenerSolicitudes": {
+      "get": {
+        "tags": [
+          "Sisac"
+        ],
+        "summary": "Servicio que obtiene las solicitudes, con sus tipos y subtipos\r\nProcedure: prc_Solicitudes",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/obtenerCombosSubtipo": {
+      "get": {
+        "tags": [
+          "Sisac"
+        ],
+        "summary": "obtenerCombosSubtipo: Obtiene la lista de combos subtipo. Pkg de referencia sisac.websvcsisac_pkg.prc_comboconsub",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/obtenerSocioUsuarios": {
+      "get": {
+        "tags": [
+          "Sisac"
+        ],
+        "summary": "Servicio que obtiene los socios del usuario\r\nProcedure: prc_SelCallPartner\r\n<param name=\"usuario\"></param>",
+        "parameters": [
+          {
+            "name": "usuario",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/obtenerInformacionGeneral": {
+      "post": {
+        "tags": [
+          "Sisac"
+        ],
+        "summary": "Servicio que obtiene informacion general \r\nProcedure: prc_InfGenInf",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/inInfGenInf"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/inInfGenInf"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/inInfGenInf"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/obtenerAfiliados": {
+      "post": {
+        "tags": [
+          "Sisac"
+        ],
+        "summary": "Obtener informacion de los afiliados principales de un contrato\r\nProcedure: prc_Conafiprincipal",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/inConAfiPrincipal"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/inConAfiPrincipal"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/inConAfiPrincipal"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/obtenerProductos": {
+      "post": {
+        "tags": [
+          "Sisac"
+        ],
+        "summary": "Obtiene la lista de productos, para la pantalla principal\r\nProcedure: prc_Proest",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/inProEst"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/inProEst"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/inProEst"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/obtenerAlertas": {
+      "post": {
+        "tags": [
+          "Sisac"
+        ],
+        "summary": "Obtener lista de alertas\r\nProcedure: prc_Alertas",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/inAlerta"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/inAlerta"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/inAlerta"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/obtenerUltimosCasos": {
+      "post": {
+        "tags": [
+          "Sisac"
+        ],
+        "summary": "Servicio que obtiene Ultimos Casos\r\nProcedure: PRC_ULTCASOS",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/inUltcasos"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/inUltcasos"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/inUltcasos"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/obtenerCausales": {
+      "post": {
+        "tags": [
+          "Sisac"
+        ],
+        "summary": " Obtiene la lista de causales\r\nProcedure: prc_Selsacsolcau",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/inCausal"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/inCausal"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/inCausal"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/obtenerAsesores": {
+      "post": {
+        "tags": [
+          "Sisac"
+        ],
+        "summary": "Obtener asesores principales\r\nProcedure: prc_conaseprincipal",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InAsePrincipal"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InAsePrincipal"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/InAsePrincipal"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/obtenerPrestadores": {
+      "post": {
+        "tags": [
+          "Sisac"
+        ],
+        "summary": "Obtiene los prestadores principales\r\nProcedure: prc_conpssprincipal",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InPssPrincipal"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InPssPrincipal"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/InPssPrincipal"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/obtenerProveedores": {
+      "post": {
+        "tags": [
+          "Sisac"
+        ],
+        "summary": "Obtiene los proveedores principales\r\nProcedure: prc_Conproprincipal",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InProPrincipal"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InProPrincipal"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/InProPrincipal"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/insertarSolicitudesCaso": {
+      "post": {
+        "tags": [
+          "Sisac"
+        ],
+        "summary": "Servicio que inserta todas las solicitudes del caso (transacciones) al CONCLUIR el proceso.\r\nProcedure: PRC_SACDETINS",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InSolicitudesCaso"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InSolicitudesCaso"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/InSolicitudesCaso"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/insertarCasosBackOffice": {
+      "post": {
+        "tags": [
+          "Sisac"
+        ],
+        "summary": "Servicio que crea Casos en BackOffice\r\nProcedure: PRC_CREATECASEBACKOFFICE",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/inTranPantalla"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/inTranPantalla"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/inTranPantalla"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/obtenerDirecciones": {
+      "post": {
+        "tags": [
+          "Sisac"
+        ],
+        "summary": "Servicio que obtiene Direcciones del Solicitante (natural/juridico).\r\nProcedure: PRC_CONSULTADIRECCIONES",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InDirecciones"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InDirecciones"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/InDirecciones"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/actualizarDirecciones": {
+      "post": {
+        "tags": [
+          "Sisac"
+        ],
+        "summary": "Actualiza y válida una dirección\r\nProcedure:  prc_actdireccion",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InActDir"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InActDir"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/InActDir"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/obtenerCasosRelacionados": {
+      "post": {
+        "tags": [
+          "Sisac"
+        ],
+        "summary": "Obtiene los casos relacionados según los datos del informante\r\nProcedure: prc_casosrelacionados",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/inCasosRelacionados"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/inCasosRelacionados"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/inCasosRelacionados"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/crearCasoCorreo": {
+      "post": {
+        "tags": [
+          "Sisac"
+        ],
+        "summary": "Obtiene el caso bizagi y el id de este creando su caso correo\r\nProcedure: prc_createcasecorreo",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InCreateCasoCorreo"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InCreateCasoCorreo"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/InCreateCasoCorreo"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/obtenerListaPortal": {
+      "get": {
+        "tags": [
+          "Sisac"
+        ],
+        "summary": "Obtiene lista (combo-lista) según el parámetro;\r\nProcedure: eps.websvcportalparametricas_pkg.prc_parametricas;\r\nListas:\r\n\"aueest\" - Estados de Autorizacion;\r\n\"calloricod\" - Tipos de Origen de Canal;\r\n\"ciud\" - Ciudades;\r\n\"codare\" - Codigos de Area de Telefono/Celular;\r\n\"esp\" - Especialidades;\r\n\"ipssuc\"+Prestador - Sucursales del Prestador;\r\n\"serips\" - Servicios;\r\n\"tipate\" - Tipos de Atencion;\r\n\"tipins\" - Tipos de Prestador;\r\n\"ubi\" - Tipos de Ubicacion;\r\n\"zonpos\" - Barrios;\r\nAutorizaciones:\r\n\"tipori\" - Tipos de Origen de Autorizacion;\r\n\"claate\" - Clases de Atencion;\r\n\"excaut\" - Tipos de Aprobacion;\r\n\"resexc\" - Responsables;\r\n\"tipest\" - Tipos de Estancia;\r\n...",
+        "description": "Some options of List:\r\n    \r\n    \"BANCO\"            -- lista Banco\r\n    \"MONEDA\"           -- lista de monedas\r\n    \"TIPOTARJETA\"      - lista tipo moneda\r\n    \"aueest\"           - Estados de Autorizacion;\r\n    \"calloricod\"       - Tipos de Origen de Canal;\r\n    \"ciud\"             - Ciudades;\r\n    \"codare\"           - Codigos de Area de Telefono/Celular;\r\n    \"esp\"              - Especialidades;\r\n    \"ipssuc\"+Prestador - Sucursales del Prestador;\r\n    \"serips\"           - Servicios;\r\n    \"tipate\"           - Tipos de Atencion;\r\n    \"tipins\"           - Tipos de Prestador;\r\n    \"ubi\"              - Tipos de Ubicacion;\r\n    \"zonpos\"           - Barrios;\r\n    \r\n    Autorizaciones:\r\n    \"tipori\"           - Tipos de Origen de Autorizacion;\r\n    \"claate\"           - Clases de Atencion;\r\n    \"excaut\"           - Tipos de Aprobacion;\r\n    \"resexc\"           - Responsables;\r\n    \"tipest\"           - Tipos de Estancia.\r\n     mas info ==> metodo SelectQueryToCombo para ver otras opciones",
+        "parameters": [
+          {
+            "name": "codigo",
+            "in": "query",
+            "description": "",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/obtenerContactoAutorizacion": {
+      "get": {
+        "tags": [
+          "Sisac"
+        ],
+        "summary": " Servicio que obtiene informacion general \r\nprocedmiento: prc_contactosaut",
+        "parameters": [
+          {
+            "name": "consecutivo",
+            "in": "query",
+            "description": "",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "tipoPersona",
+            "in": "query",
+            "description": "",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/obtenerPreguntasAutorizacion": {
+      "post": {
+        "tags": [
+          "Sisac"
+        ],
+        "summary": " Servicio que obtiene las preguntas de autorización\r\nprocedmiento: PRC_PREGAUT del paquete WEBSVCSISACTRANSACCIONES_PKG",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/inPregaut"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/inPregaut"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/inPregaut"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/obtenerTransaccionPantalla": {
+      "post": {
+        "tags": [
+          "Sisac"
+        ],
+        "summary": "Servicio que retorna las pantallas y sus URL segun su tipo.",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/inTranPantalla"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/inTranPantalla"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/inTranPantalla"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/obtenerDocumentosSubTipoSolicitud": {
+      "get": {
+        "tags": [
+          "Sisac"
+        ],
+        "summary": " Servicio que obtiene lista de Documentos que corresponden a un Sub Tipo de Solicitud.\r\nprocedmiento: PRC_SACDOCSOL del paquete WEBSVCSISACTRANSACCIONES_PKG",
+        "parameters": [
+          {
+            "name": "subTipoSolicitud",
+            "in": "query",
+            "description": "",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/execute": {
+      "post": {
+        "tags": [
+          "Sisac"
+        ],
+        "summary": "Realiza la funcionalidad de ejecutar transacciones como servicios según su clase.",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/inTranPantalla"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/inTranPantalla"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/inTranPantalla"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/obtenerTablaHonorariosMedicos": {
+      "post": {
+        "tags": [
+          "Sisac"
+        ],
+        "summary": "Obtiene la lista de la tabla honorarios médicos\r\nProcedure: prc_consultathm",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InConsultaThm"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InConsultaThm"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/InConsultaThm"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/obtenerUsuariosConfiguracion": {
+      "post": {
+        "tags": [
+          "Sisac"
+        ],
+        "summary": "obtenerUsuariosConfiguracion: Obtiene la lista de usuarios configuración. Pkg de referencia sisac.websvcsisac_pkg.prc_usrcon",
+        "description": "Example:\r\n\r\n    \"codigoUsuario\": \"U20151\",\r\n    \"nombre\": \"\",\r\n    \"calltipconcod\": 0,\r\n    \"calltipconsubcod\": 0,\r\n    \"cantidad\": 100",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InUserCon"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InUserCon"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/InUserCon"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/obtenerUsuariosConfiguracionEdited": {
+      "post": {
+        "tags": [
+          "Sisac"
+        ],
+        "summary": "obtenerUsuariosConfiguracionEdited: Obtiene la lista de usuarios configuración (Output editados). Pkg de referencia sisac.websvcsisac_pkg.prc_usrcon",
+        "description": "Example:\r\n\r\n    \"codigoUsuario\": \"U20151\",\r\n    \"nombre\": \"\",\r\n    \"calltipconcod\": 0,\r\n    \"calltipconsubcod\": 0,\r\n    \"cantidad\": 100",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InUserCon"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InUserCon"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/InUserCon"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/obtenerConFiltro": {
+      "get": {
+        "tags": [
+          "Sisac"
+        ],
+        "summary": "Obtiene un filtro según el usuario\r\nProcedure: prc_confiltro",
+        "parameters": [
+          {
+            "name": "Usuario",
+            "in": "query",
+            "description": "",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/obtenerSupervisorConfiguracion": {
+      "get": {
+        "tags": [
+          "Sisac"
+        ],
+        "summary": "obtenerSupervisorConfiguracion: Obtiene la lista de supervisores según el tipo de usuario. Pkg de referencia sisac.websvcsisac_pkg.prc_selsuppartner\r\nProcedure:",
+        "parameters": [
+          {
+            "name": "CodigoTipoUsuario",
+            "in": "query",
+            "description": "",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/crearModeradorUsuario": {
+      "post": {
+        "tags": [
+          "Sisac"
+        ],
+        "summary": "crearModeradorUsuario: Servicio que crea un rol de supervisor al usuario. Pkg de referencia sisac.websvcsisac_pkg.prc_creamodusr",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InModUser"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InModUser"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/InModUser"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/obtenerUsuarioModificar": {
+      "get": {
+        "tags": [
+          "Sisac"
+        ],
+        "summary": "Obtiene la información del usuario a modificar \r\nProcedure: prc_selsuppartner",
+        "parameters": [
+          {
+            "name": "CodigoTipoUsuario",
+            "in": "query",
+            "description": "",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/obtenerPermisosSubTipoSolicitud": {
+      "post": {
+        "tags": [
+          "Sisac"
+        ],
+        "summary": "Obtiene la lista de permisos del subtipo solicitud\r\nProcedure: prc_infconsubtip",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InConSubTip"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InConSubTip"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/InConSubTip"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/insertarPermisosSubTipoSolicitud": {
+      "post": {
+        "tags": [
+          "Sisac"
+        ],
+        "summary": "Modificar o inserta el estado según el canal que se marque en el front\r\nProcedure: prc_infconsubtipins",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InConSubTip"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InConSubTip"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/InConSubTip"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/obtenerListaSisac": {
+      "post": {
+        "tags": [
+          "Sisac"
+        ],
+        "summary": "obtenerListaSisac: Obtiene la lista de las tablas. Pkg de referencia WebSvcSisacTransacciones_pkg.prc_parametricas",
+        "description": "lista de opciones(parametro Codigo): \r\n \r\n    \"plan\"           - Lista de planes \r\n    \"sactipusr\"      - Lista de usuarios \r\n    \"servicios\"      - Lista de servicios \r\n    \"prestaciones\"   - Lista de prestaciones",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InListaSisacGen"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InListaSisacGen"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/InListaSisacGen"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/insertarRadicacion": {
+      "post": {
+        "tags": [
+          "Sisac"
+        ],
+        "summary": "Servicio que inserta Radicacion.\r\nProcedure: PRC_INSRAIPROFRAME",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/inTranPantalla"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/inTranPantalla"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/inTranPantalla"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/obtenerAutorizacion": {
+      "post": {
+        "tags": [
+          "Sisac"
+        ],
+        "summary": "Retorna una lista de autorizaciones\r\nProcedure: prc_selaue",
+        "description": "{\r\n \"numeroAutorizacion\": 43996431\r\n }",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/inAutorizacion"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/inAutorizacion"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/inAutorizacion"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/ObtenerTipoCarnet": {
+      "post": {
+        "tags": [
+          "Sisac"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CarnetSisacParam"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CarnetSisacParam"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CarnetSisacParam"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/obtenerInformacionGeneralContrato": {
+      "post": {
+        "tags": [
+          "Sisac"
+        ],
+        "summary": "Obtiene la información general del contrato\r\nProcedure: prc_infgencrt",
+        "description": " Data de prueba:\r\n {\r\n \"usuario\": \"\",\r\n  \"crtCon\": 111231,\r\n \"noContrato\": \"03138073\",\r\n \"filtro\": \"\",\r\n \"desde\": 1,\r\n \"hasta\": 5\r\n}",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/inInfoGenCon"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/inInfoGenCon"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/inInfoGenCon"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/obtenerInformacionGeneralAfiliado": {
+      "post": {
+        "tags": [
+          "Sisac"
+        ],
+        "summary": "Obtiene la información general del contrato correspondiente a un Afiliado\r\nProcedure: prc_infgencrt",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/inInfoGenAfi"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/inInfoGenAfi"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/inInfoGenAfi"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/obtenerNovedadesContrato": {
+      "post": {
+        "tags": [
+          "Sisac"
+        ],
+        "summary": "Obtiene la lista de novedades de un contrato.\r\nProcedure: prc_crtnov",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InInfoAfi"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InInfoAfi"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/InInfoAfi"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/obtenerAnexoContrato": {
+      "post": {
+        "tags": [
+          "Sisac"
+        ],
+        "summary": "Obtiene lista de Anexo de un contrato\r\nProcedure: prc_crtanx",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InInfoAfi"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InInfoAfi"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/InInfoAfi"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/obtenerObservacionContrato": {
+      "post": {
+        "tags": [
+          "Sisac"
+        ],
+        "summary": "Obtiene lista de observaciones de un contrato. \r\nProcedure:",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InInfoAfi"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InInfoAfi"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/InInfoAfi"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/obtenerAsesoresContrato": {
+      "post": {
+        "tags": [
+          "Sisac"
+        ],
+        "summary": "Obtiene la lista de Asesores de un contrato\r\nProcedure: prc_crtase",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InInfoAfi"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InInfoAfi"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/InInfoAfi"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/obtenerValoresLiquidacionContrato": {
+      "post": {
+        "tags": [
+          "Sisac"
+        ],
+        "summary": "Obtiene la lista de Valores Liquidados de un contrato\r\nProcedure: prc_crtvalliq",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InInfoAfi"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InInfoAfi"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/InInfoAfi"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/obtenerValoresLiquidacionContratoDetalle": {
+      "post": {
+        "tags": [
+          "Sisac"
+        ],
+        "summary": "Obtiene Detalle de lista de Valores Liquidados de un contrato\r\nProcedure: prc_crtvalliqV2",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InInfoAfi"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InInfoAfi"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/InInfoAfi"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/obtenerValoresLiquidacionCrtasoDetalle": {
+      "post": {
+        "tags": [
+          "Sisac"
+        ],
+        "summary": "Obtiene Detalle de lista de Valores Liquidados de un contrato primer nivel\r\nProcedure: prc_crtvalliqV2",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InInfoAfi"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InInfoAfi"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/InInfoAfi"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/obtenerEstadosLiquidacionCrtasoDetalle": {
+      "get": {
+        "tags": [
+          "Sisac"
+        ],
+        "summary": "Obtiene listado de estados de tarificacion",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/obtenerValoresLiquidacionTitular": {
+      "post": {
+        "tags": [
+          "Sisac"
+        ],
+        "summary": "Obtiene la lista de Valores Liquidados de un contrato pertenenciente a un titular\r\nProcedure: prc_valliqtit",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InInfoAfi"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InInfoAfi"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/InInfoAfi"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/obtenerValoresLiquidacionAfiliado": {
+      "post": {
+        "tags": [
+          "Sisac"
+        ],
+        "summary": "Obtiene la lista de Valores Liquidados de un contrato pertenenciente a un afiliado\r\nProcedure: prc_Valliqafi",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InInfoAfi"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InInfoAfi"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/InInfoAfi"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/obtenerAutorizacionContrato": {
+      "post": {
+        "tags": [
+          "Sisac"
+        ],
+        "summary": "Obtiene las autorizaciones de un contrato\r\nProcedure: prc_crtaut",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InInfoAfi"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InInfoAfi"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/InInfoAfi"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/obtenerAcumuladosAfiliado": {
+      "post": {
+        "tags": [
+          "Sisac"
+        ],
+        "summary": "Obtiene la lista de acumulados según contrato\r\nProcedure: prc_afiacu",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InInfoAfi"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InInfoAfi"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/InInfoAfi"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/obtenerTrackingContrato": {
+      "post": {
+        "tags": [
+          "Sisac"
+        ],
+        "summary": "Obtiene la lista de trackings según el contrato\r\nProcedure: prc_crttra",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InInfoAfi"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InInfoAfi"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/InInfoAfi"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/obtenerTrackingAfiliado": {
+      "post": {
+        "tags": [
+          "Sisac"
+        ],
+        "summary": "Obtiene la lista de Tracking según su afiliado\r\nProcedure: prc_afitracking",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InInfoAfi"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InInfoAfi"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/InInfoAfi"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/obtenerCarteraContrato": {
+      "post": {
+        "tags": [
+          "Sisac"
+        ],
+        "summary": "Obtiene los datos cartera de un contrato\r\nProcedure: prc_crtcart",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InInfoAfi"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InInfoAfi"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/InInfoAfi"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/obtenerRadicacionAfiliado": {
+      "post": {
+        "tags": [
+          "Sisac"
+        ],
+        "summary": "Obtiene la lista de radicaciones según el contrato y su afiliado\r\nProcedure: prc_afirad",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InInfoRadAfi"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InInfoRadAfi"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/InInfoRadAfi"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/obtenerRadicacionContrato": {
+      "post": {
+        "tags": [
+          "Sisac"
+        ],
+        "summary": "Obtiene la lista de radicaciones según contrato\r\nProcedure: prc_crtrad",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InInfoAfi"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InInfoAfi"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/InInfoAfi"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/obtenerRadicacionCaratulaContrato/{numContrato}": {
+      "get": {
+        "tags": [
+          "Sisac"
+        ],
+        "summary": "Obtiene la radicación de la caratula del contrato.",
+        "parameters": [
+          {
+            "name": "numContrato",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/obtenerReembolsoContrato": {
+      "post": {
+        "tags": [
+          "Sisac"
+        ],
+        "summary": "Obtiene la lista de reembolso de un contrato\r\nProcedure: prc_crtreem",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InInfoAfi"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InInfoAfi"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/InInfoAfi"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/obtenerReembolsoAfiliado": {
+      "post": {
+        "tags": [
+          "Sisac"
+        ],
+        "summary": "Obtiene la lista de reembolso de un contrato\r\nProcedure: prc_afireem",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InInfoAfi"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InInfoAfi"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/InInfoAfi"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/obtenerTraspasoTitular": {
+      "post": {
+        "tags": [
+          "Sisac"
+        ],
+        "summary": "Obtiene el traspaso según el contrato\r\nProcedure: prc_afitra",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InInfoAfi"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InInfoAfi"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/InInfoAfi"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/obtenerContactosAutorizados": {
+      "post": {
+        "tags": [
+          "Sisac"
+        ],
+        "summary": "Obtiene la lista de contactos autorizados\r\nProcedure: prc_crtconaut",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InInfoAfi"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InInfoAfi"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/InInfoAfi"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/obtenerCondicionParticularPlan": {
+      "post": {
+        "tags": [
+          "Sisac"
+        ],
+        "summary": "Obtener condiciones particulares apartir del plan\r\nProcedure: prc_Crtcondpart",
+        "description": "{\r\n   \"plan\" : \"E0302\",\r\n   \"desde\" : 1,\r\n   \"hasta\" : 25\r\n}",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InCondPartPla"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InCondPartPla"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/InCondPartPla"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/obtenerCarnetAfiliado": {
+      "post": {
+        "tags": [
+          "Sisac"
+        ],
+        "summary": "Obtiene la lista de carné según su afiliado\r\nProcedure: prc_aficar",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InInfoAfi"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InInfoAfi"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/InInfoAfi"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/obtenerRecaudoPBS": {
+      "post": {
+        "tags": [
+          "Sisac"
+        ],
+        "summary": "Obtiene la lista de recaudos PBS según su afiliado\r\nProcedure: prc_afirecpbs",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InInfoAfi"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InInfoAfi"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/InInfoAfi"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/obtenerConsumoAfiliado": {
+      "get": {
+        "tags": [
+          "Sisac"
+        ],
+        "summary": "Obtiene el consumo de un afiliado \r\nProcedure: prc_selaficom",
+        "parameters": [
+          {
+            "name": "Identificacion",
+            "in": "query",
+            "description": "",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/obtenerConsumoAfiliadoDetalle": {
+      "post": {
+        "tags": [
+          "Sisac"
+        ],
+        "summary": "Obtiene el detalle del consumo de un afiliado \r\nProcedure: prc_selaficomdet",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InDetComAfi"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InDetComAfi"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/InDetComAfi"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/obtenerFarmacia": {
+      "post": {
+        "tags": [
+          "Sisac"
+        ],
+        "summary": "Obtener Farmacias según su afiliado\r\nProcedure: prc_farmrech",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InFarmacia"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InFarmacia"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/InFarmacia"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/obtenerProgramasAfiliado": {
+      "get": {
+        "tags": [
+          "Sisac"
+        ],
+        "summary": "Obtiene la lista de programas de un afiliado\r\nProcedure: prc_selafipyp",
+        "parameters": [
+          {
+            "name": "Identificacion",
+            "in": "query",
+            "description": "",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/obtenerEstadoAfiliadoHistorico": {
+      "post": {
+        "tags": [
+          "Sisac"
+        ],
+        "summary": "Obtiene la lista del historico de estados del contrato\r\nProcedure: prc_selhisesthij",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InInfoAfi"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InInfoAfi"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/InInfoAfi"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/obtenerTarifasContrato": {
+      "get": {
+        "tags": [
+          "Sisac"
+        ],
+        "summary": "Obtiene la lista de las tarifas en cuanto a los anexos y rangos de un contrato\r\nProcedure: prc_selcrttar",
+        "parameters": [
+          {
+            "name": "Contrato",
+            "in": "query",
+            "description": "",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "Familia",
+            "in": "query",
+            "description": "",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/obtenerTarifaSisac": {
+      "post": {
+        "tags": [
+          "Sisac"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SisacFilterViewModel"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SisacFilterViewModel"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SisacFilterViewModel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/obtenerDetalleTraspasoAfiliado": {
+      "post": {
+        "tags": [
+          "Sisac"
+        ],
+        "summary": "Obtiene el detalle de un traspaso según su consecutivo\r\nProcedure: prc_dettraspaso",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InDetTra"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InDetTra"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/InDetTra"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/obtenerDatosCartera": {
+      "get": {
+        "tags": [
+          "Sisac"
+        ],
+        "summary": "Obtener datos cartera según el número factura.\r\nProcedure: prc_datoscartera",
+        "parameters": [
+          {
+            "name": "NumeroFactura",
+            "in": "query",
+            "description": "",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/obtenerFacturasDetalleCartera": {
+      "post": {
+        "tags": [
+          "Sisac"
+        ],
+        "summary": "Obtiene el detalle de la lista de facturas\r\nProcedure: prc_Cardetfac",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InFacDetCar"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InFacDetCar"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/InFacDetCar"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/obtenerPagosCartera": {
+      "post": {
+        "tags": [
+          "Sisac"
+        ],
+        "summary": "Obtiene la lista de los pagos de la cartera\r\nProcedure: prc_Carpag",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InFacDetCar"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InFacDetCar"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/InFacDetCar"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/obtenerCreditosCartera": {
+      "post": {
+        "tags": [
+          "Sisac"
+        ],
+        "summary": "Obtiene la lista de creditos de un número factura\r\nProcedure: prc_Carcre",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InFacDetCar"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InFacDetCar"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/InFacDetCar"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/obtenerInteraccionesGestorCartera": {
+      "post": {
+        "tags": [
+          "Sisac"
+        ],
+        "summary": "Obtiene la lista de interacciones Gestor de un número factura\r\nProcedure: prc_carintges",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InFacDetCar"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InFacDetCar"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/InFacDetCar"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/obtenerInformacionGeneralRadicacion": {
+      "post": {
+        "tags": [
+          "Sisac"
+        ],
+        "summary": "Obtiene la información general de una radicacón\r\nProcedure:prc_radicacion",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InRad"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InRad"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/InRad"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/obtenerDetalleRadicacion": {
+      "post": {
+        "tags": [
+          "Sisac"
+        ],
+        "summary": "Obtiene la lista del detalle de la radicación\r\nProcedure: prc_raddet",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InRad"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InRad"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/InRad"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/obtenerDisponibleAfiliado": {
+      "post": {
+        "tags": [
+          "Sisac"
+        ],
+        "summary": "Obtiene la lista de  disponibilidad de cobertura de un afiliado\r\nProcedure: prc_dispo",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InInfoDispoAfi"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InInfoDispoAfi"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/InInfoDispoAfi"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/obtenerDisponibleAfiliadoDetalle": {
+      "post": {
+        "tags": [
+          "Sisac"
+        ],
+        "summary": "Obtiene la lista de Detalle disponibilidad de cobertura de un afiliado\r\nProcedure: prc_dispodet",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InInfoDispoAfiDet"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InInfoDispoAfiDet"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/InInfoDispoAfiDet"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/obtenerAgrupadorDisponibleAfiliado": {
+      "post": {
+        "tags": [
+          "Sisac"
+        ],
+        "summary": "Obtiene la lista de Agrupadores de cobertura de un afiliado\r\nProcedure: prc_agrudiscob",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InInfoAgruDispoAfi"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InInfoAgruDispoAfi"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/InInfoAgruDispoAfi"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/obtenerCartaAumento": {
+      "get": {
+        "tags": [
+          "Sisac"
+        ],
+        "summary": "Obtiene el enlace del anexo (Carta de Aumento) más reciente de un contrato.\r\nTabla: TABAUMCRTREPHIS",
+        "parameters": [
+          {
+            "name": "contrato",
+            "in": "query",
+            "description": "",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/obtenerInformacionGeneralPss": {
+      "get": {
+        "tags": [
+          "Sisac"
+        ],
+        "summary": "Obtiene la información general de un prestador\r\nProcedure: prc_infgenpss",
+        "parameters": [
+          {
+            "name": "CodigoPss",
+            "in": "query",
+            "description": "",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/obtenerInformacionConvenioPss": {
+      "post": {
+        "tags": [
+          "Sisac"
+        ],
+        "summary": "Obtiene lista de convenios en el contrato del prestador\r\nProcedure: prc_infconpss",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/inInfConPss"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/inInfConPss"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/inInfConPss"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/obtenerTrackingPss": {
+      "post": {
+        "tags": [
+          "Sisac"
+        ],
+        "summary": "Obtiene la lista de tracking según su prestador\r\nProcedure: prc_psstracking",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/inInfConPss"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/inInfConPss"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/inInfConPss"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/obtenerRadicacionCuentasMedicasPss": {
+      "post": {
+        "tags": [
+          "Sisac"
+        ],
+        "summary": "Obtiene la lista de las radicaciones cuentas médicas según su prestador\r\nProcedure: prc_pssradcuemed",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/inInfConPss"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/inInfConPss"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/inInfConPss"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/obtenerRadicacionCuentasMedicas": {
+      "get": {
+        "tags": [
+          "Sisac"
+        ],
+        "summary": "Obtiene la información de la radicación cuentas medicas\r\nProcedure: prc_radcuemed",
+        "parameters": [
+          {
+            "name": "NumeroRadicacion",
+            "in": "query",
+            "description": "",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "Sucursal",
+            "in": "query",
+            "description": "",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/obtenerInformacionGeneralReembolso": {
+      "get": {
+        "tags": [
+          "Sisac"
+        ],
+        "summary": "Obtiene la información general de un reembolso\r\nProcedure: prc_reembolso",
+        "parameters": [
+          {
+            "name": "NumeroReembolso",
+            "in": "query",
+            "description": "",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/obtenerInformacionGeneralAsesor": {
+      "get": {
+        "tags": [
+          "Sisac"
+        ],
+        "summary": "Obtiene la información general de un Asesor\r\nProcedure: prc_Infgenasesor",
+        "parameters": [
+          {
+            "name": "CodigoPss",
+            "in": "query",
+            "description": "",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/obtenerComisionesAsesor": {
+      "post": {
+        "tags": [
+          "Sisac"
+        ],
+        "summary": "Obtiene lista de comisiones en el contrato del asesor\r\nProcedure: prc_asecom",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InInfoAse"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InInfoAse"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/InInfoAse"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/obtenerSupervisorAsesor": {
+      "post": {
+        "tags": [
+          "Sisac"
+        ],
+        "summary": "Obtiene la lista de supervisores según el aseor\r\nProcedure: prc_asesup",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InInfoAse"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InInfoAse"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/InInfoAse"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/obtenerGestorCobrosAsesor": {
+      "post": {
+        "tags": [
+          "Sisac"
+        ],
+        "summary": "Obtiene la lista de gestores de cobros según el aseor\r\nProcedure: prc_aseges",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InInfoAse"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InInfoAse"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/InInfoAse"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/obtenerContactosAutorizadosAsesor": {
+      "post": {
+        "tags": [
+          "Sisac"
+        ],
+        "summary": "Obtiene la lista de los conctactos autorizados según el aseor\r\nProcedure: prc_aseconaut",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InInfoAse"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InInfoAse"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/InInfoAse"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/obtenerTrackingAsesor": {
+      "post": {
+        "tags": [
+          "Sisac"
+        ],
+        "summary": "Obtiene el listado de tracking según el asesor\r\nProcedure: prc_asetra",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InAseTra"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InAseTra"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/InAseTra"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/ConsultarRol": {
+      "get": {
+        "tags": [
+          "Sisac"
+        ],
+        "summary": "Obtiene la lista de permisos segun el rol del usuario\r\nProcedure: prc_selrol",
+        "parameters": [
+          {
+            "name": "usuario",
+            "in": "query",
+            "description": "",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/obtenerHistoricoContrato": {
+      "get": {
+        "tags": [
+          "Sisac"
+        ],
+        "summary": "Obtiene la lista de contratos historicos por numero de contrato.",
+        "parameters": [
+          {
+            "name": "CrtNumCon",
+            "in": "query",
+            "description": "",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "historico",
+            "in": "query",
+            "description": "",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/obtenerAumentosContrato": {
+      "get": {
+        "tags": [
+          "Sisac"
+        ],
+        "summary": "Obtiene la lista de aumentos de contratos.",
+        "parameters": [
+          {
+            "name": "NumeroContrato",
+            "in": "query",
+            "description": "",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Periodo",
+            "in": "query",
+            "description": "",
+            "schema": {
+              "type": "string",
+              "default": "       "
+            }
+          },
+          {
+            "name": "Control",
+            "in": "query",
+            "description": "",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 0
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/obtenerListaComisionPorSupervisor": {
+      "get": {
+        "tags": [
+          "Sisac"
+        ],
+        "summary": "Obtener la lista cabecera de las comiciones",
+        "parameters": [
+          {
+            "name": "AseClave",
+            "in": "query",
+            "description": "",
+            "schema": {
+              "type": "string",
+              "default": "2201 "
+            }
+          },
+          {
+            "name": "usuario",
+            "in": "query",
+            "description": "",
+            "schema": {
+              "type": "string",
+              "default": "U28951  "
+            }
+          },
+          {
+            "name": "PeriodoComision",
+            "in": "query",
+            "description": "",
+            "schema": {
+              "type": "string",
+              "default": "01/01/1900"
+            }
+          },
+          {
+            "name": "ConsecutivoCabComiciones",
+            "in": "query",
+            "description": "",
+            "schema": {
+              "type": "integer",
+              "format": "int64",
+              "default": 0
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/obtenerListaDetalleComisionPorSupervisor": {
+      "get": {
+        "tags": [
+          "Sisac"
+        ],
+        "summary": "Obtener detalle de la comision del supervisor",
+        "parameters": [
+          {
+            "name": "AseClave",
+            "in": "query",
+            "description": "",
+            "schema": {
+              "type": "string",
+              "default": "2201 "
+            }
+          },
+          {
+            "name": "PeriodoComision",
+            "in": "query",
+            "description": "",
+            "schema": {
+              "type": "string",
+              "default": "01/01/1900"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/SumaDetallesFacturasNCP": {
+      "get": {
+        "tags": [
+          "Sisac"
+        ],
+        "summary": "",
+        "parameters": [
+          {
+            "name": "NumeroFactura",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/BuscarSubDetalleFacturasNCP": {
+      "get": {
+        "tags": [
+          "Sisac"
+        ],
+        "summary": "",
+        "parameters": [
+          {
+            "name": "NumeroFactura",
+            "in": "query",
+            "description": "",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ProNovNombre",
+            "in": "query",
+            "description": "",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ConsecutivPASncp",
+            "in": "query",
+            "description": "",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/obtenerInfoUsuarioSeguridad": {
+      "get": {
+        "tags": [
+          "Sisac"
+        ],
+        "summary": "obtenerInfoUsuarioSeguridad:",
+        "parameters": [
+          {
+            "name": "usuario",
+            "in": "query",
+            "description": "",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/obtenerEstadoReembolso": {
+      "post": {
+        "tags": [
+          "Sisac"
+        ],
+        "summary": "obtenerEstadoReembolso: (M) Selecciona la información de estados de Reembolso. Pkg de referencia EPS.SvcReeSelEre_Pkg.SvcReeSelEre",
+        "description": "Example:\r\n\r\n    \"sucursal\": \"7    \",\r\n    \"folio\": 348287,\r\n    \"tipoDocumento\": \"2\"",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InEstadoReembolso"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InEstadoReembolso"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/InEstadoReembolso"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "AnexoDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "descripcion": {
+            "type": "string",
+            "nullable": true
+          },
+          "valor": {
+            "type": "string",
+            "nullable": true
+          },
+          "valorDescripcion": {
+            "type": "string",
+            "nullable": true
+          },
+          "tarifa": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "additionalProperties": false
+      },
+      "CarnetSisacParam": {
+        "type": "object",
+        "properties": {
+          "codigoProduto": {
+            "type": "string",
+            "nullable": true
+          },
+          "contrato": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "numeroReciboCaja": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "famalia": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "beneficiario": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "tipoPersona": {
+            "type": "string",
+            "nullable": true
+          },
+          "afiliado": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "radicacion": {
+            "type": "string",
+            "nullable": true
+          },
+          "tipoRadicacion": {
+            "type": "string",
+            "nullable": true
+          },
+          "sucursal": {
+            "type": "string",
+            "nullable": true
+          },
+          "sucursal2": {
+            "type": "string",
+            "nullable": true
+          },
+          "tipoPersona2": {
+            "type": "string",
+            "nullable": true
+          },
+          "observacion": {
+            "type": "string",
+            "nullable": true
+          },
+          "claveGestor": {
+            "type": "string",
+            "nullable": true
+          },
+          "claveAsesor": {
+            "type": "string",
+            "nullable": true
+          },
+          "causal": {
+            "type": "string",
+            "nullable": true
+          },
+          "tipoIdentificacion": {
+            "type": "string",
+            "nullable": true
+          },
+          "identificacion": {
+            "type": "string",
+            "nullable": true
+          },
+          "nombreAfiliado": {
+            "type": "string",
+            "nullable": true
+          },
+          "usuario": {
+            "type": "string",
+            "nullable": true
+          },
+          "numeroContrato": {
+            "type": "string",
+            "nullable": true
+          },
+          "numeroRadicacion": {
+            "type": "number",
+            "format": "double"
+          },
+          "estadoBeneficiario": {
+            "type": "string",
+            "nullable": true
+          },
+          "tipoCarnet": {
+            "type": "string",
+            "nullable": true
+          },
+          "checkGenerico": {
+            "type": "number",
+            "format": "double"
+          },
+          "plan": {
+            "type": "string",
+            "nullable": true
+          },
+          "plan2": {
+            "type": "string",
+            "nullable": true
+          },
+          "fechaHasta": {
+            "type": "string",
+            "nullable": true
+          },
+          "fechaDesde": {
+            "type": "string",
+            "nullable": true
+          },
+          "tipoContrato": {
+            "type": "string",
+            "nullable": true
+          },
+          "tipoBusqueda": {
+            "type": "number",
+            "format": "double"
+          },
+          "checkAfiliacionAutomatica": {
+            "type": "number",
+            "format": "double"
+          },
+          "numeroFamilia": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "additionalProperties": false
+      },
+      "CierreCaja": {
+        "type": "object",
+        "properties": {
+          "idCaja": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "desde": {
+            "type": "string",
+            "nullable": true
+          },
+          "codigoEstado": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nombreEstado": {
+            "type": "string",
+            "nullable": true
+          },
+          "codigoCajero": {
+            "type": "string",
+            "nullable": true
+          },
+          "fechaHoraApertura": {
+            "type": "string",
+            "nullable": true
+          },
+          "numeroReciboCaja": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "consecutivoDetalleReciboCaja": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "saldoInicial": {
+            "type": "number",
+            "format": "double"
+          },
+          "codigoConceptoPagoCaja": {
+            "type": "string",
+            "nullable": true
+          },
+          "codigoSucursal": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ClienteDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number",
+            "format": "double"
+          },
+          "tipoPersona": {
+            "type": "string",
+            "nullable": true
+          },
+          "tipoIdentificacion": {
+            "type": "string",
+            "nullable": true
+          },
+          "identificacion": {
+            "type": "string",
+            "nullable": true
+          },
+          "nombre": {
+            "type": "string",
+            "nullable": true
+          },
+          "apellido": {
+            "type": "string",
+            "nullable": true
+          },
+          "nombreEmpresa": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "direccion": {
+            "type": "string",
+            "nullable": true
+          },
+          "ciudadId": {
+            "type": "string",
+            "nullable": true
+          },
+          "ciudad": {
+            "type": "string",
+            "nullable": true
+          },
+          "telefono": {
+            "type": "string",
+            "nullable": true
+          },
+          "direcciones": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DireccionDto"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CoberturaDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "descripcion": {
+            "type": "string",
+            "nullable": true
+          },
+          "valor": {
+            "type": "string",
+            "nullable": true
+          },
+          "porcentaje": {
+            "type": "string",
+            "nullable": true
+          },
+          "agrupadorId": {
+            "type": "string",
+            "nullable": true
+          },
+          "agrupador": {
+            "type": "string",
+            "nullable": true
+          },
+          "limite": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CotizacionDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number",
+            "format": "double"
+          },
+          "fecha": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "usuarioId": {
+            "type": "string",
+            "nullable": true
+          },
+          "usuario": {
+            "type": "string",
+            "nullable": true
+          },
+          "sucursalId": {
+            "type": "string",
+            "nullable": true
+          },
+          "sucursal": {
+            "type": "string",
+            "nullable": true
+          },
+          "sucursalRelacionada": {
+            "type": "string",
+            "nullable": true
+          },
+          "cantidadAfiliados": {
+            "type": "number",
+            "format": "double"
+          },
+          "cliente": {
+            "$ref": "#/components/schemas/ClienteDto"
+          },
+          "intermediarioId": {
+            "type": "string",
+            "nullable": true
+          },
+          "intermediario": {
+            "type": "string",
+            "nullable": true
+          },
+          "tipoPlan": {
+            "type": "string",
+            "nullable": true
+          },
+          "tipoContrato": {
+            "type": "string",
+            "nullable": true
+          },
+          "tipoCotizacion": {
+            "type": "string",
+            "nullable": true
+          },
+          "tipoCotizacionId": {
+            "type": "number",
+            "format": "double"
+          },
+          "contratoId": {
+            "type": "number",
+            "format": "double"
+          },
+          "rangos": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/RangoDto"
+            },
+            "nullable": true
+          },
+          "estatusId": {
+            "type": "number",
+            "format": "double"
+          },
+          "estatus": {
+            "type": "string",
+            "nullable": true
+          },
+          "observacion": {
+            "type": "string",
+            "nullable": true
+          },
+          "total": {
+            "type": "number",
+            "format": "double"
+          },
+          "aprobar": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "DireccionDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "descripcion": {
+            "type": "string",
+            "nullable": true
+          },
+          "ciudadId": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "telefonos": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "DireccionesList": {
+        "type": "object",
+        "properties": {
+          "tipoDireccion": {
+            "type": "string",
+            "nullable": true
+          },
+          "ciudad": {
+            "type": "string",
+            "nullable": true
+          },
+          "barrio": {
+            "type": "string",
+            "nullable": true
+          },
+          "tipoUbicacion": {
+            "type": "string",
+            "nullable": true
+          },
+          "nombreUbicacion": {
+            "type": "string",
+            "nullable": true
+          },
+          "direccion": {
+            "type": "string",
+            "nullable": true
+          },
+          "telefono": {
+            "type": "string",
+            "nullable": true
+          },
+          "celular": {
+            "type": "string",
+            "nullable": true
+          },
+          "beeper": {
+            "type": "string",
+            "nullable": true
+          },
+          "sucursal": {
+            "type": "string",
+            "nullable": true
+          },
+          "nombreSucursal": {
+            "type": "string",
+            "nullable": true
+          },
+          "emailComision": {
+            "type": "string",
+            "nullable": true
+          },
+          "emailCobros": {
+            "type": "string",
+            "nullable": true
+          },
+          "emailFacturas": {
+            "type": "string",
+            "nullable": true
+          },
+          "areaTelefono": {
+            "type": "string",
+            "nullable": true
+          },
+          "areaCelular": {
+            "type": "string",
+            "nullable": true
+          },
+          "areaBeeper": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ETemplatesOnboarding": {
+        "enum": [
+          0,
+          1
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "FacturaAPagar": {
+        "type": "object",
+        "properties": {
+          "usuario": {
+            "type": "string",
+            "nullable": true
+          },
+          "numeroFactura": {
+            "type": "string",
+            "nullable": true
+          },
+          "numeroContrato": {
+            "type": "string",
+            "nullable": true
+          },
+          "fechaVencimiento": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "montoOriginal": {
+            "type": "number",
+            "format": "double"
+          },
+          "saldoFactura": {
+            "type": "number",
+            "format": "double"
+          },
+          "fechaUltimoPago": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "fechaLimitePago": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "numeroRecivoDevuelto": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "codigoCompania": {
+            "type": "string",
+            "nullable": true
+          },
+          "numeroRecibo": {
+            "type": "integer",
+            "format": "int64"
+          }
+        },
+        "additionalProperties": false
+      },
+      "GuardaFiltrosFilters": {
+        "type": "object",
+        "properties": {
+          "nombre": {
+            "type": "string",
+            "nullable": true
+          },
+          "detalle": {
+            "type": "string",
+            "nullable": true
+          },
+          "usuario": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "InActDir": {
+        "type": "object",
+        "properties": {
+          "solicitante": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "tipoPersona": {
+            "type": "string",
+            "nullable": true
+          },
+          "direccionesLists": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DireccionesList"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "InActualizacionReciboCaja": {
+        "type": "object",
+        "properties": {
+          "numeroReciboCaja": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "estadoRecibo": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "InAsePrincipal": {
+        "type": "object",
+        "properties": {
+          "codigoAsesor": {
+            "type": "string",
+            "nullable": true
+          },
+          "nombre": {
+            "type": "string",
+            "nullable": true
+          },
+          "tipoId": {
+            "type": "string",
+            "nullable": true
+          },
+          "numIdentificacion": {
+            "type": "string",
+            "nullable": true
+          },
+          "desde": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "hasta": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "InAseTra": {
+        "type": "object",
+        "properties": {
+          "codigoAsesor": {
+            "type": "string",
+            "nullable": true
+          },
+          "numeroPaquete": {
+            "type": "string",
+            "nullable": true
+          },
+          "fechaDesde": {
+            "type": "string",
+            "nullable": true
+          },
+          "fechaHasta": {
+            "type": "string",
+            "nullable": true
+          },
+          "desde": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "hasta": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "InCjAperturaCaja": {
+        "type": "object",
+        "properties": {
+          "fecha": {
+            "type": "string",
+            "nullable": true
+          },
+          "cajero": {
+            "type": "string",
+            "nullable": true
+          },
+          "tipoUsuarioCajero": {
+            "type": "string",
+            "nullable": true
+          },
+          "usuarioActual": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "InCjInsertarAperturarCaja": {
+        "type": "object",
+        "properties": {
+          "codigoCajero": {
+            "type": "string",
+            "nullable": true
+          },
+          "fechaHoraApertura": {
+            "type": "string",
+            "nullable": true
+          },
+          "saldoInicial": {
+            "type": "number",
+            "format": "double"
+          },
+          "codigoEstado": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "codigoConceptoPagoCaja": {
+            "type": "string",
+            "nullable": true
+          },
+          "codigoSucursal": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "InConSubTip": {
+        "type": "object",
+        "properties": {
+          "codigoEmpresa": {
+            "type": "string",
+            "nullable": true
+          },
+          "codigoTipoSolicitud": {
+            "type": "string",
+            "nullable": true
+          },
+          "codigoSubTipoSolicitud": {
+            "type": "string",
+            "nullable": true
+          },
+          "permisos": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SisacInfPerList"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "InCondPartPla": {
+        "type": "object",
+        "properties": {
+          "plan": {
+            "type": "string",
+            "nullable": true
+          },
+          "desde": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "hasta": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "InConsultaThm": {
+        "type": "object",
+        "properties": {
+          "contrato": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "familia": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "codigoTipoAtencion": {
+            "type": "string",
+            "nullable": true
+          },
+          "codigoServicio": {
+            "type": "string",
+            "nullable": true
+          },
+          "codigoProcedimiento": {
+            "type": "string",
+            "nullable": true
+          },
+          "codigoCiudad": {
+            "type": "string",
+            "nullable": true
+          },
+          "codigoEspecialidad": {
+            "type": "string",
+            "nullable": true
+          },
+          "codigoPlan": {
+            "type": "string",
+            "nullable": true
+          },
+          "desde": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "hasta": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "InCreateCasoCorreo": {
+        "type": "object",
+        "properties": {
+          "tipoNotificacion": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "correoOto": {
+            "type": "string",
+            "nullable": true
+          },
+          "correoOcc": {
+            "type": "string",
+            "nullable": true
+          },
+          "correoTexto": {
+            "type": "string",
+            "nullable": true
+          },
+          "usuario": {
+            "type": "string",
+            "nullable": true
+          },
+          "tipoCliente": {
+            "type": "string",
+            "nullable": true
+          },
+          "subject": {
+            "type": "string",
+            "nullable": true
+          },
+          "informante": {
+            "type": "string",
+            "nullable": true
+          },
+          "codigoTipoSolicitud": {
+            "type": "string",
+            "nullable": true
+          },
+          "codigoSubTipoSolicitud": {
+            "type": "string",
+            "nullable": true
+          },
+          "codigoTipoCon": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "InDetComAfi": {
+        "type": "object",
+        "properties": {
+          "contrato": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "familia": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "topVigCon": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "InDetTra": {
+        "type": "object",
+        "properties": {
+          "consecutivoTrapaso": {
+            "type": "number",
+            "format": "double"
+          },
+          "desde": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "hasta": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "InDirecciones": {
+        "type": "object",
+        "properties": {
+          "solicitante": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "tipoPersona": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "InEmailOnboarding": {
+        "type": "object",
+        "properties": {
+          "correo": {
+            "type": "string",
+            "nullable": true
+          },
+          "procod": {
+            "type": "string",
+            "nullable": true
+          },
+          "crtcon": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "sbccon": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "numTraspaso": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "template": {
+            "$ref": "#/components/schemas/ETemplatesOnboarding"
+          }
+        },
+        "additionalProperties": false
+      },
+      "InEstadoReembolso": {
+        "type": "object",
+        "properties": {
+          "sucursal": {
+            "type": "string",
+            "nullable": true
+          },
+          "folio": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "tipoDocumento": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "InFacDetCar": {
+        "type": "object",
+        "properties": {
+          "numeroFactura": {
+            "type": "string",
+            "nullable": true
+          },
+          "desde": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "hasta": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "InFarmacia": {
+        "type": "object",
+        "properties": {
+          "identificacion": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "fechaInicio": {
+            "type": "string",
+            "nullable": true
+          },
+          "fechaFin": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "InInfoAfi": {
+        "type": "object",
+        "properties": {
+          "contrato": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "familia": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "beneficiario": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "numeroContrato": {
+            "type": "string",
+            "nullable": true
+          },
+          "excepcion": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "identificacion": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "numeroAutorizacion": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "afiliado": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "estadoAutorizacion": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "serIpsCod": {
+            "type": "string",
+            "nullable": true
+          },
+          "numeroPaquete": {
+            "type": "string",
+            "nullable": true
+          },
+          "prestacion": {
+            "type": "string",
+            "nullable": true
+          },
+          "fechaDesde": {
+            "type": "string",
+            "nullable": true
+          },
+          "fechaHasta": {
+            "type": "string",
+            "nullable": true
+          },
+          "parentezco": {
+            "type": "string",
+            "nullable": true
+          },
+          "desde": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "hasta": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "numeroFactura": {
+            "type": "string",
+            "nullable": true
+          },
+          "numeroRadicacion": {
+            "type": "string",
+            "nullable": true
+          },
+          "numeroReembolso": {
+            "type": "string",
+            "nullable": true
+          },
+          "estadoCrtaso": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "InInfoAgruDispoAfi": {
+        "type": "object",
+        "properties": {
+          "afiliado": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "desde": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "hasta": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "InInfoAse": {
+        "type": "object",
+        "properties": {
+          "codigoAsesor": {
+            "type": "string",
+            "nullable": true
+          },
+          "desde": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "hasta": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "InInfoDispoAfi": {
+        "type": "object",
+        "properties": {
+          "afiliado": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "agrugrutopcod": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "desde": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "hasta": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "InInfoDispoAfiDet": {
+        "type": "object",
+        "properties": {
+          "afiliado": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "agrugrutopcod": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "topvigcon": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "desde": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "hasta": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "InInfoRadAfi": {
+        "type": "object",
+        "properties": {
+          "contrato": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "consecutivoFamilia": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "beneficiario": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "parentezco": {
+            "type": "string",
+            "nullable": true
+          },
+          "numeroContrato": {
+            "type": "string",
+            "nullable": true
+          },
+          "familia": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "numeroIdentificacion": {
+            "type": "string",
+            "nullable": true
+          },
+          "numeroRadicacion": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "fechaDesde": {
+            "type": "string",
+            "nullable": true
+          },
+          "fechaHasta": {
+            "type": "string",
+            "nullable": true
+          },
+          "desde": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "hasta": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "InListaSisacGen": {
+        "type": "object",
+        "properties": {
+          "primerFiltro": {
+            "type": "string",
+            "nullable": true
+          },
+          "segundoFiltro": {
+            "type": "string",
+            "nullable": true
+          },
+          "tercerFiltro": {
+            "type": "string",
+            "nullable": true
+          },
+          "codigo": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "InModUser": {
+        "type": "object",
+        "properties": {
+          "codigoUsuario": {
+            "type": "string",
+            "nullable": true
+          },
+          "nombre": {
+            "type": "string",
+            "nullable": true
+          },
+          "callTipConCod": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "callTipConSubCod": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "usuarioAdmin": {
+            "type": "string",
+            "nullable": true
+          },
+          "correo": {
+            "type": "string",
+            "nullable": true
+          },
+          "codigoTipoUsuario": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "codigoSupervisor": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "InProPrincipal": {
+        "type": "object",
+        "properties": {
+          "codigoProveedor": {
+            "type": "string",
+            "nullable": true
+          },
+          "nombre": {
+            "type": "string",
+            "nullable": true
+          },
+          "tipoId": {
+            "type": "string",
+            "nullable": true
+          },
+          "numIdentificacion": {
+            "type": "string",
+            "nullable": true
+          },
+          "desde": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "hasta": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "InPssPrincipal": {
+        "type": "object",
+        "properties": {
+          "codigoPss": {
+            "type": "string",
+            "nullable": true
+          },
+          "nombre": {
+            "type": "string",
+            "nullable": true
+          },
+          "tipoId": {
+            "type": "string",
+            "nullable": true
+          },
+          "numIdentificacion": {
+            "type": "string",
+            "nullable": true
+          },
+          "especialidad": {
+            "type": "string",
+            "nullable": true
+          },
+          "ciudad": {
+            "type": "string",
+            "nullable": true
+          },
+          "desde": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "hasta": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "InRad": {
+        "type": "object",
+        "properties": {
+          "contrato": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "familia": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "beneficiario": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "numeroAfiliado": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "codigoProducto": {
+            "type": "string",
+            "nullable": true
+          },
+          "auxiliarRadicacion": {
+            "type": "string",
+            "nullable": true
+          },
+          "desde": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "hasta": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "InSolicitudesCaso": {
+        "type": "object",
+        "properties": {
+          "usuario": {
+            "type": "string",
+            "nullable": true
+          },
+          "tipoContacto": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "subTipoContacto": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "fechaInicio": {
+            "type": "string",
+            "nullable": true
+          },
+          "fechaFin": {
+            "type": "string",
+            "nullable": true
+          },
+          "codigoTipoInformante": {
+            "type": "string",
+            "nullable": true
+          },
+          "codigo": {
+            "type": "string",
+            "nullable": true
+          },
+          "informante": {
+            "type": "string",
+            "nullable": true
+          },
+          "nombre": {
+            "type": "string",
+            "nullable": true
+          },
+          "tipoPersona": {
+            "type": "string",
+            "nullable": true
+          },
+          "consecutivo": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "solicitudesCaso": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SolicitudCasoList"
+            },
+            "nullable": true
+          },
+          "notas": {
+            "type": "string",
+            "nullable": true
+          },
+          "tipoOrigen": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "InUserCon": {
+        "type": "object",
+        "properties": {
+          "codigoUsuario": {
+            "type": "string",
+            "nullable": true
+          },
+          "nombre": {
+            "type": "string",
+            "nullable": true
+          },
+          "calltipconcod": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "calltipconsubcod": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "cantidad": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "InfoNovedadesAperturaDeCajaFilter": {
+        "type": "object",
+        "properties": {
+          "indiceCriterioBusqueda": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "fechaNovedadAperturaCaja": {
+            "type": "string",
+            "nullable": true
+          },
+          "auxiliarCodigoTipoNovedadCaja": {
+            "type": "string",
+            "nullable": true
+          },
+          "codigoNovedadCaja": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "codigoCajero": {
+            "type": "string",
+            "nullable": true
+          },
+          "fechaHoraApertura": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "InformacionRecibosCajasFilter": {
+        "type": "object",
+        "properties": {
+          "indiceBusqueda": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "auxiliarNumeroReciboCaja": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "numeroReciboCaja": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "reciboManual": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "codigoCajero": {
+            "type": "string",
+            "nullable": true
+          },
+          "fechaHoraApertura": {
+            "type": "string",
+            "nullable": true
+          },
+          "fechaCreacionRecibo": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "MontoDto": {
+        "type": "object",
+        "properties": {
+          "agrupadorId": {
+            "type": "number",
+            "format": "double"
+          },
+          "agrupador": {
+            "type": "string",
+            "nullable": true
+          },
+          "descripcion": {
+            "type": "string",
+            "nullable": true
+          },
+          "valor": {
+            "type": "number",
+            "format": "double"
+          },
+          "valorPersona": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "additionalProperties": false
+      },
+      "PropuestaExistenteDto": {
+        "type": "object",
+        "properties": {
+          "cotizacionId": {
+            "type": "number",
+            "format": "double"
+          },
+          "tipoPlanId": {
+            "type": "string",
+            "nullable": true
+          },
+          "tipoPlan": {
+            "type": "string",
+            "nullable": true
+          },
+          "planId": {
+            "type": "string",
+            "nullable": true
+          },
+          "plan": {
+            "type": "string",
+            "nullable": true
+          },
+          "habitacionCodigo": {
+            "type": "string",
+            "nullable": true
+          },
+          "habitacion": {
+            "type": "string",
+            "nullable": true
+          },
+          "habitacionNombre": {
+            "type": "string",
+            "nullable": true
+          },
+          "seleccionado": {
+            "type": "boolean"
+          },
+          "codigoTarifaPlan": {
+            "type": "number",
+            "format": "double"
+          },
+          "frecuenciaId": {
+            "type": "string",
+            "nullable": true
+          },
+          "frecuencia": {
+            "type": "string",
+            "nullable": true
+          },
+          "cobertura": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CoberturaDto"
+            },
+            "nullable": true
+          },
+          "anexo": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AnexoDto"
+            },
+            "nullable": true
+          },
+          "monto": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/MontoDto"
+            },
+            "nullable": true
+          },
+          "recargo": {
+            "type": "number",
+            "format": "double"
+          },
+          "descuento": {
+            "type": "number",
+            "format": "double"
+          },
+          "tarifa": {
+            "type": "number",
+            "format": "double"
+          },
+          "tarifaVoluntaria": {
+            "type": "number",
+            "format": "double"
+          },
+          "totalTarifaVoluntaria": {
+            "type": "number",
+            "format": "double"
+          },
+          "tarifaSalud": {
+            "type": "number",
+            "format": "double"
+          },
+          "tarifaAnexos": {
+            "type": "number",
+            "format": "double"
+          },
+          "total": {
+            "type": "number",
+            "format": "double"
+          },
+          "campanaId": {
+            "type": "string",
+            "nullable": true
+          },
+          "campana": {
+            "type": "string",
+            "nullable": true
+          },
+          "campanaRegional": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "additionalProperties": false
+      },
+      "RangoDto": {
+        "type": "object",
+        "properties": {
+          "desde": {
+            "type": "number",
+            "format": "double"
+          },
+          "hasta": {
+            "type": "number",
+            "format": "double"
+          },
+          "sexo": {
+            "type": "string",
+            "nullable": true
+          },
+          "cantidad": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "descripcion": {
+            "type": "string",
+            "nullable": true
+          },
+          "tarifa": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Recibo": {
+        "type": "object",
+        "properties": {
+          "fechaApertura": {
+            "type": "string",
+            "nullable": true
+          },
+          "codigoCaja": {
+            "type": "string",
+            "nullable": true
+          },
+          "tipoIdentificacion": {
+            "type": "string",
+            "nullable": true
+          },
+          "numeroIdentificacion": {
+            "type": "string",
+            "nullable": true
+          },
+          "nombreRecibo": {
+            "type": "string",
+            "nullable": true
+          },
+          "numeroImpresiones": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "estadoRecibo": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "totalPagar": {
+            "type": "number",
+            "format": "double"
+          },
+          "valorEntrega": {
+            "type": "number",
+            "format": "double"
+          },
+          "valorCambio": {
+            "type": "number",
+            "format": "double"
+          },
+          "cajeroAnulacion": {
+            "type": "string",
+            "nullable": true
+          },
+          "fechaAnulacion": {
+            "type": "string",
+            "nullable": true
+          },
+          "numeroContrato": {
+            "type": "string",
+            "nullable": true
+          },
+          "tipoPersona": {
+            "type": "string",
+            "nullable": true
+          },
+          "reciboManual": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "radicacion": {
+            "type": "string",
+            "nullable": true
+          },
+          "numeroCotizacion": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "codigoCompania": {
+            "type": "string",
+            "nullable": true
+          },
+          "idCaja": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "numeroRecibo": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "estadoReciboOut": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "codigoEstadoRecibo": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "descripcionEstadoRecibo": {
+            "type": "string",
+            "nullable": true
+          },
+          "fechaRecibo": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "usuario": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ReciboDetallado": {
+        "type": "object",
+        "properties": {
+          "numeroRecibo": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "codigoConceptoCaja": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "numeroDocumento": {
+            "type": "string",
+            "nullable": true
+          },
+          "valorPagar": {
+            "type": "number",
+            "format": "double"
+          },
+          "valorRetencion": {
+            "type": "number",
+            "format": "double"
+          },
+          "codigoMoneda": {
+            "type": "string",
+            "nullable": true
+          },
+          "tasa": {
+            "type": "number",
+            "format": "double"
+          },
+          "valorPagadoExtranjera": {
+            "type": "number",
+            "format": "double"
+          },
+          "informeArea": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "codigoFormaPago": {
+            "type": "string",
+            "nullable": true
+          },
+          "codigoBanco": {
+            "type": "string",
+            "nullable": true
+          },
+          "numeroCheque": {
+            "type": "string",
+            "nullable": true
+          },
+          "fechaCheque": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "folioRecaudo": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "descripcionConcepto": {
+            "type": "string",
+            "nullable": true
+          },
+          "consecutivoDetalle": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "numeroRecivoDevuelto": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "codigoTipoTarjeta": {
+            "type": "string",
+            "nullable": true
+          },
+          "numeroLoteTarjeta": {
+            "type": "string",
+            "nullable": true
+          },
+          "codigoCompania": {
+            "type": "string",
+            "nullable": true
+          },
+          "fechaExpedicion": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ReciboResumido": {
+        "type": "object",
+        "properties": {
+          "estadoRecibo": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "fechaApertura": {
+            "type": "string",
+            "nullable": true
+          },
+          "codigoCaja": {
+            "type": "string",
+            "nullable": true
+          },
+          "idCaja": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "numeroContrato": {
+            "type": "string",
+            "nullable": true
+          },
+          "numeroDocumento": {
+            "type": "string",
+            "nullable": true
+          },
+          "valorPagar": {
+            "type": "number",
+            "format": "double"
+          },
+          "codigoFormaPago": {
+            "type": "string",
+            "nullable": true
+          },
+          "codigoBanco": {
+            "type": "string",
+            "nullable": true
+          },
+          "tipoIdentificacion": {
+            "type": "string",
+            "nullable": true
+          },
+          "numeroIdentificacion": {
+            "type": "string",
+            "nullable": true
+          },
+          "nombre": {
+            "type": "string",
+            "nullable": true
+          },
+          "tipoPersona": {
+            "type": "string",
+            "nullable": true
+          },
+          "codigoCompania": {
+            "type": "string",
+            "nullable": true
+          },
+          "numeroCheque": {
+            "type": "string",
+            "nullable": true
+          },
+          "codigoTipoTarjeta": {
+            "type": "string",
+            "nullable": true
+          },
+          "fechaCheque": {
+            "type": "string",
+            "nullable": true
+          },
+          "idPersona": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "numeroRecibo": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "recibido": {
+            "type": "number",
+            "format": "double"
+          },
+          "cambio": {
+            "type": "number",
+            "format": "double"
+          },
+          "usuario": {
+            "type": "string",
+            "nullable": true
+          },
+          "numeroLoteTarjeta": {
+            "type": "string",
+            "nullable": true
+          },
+          "codigoMoneda": {
+            "type": "string",
+            "nullable": true
+          },
+          "valorTasa": {
+            "type": "number",
+            "format": "double"
+          },
+          "valorRetenido": {
+            "type": "number",
+            "format": "double"
+          },
+          "valorPagarExtranjera": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "additionalProperties": false
+      },
+      "SisacFilterViewModel": {
+        "type": "object",
+        "properties": {
+          "codigoUsuario": {
+            "type": "string",
+            "nullable": true
+          },
+          "cotizacion": {
+            "$ref": "#/components/schemas/CotizacionDto"
+          },
+          "propuesta": {
+            "$ref": "#/components/schemas/PropuestaExistenteDto"
+          },
+          "proceso": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "SisacInfPerList": {
+        "type": "object",
+        "properties": {
+          "tipo": {
+            "type": "string",
+            "nullable": true
+          },
+          "codigo": {
+            "type": "string",
+            "nullable": true
+          },
+          "nombre": {
+            "type": "string",
+            "nullable": true
+          },
+          "estado": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "SolicitudCasoList": {
+        "type": "object",
+        "properties": {
+          "numeroSolicitudCaso": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "subTipoSolicitud": {
+            "type": "string",
+            "nullable": true
+          },
+          "numeroReferencia": {
+            "type": "string",
+            "nullable": true
+          },
+          "tipoSolicitud": {
+            "type": "string",
+            "nullable": true
+          },
+          "observacion": {
+            "type": "string",
+            "nullable": true
+          },
+          "usuario": {
+            "type": "string",
+            "nullable": true
+          },
+          "tipoSolicitante": {
+            "type": "string",
+            "nullable": true
+          },
+          "estado": {
+            "type": "string",
+            "nullable": true
+          },
+          "codigoTipoInformante": {
+            "type": "string",
+            "nullable": true
+          },
+          "tipoPersona": {
+            "type": "string",
+            "nullable": true
+          },
+          "solicitante": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "contrato": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "familia": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "beneficiario": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "producto": {
+            "type": "string",
+            "nullable": true
+          },
+          "fechaActual": {
+            "type": "string",
+            "nullable": true
+          },
+          "infoTransaccion": {
+            "type": "string",
+            "nullable": true
+          },
+          "causal": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "inAlerta": {
+        "type": "object",
+        "properties": {
+          "beneficiario": {
+            "type": "string",
+            "nullable": true
+          },
+          "contrato": {
+            "type": "string",
+            "nullable": true
+          },
+          "familia": {
+            "type": "string",
+            "nullable": true
+          },
+          "tipoPersona": {
+            "type": "string",
+            "nullable": true
+          },
+          "tipoConsulta": {
+            "type": "string",
+            "nullable": true
+          },
+          "producto": {
+            "type": "string",
+            "nullable": true
+          },
+          "tipoInformante": {
+            "type": "string",
+            "nullable": true
+          },
+          "codigoInformante": {
+            "type": "string",
+            "nullable": true
+          },
+          "consecutivoInformante": {
+            "type": "string",
+            "nullable": true
+          },
+          "tipoPersonaInformante": {
+            "type": "string",
+            "nullable": true
+          },
+          "tipoAlerta": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "inAutorizacion": {
+        "type": "object",
+        "properties": {
+          "codigoUsuario": {
+            "type": "string",
+            "nullable": true
+          },
+          "numeroAutorizacion": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "codigoPrestador": {
+            "type": "string",
+            "nullable": true
+          },
+          "tipoIdentificacion": {
+            "type": "string",
+            "nullable": true
+          },
+          "identificacion": {
+            "type": "string",
+            "nullable": true
+          },
+          "numeroAfiliado": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "fechaDesde": {
+            "type": "string",
+            "nullable": true
+          },
+          "fechaHasta": {
+            "type": "string",
+            "nullable": true
+          },
+          "codigoServicio": {
+            "type": "string",
+            "nullable": true
+          },
+          "codigoTipoOrigen": {
+            "type": "string",
+            "nullable": true
+          },
+          "codigoClaseAtencion": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "codigoTipoAtencion": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "codigoTipoIntervencion": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "codigoTipoCalculo": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "codigoTratamiento": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "codigoEtapa": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "codigoDiagnostico": {
+            "type": "string",
+            "nullable": true
+          },
+          "codigoEstado": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "codigoPrestacion": {
+            "type": "string",
+            "nullable": true
+          },
+          "esEmergencia": {
+            "type": "boolean"
+          },
+          "esInternamiento": {
+            "type": "boolean"
+          },
+          "esPreCertificacion": {
+            "type": "boolean"
+          },
+          "esContingencia": {
+            "type": "boolean"
+          },
+          "codigoEstadoEscalamiento": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "internamientoEnCurso": {
+            "type": "boolean"
+          },
+          "codigoTipoGestion": {
+            "type": "string",
+            "nullable": true
+          },
+          "tipoConsulta": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "inCasosRelacionados": {
+        "type": "object",
+        "properties": {
+          "codigoTipoSolicitud": {
+            "type": "string",
+            "nullable": true
+          },
+          "informante": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "codigoSubTipoSolicitud": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "inCausal": {
+        "type": "object",
+        "properties": {
+          "codigoTipoSolicitud": {
+            "type": "string",
+            "nullable": true
+          },
+          "codigoSubTipoSolicitud": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "inConAfiPrincipal": {
+        "type": "object",
+        "properties": {
+          "producto": {
+            "type": "string",
+            "nullable": true
+          },
+          "contrato": {
+            "type": "string",
+            "nullable": true
+          },
+          "familia": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "tipoid": {
+            "type": "string",
+            "nullable": true
+          },
+          "noIdentificacion": {
+            "type": "string",
+            "nullable": true
+          },
+          "noAfiliado": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "primerNombre": {
+            "type": "string",
+            "nullable": true
+          },
+          "segundoNombre": {
+            "type": "string",
+            "nullable": true
+          },
+          "primerApellido": {
+            "type": "string",
+            "nullable": true
+          },
+          "segundoApellido": {
+            "type": "string",
+            "nullable": true
+          },
+          "desde": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "hasta": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "inInfConPss": {
+        "type": "object",
+        "properties": {
+          "codigoPss": {
+            "type": "string",
+            "nullable": true
+          },
+          "plan": {
+            "type": "string",
+            "nullable": true
+          },
+          "numeroPaquete": {
+            "type": "string",
+            "nullable": true
+          },
+          "numeroFactura": {
+            "type": "string",
+            "nullable": true
+          },
+          "fechaDesde": {
+            "type": "string",
+            "nullable": true
+          },
+          "fechaHasta": {
+            "type": "string",
+            "nullable": true
+          },
+          "desde": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "hasta": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "inInfGenInf": {
+        "type": "object",
+        "properties": {
+          "codigoTipoInformante": {
+            "type": "string",
+            "nullable": true
+          },
+          "tipoPersona": {
+            "type": "string",
+            "nullable": true
+          },
+          "tipoId": {
+            "type": "string",
+            "nullable": true
+          },
+          "identificacion": {
+            "type": "string",
+            "nullable": true
+          },
+          "codigo": {
+            "type": "string",
+            "nullable": true
+          },
+          "consecutivo": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "codigoUsuario": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "inInfoGenAfi": {
+        "type": "object",
+        "properties": {
+          "noContrato": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "noFamilia": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "noBeneficiario": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "parentezco": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "inInfoGenCon": {
+        "type": "object",
+        "properties": {
+          "usuario": {
+            "type": "string",
+            "nullable": true
+          },
+          "crtCon": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "noContrato": {
+            "type": "string",
+            "nullable": true
+          },
+          "filtro": {
+            "type": "string",
+            "nullable": true
+          },
+          "desde": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "hasta": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "inPregaut": {
+        "type": "object",
+        "properties": {
+          "optinfcod": {
+            "type": "string",
+            "nullable": true
+          },
+          "numide": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "tipper": {
+            "type": "string",
+            "nullable": true
+          },
+          "calltipconcod": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "codigo": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "inProEst": {
+        "type": "object",
+        "properties": {
+          "codigoTipoInformante": {
+            "type": "string",
+            "nullable": true
+          },
+          "tipoPersona": {
+            "type": "string",
+            "nullable": true
+          },
+          "tipoId": {
+            "type": "string",
+            "nullable": true
+          },
+          "identificacion": {
+            "type": "string",
+            "nullable": true
+          },
+          "codigo": {
+            "type": "string",
+            "nullable": true
+          },
+          "consecutivo": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "usuario": {
+            "type": "string",
+            "nullable": true
+          },
+          "activos": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "inTranPantalla": {
+        "type": "object",
+        "properties": {
+          "informante": {
+            "$ref": "#/components/schemas/tranInformantes"
+          },
+          "datosConsulta": {
+            "$ref": "#/components/schemas/tranDatosConsulta"
+          },
+          "personaTransaccion": {
+            "$ref": "#/components/schemas/tranPersonaTransaccion"
+          },
+          "infoTransaccion": {
+            "$ref": "#/components/schemas/tranInfoTransaccion"
+          },
+          "namePersonCall": {
+            "type": "string",
+            "nullable": true
+          },
+          "userInfo": {
+            "$ref": "#/components/schemas/tranUserInfo"
+          },
+          "datosTransaccion": {
+            "$ref": "#/components/schemas/tranDatosTransaccion"
+          },
+          "infoRadicacion": {
+            "$ref": "#/components/schemas/tranInfoRadicacion"
+          },
+          "infoBackOffice": {
+            "$ref": "#/components/schemas/tranInfoBackOffice"
+          }
+        },
+        "additionalProperties": false
+      },
+      "inUltcasos": {
+        "type": "object",
+        "properties": {
+          "codigo": {
+            "type": "string",
+            "nullable": true
+          },
+          "consecutivo": {
+            "type": "string",
+            "nullable": true
+          },
+          "tipopersona": {
+            "type": "string",
+            "nullable": true
+          },
+          "informante": {
+            "type": "string",
+            "nullable": true
+          },
+          "usuario": {
+            "type": "string",
+            "nullable": true
+          },
+          "identificacion": {
+            "type": "string",
+            "nullable": true
+          },
+          "contrato": {
+            "type": "string",
+            "nullable": true
+          },
+          "fechadesde": {
+            "type": "string",
+            "nullable": true
+          },
+          "fechahasta": {
+            "type": "string",
+            "nullable": true
+          },
+          "cantidad": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "tranDatosConsulta": {
+        "type": "object",
+        "properties": {
+          "nombre": {
+            "type": "string",
+            "nullable": true
+          },
+          "numeroAfiliado": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "mensaje": {
+            "type": "string",
+            "nullable": true
+          },
+          "numContrato": {
+            "type": "string",
+            "nullable": true
+          },
+          "numFamilia": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "tranDatosTransaccion": {
+        "type": "object",
+        "properties": {
+          "observacion": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "tranInfoBackOffice": {
+        "type": "object",
+        "properties": {
+          "celular": {
+            "type": "string",
+            "nullable": true
+          },
+          "telefonoAdicional": {
+            "type": "string",
+            "nullable": true
+          },
+          "correoElectronico": {
+            "type": "string",
+            "nullable": true
+          },
+          "correoElectronicoAdicional": {
+            "type": "string",
+            "nullable": true
+          },
+          "documentoPendiente": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "adjuntarDocumento": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "observacion": {
+            "type": "string",
+            "nullable": true
+          },
+          "documentosRequeridos": {
+            "type": "string",
+            "nullable": true
+          },
+          "prioridad": {
+            "type": "string",
+            "nullable": true
+          },
+          "numeroReferencia": {
+            "type": "string",
+            "nullable": true
+          },
+          "casoRelacionado": {
+            "type": "string",
+            "nullable": true
+          },
+          "tarjetaCredito": {
+            "type": "string",
+            "nullable": true
+          },
+          "cvv": {
+            "type": "string",
+            "nullable": true
+          },
+          "fechaVencimiento": {
+            "type": "string",
+            "nullable": true
+          },
+          "codigoPrestador": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "tranInfoRadicacion": {
+        "type": "object",
+        "properties": {
+          "monto": {
+            "type": "number",
+            "format": "double"
+          },
+          "cantidad": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "tranInfoTransaccion": {
+        "type": "object",
+        "properties": {
+          "namespace": {
+            "type": "string",
+            "nullable": true
+          },
+          "sclass": {
+            "type": "string",
+            "nullable": true
+          },
+          "nombreSubTipoSolicitud": {
+            "type": "string",
+            "nullable": true
+          },
+          "codigoSubTipoSolicitud": {
+            "type": "string",
+            "nullable": true
+          },
+          "nombreSolicitud": {
+            "type": "string",
+            "nullable": true
+          },
+          "codigoSolicitud": {
+            "type": "string",
+            "nullable": true
+          },
+          "codigoEmpresa": {
+            "type": "string",
+            "nullable": true
+          },
+          "nombreEmpresa": {
+            "type": "string",
+            "nullable": true
+          },
+          "sacSolCau": {
+            "type": "string",
+            "nullable": true
+          },
+          "codigoPrestador": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "tranInformantes": {
+        "type": "object",
+        "properties": {
+          "nombre": {
+            "type": "string",
+            "nullable": true
+          },
+          "color": {
+            "type": "string",
+            "nullable": true
+          },
+          "tipoPersona": {
+            "type": "string",
+            "nullable": true
+          },
+          "tipoInformante": {
+            "type": "string",
+            "nullable": true
+          },
+          "codigoTipoInformante": {
+            "type": "string",
+            "nullable": true
+          },
+          "identificacion": {
+            "type": "string",
+            "nullable": true
+          },
+          "tipoId": {
+            "type": "string",
+            "nullable": true
+          },
+          "consecutivo": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "codigo": {
+            "type": "string",
+            "nullable": true
+          },
+          "segmento": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "tranPersonaTransaccion": {
+        "type": "object",
+        "properties": {
+          "sbcCon": {
+            "type": "string",
+            "nullable": true
+          },
+          "tipConCod": {
+            "type": "string",
+            "nullable": true
+          },
+          "proCod": {
+            "type": "string",
+            "nullable": true
+          },
+          "sacTipPer": {
+            "type": "string",
+            "nullable": true
+          },
+          "infIde": {
+            "type": "string",
+            "nullable": true
+          },
+          "benCon": {
+            "type": "string",
+            "nullable": true
+          },
+          "crtCon": {
+            "type": "string",
+            "nullable": true
+          },
+          "codIde": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "tranUserInfo": {
+        "type": "object",
+        "properties": {
+          "callTipConCod": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "callTipConSubCod": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "callTipConNom": {
+            "type": "string",
+            "nullable": true
+          },
+          "callTipConSubNom": {
+            "type": "string",
+            "nullable": true
+          },
+          "cantSac": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "cantSacDet": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "nombre": {
+            "type": "string",
+            "nullable": true
+          },
+          "callTipOriCod": {
+            "type": "string",
+            "nullable": true
+          },
+          "ivrinfate": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "usuario": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "Apolo"
+    },
+    {
+      "name": "Caja"
+    },
+    {
+      "name": "Onboarding"
+    },
+    {
+      "name": "Sisac"
+    }
+  ]
+}
