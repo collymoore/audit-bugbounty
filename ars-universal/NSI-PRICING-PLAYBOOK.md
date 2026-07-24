@@ -147,7 +147,88 @@ Si el precio de lista ya tiene margen, el descuento no duele — y el cliente se
 
 ## 5. Sales Funnel — El Gancho
 
-### El modelo de 2 fases
+### El flujo completo de 3 pasos
+
+```
+PASO 1: ACERCAMIENTO (NSI init)        — Sin costo
+─────────────────────────────────────────────
+  NSI se acerca al cliente:
+  "Hemos visto indicadores en OSINT público
+   que sugieren exposición de datos en su
+   infraestructura. Sin acceso no podemos
+   confirmar, pero la señal es preocupante."
+
+  → Cliente NSI no ha tocado nada del cliente aún
+  → Basado en investigación pública (Shodan, DNS, web)
+
+        │
+        ▼ CLIENTE AUTORIZA FASE 1
+
+PASO 2: RECONOCIMIENTO LEVE (autorizado)  — Sin costo
+─────────────────────────────────────────────
+  NSI hace un scan ligero autorizado:
+  • Puertos abiertos
+  • Headers HTTP
+  • Versiones de software
+  • Swagger/endpoints públicos
+
+  NSI al cliente:
+  "Confirmado. Hay múltiples vectores críticos.
+   Para proceder a identificar y documentar cada
+   hallazgo con precisión, necesitamos su
+   autorización expresa y legal por escrito."
+
+  → NO se dan detalles específicos
+  → NO se dice dónde está el hoyo
+  → Se muestra existencia de riesgo, no ubicación
+
+        │
+        ▼ CLIENTE AUTORIZA FASE 2 (legal)
+
+PASO 3: ASSESSMENT PROFUNDO (contrato)    — Paga
+─────────────────────────────────────────────
+  Se presenta la tarifa:
+
+  ┌─────────────────────────────────────────┐
+  │  PRECIO = BASE + VARIABLE (techo 2x)    │
+  │                                         │
+  │  Base:  según tipo de engagement         │
+  │         ($5K web / $7K API / $12K full) │
+  │                                         │
+  │  Variable: según severidad de findings   │
+  │         🔴 $1,500 c/u                    │
+  │         🟡  $750 c/u                     │
+  │         🟢  $250 c/u                     │
+  │         🔵  $50 c/u                      │
+  │                                         │
+  │  Techo: 2x la base                       │
+  │  Garantía: sin 🔴 → 50% desc. variable   │
+  └─────────────────────────────────────────┘
+
+  Cliente firma contrato + autorización legal.
+  NSI entrega: findings, PII, PoCs, remediación.
+```
+
+### Dónde se presenta la tarifa
+
+La tarifa NO se presenta en el Paso 1.
+La tarifa NO se presenta en el Paso 2.
+La tarifa se presenta SOLO cuando el cliente ya:
+
+1. ✅ Sabe que NSI existe
+2. ✅ Autorizó un reconocimiento leve
+3. ✅ Vio que SÍ hay resultados
+4. ✅ Está convencido de que necesita el servicio
+
+**En ese punto:** "Para continuar, esta es nuestra tarifa."
+
+| Paso | Costo para cliente | Qué recibe |
+|:----:|:------------------:|------------|
+| 1 | $0 | "Sospechamos que hay algo" |
+| 2 | $0 | "Confirmado, hay riesgo" |
+| 3 | $5K-$30K | Findings, PoCs, remediación |
+
+### Regla ABSOLUTA: No menciones dónde. Menciona solo el QUÉ.
 
 ```
                     ╔══════════════════════════════════╗
