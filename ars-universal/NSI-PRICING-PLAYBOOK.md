@@ -145,7 +145,79 @@ Si el precio de lista ya tiene margen, el descuento no duele — y el cliente se
 
 ---
 
-## 5. Estrategia de Negociación
+## 5. Sales Funnel — El Gancho
+
+### El modelo de 2 fases
+
+```
+                    ╔══════════════════════════════════╗
+                    ║  FASE 1: GRATIS (el gancho)      ║
+                    ║  ───────────────────────────────  ║
+                    ║  • Scan ligero automatizado       ║
+                    ║  • Entregas SOLO el 3-5%          ║
+                    ║  • "Definitivamente tienes esto   ║
+                    ║    expuesto" — teórico            ║
+                    ║  • NO entregas PII real           ║
+                    ║  • NO entregas evidencia concreta ║
+                    ║  • El cliente sabe que SÍ hay     ║
+                    ║    problema, pero no sabe cuál    ║
+                    ╚══════════════════════════════════╝
+                                │
+                                ▼ COMPRA
+                    ╔══════════════════════════════════╗
+                    ║  FASE 2: PAGA (el producto)      ║
+                    ║  ───────────────────────────────  ║
+                    ║  • Full assessment + Value-Based  ║
+                    ║  • Aquí SÍ: findings, PII, PoCs  ║
+                    ║  • Plan de remediación completo   ║
+                    ║  • Reporte formal + carta valor   ║
+                    ║  • El cliente paga por la verdad  ║
+                    ║    completa                       ║
+                    ╚══════════════════════════════════╝
+```
+
+### Por qué el 3-5% es la clave
+
+| Si entregas... | El cliente... | Resultado |
+|----------------|---------------|:---------:|
+| **0%** (solo teoría) | No cree que haya riesgo | ❌ No compra |
+| **100%** (todo gratis) | Ya tiene lo que necesita | ❌ No paga |
+| **3-5%** (suficiente para saber que hay) | Sabe que hay riesgo pero no sabe cuál | ✅ **COMPRA** |
+
+### Cómo presentar la Fase 1
+
+> *"Hicimos un barrido preliminar de tu infraestructura. Los resultados indican que **definitivamente tienes datos expuestos** — múltiples vectores críticos. No puedo darte los detalles sin un engagement formal, pero lo que vi es suficiente para decirte que necesitas una revisión completa."*
+
+**El cliente tiene dos opciones:**
+1. Ignorarlo (riesgo: breach)
+2. Pagar el assessment (costo: $X, ROI: 165x)
+
+### Ejemplo ARS Universal (aplicado)
+
+```
+FASE 1 (Gratis):
+  "Señor ARS, identificamos que su API SISAC en QA
+   está expuesta y tiene datos de afiliados accesibles
+   sin autenticación. Recomendamos un assessment completo."
+
+  → NO le decimos: 9,582 prestadores, 4,223 clientes, 19,031 PII
+  → NO le decimos: swagger.json con 100+ endpoints sin auth
+  → NO le decimos: Oracle INSERT sin auth
+
+FASE 2 ($24K):
+  "Aquí están los 10 hallazgos críticos, los 19,031
+   registros PII que encontramos, y el plan para
+   cerrar todo. Breach potencial: $3.97M."
+```
+
+### Regla de oro del gancho
+
+> **Nunca entregues el producto en la fase gratis.**
+> La fase 1 prueba que SABEMOS. La fase 2 demuestra QUÉ.
+
+---
+
+## 6. Estrategia de Negociación
 
 ### Regla del 20%
 
@@ -175,9 +247,9 @@ Si el precio de lista ya tiene margen, el descuento no duele — y el cliente se
 
 ---
 
-## 6. Post-Venta
+## 6. Estrategia de Negociación
 
-### Después de firmar
+### Regla del 20%
 
 | Momento | Acción |
 |---------|--------|
