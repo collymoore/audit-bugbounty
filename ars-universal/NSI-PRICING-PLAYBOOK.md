@@ -186,23 +186,35 @@ Si el precio de lista ya tiene margen, el descuento no duele — y el cliente se
 
 ### Cómo presentar la Fase 1
 
-> *"Hicimos un barrido preliminar de tu infraestructura. Los resultados indican que **definitivamente tienes datos expuestos** — múltiples vectores críticos. No puedo darte los detalles sin un engagement formal, pero lo que vi es suficiente para decirte que necesitas una revisión completa."*
+> *"Hicimos un barrido preliminar de tu infraestructura digital. Los resultados indican **múltiples vectores críticos** con datos expuestos. Hay suficiente evidencia para recomendar un assessment completo — no puedo entrar en detalles sin un engagement formal, pero el riesgo es real y medible."*
+
+**Regla ABSOLUTA: No menciones dónde. Menciona solo el QUÉ.**
+
+| ❌ Mal | ✅ Bien |
+|--------|---------|
+| "Su API SISAC en QA está expuesta" | "Identificamos exposiciones críticas en su infraestructura cloud" |
+| "Encontramos 100+ endpoints sin auth" | "Múltiples vectores de ataque detectados" |
+| "Oracle INSERT sin auth" | "Capacidad de escritura no autorizada confirmada" |
+| "Swagger público en app-ars-sisac..." | "Documentación interna de APIs filtrada" |
+
+Si el cliente sabe DÓNDE está el hoyo, contrata a un técnico por $500 para tapar ESE hoyo.
+Si el cliente sabe QUE hay hoyos pero no DÓNDE, contrata a NSI por $24K para encontrarlos TODOS.
 
 **El cliente tiene dos opciones:**
-1. Ignorarlo (riesgo: breach)
-2. Pagar el assessment (costo: $X, ROI: 165x)
+1. Ignorarlo (riesgo: breach de $1.5M-$5M+)
+2. Pagar el assessment (inversión: $5K-$30K, ROI: 165x)
 
 ### Ejemplo ARS Universal (aplicado)
 
 ```
 FASE 1 (Gratis):
-  "Señor ARS, identificamos que su API SISAC en QA
-   está expuesta y tiene datos de afiliados accesibles
-   sin autenticación. Recomendamos un assessment completo."
+  "Señor ARS, identificamos exposiciones críticas en
+   su infraestructura cloud. Múltiples vectores con
+   datos de afiliados accesibles. Recomendamos un
+   assessment completo para determinar el alcance real."
 
-  → NO le decimos: 9,582 prestadores, 4,223 clientes, 19,031 PII
-  → NO le decimos: swagger.json con 100+ endpoints sin auth
-  → NO le decimos: Oracle INSERT sin auth
+  → NO le decimos qué endpoint, qué host, qué datos
+  → Solo le decimos: hay riesgo, es medible, sabemos encontrarlo
 
 FASE 2 ($24K):
   "Aquí están los 10 hallazgos críticos, los 19,031
