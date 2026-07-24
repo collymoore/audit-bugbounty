@@ -308,7 +308,141 @@ Expone URLs directas a Azure Blob
 
 ## 5. Pricing Model — Value-Based NSI
 
-### 5.1 El Modelo
+### 5.1 Razonamiento Pipeline (Full Output)
+
+El pricing model fue desarrollado mediante un pipeline completo de 4 fases. A continuación el output íntegro de cada fase tal como fue presentado durante la conversación:
+
+---
+
+#### 🧠 Fase 1: Lateral Thinking
+
+**Assumptions Challenged:**
+| Assumption | Reversal | New Angle |
+|------------|----------|-----------|
+| El precio se fija por horas/días de trabajo | El precio se fija por OUTPUT (hallazgos) | Cobrar por volumen y criticidad de findings |
+| Más findings = más caro | Menos findings = más caro (premium) | Cliente limpio paga prima por certificación |
+| Findings severidad = crítica | Findings severidad = oportunidad | Hallazgo crítico = ahorro para cliente = valor |
+| Assessment es un gasto | Assessment es una inversión con ROI medible | Precio = % del breach que evitamos |
+| Precio fijo por engagement | Precio variable con techo | Cliente paga según riesgo mitigado |
+
+**Provocaciones (PO):**
+
+*PO 1 — Assessment gratis si no hay findings:*
+→ Movement: Elimina objeción de entrada. Cliente paga solo si hay valor.
+→ Riesgo: Clientes sin findings no generan ingreso. Se compensa con prima por certificación.
+
+*PO 2 — Precio = % del breach que evitamos:*
+→ Movement: Alineación total. NSI cobra más cuando más valor crea.
+→ Riesgo: Difícil de calcular ex-ante. Necesita la tabla base como referencia.
+
+*PO 3 — Precio lo fija el cliente según su presupuesto:*
+→ Movement: Elimina fricción comercial. Cliente auto-selecciona su nivel.
+→ Riesgo: Clientes chicos pagan poco aunque tengan riesgo alto.
+
+**Alternativas Generadas (6):**
+1. **Freemium Findings** — $5K base + $500/🔴 + $200/🟡
+2. **Valor en Riesgo (VaR)** — 3-5% del breach estimado según calculadora
+3. **Tiers por Madurez** — Bronce ($), Plata ($$), Oro ($$$) según resultado
+4. **Risk Share** — Fee base bajo + bonus por findings críticos
+5. **Suscripción Assessment** — Precio mensual, assessments trimestrales
+6. **Cobro por Superficie de Ataque** — Precio según endpoints, IPs, registros
+
+---
+
+#### 🎭 Fase 2: Six Hats Evaluation
+
+**🔵 Blue Hat — Definición del Problema**
+Diseñar un modelo de pricing que refleje el valor creado (findings), no el esfuerzo invertido. Criterios de éxito: fácil de comunicar, justo para cualquier cliente, rentable, diferenciador, simple.
+
+**⚪ White Hat — Datos Conocidos**
+- ARS: 10🔴 findings, 18,948 PII, breach potencial $1.5M-$5M
+- NSI-COST-BASE-TABLE: benchmark IBM 2025, salud $7.42M global
+- Pentest pricing 2026: $5K-$50K+ (BlazeInfoSec, Invicti, Bright Defense)
+- Valor mercado del assessment NSI: ~$75K-$163K
+- 78h de trabajo real en ARS
+- 3 prospectos activos (ARS, banca, gobierno)
+
+**Datos NO conocidos:** elasticidad de precio en RD, disposición a pagar de clientes sin findings, precios exactos de competidores locales, tasa de conversión actual.
+
+**⚫ Black Hat — Riesgos (6 identificados)**
+1. Percepción de conflicto de interés ("cobran por encontrar problemas")
+2. Volatilidad injusta: cliente chico con hallazgo crítico paga más
+3. Complejidad de explicación (10 min vs "cuánto cuesta")
+4. Comparación desfavorable con competidores de precio fijo
+5. Presión interna para inflar findings
+6. Working capital problem si cliente sale limpio
+
+**🟡 Yellow Hat — Beneficios (6 identificados)**
+1. Alineación precio-valor real
+2. Diferenciación: único en mercado RD
+3. Escalabilidad natural (chico paga poco, grande paga más)
+4. Transparencia y honestidad comercial
+5. ROI comprobable para el cliente
+6. Upsell natural: findings → implementación
+
+**🟢 Green Hat — 4 Alternativas Creativas**
+
+Alternativa A — **Modelo Híbrido** (Recomendado):
+```
+Precio = Base (cubre costo) + Variable (captura valor)
+Severidad: 🔴=$500, 🟡=$200, 🟢=$50
+Techo: 2x la base
+```
+
+Alternativa B — **Precio Post-Facto 3 Tiers:**
+- Bronce (0-2🔴) → $X
+- Plata (3-5🔴) → $2X
+- Oro (6+🔴) → $3X
+
+Alternativa C — **Precio por Riesgo + Techo:**
+```
+Precio = min(Base + 0.5%×BreachEstimado, Techo)
+```
+
+Alternativa D — **Risk Free Guarantee:**
+Sin 🔴 findings → 50% descuento
+
+**🔴 Red Hat — Intuición**
+El modelo híbrido (Alternativa A) se siente correcto. Base cubre costo, variable captura valor. Simple de explicar. Temor: que la variable opaque la base y el cliente sienta sobreprecio. Confianza: ARS es el piloto perfecto. Stakeholder: institucional prefiere fijo.
+
+**🔵 Blue Hat — Síntesis**
+*Tensión principal:* simplicidad comercial vs justicia en el precio.
+*Recomendación:* Modelo Híbrido con reglas: base fija, variable por findings con tabla explícita, techo 2x, sin findings = 50% descuento, certificación opcional.
+
+---
+
+#### 📝 Fase 3: Cuaderno de Ideas
+
+📥 **Idea Central:** Pricing por findings con Modelo Híbrido.
+
+🔍 **Ángulos no explorados:**
+- Modelo genera ingresos recurrentes: assessment inicial caro, seguimiento barato (cliente ve progreso)
+- Calculadora de breach (NSI-COST-BASE-TABLE) es el habilitador clave
+- Integración con OmniRoute para cotizaciones dinámicas
+- Automatizable: findings → breach → precio
+
+🧠 **Sesgo a vigilar:** Sobreingeniería. Versión 1 debe caber en un tuit.
+
+🌱 **Maduración:** Idea en estado verde. Próximos pasos: definir precios base, matriz de valores, piloto con ARS, simplificar a tabla de 3 columnas.
+
+---
+
+#### 🧠 Fase 4: Sequential Thinking (8 pasos)
+
+| Paso | Contenido |
+|:----:|-----------|
+| 1 | El modelo debe responder: "cliente sin nada crítico no paga igual que ARS" |
+| 2 | Pricing de 2 capas: fee base (costo) + variable (valor) |
+| 3 | Calculadora NSI-COST-BASE-TABLE es el motor |
+| 4 | Debe ser simple: tabla de 3 columnas |
+| 5 | Ofrecer precio fijo como alternativa para institucionales |
+| 6 | Debe sentirse como DESCUENTO, no CASTIGO |
+| 7 | ARS como piloto: "basado en tus 10🔴 findings..." |
+| 8 | OmniRoute puede automatizar cotización |
+
+---
+
+### 5.2 El Modelo Final
 
 ```
 PRECIO = BASE + VARIABLE (con techo 2× BASE)
